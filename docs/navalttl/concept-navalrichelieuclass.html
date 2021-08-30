@@ -1,0 +1,1043 @@
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="../static/libs/img/favicon.ico">
+
+	
+		<title>OntoSpy > http://rdf.muninn-project.org/ontologies/naval</title>
+	
+
+    <!-- Bootstrap core CSS -->
+    <!-- <link href="../static/libs/bootstrap-3.3.7-dist/css/bootstrap.min.css" rel="stylesheet">  -->
+    <!-- Bootswatch:  -->
+    <!-- cerulean  | cyborg |  flatly |  lumen |  sandstone |   spacelab  |  yeti | cosmo |  darkly |  paper | simplex | superhero |  journal | readable  |   slate |  united -->
+    <link href="../static/libs/bootswatch3.2/sandstone/bootstrap.min.css" rel="stylesheet">
+    <link href="../static/custom/css/simple-sidebar.css" rel="stylesheet">
+    <link href="../static/custom/css/familytree.css" rel="stylesheet">
+    <link href="../static/custom/css/tabletree.css" rel="stylesheet">
+
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <link href="../static/libs/bootstrap-3.3.7-dist/css/ie10-viewport-bug-workaround.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="../static/custom/css/sticky-footer-navbar.css" rel="stylesheet">
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+<style type="text/css">
+
+  .lead-plus {font-size: 26.5px;}
+  .label-xs {font-size: 10px;}
+  .label-dark {background: #2c3e50; color: white; padding: 1px;}
+  .margin50 {margin-top: 50px; margin-bottom: 50px;}
+
+  .namespaces {background: #ced2d6; width: 100%;}
+
+
+  /*so that the d3plus tooltip panel doesnt cover the top banner*/
+  .navbar {z-index: 3000;}
+
+
+  .panel-body dt {margin-top: 5px;}
+  .page-header  {margin-top: 30px;}
+  #wrapper {margin-top: 50px;}
+
+  .implementation-panel {
+    overflow: auto;
+    max-height: 500px;
+  }
+
+  tr.table-classproperties {
+      /*background: #f5f5f5;*/
+  }
+  tr.table-classproperties th {
+      font-size: 80%;
+      font-weight: normal;
+  }
+
+
+  tr.table-inheritanceinfo {
+      /*background: #f5f5f5;*/
+      text-align: left;
+  }
+
+  tr.table-inheritanceinfo th {
+      font-size: 90%;
+      font-weight: normal;
+  }
+
+
+  .breadcrumb {
+    margin-top: 20px;
+    margin-bottom: 40px;
+  }
+
+  .breadcrumb a {
+      text-transform: capitalize;
+  }
+  .breadcrumb li {
+      text-transform: none;
+      /*so to catch the uri @todo improve*/
+  }
+
+
+  .fromclass_link {
+    /*color: white;
+    text-decoration: underline;*/
+    /*background: #1c1e52;*/
+    color: inherit;
+    /*padding: 1px;*/
+  }
+
+		.mythumbnail {
+			display: block;
+			padding: 13px;
+			margin-bottom: 30px;
+			line-height: 13.428571;
+			background-color: #fff;
+			border: 1px solid #ddd;
+			border-radius: 30px;
+		}
+
+		.mythumbnail:hover {
+			background: lightyellow;
+			text-decoration: none;
+		}
+
+
+		.img-container{
+		    height:100%;
+			overflow: hidden;
+		    max-height:200px;
+			padding: 10px;
+/*			margin: 20px 0px 20px 0px;*/
+			border: 1em #EAE5E5 solid;
+		}
+
+		.img-container:hover {
+			border: 1px grey solid;
+		}
+
+		img{
+/*		    height:100% !important;*/
+		}
+
+
+		.icon-xxs {
+			font-size: 15px;
+		}
+
+
+    /* dropdown open on hover */
+
+    @media (min-width: 979px) {
+      ul.nav li.dropdown:hover > ul.dropdown-menu {
+        display: block;
+      }
+    }
+
+
+
+/*pygments css*/
+.highlight .hll { background-color: #ffffcc }
+.highlight  { background: #f8f8f8; }
+.highlight .c { color: #408080; font-style: italic } /* Comment */
+.highlight .err { border: 1px solid #FF0000 } /* Error */
+.highlight .k { color: #008000; font-weight: bold } /* Keyword */
+.highlight .o { color: #666666 } /* Operator */
+.highlight .ch { color: #408080; font-style: italic } /* Comment.Hashbang */
+.highlight .cm { color: #408080; font-style: italic } /* Comment.Multiline */
+.highlight .cp { color: #BC7A00 } /* Comment.Preproc */
+.highlight .cpf { color: #408080; font-style: italic } /* Comment.PreprocFile */
+.highlight .c1 { color: #408080; font-style: italic } /* Comment.Single */
+.highlight .cs { color: #408080; font-style: italic } /* Comment.Special */
+.highlight .gd { color: #A00000 } /* Generic.Deleted */
+.highlight .ge { font-style: italic } /* Generic.Emph */
+.highlight .gr { color: #FF0000 } /* Generic.Error */
+.highlight .gh { color: #000080; font-weight: bold } /* Generic.Heading */
+.highlight .gi { color: #00A000 } /* Generic.Inserted */
+.highlight .go { color: #888888 } /* Generic.Output */
+.highlight .gp { color: #000080; font-weight: bold } /* Generic.Prompt */
+.highlight .gs { font-weight: bold } /* Generic.Strong */
+.highlight .gu { color: #800080; font-weight: bold } /* Generic.Subheading */
+.highlight .gt { color: #0044DD } /* Generic.Traceback */
+.highlight .kc { color: #008000; font-weight: bold } /* Keyword.Constant */
+.highlight .kd { color: #008000; font-weight: bold } /* Keyword.Declaration */
+.highlight .kn { color: #008000; font-weight: bold } /* Keyword.Namespace */
+.highlight .kp { color: #008000 } /* Keyword.Pseudo */
+.highlight .kr { color: #008000; font-weight: bold } /* Keyword.Reserved */
+.highlight .kt { color: #B00040 } /* Keyword.Type */
+.highlight .m { color: #666666 } /* Literal.Number */
+.highlight .s { color: #BA2121 } /* Literal.String */
+.highlight .na { color: #7D9029 } /* Name.Attribute */
+.highlight .nb { color: #008000 } /* Name.Builtin */
+.highlight .nc { color: #0000FF; font-weight: bold } /* Name.Class */
+.highlight .no { color: #880000 } /* Name.Constant */
+.highlight .nd { color: #AA22FF } /* Name.Decorator */
+.highlight .ni { color: #999999; font-weight: bold } /* Name.Entity */
+.highlight .ne { color: #D2413A; font-weight: bold } /* Name.Exception */
+.highlight .nf { color: #0000FF } /* Name.Function */
+.highlight .nl { color: #A0A000 } /* Name.Label */
+.highlight .nn { color: #0000FF; font-weight: bold } /* Name.Namespace */
+.highlight .nt { color: #008000; font-weight: bold } /* Name.Tag */
+.highlight .nv { color: #19177C } /* Name.Variable */
+.highlight .ow { color: #AA22FF; font-weight: bold } /* Operator.Word */
+.highlight .w { color: #bbbbbb } /* Text.Whitespace */
+.highlight .mb { color: #666666 } /* Literal.Number.Bin */
+.highlight .mf { color: #666666 } /* Literal.Number.Float */
+.highlight .mh { color: #666666 } /* Literal.Number.Hex */
+.highlight .mi { color: #666666 } /* Literal.Number.Integer */
+.highlight .mo { color: #666666 } /* Literal.Number.Oct */
+.highlight .sa { color: #BA2121 } /* Literal.String.Affix */
+.highlight .sb { color: #BA2121 } /* Literal.String.Backtick */
+.highlight .sc { color: #BA2121 } /* Literal.String.Char */
+.highlight .dl { color: #BA2121 } /* Literal.String.Delimiter */
+.highlight .sd { color: #BA2121; font-style: italic } /* Literal.String.Doc */
+.highlight .s2 { color: #BA2121 } /* Literal.String.Double */
+.highlight .se { color: #BB6622; font-weight: bold } /* Literal.String.Escape */
+.highlight .sh { color: #BA2121 } /* Literal.String.Heredoc */
+.highlight .si { color: #BB6688; font-weight: bold } /* Literal.String.Interpol */
+.highlight .sx { color: #008000 } /* Literal.String.Other */
+.highlight .sr { color: #BB6688 } /* Literal.String.Regex */
+.highlight .s1 { color: #BA2121 } /* Literal.String.Single */
+.highlight .ss { color: #19177C } /* Literal.String.Symbol */
+.highlight .bp { color: #008000 } /* Name.Builtin.Pseudo */
+.highlight .fm { color: #0000FF } /* Name.Function.Magic */
+.highlight .vc { color: #19177C } /* Name.Variable.Class */
+.highlight .vg { color: #19177C } /* Name.Variable.Global */
+.highlight .vi { color: #19177C } /* Name.Variable.Instance */
+.highlight .vm { color: #19177C } /* Name.Variable.Magic */
+.highlight .il { color: #666666 } /* Literal.Number.Integer.Long */
+
+/*overloading this class from pygments*/
+.highlight {
+  overflow: auto;
+}
+
+
+
+
+
+
+
+
+</style>
+
+
+
+
+
+  </head>
+
+  <body>
+
+
+
+    
+<!-- Fixed navbar -->
+<nav class="navbar navbar-default navbar-fixed-top">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+
+      <a class="navbar-brand" id="menu-toggle" title="Toggle sidebar">
+        
+        <span class="glyphicon glyphicon-align-left" aria-hidden="true"></span>
+      </a>
+    </div>
+    <div id="navbar" class="collapse navbar-collapse">
+      <ul class="nav navbar-nav">
+        <li ><a href="index.html"><code style="font-size: 115%;">http://rdf.muninn-project.org/ontologies/naval</code></a></li>
+        
+
+       
+
+
+        <li  ><a href="dashboard.html">Dashboard</a></li>
+        <li  ><a href="entities-az.html">Entities A-Z</a></li>
+        <li class="dropdown  " >
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Entities Tree <span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            
+            <li><a href="entities-tree-classes.html">Classes</a>
+            </li>
+            
+            
+            <li><a  href="entities-tree-properties.html">Properties</a>
+            </li>
+            
+            
+            <li><a href="entities-tree-concepts.html">Concepts</a>
+            </li>
+            
+          </ul>
+      </li>
+
+      </ul>
+      
+    </div><!--/.nav-collapse -->
+
+  </div>
+</nav>
+
+
+
+
+
+
+<div id="wrapper" class="toggled">
+
+
+    
+
+    
+        
+<!-- Sidebar -->
+<div id="sidebar-wrapper">
+    <ul class="sidebar-nav">
+
+
+        <li>
+          <input style="margin-top: 30px;  margin-bottom: 20px;" type="text" id="search-input-sidebar" name="" value="" placeholder="Type to search">
+        </li>
+
+        
+          <li class="-second-level" id="sd_classes"><a href="entities-tree-classes.html">Classes (17)</a>
+          </li>
+
+            
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_3603"><a  href="class-navalballasttank.html">naval:BallastTank</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_3604"><a  href="class-navaldoublebottomballasttank.html">naval:DoubleBottomBallastTank</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_3605"><a  href="class-navalhospitalship.html">naval:HospitalShip</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_3606"><a  href="class-navalhull.html">naval:Hull</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_3607"><a  href="class-navalmilitaryshipclass.html">naval:MilitaryShipClass</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_3608"><a  href="class-navalmilitaryshipfunction.html">naval:MilitaryShipFunction</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_3609"><a  href="class-navalmilitaryshiptype.html">naval:MilitaryShipType</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_3610"><a  href="class-navalsailship.html">naval:SailShip</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_3611"><a  href="class-navalship.html">naval:Ship</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_3612"><a  href="class-navalshipclass.html">naval:ShipClass</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_3613"><a  href="class-navalshipdesignation.html">naval:ShipDesignation</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_3614"><a  href="class-navalshipfunction.html">naval:ShipFunction</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_3615"><a  href="class-navalshiptype.html">naval:ShipType</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_3616"><a  href="class-navalsubmarine.html">naval:Submarine</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_3617"><a  href="class-navaltrooptransport.html">naval:TroopTransport</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_3618"><a  href="class-navalwarship.html">naval:Warship</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_3619"><a  href="class-navalsailplan.html">naval:sailPlan</a></li>
+          
+        
+
+        
+            <li class="-second-level" id="sd_properties"><a  href="entities-tree-properties.html">Properties (33)</a>
+            </li>
+
+            
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_3620"><a   href="prop-navalhasbeam.html">naval:hasBeam</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_3621"><a   href="prop-navalhascrewsize.html">naval:hasCrewSize</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_3622"><a   href="prop-navalhasdisplacement.html">naval:hasDisplacement</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_3623"><a   href="prop-navalhasdraft.html">naval:hasDraft</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_3624"><a   href="prop-navalhasfullloaddisplacement.html">naval:hasFullLoadDisplacement</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_3625"><a   href="prop-navalhasheight.html">naval:hasHeight</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_3626"><a   href="prop-navalhaslenght.html">naval:hasLenght</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_3627"><a   href="prop-navalhasmaxdraft.html">naval:hasMaxDraft</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_3628"><a   href="prop-navalhasmaxspeed.html">naval:hasMaxSpeed</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_3629"><a   href="prop-navalhasnatoreportingname.html">naval:hasNATOReportingName</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_3630"><a   href="prop-navalpreceededby.html">naval:PreceededBy</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_3631"><a   href="prop-navaleninumber.html">naval:eniNumber</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_3632"><a   href="prop-navalhasagencyservice.html">naval:hasAgencyService</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_3633"><a   href="prop-navalhasballasttank.html">naval:hasBallastTank</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_3634"><a   href="prop-navalhasbuilder.html">naval:hasBuilder</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_3635"><a   href="prop-navalhascallsign.html">naval:hasCallSign</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_3636"><a   href="prop-navalhascountryofservice.html">naval:hasCountryOfService</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_3637"><a   href="prop-navalhashomeport.html">naval:hasHomePort</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_3638"><a   href="prop-navalhasinstancesbuilt.html">naval:hasInstancesBuilt</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_3639"><a   href="prop-navalhasmmsinumber.html">naval:hasMMSINumber</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_3640"><a   href="prop-navalhasportofregistry.html">naval:hasPortOfRegistry</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_3641"><a   href="prop-navalhasshipclass.html">naval:hasShipClass</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_3642"><a   href="prop-navalhasshipfunction.html">naval:hasShipFunction</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_3643"><a   href="prop-navalhasshipnameprefix.html">naval:hasShipNamePrefix</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_3644"><a   href="prop-navalhullnumber.html">naval:hullNumber</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_3645"><a   href="prop-navalimonumber.html">naval:imoNumber</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_3646"><a   href="prop-navalnextship.html">naval:nextShip</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_3647"><a   href="prop-navalnomenclatureof.html">naval:nomenclatureOf</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_3648"><a   href="prop-navalownedby.html">naval:ownedBy</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_3649"><a   href="prop-navalpreviousship.html">naval:previousShip</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_3650"><a   href="prop-navalrig.html">naval:rig</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_3651"><a   href="prop-navalshipusedby.html">naval:shipUsedBy</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_3652"><a   href="prop-navalsucceededby.html">naval:succeededBy</a></li>
+          
+
+        
+
+        
+            <li class="-second-level" id="sd_concepts"><a href="entities-tree-concepts.html">Concepts (100)</a>
+            </li>
+
+              
+            
+                <li class="second-level" style="line-height: 20px;" id="sd_3653"><a   href="concept-navaladmiralushakovclass.html">naval:AdmiralUshakovClass</a></li>
+            
+                <li class="second-level" style="line-height: 20px;" id="sd_3654"><a   href="concept-navalaeranclass.html">naval:AeranClass</a></li>
+            
+                <li class="second-level" style="line-height: 20px;" id="sd_3655"><a   href="concept-navalamiralbaudinclass.html">naval:AmiralBaudinClass</a></li>
+            
+                <li class="second-level" style="line-height: 20px;" id="sd_3656"><a   href="concept-navalaudaciousclass.html">naval:AudaciousClass</a></li>
+            
+                <li class="second-level" style="line-height: 20px;" id="sd_3657"><a   href="concept-navalballasttank.html">naval:BallastTank</a></li>
+            
+                <li class="second-level" style="line-height: 20px;" id="sd_3658"><a   href="concept-navalbattleship.html">naval:BattleShip</a></li>
+            
+                <li class="second-level" style="line-height: 20px;" id="sd_3659"><a   href="concept-navalbelleisleclass.html">naval:BelleisleClass</a></li>
+            
+                <li class="second-level" style="line-height: 20px;" id="sd_3660"><a   href="concept-navalbjoergvinclass.html">naval:BjoergvinClass</a></li>
+            
+                <li class="second-level" style="line-height: 20px;" id="sd_3661"><a   href="concept-navalcapitalship.html">naval:CapitalShip</a></li>
+            
+                <li class="second-level" style="line-height: 20px;" id="sd_3662"><a   href="concept-navalcoastaldefenceship.html">naval:CoastalDefenceShip</a></li>
+            
+                <li class="second-level" style="line-height: 20px;" id="sd_3663"><a   href="concept-navalcolbertclass.html">naval:ColbertClass</a></li>
+            
+                <li class="second-level" style="line-height: 20px;" id="sd_3664"><a   href="concept-navaldefenceclass.html">naval:DefenceClass</a></li>
+            
+                <li class="second-level" style="line-height: 20px;" id="sd_3665"><a   href="concept-navaldoublebottomballasttank.html">naval:DoubleBottomBallastTank</a></li>
+            
+                <li class="second-level" style="line-height: 20px;" id="sd_3666"><a   href="concept-navaldreadnought.html">naval:Dreadnought</a></li>
+            
+                <li class="second-level" style="line-height: 20px;" id="sd_3667"><a   href="concept-navaldunkerqueclass.html">naval:DunkerqueClass</a></li>
+            
+                <li class="second-level" style="line-height: 20px;" id="sd_3668"><a   href="concept-navaleidsvoldclass.html">naval:EidsvoldClass</a></li>
+            
+                <li class="second-level" style="line-height: 20px;" id="sd_3669"><a   href="concept-navalevertsenclass.html">naval:EvertsenClass</a></li>
+            
+                <li class="second-level" style="line-height: 20px;" id="sd_3670"><a   href="concept-navalfastbattleship.html">naval:FastBattleship</a></li>
+            
+                <li class="second-level" style="line-height: 20px;" id="sd_3671"><a   href="concept-navalfrigate.html">naval:Frigate</a></li>
+            
+                <li class="second-level" style="line-height: 20px;" id="sd_3672"><a   href="concept-navalhectorclass.html">naval:HectorClass</a></li>
+            
+                <li class="second-level" style="line-height: 20px;" id="sd_3673"><a   href="concept-navalherluftrolleclass.html">naval:HerlufTrolleClass</a></li>
+            
+                <li class="second-level" style="line-height: 20px;" id="sd_3674"><a   href="concept-navalhospitalship.html">naval:HospitalShip</a></li>
+            
+                <li class="second-level" style="line-height: 20px;" id="sd_3675"><a   href="concept-navalhull.html">naval:Hull</a></li>
+            
+                <li class="second-level" style="line-height: 20px;" id="sd_3676"><a   href="concept-navalhydraclass.html">naval:HydraClass</a></li>
+            
+                <li class="second-level" style="line-height: 20px;" id="sd_3677"><a   href="concept-navaliowaclass.html">naval:IowaClass</a></li>
+            
+                <li class="second-level" style="line-height: 20px;" id="sd_3678"><a   href="concept-navalironcladwarship.html">naval:IroncladWarship</a></li>
+            
+                <li class="second-level" style="line-height: 20px;" id="sd_3679"><a   href="concept-navalkaiserclass.html">naval:KaiserClass</a></li>
+            
+                <li class="second-level" style="line-height: 20px;" id="sd_3680"><a   href="concept-navalkinggeorgevclass.html">naval:KingGeorgeVClass</a></li>
+            
+                <li class="second-level" style="line-height: 20px;" id="sd_3681"><a   href="concept-navalkoninginregentesclass.html">naval:KoninginRegentesClass</a></li>
+            
+                <li class="second-level" style="line-height: 20px;" id="sd_3682"><a   href="concept-navallionclass.html">naval:LionClass</a></li>
+            
+                <li class="second-level" style="line-height: 20px;" id="sd_3683"><a   href="concept-navallittorioclass.html">naval:LittorioClass</a></li>
+            
+                <li class="second-level" style="line-height: 20px;" id="sd_3684"><a   href="concept-navallordclydeclass.html">naval:LordClydeClass</a></li>
+            
+                <li class="second-level" style="line-height: 20px;" id="sd_3685"><a   href="concept-navalmagentaclass.html">naval:MagentaClass</a></li>
+            
+                <li class="second-level" style="line-height: 20px;" id="sd_3686"><a   href="concept-navalmarceauclass.html">naval:MarceauClass</a></li>
+            
+                <li class="second-level" style="line-height: 20px;" id="sd_3687"><a   href="concept-navalmilitaryshipclass.html">naval:MilitaryShipClass</a></li>
+            
+                <li class="second-level" style="line-height: 20px;" id="sd_3688"><a   href="concept-navalmilitaryshipfunction.html">naval:MilitaryShipFunction</a></li>
+            
+                <li class="second-level" style="line-height: 20px;" id="sd_3689"><a   href="concept-navalmilitaryshiptype.html">naval:MilitaryShipType</a></li>
+            
+                <li class="second-level" style="line-height: 20px;" id="sd_3690"><a   href="concept-navalmonarchclass.html">naval:MonarchClass</a></li>
+            
+                <li class="second-level" style="line-height: 20px;" id="sd_3691"><a   href="concept-navalnelsonclass.html">naval:NelsonClass</a></li>
+            
+                <li class="second-level" style="line-height: 20px;" id="sd_3692"><a   href="concept-navalnorthcarolinaclass.html">naval:NorthCarolinaClass</a></li>
+            
+                <li class="second-level" style="line-height: 20px;" id="sd_3693"><a   href="concept-navalodenclass.html">naval:OdenClass</a></li>
+            
+                <li class="second-level" style="line-height: 20px;" id="sd_3694"><a   href="concept-navalodinclass.html">naval:OdinClass</a></li>
+            
+                <li class="second-level" style="line-height: 20px;" id="sd_3695"><a   href="concept-navalpredreadnought.html">naval:PreDreadnought</a></li>
+            
+                <li class="second-level" style="line-height: 20px;" id="sd_3696"><a   href="concept-navalpreceededby.html">naval:PreceededBy</a></li>
+            
+                <li class="second-level" style="line-height: 20px;" id="sd_3697"><a   href="concept-navalpreussenclass.html">naval:PreussenClass</a></li>
+            
+                <li class="second-level" style="line-height: 20px;" id="sd_3698"><a   href="concept-navalprinceconsortclass.html">naval:PrinceConsortClass</a></li>
+            
+                <li class="second-level" style="line-height: 20px;" id="sd_3699"><a   href="concept-navalrheinclass.html">naval:RheinClass</a></li>
+            
+                <li class="second-level" style="line-height: 20px;" id="sd_3700"><a class="active"  href="concept-navalrichelieuclass.html">naval:RichelieuClass</a></li>
+            
+                <li class="second-level" style="line-height: 20px;" id="sd_3701"><a   href="concept-navalsachsenclass.html">naval:SachsenClass</a></li>
+            
+                <li class="second-level" style="line-height: 20px;" id="sd_3702"><a   href="concept-navalsailship.html">naval:SailShip</a></li>
+            
+                <li class="second-level" style="line-height: 20px;" id="sd_3703"><a   href="concept-navalschooner.html">naval:Schooner</a></li>
+            
+                <li class="second-level" style="line-height: 20px;" id="sd_3704"><a   href="concept-navalscorpionclass.html">naval:ScorpionClass</a></li>
+            
+                <li class="second-level" style="line-height: 20px;" id="sd_3705"><a   href="concept-navalship.html">naval:Ship</a></li>
+            
+                <li class="second-level" style="line-height: 20px;" id="sd_3706"><a   href="concept-navalshipclass.html">naval:ShipClass</a></li>
+            
+                <li class="second-level" style="line-height: 20px;" id="sd_3707"><a   href="concept-navalshipdesignation.html">naval:ShipDesignation</a></li>
+            
+                <li class="second-level" style="line-height: 20px;" id="sd_3708"><a   href="concept-navalshipfunction.html">naval:ShipFunction</a></li>
+            
+                <li class="second-level" style="line-height: 20px;" id="sd_3709"><a   href="concept-navalshipoftheline.html">naval:ShipOfTheLine</a></li>
+            
+                <li class="second-level" style="line-height: 20px;" id="sd_3710"><a   href="concept-navalshiptype.html">naval:ShipType</a></li>
+            
+                <li class="second-level" style="line-height: 20px;" id="sd_3711"><a   href="concept-navalsiegfriedclass.html">naval:SiegfriedClass</a></li>
+            
+                <li class="second-level" style="line-height: 20px;" id="sd_3712"><a   href="concept-navalsouthdakotaclass.html">naval:SouthDakotaClass</a></li>
+            
+                <li class="second-level" style="line-height: 20px;" id="sd_3713"><a   href="concept-navalsubmarine.html">naval:Submarine</a></li>
+            
+                <li class="second-level" style="line-height: 20px;" id="sd_3714"><a   href="concept-navalsveaclass.html">naval:SveaClass</a></li>
+            
+                <li class="second-level" style="line-height: 20px;" id="sd_3715"><a   href="concept-navalsverigeclass.html">naval:SverigeClass</a></li>
+            
+                <li class="second-level" style="line-height: 20px;" id="sd_3716"><a   href="concept-navalswiftsureclass.html">naval:SwiftsureClass</a></li>
+            
+                <li class="second-level" style="line-height: 20px;" id="sd_3717"><a   href="concept-navaltordenskjoldclass.html">naval:TordenskjoldClass</a></li>
+            
+                <li class="second-level" style="line-height: 20px;" id="sd_3718"><a   href="concept-navaltreatybattleship.html">naval:TreatyBattleship</a></li>
+            
+                <li class="second-level" style="line-height: 20px;" id="sd_3719"><a   href="concept-navaltrooptransport.html">naval:TroopTransport</a></li>
+            
+                <li class="second-level" style="line-height: 20px;" id="sd_3720"><a   href="concept-navalwarriorclass.html">naval:WarriorClass</a></li>
+            
+                <li class="second-level" style="line-height: 20px;" id="sd_3721"><a   href="concept-navalwarship.html">naval:Warship</a></li>
+            
+                <li class="second-level" style="line-height: 20px;" id="sd_3722"><a   href="concept-navaleninumber.html">naval:eniNumber</a></li>
+            
+                <li class="second-level" style="line-height: 20px;" id="sd_3723"><a   href="concept-navalhasagencyservice.html">naval:hasAgencyService</a></li>
+            
+                <li class="second-level" style="line-height: 20px;" id="sd_3724"><a   href="concept-navalhasballasttank.html">naval:hasBallastTank</a></li>
+            
+                <li class="second-level" style="line-height: 20px;" id="sd_3725"><a   href="concept-navalhasbuilder.html">naval:hasBuilder</a></li>
+            
+                <li class="second-level" style="line-height: 20px;" id="sd_3726"><a   href="concept-navalhascallsign.html">naval:hasCallSign</a></li>
+            
+                <li class="second-level" style="line-height: 20px;" id="sd_3727"><a   href="concept-navalhascountryofservice.html">naval:hasCountryOfService</a></li>
+            
+                <li class="second-level" style="line-height: 20px;" id="sd_3728"><a   href="concept-navalhascrewsize.html">naval:hasCrewSize</a></li>
+            
+                <li class="second-level" style="line-height: 20px;" id="sd_3729"><a   href="concept-navalhasdisplacement.html">naval:hasDisplacement</a></li>
+            
+                <li class="second-level" style="line-height: 20px;" id="sd_3730"><a   href="concept-navalhasdraft.html">naval:hasDraft</a></li>
+            
+                <li class="second-level" style="line-height: 20px;" id="sd_3731"><a   href="concept-navalhasfullloaddisplacement.html">naval:hasFullLoadDisplacement</a></li>
+            
+                <li class="second-level" style="line-height: 20px;" id="sd_3732"><a   href="concept-navalhasheight.html">naval:hasHeight</a></li>
+            
+                <li class="second-level" style="line-height: 20px;" id="sd_3733"><a   href="concept-navalhashomeport.html">naval:hasHomePort</a></li>
+            
+                <li class="second-level" style="line-height: 20px;" id="sd_3734"><a   href="concept-navalhasinstancesbuilt.html">naval:hasInstancesBuilt</a></li>
+            
+                <li class="second-level" style="line-height: 20px;" id="sd_3735"><a   href="concept-navalhasmmsinumber.html">naval:hasMMSINumber</a></li>
+            
+                <li class="second-level" style="line-height: 20px;" id="sd_3736"><a   href="concept-navalhasmaxdraft.html">naval:hasMaxDraft</a></li>
+            
+                <li class="second-level" style="line-height: 20px;" id="sd_3737"><a   href="concept-navalhasmaxspeed.html">naval:hasMaxSpeed</a></li>
+            
+                <li class="second-level" style="line-height: 20px;" id="sd_3738"><a   href="concept-navalhasnatoreportingname.html">naval:hasNATOReportingName</a></li>
+            
+                <li class="second-level" style="line-height: 20px;" id="sd_3739"><a   href="concept-navalhasportofregistry.html">naval:hasPortOfRegistry</a></li>
+            
+                <li class="second-level" style="line-height: 20px;" id="sd_3740"><a   href="concept-navalhasshipclass.html">naval:hasShipClass</a></li>
+            
+                <li class="second-level" style="line-height: 20px;" id="sd_3741"><a   href="concept-navalhasshipfunction.html">naval:hasShipFunction</a></li>
+            
+                <li class="second-level" style="line-height: 20px;" id="sd_3742"><a   href="concept-navalhasshipnameprefix.html">naval:hasShipNamePrefix</a></li>
+            
+                <li class="second-level" style="line-height: 20px;" id="sd_3743"><a   href="concept-navalhullnumber.html">naval:hullNumber</a></li>
+            
+                <li class="second-level" style="line-height: 20px;" id="sd_3744"><a   href="concept-navalimonumber.html">naval:imoNumber</a></li>
+            
+                <li class="second-level" style="line-height: 20px;" id="sd_3745"><a   href="concept-navalnextship.html">naval:nextShip</a></li>
+            
+                <li class="second-level" style="line-height: 20px;" id="sd_3746"><a   href="concept-navalnomenclatureof.html">naval:nomenclatureOf</a></li>
+            
+                <li class="second-level" style="line-height: 20px;" id="sd_3747"><a   href="concept-navalownedby.html">naval:ownedBy</a></li>
+            
+                <li class="second-level" style="line-height: 20px;" id="sd_3748"><a   href="concept-navalpreviousship.html">naval:previousShip</a></li>
+            
+                <li class="second-level" style="line-height: 20px;" id="sd_3749"><a   href="concept-navalrig.html">naval:rig</a></li>
+            
+                <li class="second-level" style="line-height: 20px;" id="sd_3750"><a   href="concept-navalsailplan.html">naval:sailPlan</a></li>
+            
+                <li class="second-level" style="line-height: 20px;" id="sd_3751"><a   href="concept-navalshipusedby.html">naval:shipUsedBy</a></li>
+            
+                <li class="second-level" style="line-height: 20px;" id="sd_3752"><a   href="concept-navalsucceededby.html">naval:succeededBy</a></li>
+            
+
+        
+
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+
+    </ul>
+
+</div>
+
+
+<!-- /#sidebar-wrapper -->
+
+    
+
+
+
+
+    <!-- Begin page content -->
+    <div class="container" id="page-content-wrapper">
+
+      
+
+	
+
+
+
+
+
+        
+
+
+
+        
+            
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <ol class="breadcrumb">
+    <li>
+      <a href="index.html">Home</a>
+    </li>
+    <li>
+          <a href="entities-az.html">Entities</a>
+    </li>
+    <li>
+          <a href="entities-tree-concepts.html">Concepts</a>
+    </li>
+      <li class="active">
+            http://rdf.muninn-project.org/ontologies/naval#RichelieuClass
+        </li>
+  </ol>
+
+
+
+        
+
+
+
+
+
+         <h1>
+
+             naval:RichelieuClass
+             
+                 <small class="label label-info label-xs ">leaf node</small>
+               
+
+         </h1>
+
+            <hr>
+
+
+
+
+            <div class="tree-container">
+            <div class="tree">
+                <ul>
+                    
+
+                        <li><a href="entities-tree-properties.html">skos:Concept</a>
+
+                          <ul>
+                            <li><a style="font-weight: bold;" title="'Richelieu class battleship' - The Richelieu class battleships were the last and largest battleships of the French Navy, staying in service into the 1960s. ...">naval:RichelieuClass</a>
+
+                            
+                              </li>
+
+                          </ul>
+
+                        </li>
+                    
+
+                </ul>
+            </div>
+            </div>
+
+
+
+
+            <div class="row"><div class="col-md-12">
+               <div class="panel panel-default">
+             <div class="panel-heading">
+               <h3 class="panel-title">URI</h3>
+             </div>
+             <div class="panel-body">
+
+                 <code>http://rdf.muninn-project.org/ontologies/naval#RichelieuClass</code>
+             </div>
+           </div>
+            </div></div>
+
+
+
+            
+             <div class="row"><div class="col-md-12">
+               <div class="panel panel-default">
+             <div class="panel-heading">
+               <h3 class="panel-title">Label</h3>
+             </div>
+             <div class="panel-body">
+
+                 Richelieu class battleship
+             </div>
+           </div>
+            </div></div>
+            
+
+
+
+
+            
+             <div class="row"><div class="col-md-12">
+               <div class="panel panel-default">
+             <div class="panel-heading">
+               <h3 class="panel-title">Description</h3>
+             </div>
+             <div class="panel-body">
+
+                 The Richelieu class battleships were the last and largest battleships of the French Navy, staying in service into the 1960s. They still remain to this day the largest warships ever built by France.
+             </div>
+           </div>
+            </div></div>
+            
+
+
+
+
+
+            <div class="row"><div class="col-md-12">
+              <div class="panel panel-default">
+            <div class="panel-heading">
+              <h3 class="panel-title">Inherits from</h3>
+            </div>
+            <div class="panel-body">
+
+            
+                <li>owl:Thing</li>
+            
+
+            </div>
+          </div>
+           </div></div>
+
+
+
+
+          <div class="row"><div class="col-md-12">
+             <div class="panel panel-default">
+           <div class="panel-heading">
+             <h3 class="panel-title">Implementation</h3>
+           </div>
+           <div class="panel-body implementation-panel">
+
+               
+
+                   <div class="highlight"><pre><span></span><span class="k">@prefix</span><span class="w"> </span><span class="nn">:</span><span class="w"> </span><span class="nv">&lt;http://rdf.muninn-project.org/ontologies/naval#&gt;</span><span class="w"> </span><span class="p">.</span><span class="w"></span>
+<span class="k">@prefix</span><span class="w"> </span><span class="nn">cc:</span><span class="w"> </span><span class="nv">&lt;http://creativecommons.org/ns#&gt;</span><span class="w"> </span><span class="p">.</span><span class="w"></span>
+<span class="k">@prefix</span><span class="w"> </span><span class="nn">dbpedia:</span><span class="w"> </span><span class="nv">&lt;http://dbpedia.org/resource/&gt;</span><span class="w"> </span><span class="p">.</span><span class="w"></span>
+<span class="k">@prefix</span><span class="w"> </span><span class="nn">dc:</span><span class="w"> </span><span class="nv">&lt;http://purl.org/dc/elements/1.1/&gt;</span><span class="w"> </span><span class="p">.</span><span class="w"></span>
+<span class="k">@prefix</span><span class="w"> </span><span class="nn">dcterms:</span><span class="w"> </span><span class="nv">&lt;http://purl.org/dc/terms/&gt;</span><span class="w"> </span><span class="p">.</span><span class="w"></span>
+<span class="k">@prefix</span><span class="w"> </span><span class="nn">foaf:</span><span class="w"> </span><span class="nv">&lt;http://xmlns.com/foaf/0.1/&gt;</span><span class="w"> </span><span class="p">.</span><span class="w"></span>
+<span class="k">@prefix</span><span class="w"> </span><span class="nn">mil:</span><span class="w"> </span><span class="nv">&lt;http://rdf.muninn-project.org/ontologies/military#&gt;</span><span class="w"> </span><span class="p">.</span><span class="w"></span>
+<span class="k">@prefix</span><span class="w"> </span><span class="nn">muninn:</span><span class="w"> </span><span class="nv">&lt;http://rdf.muninn-project.org/ontologies/muninn#&gt;</span><span class="w"> </span><span class="p">.</span><span class="w"></span>
+<span class="k">@prefix</span><span class="w"> </span><span class="nn">naval:</span><span class="w"> </span><span class="nv">&lt;http://rdf.muninn-project.org/ontologies/naval&gt;</span><span class="w"> </span><span class="p">.</span><span class="w"></span>
+<span class="k">@prefix</span><span class="w"> </span><span class="nn">ns1:</span><span class="w"> </span><span class="nv">&lt;http://rdf.muninn-project.org/ontologies/&gt;</span><span class="w"> </span><span class="p">.</span><span class="w"></span>
+<span class="k">@prefix</span><span class="w"> </span><span class="nn">org:</span><span class="w"> </span><span class="nv">&lt;http://rdf.muninn-project.org/ontologies/organization#&gt;</span><span class="w"> </span><span class="p">.</span><span class="w"></span>
+<span class="k">@prefix</span><span class="w"> </span><span class="nn">owl:</span><span class="w"> </span><span class="nv">&lt;http://www.w3.org/2002/07/owl#&gt;</span><span class="w"> </span><span class="p">.</span><span class="w"></span>
+<span class="k">@prefix</span><span class="w"> </span><span class="nn">person:</span><span class="w"> </span><span class="nv">&lt;http://rdf.muninn-project.org/ontologies/person#&gt;</span><span class="w"> </span><span class="p">.</span><span class="w"></span>
+<span class="k">@prefix</span><span class="w"> </span><span class="nn">rdf:</span><span class="w"> </span><span class="nv">&lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#&gt;</span><span class="w"> </span><span class="p">.</span><span class="w"></span>
+<span class="k">@prefix</span><span class="w"> </span><span class="nn">rdfs:</span><span class="w"> </span><span class="nv">&lt;http://www.w3.org/2000/01/rdf-schema#&gt;</span><span class="w"> </span><span class="p">.</span><span class="w"></span>
+<span class="k">@prefix</span><span class="w"> </span><span class="nn">skos:</span><span class="w"> </span><span class="nv">&lt;http://www.w3.org/2004/02/skos/core#&gt;</span><span class="w"> </span><span class="p">.</span><span class="w"></span>
+<span class="k">@prefix</span><span class="w"> </span><span class="nn">swrl:</span><span class="w"> </span><span class="nv">&lt;http://www.w3.org/2003/11/swrl#&gt;</span><span class="w"> </span><span class="p">.</span><span class="w"></span>
+<span class="k">@prefix</span><span class="w"> </span><span class="nn">swrlb:</span><span class="w"> </span><span class="nv">&lt;http://www.w3.org/2003/11/swrlb#&gt;</span><span class="w"> </span><span class="p">.</span><span class="w"></span>
+<span class="k">@prefix</span><span class="w"> </span><span class="nn">time:</span><span class="w"> </span><span class="nv">&lt;http://www.w3.org/2006/time#&gt;</span><span class="w"> </span><span class="p">.</span><span class="w"></span>
+<span class="k">@prefix</span><span class="w"> </span><span class="nn">vann:</span><span class="w"> </span><span class="nv">&lt;http://purl.org/vocab/vann/&gt;</span><span class="w"> </span><span class="p">.</span><span class="w"></span>
+<span class="k">@prefix</span><span class="w"> </span><span class="nn">void:</span><span class="w"> </span><span class="nv">&lt;http://rdfs.org/ns/void#&gt;</span><span class="w"> </span><span class="p">.</span><span class="w"></span>
+<span class="k">@prefix</span><span class="w"> </span><span class="nn">vs:</span><span class="w"> </span><span class="nv">&lt;http://www.w3.org/2003/06/sw-vocab-status/ns#&gt;</span><span class="w"> </span><span class="p">.</span><span class="w"></span>
+<span class="k">@prefix</span><span class="w"> </span><span class="nn">xml:</span><span class="w"> </span><span class="nv">&lt;http://www.w3.org/XML/1998/namespace&gt;</span><span class="w"> </span><span class="p">.</span><span class="w"></span>
+<span class="k">@prefix</span><span class="w"> </span><span class="nn">xsd:</span><span class="w"> </span><span class="nv">&lt;http://www.w3.org/2001/XMLSchema#&gt;</span><span class="w"> </span><span class="p">.</span><span class="w"></span>
+
+<span class="nn">:</span><span class="nt">RichelieuClass</span><span class="w"> </span><span class="kt">a</span><span class="w"> </span><span class="nn">:</span><span class="nt">MilitaryShipClass</span><span class="p">,</span><span class="w"></span>
+<span class="w">        </span><span class="nn">:</span><span class="nt">TreatyBattleship</span><span class="p">,</span><span class="w"></span>
+<span class="w">        </span><span class="nn">skos:</span><span class="nt">Concept</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="nn">rdfs:</span><span class="nt">label</span><span class="w"> </span><span class="s">&quot;Třída Richelieu&quot;</span><span class="o">@</span><span class="ge">cs</span><span class="p">,</span><span class="w"></span>
+<span class="w">        </span><span class="s">&quot;Richelieu-Klasse&quot;</span><span class="o">@</span><span class="ge">de</span><span class="p">,</span><span class="w"></span>
+<span class="w">        </span><span class="s">&quot;Richelieu class battleship&quot;</span><span class="o">@</span><span class="ge">en</span><span class="p">,</span><span class="w"></span>
+<span class="w">        </span><span class="s">&quot;Richelieu-luokka&quot;</span><span class="o">@</span><span class="ge">fi</span><span class="p">,</span><span class="w"></span>
+<span class="w">        </span><span class="s">&quot;Classe Richelieu&quot;</span><span class="o">@</span><span class="ge">fr</span><span class="p">,</span><span class="w"></span>
+<span class="w">        </span><span class="s">&quot;Richelieu osztály&quot;</span><span class="o">@</span><span class="ge">hu</span><span class="p">,</span><span class="w"></span>
+<span class="w">        </span><span class="s">&quot;Classe Richelieu&quot;</span><span class="o">@</span><span class="ge">it</span><span class="p">,</span><span class="w"></span>
+<span class="w">        </span><span class="s">&quot;Линейные корабли типа «Ришелье»&quot;</span><span class="o">@</span><span class="ge">ru</span><span class="p">,</span><span class="w"></span>
+<span class="w">        </span><span class="s">&quot;Richelieu (lớp thiết giáp hạm)&quot;</span><span class="o">@</span><span class="ge">vi</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="nn">ns1:</span><span class="nt">navalhasBeamMeters</span><span class="w"> </span><span class="s">&quot;33.0&quot;</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="nn">ns1:</span><span class="nt">navalhasCrewSize</span><span class="w"> </span><span class="s">&quot;1280&quot;</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="nn">ns1:</span><span class="nt">navalhasDisplacementMetricTonnes</span><span class="w"> </span><span class="s">&quot;31751&quot;</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="nn">ns1:</span><span class="nt">navalhasDraughtMeters</span><span class="w"> </span><span class="s">&quot;9.63&quot;</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="nn">ns1:</span><span class="nt">navalhasLenghtMeters</span><span class="w"> </span><span class="s">&quot;247.85&quot;</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="nn">ns1:</span><span class="nt">navalhasMaxSpeedKPH</span><span class="w"> </span><span class="s">&quot;55.56&quot;</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="nn">ns1:</span><span class="nt">navalownedBy</span><span class="w"> </span><span class="nn">ns1:</span><span class="nt">French_Navy</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="nn">ns1:</span><span class="nt">navalpreceededBy</span><span class="w"> </span><span class="nn">dbpedia:</span><span class="nt">Dunkerque_class_battleship</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="nn">ns1:</span><span class="nt">navalsucceededBy</span><span class="w"> </span><span class="nn">dbpedia:</span><span class="nt">Alsace_class_battleship</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="nn">void:</span><span class="nt">inDataset</span><span class="w"> </span><span class="nn">:</span><span class="nt">datasetdefinition</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="nn">rdfs:</span><span class="nt">isDefinedBy</span><span class="w"> </span><span class="nn">ns1:</span><span class="nt">naval</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="nn">owl:</span><span class="nt">sameAs</span><span class="w"> </span><span class="nn">dbpedia:</span><span class="nt">Richelieu_class_battleship</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="nn">skos:</span><span class="nt">definition</span><span class="w"> </span><span class="s">&quot;The Richelieu class battleships were the last and largest battleships of the French Navy, staying in service into the 1960s. They still remain to this day the largest warships ever built by France.&quot;</span><span class="o">@</span><span class="ge">en</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="nn">foaf:</span><span class="nt">name</span><span class="w"> </span><span class="s">&quot;Richelieu Class&quot;</span><span class="w"> </span><span class="p">.</span><span class="w"></span>
+</pre></div>
+
+
+               
+           </div>
+
+         </div>
+          </div></div>
+
+
+
+
+
+        
+
+
+
+
+
+
+
+
+
+
+
+	</div><!-- /#page-content-wrapper -->
+
+
+  
+
+
+
+  
+
+
+
+
+  <footer class="footer">
+    <div class="container">
+    
+      <p class="text-muted">Documentation automatically generated on 26th February 2017 with <a href="https://github.com/lambdamusic/OntoSpy">OntoSpy</a> (v1.7.4)</p>
+
+    
+    </div>
+  </footer>
+
+
+</div><!-- /#wrapper -->
+
+
+<!-- Bootstrap core JavaScript
+================================================== -->
+<!-- Placed at the end of the document so the pages load faster -->
+<script src="../static/libs/jquery/1.12.4/jquery.min.js"></script>
+<script src="../static/libs/bootstrap-3.3.7-dist/js/bootstrap.min.js"></script>
+
+<!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+<script src="../static/libs/bootstrap-3.3.7-dist/js/ie10-viewport-bug-workaround.js"></script>
+
+<script src="../static/libs/Chart.js-2.4.0/Chart.bundle.js"></script>
+
+
+<!-- Menu Toggle Script -->
+<script>
+$("#menu-toggle").click(function(e) {
+    e.preventDefault();
+    $("#wrapper").toggleClass("toggled");
+});
+</script>
+
+
+
+
+<script type="text/javascript">
+
+$('#search-input-sidebar').keyup(function() {
+
+  var val = $.trim($(this).val()).replace(/ +/g, ' ').toLowerCase();
+  // var $rows = $(this).next(".entities-list").find("div");
+  var $rows = $(this).parent().parent().find("li.second-level");
+
+  $rows.show().filter(function() {
+      var text = $(this).text().replace(/\s+/g, ' ').toLowerCase();
+      return !~text.indexOf(val);
+  }).hide();
+});
+
+</script>
+
+
+
+
+  <!-- Scroll Sidebar Script -->
+  
+  
+  <script type="text/javascript">
+
+    $(document).ready(function (){
+      $('#sidebar-wrapper').animate({
+          scrollTop: $("#sd_3700").offset().top - 100
+      }, 100);
+    });
+
+  </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  </body>
+</html>

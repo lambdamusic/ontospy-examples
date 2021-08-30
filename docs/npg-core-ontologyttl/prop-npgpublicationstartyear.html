@@ -1,0 +1,1108 @@
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="../static/libs/img/favicon.ico">
+
+	
+		<title>OntoSpy > http://ns.nature.com/terms/</title>
+	
+
+    <!-- Bootstrap core CSS -->
+    <!-- <link href="../static/libs/bootstrap-3.3.7-dist/css/bootstrap.min.css" rel="stylesheet">  -->
+    <!-- Bootswatch:  -->
+    <!-- cerulean  | cyborg |  flatly |  lumen |  sandstone |   spacelab  |  yeti | cosmo |  darkly |  paper | simplex | superhero |  journal | readable  |   slate |  united -->
+    <link href="../static/libs/bootswatch3.2/simplex/bootstrap.min.css" rel="stylesheet">
+    <link href="../static/custom/css/simple-sidebar.css" rel="stylesheet">
+    <link href="../static/custom/css/familytree.css" rel="stylesheet">
+    <link href="../static/custom/css/tabletree.css" rel="stylesheet">
+
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <link href="../static/libs/bootstrap-3.3.7-dist/css/ie10-viewport-bug-workaround.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="../static/custom/css/sticky-footer-navbar.css" rel="stylesheet">
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+<style type="text/css">
+
+  .lead-plus {font-size: 26.5px;}
+  .label-xs {font-size: 10px;}
+  .label-dark {background: #2c3e50; color: white; padding: 1px;}
+  .margin50 {margin-top: 50px; margin-bottom: 50px;}
+
+  .namespaces {background: #ced2d6; width: 100%;}
+
+
+  /*so that the d3plus tooltip panel doesnt cover the top banner*/
+  .navbar {z-index: 3000;}
+
+
+  .panel-body dt {margin-top: 5px;}
+  .page-header  {margin-top: 30px;}
+  #wrapper {margin-top: 50px;}
+
+  .implementation-panel {
+    overflow: auto;
+    max-height: 500px;
+  }
+
+  tr.table-classproperties {
+      /*background: #f5f5f5;*/
+  }
+  tr.table-classproperties th {
+      font-size: 80%;
+      font-weight: normal;
+  }
+
+
+  tr.table-inheritanceinfo {
+      /*background: #f5f5f5;*/
+      text-align: left;
+  }
+
+  tr.table-inheritanceinfo th {
+      font-size: 90%;
+      font-weight: normal;
+  }
+
+
+  .breadcrumb {
+    margin-top: 20px;
+    margin-bottom: 40px;
+  }
+
+  .breadcrumb a {
+      text-transform: capitalize;
+  }
+  .breadcrumb li {
+      text-transform: none;
+      /*so to catch the uri @todo improve*/
+  }
+
+
+  .fromclass_link {
+    /*color: white;
+    text-decoration: underline;*/
+    /*background: #1c1e52;*/
+    color: inherit;
+    /*padding: 1px;*/
+  }
+
+		.mythumbnail {
+			display: block;
+			padding: 13px;
+			margin-bottom: 30px;
+			line-height: 13.428571;
+			background-color: #fff;
+			border: 1px solid #ddd;
+			border-radius: 30px;
+		}
+
+		.mythumbnail:hover {
+			background: lightyellow;
+			text-decoration: none;
+		}
+
+
+		.img-container{
+		    height:100%;
+			overflow: hidden;
+		    max-height:200px;
+			padding: 10px;
+/*			margin: 20px 0px 20px 0px;*/
+			border: 1em #EAE5E5 solid;
+		}
+
+		.img-container:hover {
+			border: 1px grey solid;
+		}
+
+		img{
+/*		    height:100% !important;*/
+		}
+
+
+		.icon-xxs {
+			font-size: 15px;
+		}
+
+
+    /* dropdown open on hover */
+
+    @media (min-width: 979px) {
+      ul.nav li.dropdown:hover > ul.dropdown-menu {
+        display: block;
+      }
+    }
+
+
+
+/*pygments css*/
+.highlight .hll { background-color: #ffffcc }
+.highlight  { background: #f8f8f8; }
+.highlight .c { color: #408080; font-style: italic } /* Comment */
+.highlight .err { border: 1px solid #FF0000 } /* Error */
+.highlight .k { color: #008000; font-weight: bold } /* Keyword */
+.highlight .o { color: #666666 } /* Operator */
+.highlight .ch { color: #408080; font-style: italic } /* Comment.Hashbang */
+.highlight .cm { color: #408080; font-style: italic } /* Comment.Multiline */
+.highlight .cp { color: #BC7A00 } /* Comment.Preproc */
+.highlight .cpf { color: #408080; font-style: italic } /* Comment.PreprocFile */
+.highlight .c1 { color: #408080; font-style: italic } /* Comment.Single */
+.highlight .cs { color: #408080; font-style: italic } /* Comment.Special */
+.highlight .gd { color: #A00000 } /* Generic.Deleted */
+.highlight .ge { font-style: italic } /* Generic.Emph */
+.highlight .gr { color: #FF0000 } /* Generic.Error */
+.highlight .gh { color: #000080; font-weight: bold } /* Generic.Heading */
+.highlight .gi { color: #00A000 } /* Generic.Inserted */
+.highlight .go { color: #888888 } /* Generic.Output */
+.highlight .gp { color: #000080; font-weight: bold } /* Generic.Prompt */
+.highlight .gs { font-weight: bold } /* Generic.Strong */
+.highlight .gu { color: #800080; font-weight: bold } /* Generic.Subheading */
+.highlight .gt { color: #0044DD } /* Generic.Traceback */
+.highlight .kc { color: #008000; font-weight: bold } /* Keyword.Constant */
+.highlight .kd { color: #008000; font-weight: bold } /* Keyword.Declaration */
+.highlight .kn { color: #008000; font-weight: bold } /* Keyword.Namespace */
+.highlight .kp { color: #008000 } /* Keyword.Pseudo */
+.highlight .kr { color: #008000; font-weight: bold } /* Keyword.Reserved */
+.highlight .kt { color: #B00040 } /* Keyword.Type */
+.highlight .m { color: #666666 } /* Literal.Number */
+.highlight .s { color: #BA2121 } /* Literal.String */
+.highlight .na { color: #7D9029 } /* Name.Attribute */
+.highlight .nb { color: #008000 } /* Name.Builtin */
+.highlight .nc { color: #0000FF; font-weight: bold } /* Name.Class */
+.highlight .no { color: #880000 } /* Name.Constant */
+.highlight .nd { color: #AA22FF } /* Name.Decorator */
+.highlight .ni { color: #999999; font-weight: bold } /* Name.Entity */
+.highlight .ne { color: #D2413A; font-weight: bold } /* Name.Exception */
+.highlight .nf { color: #0000FF } /* Name.Function */
+.highlight .nl { color: #A0A000 } /* Name.Label */
+.highlight .nn { color: #0000FF; font-weight: bold } /* Name.Namespace */
+.highlight .nt { color: #008000; font-weight: bold } /* Name.Tag */
+.highlight .nv { color: #19177C } /* Name.Variable */
+.highlight .ow { color: #AA22FF; font-weight: bold } /* Operator.Word */
+.highlight .w { color: #bbbbbb } /* Text.Whitespace */
+.highlight .mb { color: #666666 } /* Literal.Number.Bin */
+.highlight .mf { color: #666666 } /* Literal.Number.Float */
+.highlight .mh { color: #666666 } /* Literal.Number.Hex */
+.highlight .mi { color: #666666 } /* Literal.Number.Integer */
+.highlight .mo { color: #666666 } /* Literal.Number.Oct */
+.highlight .sa { color: #BA2121 } /* Literal.String.Affix */
+.highlight .sb { color: #BA2121 } /* Literal.String.Backtick */
+.highlight .sc { color: #BA2121 } /* Literal.String.Char */
+.highlight .dl { color: #BA2121 } /* Literal.String.Delimiter */
+.highlight .sd { color: #BA2121; font-style: italic } /* Literal.String.Doc */
+.highlight .s2 { color: #BA2121 } /* Literal.String.Double */
+.highlight .se { color: #BB6622; font-weight: bold } /* Literal.String.Escape */
+.highlight .sh { color: #BA2121 } /* Literal.String.Heredoc */
+.highlight .si { color: #BB6688; font-weight: bold } /* Literal.String.Interpol */
+.highlight .sx { color: #008000 } /* Literal.String.Other */
+.highlight .sr { color: #BB6688 } /* Literal.String.Regex */
+.highlight .s1 { color: #BA2121 } /* Literal.String.Single */
+.highlight .ss { color: #19177C } /* Literal.String.Symbol */
+.highlight .bp { color: #008000 } /* Name.Builtin.Pseudo */
+.highlight .fm { color: #0000FF } /* Name.Function.Magic */
+.highlight .vc { color: #19177C } /* Name.Variable.Class */
+.highlight .vg { color: #19177C } /* Name.Variable.Global */
+.highlight .vi { color: #19177C } /* Name.Variable.Instance */
+.highlight .vm { color: #19177C } /* Name.Variable.Magic */
+.highlight .il { color: #666666 } /* Literal.Number.Integer.Long */
+
+/*overloading this class from pygments*/
+.highlight {
+  overflow: auto;
+}
+
+
+
+
+
+
+
+
+</style>
+
+
+
+
+
+  </head>
+
+  <body>
+
+
+
+    
+<!-- Fixed navbar -->
+<nav class="navbar navbar-default navbar-fixed-top">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+
+      <a class="navbar-brand" id="menu-toggle" title="Toggle sidebar">
+        
+        <span class="glyphicon glyphicon-align-left" aria-hidden="true"></span>
+      </a>
+    </div>
+    <div id="navbar" class="collapse navbar-collapse">
+      <ul class="nav navbar-nav">
+        <li ><a href="index.html"><code style="font-size: 115%;">http://ns.nature.com/terms/</code></a></li>
+        
+
+       
+
+
+        <li  ><a href="dashboard.html">Dashboard</a></li>
+        <li  ><a href="entities-az.html">Entities A-Z</a></li>
+        <li class="dropdown  " >
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Entities Tree <span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            
+            <li><a href="entities-tree-classes.html">Classes</a>
+            </li>
+            
+            
+            <li><a  href="entities-tree-properties.html">Properties</a>
+            </li>
+            
+            
+          </ul>
+      </li>
+
+      </ul>
+      
+    </div><!--/.nav-collapse -->
+
+  </div>
+</nav>
+
+
+
+
+
+
+<div id="wrapper" class="toggled">
+
+
+    
+
+    
+        
+<!-- Sidebar -->
+<div id="sidebar-wrapper">
+    <ul class="sidebar-nav">
+
+
+        <li>
+          <input style="margin-top: 30px;  margin-bottom: 20px;" type="text" id="search-input-sidebar" name="" value="" placeholder="Type to search">
+        </li>
+
+        
+          <li class="-second-level" id="sd_classes"><a href="entities-tree-classes.html">Classes (49)</a>
+          </li>
+
+            
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_3824"><a  href="class-npgabstract.html">npg:Abstract</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_3825"><a  href="class-npgagent.html">npg:Agent</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_3826"><a  href="class-npgaggregationevent.html">npg:AggregationEvent</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_3827"><a  href="class-npgarticle.html">npg:Article</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_3828"><a  href="class-npgarticletype.html">npg:ArticleType</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_3829"><a  href="class-npgasset.html">npg:Asset</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_3830"><a  href="class-npgbinaryasset.html">npg:BinaryAsset</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_3831"><a  href="class-npgblobasset.html">npg:BlobAsset</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_3832"><a  href="class-npgblog.html">npg:Blog</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_3833"><a  href="class-npgblogpost.html">npg:BlogPost</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_3834"><a  href="class-npgcollection.html">npg:Collection</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_3835"><a  href="class-npgcomponent.html">npg:Component</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_3836"><a  href="class-npgconcept.html">npg:Concept</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_3837"><a  href="class-npgcontributor.html">npg:Contributor</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_3838"><a  href="class-npgdataset.html">npg:Dataset</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_3839"><a  href="class-npgdocument.html">npg:Document</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_3840"><a  href="class-npgevent.html">npg:Event</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_3841"><a  href="class-npgexternalarticle.html">npg:ExternalArticle</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_3842"><a  href="class-npgexternalcontributor.html">npg:ExternalContributor</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_3843"><a  href="class-npgfigure.html">npg:Figure</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_3844"><a  href="class-npggraph.html">npg:Graph</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_3845"><a  href="class-npgillustration.html">npg:Illustration</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_3846"><a  href="class-npgimage.html">npg:Image</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_3847"><a  href="class-npgimageasset.html">npg:ImageAsset</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_3848"><a  href="class-npgissue.html">npg:Issue</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_3849"><a  href="class-npgitem.html">npg:Item</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_3850"><a  href="class-npgjournal.html">npg:Journal</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_3851"><a  href="class-npgknowledgebase.html">npg:KnowledgeBase</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_3852"><a  href="class-npgorganization.html">npg:Organization</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_3853"><a  href="class-npgpdfasset.html">npg:PdfAsset</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_3854"><a  href="class-npgperson.html">npg:Person</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_3855"><a  href="class-npgpublication.html">npg:Publication</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_3856"><a  href="class-npgpublicationevent.html">npg:PublicationEvent</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_3857"><a  href="class-npgpublicationstate.html">npg:PublicationState</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_3858"><a  href="class-npgpublishevent.html">npg:PublishEvent</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_3859"><a  href="class-npgpublishstate.html">npg:PublishState</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_3860"><a  href="class-npgpublisher.html">npg:Publisher</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_3861"><a  href="class-npgreviewevent.html">npg:ReviewEvent</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_3862"><a  href="class-npgreviewstate.html">npg:ReviewState</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_3863"><a  href="class-npgsection.html">npg:Section</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_3864"><a  href="class-npgserial.html">npg:Serial</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_3865"><a  href="class-npgseveritylevel.html">npg:SeverityLevel</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_3866"><a  href="class-npgsubject.html">npg:Subject</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_3867"><a  href="class-npgsummary.html">npg:Summary</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_3868"><a  href="class-npgsummarytype.html">npg:SummaryType</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_3869"><a  href="class-npgthing.html">npg:Thing</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_3870"><a  href="class-npgtype.html">npg:Type</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_3871"><a  href="class-npgwebsite.html">npg:Website</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_3872"><a  href="class-npgxmlasset.html">npg:XmlAsset</a></li>
+          
+        
+
+        
+            <li class="-second-level" id="sd_properties"><a  href="entities-tree-properties.html">Properties (139)</a>
+            </li>
+
+            
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_3873"><a   href="prop-npgclass.html">npg:class</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_3874"><a   href="prop-npgdatetime.html">npg:datetime</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_3875"><a   href="prop-npgexample.html">npg:example</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_3876"><a   href="prop-npggraph.html">npg:graph</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_3877"><a   href="prop-npgisnamedresource.html">npg:isNamedResource</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_3878"><a   href="prop-npgisrepeatable.html">npg:isRepeatable</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_3879"><a   href="prop-npgisvocabulary.html">npg:isVocabulary</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_3880"><a   href="prop-npgtype.html">npg:type</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_3881"><a   href="prop-npgassetfoldername.html">npg:assetFolderName</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_3882"><a   href="prop-npgassetversion.html">npg:assetVersion</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_3883"><a   href="prop-npgbaseuritemplate.html">npg:baseUriTemplate</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_3884"><a   href="prop-npgbody.html">npg:body</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_3885"><a   href="prop-npgbodyxml.html">npg:bodyXml</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_3886"><a   href="prop-npgcaption.html">npg:caption</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_3887"><a   href="prop-npgcaptionxml.html">npg:captionXml</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_3888"><a   href="prop-npgcitation.html">npg:citation</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_3889"><a   href="prop-npgcitationdata.html">npg:citationData</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_3890"><a   href="prop-npgcitationxml.html">npg:citationXml</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_3891"><a   href="prop-npgcode.html">npg:code</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_3892"><a   href="prop-npgcoverdate.html">npg:coverDate</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_3893"><a   href="prop-npgcoveryear.html">npg:coverYear</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_3894"><a   href="prop-npgcoveryearmonth.html">npg:coverYearMonth</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_3895"><a   href="prop-npgcredit.html">npg:credit</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_3896"><a   href="prop-npgdate.html">npg:date</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_3897"><a   href="prop-npgdateend.html">npg:dateEnd</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_3898"><a   href="prop-npgdatestart.html">npg:dateStart</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_3899"><a   href="prop-npgdoi.html">npg:doi</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_3900"><a   href="prop-npgeissn.html">npg:eissn</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_3901"><a   href="prop-npgfamilyname.html">npg:familyName</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_3902"><a   href="prop-npgfileextension.html">npg:fileExtension</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_3903"><a   href="prop-npgfilename.html">npg:filename</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_3904"><a   href="prop-npgfilesize.html">npg:filesize</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_3905"><a   href="prop-npggivenname.html">npg:givenName</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_3906"><a   href="prop-npghash.html">npg:hash</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_3907"><a   href="prop-npgid.html">npg:id</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_3908"><a   href="prop-npgidhash.html">npg:idHash</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_3909"><a   href="prop-npgiscorresponding.html">npg:isCorresponding</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_3910"><a   href="prop-npgiscurated.html">npg:isCurated</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_3911"><a   href="prop-npgiseventworkflow.html">npg:isEventWorkflow</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_3912"><a   href="prop-npgisgroup.html">npg:isGroup</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_3913"><a   href="prop-npgisissuebased.html">npg:isIssueBased</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_3914"><a   href="prop-npgisleaf.html">npg:isLeaf</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_3915"><a   href="prop-npgisprimaryarticletype.html">npg:isPrimaryArticleType</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_3916"><a   href="prop-npgispublishready.html">npg:isPublishReady</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_3917"><a   href="prop-npgisroot.html">npg:isRoot</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_3918"><a   href="prop-npgistestinstance.html">npg:isTestInstance</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_3919"><a   href="prop-npgissn.html">npg:issn</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_3920"><a   href="prop-npgissue.html">npg:issue</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_3921"><a   href="prop-npgissueend.html">npg:issueEnd</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_3922"><a   href="prop-npgissuestart.html">npg:issueStart</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_3923"><a   href="prop-npgitemnumber.html">npg:itemNumber</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_3924"><a   href="prop-npgname.html">npg:name</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_3925"><a   href="prop-npgnumber.html">npg:number</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_3926"><a   href="prop-npgothercode.html">npg:otherCode</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_3927"><a   href="prop-npgpageend.html">npg:pageEnd</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_3928"><a   href="prop-npgpagestart.html">npg:pageStart</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_3929"><a   href="prop-npgpages.html">npg:pages</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_3930"><a   href="prop-npgpublicationdate.html">npg:publicationDate</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_3931"><a   href="prop-npgpublicationdatetime.html">npg:publicationDateTime</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_3932"><a   href="prop-npgpublicationendyear.html">npg:publicationEndYear</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_3933"><a   href="prop-npgpublicationendyearmonth.html">npg:publicationEndYearMonth</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_3934"><a   href="prop-npgpublicationname.html">npg:publicationName</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_3935"><a class="active"  href="prop-npgpublicationstartyear.html">npg:publicationStartYear</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_3936"><a   href="prop-npgpublicationstartyearmonth.html">npg:publicationStartYearMonth</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_3937"><a   href="prop-npgpublicationyear.html">npg:publicationYear</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_3938"><a   href="prop-npgpublicationyearmonth.html">npg:publicationYearMonth</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_3939"><a   href="prop-npgrepositoryid.html">npg:repositoryId</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_3940"><a   href="prop-npgsectionlevel.html">npg:sectionLevel</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_3941"><a   href="prop-npgshorttitle.html">npg:shortTitle</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_3942"><a   href="prop-npgsortletter.html">npg:sortLetter</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_3943"><a   href="prop-npgsortnumber.html">npg:sortNumber</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_3944"><a   href="prop-npgstatus.html">npg:status</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_3945"><a   href="prop-npgsubjectpath.html">npg:subjectPath</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_3946"><a   href="prop-npgtest.html">npg:test</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_3947"><a   href="prop-npgtimestamp.html">npg:timestamp</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_3948"><a   href="prop-npgtitle.html">npg:title</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_3949"><a   href="prop-npgtitlexml.html">npg:titleXml</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_3950"><a   href="prop-npgtreedepth.html">npg:treeDepth</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_3951"><a   href="prop-npgvolume.html">npg:volume</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_3952"><a   href="prop-npgvolumeend.html">npg:volumeEnd</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_3953"><a   href="prop-npgvolumestart.html">npg:volumeStart</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_3954"><a   href="prop-npgxmlid.html">npg:xmlId</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_3955"><a   href="prop-npgyear.html">npg:year</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_3956"><a   href="prop-npgyearmonth.html">npg:yearMonth</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_3957"><a   href="prop-npgcontributorlist.html">npg:contributorList</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_3958"><a   href="prop-npgcount.html">npg:count</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_3959"><a   href="prop-npgdoilink.html">npg:doiLink</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_3960"><a   href="prop-npgfigurelist.html">npg:figureList</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_3961"><a   href="prop-npghasabstract.html">npg:hasAbstract</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_3962"><a   href="prop-npghasarticle.html">npg:hasArticle</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_3963"><a   href="prop-npghasarticletype.html">npg:hasArticleType</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_3964"><a   href="prop-npghasasset.html">npg:hasAsset</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_3965"><a   href="prop-npghasblog.html">npg:hasBlog</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_3966"><a   href="prop-npghasbroadersubject.html">npg:hasBroaderSubject</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_3967"><a   href="prop-npghascollection.html">npg:hasCollection</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_3968"><a   href="prop-npghascontributor.html">npg:hasContributor</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_3969"><a   href="prop-npghascorrespondingcontributor.html">npg:hasCorrespondingContributor</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_3970"><a   href="prop-npghascurrentissue.html">npg:hasCurrentIssue</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_3971"><a   href="prop-npghasexternalarticle.html">npg:hasExternalArticle</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_3972"><a   href="prop-npghasexternalcontributor.html">npg:hasExternalContributor</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_3973"><a   href="prop-npghasfigure.html">npg:hasFigure</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_3974"><a   href="prop-npghasgraph.html">npg:hasGraph</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_3975"><a   href="prop-npghasillustration.html">npg:hasIllustration</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_3976"><a   href="prop-npghasimage.html">npg:hasImage</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_3977"><a   href="prop-npghasimageasset.html">npg:hasImageAsset</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_3978"><a   href="prop-npghasissue.html">npg:hasIssue</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_3979"><a   href="prop-npghasitem.html">npg:hasItem</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_3980"><a   href="prop-npghasjournal.html">npg:hasJournal</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_3981"><a   href="prop-npghasnextissue.html">npg:hasNextIssue</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_3982"><a   href="prop-npghaspdfasset.html">npg:hasPdfAsset</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_3983"><a   href="prop-npghaspreviousissue.html">npg:hasPreviousIssue</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_3984"><a   href="prop-npghasprimaryarticletype.html">npg:hasPrimaryArticleType</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_3985"><a   href="prop-npghaspublication.html">npg:hasPublication</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_3986"><a   href="prop-npghaspublishevent.html">npg:hasPublishEvent</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_3987"><a   href="prop-npghaspublishstate.html">npg:hasPublishState</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_3988"><a   href="prop-npghaspublisher.html">npg:hasPublisher</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_3989"><a   href="prop-npghasreviewevent.html">npg:hasReviewEvent</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_3990"><a   href="prop-npghasreviewstate.html">npg:hasReviewState</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_3991"><a   href="prop-npghasroot.html">npg:hasRoot</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_3992"><a   href="prop-npghassection.html">npg:hasSection</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_3993"><a   href="prop-npghasserial.html">npg:hasSerial</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_3994"><a   href="prop-npghassubject.html">npg:hasSubject</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_3995"><a   href="prop-npghassummary.html">npg:hasSummary</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_3996"><a   href="prop-npghassummarytype.html">npg:hasSummaryType</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_3997"><a   href="prop-npghaswebsite.html">npg:hasWebsite</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_3998"><a   href="prop-npghasxmlasset.html">npg:hasXmlAsset</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_3999"><a   href="prop-npgimagelist.html">npg:imageList</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_4000"><a   href="prop-npgisassetof.html">npg:isAssetOf</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_4001"><a   href="prop-npgitemlist.html">npg:itemList</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_4002"><a   href="prop-npgitemreferencelist.html">npg:itemReferenceList</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_4003"><a   href="prop-npgitemtype.html">npg:itemType</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_4004"><a   href="prop-npgmesh.html">npg:mesh</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_4005"><a   href="prop-npgnamespace.html">npg:namespace</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_4006"><a   href="prop-npgorcid.html">npg:orcid</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_4007"><a   href="prop-npgrelation.html">npg:relation</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_4008"><a   href="prop-npgreplacedby.html">npg:replacedBy</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_4009"><a   href="prop-npgreplaces.html">npg:replaces</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_4010"><a   href="prop-npgrepository.html">npg:repository</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_4011"><a   href="prop-npgwebpage.html">npg:webpage</a></li>
+          
+
+        
+
+        
+
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+
+    </ul>
+
+</div>
+
+
+<!-- /#sidebar-wrapper -->
+
+    
+
+
+
+
+    <!-- Begin page content -->
+    <div class="container" id="page-content-wrapper">
+
+      
+
+	
+
+
+
+
+        
+
+
+        
+            
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <ol class="breadcrumb">
+    <li>
+      <a href="index.html">Home</a>
+    </li>
+    <li>
+          <a href="entities-az.html">Entities</a>
+    </li>
+    <li>
+          <a href="entities-tree-properties.html">Properties</a>
+    </li>
+      <li class="active">
+            http://ns.nature.com/terms/publicationStartYear
+        </li>
+  </ol>
+
+
+
+
+
+
+
+
+        
+
+
+
+            <h1>
+
+                npg:publicationStartYear
+                
+                    <small class="label label-info label-xs ">leaf node</small>
+                  
+
+            </h1>
+
+            <hr>
+
+
+
+            <div class="tree-container">
+            <div class="tree">
+                <ul>
+                    
+
+                        <li><a href="entities-tree-properties.html">rdf:Property</a>
+
+                          <ul>
+                            <li><a style="font-weight: bold;" title="'Publication Start Year' - The :publicationStartYear property specifies the year date of a publication&#39;s start as a string. Note that this date relates to ...">npg:publicationStartYear</a>
+
+                            
+                              </li>
+
+                          </ul>
+
+                        </li>
+                    
+
+                </ul>
+            </div>
+            </div>
+
+
+
+
+            <div class="row"><div class="col-md-12">
+               <div class="panel panel-default">
+             <div class="panel-heading">
+               <h3 class="panel-title">URI</h3>
+             </div>
+             <div class="panel-body">
+
+                 <code>http://ns.nature.com/terms/publicationStartYear</code>
+             </div>
+           </div>
+            </div></div>
+
+
+
+            
+             <div class="row"><div class="col-md-12">
+               <div class="panel panel-default">
+             <div class="panel-heading">
+               <h3 class="panel-title">Label</h3>
+             </div>
+             <div class="panel-body">
+
+                 Publication Start Year
+             </div>
+           </div>
+            </div></div>
+            
+
+
+            
+            <div class="row"><div class="col-md-12">
+              <div class="panel panel-default">
+            <div class="panel-heading">
+              <h3 class="panel-title">Description</h3>
+            </div>
+            <div class="panel-body">
+
+                The :publicationStartYear property specifies the year date of a publication&#39;s start as a string. Note that this date relates to the publisher holdings which may not be the same as the actual publication start date.
+            </div>
+          </div>
+           </div></div>
+           
+
+
+
+            
+
+
+
+            
+
+
+            <div class="row"><div class="col-md-12">
+              <div class="panel panel-default">
+            <div class="panel-heading">
+              <h3 class="panel-title">Usage</h3>
+            </div>
+
+            <table class="table table-bordered" style="overflow: auto;">
+
+               <tr class="table-classproperties">
+                   <th>DOMAIN</th><th>PROPERTY</th><th>RANGE</th>
+               </tr>
+               <tr>
+                   <td>
+                     
+                         
+                           <a href="class-npgpublication.html">npg:Publication</a>
+                           
+                         
+                     
+                   </td>
+
+                    <td>
+                      npg:publicationStartYear
+                    </td>
+
+                    <td>
+                      
+                          
+                            <a href=".html">http://www.w3.org/2001/XMLSchema#gYear</a>
+                            
+                          
+                      
+                    </td>
+            </table>
+
+          </div>
+           </div></div>
+
+
+
+           <div class="row"><div class="col-md-12">
+              <div class="panel panel-default">
+            <div class="panel-heading">
+              <h3 class="panel-title">Implementation</h3>
+            </div>
+            <div class="panel-body implementation-panel">
+
+                
+
+                    <div class="highlight"><pre><span></span><span class="k">@prefix</span><span class="w"> </span><span class="nn">bibo:</span><span class="w"> </span><span class="nv">&lt;http://purl.org/ontology/bibo/&gt;</span><span class="w"> </span><span class="p">.</span><span class="w"></span>
+<span class="k">@prefix</span><span class="w"> </span><span class="nn">crm:</span><span class="w"> </span><span class="nv">&lt;http://www.cidoc-crm.org/cidoc-crm/&gt;</span><span class="w"> </span><span class="p">.</span><span class="w"></span>
+<span class="k">@prefix</span><span class="w"> </span><span class="nn">dbpedia:</span><span class="w"> </span><span class="nv">&lt;http://dbpedia.org/resource/&gt;</span><span class="w"> </span><span class="p">.</span><span class="w"></span>
+<span class="k">@prefix</span><span class="w"> </span><span class="nn">dbpedia-owl:</span><span class="w"> </span><span class="nv">&lt;http://dbpedia.org/ontology/&gt;</span><span class="w"> </span><span class="p">.</span><span class="w"></span>
+<span class="k">@prefix</span><span class="w"> </span><span class="nn">dc:</span><span class="w"> </span><span class="nv">&lt;http://purl.org/dc/elements/1.1/&gt;</span><span class="w"> </span><span class="p">.</span><span class="w"></span>
+<span class="k">@prefix</span><span class="w"> </span><span class="nn">dcterms:</span><span class="w"> </span><span class="nv">&lt;http://purl.org/dc/terms/&gt;</span><span class="w"> </span><span class="p">.</span><span class="w"></span>
+<span class="k">@prefix</span><span class="w"> </span><span class="nn">event:</span><span class="w"> </span><span class="nv">&lt;http://purl.org/NET/c4dm/event.owl#&gt;</span><span class="w"> </span><span class="p">.</span><span class="w"></span>
+<span class="k">@prefix</span><span class="w"> </span><span class="nn">fabio:</span><span class="w"> </span><span class="nv">&lt;http://purl.org/spar/fabio/&gt;</span><span class="w"> </span><span class="p">.</span><span class="w"></span>
+<span class="k">@prefix</span><span class="w"> </span><span class="nn">foaf:</span><span class="w"> </span><span class="nv">&lt;http://xmlns.com/foaf/0.1/&gt;</span><span class="w"> </span><span class="p">.</span><span class="w"></span>
+<span class="k">@prefix</span><span class="w"> </span><span class="nn">npg:</span><span class="w"> </span><span class="nv">&lt;http://ns.nature.com/terms/&gt;</span><span class="w"> </span><span class="p">.</span><span class="w"></span>
+<span class="k">@prefix</span><span class="w"> </span><span class="nn">npgd:</span><span class="w"> </span><span class="nv">&lt;http://ns.nature.com/datasets/&gt;</span><span class="w"> </span><span class="p">.</span><span class="w"></span>
+<span class="k">@prefix</span><span class="w"> </span><span class="nn">npgg:</span><span class="w"> </span><span class="nv">&lt;http://ns.nature.com/graphs/&gt;</span><span class="w"> </span><span class="p">.</span><span class="w"></span>
+<span class="k">@prefix</span><span class="w"> </span><span class="nn">obo:</span><span class="w"> </span><span class="nv">&lt;http://purl.obolibrary.org/obo/&gt;</span><span class="w"> </span><span class="p">.</span><span class="w"></span>
+<span class="k">@prefix</span><span class="w"> </span><span class="nn">owl:</span><span class="w"> </span><span class="nv">&lt;http://www.w3.org/2002/07/owl#&gt;</span><span class="w"> </span><span class="p">.</span><span class="w"></span>
+<span class="k">@prefix</span><span class="w"> </span><span class="nn">prism:</span><span class="w"> </span><span class="nv">&lt;http://prismstandard.org/namespaces/basic/2.1/&gt;</span><span class="w"> </span><span class="p">.</span><span class="w"></span>
+<span class="k">@prefix</span><span class="w"> </span><span class="nn">rdf:</span><span class="w"> </span><span class="nv">&lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#&gt;</span><span class="w"> </span><span class="p">.</span><span class="w"></span>
+<span class="k">@prefix</span><span class="w"> </span><span class="nn">rdfs:</span><span class="w"> </span><span class="nv">&lt;http://www.w3.org/2000/01/rdf-schema#&gt;</span><span class="w"> </span><span class="p">.</span><span class="w"></span>
+<span class="k">@prefix</span><span class="w"> </span><span class="nn">schema:</span><span class="w"> </span><span class="nv">&lt;http://schema.org/&gt;</span><span class="w"> </span><span class="p">.</span><span class="w"></span>
+<span class="k">@prefix</span><span class="w"> </span><span class="nn">skos:</span><span class="w"> </span><span class="nv">&lt;http://www.w3.org/2004/02/skos/core#&gt;</span><span class="w"> </span><span class="p">.</span><span class="w"></span>
+<span class="k">@prefix</span><span class="w"> </span><span class="nn">vann:</span><span class="w"> </span><span class="nv">&lt;http://purl.org/vocab/vann/&gt;</span><span class="w"> </span><span class="p">.</span><span class="w"></span>
+<span class="k">@prefix</span><span class="w"> </span><span class="nn">vcard:</span><span class="w"> </span><span class="nv">&lt;http://www.w3.org/2006/vcard/ns#&gt;</span><span class="w"> </span><span class="p">.</span><span class="w"></span>
+<span class="k">@prefix</span><span class="w"> </span><span class="nn">vivo:</span><span class="w"> </span><span class="nv">&lt;http://vivoweb.org/ontology/core#&gt;</span><span class="w"> </span><span class="p">.</span><span class="w"></span>
+<span class="k">@prefix</span><span class="w"> </span><span class="nn">wikidata:</span><span class="w"> </span><span class="nv">&lt;http://www.wikidata.org/entity/&gt;</span><span class="w"> </span><span class="p">.</span><span class="w"></span>
+<span class="k">@prefix</span><span class="w"> </span><span class="nn">xml:</span><span class="w"> </span><span class="nv">&lt;http://www.w3.org/XML/1998/namespace&gt;</span><span class="w"> </span><span class="p">.</span><span class="w"></span>
+<span class="k">@prefix</span><span class="w"> </span><span class="nn">xsd:</span><span class="w"> </span><span class="nv">&lt;http://www.w3.org/2001/XMLSchema#&gt;</span><span class="w"> </span><span class="p">.</span><span class="w"></span>
+
+<span class="nn">npg:</span><span class="nt">publicationStartYear</span><span class="w"> </span><span class="kt">a</span><span class="w"> </span><span class="nn">owl:</span><span class="nt">DatatypeProperty</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="nn">rdfs:</span><span class="nt">domain</span><span class="w"> </span><span class="nn">npg:</span><span class="nt">Publication</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="nn">rdfs:</span><span class="nt">isDefinedBy</span><span class="w"> </span><span class="err">npg</span><span class="p">:</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="nn">rdfs:</span><span class="nt">range</span><span class="w"> </span><span class="nn">xsd:</span><span class="nt">gYear</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="nn">skos:</span><span class="nt">definition</span><span class="w"> </span><span class="s">&quot;The :publicationStartYear property specifies the year date of a publication&#39;s start as a string. Note that this date relates to the publisher holdings which may not be the same as the actual publication start date.&quot;</span><span class="o">@</span><span class="ge">en</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="nn">skos:</span><span class="nt">prefLabel</span><span class="w"> </span><span class="s">&quot;Publication Start Year&quot;</span><span class="o">@</span><span class="ge">en</span><span class="w"> </span><span class="p">.</span><span class="w"></span>
+</pre></div>
+
+
+                
+            </div>
+          </div>
+           </div></div>
+
+
+
+
+        
+
+
+
+
+
+
+
+
+
+
+
+	</div><!-- /#page-content-wrapper -->
+
+
+  
+
+
+
+  
+
+
+
+
+  <footer class="footer">
+    <div class="container">
+    
+      <p class="text-muted">Documentation automatically generated on 26th February 2017 with <a href="https://github.com/lambdamusic/OntoSpy">OntoSpy</a> (v1.7.4)</p>
+
+    
+    </div>
+  </footer>
+
+
+</div><!-- /#wrapper -->
+
+
+<!-- Bootstrap core JavaScript
+================================================== -->
+<!-- Placed at the end of the document so the pages load faster -->
+<script src="../static/libs/jquery/1.12.4/jquery.min.js"></script>
+<script src="../static/libs/bootstrap-3.3.7-dist/js/bootstrap.min.js"></script>
+
+<!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+<script src="../static/libs/bootstrap-3.3.7-dist/js/ie10-viewport-bug-workaround.js"></script>
+
+<script src="../static/libs/Chart.js-2.4.0/Chart.bundle.js"></script>
+
+
+<!-- Menu Toggle Script -->
+<script>
+$("#menu-toggle").click(function(e) {
+    e.preventDefault();
+    $("#wrapper").toggleClass("toggled");
+});
+</script>
+
+
+
+
+<script type="text/javascript">
+
+$('#search-input-sidebar').keyup(function() {
+
+  var val = $.trim($(this).val()).replace(/ +/g, ' ').toLowerCase();
+  // var $rows = $(this).next(".entities-list").find("div");
+  var $rows = $(this).parent().parent().find("li.second-level");
+
+  $rows.show().filter(function() {
+      var text = $(this).text().replace(/\s+/g, ' ').toLowerCase();
+      return !~text.indexOf(val);
+  }).hide();
+});
+
+</script>
+
+
+
+
+  <!-- Scroll Sidebar Script -->
+  
+  
+  <script type="text/javascript">
+
+    $(document).ready(function (){
+      $('#sidebar-wrapper').animate({
+          scrollTop: $("#sd_3935").offset().top - 100
+      }, 100);
+    });
+
+  </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  </body>
+</html>

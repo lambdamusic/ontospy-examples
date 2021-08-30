@@ -1,0 +1,843 @@
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="../static/libs/img/favicon.ico">
+
+	
+		<title>OntoSpy > http://purl.org/obo/owl/OBO_REL</title>
+	
+
+    <!-- Bootstrap core CSS -->
+    <!-- <link href="../static/libs/bootstrap-3.3.7-dist/css/bootstrap.min.css" rel="stylesheet">  -->
+    <!-- Bootswatch:  -->
+    <!-- cerulean  | cyborg |  flatly |  lumen |  sandstone |   spacelab  |  yeti | cosmo |  darkly |  paper | simplex | superhero |  journal | readable  |   slate |  united -->
+    <link href="../static/libs/bootswatch3.2/readable/bootstrap.min.css" rel="stylesheet">
+    <link href="../static/custom/css/simple-sidebar.css" rel="stylesheet">
+    <link href="../static/custom/css/familytree.css" rel="stylesheet">
+    <link href="../static/custom/css/tabletree.css" rel="stylesheet">
+
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <link href="../static/libs/bootstrap-3.3.7-dist/css/ie10-viewport-bug-workaround.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="../static/custom/css/sticky-footer-navbar.css" rel="stylesheet">
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+<style type="text/css">
+
+  .lead-plus {font-size: 26.5px;}
+  .label-xs {font-size: 10px;}
+  .label-dark {background: #2c3e50; color: white; padding: 1px;}
+  .margin50 {margin-top: 50px; margin-bottom: 50px;}
+
+  .namespaces {background: #ced2d6; width: 100%;}
+
+
+  /*so that the d3plus tooltip panel doesnt cover the top banner*/
+  .navbar {z-index: 3000;}
+
+
+  .panel-body dt {margin-top: 5px;}
+  .page-header  {margin-top: 30px;}
+  #wrapper {margin-top: 50px;}
+
+  .implementation-panel {
+    overflow: auto;
+    max-height: 500px;
+  }
+
+  tr.table-classproperties {
+      /*background: #f5f5f5;*/
+  }
+  tr.table-classproperties th {
+      font-size: 80%;
+      font-weight: normal;
+  }
+
+
+  tr.table-inheritanceinfo {
+      /*background: #f5f5f5;*/
+      text-align: left;
+  }
+
+  tr.table-inheritanceinfo th {
+      font-size: 90%;
+      font-weight: normal;
+  }
+
+
+  .breadcrumb {
+    margin-top: 20px;
+    margin-bottom: 40px;
+  }
+
+  .breadcrumb a {
+      text-transform: capitalize;
+  }
+  .breadcrumb li {
+      text-transform: none;
+      /*so to catch the uri @todo improve*/
+  }
+
+
+  .fromclass_link {
+    /*color: white;
+    text-decoration: underline;*/
+    /*background: #1c1e52;*/
+    color: inherit;
+    /*padding: 1px;*/
+  }
+
+		.mythumbnail {
+			display: block;
+			padding: 13px;
+			margin-bottom: 30px;
+			line-height: 13.428571;
+			background-color: #fff;
+			border: 1px solid #ddd;
+			border-radius: 30px;
+		}
+
+		.mythumbnail:hover {
+			background: lightyellow;
+			text-decoration: none;
+		}
+
+
+		.img-container{
+		    height:100%;
+			overflow: hidden;
+		    max-height:200px;
+			padding: 10px;
+/*			margin: 20px 0px 20px 0px;*/
+			border: 1em #EAE5E5 solid;
+		}
+
+		.img-container:hover {
+			border: 1px grey solid;
+		}
+
+		img{
+/*		    height:100% !important;*/
+		}
+
+
+		.icon-xxs {
+			font-size: 15px;
+		}
+
+
+    /* dropdown open on hover */
+
+    @media (min-width: 979px) {
+      ul.nav li.dropdown:hover > ul.dropdown-menu {
+        display: block;
+      }
+    }
+
+
+
+/*pygments css*/
+
+
+/*overloading this class from pygments*/
+.highlight {
+  overflow: auto;
+}
+
+
+
+
+
+
+
+
+</style>
+
+
+
+
+
+  </head>
+
+  <body>
+
+
+
+  
+      
+<!-- Fixed navbar -->
+<nav class="navbar navbar-default navbar-fixed-top">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+
+      <a class="navbar-brand" id="menu-toggle" title="Toggle sidebar">
+        
+        <span class="glyphicon glyphicon-align-left" aria-hidden="true"></span>
+      </a>
+    </div>
+    <div id="navbar" class="collapse navbar-collapse">
+      <ul class="nav navbar-nav">
+        <li ><a href="index.html"><code style="font-size: 115%;">http://purl.org/obo/owl/OBO_REL</code></a></li>
+        
+
+       
+
+
+        <li  ><a href="dashboard.html">Dashboard</a></li>
+        <li  ><a href="entities-az.html">Entities A-Z</a></li>
+        <li class="dropdown active " >
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Entities Tree <span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            
+            <li><a class="active"href="entities-tree-classes.html">Classes</a>
+            </li>
+            
+            
+            <li><a  href="entities-tree-properties.html">Properties</a>
+            </li>
+            
+            
+          </ul>
+      </li>
+
+      </ul>
+      
+    </div><!--/.nav-collapse -->
+
+  </div>
+</nav>
+
+  
+
+
+
+
+
+<div id="wrapper" class="toggled">
+
+
+    
+
+    
+        
+<!-- Sidebar -->
+<div id="sidebar-wrapper">
+    <ul class="sidebar-nav">
+
+
+        <li>
+          <input style="margin-top: 30px;  margin-bottom: 20px;" type="text" id="search-input-sidebar" name="" value="" placeholder="Type to search">
+        </li>
+
+        
+          <li class="-second-level" id="sd_classes"><a class="active"href="entities-tree-classes.html">Classes (45)</a>
+          </li>
+
+            
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_6600"><a  href="class-httppurlorgoboowlchebichebi_33708.html">http://purl.org/obo/owl/CHEBI#CHEBI_33708</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_6601"><a  href="class-httppurlorgoboowlecoeco_0000000.html">http://purl.org/obo/owl/ECO#ECO_0000000</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_6602"><a  href="class-httppurlorgoboowlecoeco_0000044.html">http://purl.org/obo/owl/ECO#ECO_0000044</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_6603"><a  href="class-httppurlorgscienceowlmeshqualifier.html">http://purl.org/science/owl/mesh/Qualifier</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_6604"><a  href="class-sciencecommons0feature.html">sciencecommons0:Feature</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_6605"><a  href="class-sciencecommons0sequencegap.html">sciencecommons0:SequenceGap</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_6606"><a  href="class-sciencecommons0stopcodon.html">sciencecommons0:StopCodon</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_6607"><a  href="class-sciencecommons0coincident_expression.html">sciencecommons0:coincident_expression</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_6608"><a  href="class-sciencecommons0conserved_map_location.html">sciencecommons0:conserved_map_location</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_6609"><a  href="class-sciencecommons0cross_hybridization_to_same_molecular_probe.html">sciencecommons0:cross_hybridization_to_same_molecular_probe</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_6610"><a  href="class-sciencecommons0domain_record.html">sciencecommons0:domain_record</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_6611"><a  href="class-sciencecommons0enzyme_record.html">sciencecommons0:enzyme_record</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_6612"><a  href="class-sciencecommons0formation_of_functional_heteropolymers.html">sciencecommons0:formation_of_functional_heteropolymers</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_6613"><a  href="class-sciencecommons0functional_complementation.html">sciencecommons0:functional_complementation</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_6614"><a  href="class-sciencecommons0gene.html">sciencecommons0:gene</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_6615"><a  href="class-sciencecommons0gene_record.html">sciencecommons0:gene_record</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_6616"><a  href="class-sciencecommons0immunological_cross_reaction.html">sciencecommons0:immunological_cross_reaction</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_6617"><a  href="class-sciencecommons0inferred_from_homologene_orthology_computation.html">sciencecommons0:inferred_from_homologene_orthology_computation</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_6618"><a  href="class-sciencecommons0journal_article.html">sciencecommons0:journal_article</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_6619"><a  href="class-sciencecommons0not_specified.html">sciencecommons0:not_specified</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_6620"><a  href="class-sciencecommons0note.html">sciencecommons0:note</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_6621"><a  href="class-sciencecommons0nucleotide_sequence_comparison.html">sciencecommons0:nucleotide_sequence_comparison</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_6622"><a  href="class-sciencecommons0omim_record.html">sciencecommons0:omim_record</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_6623"><a  href="class-sciencecommons0orthology_record.html">sciencecommons0:orthology_record</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_6624"><a  href="class-sciencecommons0pdb_record.html">sciencecommons0:pdb_record</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_6625"><a  href="class-sciencecommons0protein.html">sciencecommons0:protein</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_6626"><a  href="class-sciencecommons0protein_record.html">sciencecommons0:protein_record</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_6627"><a  href="class-sciencecommons0pubmed_record.html">sciencecommons0:pubmed_record</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_6628"><a  href="class-sciencecommons0record.html">sciencecommons0:record</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_6629"><a  href="class-sciencecommons0report.html">sciencecommons0:report</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_6630"><a  href="class-sciencecommons0sequence_record.html">sciencecommons0:sequence_record</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_6631"><a  href="class-sciencecommons0similar_response_to_specific_inhibitors.html">sciencecommons0:similar_response_to_specific_inhibitors</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_6632"><a  href="class-sciencecommons0similar_subcellular_location.html">sciencecommons0:similar_subcellular_location</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_6633"><a  href="class-sciencecommons0similar_substrate_specificity.html">sciencecommons0:similar_substrate_specificity</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_6634"><a  href="class-sciencecommons0similar_subunit_structure.html">sciencecommons0:similar_subunit_structure</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_6635"><a  href="class-sciencecommons0term.html">sciencecommons0:term</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_6636"><a  href="class-sciencecommons0textual_thing.html">sciencecommons0:textual_thing</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_6637"><a  href="class-sciencecommons0unviewed.html">sciencecommons0:unviewed</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_6638"><a  href="class-httpwwwifomisorgbfo11snapfunction.html">http://www.ifomis.org/bfo/1.1/snap#Function</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_6639"><a  href="class-httpwwwifomisorgbfo11snapindependentcontinuant.html">http://www.ifomis.org/bfo/1.1/snap#IndependentContinuant</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_6640"><a  href="class-httpwwwifomisorgbfo11snapmaterialentity.html">http://www.ifomis.org/bfo/1.1/snap#MaterialEntity</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_6641"><a  href="class-httpwwwifomisorgbfo11snapobject.html">http://www.ifomis.org/bfo/1.1/snap#Object</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_6642"><a  href="class-httpwwwifomisorgbfo11snaprealizableentity.html">http://www.ifomis.org/bfo/1.1/snap#RealizableEntity</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_6643"><a  href="class-httpwwwifomisorgbfo11spanprocessualentity.html">http://www.ifomis.org/bfo/1.1/span#ProcessualEntity</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_6644"><a  href="class-skosconcept.html">skos:Concept</a></li>
+          
+        
+
+        
+            <li class="-second-level" id="sd_properties"><a  href="entities-tree-properties.html">Properties (54)</a>
+            </li>
+
+            
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_6645"><a   href="prop-sciencecommons0has_supporting_evidence.html">sciencecommons0:has_supporting_evidence</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_6646"><a   href="prop-sciencecommons0in_domain_of.html">sciencecommons0:in_domain_of</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_6647"><a   href="prop-sciencecommons0in_range_of.html">sciencecommons0:in_range_of</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_6648"><a   href="prop-sciencecommons0maybe_in_domain_of.html">sciencecommons0:maybe_in_domain_of</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_6649"><a   href="prop-sciencecommons0maybe_in_range_of.html">sciencecommons0:maybe_in_range_of</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_6650"><a   href="prop-rdfscomment.html">rdfs:comment</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_6651"><a   href="prop-rdfslabel.html">rdfs:label</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_6652"><a   href="prop-rdfsseealso.html">rdfs:seeAlso</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_6653"><a   href="prop-httpxmlnscomfoaf01primarytopic.html">http://xmlns.com/foaf/0.1/primaryTopic</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_6654"><a   href="prop-sciencecommons0ggp-has-description.html">sciencecommons0:ggp-has-description</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_6655"><a   href="prop-sciencecommons0ggp-has-primary-description.html">sciencecommons0:ggp-has-primary-description</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_6656"><a   href="prop-sciencecommons0ggp_has_primary_symbol.html">sciencecommons0:ggp_has_primary_symbol</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_6657"><a   href="prop-sciencecommons0ggp_has_symbol.html">sciencecommons0:ggp_has_symbol</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_6658"><a   href="prop-sciencecommons0has_id_in_databank.html">sciencecommons0:has_id_in_databank</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_6659"><a   href="prop-sciencecommons0has_record_id.html">sciencecommons0:has_record_id</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_6660"><a   href="prop-sciencecommons0is_encoded_as_mime_type.html">sciencecommons0:is_encoded_as_mime_type</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_6661"><a   href="prop-sciencecommons0pdb_coord.html">sciencecommons0:pdb_coord</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_6662"><a   href="prop-sciencecommons0pdb_keywords.html">sciencecommons0:pdb_keywords</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_6663"><a   href="prop-sciencecommons0pdb_keywords_description.html">sciencecommons0:pdb_keywords_description</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_6664"><a   href="prop-sciencecommons0pfam_id.html">sciencecommons0:pfam_id</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_6665"><a   href="prop-sciencecommons0scop_id.html">sciencecommons0:scop_id</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_6666"><a   href="prop-sciencecommons0sequence.html">sciencecommons0:sequence</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_6667"><a   href="prop-sciencecommons0sequence_length.html">sciencecommons0:sequence_length</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_6668"><a   href="prop-sciencecommons0identified_by_pmid.html">sciencecommons0:identified_by_pmid</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_6669"><a   href="prop-httppurlobofoundryorgoboiao_0000136.html">http://purl.obofoundry.org/obo/IAO_0000136</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_6670"><a   href="prop-httppurlobofoundryorgoboiao_0000142.html">http://purl.obofoundry.org/obo/IAO_0000142</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_6671"><a   href="prop-sciencecommons0chain_contact.html">sciencecommons0:chain_contact</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_6672"><a   href="prop-sciencecommons0cites_evidence_source.html">sciencecommons0:cites_evidence_source</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_6673"><a   href="prop-sciencecommons0describes_gene_or_gene_product_mentioned_by.html">sciencecommons0:describes_gene_or_gene_product_mentioned_by</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_6674"><a   href="prop-sciencecommons0has-as-major-mesh.html">sciencecommons0:has-as-major-mesh</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_6675"><a   href="prop-sciencecommons0has-as-minor-mesh.html">sciencecommons0:has-as-minor-mesh</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_6676"><a   href="prop-sciencecommons0has_encoding.html">sciencecommons0:has_encoding</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_6677"><a   href="prop-sciencecommons0has_grain.html">sciencecommons0:has_grain</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_6678"><a   href="prop-sciencecommons0has_orthologous_gene_record.html">sciencecommons0:has_orthologous_gene_record</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_6679"><a   href="prop-sciencecommons0has_peptide_sequence_described_by.html">sciencecommons0:has_peptide_sequence_described_by</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_6680"><a   href="prop-sciencecommons0is_protein_gene_product_of_dna_described_by.html">sciencecommons0:is_protein_gene_product_of_dna_described_by</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_6681"><a   href="prop-sciencecommons0is_qualified_by.html">sciencecommons0:is_qualified_by</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_6682"><a   href="prop-sciencecommons0pdb_primary_citation.html">sciencecommons0:pdb_primary_citation</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_6683"><a   href="prop-sciencecommons0perturbation.html">sciencecommons0:perturbation</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_6684"><a   href="prop-sciencecommons0primary_allele.html">sciencecommons0:primary_allele</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_6685"><a   href="prop-sciencecommons0primate_allele.html">sciencecommons0:primate_allele</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_6686"><a   href="prop-sciencecommons0reference_sequence_item.html">sciencecommons0:reference_sequence_item</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_6687"><a   href="prop-sciencecommons0says_evidence_uses.html">sciencecommons0:says_evidence_uses</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_6688"><a   href="prop-sciencecommons0uniprot.html">sciencecommons0:uniprot</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_6689"><a   href="prop-httpwwwifomisorgbfo11rohas_part.html">http://www.ifomis.org/bfo/1.1/ro#has_part</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_6690"><a   href="prop-httpwwwobofoundryorgroroowlderived_into.html">http://www.obofoundry.org/ro/ro.owl#derived_into</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_6691"><a   href="prop-httpwwwobofoundryorgroroowlderives_from.html">http://www.obofoundry.org/ro/ro.owl#derives_from</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_6692"><a   href="prop-httpwwwobofoundryorgroroowlhas_function.html">http://www.obofoundry.org/ro/ro.owl#has_function</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_6693"><a   href="prop-httpwwwobofoundryorgroroowlhas_part.html">http://www.obofoundry.org/ro/ro.owl#has_part</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_6694"><a   href="prop-httpwwwobofoundryorgroroowlhas_participant.html">http://www.obofoundry.org/ro/ro.owl#has_participant</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_6695"><a   href="prop-httpwwwobofoundryorgroroowllocated_in.html">http://www.obofoundry.org/ro/ro.owl#located_in</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_6696"><a   href="prop-httpwwwobofoundryorgroroowlpart_of.html">http://www.obofoundry.org/ro/ro.owl#part_of</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_6697"><a   href="prop-httpwwwobofoundryorgroroowlparticipates_in.html">http://www.obofoundry.org/ro/ro.owl#participates_in</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_6698"><a   href="prop-httpwwwobofoundryorgroroowlrealized_as.html">http://www.obofoundry.org/ro/ro.owl#realized_as</a></li>
+          
+
+        
+
+        
+
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+
+    </ul>
+
+</div>
+
+
+<!-- /#sidebar-wrapper -->
+
+    
+
+
+
+
+    <!-- Begin page content -->
+    <div class="container" id="page-content-wrapper">
+
+      
+
+	
+
+
+
+    
+        
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<ol class="breadcrumb">
+  <li>
+    <a href="index.html">Home</a>
+  </li>
+  <li>
+        <a href="entities-az.html">Entities</a>
+    </li>
+    <li class="active">
+          Classes
+      </li>
+</ol>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+
+
+
+
+  <div class="page-header">
+
+      <h3>Entities Tree: Classes
+      </h3>
+      <input id="search-input" type="text" class="form-control" placeholder="Filter...">
+
+  </div>
+
+
+
+     <div class="row"><div class="col-md-12">
+        <div class="panel panel-default">
+      <div class="panel-heading">
+        <h3 class="panel-title">Tree</h3>
+      </div>
+      <div class="panel-body entities-list">
+
+          <table class="h"><tr>
+							<td class="tc" colspan=4><a title="http://purl.org/obo/owl/CHEBI#CHEBI_33708" class="treelinks" href="class-httppurlorgoboowlchebichebi_33708.html">http://purl.org/obo/owl/CHEBI#CHEBI_33708</a></td>
+						  </tr><tr>
+							<td class="tc" colspan=4><a title="http://purl.org/obo/owl/ECO#ECO_0000044" class="treelinks" href="class-httppurlorgoboowlecoeco_0000044.html">http://purl.org/obo/owl/ECO#ECO_0000044</a></td>
+						  </tr> <tr>
+							<td class="space"></td>
+							<td class="bar"></td>
+							<td class="space"></td>
+							<td><table class="h"><tr>
+							<td class="tc" colspan=4><a title="http://purl.org/science/owl/sciencecommons/inferred_from_homologene_orthology_computation" class="treelinks" href="class-sciencecommons0inferred_from_homologene_orthology_computation.html">...ns0:inferred_from_homologene_orthology_computation</a></td>
+						  </tr></table></td>
+							</tr><tr>
+							<td class="tc" colspan=4><a title="http://purl.org/science/owl/sciencecommons/Feature" class="treelinks" href="class-sciencecommons0feature.html">sciencecommons0:Feature</a></td>
+						  </tr><tr>
+							<td class="tc" colspan=4><a title="http://www.ifomis.org/bfo/1.1/snap#Function" class="treelinks" href="class-httpwwwifomisorgbfo11snapfunction.html">http://www.ifomis.org/bfo/1.1/snap#Function</a></td>
+						  </tr><tr>
+							<td class="tc" colspan=4><a title="http://www.ifomis.org/bfo/1.1/snap#IndependentContinuant" class="treelinks" href="class-httpwwwifomisorgbfo11snapindependentcontinuant.html">.../www.ifomis.org/bfo/1.1/snap#IndependentContinuant</a></td>
+						  </tr><tr>
+							<td class="tc" colspan=4><a title="http://www.ifomis.org/bfo/1.1/snap#MaterialEntity" class="treelinks" href="class-httpwwwifomisorgbfo11snapmaterialentity.html">http://www.ifomis.org/bfo/1.1/snap#MaterialEntity</a></td>
+						  </tr> <tr>
+							<td class="space"></td>
+							<td class="bar"></td>
+							<td class="space"></td>
+							<td><table class="h"><tr>
+							<td class="tc" colspan=4><a title="http://purl.org/science/owl/sciencecommons/SequenceGap" class="treelinks" href="class-sciencecommons0sequencegap.html">sciencecommons0:SequenceGap</a></td>
+						  </tr><tr>
+							<td class="tc" colspan=4><a title="http://purl.org/science/owl/sciencecommons/StopCodon" class="treelinks" href="class-sciencecommons0stopcodon.html">sciencecommons0:StopCodon</a></td>
+						  </tr></table></td>
+							</tr><tr>
+							<td class="tc" colspan=4><a title="http://www.ifomis.org/bfo/1.1/snap#Object" class="treelinks" href="class-httpwwwifomisorgbfo11snapobject.html">http://www.ifomis.org/bfo/1.1/snap#Object</a></td>
+						  </tr> <tr>
+							<td class="space"></td>
+							<td class="bar"></td>
+							<td class="space"></td>
+							<td><table class="h"><tr>
+							<td class="tc" colspan=4><a title="http://purl.org/science/owl/mesh/Qualifier" class="treelinks" href="class-httppurlorgscienceowlmeshqualifier.html">http://purl.org/science/owl/mesh/Qualifier</a></td>
+						  </tr><tr>
+							<td class="tc" colspan=4><a title="http://purl.org/science/owl/sciencecommons/gene" class="treelinks" href="class-sciencecommons0gene.html">sciencecommons0:gene</a></td>
+						  </tr><tr>
+							<td class="tc" colspan=4><a title="http://purl.org/science/owl/sciencecommons/protein" class="treelinks" href="class-sciencecommons0protein.html">sciencecommons0:protein</a></td>
+						  </tr><tr>
+							<td class="tc" colspan=4><a title="http://purl.org/science/owl/sciencecommons/textual_thing" class="treelinks" href="class-sciencecommons0textual_thing.html">sciencecommons0:textual_thing</a></td>
+						  </tr> <tr>
+							<td class="space"></td>
+							<td class="bar"></td>
+							<td class="space"></td>
+							<td><table class="h"><tr>
+							<td class="tc" colspan=4><a title="http://purl.org/science/owl/sciencecommons/record" class="treelinks" href="class-sciencecommons0record.html">sciencecommons0:record</a></td>
+						  </tr> <tr>
+							<td class="space"></td>
+							<td class="bar"></td>
+							<td class="space"></td>
+							<td><table class="h"><tr>
+							<td class="tc" colspan=4><a title="http://purl.org/science/owl/sciencecommons/domain_record" class="treelinks" href="class-sciencecommons0domain_record.html">sciencecommons0:domain_record</a></td>
+						  </tr><tr>
+							<td class="tc" colspan=4><a title="http://purl.org/science/owl/sciencecommons/enzyme_record" class="treelinks" href="class-sciencecommons0enzyme_record.html">sciencecommons0:enzyme_record</a></td>
+						  </tr><tr>
+							<td class="tc" colspan=4><a title="http://purl.org/science/owl/sciencecommons/gene_record" class="treelinks" href="class-sciencecommons0gene_record.html">sciencecommons0:gene_record</a></td>
+						  </tr><tr>
+							<td class="tc" colspan=4><a title="http://purl.org/science/owl/sciencecommons/omim_record" class="treelinks" href="class-sciencecommons0omim_record.html">sciencecommons0:omim_record</a></td>
+						  </tr><tr>
+							<td class="tc" colspan=4><a title="http://purl.org/science/owl/sciencecommons/orthology_record" class="treelinks" href="class-sciencecommons0orthology_record.html">sciencecommons0:orthology_record</a></td>
+						  </tr><tr>
+							<td class="tc" colspan=4><a title="http://purl.org/science/owl/sciencecommons/pdb_record" class="treelinks" href="class-sciencecommons0pdb_record.html">sciencecommons0:pdb_record</a></td>
+						  </tr><tr>
+							<td class="tc" colspan=4><a title="http://purl.org/science/owl/sciencecommons/protein_record" class="treelinks" href="class-sciencecommons0protein_record.html">sciencecommons0:protein_record</a></td>
+						  </tr><tr>
+							<td class="tc" colspan=4><a title="http://purl.org/science/owl/sciencecommons/pubmed_record" class="treelinks" href="class-sciencecommons0pubmed_record.html">sciencecommons0:pubmed_record</a></td>
+						  </tr><tr>
+							<td class="tc" colspan=4><a title="http://purl.org/science/owl/sciencecommons/sequence_record" class="treelinks" href="class-sciencecommons0sequence_record.html">sciencecommons0:sequence_record</a></td>
+						  </tr></table></td>
+							</tr><tr>
+							<td class="tc" colspan=4><a title="http://purl.org/science/owl/sciencecommons/report" class="treelinks" href="class-sciencecommons0report.html">sciencecommons0:report</a></td>
+						  </tr> <tr>
+							<td class="space"></td>
+							<td class="bar"></td>
+							<td class="space"></td>
+							<td><table class="h"><tr>
+							<td class="tc" colspan=4><a title="http://purl.org/obo/owl/ECO#ECO_0000000" class="treelinks" href="class-httppurlorgoboowlecoeco_0000000.html">http://purl.org/obo/owl/ECO#ECO_0000000</a></td>
+						  </tr> <tr>
+							<td class="space"></td>
+							<td class="bar"></td>
+							<td class="space"></td>
+							<td><table class="h"><tr>
+							<td class="tc" colspan=4><a title="http://purl.org/science/owl/sciencecommons/coincident_expression" class="treelinks" href="class-sciencecommons0coincident_expression.html">sciencecommons0:coincident_expression</a></td>
+						  </tr><tr>
+							<td class="tc" colspan=4><a title="http://purl.org/science/owl/sciencecommons/conserved_map_location" class="treelinks" href="class-sciencecommons0conserved_map_location.html">sciencecommons0:conserved_map_location</a></td>
+						  </tr><tr>
+							<td class="tc" colspan=4><a title="http://purl.org/science/owl/sciencecommons/cross_hybridization_to_same_molecular_probe" class="treelinks" href="class-sciencecommons0cross_hybridization_to_same_molecular_probe.html">...mmons0:cross_hybridization_to_same_molecular_probe</a></td>
+						  </tr><tr>
+							<td class="tc" colspan=4><a title="http://purl.org/science/owl/sciencecommons/formation_of_functional_heteropolymers" class="treelinks" href="class-sciencecommons0formation_of_functional_heteropolymers.html">...ncecommons0:formation_of_functional_heteropolymers</a></td>
+						  </tr><tr>
+							<td class="tc" colspan=4><a title="http://purl.org/science/owl/sciencecommons/functional_complementation" class="treelinks" href="class-sciencecommons0functional_complementation.html">sciencecommons0:functional_complementation</a></td>
+						  </tr><tr>
+							<td class="tc" colspan=4><a title="http://purl.org/science/owl/sciencecommons/immunological_cross_reaction" class="treelinks" href="class-sciencecommons0immunological_cross_reaction.html">sciencecommons0:immunological_cross_reaction</a></td>
+						  </tr><tr>
+							<td class="tc" colspan=4><a title="http://purl.org/science/owl/sciencecommons/not_specified" class="treelinks" href="class-sciencecommons0not_specified.html">sciencecommons0:not_specified</a></td>
+						  </tr><tr>
+							<td class="tc" colspan=4><a title="http://purl.org/science/owl/sciencecommons/nucleotide_sequence_comparison" class="treelinks" href="class-sciencecommons0nucleotide_sequence_comparison.html">sciencecommons0:nucleotide_sequence_comparison</a></td>
+						  </tr><tr>
+							<td class="tc" colspan=4><a title="http://purl.org/science/owl/sciencecommons/similar_response_to_specific_inhibitors" class="treelinks" href="class-sciencecommons0similar_response_to_specific_inhibitors.html">...cecommons0:similar_response_to_specific_inhibitors</a></td>
+						  </tr><tr>
+							<td class="tc" colspan=4><a title="http://purl.org/science/owl/sciencecommons/similar_subcellular_location" class="treelinks" href="class-sciencecommons0similar_subcellular_location.html">sciencecommons0:similar_subcellular_location</a></td>
+						  </tr><tr>
+							<td class="tc" colspan=4><a title="http://purl.org/science/owl/sciencecommons/similar_substrate_specificity" class="treelinks" href="class-sciencecommons0similar_substrate_specificity.html">sciencecommons0:similar_substrate_specificity</a></td>
+						  </tr><tr>
+							<td class="tc" colspan=4><a title="http://purl.org/science/owl/sciencecommons/similar_subunit_structure" class="treelinks" href="class-sciencecommons0similar_subunit_structure.html">sciencecommons0:similar_subunit_structure</a></td>
+						  </tr><tr>
+							<td class="tc" colspan=4><a title="http://purl.org/science/owl/sciencecommons/unviewed" class="treelinks" href="class-sciencecommons0unviewed.html">sciencecommons0:unviewed</a></td>
+						  </tr></table></td>
+							</tr><tr>
+							<td class="tc" colspan=4><a title="http://purl.org/science/owl/sciencecommons/journal_article" class="treelinks" href="class-sciencecommons0journal_article.html">sciencecommons0:journal_article</a></td>
+						  </tr><tr>
+							<td class="tc" colspan=4><a title="http://purl.org/science/owl/sciencecommons/note" class="treelinks" href="class-sciencecommons0note.html">sciencecommons0:note</a></td>
+						  </tr><tr>
+							<td class="tc" colspan=4><a title="http://purl.org/science/owl/sciencecommons/term" class="treelinks" href="class-sciencecommons0term.html">sciencecommons0:term</a></td>
+						  </tr></table></td>
+							</tr></table></td>
+							</tr></table></td>
+							</tr><tr>
+							<td class="tc" colspan=4><a title="http://www.ifomis.org/bfo/1.1/snap#RealizableEntity" class="treelinks" href="class-httpwwwifomisorgbfo11snaprealizableentity.html">...ttp://www.ifomis.org/bfo/1.1/snap#RealizableEntity</a></td>
+						  </tr><tr>
+							<td class="tc" colspan=4><a title="http://www.ifomis.org/bfo/1.1/span#ProcessualEntity" class="treelinks" href="class-httpwwwifomisorgbfo11spanprocessualentity.html">...ttp://www.ifomis.org/bfo/1.1/span#ProcessualEntity</a></td>
+						  </tr><tr>
+							<td class="tc" colspan=4><a title="http://www.w3.org/2004/02/skos/core#Concept" class="treelinks" href="class-skosconcept.html">skos:Concept</a></td>
+						  </tr></table>
+
+
+      </div>
+    </div>
+     </div></div>
+
+
+
+
+
+
+    <div class="container margin50">
+
+
+    </div> <!-- /container -->
+
+
+  
+
+
+	</div><!-- /#page-content-wrapper -->
+
+
+  
+
+
+
+  
+
+
+
+
+  <footer class="footer">
+    <div class="container">
+    
+      <p class="text-muted">Documentation automatically generated on 26th February 2017 with <a href="https://github.com/lambdamusic/OntoSpy">OntoSpy</a> (v1.7.4)</p>
+
+    
+    </div>
+  </footer>
+
+
+</div><!-- /#wrapper -->
+
+
+<!-- Bootstrap core JavaScript
+================================================== -->
+<!-- Placed at the end of the document so the pages load faster -->
+<script src="../static/libs/jquery/1.12.4/jquery.min.js"></script>
+<script src="../static/libs/bootstrap-3.3.7-dist/js/bootstrap.min.js"></script>
+
+<!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+<script src="../static/libs/bootstrap-3.3.7-dist/js/ie10-viewport-bug-workaround.js"></script>
+
+<script src="../static/libs/Chart.js-2.4.0/Chart.bundle.js"></script>
+
+
+<!-- Menu Toggle Script -->
+<script>
+$("#menu-toggle").click(function(e) {
+    e.preventDefault();
+    $("#wrapper").toggleClass("toggled");
+});
+</script>
+
+
+
+
+<script type="text/javascript">
+
+$('#search-input-sidebar').keyup(function() {
+
+  var val = $.trim($(this).val()).replace(/ +/g, ' ').toLowerCase();
+  // var $rows = $(this).next(".entities-list").find("div");
+  var $rows = $(this).parent().parent().find("li.second-level");
+
+  $rows.show().filter(function() {
+      var text = $(this).text().replace(/\s+/g, ' ').toLowerCase();
+      return !~text.indexOf(val);
+  }).hide();
+});
+
+</script>
+
+
+
+
+
+
+
+
+
+<script type="text/javascript">
+
+// http://stackoverflow.com/questions/9127498/how-to-perform-a-real-time-search-and-filter-on-a-html-table
+
+  $('#search-input').keyup(function() {
+
+    var val = $.trim($(this).val()).replace(/ +/g, ' ').toLowerCase();
+
+    // var $rows = $(this).next(".entities-list").find("div");
+    var $rows = $(this).parent().next().find(".entities-list tr");
+
+    $rows.show().filter(function() {
+        var text = $(this).text().replace(/\s+/g, ' ').toLowerCase();
+        return !~text.indexOf(val);
+    }).hide();
+});
+
+
+</script>
+
+
+
+<!-- Scroll Sidebar Script -->
+
+<script type="text/javascript">
+
+  $(document).ready(function (){
+    $('#sidebar-wrapper').animate({
+        scrollTop: $("#sd_classes").offset().top - 100
+    }, 100);
+  });
+
+</script>
+
+
+
+
+
+
+
+
+  </body>
+</html>

@@ -1,0 +1,857 @@
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="../static/libs/img/favicon.ico">
+
+	
+		<title>OntoSpy > http://www.w3.org/2002/12/cal/ical</title>
+	
+
+    <!-- Bootstrap core CSS -->
+    <!-- <link href="../static/libs/bootstrap-3.3.7-dist/css/bootstrap.min.css" rel="stylesheet">  -->
+    <!-- Bootswatch:  -->
+    <!-- cerulean  | cyborg |  flatly |  lumen |  sandstone |   spacelab  |  yeti | cosmo |  darkly |  paper | simplex | superhero |  journal | readable  |   slate |  united -->
+    <link href="../static/libs/bootswatch3.2/slate/bootstrap.min.css" rel="stylesheet">
+    <link href="../static/custom/css/simple-sidebar.css" rel="stylesheet">
+    <link href="../static/custom/css/familytree.css" rel="stylesheet">
+    <link href="../static/custom/css/tabletree.css" rel="stylesheet">
+
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <link href="../static/libs/bootstrap-3.3.7-dist/css/ie10-viewport-bug-workaround.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="../static/custom/css/sticky-footer-navbar.css" rel="stylesheet">
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+<style type="text/css">
+
+  .lead-plus {font-size: 26.5px;}
+  .label-xs {font-size: 10px;}
+  .label-dark {background: #2c3e50; color: white; padding: 1px;}
+  .margin50 {margin-top: 50px; margin-bottom: 50px;}
+
+  .namespaces {background: #ced2d6; width: 100%;}
+
+
+  /*so that the d3plus tooltip panel doesnt cover the top banner*/
+  .navbar {z-index: 3000;}
+
+
+  .panel-body dt {margin-top: 5px;}
+  .page-header  {margin-top: 30px;}
+  #wrapper {margin-top: 50px;}
+
+  .implementation-panel {
+    overflow: auto;
+    max-height: 500px;
+  }
+
+  tr.table-classproperties {
+      /*background: #f5f5f5;*/
+  }
+  tr.table-classproperties th {
+      font-size: 80%;
+      font-weight: normal;
+  }
+
+
+  tr.table-inheritanceinfo {
+      /*background: #f5f5f5;*/
+      text-align: left;
+  }
+
+  tr.table-inheritanceinfo th {
+      font-size: 90%;
+      font-weight: normal;
+  }
+
+
+  .breadcrumb {
+    margin-top: 20px;
+    margin-bottom: 40px;
+  }
+
+  .breadcrumb a {
+      text-transform: capitalize;
+  }
+  .breadcrumb li {
+      text-transform: none;
+      /*so to catch the uri @todo improve*/
+  }
+
+
+  .fromclass_link {
+    /*color: white;
+    text-decoration: underline;*/
+    /*background: #1c1e52;*/
+    color: inherit;
+    /*padding: 1px;*/
+  }
+
+		.mythumbnail {
+			display: block;
+			padding: 13px;
+			margin-bottom: 30px;
+			line-height: 13.428571;
+			background-color: #fff;
+			border: 1px solid #ddd;
+			border-radius: 30px;
+		}
+
+		.mythumbnail:hover {
+			background: lightyellow;
+			text-decoration: none;
+		}
+
+
+		.img-container{
+		    height:100%;
+			overflow: hidden;
+		    max-height:200px;
+			padding: 10px;
+/*			margin: 20px 0px 20px 0px;*/
+			border: 1em #EAE5E5 solid;
+		}
+
+		.img-container:hover {
+			border: 1px grey solid;
+		}
+
+		img{
+/*		    height:100% !important;*/
+		}
+
+
+		.icon-xxs {
+			font-size: 15px;
+		}
+
+
+    /* dropdown open on hover */
+
+    @media (min-width: 979px) {
+      ul.nav li.dropdown:hover > ul.dropdown-menu {
+        display: block;
+      }
+    }
+
+
+
+/*pygments css*/
+.highlight .hll { background-color: #ffffcc }
+.highlight  { background: #f8f8f8; }
+.highlight .c { color: #408080; font-style: italic } /* Comment */
+.highlight .err { border: 1px solid #FF0000 } /* Error */
+.highlight .k { color: #008000; font-weight: bold } /* Keyword */
+.highlight .o { color: #666666 } /* Operator */
+.highlight .ch { color: #408080; font-style: italic } /* Comment.Hashbang */
+.highlight .cm { color: #408080; font-style: italic } /* Comment.Multiline */
+.highlight .cp { color: #BC7A00 } /* Comment.Preproc */
+.highlight .cpf { color: #408080; font-style: italic } /* Comment.PreprocFile */
+.highlight .c1 { color: #408080; font-style: italic } /* Comment.Single */
+.highlight .cs { color: #408080; font-style: italic } /* Comment.Special */
+.highlight .gd { color: #A00000 } /* Generic.Deleted */
+.highlight .ge { font-style: italic } /* Generic.Emph */
+.highlight .gr { color: #FF0000 } /* Generic.Error */
+.highlight .gh { color: #000080; font-weight: bold } /* Generic.Heading */
+.highlight .gi { color: #00A000 } /* Generic.Inserted */
+.highlight .go { color: #888888 } /* Generic.Output */
+.highlight .gp { color: #000080; font-weight: bold } /* Generic.Prompt */
+.highlight .gs { font-weight: bold } /* Generic.Strong */
+.highlight .gu { color: #800080; font-weight: bold } /* Generic.Subheading */
+.highlight .gt { color: #0044DD } /* Generic.Traceback */
+.highlight .kc { color: #008000; font-weight: bold } /* Keyword.Constant */
+.highlight .kd { color: #008000; font-weight: bold } /* Keyword.Declaration */
+.highlight .kn { color: #008000; font-weight: bold } /* Keyword.Namespace */
+.highlight .kp { color: #008000 } /* Keyword.Pseudo */
+.highlight .kr { color: #008000; font-weight: bold } /* Keyword.Reserved */
+.highlight .kt { color: #B00040 } /* Keyword.Type */
+.highlight .m { color: #666666 } /* Literal.Number */
+.highlight .s { color: #BA2121 } /* Literal.String */
+.highlight .na { color: #7D9029 } /* Name.Attribute */
+.highlight .nb { color: #008000 } /* Name.Builtin */
+.highlight .nc { color: #0000FF; font-weight: bold } /* Name.Class */
+.highlight .no { color: #880000 } /* Name.Constant */
+.highlight .nd { color: #AA22FF } /* Name.Decorator */
+.highlight .ni { color: #999999; font-weight: bold } /* Name.Entity */
+.highlight .ne { color: #D2413A; font-weight: bold } /* Name.Exception */
+.highlight .nf { color: #0000FF } /* Name.Function */
+.highlight .nl { color: #A0A000 } /* Name.Label */
+.highlight .nn { color: #0000FF; font-weight: bold } /* Name.Namespace */
+.highlight .nt { color: #008000; font-weight: bold } /* Name.Tag */
+.highlight .nv { color: #19177C } /* Name.Variable */
+.highlight .ow { color: #AA22FF; font-weight: bold } /* Operator.Word */
+.highlight .w { color: #bbbbbb } /* Text.Whitespace */
+.highlight .mb { color: #666666 } /* Literal.Number.Bin */
+.highlight .mf { color: #666666 } /* Literal.Number.Float */
+.highlight .mh { color: #666666 } /* Literal.Number.Hex */
+.highlight .mi { color: #666666 } /* Literal.Number.Integer */
+.highlight .mo { color: #666666 } /* Literal.Number.Oct */
+.highlight .sa { color: #BA2121 } /* Literal.String.Affix */
+.highlight .sb { color: #BA2121 } /* Literal.String.Backtick */
+.highlight .sc { color: #BA2121 } /* Literal.String.Char */
+.highlight .dl { color: #BA2121 } /* Literal.String.Delimiter */
+.highlight .sd { color: #BA2121; font-style: italic } /* Literal.String.Doc */
+.highlight .s2 { color: #BA2121 } /* Literal.String.Double */
+.highlight .se { color: #BB6622; font-weight: bold } /* Literal.String.Escape */
+.highlight .sh { color: #BA2121 } /* Literal.String.Heredoc */
+.highlight .si { color: #BB6688; font-weight: bold } /* Literal.String.Interpol */
+.highlight .sx { color: #008000 } /* Literal.String.Other */
+.highlight .sr { color: #BB6688 } /* Literal.String.Regex */
+.highlight .s1 { color: #BA2121 } /* Literal.String.Single */
+.highlight .ss { color: #19177C } /* Literal.String.Symbol */
+.highlight .bp { color: #008000 } /* Name.Builtin.Pseudo */
+.highlight .fm { color: #0000FF } /* Name.Function.Magic */
+.highlight .vc { color: #19177C } /* Name.Variable.Class */
+.highlight .vg { color: #19177C } /* Name.Variable.Global */
+.highlight .vi { color: #19177C } /* Name.Variable.Instance */
+.highlight .vm { color: #19177C } /* Name.Variable.Magic */
+.highlight .il { color: #666666 } /* Literal.Number.Integer.Long */
+
+/*overloading this class from pygments*/
+.highlight {
+  overflow: auto;
+}
+
+
+
+
+/* override default footer background for dark themes only */
+.footer {
+  background-color: inherit;
+}
+
+
+
+
+
+</style>
+
+
+
+
+
+  </head>
+
+  <body>
+
+
+
+    
+<!-- Fixed navbar -->
+<nav class="navbar navbar-default navbar-fixed-top">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+
+      <a class="navbar-brand" id="menu-toggle" title="Toggle sidebar">
+        
+        <span class="glyphicon glyphicon-align-left" aria-hidden="true"></span>
+      </a>
+    </div>
+    <div id="navbar" class="collapse navbar-collapse">
+      <ul class="nav navbar-nav">
+        <li ><a href="index.html"><code style="font-size: 115%;">http://www.w3.org/2002/12/cal/ical</code></a></li>
+        
+
+       
+
+
+        <li  ><a href="dashboard.html">Dashboard</a></li>
+        <li  ><a href="entities-az.html">Entities A-Z</a></li>
+        <li class="dropdown  " >
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Entities Tree <span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            
+            <li><a href="entities-tree-classes.html">Classes</a>
+            </li>
+            
+            
+            <li><a  href="entities-tree-properties.html">Properties</a>
+            </li>
+            
+            
+          </ul>
+      </li>
+
+      </ul>
+      
+    </div><!--/.nav-collapse -->
+
+  </div>
+</nav>
+
+
+
+
+
+
+<div id="wrapper" class="toggled">
+
+
+    
+
+    
+        
+<!-- Sidebar -->
+<div id="sidebar-wrapper">
+    <ul class="sidebar-nav">
+
+
+        <li>
+          <input style="margin-top: 30px;  margin-bottom: 20px;" type="text" id="search-input-sidebar" name="" value="" placeholder="Type to search">
+        </li>
+
+        
+          <li class="-second-level" id="sd_classes"><a href="entities-tree-classes.html">Classes (13)</a>
+          </li>
+
+            
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_4134"><a  href="class-okaraction.html">okar:Action</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_4135"><a  href="class-okaragent.html">okar:Agent</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_4136"><a  href="class-okarartifact.html">okar:Artifact</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_4137"><a  href="class-okardocument.html">okar:Document</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_4138"><a  href="class-okarequipment.html">okar:Equipment</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_4139"><a  href="class-okarevent.html">okar:Event</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_4140"><a  href="class-okargroupevent.html">okar:GroupEvent</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_4141"><a  href="class-okarlocation.html">okar:Location</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_4142"><a  href="class-okarorganization.html">okar:Organization</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_4143"><a  href="class-okarperson.html">okar:Person</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_4144"><a  href="class-okarpersonname.html">okar:PersonName</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_4145"><a  href="class-okarrole.html">okar:Role</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_4146"><a  href="class-okarsoftware.html">okar:Software</a></li>
+          
+        
+
+        
+            <li class="-second-level" id="sd_properties"><a  href="entities-tree-properties.html">Properties (61)</a>
+            </li>
+
+            
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_4147"><a class="active"  href="prop-dccoverage.html">dc:coverage</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_4148"><a   href="prop-dcdate.html">dc:date</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_4149"><a   href="prop-dcdescription.html">dc:description</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_4150"><a   href="prop-dcformat.html">dc:format</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_4151"><a   href="prop-dcidentifier.html">dc:identifier</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_4152"><a   href="prop-dclanguage.html">dc:language</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_4153"><a   href="prop-dcrights.html">dc:rights</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_4154"><a   href="prop-dctitle.html">dc:title</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_4155"><a   href="prop-okardday.html">okar:DDAY</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_4156"><a   href="prop-okarpurpose.html">okar:purpose</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_4157"><a   href="prop-okarrolerank.html">okar:roleRank</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_4158"><a   href="prop-okarroleweight.html">okar:roleWeight</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_4159"><a   href="prop-vcardbday.html">vcard:BDAY</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_4160"><a   href="prop-vcardclass.html">vcard:CLASS</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_4161"><a   href="prop-vcardfn.html">vcard:FN</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_4162"><a   href="prop-vcardfamily.html">vcard:Family</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_4163"><a   href="prop-vcardgiven.html">vcard:Given</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_4164"><a   href="prop-vcardkey.html">vcard:KEY</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_4165"><a   href="prop-vcardnickname.html">vcard:NICKNAME</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_4166"><a   href="prop-vcardnote.html">vcard:NOTE</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_4167"><a   href="prop-vcardother.html">vcard:Other</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_4168"><a   href="prop-vcardprefix.html">vcard:Prefix</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_4169"><a   href="prop-vcardrole.html">vcard:ROLE</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_4170"><a   href="prop-vcardsuffix.html">vcard:Suffix</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_4171"><a   href="prop-vcardtitle.html">vcard:TITLE</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_4172"><a   href="prop-vcardorg.html">vcard:ORG</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_4173"><a   href="prop-dccontributor.html">dc:contributor</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_4174"><a   href="prop-dccreator.html">dc:creator</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_4175"><a   href="prop-dcpublisher.html">dc:publisher</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_4176"><a   href="prop-dcrelation.html">dc:relation</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_4177"><a   href="prop-dcsource.html">dc:source</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_4178"><a   href="prop-dcsubject.html">dc:subject</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_4179"><a   href="prop-dctype.html">dc:type</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_4180"><a   href="prop-dctermsaudience.html">dcterms:audience</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_4181"><a   href="prop-okaractor.html">okar:actor</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_4182"><a   href="prop-okargroupmember.html">okar:groupMember</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_4183"><a   href="prop-okarhaslocation.html">okar:hasLocation</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_4184"><a   href="prop-okarhasrole.html">okar:hasRole</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_4185"><a   href="prop-okarknows.html">okar:knows</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_4186"><a   href="prop-okarleader.html">okar:leader</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_4187"><a   href="prop-okarmate.html">okar:mate</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_4188"><a   href="prop-okarmember.html">okar:member</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_4189"><a   href="prop-okarowner.html">okar:owner</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_4190"><a   href="prop-okarregulergroupmember.html">okar:regulerGroupMember</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_4191"><a   href="prop-okarregulermember.html">okar:regulerMember</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_4192"><a   href="prop-okarrelatedevent.html">okar:relatedEvent</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_4193"><a   href="prop-okarrelatedrole.html">okar:relatedRole</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_4194"><a   href="prop-okarsubleader.html">okar:subLeader</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_4195"><a   href="prop-okartarget.html">okar:target</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_4196"><a   href="prop-okartemporarygroupmember.html">okar:temporaryGroupMember</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_4197"><a   href="prop-okartemporarymember.html">okar:temporaryMember</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_4198"><a   href="prop-okaruser.html">okar:user</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_4199"><a   href="prop-vcardadr.html">vcard:ADR</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_4200"><a   href="prop-vcardemail.html">vcard:EMAIL</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_4201"><a   href="prop-vcardlogo.html">vcard:LOGO</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_4202"><a   href="prop-vcardn.html">vcard:N</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_4203"><a   href="prop-vcardphoto.html">vcard:PHOTO</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_4204"><a   href="prop-vcardtel.html">vcard:TEL</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_4205"><a   href="prop-icalattach.html">ical:attach</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_4206"><a   href="prop-icalattendee.html">ical:attendee</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_4207"><a   href="prop-icalorganizer.html">ical:organizer</a></li>
+          
+
+        
+
+        
+
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+
+    </ul>
+
+</div>
+
+
+<!-- /#sidebar-wrapper -->
+
+    
+
+
+
+
+    <!-- Begin page content -->
+    <div class="container" id="page-content-wrapper">
+
+      
+
+	
+
+
+
+
+        
+
+
+        
+            
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <ol class="breadcrumb">
+    <li>
+      <a href="index.html">Home</a>
+    </li>
+    <li>
+          <a href="entities-az.html">Entities</a>
+    </li>
+    <li>
+          <a href="entities-tree-properties.html">Properties</a>
+    </li>
+      <li class="active">
+            http://purl.org/dc/elements/1.1/coverage
+        </li>
+  </ol>
+
+
+
+
+
+
+
+
+        
+
+
+
+            <h1>
+
+                dc:coverage
+                
+                    <small class="label label-info label-xs ">leaf node</small>
+                  
+
+            </h1>
+
+            <hr>
+
+
+
+            <div class="tree-container">
+            <div class="tree">
+                <ul>
+                    
+
+                        <li><a href="entities-tree-properties.html">rdf:Property</a>
+
+                          <ul>
+                            <li><a style="font-weight: bold;" title="'coverage'">dc:coverage</a>
+
+                            
+                              </li>
+
+                          </ul>
+
+                        </li>
+                    
+
+                </ul>
+            </div>
+            </div>
+
+
+
+
+            <div class="row"><div class="col-md-12">
+               <div class="panel panel-default">
+             <div class="panel-heading">
+               <h3 class="panel-title">URI</h3>
+             </div>
+             <div class="panel-body">
+
+                 <code>http://purl.org/dc/elements/1.1/coverage</code>
+             </div>
+           </div>
+            </div></div>
+
+
+
+            
+             <div class="row"><div class="col-md-12">
+               <div class="panel panel-default">
+             <div class="panel-heading">
+               <h3 class="panel-title">Label</h3>
+             </div>
+             <div class="panel-body">
+
+                 coverage
+             </div>
+           </div>
+            </div></div>
+            
+
+
+            
+
+
+
+            
+
+
+
+            
+
+
+            <div class="row"><div class="col-md-12">
+              <div class="panel panel-default">
+            <div class="panel-heading">
+              <h3 class="panel-title">Usage</h3>
+            </div>
+
+            <table class="table table-bordered" style="overflow: auto;">
+
+               <tr class="table-classproperties">
+                   <th>DOMAIN</th><th>PROPERTY</th><th>RANGE</th>
+               </tr>
+               <tr>
+                   <td>
+                     
+                         
+                           <a href="class-okarartifact.html">okar:Artifact</a>
+                           
+                         
+                     
+                   </td>
+
+                    <td>
+                      dc:coverage
+                    </td>
+
+                    <td>
+                      
+                          
+                            <a href=".html">http://www.w3.org/2001/XMLSchema#string</a>
+                            
+                          
+                      
+                    </td>
+            </table>
+
+          </div>
+           </div></div>
+
+
+
+           <div class="row"><div class="col-md-12">
+              <div class="panel panel-default">
+            <div class="panel-heading">
+              <h3 class="panel-title">Implementation</h3>
+            </div>
+            <div class="panel-body implementation-panel">
+
+                
+
+                    <div class="highlight"><pre><span></span><span class="k">@prefix</span><span class="w"> </span><span class="nn">dc:</span><span class="w"> </span><span class="nv">&lt;http://purl.org/dc/elements/1.1/&gt;</span><span class="w"> </span><span class="p">.</span><span class="w"></span>
+<span class="k">@prefix</span><span class="w"> </span><span class="nn">dcterms:</span><span class="w"> </span><span class="nv">&lt;http://purl.org/dc/terms/&gt;</span><span class="w"> </span><span class="p">.</span><span class="w"></span>
+<span class="k">@prefix</span><span class="w"> </span><span class="nn">ical:</span><span class="w"> </span><span class="nv">&lt;http://www.w3.org/2002/12/cal/ical#&gt;</span><span class="w"> </span><span class="p">.</span><span class="w"></span>
+<span class="k">@prefix</span><span class="w"> </span><span class="nn">okar:</span><span class="w"> </span><span class="nv">&lt;http://www.labs.fujitsu.com/jp/techinfo/okar/0.92#&gt;</span><span class="w"> </span><span class="p">.</span><span class="w"></span>
+<span class="k">@prefix</span><span class="w"> </span><span class="nn">owl:</span><span class="w"> </span><span class="nv">&lt;http://www.w3.org/2002/07/owl#&gt;</span><span class="w"> </span><span class="p">.</span><span class="w"></span>
+<span class="k">@prefix</span><span class="w"> </span><span class="nn">rdf:</span><span class="w"> </span><span class="nv">&lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#&gt;</span><span class="w"> </span><span class="p">.</span><span class="w"></span>
+<span class="k">@prefix</span><span class="w"> </span><span class="nn">rdfs:</span><span class="w"> </span><span class="nv">&lt;http://www.w3.org/2000/01/rdf-schema#&gt;</span><span class="w"> </span><span class="p">.</span><span class="w"></span>
+<span class="k">@prefix</span><span class="w"> </span><span class="nn">skos:</span><span class="w"> </span><span class="nv">&lt;http://www.w3.org/2004/02/skos/core#&gt;</span><span class="w"> </span><span class="p">.</span><span class="w"></span>
+<span class="k">@prefix</span><span class="w"> </span><span class="nn">vcard:</span><span class="w"> </span><span class="nv">&lt;http://www.w3.org/2001/vcard-rdf/3.0#&gt;</span><span class="w"> </span><span class="p">.</span><span class="w"></span>
+<span class="k">@prefix</span><span class="w"> </span><span class="nn">xml:</span><span class="w"> </span><span class="nv">&lt;http://www.w3.org/XML/1998/namespace&gt;</span><span class="w"> </span><span class="p">.</span><span class="w"></span>
+<span class="k">@prefix</span><span class="w"> </span><span class="nn">xsd:</span><span class="w"> </span><span class="nv">&lt;http://www.w3.org/2001/XMLSchema#&gt;</span><span class="w"> </span><span class="p">.</span><span class="w"></span>
+
+<span class="nn">dc:</span><span class="nt">coverage</span><span class="w"> </span><span class="kt">a</span><span class="w"> </span><span class="nn">owl:</span><span class="nt">DatatypeProperty</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="nn">rdfs:</span><span class="nt">domain</span><span class="w"> </span><span class="nn">okar:</span><span class="nt">Artifact</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="nn">rdfs:</span><span class="nt">isDefinedBy</span><span class="w"> </span><span class="err">dc</span><span class="p">:</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="nn">rdfs:</span><span class="nt">range</span><span class="w"> </span><span class="nn">xsd:</span><span class="nt">string</span><span class="w"> </span><span class="p">.</span><span class="w"></span>
+</pre></div>
+
+
+                
+            </div>
+          </div>
+           </div></div>
+
+
+
+
+        
+
+
+
+
+
+
+
+
+
+
+
+	</div><!-- /#page-content-wrapper -->
+
+
+  
+
+
+
+  
+
+
+
+
+  <footer class="footer">
+    <div class="container">
+    
+      <p class="text-muted">Documentation automatically generated on 26th February 2017 with <a href="https://github.com/lambdamusic/OntoSpy">OntoSpy</a> (v1.7.4)</p>
+
+    
+    </div>
+  </footer>
+
+
+</div><!-- /#wrapper -->
+
+
+<!-- Bootstrap core JavaScript
+================================================== -->
+<!-- Placed at the end of the document so the pages load faster -->
+<script src="../static/libs/jquery/1.12.4/jquery.min.js"></script>
+<script src="../static/libs/bootstrap-3.3.7-dist/js/bootstrap.min.js"></script>
+
+<!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+<script src="../static/libs/bootstrap-3.3.7-dist/js/ie10-viewport-bug-workaround.js"></script>
+
+<script src="../static/libs/Chart.js-2.4.0/Chart.bundle.js"></script>
+
+
+<!-- Menu Toggle Script -->
+<script>
+$("#menu-toggle").click(function(e) {
+    e.preventDefault();
+    $("#wrapper").toggleClass("toggled");
+});
+</script>
+
+
+
+
+<script type="text/javascript">
+
+$('#search-input-sidebar').keyup(function() {
+
+  var val = $.trim($(this).val()).replace(/ +/g, ' ').toLowerCase();
+  // var $rows = $(this).next(".entities-list").find("div");
+  var $rows = $(this).parent().parent().find("li.second-level");
+
+  $rows.show().filter(function() {
+      var text = $(this).text().replace(/\s+/g, ' ').toLowerCase();
+      return !~text.indexOf(val);
+  }).hide();
+});
+
+</script>
+
+
+
+
+  <!-- Scroll Sidebar Script -->
+  
+  
+  <script type="text/javascript">
+
+    $(document).ready(function (){
+      $('#sidebar-wrapper').animate({
+          scrollTop: $("#sd_4147").offset().top - 100
+      }, 100);
+    });
+
+  </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  </body>
+</html>

@@ -1,0 +1,888 @@
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="../static/libs/img/favicon.ico">
+
+	
+		<title>OntoSpy > /Users/michele.pasin/DEsktop/mylist/dcterms.rdf</title>
+	
+
+    <!-- Bootstrap core CSS -->
+    <!-- <link href="../static/libs/bootstrap-3.3.7-dist/css/bootstrap.min.css" rel="stylesheet">  -->
+    <!-- Bootswatch:  -->
+    <!-- cerulean  | cyborg |  flatly |  lumen |  sandstone |   spacelab  |  yeti | cosmo |  darkly |  paper | simplex | superhero |  journal | readable  |   slate |  united -->
+    <link href="../static/libs/bootswatch3.2/flatly/bootstrap.min.css" rel="stylesheet">
+    <link href="../static/custom/css/simple-sidebar.css" rel="stylesheet">
+    <link href="../static/custom/css/familytree.css" rel="stylesheet">
+    <link href="../static/custom/css/tabletree.css" rel="stylesheet">
+
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <link href="../static/libs/bootstrap-3.3.7-dist/css/ie10-viewport-bug-workaround.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="../static/custom/css/sticky-footer-navbar.css" rel="stylesheet">
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+<style type="text/css">
+
+  .lead-plus {font-size: 26.5px;}
+  .label-xs {font-size: 10px;}
+  .label-dark {background: #2c3e50; color: white; padding: 1px;}
+  .margin50 {margin-top: 50px; margin-bottom: 50px;}
+
+  .namespaces {background: #ced2d6; width: 100%;}
+
+
+  /*so that the d3plus tooltip panel doesnt cover the top banner*/
+  .navbar {z-index: 3000;}
+
+
+  .panel-body dt {margin-top: 5px;}
+  .page-header  {margin-top: 30px;}
+  #wrapper {margin-top: 50px;}
+
+  .implementation-panel {
+    overflow: auto;
+    max-height: 500px;
+  }
+
+  tr.table-classproperties {
+      /*background: #f5f5f5;*/
+  }
+  tr.table-classproperties th {
+      font-size: 80%;
+      font-weight: normal;
+  }
+
+
+  tr.table-inheritanceinfo {
+      /*background: #f5f5f5;*/
+      text-align: left;
+  }
+
+  tr.table-inheritanceinfo th {
+      font-size: 90%;
+      font-weight: normal;
+  }
+
+
+  .breadcrumb {
+    margin-top: 20px;
+    margin-bottom: 40px;
+  }
+
+  .breadcrumb a {
+      text-transform: capitalize;
+  }
+  .breadcrumb li {
+      text-transform: none;
+      /*so to catch the uri @todo improve*/
+  }
+
+
+  .fromclass_link {
+    /*color: white;
+    text-decoration: underline;*/
+    /*background: #1c1e52;*/
+    color: inherit;
+    /*padding: 1px;*/
+  }
+
+		.mythumbnail {
+			display: block;
+			padding: 13px;
+			margin-bottom: 30px;
+			line-height: 13.428571;
+			background-color: #fff;
+			border: 1px solid #ddd;
+			border-radius: 30px;
+		}
+
+		.mythumbnail:hover {
+			background: lightyellow;
+			text-decoration: none;
+		}
+
+
+		.img-container{
+		    height:100%;
+			overflow: hidden;
+		    max-height:200px;
+			padding: 10px;
+/*			margin: 20px 0px 20px 0px;*/
+			border: 1em #EAE5E5 solid;
+		}
+
+		.img-container:hover {
+			border: 1px grey solid;
+		}
+
+		img{
+/*		    height:100% !important;*/
+		}
+
+
+		.icon-xxs {
+			font-size: 15px;
+		}
+
+
+    /* dropdown open on hover */
+
+    @media (min-width: 979px) {
+      ul.nav li.dropdown:hover > ul.dropdown-menu {
+        display: block;
+      }
+    }
+
+
+
+/*pygments css*/
+.highlight .hll { background-color: #ffffcc }
+.highlight  { background: #f8f8f8; }
+.highlight .c { color: #408080; font-style: italic } /* Comment */
+.highlight .err { border: 1px solid #FF0000 } /* Error */
+.highlight .k { color: #008000; font-weight: bold } /* Keyword */
+.highlight .o { color: #666666 } /* Operator */
+.highlight .ch { color: #408080; font-style: italic } /* Comment.Hashbang */
+.highlight .cm { color: #408080; font-style: italic } /* Comment.Multiline */
+.highlight .cp { color: #BC7A00 } /* Comment.Preproc */
+.highlight .cpf { color: #408080; font-style: italic } /* Comment.PreprocFile */
+.highlight .c1 { color: #408080; font-style: italic } /* Comment.Single */
+.highlight .cs { color: #408080; font-style: italic } /* Comment.Special */
+.highlight .gd { color: #A00000 } /* Generic.Deleted */
+.highlight .ge { font-style: italic } /* Generic.Emph */
+.highlight .gr { color: #FF0000 } /* Generic.Error */
+.highlight .gh { color: #000080; font-weight: bold } /* Generic.Heading */
+.highlight .gi { color: #00A000 } /* Generic.Inserted */
+.highlight .go { color: #888888 } /* Generic.Output */
+.highlight .gp { color: #000080; font-weight: bold } /* Generic.Prompt */
+.highlight .gs { font-weight: bold } /* Generic.Strong */
+.highlight .gu { color: #800080; font-weight: bold } /* Generic.Subheading */
+.highlight .gt { color: #0044DD } /* Generic.Traceback */
+.highlight .kc { color: #008000; font-weight: bold } /* Keyword.Constant */
+.highlight .kd { color: #008000; font-weight: bold } /* Keyword.Declaration */
+.highlight .kn { color: #008000; font-weight: bold } /* Keyword.Namespace */
+.highlight .kp { color: #008000 } /* Keyword.Pseudo */
+.highlight .kr { color: #008000; font-weight: bold } /* Keyword.Reserved */
+.highlight .kt { color: #B00040 } /* Keyword.Type */
+.highlight .m { color: #666666 } /* Literal.Number */
+.highlight .s { color: #BA2121 } /* Literal.String */
+.highlight .na { color: #7D9029 } /* Name.Attribute */
+.highlight .nb { color: #008000 } /* Name.Builtin */
+.highlight .nc { color: #0000FF; font-weight: bold } /* Name.Class */
+.highlight .no { color: #880000 } /* Name.Constant */
+.highlight .nd { color: #AA22FF } /* Name.Decorator */
+.highlight .ni { color: #999999; font-weight: bold } /* Name.Entity */
+.highlight .ne { color: #D2413A; font-weight: bold } /* Name.Exception */
+.highlight .nf { color: #0000FF } /* Name.Function */
+.highlight .nl { color: #A0A000 } /* Name.Label */
+.highlight .nn { color: #0000FF; font-weight: bold } /* Name.Namespace */
+.highlight .nt { color: #008000; font-weight: bold } /* Name.Tag */
+.highlight .nv { color: #19177C } /* Name.Variable */
+.highlight .ow { color: #AA22FF; font-weight: bold } /* Operator.Word */
+.highlight .w { color: #bbbbbb } /* Text.Whitespace */
+.highlight .mb { color: #666666 } /* Literal.Number.Bin */
+.highlight .mf { color: #666666 } /* Literal.Number.Float */
+.highlight .mh { color: #666666 } /* Literal.Number.Hex */
+.highlight .mi { color: #666666 } /* Literal.Number.Integer */
+.highlight .mo { color: #666666 } /* Literal.Number.Oct */
+.highlight .sa { color: #BA2121 } /* Literal.String.Affix */
+.highlight .sb { color: #BA2121 } /* Literal.String.Backtick */
+.highlight .sc { color: #BA2121 } /* Literal.String.Char */
+.highlight .dl { color: #BA2121 } /* Literal.String.Delimiter */
+.highlight .sd { color: #BA2121; font-style: italic } /* Literal.String.Doc */
+.highlight .s2 { color: #BA2121 } /* Literal.String.Double */
+.highlight .se { color: #BB6622; font-weight: bold } /* Literal.String.Escape */
+.highlight .sh { color: #BA2121 } /* Literal.String.Heredoc */
+.highlight .si { color: #BB6688; font-weight: bold } /* Literal.String.Interpol */
+.highlight .sx { color: #008000 } /* Literal.String.Other */
+.highlight .sr { color: #BB6688 } /* Literal.String.Regex */
+.highlight .s1 { color: #BA2121 } /* Literal.String.Single */
+.highlight .ss { color: #19177C } /* Literal.String.Symbol */
+.highlight .bp { color: #008000 } /* Name.Builtin.Pseudo */
+.highlight .fm { color: #0000FF } /* Name.Function.Magic */
+.highlight .vc { color: #19177C } /* Name.Variable.Class */
+.highlight .vg { color: #19177C } /* Name.Variable.Global */
+.highlight .vi { color: #19177C } /* Name.Variable.Instance */
+.highlight .vm { color: #19177C } /* Name.Variable.Magic */
+.highlight .il { color: #666666 } /* Literal.Number.Integer.Long */
+
+/*overloading this class from pygments*/
+.highlight {
+  overflow: auto;
+}
+
+
+
+
+
+
+
+
+</style>
+
+
+
+
+
+  </head>
+
+  <body>
+
+
+
+    
+<!-- Fixed navbar -->
+<nav class="navbar navbar-default navbar-fixed-top">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+
+      <a class="navbar-brand" id="menu-toggle" title="Toggle sidebar">
+        
+        <span class="glyphicon glyphicon-align-left" aria-hidden="true"></span>
+      </a>
+    </div>
+    <div id="navbar" class="collapse navbar-collapse">
+      <ul class="nav navbar-nav">
+        <li ><a href="index.html"><code style="font-size: 115%;">/Users/michele.pasin/DEsktop/mylist/dcterms.rdf</code></a></li>
+        
+
+       
+
+
+        <li  ><a href="dashboard.html">Dashboard</a></li>
+        <li  ><a href="entities-az.html">Entities A-Z</a></li>
+        <li class="dropdown  " >
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Entities Tree <span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            
+            <li><a href="entities-tree-classes.html">Classes</a>
+            </li>
+            
+            
+            <li><a  href="entities-tree-properties.html">Properties</a>
+            </li>
+            
+            
+          </ul>
+      </li>
+
+      </ul>
+      
+    </div><!--/.nav-collapse -->
+
+  </div>
+</nav>
+
+
+
+
+
+
+<div id="wrapper" class="toggled">
+
+
+    
+
+    
+        
+<!-- Sidebar -->
+<div id="sidebar-wrapper">
+    <ul class="sidebar-nav">
+
+
+        <li>
+          <input style="margin-top: 30px;  margin-bottom: 20px;" type="text" id="search-input-sidebar" name="" value="" placeholder="Type to search">
+        </li>
+
+        
+          <li class="-second-level" id="sd_classes"><a href="entities-tree-classes.html">Classes (22)</a>
+          </li>
+
+            
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_783"><a  href="class-dctermsagent.html">dcterms:Agent</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_784"><a  href="class-dctermsagentclass.html">dcterms:AgentClass</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_785"><a  href="class-dctermsbibliographicresource.html">dcterms:BibliographicResource</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_786"><a  href="class-dctermsfileformat.html">dcterms:FileFormat</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_787"><a  href="class-dctermsfrequency.html">dcterms:Frequency</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_788"><a  href="class-dctermsjurisdiction.html">dcterms:Jurisdiction</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_789"><a  href="class-dctermslicensedocument.html">dcterms:LicenseDocument</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_790"><a  href="class-dctermslinguisticsystem.html">dcterms:LinguisticSystem</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_791"><a  href="class-dctermslocation.html">dcterms:Location</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_792"><a  href="class-dctermslocationperiodorjurisdiction.html">dcterms:LocationPeriodOrJurisdiction</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_793"><a  href="class-dctermsmediatype.html">dcterms:MediaType</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_794"><a  href="class-dctermsmediatypeorextent.html">dcterms:MediaTypeOrExtent</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_795"><a  href="class-dctermsmethodofaccrual.html">dcterms:MethodOfAccrual</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_796"><a  href="class-dctermsmethodofinstruction.html">dcterms:MethodOfInstruction</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_797"><a  href="class-dctermsperiodoftime.html">dcterms:PeriodOfTime</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_798"><a  href="class-dctermsphysicalmedium.html">dcterms:PhysicalMedium</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_799"><a  href="class-dctermsphysicalresource.html">dcterms:PhysicalResource</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_800"><a  href="class-dctermspolicy.html">dcterms:Policy</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_801"><a  href="class-dctermsprovenancestatement.html">dcterms:ProvenanceStatement</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_802"><a  href="class-dctermsrightsstatement.html">dcterms:RightsStatement</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_803"><a  href="class-dctermssizeorduration.html">dcterms:SizeOrDuration</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_804"><a  href="class-dctermsstandard.html">dcterms:Standard</a></li>
+          
+        
+
+        
+            <li class="-second-level" id="sd_properties"><a  href="entities-tree-properties.html">Properties (55)</a>
+            </li>
+
+            
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_805"><a   href="prop-dctermsabstract.html">dcterms:abstract</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_806"><a   href="prop-dctermsaccessrights.html">dcterms:accessRights</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_807"><a   href="prop-dctermsaccrualmethod.html">dcterms:accrualMethod</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_808"><a   href="prop-dctermsaccrualperiodicity.html">dcterms:accrualPeriodicity</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_809"><a   href="prop-dctermsaccrualpolicy.html">dcterms:accrualPolicy</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_810"><a   href="prop-dctermsalternative.html">dcterms:alternative</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_811"><a   href="prop-dctermsaudience.html">dcterms:audience</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_812"><a   href="prop-dctermsavailable.html">dcterms:available</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_813"><a   href="prop-dctermsbibliographiccitation.html">dcterms:bibliographicCitation</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_814"><a   href="prop-dctermsconformsto.html">dcterms:conformsTo</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_815"><a   href="prop-dctermscontributor.html">dcterms:contributor</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_816"><a   href="prop-dctermscoverage.html">dcterms:coverage</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_817"><a   href="prop-dctermscreated.html">dcterms:created</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_818"><a   href="prop-dctermscreator.html">dcterms:creator</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_819"><a class="active"  href="prop-dctermsdate.html">dcterms:date</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_820"><a   href="prop-dctermsdateaccepted.html">dcterms:dateAccepted</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_821"><a   href="prop-dctermsdatecopyrighted.html">dcterms:dateCopyrighted</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_822"><a   href="prop-dctermsdatesubmitted.html">dcterms:dateSubmitted</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_823"><a   href="prop-dctermsdescription.html">dcterms:description</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_824"><a   href="prop-dctermseducationlevel.html">dcterms:educationLevel</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_825"><a   href="prop-dctermsextent.html">dcterms:extent</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_826"><a   href="prop-dctermsformat.html">dcterms:format</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_827"><a   href="prop-dctermshasformat.html">dcterms:hasFormat</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_828"><a   href="prop-dctermshaspart.html">dcterms:hasPart</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_829"><a   href="prop-dctermshasversion.html">dcterms:hasVersion</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_830"><a   href="prop-dctermsidentifier.html">dcterms:identifier</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_831"><a   href="prop-dctermsinstructionalmethod.html">dcterms:instructionalMethod</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_832"><a   href="prop-dctermsisformatof.html">dcterms:isFormatOf</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_833"><a   href="prop-dctermsispartof.html">dcterms:isPartOf</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_834"><a   href="prop-dctermsisreferencedby.html">dcterms:isReferencedBy</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_835"><a   href="prop-dctermsisreplacedby.html">dcterms:isReplacedBy</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_836"><a   href="prop-dctermsisrequiredby.html">dcterms:isRequiredBy</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_837"><a   href="prop-dctermsisversionof.html">dcterms:isVersionOf</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_838"><a   href="prop-dctermsissued.html">dcterms:issued</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_839"><a   href="prop-dctermslanguage.html">dcterms:language</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_840"><a   href="prop-dctermslicense.html">dcterms:license</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_841"><a   href="prop-dctermsmediator.html">dcterms:mediator</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_842"><a   href="prop-dctermsmedium.html">dcterms:medium</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_843"><a   href="prop-dctermsmodified.html">dcterms:modified</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_844"><a   href="prop-dctermsprovenance.html">dcterms:provenance</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_845"><a   href="prop-dctermspublisher.html">dcterms:publisher</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_846"><a   href="prop-dctermsreferences.html">dcterms:references</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_847"><a   href="prop-dctermsrelation.html">dcterms:relation</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_848"><a   href="prop-dctermsreplaces.html">dcterms:replaces</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_849"><a   href="prop-dctermsrequires.html">dcterms:requires</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_850"><a   href="prop-dctermsrights.html">dcterms:rights</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_851"><a   href="prop-dctermsrightsholder.html">dcterms:rightsHolder</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_852"><a   href="prop-dctermssource.html">dcterms:source</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_853"><a   href="prop-dctermsspatial.html">dcterms:spatial</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_854"><a   href="prop-dctermssubject.html">dcterms:subject</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_855"><a   href="prop-dctermstableofcontents.html">dcterms:tableOfContents</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_856"><a   href="prop-dctermstemporal.html">dcterms:temporal</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_857"><a   href="prop-dctermstitle.html">dcterms:title</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_858"><a   href="prop-dctermstype.html">dcterms:type</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_859"><a   href="prop-dctermsvalid.html">dcterms:valid</a></li>
+          
+
+        
+
+        
+
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+
+    </ul>
+
+</div>
+
+
+<!-- /#sidebar-wrapper -->
+
+    
+
+
+
+
+    <!-- Begin page content -->
+    <div class="container" id="page-content-wrapper">
+
+      
+
+	
+
+
+
+
+        
+
+
+        
+            
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <ol class="breadcrumb">
+    <li>
+      <a href="index.html">Home</a>
+    </li>
+    <li>
+          <a href="entities-az.html">Entities</a>
+    </li>
+    <li>
+          <a href="entities-tree-properties.html">Properties</a>
+    </li>
+      <li class="active">
+            http://purl.org/dc/terms/date
+        </li>
+  </ol>
+
+
+
+
+
+
+
+
+        
+
+
+
+            <h1>
+
+                dcterms:date
+                
+
+            </h1>
+
+            <hr>
+
+
+
+            <div class="tree-container">
+            <div class="tree">
+                <ul>
+                    
+
+                        <li><a href="entities-tree-properties.html">rdf:Property</a>
+
+                          <ul>
+                            <li><a style="font-weight: bold;" title="'Date' - A point or period of time associated with an event in the lifecycle of the resource.">dcterms:date</a>
+
+                            
+                                <ul>
+                                  <li><a href="prop-dctermsavailable.html" title="'Date Available' - Date (often a range) that the resource became or will become available.">dcterms:available</a></li><li><a href="prop-dctermscreated.html" title="'Date Created' - Date of creation of the resource.">dcterms:created</a></li><li><a href="prop-dctermsdateaccepted.html" title="'Date Accepted' - Date of acceptance of the resource.">dcterms:dateAccepted</a></li><li><a href="prop-dctermsdatecopyrighted.html" title="'Date Copyrighted' - Date of copyright.">dcterms:dateCopyrighted</a></li><li><a href="prop-dctermsdatesubmitted.html" title="'Date Submitted' - Date of submission of the resource.">dcterms:dateSubmitted</a></li><li><a href="prop-dctermsissued.html" title="'Date Issued' - Date of formal issuance (e.g., publication) of the resource.">dcterms:issued</a></li><li><a href="prop-dctermsmodified.html" title="'Date Modified' - Date on which the resource was changed.">dcterms:modified</a></li><li><a href="prop-dctermsvalid.html" title="'Date Valid' - Date (often a range) of validity of a resource.">dcterms:valid</a></li>
+                                </ul>
+                            
+                              </li>
+
+                          </ul>
+
+                        </li>
+                    
+
+                </ul>
+            </div>
+            </div>
+
+
+
+
+            <div class="row"><div class="col-md-12">
+               <div class="panel panel-default">
+             <div class="panel-heading">
+               <h3 class="panel-title">URI</h3>
+             </div>
+             <div class="panel-body">
+
+                 <code>http://purl.org/dc/terms/date</code>
+             </div>
+           </div>
+            </div></div>
+
+
+
+            
+             <div class="row"><div class="col-md-12">
+               <div class="panel panel-default">
+             <div class="panel-heading">
+               <h3 class="panel-title">Label</h3>
+             </div>
+             <div class="panel-body">
+
+                 Date
+             </div>
+           </div>
+            </div></div>
+            
+
+
+            
+            <div class="row"><div class="col-md-12">
+              <div class="panel panel-default">
+            <div class="panel-heading">
+              <h3 class="panel-title">Description</h3>
+            </div>
+            <div class="panel-body">
+
+                A point or period of time associated with an event in the lifecycle of the resource.
+            </div>
+          </div>
+           </div></div>
+           
+
+
+
+            
+
+
+
+            
+
+                  <div class="row"><div class="col-md-12">
+                    <div class="panel panel-default">
+                  <div class="panel-heading">
+                    <h3 class="panel-title">Sub Property</h3>
+                  </div>
+                  <div class="panel-body">
+
+                      <li><a href="prop-dctermsavailable.html">dcterms:available</a></li><li><a href="prop-dctermscreated.html">dcterms:created</a></li><li><a href="prop-dctermsdateaccepted.html">dcterms:dateAccepted</a></li><li><a href="prop-dctermsdatecopyrighted.html">dcterms:dateCopyrighted</a></li><li><a href="prop-dctermsdatesubmitted.html">dcterms:dateSubmitted</a></li><li><a href="prop-dctermsissued.html">dcterms:issued</a></li><li><a href="prop-dctermsmodified.html">dcterms:modified</a></li><li><a href="prop-dctermsvalid.html">dcterms:valid</a></li>
+
+
+                  </div>
+                </div>
+                 </div></div>
+
+            
+
+
+            <div class="row"><div class="col-md-12">
+              <div class="panel panel-default">
+            <div class="panel-heading">
+              <h3 class="panel-title">Usage</h3>
+            </div>
+
+            <table class="table table-bordered" style="overflow: auto;">
+
+               <tr class="table-classproperties">
+                   <th>DOMAIN</th><th>PROPERTY</th><th>RANGE</th>
+               </tr>
+               <tr>
+                   <td>
+                     
+                         <a>owl:Thing</a> (inferred)
+                     
+                   </td>
+
+                    <td>
+                      dcterms:date
+                    </td>
+
+                    <td>
+                      
+                          
+                            <a href=".html">http://www.w3.org/2000/01/rdf-schema#Literal</a>
+                            
+                          
+                      
+                    </td>
+            </table>
+
+          </div>
+           </div></div>
+
+
+
+           <div class="row"><div class="col-md-12">
+              <div class="panel panel-default">
+            <div class="panel-heading">
+              <h3 class="panel-title">Implementation</h3>
+            </div>
+            <div class="panel-body implementation-panel">
+
+                
+
+                    <div class="highlight"><pre><span></span><span class="k">@prefix</span><span class="w"> </span><span class="nn">dcam:</span><span class="w"> </span><span class="nv">&lt;http://purl.org/dc/dcam/&gt;</span><span class="w"> </span><span class="p">.</span><span class="w"></span>
+<span class="k">@prefix</span><span class="w"> </span><span class="nn">dcterms:</span><span class="w"> </span><span class="nv">&lt;http://purl.org/dc/terms/&gt;</span><span class="w"> </span><span class="p">.</span><span class="w"></span>
+<span class="k">@prefix</span><span class="w"> </span><span class="nn">owl:</span><span class="w"> </span><span class="nv">&lt;http://www.w3.org/2002/07/owl#&gt;</span><span class="w"> </span><span class="p">.</span><span class="w"></span>
+<span class="k">@prefix</span><span class="w"> </span><span class="nn">rdf:</span><span class="w"> </span><span class="nv">&lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#&gt;</span><span class="w"> </span><span class="p">.</span><span class="w"></span>
+<span class="k">@prefix</span><span class="w"> </span><span class="nn">rdfs:</span><span class="w"> </span><span class="nv">&lt;http://www.w3.org/2000/01/rdf-schema#&gt;</span><span class="w"> </span><span class="p">.</span><span class="w"></span>
+<span class="k">@prefix</span><span class="w"> </span><span class="nn">skos:</span><span class="w"> </span><span class="nv">&lt;http://www.w3.org/2004/02/skos/core#&gt;</span><span class="w"> </span><span class="p">.</span><span class="w"></span>
+<span class="k">@prefix</span><span class="w"> </span><span class="nn">xml:</span><span class="w"> </span><span class="nv">&lt;http://www.w3.org/XML/1998/namespace&gt;</span><span class="w"> </span><span class="p">.</span><span class="w"></span>
+<span class="k">@prefix</span><span class="w"> </span><span class="nn">xsd:</span><span class="w"> </span><span class="nv">&lt;http://www.w3.org/2001/XMLSchema#&gt;</span><span class="w"> </span><span class="p">.</span><span class="w"></span>
+
+<span class="nn">dcterms:</span><span class="nt">date</span><span class="w"> </span><span class="kt">a</span><span class="w"> </span><span class="nn">rdf:</span><span class="nt">Property</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="nn">rdfs:</span><span class="nt">label</span><span class="w"> </span><span class="s">&quot;Date&quot;</span><span class="o">@</span><span class="ge">en-US</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="nn">dcterms:</span><span class="nt">description</span><span class="w"> </span><span class="s">&quot;Date may be used to express temporal information at any level of granularity.  Recommended best practice is to use an encoding scheme, such as the W3CDTF profile of ISO 8601 [W3CDTF].&quot;</span><span class="o">@</span><span class="ge">en-US</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="nn">dcterms:</span><span class="nt">hasVersion</span><span class="w"> </span><span class="nv">&lt;http://dublincore.org/usage/terms/history/#dateT-001&gt;</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="nn">dcterms:</span><span class="nt">issued</span><span class="w"> </span><span class="s">&quot;2008-01-14&quot;</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="nn">dcterms:</span><span class="nt">modified</span><span class="w"> </span><span class="s">&quot;2008-01-14&quot;</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="nn">rdfs:</span><span class="nt">comment</span><span class="w"> </span><span class="s">&quot;A point or period of time associated with an event in the lifecycle of the resource.&quot;</span><span class="o">@</span><span class="ge">en-US</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="nn">rdfs:</span><span class="nt">isDefinedBy</span><span class="w"> </span><span class="err">dcterms</span><span class="p">:</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="nn">rdfs:</span><span class="nt">range</span><span class="w"> </span><span class="nn">rdfs:</span><span class="nt">Literal</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="nn">rdfs:</span><span class="nt">subPropertyOf</span><span class="w"> </span><span class="nv">&lt;http://purl.org/dc/elements/1.1/date&gt;</span><span class="w"> </span><span class="p">.</span><span class="w"></span>
+</pre></div>
+
+
+                
+            </div>
+          </div>
+           </div></div>
+
+
+
+
+        
+
+
+
+
+
+
+
+
+
+
+
+	</div><!-- /#page-content-wrapper -->
+
+
+  
+
+
+
+  
+
+
+
+
+  <footer class="footer">
+    <div class="container">
+    
+      <p class="text-muted">Documentation automatically generated on 26th February 2017 with <a href="https://github.com/lambdamusic/OntoSpy">OntoSpy</a> (v1.7.4)</p>
+
+    
+    </div>
+  </footer>
+
+
+</div><!-- /#wrapper -->
+
+
+<!-- Bootstrap core JavaScript
+================================================== -->
+<!-- Placed at the end of the document so the pages load faster -->
+<script src="../static/libs/jquery/1.12.4/jquery.min.js"></script>
+<script src="../static/libs/bootstrap-3.3.7-dist/js/bootstrap.min.js"></script>
+
+<!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+<script src="../static/libs/bootstrap-3.3.7-dist/js/ie10-viewport-bug-workaround.js"></script>
+
+<script src="../static/libs/Chart.js-2.4.0/Chart.bundle.js"></script>
+
+
+<!-- Menu Toggle Script -->
+<script>
+$("#menu-toggle").click(function(e) {
+    e.preventDefault();
+    $("#wrapper").toggleClass("toggled");
+});
+</script>
+
+
+
+
+<script type="text/javascript">
+
+$('#search-input-sidebar').keyup(function() {
+
+  var val = $.trim($(this).val()).replace(/ +/g, ' ').toLowerCase();
+  // var $rows = $(this).next(".entities-list").find("div");
+  var $rows = $(this).parent().parent().find("li.second-level");
+
+  $rows.show().filter(function() {
+      var text = $(this).text().replace(/\s+/g, ' ').toLowerCase();
+      return !~text.indexOf(val);
+  }).hide();
+});
+
+</script>
+
+
+
+
+  <!-- Scroll Sidebar Script -->
+  
+  
+  <script type="text/javascript">
+
+    $(document).ready(function (){
+      $('#sidebar-wrapper').animate({
+          scrollTop: $("#sd_819").offset().top - 100
+      }, 100);
+    });
+
+  </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  </body>
+</html>

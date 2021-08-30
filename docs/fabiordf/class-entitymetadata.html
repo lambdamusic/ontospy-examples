@@ -1,0 +1,2551 @@
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="../static/libs/img/favicon.ico">
+
+	
+		<title>OntoSpy > http://purl.org/spar/fabio/</title>
+	
+
+    <!-- Bootstrap core CSS -->
+    <!-- <link href="../static/libs/bootstrap-3.3.7-dist/css/bootstrap.min.css" rel="stylesheet">  -->
+    <!-- Bootswatch:  -->
+    <!-- cerulean  | cyborg |  flatly |  lumen |  sandstone |   spacelab  |  yeti | cosmo |  darkly |  paper | simplex | superhero |  journal | readable  |   slate |  united -->
+    <link href="../static/libs/bootswatch3.2/cosmo/bootstrap.min.css" rel="stylesheet">
+    <link href="../static/custom/css/simple-sidebar.css" rel="stylesheet">
+    <link href="../static/custom/css/familytree.css" rel="stylesheet">
+    <link href="../static/custom/css/tabletree.css" rel="stylesheet">
+
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <link href="../static/libs/bootstrap-3.3.7-dist/css/ie10-viewport-bug-workaround.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="../static/custom/css/sticky-footer-navbar.css" rel="stylesheet">
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+<style type="text/css">
+
+  .lead-plus {font-size: 26.5px;}
+  .label-xs {font-size: 10px;}
+  .label-dark {background: #2c3e50; color: white; padding: 1px;}
+  .margin50 {margin-top: 50px; margin-bottom: 50px;}
+
+  .namespaces {background: #ced2d6; width: 100%;}
+
+
+  /*so that the d3plus tooltip panel doesnt cover the top banner*/
+  .navbar {z-index: 3000;}
+
+
+  .panel-body dt {margin-top: 5px;}
+  .page-header  {margin-top: 30px;}
+  #wrapper {margin-top: 50px;}
+
+  .implementation-panel {
+    overflow: auto;
+    max-height: 500px;
+  }
+
+  tr.table-classproperties {
+      /*background: #f5f5f5;*/
+  }
+  tr.table-classproperties th {
+      font-size: 80%;
+      font-weight: normal;
+  }
+
+
+  tr.table-inheritanceinfo {
+      /*background: #f5f5f5;*/
+      text-align: left;
+  }
+
+  tr.table-inheritanceinfo th {
+      font-size: 90%;
+      font-weight: normal;
+  }
+
+
+  .breadcrumb {
+    margin-top: 20px;
+    margin-bottom: 40px;
+  }
+
+  .breadcrumb a {
+      text-transform: capitalize;
+  }
+  .breadcrumb li {
+      text-transform: none;
+      /*so to catch the uri @todo improve*/
+  }
+
+
+  .fromclass_link {
+    /*color: white;
+    text-decoration: underline;*/
+    /*background: #1c1e52;*/
+    color: inherit;
+    /*padding: 1px;*/
+  }
+
+		.mythumbnail {
+			display: block;
+			padding: 13px;
+			margin-bottom: 30px;
+			line-height: 13.428571;
+			background-color: #fff;
+			border: 1px solid #ddd;
+			border-radius: 30px;
+		}
+
+		.mythumbnail:hover {
+			background: lightyellow;
+			text-decoration: none;
+		}
+
+
+		.img-container{
+		    height:100%;
+			overflow: hidden;
+		    max-height:200px;
+			padding: 10px;
+/*			margin: 20px 0px 20px 0px;*/
+			border: 1em #EAE5E5 solid;
+		}
+
+		.img-container:hover {
+			border: 1px grey solid;
+		}
+
+		img{
+/*		    height:100% !important;*/
+		}
+
+
+		.icon-xxs {
+			font-size: 15px;
+		}
+
+
+    /* dropdown open on hover */
+
+    @media (min-width: 979px) {
+      ul.nav li.dropdown:hover > ul.dropdown-menu {
+        display: block;
+      }
+    }
+
+
+
+/*pygments css*/
+.highlight .hll { background-color: #ffffcc }
+.highlight  { background: #f8f8f8; }
+.highlight .c { color: #408080; font-style: italic } /* Comment */
+.highlight .err { border: 1px solid #FF0000 } /* Error */
+.highlight .k { color: #008000; font-weight: bold } /* Keyword */
+.highlight .o { color: #666666 } /* Operator */
+.highlight .ch { color: #408080; font-style: italic } /* Comment.Hashbang */
+.highlight .cm { color: #408080; font-style: italic } /* Comment.Multiline */
+.highlight .cp { color: #BC7A00 } /* Comment.Preproc */
+.highlight .cpf { color: #408080; font-style: italic } /* Comment.PreprocFile */
+.highlight .c1 { color: #408080; font-style: italic } /* Comment.Single */
+.highlight .cs { color: #408080; font-style: italic } /* Comment.Special */
+.highlight .gd { color: #A00000 } /* Generic.Deleted */
+.highlight .ge { font-style: italic } /* Generic.Emph */
+.highlight .gr { color: #FF0000 } /* Generic.Error */
+.highlight .gh { color: #000080; font-weight: bold } /* Generic.Heading */
+.highlight .gi { color: #00A000 } /* Generic.Inserted */
+.highlight .go { color: #888888 } /* Generic.Output */
+.highlight .gp { color: #000080; font-weight: bold } /* Generic.Prompt */
+.highlight .gs { font-weight: bold } /* Generic.Strong */
+.highlight .gu { color: #800080; font-weight: bold } /* Generic.Subheading */
+.highlight .gt { color: #0044DD } /* Generic.Traceback */
+.highlight .kc { color: #008000; font-weight: bold } /* Keyword.Constant */
+.highlight .kd { color: #008000; font-weight: bold } /* Keyword.Declaration */
+.highlight .kn { color: #008000; font-weight: bold } /* Keyword.Namespace */
+.highlight .kp { color: #008000 } /* Keyword.Pseudo */
+.highlight .kr { color: #008000; font-weight: bold } /* Keyword.Reserved */
+.highlight .kt { color: #B00040 } /* Keyword.Type */
+.highlight .m { color: #666666 } /* Literal.Number */
+.highlight .s { color: #BA2121 } /* Literal.String */
+.highlight .na { color: #7D9029 } /* Name.Attribute */
+.highlight .nb { color: #008000 } /* Name.Builtin */
+.highlight .nc { color: #0000FF; font-weight: bold } /* Name.Class */
+.highlight .no { color: #880000 } /* Name.Constant */
+.highlight .nd { color: #AA22FF } /* Name.Decorator */
+.highlight .ni { color: #999999; font-weight: bold } /* Name.Entity */
+.highlight .ne { color: #D2413A; font-weight: bold } /* Name.Exception */
+.highlight .nf { color: #0000FF } /* Name.Function */
+.highlight .nl { color: #A0A000 } /* Name.Label */
+.highlight .nn { color: #0000FF; font-weight: bold } /* Name.Namespace */
+.highlight .nt { color: #008000; font-weight: bold } /* Name.Tag */
+.highlight .nv { color: #19177C } /* Name.Variable */
+.highlight .ow { color: #AA22FF; font-weight: bold } /* Operator.Word */
+.highlight .w { color: #bbbbbb } /* Text.Whitespace */
+.highlight .mb { color: #666666 } /* Literal.Number.Bin */
+.highlight .mf { color: #666666 } /* Literal.Number.Float */
+.highlight .mh { color: #666666 } /* Literal.Number.Hex */
+.highlight .mi { color: #666666 } /* Literal.Number.Integer */
+.highlight .mo { color: #666666 } /* Literal.Number.Oct */
+.highlight .sa { color: #BA2121 } /* Literal.String.Affix */
+.highlight .sb { color: #BA2121 } /* Literal.String.Backtick */
+.highlight .sc { color: #BA2121 } /* Literal.String.Char */
+.highlight .dl { color: #BA2121 } /* Literal.String.Delimiter */
+.highlight .sd { color: #BA2121; font-style: italic } /* Literal.String.Doc */
+.highlight .s2 { color: #BA2121 } /* Literal.String.Double */
+.highlight .se { color: #BB6622; font-weight: bold } /* Literal.String.Escape */
+.highlight .sh { color: #BA2121 } /* Literal.String.Heredoc */
+.highlight .si { color: #BB6688; font-weight: bold } /* Literal.String.Interpol */
+.highlight .sx { color: #008000 } /* Literal.String.Other */
+.highlight .sr { color: #BB6688 } /* Literal.String.Regex */
+.highlight .s1 { color: #BA2121 } /* Literal.String.Single */
+.highlight .ss { color: #19177C } /* Literal.String.Symbol */
+.highlight .bp { color: #008000 } /* Name.Builtin.Pseudo */
+.highlight .fm { color: #0000FF } /* Name.Function.Magic */
+.highlight .vc { color: #19177C } /* Name.Variable.Class */
+.highlight .vg { color: #19177C } /* Name.Variable.Global */
+.highlight .vi { color: #19177C } /* Name.Variable.Instance */
+.highlight .vm { color: #19177C } /* Name.Variable.Magic */
+.highlight .il { color: #666666 } /* Literal.Number.Integer.Long */
+
+/*overloading this class from pygments*/
+.highlight {
+  overflow: auto;
+}
+
+
+
+
+
+
+
+
+</style>
+
+
+
+
+
+  </head>
+
+  <body>
+
+
+
+    
+<!-- Fixed navbar -->
+<nav class="navbar navbar-default navbar-fixed-top">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+
+      <a class="navbar-brand" id="menu-toggle" title="Toggle sidebar">
+        
+        <span class="glyphicon glyphicon-align-left" aria-hidden="true"></span>
+      </a>
+    </div>
+    <div id="navbar" class="collapse navbar-collapse">
+      <ul class="nav navbar-nav">
+        <li ><a href="index.html"><code style="font-size: 115%;">http://purl.org/spar/fabio/</code></a></li>
+        
+
+       
+
+
+        <li  ><a href="dashboard.html">Dashboard</a></li>
+        <li  ><a href="entities-az.html">Entities A-Z</a></li>
+        <li class="dropdown  " >
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Entities Tree <span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            
+            <li><a href="entities-tree-classes.html">Classes</a>
+            </li>
+            
+            
+            <li><a  href="entities-tree-properties.html">Properties</a>
+            </li>
+            
+            
+          </ul>
+      </li>
+
+      </ul>
+      
+    </div><!--/.nav-collapse -->
+
+  </div>
+</nav>
+
+
+
+
+
+
+<div id="wrapper" class="toggled">
+
+
+    
+
+    
+        
+<!-- Sidebar -->
+<div id="sidebar-wrapper">
+    <ul class="sidebar-nav">
+
+
+        <li>
+          <input style="margin-top: 30px;  margin-bottom: 20px;" type="text" id="search-input-sidebar" name="" value="" placeholder="Type to search">
+        </li>
+
+        
+          <li class="-second-level" id="sd_classes"><a href="entities-tree-classes.html">Classes (242)</a>
+          </li>
+
+            
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_1034"><a  href="class-abstract.html">:Abstract</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_1035"><a  href="class-academicproceedings.html">:AcademicProceedings</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_1036"><a  href="class-addendum.html">:Addendum</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_1037"><a  href="class-algorithm.html">:Algorithm</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_1038"><a  href="class-analogitem.html">:AnalogItem</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_1039"><a  href="class-analogmanifestation.html">:AnalogManifestation</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_1040"><a  href="class-analogstoragemedium.html">:AnalogStorageMedium</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_1041"><a  href="class-announcement.html">:Announcement</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_1042"><a  href="class-anthology.html">:Anthology</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_1043"><a  href="class-applicationprofile.html">:ApplicationProfile</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_1044"><a  href="class-applicationprogramminginterface.html">:ApplicationProgrammingInterface</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_1045"><a  href="class-article.html">:Article</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_1046"><a  href="class-artisticwork.html">:ArtisticWork</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_1047"><a  href="class-audiodocument.html">:AudioDocument</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_1048"><a  href="class-authorityfile.html">:AuthorityFile</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_1049"><a  href="class-bachelorsthesis.html">:BachelorsThesis</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_1050"><a  href="class-bibliographicdatabase.html">:BibliographicDatabase</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_1051"><a  href="class-bibliographicmetadata.html">:BibliographicMetadata</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_1052"><a  href="class-biography.html">:Biography</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_1053"><a  href="class-blog.html">:Blog</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_1054"><a  href="class-blogpost.html">:BlogPost</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_1055"><a  href="class-book.html">:Book</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_1056"><a  href="class-bookchapter.html">:BookChapter</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_1057"><a  href="class-bookreview.html">:BookReview</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_1058"><a  href="class-bookseries.html">:BookSeries</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_1059"><a  href="class-briefreport.html">:BriefReport</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_1060"><a  href="class-callforapplications.html">:CallForApplications</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_1061"><a  href="class-caseforsupport.html">:CaseForSupport</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_1062"><a  href="class-caseforsupportdocument.html">:CaseForSupportDocument</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_1063"><a  href="class-casereport.html">:CaseReport</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_1064"><a  href="class-catalog.html">:Catalog</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_1065"><a  href="class-chapter.html">:Chapter</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_1066"><a  href="class-citationmetadata.html">:CitationMetadata</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_1067"><a  href="class-clinicalcasereport.html">:ClinicalCaseReport</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_1068"><a  href="class-clinicalguideline.html">:ClinicalGuideline</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_1069"><a  href="class-clinicaltrialdesign.html">:ClinicalTrialDesign</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_1070"><a  href="class-clinicaltrialreport.html">:ClinicalTrialReport</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_1071"><a  href="class-collectedworks.html">:CollectedWorks</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_1072"><a  href="class-comment.html">:Comment</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_1073"><a  href="class-completeworks.html">:CompleteWorks</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_1074"><a  href="class-computerapplication.html">:ComputerApplication</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_1075"><a  href="class-computerfile.html">:ComputerFile</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_1076"><a  href="class-computerprogram.html">:ComputerProgram</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_1077"><a  href="class-conferencepaper.html">:ConferencePaper</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_1078"><a  href="class-conferenceposter.html">:ConferencePoster</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_1079"><a  href="class-conferenceproceedings.html">:ConferenceProceedings</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_1080"><a  href="class-controlledvocabulary.html">:ControlledVocabulary</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_1081"><a  href="class-correction.html">:Correction</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_1082"><a  href="class-corrigendum.html">:Corrigendum</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_1083"><a  href="class-cover.html">:Cover</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_1084"><a  href="class-criticaledition.html">:CriticalEdition</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_1085"><a  href="class-datafile.html">:DataFile</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_1086"><a  href="class-datamanagementpolicy.html">:DataManagementPolicy</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_1087"><a  href="class-datamanagementpolicydocument.html">:DataManagementPolicyDocument</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_1088"><a  href="class-datamangementplan.html">:DataMangementPlan</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_1089"><a  href="class-datarepository.html">:DataRepository</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_1090"><a  href="class-database.html">:Database</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_1091"><a  href="class-databasemanagementsystem.html">:DatabaseManagementSystem</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_1092"><a  href="class-dataset.html">:Dataset</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_1093"><a  href="class-definitiveversion.html">:DefinitiveVersion</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_1094"><a  href="class-demopaper.html">:DemoPaper</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_1095"><a  href="class-diary.html">:Diary</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_1096"><a  href="class-digitalitem.html">:DigitalItem</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_1097"><a  href="class-digitalmanifestation.html">:DigitalManifestation</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_1098"><a  href="class-digitalstoragemedium.html">:DigitalStorageMedium</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_1099"><a  href="class-directory.html">:Directory</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_1100"><a  href="class-disciplinedictionary.html">:DisciplineDictionary</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_1101"><a  href="class-doctoralthesis.html">:DoctoralThesis</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_1102"><a  href="class-documentrepository.html">:DocumentRepository</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_1103"><a  href="class-dustjacket.html">:DustJacket</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_1104"><a  href="class-editorial.html">:Editorial</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_1105"><a  href="class-email.html">:Email</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_1106"><a class="active" href="class-entitymetadata.html">:EntityMetadata</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_1107"><a  href="class-erratum.html">:Erratum</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_1108"><a  href="class-essay.html">:Essay</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_1109"><a  href="class-examinationpaper.html">:ExaminationPaper</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_1110"><a  href="class-excerpt.html">:Excerpt</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_1111"><a  href="class-executivesummary.html">:ExecutiveSummary</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_1112"><a  href="class-experimentalprotocol.html">:ExperimentalProtocol</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_1113"><a  href="class-expression.html">:Expression</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_1114"><a  href="class-expressioncollection.html">:ExpressionCollection</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_1115"><a  href="class-figure.html">:Figure</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_1116"><a  href="class-film.html">:Film</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_1117"><a  href="class-folksonomy.html">:Folksonomy</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_1118"><a  href="class-ganttchart.html">:GanttChart</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_1119"><a  href="class-grantapplication.html">:GrantApplication</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_1120"><a  href="class-grantapplicationdocument.html">:GrantApplicationDocument</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_1121"><a  href="class-hardback.html">:Hardback</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_1122"><a  href="class-image.html">:Image</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_1123"><a  href="class-inbrief.html">:InBrief</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_1124"><a  href="class-inusepaper.html">:InUsePaper</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_1125"><a  href="class-index.html">:Index</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_1126"><a  href="class-instructionmanual.html">:InstructionManual</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_1127"><a  href="class-instructionalwork.html">:InstructionalWork</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_1128"><a  href="class-item.html">:Item</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_1129"><a  href="class-itemcollection.html">:ItemCollection</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_1130"><a  href="class-journal.html">:Journal</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_1131"><a  href="class-journalarticle.html">:JournalArticle</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_1132"><a  href="class-journaleditorial.html">:JournalEditorial</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_1133"><a  href="class-journalissue.html">:JournalIssue</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_1134"><a  href="class-journalnewsitem.html">:JournalNewsItem</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_1135"><a  href="class-journalvolume.html">:JournalVolume</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_1136"><a  href="class-laboratorynotebook.html">:LaboratoryNotebook</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_1137"><a  href="class-lecturenotes.html">:LectureNotes</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_1138"><a  href="class-legalopinion.html">:LegalOpinion</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_1139"><a  href="class-letter.html">:Letter</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_1140"><a  href="class-librarycatalog.html">:LibraryCatalog</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_1141"><a  href="class-literaryartisticwork.html">:LiteraryArtisticWork</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_1142"><a  href="class-magazine.html">:Magazine</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_1143"><a  href="class-magazinearticle.html">:MagazineArticle</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_1144"><a  href="class-magazineeditorial.html">:MagazineEditorial</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_1145"><a  href="class-magazineissue.html">:MagazineIssue</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_1146"><a  href="class-magazinenewsitem.html">:MagazineNewsItem</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_1147"><a  href="class-manifestation.html">:Manifestation</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_1148"><a  href="class-manifestationcollection.html">:ManifestationCollection</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_1149"><a  href="class-manuscript.html">:Manuscript</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_1150"><a  href="class-mastersthesis.html">:MastersThesis</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_1151"><a  href="class-meetingreport.html">:MeetingReport</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_1152"><a  href="class-metadata.html">:Metadata</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_1153"><a  href="class-metadatadocument.html">:MetadataDocument</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_1154"><a  href="class-microblog.html">:Microblog</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_1155"><a  href="class-micropost.html">:Micropost</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_1156"><a  href="class-minimalinformationstandard.html">:MinimalInformationStandard</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_1157"><a  href="class-model.html">:Model</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_1158"><a  href="class-movie.html">:Movie</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_1159"><a  href="class-movingimage.html">:MovingImage</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_1160"><a  href="class-musicalcomposition.html">:MusicalComposition</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_1161"><a  href="class-nanopublication.html">:Nanopublication</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_1162"><a  href="class-newsitem.html">:NewsItem</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_1163"><a  href="class-newsreport.html">:NewsReport</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_1164"><a  href="class-newspaper.html">:Newspaper</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_1165"><a  href="class-newspaperarticle.html">:NewspaperArticle</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_1166"><a  href="class-newspapereditorial.html">:NewspaperEditorial</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_1167"><a  href="class-newspaperissue.html">:NewspaperIssue</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_1168"><a  href="class-newspapernewsitem.html">:NewspaperNewsItem</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_1169"><a  href="class-notebook.html">:Notebook</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_1170"><a  href="class-notificationofreceipt.html">:NotificationOfReceipt</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_1171"><a  href="class-novel.html">:Novel</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_1172"><a  href="class-obituary.html">:Obituary</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_1173"><a  href="class-ontology.html">:Ontology</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_1174"><a  href="class-ontologydocument.html">:OntologyDocument</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_1175"><a  href="class-opinion.html">:Opinion</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_1176"><a  href="class-oration.html">:Oration</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_1177"><a  href="class-paperback.html">:Paperback</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_1178"><a  href="class-patent.html">:Patent</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_1179"><a  href="class-patentapplication.html">:PatentApplication</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_1180"><a  href="class-patentapplicationdocument.html">:PatentApplicationDocument</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_1181"><a  href="class-patentdocument.html">:PatentDocument</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_1182"><a  href="class-periodical.html">:Periodical</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_1183"><a  href="class-periodicalissue.html">:PeriodicalIssue</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_1184"><a  href="class-periodicalitem.html">:PeriodicalItem</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_1185"><a  href="class-periodicalvolume.html">:PeriodicalVolume</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_1186"><a  href="class-personalcommunication.html">:PersonalCommunication</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_1187"><a  href="class-phdsymposiumpaper.html">:PhDSymposiumPaper</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_1188"><a  href="class-play.html">:Play</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_1189"><a  href="class-poem.html">:Poem</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_1190"><a  href="class-policy.html">:Policy</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_1191"><a  href="class-policydocument.html">:PolicyDocument</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_1192"><a  href="class-posterpaper.html">:PosterPaper</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_1193"><a  href="class-postprint.html">:Postprint</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_1194"><a  href="class-preprint.html">:Preprint</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_1195"><a  href="class-presentation.html">:Presentation</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_1196"><a  href="class-pressrelease.html">:PressRelease</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_1197"><a  href="class-printobject.html">:PrintObject</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_1198"><a  href="class-productreview.html">:ProductReview</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_1199"><a  href="class-projectmetadata.html">:ProjectMetadata</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_1200"><a  href="class-projectplan.html">:ProjectPlan</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_1201"><a  href="class-projectreport.html">:ProjectReport</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_1202"><a  href="class-projectreportdocument.html">:ProjectReportDocument</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_1203"><a  href="class-proof.html">:Proof</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_1204"><a  href="class-proposition.html">:Proposition</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_1205"><a  href="class-questionnaire.html">:Questionnaire</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_1206"><a  href="class-quotation.html">:Quotation</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_1207"><a  href="class-rapidcommunication.html">:RapidCommunication</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_1208"><a  href="class-referencework.html">:ReferenceWork</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_1209"><a  href="class-relationaldatabase.html">:RelationalDatabase</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_1210"><a  href="class-reply.html">:Reply</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_1211"><a  href="class-report.html">:Report</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_1212"><a  href="class-reportdocument.html">:ReportDocument</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_1213"><a  href="class-reportingstandard.html">:ReportingStandard</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_1214"><a  href="class-repository.html">:Repository</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_1215"><a  href="class-researchpaper.html">:ResearchPaper</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_1216"><a  href="class-retraction.html">:Retraction</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_1217"><a  href="class-review.html">:Review</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_1218"><a  href="class-reviewarticle.html">:ReviewArticle</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_1219"><a  href="class-screenplay.html">:Screenplay</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_1220"><a  href="class-script.html">:Script</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_1221"><a  href="class-shortstory.html">:ShortStory</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_1222"><a  href="class-song.html">:Song</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_1223"><a  href="class-soundrecording.html">:SoundRecording</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_1224"><a  href="class-specification.html">:Specification</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_1225"><a  href="class-spreadsheet.html">:Spreadsheet</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_1226"><a  href="class-standardoperatingprocedure.html">:StandardOperatingProcedure</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_1227"><a  href="class-stillimage.html">:StillImage</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_1228"><a  href="class-storagemedium.html">:StorageMedium</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_1229"><a  href="class-structuredsummary.html">:StructuredSummary</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_1230"><a  href="class-subjectdiscipline.html">:SubjectDiscipline</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_1231"><a  href="class-subjectterm.html">:SubjectTerm</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_1232"><a  href="class-supplement.html">:Supplement</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_1233"><a  href="class-supplementaryinformation.html">:SupplementaryInformation</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_1234"><a  href="class-systematicreview.html">:SystematicReview</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_1235"><a  href="class-table.html">:Table</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_1236"><a  href="class-tableofcontents.html">:TableOfContents</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_1237"><a  href="class-taxonomy.html">:Taxonomy</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_1238"><a  href="class-technicalreport.html">:TechnicalReport</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_1239"><a  href="class-technicalstandard.html">:TechnicalStandard</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_1240"><a  href="class-termdictionary.html">:TermDictionary</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_1241"><a  href="class-textbook.html">:Textbook</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_1242"><a  href="class-thesaurus.html">:Thesaurus</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_1243"><a  href="class-thesis.html">:Thesis</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_1244"><a  href="class-timetable.html">:Timetable</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_1245"><a  href="class-trialreport.html">:TrialReport</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_1246"><a  href="class-triplestore.html">:Triplestore</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_1247"><a  href="class-tweet.html">:Tweet</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_1248"><a  href="class-uncontrolledvocabulary.html">:UncontrolledVocabulary</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_1249"><a  href="class-vocabulary.html">:Vocabulary</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_1250"><a  href="class-vocabularydocument.html">:VocabularyDocument</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_1251"><a  href="class-vocabularymapping.html">:VocabularyMapping</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_1252"><a  href="class-vocabularymappingdocument.html">:VocabularyMappingDocument</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_1253"><a  href="class-webarchive.html">:WebArchive</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_1254"><a  href="class-webcontent.html">:WebContent</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_1255"><a  href="class-webmanifestation.html">:WebManifestation</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_1256"><a  href="class-webpage.html">:WebPage</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_1257"><a  href="class-website.html">:WebSite</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_1258"><a  href="class-whitepaper.html">:WhitePaper</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_1259"><a  href="class-wiki.html">:Wiki</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_1260"><a  href="class-wikientry.html">:WikiEntry</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_1261"><a  href="class-wikipediaentry.html">:WikipediaEntry</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_1262"><a  href="class-work.html">:Work</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_1263"><a  href="class-workcollection.html">:WorkCollection</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_1264"><a  href="class-workpackage.html">:WorkPackage</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_1265"><a  href="class-workflow.html">:Workflow</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_1266"><a  href="class-workingpaper.html">:WorkingPaper</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_1267"><a  href="class-workshoppaper.html">:WorkshopPaper</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_1268"><a  href="class-workshopproceedings.html">:WorkshopProceedings</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_1269"><a  href="class-frbrendeavour.html">frbr:Endeavour</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_1270"><a  href="class-frbrexpression.html">frbr:Expression</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_1271"><a  href="class-frbritem.html">frbr:Item</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_1272"><a  href="class-frbrmanifestation.html">frbr:Manifestation</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_1273"><a  href="class-frbrwork.html">frbr:Work</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_1274"><a  href="class-skosconcept.html">skos:Concept</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_1275"><a  href="class-skosconceptscheme.html">skos:ConceptScheme</a></li>
+          
+        
+
+        
+            <li class="-second-level" id="sd_properties"><a  href="entities-tree-properties.html">Properties (106)</a>
+            </li>
+
+            
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_1276"><a   href="prop-dccontributor.html">dc:contributor</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_1277"><a   href="prop-dccreator.html">dc:creator</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_1278"><a   href="prop-dcdate.html">dc:date</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_1279"><a   href="prop-dcdescription.html">dc:description</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_1280"><a   href="prop-dcrights.html">dc:rights</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_1281"><a   href="prop-dctitle.html">dc:title</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_1282"><a   href="prop-vannpreferrednamespaceprefix.html">vann:preferredNamespacePrefix</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_1283"><a   href="prop-vannpreferrednamespaceuri.html">vann:preferredNamespaceUri</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_1284"><a   href="prop-rdfscomment.html">rdfs:comment</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_1285"><a   href="prop-rdfslabel.html">rdfs:label</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_1286"><a   href="prop-rdfsseealso.html">rdfs:seeAlso</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_1287"><a   href="prop-owlversioninfo.html">owl:versionInfo</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_1288"><a   href="prop-prismalternatetitle.html">prism:alternateTitle</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_1289"><a   href="prop-prismdoi.html">prism:doi</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_1290"><a   href="prop-prismeissn.html">prism:eIssn</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_1291"><a   href="prop-prismedition.html">prism:edition</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_1292"><a   href="prop-prismendingpage.html">prism:endingPage</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_1293"><a   href="prop-prismisbn.html">prism:isbn</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_1294"><a   href="prop-prismissn.html">prism:issn</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_1295"><a   href="prop-prismissueidentifier.html">prism:issueIdentifier</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_1296"><a   href="prop-prismkeyword.html">prism:keyword</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_1297"><a   href="prop-prismpagerange.html">prism:pageRange</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_1298"><a   href="prop-prismpublicationdate.html">prism:publicationDate</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_1299"><a   href="prop-prismsection.html">prism:section</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_1300"><a   href="prop-prismstartingpage.html">prism:startingPage</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_1301"><a   href="prop-prismversionidentifier.html">prism:versionIdentifier</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_1302"><a   href="prop-prismvolume.html">prism:volume</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_1303"><a   href="prop-prismwordcount.html">prism:wordCount</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_1304"><a   href="prop-dctermscreated.html">dcterms:created</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_1305"><a   href="prop-dctermsdate.html">dcterms:date</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_1306"><a   href="prop-dctermsdateaccepted.html">dcterms:dateAccepted</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_1307"><a   href="prop-dctermsdatecopyrighted.html">dcterms:dateCopyrighted</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_1308"><a   href="prop-dctermsdatesubmitted.html">dcterms:dateSubmitted</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_1309"><a   href="prop-dctermsidentifier.html">dcterms:identifier</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_1310"><a   href="prop-dctermsissued.html">dcterms:issued</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_1311"><a   href="prop-dctermsmodified.html">dcterms:modified</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_1312"><a   href="prop-dctermstitle.html">dcterms:title</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_1313"><a   href="prop-dctermsvalid.html">dcterms:valid</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_1314"><a   href="prop-datelastupdated.html">:dateLastUpdated</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_1315"><a   href="prop-hasaccessdate.html">:hasAccessDate</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_1316"><a   href="prop-hasarxivid.html">:hasArXivId</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_1317"><a   href="prop-hascoden.html">:hasCODEN</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_1318"><a   href="prop-hascharactercount.html">:hasCharacterCount</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_1319"><a   href="prop-hascopyrightyear.html">:hasCopyrightYear</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_1320"><a   href="prop-hascorrectiondate.html">:hasCorrectionDate</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_1321"><a   href="prop-hasdatereceived.html">:hasDateReceived</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_1322"><a   href="prop-hasdeadline.html">:hasDeadline</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_1323"><a   href="prop-hasdecisondate.html">:hasDecisonDate</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_1324"><a   href="prop-hasdepositdate.html">:hasDepositDate</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_1325"><a   href="prop-hasdistributiondate.html">:hasDistributionDate</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_1326"><a   href="prop-haselectronicarticleidentifier.html">:hasElectronicArticleIdentifier</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_1327"><a   href="prop-hasembargodate.html">:hasEmbargoDate</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_1328"><a   href="prop-hasembargoduration.html">:hasEmbargoDuration</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_1329"><a   href="prop-hashandle.html">:hasHandle</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_1330"><a   href="prop-hasissnl.html">:hasIssnL</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_1331"><a   href="prop-hasnlmjournaltitleabbreviation.html">:hasNLMJournalTitleAbbreviation</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_1332"><a   href="prop-hasnationallibraryofmedicinejournalid.html">:hasNationalLibraryOfMedicineJournalId</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_1333"><a   href="prop-haspii.html">:hasPII</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_1334"><a   href="prop-haspagecount.html">:hasPageCount</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_1335"><a   href="prop-haspatentnumber.html">:hasPatentNumber</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_1336"><a   href="prop-haspubmedcentralid.html">:hasPubMedCentralId</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_1337"><a   href="prop-haspubmedid.html">:hasPubMedId</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_1338"><a   href="prop-haspublicationyear.html">:hasPublicationYear</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_1339"><a   href="prop-hasrequestdate.html">:hasRequestDate</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_1340"><a   href="prop-hasretractiondate.html">:hasRetractionDate</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_1341"><a   href="prop-hassici.html">:hasSICI</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_1342"><a   href="prop-hasseason.html">:hasSeason</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_1343"><a   href="prop-hassequenceidentifier.html">:hasSequenceIdentifier</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_1344"><a   href="prop-hasshorttitle.html">:hasShortTitle</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_1345"><a   href="prop-hasstandardnumber.html">:hasStandardNumber</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_1346"><a   href="prop-hassubtitle.html">:hasSubtitle</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_1347"><a   href="prop-hastranslatedsubtitle.html">:hasTranslatedSubtitle</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_1348"><a   href="prop-hastranslatedtitle.html">:hasTranslatedTitle</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_1349"><a   href="prop-hasurl.html">:hasURL</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_1350"><a   href="prop-hasvolumecount.html">:hasVolumeCount</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_1351"><a   href="prop-usescalendar.html">:usesCalendar</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_1352"><a   href="prop-owltopdataproperty.html">owl:topDataProperty</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_1353"><a   href="prop-dctermscreator.html">dcterms:creator</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_1354"><a   href="prop-dctermsformat.html">dcterms:format</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_1355"><a   href="prop-dctermslanguage.html">dcterms:language</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_1356"><a   href="prop-dctermslicense.html">dcterms:license</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_1357"><a   href="prop-dctermspublisher.html">dcterms:publisher</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_1358"><a   href="prop-dctermsrights.html">dcterms:rights</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_1359"><a   href="prop-hasdiscipline.html">:hasDiscipline</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_1360"><a   href="prop-hasmanifestation.html">:hasManifestation</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_1361"><a   href="prop-hasportrayal.html">:hasPortrayal</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_1362"><a   href="prop-hasrepresentation.html">:hasRepresentation</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_1363"><a   href="prop-hassubjectterm.html">:hasSubjectTerm</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_1364"><a   href="prop-isdisciplineof.html">:isDisciplineOf</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_1365"><a   href="prop-ismanifestationof.html">:isManifestationOf</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_1366"><a   href="prop-isportrayalof.html">:isPortrayalOf</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_1367"><a   href="prop-isrepresentationof.html">:isRepresentationOf</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_1368"><a   href="prop-isschemeof.html">:isSchemeOf</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_1369"><a   href="prop-isstoredon.html">:isStoredOn</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_1370"><a   href="prop-stores.html">:stores</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_1371"><a   href="prop-frbrembodiment.html">frbr:embodiment</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_1372"><a   href="prop-frbrembodimentof.html">frbr:embodimentOf</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_1373"><a   href="prop-frbrexemplar.html">frbr:exemplar</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_1374"><a   href="prop-frbrexemplarof.html">frbr:exemplarOf</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_1375"><a   href="prop-frbrpart.html">frbr:part</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_1376"><a   href="prop-frbrpartof.html">frbr:partOf</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_1377"><a   href="prop-frbrrealization.html">frbr:realization</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_1378"><a   href="prop-frbrrealizationof.html">frbr:realizationOf</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_1379"><a   href="prop-frbrrelatedendeavour.html">frbr:relatedEndeavour</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_1380"><a   href="prop-owltopobjectproperty.html">owl:topObjectProperty</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_1381"><a   href="prop-skosinscheme.html">skos:inScheme</a></li>
+          
+
+        
+
+        
+
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+
+    </ul>
+
+</div>
+
+
+<!-- /#sidebar-wrapper -->
+
+    
+
+
+
+
+    <!-- Begin page content -->
+    <div class="container" id="page-content-wrapper">
+
+      
+
+	
+
+
+
+
+
+
+        
+
+
+
+
+        
+            
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <ol class="breadcrumb">
+    <li>
+      <a href="index.html">Home</a>
+    </li>
+    <li>
+          <a href="entities-az.html">Entities</a>
+    </li>
+    <li>
+          <a href="entities-tree-classes.html">Classes</a>
+    </li>
+      <li class="active">
+            http://purl.org/spar/fabio/EntityMetadata
+        </li>
+  </ol>
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+
+
+
+
+
+            <h1>
+
+                :EntityMetadata
+                
+                    <small class="label label-info label-xs">leaf node</small>
+                  
+
+            </h1>
+            <hr>
+
+
+
+            <div class="tree-container">
+            <div class="tree">
+                <ul>
+                    
+
+                        
+
+                        <li>
+
+                          <a href="class-metadata.html" title="'metadata' - A separate work that provides information describing one or more characteristics of a resource or entity.">:Metadata</a>
+
+                          <ul>
+
+                            <li><a style="font-weight: bold;" title="'entity metadata' - Metadata describing the work itself, including for example the name of the creator(s), the title of the work, and the ...">:EntityMetadata</a>
+                            
+                              </li>
+
+                          </ul>
+
+                          </li>
+                        
+
+                    
+
+                </ul>
+            </div>
+            </div>
+
+
+
+
+           <div class="row"><div class="col-md-12">
+              <div class="panel panel-default">
+            <div class="panel-heading">
+              <h3 class="panel-title">URI</h3>
+            </div>
+            <div class="panel-body">
+
+                <code>http://purl.org/spar/fabio/EntityMetadata</code>
+            </div>
+          </div>
+           </div></div>
+
+           
+            <div class="row"><div class="col-md-12">
+              <div class="panel panel-default">
+            <div class="panel-heading">
+              <h3 class="panel-title">Label</h3>
+            </div>
+            <div class="panel-body">
+
+                entity metadata
+            </div>
+          </div>
+           </div></div>
+           
+
+
+
+           
+            <div class="row"><div class="col-md-12">
+              <div class="panel panel-default">
+            <div class="panel-heading">
+              <h3 class="panel-title">Description</h3>
+            </div>
+            <div class="panel-body">
+
+                Metadata describing the work itself, including for example the name of the creator(s), the title of the work, and the date and place of its creation.
+            </div>
+          </div>
+           </div></div>
+           
+
+
+
+
+           
+            <div class="row"><div class="col-md-12">
+              <div class="panel panel-default">
+            <div class="panel-heading">
+              <h3 class="panel-title">Superclasses (3)</h3>
+            </div>
+            <div class="panel-body">
+
+            
+                    <li><a href="class-metadata.html">:Metadata</a></li><li><a href="class-work.html">:Work</a></li><li><a href="class-frbrwork.html">frbr:Work</a></li>
+            
+
+            </div>
+          </div>
+           </div></div>
+           
+
+
+
+         
+           <div class="row"><div class="col-md-12">
+              <div class="panel panel-default">
+            <div class="panel-heading">
+              <h3 class="panel-title">Usage</h3>
+            </div>
+            <div class="panel-body" style="overflow: auto;">
+
+                <p>Instances of :EntityMetadata can have the following properties:</p>
+            </div>
+             <table class="table table-bordered" style="overflow: auto;">
+
+                <tr class="table-classproperties">
+                    <th>PROPERTY</th><th>DESCRIPTION</th><th>RANGE</th>
+                </tr>
+
+                
+
+                    
+
+                    
+
+                    
+
+                
+
+                    
+
+                    
+
+                        <tr class="table-inheritanceinfo">
+                            <th colspan="3" class="treeinfo"><span class="label label-default">From class <a title="frbr:Work" href="class-frbrwork.html" class="fromclass_link">frbr:Work</a></span>
+                            </th>
+                        </tr>
+
+                            
+                            <tr>
+                                <td class="firsttd">
+                                    <a class="propcolor" title=":hasManifestation" href="prop-hasmanifestation.html">:hasManifestation</a>
+                                </td>
+                                <td class="thirdtd">
+                                    <span>A property linking a particular work to its manifestations.  This property is additional to the relationships between FRBR endeavours present in the classical FRBR data model.</span>
+                                </td>
+                                <td class="secondtd">
+                                    
+                                    
+
+                                        <a title="frbr:Manifestation" href="class-frbrmanifestation.html" class="rdfclass">frbr:Manifestation</a>
+
+                                    
+                                    
+                                </td>
+                            </tr>
+
+                            
+                            <tr>
+                                <td class="firsttd">
+                                    <a class="propcolor" title=":hasPortrayal" href="prop-hasportrayal.html">:hasPortrayal</a>
+                                </td>
+                                <td class="thirdtd">
+                                    <span>A property linking a particular work to its items.  This property is additional to the relationships between FRBR endeavours present in the classical FRBR data model.</span>
+                                </td>
+                                <td class="secondtd">
+                                    
+                                    
+
+                                        <a title="frbr:Item" href="class-frbritem.html" class="rdfclass">frbr:Item</a>
+
+                                    
+                                    
+                                </td>
+                            </tr>
+
+                            
+
+                    
+
+                    
+
+                
+
+                    
+
+                    
+
+                        <tr class="table-inheritanceinfo">
+                            <th colspan="3" class="treeinfo"><span class="label label-default">From class <a title="owl:Thing" href="class-owlthing.html" class="fromclass_link">owl:Thing</a></span>
+                            </th>
+                        </tr>
+
+                            
+                            <tr>
+                                <td class="firsttd">
+                                    <a class="propcolor" title="dc:contributor" href="prop-dccontributor.html">dc:contributor</a>
+                                </td>
+                                <td class="thirdtd">
+                                    <span>--</span>
+                                </td>
+                                <td class="secondtd">
+                                    
+                                        <i>owl:Thing</i>
+                                    
+                                </td>
+                            </tr>
+
+                            
+                            <tr>
+                                <td class="firsttd">
+                                    <a class="propcolor" title="dc:creator" href="prop-dccreator.html">dc:creator</a>
+                                </td>
+                                <td class="thirdtd">
+                                    <span>--</span>
+                                </td>
+                                <td class="secondtd">
+                                    
+                                        <i>owl:Thing</i>
+                                    
+                                </td>
+                            </tr>
+
+                            
+                            <tr>
+                                <td class="firsttd">
+                                    <a class="propcolor" title="dc:date" href="prop-dcdate.html">dc:date</a>
+                                </td>
+                                <td class="thirdtd">
+                                    <span>--</span>
+                                </td>
+                                <td class="secondtd">
+                                    
+                                        <i>owl:Thing</i>
+                                    
+                                </td>
+                            </tr>
+
+                            
+                            <tr>
+                                <td class="firsttd">
+                                    <a class="propcolor" title="dc:description" href="prop-dcdescription.html">dc:description</a>
+                                </td>
+                                <td class="thirdtd">
+                                    <span>--</span>
+                                </td>
+                                <td class="secondtd">
+                                    
+                                        <i>owl:Thing</i>
+                                    
+                                </td>
+                            </tr>
+
+                            
+                            <tr>
+                                <td class="firsttd">
+                                    <a class="propcolor" title="dc:rights" href="prop-dcrights.html">dc:rights</a>
+                                </td>
+                                <td class="thirdtd">
+                                    <span>--</span>
+                                </td>
+                                <td class="secondtd">
+                                    
+                                        <i>owl:Thing</i>
+                                    
+                                </td>
+                            </tr>
+
+                            
+                            <tr>
+                                <td class="firsttd">
+                                    <a class="propcolor" title="dc:title" href="prop-dctitle.html">dc:title</a>
+                                </td>
+                                <td class="thirdtd">
+                                    <span>--</span>
+                                </td>
+                                <td class="secondtd">
+                                    
+                                        <i>owl:Thing</i>
+                                    
+                                </td>
+                            </tr>
+
+                            
+                            <tr>
+                                <td class="firsttd">
+                                    <a class="propcolor" title="vann:preferredNamespacePrefix" href="prop-vannpreferrednamespaceprefix.html">vann:preferredNamespacePrefix</a>
+                                </td>
+                                <td class="thirdtd">
+                                    <span>--</span>
+                                </td>
+                                <td class="secondtd">
+                                    
+                                        <i>owl:Thing</i>
+                                    
+                                </td>
+                            </tr>
+
+                            
+                            <tr>
+                                <td class="firsttd">
+                                    <a class="propcolor" title="vann:preferredNamespaceUri" href="prop-vannpreferrednamespaceuri.html">vann:preferredNamespaceUri</a>
+                                </td>
+                                <td class="thirdtd">
+                                    <span>--</span>
+                                </td>
+                                <td class="secondtd">
+                                    
+                                        <i>owl:Thing</i>
+                                    
+                                </td>
+                            </tr>
+
+                            
+                            <tr>
+                                <td class="firsttd">
+                                    <a class="propcolor" title="rdfs:comment" href="prop-rdfscomment.html">rdfs:comment</a>
+                                </td>
+                                <td class="thirdtd">
+                                    <span>--</span>
+                                </td>
+                                <td class="secondtd">
+                                    
+                                        <i>owl:Thing</i>
+                                    
+                                </td>
+                            </tr>
+
+                            
+                            <tr>
+                                <td class="firsttd">
+                                    <a class="propcolor" title="rdfs:label" href="prop-rdfslabel.html">rdfs:label</a>
+                                </td>
+                                <td class="thirdtd">
+                                    <span>--</span>
+                                </td>
+                                <td class="secondtd">
+                                    
+                                        <i>owl:Thing</i>
+                                    
+                                </td>
+                            </tr>
+
+                            
+                            <tr>
+                                <td class="firsttd">
+                                    <a class="propcolor" title="rdfs:seeAlso" href="prop-rdfsseealso.html">rdfs:seeAlso</a>
+                                </td>
+                                <td class="thirdtd">
+                                    <span>--</span>
+                                </td>
+                                <td class="secondtd">
+                                    
+                                        <i>owl:Thing</i>
+                                    
+                                </td>
+                            </tr>
+
+                            
+                            <tr>
+                                <td class="firsttd">
+                                    <a class="propcolor" title="owl:versionInfo" href="prop-owlversioninfo.html">owl:versionInfo</a>
+                                </td>
+                                <td class="thirdtd">
+                                    <span>--</span>
+                                </td>
+                                <td class="secondtd">
+                                    
+                                        <i>owl:Thing</i>
+                                    
+                                </td>
+                            </tr>
+
+                            
+                            <tr>
+                                <td class="firsttd">
+                                    <a class="propcolor" title="prism:alternateTitle" href="prop-prismalternatetitle.html">prism:alternateTitle</a>
+                                </td>
+                                <td class="thirdtd">
+                                    <span>An alternative title for a resource.</span>
+                                </td>
+                                <td class="secondtd">
+                                    
+                                        <i>owl:Thing</i>
+                                    
+                                </td>
+                            </tr>
+
+                            
+                            <tr>
+                                <td class="firsttd">
+                                    <a class="propcolor" title="prism:section" href="prop-prismsection.html">prism:section</a>
+                                </td>
+                                <td class="thirdtd">
+                                    <span>The name or identifier of the section or part of a resource, for example Part 2 of Issue 6 of Volume 127 of the Journal of Cell Biology, or the Travel Section of a newspaper issue.</span>
+                                </td>
+                                <td class="secondtd">
+                                    
+                                        <i>owl:Thing</i>
+                                    
+                                </td>
+                            </tr>
+
+                            
+                            <tr>
+                                <td class="firsttd">
+                                    <a class="propcolor" title="dcterms:created" href="prop-dctermscreated.html">dcterms:created</a>
+                                </td>
+                                <td class="thirdtd">
+                                    <span>The date on which an entity has been created.</span>
+                                </td>
+                                <td class="secondtd">
+                                    
+                                    
+
+                                        <a title="" href=".html" class="rdfclass"></a>
+
+                                    
+                                    
+                                </td>
+                            </tr>
+
+                            
+                            <tr>
+                                <td class="firsttd">
+                                    <a class="propcolor" title="dcterms:date" href="prop-dctermsdate.html">dcterms:date</a>
+                                </td>
+                                <td class="thirdtd">
+                                    <span>A point or period of time associated with an event in the lifecycle of the resource.
+
+Date may be used to express temporal information at any level of granularity. Recommended best practice is to use an encoding scheme, such as the W3CDTF profile of ISO 8601 [http://www.w3.org/TR/NOTE-datetime].</span>
+                                </td>
+                                <td class="secondtd">
+                                    
+                                        <i>owl:Thing</i>
+                                    
+                                </td>
+                            </tr>
+
+                            
+                            <tr>
+                                <td class="firsttd">
+                                    <a class="propcolor" title="dcterms:dateAccepted" href="prop-dctermsdateaccepted.html">dcterms:dateAccepted</a>
+                                </td>
+                                <td class="thirdtd">
+                                    <span>The date of acceptance of an entity. Examples of entities to which a Date Accepted may be relevant are a thesis (accepted by a university examination board) or an article (accepted by a journal editor).</span>
+                                </td>
+                                <td class="secondtd">
+                                    
+                                    
+
+                                        <a title="" href=".html" class="rdfclass"></a>
+
+                                    
+                                    
+                                </td>
+                            </tr>
+
+                            
+                            <tr>
+                                <td class="firsttd">
+                                    <a class="propcolor" title="dcterms:dateCopyrighted" href="prop-dctermsdatecopyrighted.html">dcterms:dateCopyrighted</a>
+                                </td>
+                                <td class="thirdtd">
+                                    <span>The date on which an entity has been copyrighted.</span>
+                                </td>
+                                <td class="secondtd">
+                                    
+                                    
+
+                                        <a title="" href=".html" class="rdfclass"></a>
+
+                                    
+                                    
+                                </td>
+                            </tr>
+
+                            
+                            <tr>
+                                <td class="firsttd">
+                                    <a class="propcolor" title="dcterms:dateSubmitted" href="prop-dctermsdatesubmitted.html">dcterms:dateSubmitted</a>
+                                </td>
+                                <td class="thirdtd">
+                                    <span>The date on which an entity has been submitted. Examples of resources to which a Date Submitted may be relevant are a thesis (submitted to a university department), a grant application (submitted to a funding agency) or an article (submitted to a journal).</span>
+                                </td>
+                                <td class="secondtd">
+                                    
+                                    
+
+                                        <a title="" href=".html" class="rdfclass"></a>
+
+                                    
+                                    
+                                </td>
+                            </tr>
+
+                            
+                            <tr>
+                                <td class="firsttd">
+                                    <a class="propcolor" title="dcterms:identifier" href="prop-dctermsidentifier.html">dcterms:identifier</a>
+                                </td>
+                                <td class="thirdtd">
+                                    <span>A unique and unambiguous reference to the resource within a given context.
+
+Recommended best practice is to identify the resource by means of a string conforming to a formal identification system.</span>
+                                </td>
+                                <td class="secondtd">
+                                    
+                                        <i>owl:Thing</i>
+                                    
+                                </td>
+                            </tr>
+
+                            
+                            <tr>
+                                <td class="firsttd">
+                                    <a class="propcolor" title="dcterms:issued" href="prop-dctermsissued.html">dcterms:issued</a>
+                                </td>
+                                <td class="thirdtd">
+                                    <span>Date of formal issuance of a resource (e.g. a publication or a patent).</span>
+                                </td>
+                                <td class="secondtd">
+                                    
+                                    
+
+                                        <a title="" href=".html" class="rdfclass"></a>
+
+                                    
+                                    
+                                </td>
+                            </tr>
+
+                            
+                            <tr>
+                                <td class="firsttd">
+                                    <a class="propcolor" title="dcterms:modified" href="prop-dctermsmodified.html">dcterms:modified</a>
+                                </td>
+                                <td class="thirdtd">
+                                    <span>The date on which an entity has been modified.</span>
+                                </td>
+                                <td class="secondtd">
+                                    
+                                    
+
+                                        <a title="" href=".html" class="rdfclass"></a>
+
+                                    
+                                    
+                                </td>
+                            </tr>
+
+                            
+                            <tr>
+                                <td class="firsttd">
+                                    <a class="propcolor" title="dcterms:title" href="prop-dctermstitle.html">dcterms:title</a>
+                                </td>
+                                <td class="thirdtd">
+                                    <span>A name given to a resource.  Typically, the title will be the name by which the resource is formally known.</span>
+                                </td>
+                                <td class="secondtd">
+                                    
+                                        <i>owl:Thing</i>
+                                    
+                                </td>
+                            </tr>
+
+                            
+                            <tr>
+                                <td class="firsttd">
+                                    <a class="propcolor" title="dcterms:valid" href="prop-dctermsvalid.html">dcterms:valid</a>
+                                </td>
+                                <td class="thirdtd">
+                                    <span>Date (often a range) of validity of a resource.</span>
+                                </td>
+                                <td class="secondtd">
+                                    
+                                    
+
+                                        <a title="" href=".html" class="rdfclass"></a>
+
+                                    
+                                    
+                                </td>
+                            </tr>
+
+                            
+                            <tr>
+                                <td class="firsttd">
+                                    <a class="propcolor" title=":dateLastUpdated" href="prop-datelastupdated.html">:dateLastUpdated</a>
+                                </td>
+                                <td class="thirdtd">
+                                    <span>The date on which a particular endeavour, such as an ontology, was last updated.</span>
+                                </td>
+                                <td class="secondtd">
+                                    
+                                    
+
+                                        <a title="" href=".html" class="rdfclass"></a>
+
+                                    
+                                    
+                                </td>
+                            </tr>
+
+                            
+                            <tr>
+                                <td class="firsttd">
+                                    <a class="propcolor" title=":hasArXivId" href="prop-hasarxivid.html">:hasArXivId</a>
+                                </td>
+                                <td class="thirdtd">
+                                    <span>An identifier used by the preprint repository ArXiv.</span>
+                                </td>
+                                <td class="secondtd">
+                                    
+                                        <i>owl:Thing</i>
+                                    
+                                </td>
+                            </tr>
+
+                            
+                            <tr>
+                                <td class="firsttd">
+                                    <a class="propcolor" title=":hasCODEN" href="prop-hascoden.html">:hasCODEN</a>
+                                </td>
+                                <td class="thirdtd">
+                                    <span>A CODEN is a six character, alphanumeric bibliographic identification code, that provides concise, unique and unambiguous identification of the titles of serials and non-serial publications.</span>
+                                </td>
+                                <td class="secondtd">
+                                    
+                                        <i>owl:Thing</i>
+                                    
+                                </td>
+                            </tr>
+
+                            
+                            <tr>
+                                <td class="firsttd">
+                                    <a class="propcolor" title=":hasCorrectionDate" href="prop-hascorrectiondate.html">:hasCorrectionDate</a>
+                                </td>
+                                <td class="thirdtd">
+                                    <span>The date on which something, for example a document, is corrected.</span>
+                                </td>
+                                <td class="secondtd">
+                                    
+                                    
+
+                                        <a title="" href=".html" class="rdfclass"></a>
+
+                                    
+                                    
+                                </td>
+                            </tr>
+
+                            
+                            <tr>
+                                <td class="firsttd">
+                                    <a class="propcolor" title=":hasDateReceived" href="prop-hasdatereceived.html">:hasDateReceived</a>
+                                </td>
+                                <td class="thirdtd">
+                                    <span>The date on which some item is received, for example a document being received by a publisher.</span>
+                                </td>
+                                <td class="secondtd">
+                                    
+                                    
+
+                                        <a title="" href=".html" class="rdfclass"></a>
+
+                                    
+                                    
+                                </td>
+                            </tr>
+
+                            
+                            <tr>
+                                <td class="firsttd">
+                                    <a class="propcolor" title=":hasDeadline" href="prop-hasdeadline.html">:hasDeadline</a>
+                                </td>
+                                <td class="thirdtd">
+                                    <span>A date by which something has to be done.</span>
+                                </td>
+                                <td class="secondtd">
+                                    
+                                    
+
+                                        <a title="" href=".html" class="rdfclass"></a>
+
+                                    
+                                    
+                                </td>
+                            </tr>
+
+                            
+                            <tr>
+                                <td class="firsttd">
+                                    <a class="propcolor" title=":hasDecisonDate" href="prop-hasdecisondate.html">:hasDecisonDate</a>
+                                </td>
+                                <td class="thirdtd">
+                                    <span>The date on which a particular endeavour, such as a grant application, has been or will be approved or rejected by somebody.</span>
+                                </td>
+                                <td class="secondtd">
+                                    
+                                    
+
+                                        <a title="" href=".html" class="rdfclass"></a>
+
+                                    
+                                    
+                                </td>
+                            </tr>
+
+                            
+                            <tr>
+                                <td class="firsttd">
+                                    <a class="propcolor" title=":hasDistributionDate" href="prop-hasdistributiondate.html">:hasDistributionDate</a>
+                                </td>
+                                <td class="thirdtd">
+                                    <span>The date on which something is distributed, for example the date on which a preprint of a document is e-mailed to colleagues and other academics by the author(s), or the date on which a printed announcement of forthcoming theatre events is mailed to those those on the theatre&#39;s mailing list.</span>
+                                </td>
+                                <td class="secondtd">
+                                    
+                                    
+
+                                        <a title="" href=".html" class="rdfclass"></a>
+
+                                    
+                                    
+                                </td>
+                            </tr>
+
+                            
+                            <tr>
+                                <td class="firsttd">
+                                    <a class="propcolor" title=":hasEmbargoDate" href="prop-hasembargodate.html">:hasEmbargoDate</a>
+                                </td>
+                                <td class="thirdtd">
+                                    <span>The date before which an entity should not be published, or before which a press release should not be reported on.  For open-access journal articles, the embargo date is the date before which availability of the open-access version of the article is restricted by the publisher, following subscription-access availability of the published work.  The duration of the embargo period can be specified by fabio:hasEmbargoDuration.</span>
+                                </td>
+                                <td class="secondtd">
+                                    
+                                    
+
+                                        <a title="" href=".html" class="rdfclass"></a>
+
+                                    
+                                    
+                                </td>
+                            </tr>
+
+                            
+                            <tr>
+                                <td class="firsttd">
+                                    <a class="propcolor" title=":hasEmbargoDuration" href="prop-hasembargoduration.html">:hasEmbargoDuration</a>
+                                </td>
+                                <td class="thirdtd">
+                                    <span>The time period for which an entity is embargoed.  During this period, the entity should not be published or, in the case of a press release, should not be reported on.  For open-access journal articles, the embargo duration specifies that period of time during which availability of the open-access version of the article is delayed by the publisher, following subscription-access availability of the published work.  The end of the embargo period can be specified by fabio:hasEmbargoDate.</span>
+                                </td>
+                                <td class="secondtd">
+                                    
+                                        <i>owl:Thing</i>
+                                    
+                                </td>
+                            </tr>
+
+                            
+                            <tr>
+                                <td class="firsttd">
+                                    <a class="propcolor" title=":hasIssnL" href="prop-hasissnl.html">:hasIssnL</a>
+                                </td>
+                                <td class="thirdtd">
+                                    <span>A linking International Standard Serial Number.</span>
+                                </td>
+                                <td class="secondtd">
+                                    
+                                        <i>owl:Thing</i>
+                                    
+                                </td>
+                            </tr>
+
+                            
+                            <tr>
+                                <td class="firsttd">
+                                    <a class="propcolor" title=":hasNLMJournalTitleAbbreviation" href="prop-hasnlmjournaltitleabbreviation.html">:hasNLMJournalTitleAbbreviation</a>
+                                </td>
+                                <td class="thirdtd">
+                                    <span>An internal identifier for the abbreviation of the title of journals available from the National Library of Medicine repository.</span>
+                                </td>
+                                <td class="secondtd">
+                                    
+                                        <i>owl:Thing</i>
+                                    
+                                </td>
+                            </tr>
+
+                            
+                            <tr>
+                                <td class="firsttd">
+                                    <a class="propcolor" title=":hasPII" href="prop-haspii.html">:hasPII</a>
+                                </td>
+                                <td class="thirdtd">
+                                    <span>Has Publisher Item Identifier</span>
+                                </td>
+                                <td class="secondtd">
+                                    
+                                        <i>owl:Thing</i>
+                                    
+                                </td>
+                            </tr>
+
+                            
+                            <tr>
+                                <td class="firsttd">
+                                    <a class="propcolor" title=":hasPatentNumber" href="prop-haspatentnumber.html">:hasPatentNumber</a>
+                                </td>
+                                <td class="thirdtd">
+                                    <span>A unique identifing number issued by a patent authority to identify a patent, displayed at the beginning of the patent document.</span>
+                                </td>
+                                <td class="secondtd">
+                                    
+                                        <i>owl:Thing</i>
+                                    
+                                </td>
+                            </tr>
+
+                            
+                            <tr>
+                                <td class="firsttd">
+                                    <a class="propcolor" title=":hasPublicationYear" href="prop-haspublicationyear.html">:hasPublicationYear</a>
+                                </td>
+                                <td class="thirdtd">
+                                    <span>The year in which a resource is published.</span>
+                                </td>
+                                <td class="secondtd">
+                                    
+                                    
+
+                                        <a title="" href=".html" class="rdfclass"></a>
+
+                                    
+                                    
+                                </td>
+                            </tr>
+
+                            
+                            <tr>
+                                <td class="firsttd">
+                                    <a class="propcolor" title=":hasRequestDate" href="prop-hasrequestdate.html">:hasRequestDate</a>
+                                </td>
+                                <td class="thirdtd">
+                                    <span>The date on which an agent is requested to do something, for example a reviewer is requested to write a review of a paper submitted to a journal for publication, or an author is requested to supply a revised version of the paper in response to the reviews received.</span>
+                                </td>
+                                <td class="secondtd">
+                                    
+                                        <i>owl:Thing</i>
+                                    
+                                </td>
+                            </tr>
+
+                            
+                            <tr>
+                                <td class="firsttd">
+                                    <a class="propcolor" title=":hasRetractionDate" href="prop-hasretractiondate.html">:hasRetractionDate</a>
+                                </td>
+                                <td class="thirdtd">
+                                    <span>The date on which something, for example a claim or a journal article, is retracted.</span>
+                                </td>
+                                <td class="secondtd">
+                                    
+                                    
+
+                                        <a title="" href=".html" class="rdfclass"></a>
+
+                                    
+                                    
+                                </td>
+                            </tr>
+
+                            
+                            <tr>
+                                <td class="firsttd">
+                                    <a class="propcolor" title=":hasSeason" href="prop-hasseason.html">:hasSeason</a>
+                                </td>
+                                <td class="thirdtd">
+                                    <span>Permits specification of the season of the year, for example spring, summer, autumn and winter in British English.</span>
+                                </td>
+                                <td class="secondtd">
+                                    
+                                        <i>owl:Thing</i>
+                                    
+                                </td>
+                            </tr>
+
+                            
+                            <tr>
+                                <td class="firsttd">
+                                    <a class="propcolor" title=":hasStandardNumber" href="prop-hasstandardnumber.html">:hasStandardNumber</a>
+                                </td>
+                                <td class="thirdtd">
+                                    <span>The number defining an international standard, for example Z39.96 - 201x, identifying NISO JATS, the Journal Article Tag Suite.</span>
+                                </td>
+                                <td class="secondtd">
+                                    
+                                        <i>owl:Thing</i>
+                                    
+                                </td>
+                            </tr>
+
+                            
+                            <tr>
+                                <td class="firsttd">
+                                    <a class="propcolor" title=":hasTranslatedSubtitle" href="prop-hastranslatedsubtitle.html">:hasTranslatedSubtitle</a>
+                                </td>
+                                <td class="thirdtd">
+                                    <span>A version of the subtitle of an entity translated into another language, which may be specified using the object property dcterms:language.</span>
+                                </td>
+                                <td class="secondtd">
+                                    
+                                        <i>owl:Thing</i>
+                                    
+                                </td>
+                            </tr>
+
+                            
+                            <tr>
+                                <td class="firsttd">
+                                    <a class="propcolor" title=":hasTranslatedTitle" href="prop-hastranslatedtitle.html">:hasTranslatedTitle</a>
+                                </td>
+                                <td class="thirdtd">
+                                    <span>A version of the title of an entity translated into another language, which may be specified using the object property dcterms:language.</span>
+                                </td>
+                                <td class="secondtd">
+                                    
+                                        <i>owl:Thing</i>
+                                    
+                                </td>
+                            </tr>
+
+                            
+                            <tr>
+                                <td class="firsttd">
+                                    <a class="propcolor" title=":usesCalendar" href="prop-usescalendar.html">:usesCalendar</a>
+                                </td>
+                                <td class="thirdtd">
+                                    <span>A property that identifies the calendar system used to specify a date, for example the Chinese, Gregorian, Hebrew, Islamic or Lunar calendar.</span>
+                                </td>
+                                <td class="secondtd">
+                                    
+                                        <i>owl:Thing</i>
+                                    
+                                </td>
+                            </tr>
+
+                            
+                            <tr>
+                                <td class="firsttd">
+                                    <a class="propcolor" title="owl:topDataProperty" href="prop-owltopdataproperty.html">owl:topDataProperty</a>
+                                </td>
+                                <td class="thirdtd">
+                                    <span>--</span>
+                                </td>
+                                <td class="secondtd">
+                                    
+                                        <i>owl:Thing</i>
+                                    
+                                </td>
+                            </tr>
+
+                            
+                            <tr>
+                                <td class="firsttd">
+                                    <a class="propcolor" title="dcterms:creator" href="prop-dctermscreator.html">dcterms:creator</a>
+                                </td>
+                                <td class="thirdtd">
+                                    <span>An entity primarily responsible for making the resource.
+
+Examples of a Creator include a person, an organization, or a service. Typically, the name of a Creator should be used to indicate the entity.</span>
+                                </td>
+                                <td class="secondtd">
+                                    
+                                        <i>owl:Thing</i>
+                                    
+                                </td>
+                            </tr>
+
+                            
+                            <tr>
+                                <td class="firsttd">
+                                    <a class="propcolor" title="dcterms:format" href="prop-dctermsformat.html">dcterms:format</a>
+                                </td>
+                                <td class="thirdtd">
+                                    <span>The file format, physical medium, or dimensions of the resource.
+
+Examples of dimensions include size and duration. Recommended best practice is to use a controlled vocabulary such as the list of Internet Media Types.</span>
+                                </td>
+                                <td class="secondtd">
+                                    
+                                        <i>owl:Thing</i>
+                                    
+                                </td>
+                            </tr>
+
+                            
+                            <tr>
+                                <td class="firsttd">
+                                    <a class="propcolor" title="dcterms:language" href="prop-dctermslanguage.html">dcterms:language</a>
+                                </td>
+                                <td class="thirdtd">
+                                    <span>A language of the resource. Examples include written, spoken, sign, and computer languages.
+
+Recommended best practice is to use a controlled vocabulary such as RFC 4646 [http://www.ietf.org/rfc/rfc4646.txt].</span>
+                                </td>
+                                <td class="secondtd">
+                                    
+                                        <i>owl:Thing</i>
+                                    
+                                </td>
+                            </tr>
+
+                            
+                            <tr>
+                                <td class="firsttd">
+                                    <a class="propcolor" title="dcterms:license" href="prop-dctermslicense.html">dcterms:license</a>
+                                </td>
+                                <td class="thirdtd">
+                                    <span>A legal document giving official permission to do something with the resource.</span>
+                                </td>
+                                <td class="secondtd">
+                                    
+                                        <i>owl:Thing</i>
+                                    
+                                </td>
+                            </tr>
+
+                            
+                            <tr>
+                                <td class="firsttd">
+                                    <a class="propcolor" title="dcterms:publisher" href="prop-dctermspublisher.html">dcterms:publisher</a>
+                                </td>
+                                <td class="thirdtd">
+                                    <span>An entity responsible for making the resource available.
+
+Examples of a Publisher include a person, an organization, or a service. Typically, the name of a Publisher should be used to indicate the entity.</span>
+                                </td>
+                                <td class="secondtd">
+                                    
+                                        <i>owl:Thing</i>
+                                    
+                                </td>
+                            </tr>
+
+                            
+                            <tr>
+                                <td class="firsttd">
+                                    <a class="propcolor" title="dcterms:rights" href="prop-dctermsrights.html">dcterms:rights</a>
+                                </td>
+                                <td class="thirdtd">
+                                    <span>Information about rights held in and over the resource.
+
+Typically, rights information includes a statement about various property rights associated with the resource, including intellectual property rights.</span>
+                                </td>
+                                <td class="secondtd">
+                                    
+                                        <i>owl:Thing</i>
+                                    
+                                </td>
+                            </tr>
+
+                            
+                            <tr>
+                                <td class="firsttd">
+                                    <a class="propcolor" title=":hasDiscipline" href="prop-hasdiscipline.html">:hasDiscipline</a>
+                                </td>
+                                <td class="thirdtd">
+                                    <span>The discipline to which a subject vocabulary belongs.</span>
+                                </td>
+                                <td class="secondtd">
+                                    
+                                    
+
+                                        <a title=":SubjectDiscipline" href="class-subjectdiscipline.html" class="rdfclass">:SubjectDiscipline</a>
+
+                                    
+                                    
+                                </td>
+                            </tr>
+
+                            
+                            <tr>
+                                <td class="firsttd">
+                                    <a class="propcolor" title="frbr:embodiment" href="prop-frbrembodiment.html">frbr:embodiment</a>
+                                </td>
+                                <td class="thirdtd">
+                                    <span>As defined by FRBR (http://www.ifla.org/VII/s13/frbr/frbr1.htm; http://purl.org/vocab/frbr/core#embodiment), a property representing a manifestation that embodies an expression.</span>
+                                </td>
+                                <td class="secondtd">
+                                    
+                                        <i>owl:Thing</i>
+                                    
+                                </td>
+                            </tr>
+
+                            
+                            <tr>
+                                <td class="firsttd">
+                                    <a class="propcolor" title="frbr:embodimentOf" href="prop-frbrembodimentof.html">frbr:embodimentOf</a>
+                                </td>
+                                <td class="thirdtd">
+                                    <span>As defined by FRBR (http://www.ifla.org/VII/s13/frbr/frbr1.htm; http://purl.org/vocab/frbr/core#embodimentOf), a property representing an expression that is embodied by a manifestation.</span>
+                                </td>
+                                <td class="secondtd">
+                                    
+                                        <i>owl:Thing</i>
+                                    
+                                </td>
+                            </tr>
+
+                            
+                            <tr>
+                                <td class="firsttd">
+                                    <a class="propcolor" title="frbr:exemplar" href="prop-frbrexemplar.html">frbr:exemplar</a>
+                                </td>
+                                <td class="thirdtd">
+                                    <span>As defined by FRBR (http://www.ifla.org/VII/s13/frbr/frbr1.htm; http://purl.org/vocab/frbr/core#exemplar), a property representing an item that exemplifies a manifestation.</span>
+                                </td>
+                                <td class="secondtd">
+                                    
+                                        <i>owl:Thing</i>
+                                    
+                                </td>
+                            </tr>
+
+                            
+                            <tr>
+                                <td class="firsttd">
+                                    <a class="propcolor" title="frbr:exemplarOf" href="prop-frbrexemplarof.html">frbr:exemplarOf</a>
+                                </td>
+                                <td class="thirdtd">
+                                    <span>As defined by FRBR (http://www.ifla.org/VII/s13/frbr/frbr1.htm; http://purl.org/vocab/frbr/core#embodimentOf), a property representing a manifestation that is exemplified by an item.</span>
+                                </td>
+                                <td class="secondtd">
+                                    
+                                        <i>owl:Thing</i>
+                                    
+                                </td>
+                            </tr>
+
+                            
+                            <tr>
+                                <td class="firsttd">
+                                    <a class="propcolor" title="frbr:part" href="prop-frbrpart.html">frbr:part</a>
+                                </td>
+                                <td class="thirdtd">
+                                    <span>Meaning = has part.  As defined by FRBR (http://www.ifla.org/VII/s13/frbr/frbr1.htm; http://purl.org/vocab/frbr/core#part),  a property indicating that one entity includes another entity.</span>
+                                </td>
+                                <td class="secondtd">
+                                    
+                                        <i>owl:Thing</i>
+                                    
+                                </td>
+                            </tr>
+
+                            
+                            <tr>
+                                <td class="firsttd">
+                                    <a class="propcolor" title="frbr:partOf" href="prop-frbrpartof.html">frbr:partOf</a>
+                                </td>
+                                <td class="thirdtd">
+                                    <span>Meaning = is part of.  As defined by FRBR (http://www.ifla.org/VII/s13/frbr/frbr1.htm; http://purl.org/vocab/frbr/core#partOf), a property indicating that one entity is a part of another entity.</span>
+                                </td>
+                                <td class="secondtd">
+                                    
+                                        <i>owl:Thing</i>
+                                    
+                                </td>
+                            </tr>
+
+                            
+                            <tr>
+                                <td class="firsttd">
+                                    <a class="propcolor" title="frbr:realization" href="prop-frbrrealization.html">frbr:realization</a>
+                                </td>
+                                <td class="thirdtd">
+                                    <span>As defined by FRBR (http://www.ifla.org/VII/s13/frbr/frbr1.htm; http://purl.org/vocab/frbr/core#realization), a property representing an expression that is an intellectual or artistic realization of a work.</span>
+                                </td>
+                                <td class="secondtd">
+                                    
+                                        <i>owl:Thing</i>
+                                    
+                                </td>
+                            </tr>
+
+                            
+                            <tr>
+                                <td class="firsttd">
+                                    <a class="propcolor" title="frbr:realizationOf" href="prop-frbrrealizationof.html">frbr:realizationOf</a>
+                                </td>
+                                <td class="thirdtd">
+                                    <span>As defined by FRBR (http://www.ifla.org/VII/s13/frbr/frbr1.htm; http://purl.org/vocab/frbr/core#realizationOf), a property representing the work that has been realized by an expression.</span>
+                                </td>
+                                <td class="secondtd">
+                                    
+                                        <i>owl:Thing</i>
+                                    
+                                </td>
+                            </tr>
+
+                            
+                            <tr>
+                                <td class="firsttd">
+                                    <a class="propcolor" title="frbr:relatedEndeavour" href="prop-frbrrelatedendeavour.html">frbr:relatedEndeavour</a>
+                                </td>
+                                <td class="thirdtd">
+                                    <span>--</span>
+                                </td>
+                                <td class="secondtd">
+                                    
+                                        <i>owl:Thing</i>
+                                    
+                                </td>
+                            </tr>
+
+                            
+                            <tr>
+                                <td class="firsttd">
+                                    <a class="propcolor" title="owl:topObjectProperty" href="prop-owltopobjectproperty.html">owl:topObjectProperty</a>
+                                </td>
+                                <td class="thirdtd">
+                                    <span>--</span>
+                                </td>
+                                <td class="secondtd">
+                                    
+                                        <i>owl:Thing</i>
+                                    
+                                </td>
+                            </tr>
+
+                            
+
+                    
+
+                    
+
+                
+
+            </table>
+
+
+          </div>
+           </div></div>
+
+        
+
+
+
+
+
+
+           <div class="row"><div class="col-md-12">
+              <div class="panel panel-default">
+            <div class="panel-heading">
+              <h3 class="panel-title">Implementation</h3>
+            </div>
+            <div class="panel-body implementation-panel">
+
+                
+
+                    <div class="highlight"><pre><span></span><span class="k">@prefix</span><span class="w"> </span><span class="nn">:</span><span class="w"> </span><span class="nv">&lt;http://purl.org/spar/fabio/&gt;</span><span class="w"> </span><span class="p">.</span><span class="w"></span>
+<span class="k">@prefix</span><span class="w"> </span><span class="nn">dc:</span><span class="w"> </span><span class="nv">&lt;http://purl.org/dc/elements/1.1/&gt;</span><span class="w"> </span><span class="p">.</span><span class="w"></span>
+<span class="k">@prefix</span><span class="w"> </span><span class="nn">dcterms:</span><span class="w"> </span><span class="nv">&lt;http://purl.org/dc/terms/&gt;</span><span class="w"> </span><span class="p">.</span><span class="w"></span>
+<span class="k">@prefix</span><span class="w"> </span><span class="nn">frbr:</span><span class="w"> </span><span class="nv">&lt;http://purl.org/vocab/frbr/core#&gt;</span><span class="w"> </span><span class="p">.</span><span class="w"></span>
+<span class="k">@prefix</span><span class="w"> </span><span class="nn">owl:</span><span class="w"> </span><span class="nv">&lt;http://www.w3.org/2002/07/owl#&gt;</span><span class="w"> </span><span class="p">.</span><span class="w"></span>
+<span class="k">@prefix</span><span class="w"> </span><span class="nn">prism:</span><span class="w"> </span><span class="nv">&lt;http://prismstandard.org/namespaces/basic/2.0/&gt;</span><span class="w"> </span><span class="p">.</span><span class="w"></span>
+<span class="k">@prefix</span><span class="w"> </span><span class="nn">rdf:</span><span class="w"> </span><span class="nv">&lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#&gt;</span><span class="w"> </span><span class="p">.</span><span class="w"></span>
+<span class="k">@prefix</span><span class="w"> </span><span class="nn">rdfs:</span><span class="w"> </span><span class="nv">&lt;http://www.w3.org/2000/01/rdf-schema#&gt;</span><span class="w"> </span><span class="p">.</span><span class="w"></span>
+<span class="k">@prefix</span><span class="w"> </span><span class="nn">skos:</span><span class="w"> </span><span class="nv">&lt;http://www.w3.org/2004/02/skos/core#&gt;</span><span class="w"> </span><span class="p">.</span><span class="w"></span>
+<span class="k">@prefix</span><span class="w"> </span><span class="nn">spar:</span><span class="w"> </span><span class="nv">&lt;http://purl.org/spar/&gt;</span><span class="w"> </span><span class="p">.</span><span class="w"></span>
+<span class="k">@prefix</span><span class="w"> </span><span class="nn">vann:</span><span class="w"> </span><span class="nv">&lt;http://purl.org/vocab/vann/&gt;</span><span class="w"> </span><span class="p">.</span><span class="w"></span>
+<span class="k">@prefix</span><span class="w"> </span><span class="nn">xml:</span><span class="w"> </span><span class="nv">&lt;http://www.w3.org/XML/1998/namespace&gt;</span><span class="w"> </span><span class="p">.</span><span class="w"></span>
+<span class="k">@prefix</span><span class="w"> </span><span class="nn">xsd:</span><span class="w"> </span><span class="nv">&lt;http://www.w3.org/2001/XMLSchema#&gt;</span><span class="w"> </span><span class="p">.</span><span class="w"></span>
+
+<span class="nn">:</span><span class="nt">EntityMetadata</span><span class="w"> </span><span class="kt">a</span><span class="w"> </span><span class="nn">owl:</span><span class="nt">Class</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="nn">rdfs:</span><span class="nt">label</span><span class="w"> </span><span class="s">&quot;entity metadata&quot;</span><span class="o">@</span><span class="ge">en</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="nn">rdfs:</span><span class="nt">comment</span><span class="w"> </span><span class="s">&quot;Metadata describing the work itself, including for example the name of the creator(s), the title of the work, and the date and place of its creation.&quot;</span><span class="o">@</span><span class="ge">en</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="nn">rdfs:</span><span class="nt">subClassOf</span><span class="w"> </span><span class="nn">:</span><span class="nt">Metadata</span><span class="w"> </span><span class="p">.</span><span class="w"></span>
+</pre></div>
+
+
+                
+            </div>
+          </div>
+           </div></div>
+
+
+
+
+
+        
+
+
+
+
+
+
+
+
+
+
+
+	</div><!-- /#page-content-wrapper -->
+
+
+  
+
+
+
+  
+
+
+
+
+  <footer class="footer">
+    <div class="container">
+    
+      <p class="text-muted">Documentation automatically generated on 26th February 2017 with <a href="https://github.com/lambdamusic/OntoSpy">OntoSpy</a> (v1.7.4)</p>
+
+    
+    </div>
+  </footer>
+
+
+</div><!-- /#wrapper -->
+
+
+<!-- Bootstrap core JavaScript
+================================================== -->
+<!-- Placed at the end of the document so the pages load faster -->
+<script src="../static/libs/jquery/1.12.4/jquery.min.js"></script>
+<script src="../static/libs/bootstrap-3.3.7-dist/js/bootstrap.min.js"></script>
+
+<!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+<script src="../static/libs/bootstrap-3.3.7-dist/js/ie10-viewport-bug-workaround.js"></script>
+
+<script src="../static/libs/Chart.js-2.4.0/Chart.bundle.js"></script>
+
+
+<!-- Menu Toggle Script -->
+<script>
+$("#menu-toggle").click(function(e) {
+    e.preventDefault();
+    $("#wrapper").toggleClass("toggled");
+});
+</script>
+
+
+
+
+<script type="text/javascript">
+
+$('#search-input-sidebar').keyup(function() {
+
+  var val = $.trim($(this).val()).replace(/ +/g, ' ').toLowerCase();
+  // var $rows = $(this).next(".entities-list").find("div");
+  var $rows = $(this).parent().parent().find("li.second-level");
+
+  $rows.show().filter(function() {
+      var text = $(this).text().replace(/\s+/g, ' ').toLowerCase();
+      return !~text.indexOf(val);
+  }).hide();
+});
+
+</script>
+
+
+
+
+  <!-- Scroll Sidebar Script -->
+  
+  
+  <script type="text/javascript">
+
+    $(document).ready(function (){
+      $('#sidebar-wrapper').animate({
+          scrollTop: $("#sd_1106").offset().top - 100
+      }, 100);
+    });
+
+  </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  </body>
+</html>

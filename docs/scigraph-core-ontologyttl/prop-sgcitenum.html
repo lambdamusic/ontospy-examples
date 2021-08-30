@@ -1,0 +1,1352 @@
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="../static/libs/img/favicon.ico">
+
+	
+		<title>OntoSpy > http://name.scigraph.com/terms/</title>
+	
+
+    <!-- Bootstrap core CSS -->
+    <!-- <link href="../static/libs/bootstrap-3.3.7-dist/css/bootstrap.min.css" rel="stylesheet">  -->
+    <!-- Bootswatch:  -->
+    <!-- cerulean  | cyborg |  flatly |  lumen |  sandstone |   spacelab  |  yeti | cosmo |  darkly |  paper | simplex | superhero |  journal | readable  |   slate |  united -->
+    <link href="../static/libs/bootswatch3.2/yeti/bootstrap.min.css" rel="stylesheet">
+    <link href="../static/custom/css/simple-sidebar.css" rel="stylesheet">
+    <link href="../static/custom/css/familytree.css" rel="stylesheet">
+    <link href="../static/custom/css/tabletree.css" rel="stylesheet">
+
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <link href="../static/libs/bootstrap-3.3.7-dist/css/ie10-viewport-bug-workaround.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="../static/custom/css/sticky-footer-navbar.css" rel="stylesheet">
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+<style type="text/css">
+
+  .lead-plus {font-size: 26.5px;}
+  .label-xs {font-size: 10px;}
+  .label-dark {background: #2c3e50; color: white; padding: 1px;}
+  .margin50 {margin-top: 50px; margin-bottom: 50px;}
+
+  .namespaces {background: #ced2d6; width: 100%;}
+
+
+  /*so that the d3plus tooltip panel doesnt cover the top banner*/
+  .navbar {z-index: 3000;}
+
+
+  .panel-body dt {margin-top: 5px;}
+  .page-header  {margin-top: 30px;}
+  #wrapper {margin-top: 50px;}
+
+  .implementation-panel {
+    overflow: auto;
+    max-height: 500px;
+  }
+
+  tr.table-classproperties {
+      /*background: #f5f5f5;*/
+  }
+  tr.table-classproperties th {
+      font-size: 80%;
+      font-weight: normal;
+  }
+
+
+  tr.table-inheritanceinfo {
+      /*background: #f5f5f5;*/
+      text-align: left;
+  }
+
+  tr.table-inheritanceinfo th {
+      font-size: 90%;
+      font-weight: normal;
+  }
+
+
+  .breadcrumb {
+    margin-top: 20px;
+    margin-bottom: 40px;
+  }
+
+  .breadcrumb a {
+      text-transform: capitalize;
+  }
+  .breadcrumb li {
+      text-transform: none;
+      /*so to catch the uri @todo improve*/
+  }
+
+
+  .fromclass_link {
+    /*color: white;
+    text-decoration: underline;*/
+    /*background: #1c1e52;*/
+    color: inherit;
+    /*padding: 1px;*/
+  }
+
+		.mythumbnail {
+			display: block;
+			padding: 13px;
+			margin-bottom: 30px;
+			line-height: 13.428571;
+			background-color: #fff;
+			border: 1px solid #ddd;
+			border-radius: 30px;
+		}
+
+		.mythumbnail:hover {
+			background: lightyellow;
+			text-decoration: none;
+		}
+
+
+		.img-container{
+		    height:100%;
+			overflow: hidden;
+		    max-height:200px;
+			padding: 10px;
+/*			margin: 20px 0px 20px 0px;*/
+			border: 1em #EAE5E5 solid;
+		}
+
+		.img-container:hover {
+			border: 1px grey solid;
+		}
+
+		img{
+/*		    height:100% !important;*/
+		}
+
+
+		.icon-xxs {
+			font-size: 15px;
+		}
+
+
+    /* dropdown open on hover */
+
+    @media (min-width: 979px) {
+      ul.nav li.dropdown:hover > ul.dropdown-menu {
+        display: block;
+      }
+    }
+
+
+
+/*pygments css*/
+.highlight .hll { background-color: #ffffcc }
+.highlight  { background: #f8f8f8; }
+.highlight .c { color: #408080; font-style: italic } /* Comment */
+.highlight .err { border: 1px solid #FF0000 } /* Error */
+.highlight .k { color: #008000; font-weight: bold } /* Keyword */
+.highlight .o { color: #666666 } /* Operator */
+.highlight .ch { color: #408080; font-style: italic } /* Comment.Hashbang */
+.highlight .cm { color: #408080; font-style: italic } /* Comment.Multiline */
+.highlight .cp { color: #BC7A00 } /* Comment.Preproc */
+.highlight .cpf { color: #408080; font-style: italic } /* Comment.PreprocFile */
+.highlight .c1 { color: #408080; font-style: italic } /* Comment.Single */
+.highlight .cs { color: #408080; font-style: italic } /* Comment.Special */
+.highlight .gd { color: #A00000 } /* Generic.Deleted */
+.highlight .ge { font-style: italic } /* Generic.Emph */
+.highlight .gr { color: #FF0000 } /* Generic.Error */
+.highlight .gh { color: #000080; font-weight: bold } /* Generic.Heading */
+.highlight .gi { color: #00A000 } /* Generic.Inserted */
+.highlight .go { color: #888888 } /* Generic.Output */
+.highlight .gp { color: #000080; font-weight: bold } /* Generic.Prompt */
+.highlight .gs { font-weight: bold } /* Generic.Strong */
+.highlight .gu { color: #800080; font-weight: bold } /* Generic.Subheading */
+.highlight .gt { color: #0044DD } /* Generic.Traceback */
+.highlight .kc { color: #008000; font-weight: bold } /* Keyword.Constant */
+.highlight .kd { color: #008000; font-weight: bold } /* Keyword.Declaration */
+.highlight .kn { color: #008000; font-weight: bold } /* Keyword.Namespace */
+.highlight .kp { color: #008000 } /* Keyword.Pseudo */
+.highlight .kr { color: #008000; font-weight: bold } /* Keyword.Reserved */
+.highlight .kt { color: #B00040 } /* Keyword.Type */
+.highlight .m { color: #666666 } /* Literal.Number */
+.highlight .s { color: #BA2121 } /* Literal.String */
+.highlight .na { color: #7D9029 } /* Name.Attribute */
+.highlight .nb { color: #008000 } /* Name.Builtin */
+.highlight .nc { color: #0000FF; font-weight: bold } /* Name.Class */
+.highlight .no { color: #880000 } /* Name.Constant */
+.highlight .nd { color: #AA22FF } /* Name.Decorator */
+.highlight .ni { color: #999999; font-weight: bold } /* Name.Entity */
+.highlight .ne { color: #D2413A; font-weight: bold } /* Name.Exception */
+.highlight .nf { color: #0000FF } /* Name.Function */
+.highlight .nl { color: #A0A000 } /* Name.Label */
+.highlight .nn { color: #0000FF; font-weight: bold } /* Name.Namespace */
+.highlight .nt { color: #008000; font-weight: bold } /* Name.Tag */
+.highlight .nv { color: #19177C } /* Name.Variable */
+.highlight .ow { color: #AA22FF; font-weight: bold } /* Operator.Word */
+.highlight .w { color: #bbbbbb } /* Text.Whitespace */
+.highlight .mb { color: #666666 } /* Literal.Number.Bin */
+.highlight .mf { color: #666666 } /* Literal.Number.Float */
+.highlight .mh { color: #666666 } /* Literal.Number.Hex */
+.highlight .mi { color: #666666 } /* Literal.Number.Integer */
+.highlight .mo { color: #666666 } /* Literal.Number.Oct */
+.highlight .sa { color: #BA2121 } /* Literal.String.Affix */
+.highlight .sb { color: #BA2121 } /* Literal.String.Backtick */
+.highlight .sc { color: #BA2121 } /* Literal.String.Char */
+.highlight .dl { color: #BA2121 } /* Literal.String.Delimiter */
+.highlight .sd { color: #BA2121; font-style: italic } /* Literal.String.Doc */
+.highlight .s2 { color: #BA2121 } /* Literal.String.Double */
+.highlight .se { color: #BB6622; font-weight: bold } /* Literal.String.Escape */
+.highlight .sh { color: #BA2121 } /* Literal.String.Heredoc */
+.highlight .si { color: #BB6688; font-weight: bold } /* Literal.String.Interpol */
+.highlight .sx { color: #008000 } /* Literal.String.Other */
+.highlight .sr { color: #BB6688 } /* Literal.String.Regex */
+.highlight .s1 { color: #BA2121 } /* Literal.String.Single */
+.highlight .ss { color: #19177C } /* Literal.String.Symbol */
+.highlight .bp { color: #008000 } /* Name.Builtin.Pseudo */
+.highlight .fm { color: #0000FF } /* Name.Function.Magic */
+.highlight .vc { color: #19177C } /* Name.Variable.Class */
+.highlight .vg { color: #19177C } /* Name.Variable.Global */
+.highlight .vi { color: #19177C } /* Name.Variable.Instance */
+.highlight .vm { color: #19177C } /* Name.Variable.Magic */
+.highlight .il { color: #666666 } /* Literal.Number.Integer.Long */
+
+/*overloading this class from pygments*/
+.highlight {
+  overflow: auto;
+}
+
+
+
+
+
+
+
+
+</style>
+
+
+
+
+
+  </head>
+
+  <body>
+
+
+
+    
+<!-- Fixed navbar -->
+<nav class="navbar navbar-default navbar-fixed-top">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+
+      <a class="navbar-brand" id="menu-toggle" title="Toggle sidebar">
+        
+        <span class="glyphicon glyphicon-align-left" aria-hidden="true"></span>
+      </a>
+    </div>
+    <div id="navbar" class="collapse navbar-collapse">
+      <ul class="nav navbar-nav">
+        <li ><a href="index.html"><code style="font-size: 115%;">http://name.scigraph.com/terms/</code></a></li>
+        
+
+       
+
+
+        <li  ><a href="dashboard.html">Dashboard</a></li>
+        <li  ><a href="entities-az.html">Entities A-Z</a></li>
+        <li class="dropdown  " >
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Entities Tree <span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            
+            <li><a href="entities-tree-classes.html">Classes</a>
+            </li>
+            
+            
+            <li><a  href="entities-tree-properties.html">Properties</a>
+            </li>
+            
+            
+          </ul>
+      </li>
+
+      </ul>
+      
+    </div><!--/.nav-collapse -->
+
+  </div>
+</nav>
+
+
+
+
+
+
+<div id="wrapper" class="toggled">
+
+
+    
+
+    
+        
+<!-- Sidebar -->
+<div id="sidebar-wrapper">
+    <ul class="sidebar-nav">
+
+
+        <li>
+          <input style="margin-top: 30px;  margin-bottom: 20px;" type="text" id="search-input-sidebar" name="" value="" placeholder="Type to search">
+        </li>
+
+        
+          <li class="-second-level" id="sd_classes"><a href="entities-tree-classes.html">Classes (80)</a>
+          </li>
+
+            
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_6701"><a  href="class-sgabstract.html">sg:Abstract</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_6702"><a  href="class-sgaccesstype.html">sg:AccessType</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_6703"><a  href="class-sgagent.html">sg:Agent</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_6704"><a  href="class-sgaggregationevent.html">sg:AggregationEvent</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_6705"><a  href="class-sgannotation.html">sg:Annotation</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_6706"><a  href="class-sgannotationevent.html">sg:AnnotationEvent</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_6707"><a  href="class-sgarticle.html">sg:Article</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_6708"><a  href="class-sgarticletype.html">sg:ArticleType</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_6709"><a  href="class-sgasset.html">sg:Asset</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_6710"><a  href="class-sgassetmap.html">sg:AssetMap</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_6711"><a  href="class-sgbinaryasset.html">sg:BinaryAsset</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_6712"><a  href="class-sgbinding.html">sg:Binding</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_6713"><a  href="class-sgblobasset.html">sg:BlobAsset</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_6714"><a  href="class-sgblog.html">sg:Blog</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_6715"><a  href="class-sgblogpost.html">sg:BlogPost</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_6716"><a  href="class-sgbook.html">sg:Book</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_6717"><a  href="class-sgbookchapter.html">sg:BookChapter</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_6718"><a  href="class-sgcitationmetrics.html">sg:CitationMetrics</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_6719"><a  href="class-sgcollection.html">sg:Collection</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_6720"><a  href="class-sgcollectiontype.html">sg:CollectionType</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_6721"><a  href="class-sgcomponent.html">sg:Component</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_6722"><a  href="class-sgconcept.html">sg:Concept</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_6723"><a  href="class-sgconference.html">sg:Conference</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_6724"><a  href="class-sgconferenceseries.html">sg:ConferenceSeries</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_6725"><a  href="class-sgcontract.html">sg:Contract</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_6726"><a  href="class-sgcontributor.html">sg:Contributor</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_6727"><a  href="class-sgdatarepository.html">sg:DataRepository</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_6728"><a  href="class-sgdatabase.html">sg:Database</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_6729"><a  href="class-sgdataset.html">sg:Dataset</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_6730"><a  href="class-sgdigitalrepository.html">sg:DigitalRepository</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_6731"><a  href="class-sgdocument.html">sg:Document</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_6732"><a  href="class-sgdocumentrepository.html">sg:DocumentRepository</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_6733"><a  href="class-sgdomain.html">sg:Domain</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_6734"><a  href="class-sgevent.html">sg:Event</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_6735"><a  href="class-sgexternalarticle.html">sg:ExternalArticle</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_6736"><a  href="class-sgexternalcontributor.html">sg:ExternalContributor</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_6737"><a  href="class-sgfigure.html">sg:Figure</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_6738"><a  href="class-sggraph.html">sg:Graph</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_6739"><a  href="class-sgillustration.html">sg:Illustration</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_6740"><a  href="class-sgimage.html">sg:Image</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_6741"><a  href="class-sgimageasset.html">sg:ImageAsset</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_6742"><a  href="class-sgissue.html">sg:Issue</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_6743"><a  href="class-sgitem.html">sg:Item</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_6744"><a  href="class-sgjournal.html">sg:Journal</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_6745"><a  href="class-sgknowledgebase.html">sg:KnowledgeBase</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_6746"><a  href="class-sgmetrics.html">sg:Metrics</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_6747"><a  href="class-sgmetricsevent.html">sg:MetricsEvent</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_6748"><a  href="class-sgorganization.html">sg:Organization</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_6749"><a  href="class-sgpdfasset.html">sg:PdfAsset</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_6750"><a  href="class-sgperson.html">sg:Person</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_6751"><a  href="class-sgphysicalrepository.html">sg:PhysicalRepository</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_6752"><a  href="class-sgprimaryarticletype.html">sg:PrimaryArticleType</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_6753"><a  href="class-sgproceedingsvolume.html">sg:ProceedingsVolume</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_6754"><a  href="class-sgproductmarketcode.html">sg:ProductMarketCode</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_6755"><a  href="class-sgpublication.html">sg:Publication</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_6756"><a  href="class-sgpublicationevent.html">sg:PublicationEvent</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_6757"><a  href="class-sgpublicationgroup.html">sg:PublicationGroup</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_6758"><a  href="class-sgpublicationstate.html">sg:PublicationState</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_6759"><a  href="class-sgpublishevent.html">sg:PublishEvent</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_6760"><a  href="class-sgpublishstate.html">sg:PublishState</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_6761"><a  href="class-sgpublisher.html">sg:Publisher</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_6762"><a  href="class-sgrepository.html">sg:Repository</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_6763"><a  href="class-sgreviewevent.html">sg:ReviewEvent</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_6764"><a  href="class-sgreviewstate.html">sg:ReviewState</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_6765"><a  href="class-sgrule.html">sg:Rule</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_6766"><a  href="class-sgsection.html">sg:Section</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_6767"><a  href="class-sgserial.html">sg:Serial</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_6768"><a  href="class-sgseveritylevel.html">sg:SeverityLevel</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_6769"><a  href="class-sgstorage.html">sg:Storage</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_6770"><a  href="class-sgsubject.html">sg:Subject</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_6771"><a  href="class-sgsummary.html">sg:Summary</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_6772"><a  href="class-sgsummarytype.html">sg:SummaryType</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_6773"><a  href="class-sgtechnique.html">sg:Technique</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_6774"><a  href="class-sgthing.html">sg:Thing</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_6775"><a  href="class-sgtool.html">sg:Tool</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_6776"><a  href="class-sgtype.html">sg:Type</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_6777"><a  href="class-sgvideo.html">sg:Video</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_6778"><a  href="class-sgvideoasset.html">sg:VideoAsset</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_6779"><a  href="class-sgwebsite.html">sg:Website</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_6780"><a  href="class-sgxmlasset.html">sg:XmlAsset</a></li>
+          
+        
+
+        
+            <li class="-second-level" id="sd_properties"><a  href="entities-tree-properties.html">Properties (230)</a>
+            </li>
+
+            
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_6781"><a   href="prop-sgclass.html">sg:class</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_6782"><a   href="prop-sgdatetime.html">sg:datetime</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_6783"><a   href="prop-sgdisplayform.html">sg:displayForm</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_6784"><a   href="prop-sgexample.html">sg:example</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_6785"><a   href="prop-sggraph.html">sg:graph</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_6786"><a   href="prop-sgismaestroplatform.html">sg:isMaestroPlatform</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_6787"><a   href="prop-sgismanagedexternally.html">sg:isManagedExternally</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_6788"><a   href="prop-sgisnamedresource.html">sg:isNamedResource</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_6789"><a   href="prop-sgisrepeatable.html">sg:isRepeatable</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_6790"><a   href="prop-sgisterm.html">sg:isTerm</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_6791"><a   href="prop-sgistransitionjournal.html">sg:isTransitionJournal</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_6792"><a   href="prop-sgisvocabulary.html">sg:isVocabulary</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_6793"><a   href="prop-sgmarklogiccollection.html">sg:markLogicCollection</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_6794"><a   href="prop-sgrangelabel.html">sg:rangeLabel</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_6795"><a   href="prop-sgtestmarklogiccollection.html">sg:testMarkLogicCollection</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_6796"><a   href="prop-sgtype.html">sg:type</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_6797"><a   href="prop-sgalertlistid.html">sg:alertListId</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_6798"><a   href="prop-sgarticletype.html">sg:articleType</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_6799"><a   href="prop-sgarticletypepath.html">sg:articleTypePath</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_6800"><a   href="prop-sgartid.html">sg:artid</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_6801"><a   href="prop-sgassetfoldername.html">sg:assetFolderName</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_6802"><a   href="prop-sgasseturitemplate.html">sg:assetUriTemplate</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_6803"><a   href="prop-sgassetversion.html">sg:assetVersion</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_6804"><a   href="prop-sgavailableat.html">sg:availableAt</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_6805"><a   href="prop-sgbaseuritemplate.html">sg:baseUriTemplate</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_6806"><a   href="prop-sgbody.html">sg:body</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_6807"><a   href="prop-sgbodyxml.html">sg:bodyXml</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_6808"><a   href="prop-sgbookseriesacronym.html">sg:bookSeriesAcronym</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_6809"><a   href="prop-sgcaption.html">sg:caption</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_6810"><a   href="prop-sgcaptionxml.html">sg:captionXml</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_6811"><a   href="prop-sgchapteronlinedate.html">sg:chapterOnlineDate</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_6812"><a   href="prop-sgchapterregistrationdate.html">sg:chapterRegistrationDate</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_6813"><a   href="prop-sgcitation.html">sg:citation</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_6814"><a   href="prop-sgcitationdata.html">sg:citationData</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_6815"><a   href="prop-sgcitationxml.html">sg:citationXml</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_6816"><a class="active"  href="prop-sgcitenum.html">sg:citeNum</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_6817"><a   href="prop-sgcode.html">sg:code</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_6818"><a   href="prop-sgconfacronym.html">sg:confAcronym</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_6819"><a   href="prop-sgconfcity.html">sg:confCity</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_6820"><a   href="prop-sgconfcountry.html">sg:confCountry</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_6821"><a   href="prop-sgconfenddate.html">sg:confEndDate</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_6822"><a   href="prop-sgconfname.html">sg:confName</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_6823"><a   href="prop-sgconfnumber.html">sg:confNumber</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_6824"><a   href="prop-sgconfseriesname.html">sg:confSeriesName</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_6825"><a   href="prop-sgconfstartdate.html">sg:confStartDate</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_6826"><a   href="prop-sgconfyear.html">sg:confYear</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_6827"><a   href="prop-sgcontent.html">sg:content</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_6828"><a   href="prop-sgcoverdate.html">sg:coverDate</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_6829"><a   href="prop-sgcoveryear.html">sg:coverYear</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_6830"><a   href="prop-sgcoveryearmonth.html">sg:coverYearMonth</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_6831"><a   href="prop-sgcredit.html">sg:credit</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_6832"><a   href="prop-sgcurator.html">sg:curator</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_6833"><a   href="prop-sgdatabase.html">sg:database</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_6834"><a   href="prop-sgdate.html">sg:date</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_6835"><a   href="prop-sgdateend.html">sg:dateEnd</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_6836"><a   href="prop-sgdatestart.html">sg:dateStart</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_6837"><a   href="prop-sgdefinition.html">sg:definition</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_6838"><a   href="prop-sgdomain.html">sg:domain</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_6839"><a   href="prop-sgeisbn.html">sg:eisbn</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_6840"><a   href="prop-sgejpmanuscriptsubmitlink.html">sg:ejpManuscriptSubmitLink</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_6841"><a   href="prop-sgemail.html">sg:email</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_6842"><a   href="prop-sgfiguretype.html">sg:figureType</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_6843"><a   href="prop-sgfileextension.html">sg:fileExtension</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_6844"><a   href="prop-sgfilename.html">sg:filename</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_6845"><a   href="prop-sgfilesize.html">sg:filesize</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_6846"><a   href="prop-sgfirstpage.html">sg:firstPage</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_6847"><a   href="prop-sghash.html">sg:hash</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_6848"><a   href="prop-sgid.html">sg:id</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_6849"><a   href="prop-sgidhash.html">sg:idHash</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_6850"><a   href="prop-sgiscorresponding.html">sg:isCorresponding</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_6851"><a   href="prop-sgiscurated.html">sg:isCurated</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_6852"><a   href="prop-sgiseventworkflow.html">sg:isEventWorkflow</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_6853"><a   href="prop-sgisgroup.html">sg:isGroup</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_6854"><a   href="prop-sgisindexedbyscopus.html">sg:isIndexedByScopus</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_6855"><a   href="prop-sgisinstitutionalrepository.html">sg:isInstitutionalRepository</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_6856"><a   href="prop-sgisissuebased.html">sg:isIssueBased</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_6857"><a   href="prop-sgisleaf.html">sg:isLeaf</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_6858"><a   href="prop-sgisopenaccess.html">sg:isOpenAccess</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_6859"><a   href="prop-sgispalgravesubject.html">sg:isPalgraveSubject</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_6860"><a   href="prop-sgisprimaryarticletype.html">sg:isPrimaryArticleType</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_6861"><a   href="prop-sgispublishready.html">sg:isPublishReady</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_6862"><a   href="prop-sgisroot.html">sg:isRoot</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_6863"><a   href="prop-sgisscopussearchscheduled.html">sg:isScopusSearchScheduled</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_6864"><a   href="prop-sgistestinstance.html">sg:isTestInstance</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_6865"><a   href="prop-sgisbn.html">sg:isbn</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_6866"><a   href="prop-sgissueend.html">sg:issueEnd</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_6867"><a   href="prop-sgissuestart.html">sg:issueStart</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_6868"><a   href="prop-sgitemnumber.html">sg:itemNumber</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_6869"><a   href="prop-sgjournalid.html">sg:journalId</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_6870"><a   href="prop-sglastpage.html">sg:lastPage</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_6871"><a   href="prop-sglatestmetadatauritemplate.html">sg:latestMetadataUriTemplate</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_6872"><a   href="prop-sgmeshterm.html">sg:meshTerm</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_6873"><a   href="prop-sgmetadatauritemplate.html">sg:metadataUriTemplate</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_6874"><a   href="prop-sgnpgid.html">sg:npgid</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_6875"><a   href="prop-sgnumber.html">sg:number</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_6876"><a   href="prop-sgoldcode.html">sg:oldCode</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_6877"><a   href="prop-sgothercode.html">sg:otherCode</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_6878"><a   href="prop-sgownership.html">sg:ownership</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_6879"><a   href="prop-sgpartnername.html">sg:partnerName</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_6880"><a   href="prop-sgpcode.html">sg:pcode</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_6881"><a   href="prop-sgplurallabel.html">sg:pluralLabel</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_6882"><a   href="prop-sgpriceband.html">sg:priceBand</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_6883"><a   href="prop-sgprimaryxmlid.html">sg:primaryXmlId</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_6884"><a   href="prop-sgproductid.html">sg:productId</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_6885"><a   href="prop-sgpublicationdate.html">sg:publicationDate</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_6886"><a   href="prop-sgpublicationdatetime.html">sg:publicationDateTime</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_6887"><a   href="prop-sgpublicationenddate.html">sg:publicationEndDate</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_6888"><a   href="prop-sgpublicationendyear.html">sg:publicationEndYear</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_6889"><a   href="prop-sgpublicationendyearmonth.html">sg:publicationEndYearMonth</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_6890"><a   href="prop-sgpublicationname.html">sg:publicationName</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_6891"><a   href="prop-sgpublicationstartdate.html">sg:publicationStartDate</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_6892"><a   href="prop-sgpublicationstartyear.html">sg:publicationStartYear</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_6893"><a   href="prop-sgpublicationstartyearmonth.html">sg:publicationStartYearMonth</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_6894"><a   href="prop-sgpublicationyear.html">sg:publicationYear</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_6895"><a   href="prop-sgpublicationyearmonth.html">sg:publicationYearMonth</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_6896"><a   href="prop-sgpublishedmetadatauritemplate.html">sg:publishedMetadataUriTemplate</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_6897"><a   href="prop-sgrepositoryid.html">sg:repositoryId</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_6898"><a   href="prop-sgrulename.html">sg:ruleName</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_6899"><a   href="prop-sgrulenumber.html">sg:ruleNumber</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_6900"><a   href="prop-sgscopussearchdate.html">sg:scopusSearchDate</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_6901"><a   href="prop-sgsectionlevel.html">sg:sectionLevel</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_6902"><a   href="prop-sgsortlabel.html">sg:sortLabel</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_6903"><a   href="prop-sgsortletter.html">sg:sortLetter</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_6904"><a   href="prop-sgsortnumber.html">sg:sortNumber</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_6905"><a   href="prop-sgsortweight.html">sg:sortWeight</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_6906"><a   href="prop-sgsubjectpath.html">sg:subjectPath</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_6907"><a   href="prop-sgsubmittedby.html">sg:submittedBy</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_6908"><a   href="prop-sgsubtitle.html">sg:subtitle</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_6909"><a   href="prop-sgsubtypelabel.html">sg:subtypeLabel</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_6910"><a   href="prop-sgtargetdomain.html">sg:targetDomain</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_6911"><a   href="prop-sgtargeturitemplate.html">sg:targetUriTemplate</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_6912"><a   href="prop-sgtechniquepath.html">sg:techniquePath</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_6913"><a   href="prop-sgtest.html">sg:test</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_6914"><a   href="prop-sgtimestamp.html">sg:timestamp</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_6915"><a   href="prop-sgtitle.html">sg:title</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_6916"><a   href="prop-sgtitlexml.html">sg:titleXml</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_6917"><a   href="prop-sgtreedepth.html">sg:treeDepth</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_6918"><a   href="prop-sgtypelabel.html">sg:typeLabel</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_6919"><a   href="prop-sgunpublishedmetadatauritemplate.html">sg:unpublishedMetadataUriTemplate</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_6920"><a   href="prop-sgvolumeend.html">sg:volumeEnd</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_6921"><a   href="prop-sgvolumenumber.html">sg:volumeNumber</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_6922"><a   href="prop-sgvolumestart.html">sg:volumeStart</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_6923"><a   href="prop-sgwebtrendsid.html">sg:webtrendsId</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_6924"><a   href="prop-sgxmlasseturitemplate.html">sg:xmlAssetUriTemplate</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_6925"><a   href="prop-sgxmlid.html">sg:xmlId</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_6926"><a   href="prop-sgxmluritemplate.html">sg:xmlUriTemplate</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_6927"><a   href="prop-sgyear.html">sg:year</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_6928"><a   href="prop-sgyearmonth.html">sg:yearMonth</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_6929"><a   href="prop-sgallowedprimaryarticletypelist.html">sg:allowedPrimaryArticleTypeList</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_6930"><a   href="prop-sgallowspredicate.html">sg:allowsPredicate</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_6931"><a   href="prop-sgallowspredicatestringtable.html">sg:allowsPredicateStringTable</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_6932"><a   href="prop-sgassetlist.html">sg:assetList</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_6933"><a   href="prop-sgauthorlist.html">sg:authorList</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_6934"><a   href="prop-sgchapterof.html">sg:chapterOf</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_6935"><a   href="prop-sgcount.html">sg:count</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_6936"><a   href="prop-sgdoilink.html">sg:doiLink</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_6937"><a   href="prop-sgfigurelist.html">sg:figureList</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_6938"><a   href="prop-sghasabstract.html">sg:hasAbstract</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_6939"><a   href="prop-sghasaccesstype.html">sg:hasAccessType</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_6940"><a   href="prop-sghasallowedprimaryarticletype.html">sg:hasAllowedPrimaryArticleType</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_6941"><a   href="prop-sghasarticle.html">sg:hasArticle</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_6942"><a   href="prop-sghasarticletype.html">sg:hasArticleType</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_6943"><a   href="prop-sghasarticletypemapping.html">sg:hasArticleTypeMapping</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_6944"><a   href="prop-sghasasset.html">sg:hasAsset</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_6945"><a   href="prop-sghasbinding.html">sg:hasBinding</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_6946"><a   href="prop-sghasblog.html">sg:hasBlog</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_6947"><a   href="prop-sghasbroaderarticletype.html">sg:hasBroaderArticleType</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_6948"><a   href="prop-sghasbroadersubject.html">sg:hasBroaderSubject</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_6949"><a   href="prop-sghascollection.html">sg:hasCollection</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_6950"><a   href="prop-sghascollectiontype.html">sg:hasCollectionType</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_6951"><a   href="prop-sghasconference.html">sg:hasConference</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_6952"><a   href="prop-sghascontract.html">sg:hasContract</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_6953"><a   href="prop-sghascontributor.html">sg:hasContributor</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_6954"><a   href="prop-sghascorrespondingcontributor.html">sg:hasCorrespondingContributor</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_6955"><a   href="prop-sghascurrentissue.html">sg:hasCurrentIssue</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_6956"><a   href="prop-sghasdblpid.html">sg:hasDblpId</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_6957"><a   href="prop-sghasdomain.html">sg:hasDomain</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_6958"><a   href="prop-sghasexternalarticle.html">sg:hasExternalArticle</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_6959"><a   href="prop-sghasexternalcontributor.html">sg:hasExternalContributor</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_6960"><a   href="prop-sghasfigure.html">sg:hasFigure</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_6961"><a   href="prop-sghasgraph.html">sg:hasGraph</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_6962"><a   href="prop-sghasillustration.html">sg:hasIllustration</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_6963"><a   href="prop-sghasimage.html">sg:hasImage</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_6964"><a   href="prop-sghasimageasset.html">sg:hasImageAsset</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_6965"><a   href="prop-sghasissue.html">sg:hasIssue</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_6966"><a   href="prop-sghasitem.html">sg:hasItem</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_6967"><a   href="prop-sghasjournal.html">sg:hasJournal</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_6968"><a   href="prop-sghasknowledgebase.html">sg:hasKnowledgeBase</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_6969"><a   href="prop-sghaslink.html">sg:hasLink</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_6970"><a   href="prop-sghasmetricsevent.html">sg:hasMetricsEvent</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_6971"><a   href="prop-sghasnextissue.html">sg:hasNextIssue</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_6972"><a   href="prop-sghaspdfasset.html">sg:hasPdfAsset</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_6973"><a   href="prop-sghaspreviousissue.html">sg:hasPreviousIssue</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_6974"><a   href="prop-sghasprimaryarticletype.html">sg:hasPrimaryArticleType</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_6975"><a   href="prop-sghaspublication.html">sg:hasPublication</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_6976"><a   href="prop-sghaspublicationgroup.html">sg:hasPublicationGroup</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_6977"><a   href="prop-sghaspublishevent.html">sg:hasPublishEvent</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_6978"><a   href="prop-sghaspublishstate.html">sg:hasPublishState</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_6979"><a   href="prop-sghaspublisher.html">sg:hasPublisher</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_6980"><a   href="prop-sghasreviewevent.html">sg:hasReviewEvent</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_6981"><a   href="prop-sghasreviewstate.html">sg:hasReviewState</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_6982"><a   href="prop-sghasroot.html">sg:hasRoot</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_6983"><a   href="prop-sghassection.html">sg:hasSection</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_6984"><a   href="prop-sghasserial.html">sg:hasSerial</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_6985"><a   href="prop-sghasseries.html">sg:hasSeries</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_6986"><a   href="prop-sghassubject.html">sg:hasSubject</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_6987"><a   href="prop-sghassummary.html">sg:hasSummary</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_6988"><a   href="prop-sghassummarytype.html">sg:hasSummaryType</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_6989"><a   href="prop-sghastechnique.html">sg:hasTechnique</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_6990"><a   href="prop-sghastestpublicationgroup.html">sg:hasTestPublicationGroup</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_6991"><a   href="prop-sghaswebsite.html">sg:hasWebsite</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_6992"><a   href="prop-sghasxmlasset.html">sg:hasXmlAsset</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_6993"><a   href="prop-sgimagelist.html">sg:imageList</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_6994"><a   href="prop-sgisassetof.html">sg:isAssetOf</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_6995"><a   href="prop-sgitemlist.html">sg:itemList</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_6996"><a   href="prop-sgitemreferencelist.html">sg:itemReferenceList</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_6997"><a   href="prop-sgitemtype.html">sg:itemType</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_6998"><a   href="prop-sgmesh.html">sg:mesh</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_6999"><a   href="prop-sgnamespace.html">sg:namespace</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_7000"><a   href="prop-sgonclass.html">sg:onClass</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_7001"><a   href="prop-sgoninstanceof.html">sg:onInstanceOf</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_7002"><a   href="prop-sgonontology.html">sg:onOntology</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_7003"><a   href="prop-sgonproperty.html">sg:onProperty</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_7004"><a   href="prop-sgonsubpropertyof.html">sg:onSubPropertyOf</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_7005"><a   href="prop-sgorcid.html">sg:orcid</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_7006"><a   href="prop-sgrelation.html">sg:relation</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_7007"><a   href="prop-sgreplacedby.html">sg:replacedBy</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_7008"><a   href="prop-sgreplaces.html">sg:replaces</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_7009"><a   href="prop-sgrepository.html">sg:repository</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_7010"><a   href="prop-sgwebpage.html">sg:webpage</a></li>
+          
+
+        
+
+        
+
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+
+    </ul>
+
+</div>
+
+
+<!-- /#sidebar-wrapper -->
+
+    
+
+
+
+
+    <!-- Begin page content -->
+    <div class="container" id="page-content-wrapper">
+
+      
+
+	
+
+
+
+
+        
+
+
+        
+            
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <ol class="breadcrumb">
+    <li>
+      <a href="index.html">Home</a>
+    </li>
+    <li>
+          <a href="entities-az.html">Entities</a>
+    </li>
+    <li>
+          <a href="entities-tree-properties.html">Properties</a>
+    </li>
+      <li class="active">
+            http://name.scigraph.com/terms/citeNum
+        </li>
+  </ol>
+
+
+
+
+
+
+
+
+        
+
+
+
+            <h1>
+
+                sg:citeNum
+                
+                    <small class="label label-info label-xs ">leaf node</small>
+                  
+
+            </h1>
+
+            <hr>
+
+
+
+            <div class="tree-container">
+            <div class="tree">
+                <ul>
+                    
+
+                        <li><a href="entities-tree-properties.html">rdf:Property</a>
+
+                          <ul>
+                            <li><a style="font-weight: bold;" title="'cite num' - TO DO ...">sg:citeNum</a>
+
+                            
+                              </li>
+
+                          </ul>
+
+                        </li>
+                    
+
+                </ul>
+            </div>
+            </div>
+
+
+
+
+            <div class="row"><div class="col-md-12">
+               <div class="panel panel-default">
+             <div class="panel-heading">
+               <h3 class="panel-title">URI</h3>
+             </div>
+             <div class="panel-body">
+
+                 <code>http://name.scigraph.com/terms/citeNum</code>
+             </div>
+           </div>
+            </div></div>
+
+
+
+            
+             <div class="row"><div class="col-md-12">
+               <div class="panel panel-default">
+             <div class="panel-heading">
+               <h3 class="panel-title">Label</h3>
+             </div>
+             <div class="panel-body">
+
+                 cite num
+             </div>
+           </div>
+            </div></div>
+            
+
+
+            
+            <div class="row"><div class="col-md-12">
+              <div class="panel panel-default">
+            <div class="panel-heading">
+              <h3 class="panel-title">Description</h3>
+            </div>
+            <div class="panel-body">
+
+                TO DO ...
+            </div>
+          </div>
+           </div></div>
+           
+
+
+
+            
+
+
+
+            
+
+
+            <div class="row"><div class="col-md-12">
+              <div class="panel panel-default">
+            <div class="panel-heading">
+              <h3 class="panel-title">Usage</h3>
+            </div>
+
+            <table class="table table-bordered" style="overflow: auto;">
+
+               <tr class="table-classproperties">
+                   <th>DOMAIN</th><th>PROPERTY</th><th>RANGE</th>
+               </tr>
+               <tr>
+                   <td>
+                     
+                         <a>owl:Thing</a> (inferred)
+                     
+                   </td>
+
+                    <td>
+                      sg:citeNum
+                    </td>
+
+                    <td>
+                      
+                          
+                            <a href=".html">http://www.w3.org/2000/01/rdf-schema#Literal</a>
+                            
+                          
+                      
+                    </td>
+            </table>
+
+          </div>
+           </div></div>
+
+
+
+           <div class="row"><div class="col-md-12">
+              <div class="panel panel-default">
+            <div class="panel-heading">
+              <h3 class="panel-title">Implementation</h3>
+            </div>
+            <div class="panel-body implementation-panel">
+
+                
+
+                    <div class="highlight"><pre><span></span><span class="k">@prefix</span><span class="w"> </span><span class="nn">bibo:</span><span class="w"> </span><span class="nv">&lt;http://purl.org/ontology/bibo/&gt;</span><span class="w"> </span><span class="p">.</span><span class="w"></span>
+<span class="k">@prefix</span><span class="w"> </span><span class="nn">dc:</span><span class="w"> </span><span class="nv">&lt;http://purl.org/dc/elements/1.1/&gt;</span><span class="w"> </span><span class="p">.</span><span class="w"></span>
+<span class="k">@prefix</span><span class="w"> </span><span class="nn">dcterms:</span><span class="w"> </span><span class="nv">&lt;http://purl.org/dc/terms/&gt;</span><span class="w"> </span><span class="p">.</span><span class="w"></span>
+<span class="k">@prefix</span><span class="w"> </span><span class="nn">foaf:</span><span class="w"> </span><span class="nv">&lt;http://xmlns.com/foaf/0.1/&gt;</span><span class="w"> </span><span class="p">.</span><span class="w"></span>
+<span class="k">@prefix</span><span class="w"> </span><span class="nn">lodc:</span><span class="w"> </span><span class="nv">&lt;http://lod.springer.com/data/ontology/class/&gt;</span><span class="w"> </span><span class="p">.</span><span class="w"></span>
+<span class="k">@prefix</span><span class="w"> </span><span class="nn">lodp:</span><span class="w"> </span><span class="nv">&lt;http://lod.springer.com/data/ontology/property/&gt;</span><span class="w"> </span><span class="p">.</span><span class="w"></span>
+<span class="k">@prefix</span><span class="w"> </span><span class="nn">owl:</span><span class="w"> </span><span class="nv">&lt;http://www.w3.org/2002/07/owl#&gt;</span><span class="w"> </span><span class="p">.</span><span class="w"></span>
+<span class="k">@prefix</span><span class="w"> </span><span class="nn">prism:</span><span class="w"> </span><span class="nv">&lt;http://prismstandard.org/namespaces/basic/2.1/&gt;</span><span class="w"> </span><span class="p">.</span><span class="w"></span>
+<span class="k">@prefix</span><span class="w"> </span><span class="nn">rdf:</span><span class="w"> </span><span class="nv">&lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#&gt;</span><span class="w"> </span><span class="p">.</span><span class="w"></span>
+<span class="k">@prefix</span><span class="w"> </span><span class="nn">rdfs:</span><span class="w"> </span><span class="nv">&lt;http://www.w3.org/2000/01/rdf-schema#&gt;</span><span class="w"> </span><span class="p">.</span><span class="w"></span>
+<span class="k">@prefix</span><span class="w"> </span><span class="nn">sg:</span><span class="w"> </span><span class="nv">&lt;http://name.scigraph.com/terms/&gt;</span><span class="w"> </span><span class="p">.</span><span class="w"></span>
+<span class="k">@prefix</span><span class="w"> </span><span class="nn">sgg:</span><span class="w"> </span><span class="nv">&lt;http://name.scigraph.com/graphs/&gt;</span><span class="w"> </span><span class="p">.</span><span class="w"></span>
+<span class="k">@prefix</span><span class="w"> </span><span class="nn">sgo:</span><span class="w"> </span><span class="nv">&lt;http://name.scigraph.com/ontologies/&gt;</span><span class="w"> </span><span class="p">.</span><span class="w"></span>
+<span class="k">@prefix</span><span class="w"> </span><span class="nn">skos:</span><span class="w"> </span><span class="nv">&lt;http://www.w3.org/2004/02/skos/core#&gt;</span><span class="w"> </span><span class="p">.</span><span class="w"></span>
+<span class="k">@prefix</span><span class="w"> </span><span class="nn">sp:</span><span class="w"> </span><span class="nv">&lt;http://spinrdf.org/sp#&gt;</span><span class="w"> </span><span class="p">.</span><span class="w"></span>
+<span class="k">@prefix</span><span class="w"> </span><span class="nn">spin:</span><span class="w"> </span><span class="nv">&lt;http://spinrdf.org/spin#&gt;</span><span class="w"> </span><span class="p">.</span><span class="w"></span>
+<span class="k">@prefix</span><span class="w"> </span><span class="nn">vann:</span><span class="w"> </span><span class="nv">&lt;http://purl.org/vocab/vann/&gt;</span><span class="w"> </span><span class="p">.</span><span class="w"></span>
+<span class="k">@prefix</span><span class="w"> </span><span class="nn">vcard:</span><span class="w"> </span><span class="nv">&lt;http://www.w3.org/2006/vcard/ns#&gt;</span><span class="w"> </span><span class="p">.</span><span class="w"></span>
+<span class="k">@prefix</span><span class="w"> </span><span class="nn">void:</span><span class="w"> </span><span class="nv">&lt;http://rdfs.org/ns/void#&gt;</span><span class="w"> </span><span class="p">.</span><span class="w"></span>
+<span class="k">@prefix</span><span class="w"> </span><span class="nn">xml:</span><span class="w"> </span><span class="nv">&lt;http://www.w3.org/XML/1998/namespace&gt;</span><span class="w"> </span><span class="p">.</span><span class="w"></span>
+<span class="k">@prefix</span><span class="w"> </span><span class="nn">xmp:</span><span class="w"> </span><span class="nv">&lt;http://ns.adobe.com/xap/1.0/&gt;</span><span class="w"> </span><span class="p">.</span><span class="w"></span>
+<span class="k">@prefix</span><span class="w"> </span><span class="nn">xmpMM:</span><span class="w"> </span><span class="nv">&lt;http://ns.adobe.com/xap/1.0/mm/&gt;</span><span class="w"> </span><span class="p">.</span><span class="w"></span>
+<span class="k">@prefix</span><span class="w"> </span><span class="nn">xmpRights:</span><span class="w"> </span><span class="nv">&lt;http://ns.adobe.com/xap/1.0/rights/&gt;</span><span class="w"> </span><span class="p">.</span><span class="w"></span>
+<span class="k">@prefix</span><span class="w"> </span><span class="nn">xsd:</span><span class="w"> </span><span class="nv">&lt;http://www.w3.org/2001/XMLSchema#&gt;</span><span class="w"> </span><span class="p">.</span><span class="w"></span>
+
+<span class="nn">sg:</span><span class="nt">citeNum</span><span class="w"> </span><span class="kt">a</span><span class="w"> </span><span class="nn">owl:</span><span class="nt">DatatypeProperty</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="nn">rdfs:</span><span class="nt">label</span><span class="w"> </span><span class="s">&quot;cite num&quot;</span><span class="o">@</span><span class="ge">en</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="nn">sg:</span><span class="nt">definition</span><span class="w"> </span><span class="s">&quot;A sequence number for a citation.&quot;</span><span class="o">@</span><span class="ge">en</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="nn">sg:</span><span class="nt">isRepeatable</span><span class="w"> </span><span class="l">false</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="nn">sg:</span><span class="nt">isTerm</span><span class="w"> </span><span class="l">true</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="nn">sg:</span><span class="nt">rangeLabel</span><span class="w"> </span><span class="s">&quot;rdfs:Literal&quot;</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="nn">rdfs:</span><span class="nt">isDefinedBy</span><span class="w"> </span><span class="err">sg</span><span class="p">:</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="nn">rdfs:</span><span class="nt">range</span><span class="w"> </span><span class="nn">rdfs:</span><span class="nt">Literal</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="nn">skos:</span><span class="nt">definition</span><span class="w"> </span><span class="s">&quot;TO DO ...&quot;</span><span class="o">@</span><span class="ge">en</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="nn">skos:</span><span class="nt">prefLabel</span><span class="w"> </span><span class="s">&quot;cite num&quot;</span><span class="o">@</span><span class="ge">en</span><span class="w"> </span><span class="p">.</span><span class="w"></span>
+</pre></div>
+
+
+                
+            </div>
+          </div>
+           </div></div>
+
+
+
+
+        
+
+
+
+
+
+
+
+
+
+
+
+	</div><!-- /#page-content-wrapper -->
+
+
+  
+
+
+
+  
+
+
+
+
+  <footer class="footer">
+    <div class="container">
+    
+      <p class="text-muted">Documentation automatically generated on 26th February 2017 with <a href="https://github.com/lambdamusic/OntoSpy">OntoSpy</a> (v1.7.4)</p>
+
+    
+    </div>
+  </footer>
+
+
+</div><!-- /#wrapper -->
+
+
+<!-- Bootstrap core JavaScript
+================================================== -->
+<!-- Placed at the end of the document so the pages load faster -->
+<script src="../static/libs/jquery/1.12.4/jquery.min.js"></script>
+<script src="../static/libs/bootstrap-3.3.7-dist/js/bootstrap.min.js"></script>
+
+<!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+<script src="../static/libs/bootstrap-3.3.7-dist/js/ie10-viewport-bug-workaround.js"></script>
+
+<script src="../static/libs/Chart.js-2.4.0/Chart.bundle.js"></script>
+
+
+<!-- Menu Toggle Script -->
+<script>
+$("#menu-toggle").click(function(e) {
+    e.preventDefault();
+    $("#wrapper").toggleClass("toggled");
+});
+</script>
+
+
+
+
+<script type="text/javascript">
+
+$('#search-input-sidebar').keyup(function() {
+
+  var val = $.trim($(this).val()).replace(/ +/g, ' ').toLowerCase();
+  // var $rows = $(this).next(".entities-list").find("div");
+  var $rows = $(this).parent().parent().find("li.second-level");
+
+  $rows.show().filter(function() {
+      var text = $(this).text().replace(/\s+/g, ' ').toLowerCase();
+      return !~text.indexOf(val);
+  }).hide();
+});
+
+</script>
+
+
+
+
+  <!-- Scroll Sidebar Script -->
+  
+  
+  <script type="text/javascript">
+
+    $(document).ready(function (){
+      $('#sidebar-wrapper').animate({
+          scrollTop: $("#sd_6816").offset().top - 100
+      }, 100);
+    });
+
+  </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  </body>
+</html>

@@ -1,0 +1,1161 @@
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="../static/libs/img/favicon.ico">
+
+	
+		<title>OntoSpy > http://xmlns.com/foaf/0.1/</title>
+	
+
+    <!-- Bootstrap core CSS -->
+    <!-- <link href="../static/libs/bootstrap-3.3.7-dist/css/bootstrap.min.css" rel="stylesheet">  -->
+    <!-- Bootswatch:  -->
+    <!-- cerulean  | cyborg |  flatly |  lumen |  sandstone |   spacelab  |  yeti | cosmo |  darkly |  paper | simplex | superhero |  journal | readable  |   slate |  united -->
+    <link href="../static/libs/bootswatch3.2/cosmo/bootstrap.min.css" rel="stylesheet">
+    <link href="../static/custom/css/simple-sidebar.css" rel="stylesheet">
+    <link href="../static/custom/css/familytree.css" rel="stylesheet">
+    <link href="../static/custom/css/tabletree.css" rel="stylesheet">
+
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <link href="../static/libs/bootstrap-3.3.7-dist/css/ie10-viewport-bug-workaround.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="../static/custom/css/sticky-footer-navbar.css" rel="stylesheet">
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+<style type="text/css">
+
+  .lead-plus {font-size: 26.5px;}
+  .label-xs {font-size: 10px;}
+  .label-dark {background: #2c3e50; color: white; padding: 1px;}
+  .margin50 {margin-top: 50px; margin-bottom: 50px;}
+
+  .namespaces {background: #ced2d6; width: 100%;}
+
+
+  /*so that the d3plus tooltip panel doesnt cover the top banner*/
+  .navbar {z-index: 3000;}
+
+
+  .panel-body dt {margin-top: 5px;}
+  .page-header  {margin-top: 30px;}
+  #wrapper {margin-top: 50px;}
+
+  .implementation-panel {
+    overflow: auto;
+    max-height: 500px;
+  }
+
+  tr.table-classproperties {
+      /*background: #f5f5f5;*/
+  }
+  tr.table-classproperties th {
+      font-size: 80%;
+      font-weight: normal;
+  }
+
+
+  tr.table-inheritanceinfo {
+      /*background: #f5f5f5;*/
+      text-align: left;
+  }
+
+  tr.table-inheritanceinfo th {
+      font-size: 90%;
+      font-weight: normal;
+  }
+
+
+  .breadcrumb {
+    margin-top: 20px;
+    margin-bottom: 40px;
+  }
+
+  .breadcrumb a {
+      text-transform: capitalize;
+  }
+  .breadcrumb li {
+      text-transform: none;
+      /*so to catch the uri @todo improve*/
+  }
+
+
+  .fromclass_link {
+    /*color: white;
+    text-decoration: underline;*/
+    /*background: #1c1e52;*/
+    color: inherit;
+    /*padding: 1px;*/
+  }
+
+		.mythumbnail {
+			display: block;
+			padding: 13px;
+			margin-bottom: 30px;
+			line-height: 13.428571;
+			background-color: #fff;
+			border: 1px solid #ddd;
+			border-radius: 30px;
+		}
+
+		.mythumbnail:hover {
+			background: lightyellow;
+			text-decoration: none;
+		}
+
+
+		.img-container{
+		    height:100%;
+			overflow: hidden;
+		    max-height:200px;
+			padding: 10px;
+/*			margin: 20px 0px 20px 0px;*/
+			border: 1em #EAE5E5 solid;
+		}
+
+		.img-container:hover {
+			border: 1px grey solid;
+		}
+
+		img{
+/*		    height:100% !important;*/
+		}
+
+
+		.icon-xxs {
+			font-size: 15px;
+		}
+
+
+    /* dropdown open on hover */
+
+    @media (min-width: 979px) {
+      ul.nav li.dropdown:hover > ul.dropdown-menu {
+        display: block;
+      }
+    }
+
+
+
+/*pygments css*/
+.highlight .hll { background-color: #ffffcc }
+.highlight  { background: #f8f8f8; }
+.highlight .c { color: #408080; font-style: italic } /* Comment */
+.highlight .err { border: 1px solid #FF0000 } /* Error */
+.highlight .k { color: #008000; font-weight: bold } /* Keyword */
+.highlight .o { color: #666666 } /* Operator */
+.highlight .ch { color: #408080; font-style: italic } /* Comment.Hashbang */
+.highlight .cm { color: #408080; font-style: italic } /* Comment.Multiline */
+.highlight .cp { color: #BC7A00 } /* Comment.Preproc */
+.highlight .cpf { color: #408080; font-style: italic } /* Comment.PreprocFile */
+.highlight .c1 { color: #408080; font-style: italic } /* Comment.Single */
+.highlight .cs { color: #408080; font-style: italic } /* Comment.Special */
+.highlight .gd { color: #A00000 } /* Generic.Deleted */
+.highlight .ge { font-style: italic } /* Generic.Emph */
+.highlight .gr { color: #FF0000 } /* Generic.Error */
+.highlight .gh { color: #000080; font-weight: bold } /* Generic.Heading */
+.highlight .gi { color: #00A000 } /* Generic.Inserted */
+.highlight .go { color: #888888 } /* Generic.Output */
+.highlight .gp { color: #000080; font-weight: bold } /* Generic.Prompt */
+.highlight .gs { font-weight: bold } /* Generic.Strong */
+.highlight .gu { color: #800080; font-weight: bold } /* Generic.Subheading */
+.highlight .gt { color: #0044DD } /* Generic.Traceback */
+.highlight .kc { color: #008000; font-weight: bold } /* Keyword.Constant */
+.highlight .kd { color: #008000; font-weight: bold } /* Keyword.Declaration */
+.highlight .kn { color: #008000; font-weight: bold } /* Keyword.Namespace */
+.highlight .kp { color: #008000 } /* Keyword.Pseudo */
+.highlight .kr { color: #008000; font-weight: bold } /* Keyword.Reserved */
+.highlight .kt { color: #B00040 } /* Keyword.Type */
+.highlight .m { color: #666666 } /* Literal.Number */
+.highlight .s { color: #BA2121 } /* Literal.String */
+.highlight .na { color: #7D9029 } /* Name.Attribute */
+.highlight .nb { color: #008000 } /* Name.Builtin */
+.highlight .nc { color: #0000FF; font-weight: bold } /* Name.Class */
+.highlight .no { color: #880000 } /* Name.Constant */
+.highlight .nd { color: #AA22FF } /* Name.Decorator */
+.highlight .ni { color: #999999; font-weight: bold } /* Name.Entity */
+.highlight .ne { color: #D2413A; font-weight: bold } /* Name.Exception */
+.highlight .nf { color: #0000FF } /* Name.Function */
+.highlight .nl { color: #A0A000 } /* Name.Label */
+.highlight .nn { color: #0000FF; font-weight: bold } /* Name.Namespace */
+.highlight .nt { color: #008000; font-weight: bold } /* Name.Tag */
+.highlight .nv { color: #19177C } /* Name.Variable */
+.highlight .ow { color: #AA22FF; font-weight: bold } /* Operator.Word */
+.highlight .w { color: #bbbbbb } /* Text.Whitespace */
+.highlight .mb { color: #666666 } /* Literal.Number.Bin */
+.highlight .mf { color: #666666 } /* Literal.Number.Float */
+.highlight .mh { color: #666666 } /* Literal.Number.Hex */
+.highlight .mi { color: #666666 } /* Literal.Number.Integer */
+.highlight .mo { color: #666666 } /* Literal.Number.Oct */
+.highlight .sa { color: #BA2121 } /* Literal.String.Affix */
+.highlight .sb { color: #BA2121 } /* Literal.String.Backtick */
+.highlight .sc { color: #BA2121 } /* Literal.String.Char */
+.highlight .dl { color: #BA2121 } /* Literal.String.Delimiter */
+.highlight .sd { color: #BA2121; font-style: italic } /* Literal.String.Doc */
+.highlight .s2 { color: #BA2121 } /* Literal.String.Double */
+.highlight .se { color: #BB6622; font-weight: bold } /* Literal.String.Escape */
+.highlight .sh { color: #BA2121 } /* Literal.String.Heredoc */
+.highlight .si { color: #BB6688; font-weight: bold } /* Literal.String.Interpol */
+.highlight .sx { color: #008000 } /* Literal.String.Other */
+.highlight .sr { color: #BB6688 } /* Literal.String.Regex */
+.highlight .s1 { color: #BA2121 } /* Literal.String.Single */
+.highlight .ss { color: #19177C } /* Literal.String.Symbol */
+.highlight .bp { color: #008000 } /* Name.Builtin.Pseudo */
+.highlight .fm { color: #0000FF } /* Name.Function.Magic */
+.highlight .vc { color: #19177C } /* Name.Variable.Class */
+.highlight .vg { color: #19177C } /* Name.Variable.Global */
+.highlight .vi { color: #19177C } /* Name.Variable.Instance */
+.highlight .vm { color: #19177C } /* Name.Variable.Magic */
+.highlight .il { color: #666666 } /* Literal.Number.Integer.Long */
+
+/*overloading this class from pygments*/
+.highlight {
+  overflow: auto;
+}
+
+
+
+
+
+
+
+
+</style>
+
+
+
+
+
+  </head>
+
+  <body>
+
+
+
+    
+<!-- Fixed navbar -->
+<nav class="navbar navbar-default navbar-fixed-top">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+
+      <a class="navbar-brand" id="menu-toggle" title="Toggle sidebar">
+        
+        <span class="glyphicon glyphicon-align-left" aria-hidden="true"></span>
+      </a>
+    </div>
+    <div id="navbar" class="collapse navbar-collapse">
+      <ul class="nav navbar-nav">
+        <li ><a href="index.html"><code style="font-size: 115%;">http://xmlns.com/foaf/0.1/</code></a></li>
+        
+
+       
+
+
+        <li  ><a href="dashboard.html">Dashboard</a></li>
+        <li  ><a href="entities-az.html">Entities A-Z</a></li>
+        <li class="dropdown  " >
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Entities Tree <span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            
+            <li><a href="entities-tree-classes.html">Classes</a>
+            </li>
+            
+            
+            <li><a  href="entities-tree-properties.html">Properties</a>
+            </li>
+            
+            
+          </ul>
+      </li>
+
+      </ul>
+      
+    </div><!--/.nav-collapse -->
+
+  </div>
+</nav>
+
+
+
+
+
+
+<div id="wrapper" class="toggled">
+
+
+    
+
+    
+        
+<!-- Sidebar -->
+<div id="sidebar-wrapper">
+    <ul class="sidebar-nav">
+
+
+        <li>
+          <input style="margin-top: 30px;  margin-bottom: 20px;" type="text" id="search-input-sidebar" name="" value="" placeholder="Type to search">
+        </li>
+
+        
+          <li class="-second-level" id="sd_classes"><a href="entities-tree-classes.html">Classes (15)</a>
+          </li>
+
+            
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_1614"><a  href="class-httpwwww3org200010swappimcontactperson.html">http://www.w3.org/2000/10/swap/pim/contact#Person</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_1615"><a  href="class-httpwwww3org200301geowgs84_posspatialthing.html">http://www.w3.org/2003/01/geo/wgs84_pos#SpatialThing</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_1616"><a  href="class-foafagent.html">foaf:Agent</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_1617"><a  href="class-foafdocument.html">foaf:Document</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_1618"><a  href="class-foafgroup.html">foaf:Group</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_1619"><a  href="class-foafimage.html">foaf:Image</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_1620"><a  href="class-foaflabelproperty.html">foaf:LabelProperty</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_1621"><a  href="class-foafonlineaccount.html">foaf:OnlineAccount</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_1622"><a  href="class-foafonlinechataccount.html">foaf:OnlineChatAccount</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_1623"><a  href="class-foafonlineecommerceaccount.html">foaf:OnlineEcommerceAccount</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_1624"><a class="active" href="class-foafonlinegamingaccount.html">foaf:OnlineGamingAccount</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_1625"><a  href="class-foaforganization.html">foaf:Organization</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_1626"><a  href="class-foafperson.html">foaf:Person</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_1627"><a  href="class-foafpersonalprofiledocument.html">foaf:PersonalProfileDocument</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_1628"><a  href="class-foafproject.html">foaf:Project</a></li>
+          
+        
+
+        
+            <li class="-second-level" id="sd_properties"><a  href="entities-tree-properties.html">Properties (67)</a>
+            </li>
+
+            
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_1629"><a   href="prop-foafaccount.html">foaf:account</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_1630"><a   href="prop-foafaccountname.html">foaf:accountName</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_1631"><a   href="prop-foafaccountservicehomepage.html">foaf:accountServiceHomepage</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_1632"><a   href="prop-foafage.html">foaf:age</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_1633"><a   href="prop-foafaimchatid.html">foaf:aimChatID</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_1634"><a   href="prop-foafbased_near.html">foaf:based_near</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_1635"><a   href="prop-foafbirthday.html">foaf:birthday</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_1636"><a   href="prop-foafcurrentproject.html">foaf:currentProject</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_1637"><a   href="prop-foafdepiction.html">foaf:depiction</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_1638"><a   href="prop-foafdepicts.html">foaf:depicts</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_1639"><a   href="prop-foafdnachecksum.html">foaf:dnaChecksum</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_1640"><a   href="prop-foaffamilyname.html">foaf:familyName</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_1641"><a   href="prop-foaffamily_name.html">foaf:family_name</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_1642"><a   href="prop-foaffirstname.html">foaf:firstName</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_1643"><a   href="prop-foaffocus.html">foaf:focus</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_1644"><a   href="prop-foaffundedby.html">foaf:fundedBy</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_1645"><a   href="prop-foafgeekcode.html">foaf:geekcode</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_1646"><a   href="prop-foafgender.html">foaf:gender</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_1647"><a   href="prop-foafgivenname.html">foaf:givenName</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_1648"><a   href="prop-foafholdsaccount.html">foaf:holdsAccount</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_1649"><a   href="prop-foafhomepage.html">foaf:homepage</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_1650"><a   href="prop-foaficqchatid.html">foaf:icqChatID</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_1651"><a   href="prop-foafimg.html">foaf:img</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_1652"><a   href="prop-foafinterest.html">foaf:interest</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_1653"><a   href="prop-foafisprimarytopicof.html">foaf:isPrimaryTopicOf</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_1654"><a   href="prop-foafjabberid.html">foaf:jabberID</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_1655"><a   href="prop-foafknows.html">foaf:knows</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_1656"><a   href="prop-foaflastname.html">foaf:lastName</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_1657"><a   href="prop-foaflogo.html">foaf:logo</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_1658"><a   href="prop-foafmade.html">foaf:made</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_1659"><a   href="prop-foafmaker.html">foaf:maker</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_1660"><a   href="prop-foafmbox.html">foaf:mbox</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_1661"><a   href="prop-foafmbox_sha1sum.html">foaf:mbox_sha1sum</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_1662"><a   href="prop-foafmember.html">foaf:member</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_1663"><a   href="prop-foafmembershipclass.html">foaf:membershipClass</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_1664"><a   href="prop-foafmsnchatid.html">foaf:msnChatID</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_1665"><a   href="prop-foafmyersbriggs.html">foaf:myersBriggs</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_1666"><a   href="prop-foafname.html">foaf:name</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_1667"><a   href="prop-foafnick.html">foaf:nick</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_1668"><a   href="prop-foafopenid.html">foaf:openid</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_1669"><a   href="prop-foafpage.html">foaf:page</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_1670"><a   href="prop-foafpastproject.html">foaf:pastProject</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_1671"><a   href="prop-foafphone.html">foaf:phone</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_1672"><a   href="prop-foafplan.html">foaf:plan</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_1673"><a   href="prop-foafprimarytopic.html">foaf:primaryTopic</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_1674"><a   href="prop-foafpublications.html">foaf:publications</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_1675"><a   href="prop-foafschoolhomepage.html">foaf:schoolHomepage</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_1676"><a   href="prop-foafsha1.html">foaf:sha1</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_1677"><a   href="prop-foafskypeid.html">foaf:skypeID</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_1678"><a   href="prop-foafstatus.html">foaf:status</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_1679"><a   href="prop-foafsurname.html">foaf:surname</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_1680"><a   href="prop-foaftheme.html">foaf:theme</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_1681"><a   href="prop-foafthumbnail.html">foaf:thumbnail</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_1682"><a   href="prop-foaftipjar.html">foaf:tipjar</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_1683"><a   href="prop-foaftitle.html">foaf:title</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_1684"><a   href="prop-foaftopic.html">foaf:topic</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_1685"><a   href="prop-foaftopic_interest.html">foaf:topic_interest</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_1686"><a   href="prop-foafweblog.html">foaf:weblog</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_1687"><a   href="prop-foafworkinfohomepage.html">foaf:workInfoHomepage</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_1688"><a   href="prop-foafworkplacehomepage.html">foaf:workplaceHomepage</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_1689"><a   href="prop-foafyahoochatid.html">foaf:yahooChatID</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_1690"><a   href="prop-dcdate.html">dc:date</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_1691"><a   href="prop-dcdescription.html">dc:description</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_1692"><a   href="prop-dctitle.html">dc:title</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_1693"><a   href="prop-vsterm_status.html">vs:term_status</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_1694"><a   href="prop-wotassurance.html">wot:assurance</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_1695"><a   href="prop-wotsrc_assurance.html">wot:src_assurance</a></li>
+          
+
+        
+
+        
+
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+
+    </ul>
+
+</div>
+
+
+<!-- /#sidebar-wrapper -->
+
+    
+
+
+
+
+    <!-- Begin page content -->
+    <div class="container" id="page-content-wrapper">
+
+      
+
+	
+
+
+
+
+
+
+        
+
+
+
+
+        
+            
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <ol class="breadcrumb">
+    <li>
+      <a href="index.html">Home</a>
+    </li>
+    <li>
+          <a href="entities-az.html">Entities</a>
+    </li>
+    <li>
+          <a href="entities-tree-classes.html">Classes</a>
+    </li>
+      <li class="active">
+            http://xmlns.com/foaf/0.1/OnlineGamingAccount
+        </li>
+  </ol>
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+
+
+
+
+
+            <h1>
+
+                foaf:OnlineGamingAccount
+                
+                    <small class="label label-info label-xs">leaf node</small>
+                  
+
+            </h1>
+            <hr>
+
+
+
+            <div class="tree-container">
+            <div class="tree">
+                <ul>
+                    
+
+                        
+
+                        <li>
+
+                          <a href="class-foafonlineaccount.html" title="'Online Account' - An online account.">foaf:OnlineAccount</a>
+
+                          <ul>
+
+                            <li><a style="font-weight: bold;" title="'Online Gaming Account' - An online gaming account.">foaf:OnlineGamingAccount</a>
+                            
+                              </li>
+
+                          </ul>
+
+                          </li>
+                        
+
+                    
+
+                </ul>
+            </div>
+            </div>
+
+
+
+
+           <div class="row"><div class="col-md-12">
+              <div class="panel panel-default">
+            <div class="panel-heading">
+              <h3 class="panel-title">URI</h3>
+            </div>
+            <div class="panel-body">
+
+                <code>http://xmlns.com/foaf/0.1/OnlineGamingAccount</code>
+            </div>
+          </div>
+           </div></div>
+
+           
+            <div class="row"><div class="col-md-12">
+              <div class="panel panel-default">
+            <div class="panel-heading">
+              <h3 class="panel-title">Label</h3>
+            </div>
+            <div class="panel-body">
+
+                Online Gaming Account
+            </div>
+          </div>
+           </div></div>
+           
+
+
+
+           
+            <div class="row"><div class="col-md-12">
+              <div class="panel panel-default">
+            <div class="panel-heading">
+              <h3 class="panel-title">Description</h3>
+            </div>
+            <div class="panel-body">
+
+                An online gaming account.
+            </div>
+          </div>
+           </div></div>
+           
+
+
+
+
+           
+            <div class="row"><div class="col-md-12">
+              <div class="panel panel-default">
+            <div class="panel-heading">
+              <h3 class="panel-title">Superclasses (1)</h3>
+            </div>
+            <div class="panel-body">
+
+            
+                    <li><a href="class-foafonlineaccount.html">foaf:OnlineAccount</a></li>
+            
+
+            </div>
+          </div>
+           </div></div>
+           
+
+
+
+         
+           <div class="row"><div class="col-md-12">
+              <div class="panel panel-default">
+            <div class="panel-heading">
+              <h3 class="panel-title">Usage</h3>
+            </div>
+            <div class="panel-body" style="overflow: auto;">
+
+                <p>Instances of foaf:OnlineGamingAccount can have the following properties:</p>
+            </div>
+             <table class="table table-bordered" style="overflow: auto;">
+
+                <tr class="table-classproperties">
+                    <th>PROPERTY</th><th>DESCRIPTION</th><th>RANGE</th>
+                </tr>
+
+                
+
+                    
+
+                    
+
+                    
+
+                
+
+                    
+
+                    
+
+                        <tr class="table-inheritanceinfo">
+                            <th colspan="3" class="treeinfo"><span class="label label-default">From class <a title="foaf:OnlineAccount" href="class-foafonlineaccount.html" class="fromclass_link">foaf:OnlineAccount</a></span>
+                            </th>
+                        </tr>
+
+                            
+                            <tr>
+                                <td class="firsttd">
+                                    <a class="propcolor" title="foaf:accountName" href="prop-foafaccountname.html">foaf:accountName</a>
+                                </td>
+                                <td class="thirdtd">
+                                    <span>Indicates the name (identifier) associated with this online account.</span>
+                                </td>
+                                <td class="secondtd">
+                                    
+                                    
+
+                                        <a title="" href=".html" class="rdfclass"></a>
+
+                                    
+                                    
+                                </td>
+                            </tr>
+
+                            
+                            <tr>
+                                <td class="firsttd">
+                                    <a class="propcolor" title="foaf:accountServiceHomepage" href="prop-foafaccountservicehomepage.html">foaf:accountServiceHomepage</a>
+                                </td>
+                                <td class="thirdtd">
+                                    <span>Indicates a homepage of the service provide for this online account.</span>
+                                </td>
+                                <td class="secondtd">
+                                    
+                                    
+
+                                        <a title="foaf:Document" href="class-foafdocument.html" class="rdfclass">foaf:Document</a>
+
+                                    
+                                    
+                                </td>
+                            </tr>
+
+                            
+
+                    
+
+                    
+
+                
+
+                    
+
+                    
+
+                        <tr class="table-inheritanceinfo">
+                            <th colspan="3" class="treeinfo"><span class="label label-default">From class <a title="owl:Thing" href="class-owlthing.html" class="fromclass_link">owl:Thing</a></span>
+                            </th>
+                        </tr>
+
+                            
+                            <tr>
+                                <td class="firsttd">
+                                    <a class="propcolor" title="foaf:dnaChecksum" href="prop-foafdnachecksum.html">foaf:dnaChecksum</a>
+                                </td>
+                                <td class="thirdtd">
+                                    <span>A checksum for the DNA of some thing. Joke.</span>
+                                </td>
+                                <td class="secondtd">
+                                    
+                                    
+
+                                        <a title="" href=".html" class="rdfclass"></a>
+
+                                    
+                                    
+                                </td>
+                            </tr>
+
+                            
+                            <tr>
+                                <td class="firsttd">
+                                    <a class="propcolor" title="foaf:givenName" href="prop-foafgivenname.html">foaf:givenName</a>
+                                </td>
+                                <td class="thirdtd">
+                                    <span>The given name of some person.</span>
+                                </td>
+                                <td class="secondtd">
+                                    
+                                        <i>owl:Thing</i>
+                                    
+                                </td>
+                            </tr>
+
+                            
+                            <tr>
+                                <td class="firsttd">
+                                    <a class="propcolor" title="foaf:membershipClass" href="prop-foafmembershipclass.html">foaf:membershipClass</a>
+                                </td>
+                                <td class="thirdtd">
+                                    <span>Indicates the class of individuals that are a member of a Group</span>
+                                </td>
+                                <td class="secondtd">
+                                    
+                                        <i>owl:Thing</i>
+                                    
+                                </td>
+                            </tr>
+
+                            
+                            <tr>
+                                <td class="firsttd">
+                                    <a class="propcolor" title="foaf:nick" href="prop-foafnick.html">foaf:nick</a>
+                                </td>
+                                <td class="thirdtd">
+                                    <span>A short informal nickname characterising an agent (includes login identifiers, IRC and other chat nicknames).</span>
+                                </td>
+                                <td class="secondtd">
+                                    
+                                        <i>owl:Thing</i>
+                                    
+                                </td>
+                            </tr>
+
+                            
+                            <tr>
+                                <td class="firsttd">
+                                    <a class="propcolor" title="foaf:phone" href="prop-foafphone.html">foaf:phone</a>
+                                </td>
+                                <td class="thirdtd">
+                                    <span>A phone,  specified using fully qualified tel: URI scheme (refs: http://www.w3.org/Addressing/schemes.html#tel).</span>
+                                </td>
+                                <td class="secondtd">
+                                    
+                                        <i>owl:Thing</i>
+                                    
+                                </td>
+                            </tr>
+
+                            
+                            <tr>
+                                <td class="firsttd">
+                                    <a class="propcolor" title="foaf:title" href="prop-foaftitle.html">foaf:title</a>
+                                </td>
+                                <td class="thirdtd">
+                                    <span>Title (Mr, Mrs, Ms, Dr. etc)</span>
+                                </td>
+                                <td class="secondtd">
+                                    
+                                        <i>owl:Thing</i>
+                                    
+                                </td>
+                            </tr>
+
+                            
+                            <tr>
+                                <td class="firsttd">
+                                    <a class="propcolor" title="dc:date" href="prop-dcdate.html">dc:date</a>
+                                </td>
+                                <td class="thirdtd">
+                                    <span>--</span>
+                                </td>
+                                <td class="secondtd">
+                                    
+                                        <i>owl:Thing</i>
+                                    
+                                </td>
+                            </tr>
+
+                            
+                            <tr>
+                                <td class="firsttd">
+                                    <a class="propcolor" title="dc:description" href="prop-dcdescription.html">dc:description</a>
+                                </td>
+                                <td class="thirdtd">
+                                    <span>--</span>
+                                </td>
+                                <td class="secondtd">
+                                    
+                                        <i>owl:Thing</i>
+                                    
+                                </td>
+                            </tr>
+
+                            
+                            <tr>
+                                <td class="firsttd">
+                                    <a class="propcolor" title="dc:title" href="prop-dctitle.html">dc:title</a>
+                                </td>
+                                <td class="thirdtd">
+                                    <span>--</span>
+                                </td>
+                                <td class="secondtd">
+                                    
+                                        <i>owl:Thing</i>
+                                    
+                                </td>
+                            </tr>
+
+                            
+                            <tr>
+                                <td class="firsttd">
+                                    <a class="propcolor" title="vs:term_status" href="prop-vsterm_status.html">vs:term_status</a>
+                                </td>
+                                <td class="thirdtd">
+                                    <span>--</span>
+                                </td>
+                                <td class="secondtd">
+                                    
+                                        <i>owl:Thing</i>
+                                    
+                                </td>
+                            </tr>
+
+                            
+                            <tr>
+                                <td class="firsttd">
+                                    <a class="propcolor" title="wot:assurance" href="prop-wotassurance.html">wot:assurance</a>
+                                </td>
+                                <td class="thirdtd">
+                                    <span>--</span>
+                                </td>
+                                <td class="secondtd">
+                                    
+                                        <i>owl:Thing</i>
+                                    
+                                </td>
+                            </tr>
+
+                            
+                            <tr>
+                                <td class="firsttd">
+                                    <a class="propcolor" title="wot:src_assurance" href="prop-wotsrc_assurance.html">wot:src_assurance</a>
+                                </td>
+                                <td class="thirdtd">
+                                    <span>--</span>
+                                </td>
+                                <td class="secondtd">
+                                    
+                                        <i>owl:Thing</i>
+                                    
+                                </td>
+                            </tr>
+
+                            
+
+                    
+
+                    
+
+                
+
+            </table>
+
+
+          </div>
+           </div></div>
+
+        
+
+
+
+
+
+
+           <div class="row"><div class="col-md-12">
+              <div class="panel panel-default">
+            <div class="panel-heading">
+              <h3 class="panel-title">Implementation</h3>
+            </div>
+            <div class="panel-body implementation-panel">
+
+                
+
+                    <div class="highlight"><pre><span></span><span class="k">@prefix</span><span class="w"> </span><span class="nn">dc:</span><span class="w"> </span><span class="nv">&lt;http://purl.org/dc/elements/1.1/&gt;</span><span class="w"> </span><span class="p">.</span><span class="w"></span>
+<span class="k">@prefix</span><span class="w"> </span><span class="nn">foaf:</span><span class="w"> </span><span class="nv">&lt;http://xmlns.com/foaf/0.1/&gt;</span><span class="w"> </span><span class="p">.</span><span class="w"></span>
+<span class="k">@prefix</span><span class="w"> </span><span class="nn">owl:</span><span class="w"> </span><span class="nv">&lt;http://www.w3.org/2002/07/owl#&gt;</span><span class="w"> </span><span class="p">.</span><span class="w"></span>
+<span class="k">@prefix</span><span class="w"> </span><span class="nn">rdf:</span><span class="w"> </span><span class="nv">&lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#&gt;</span><span class="w"> </span><span class="p">.</span><span class="w"></span>
+<span class="k">@prefix</span><span class="w"> </span><span class="nn">rdfs:</span><span class="w"> </span><span class="nv">&lt;http://www.w3.org/2000/01/rdf-schema#&gt;</span><span class="w"> </span><span class="p">.</span><span class="w"></span>
+<span class="k">@prefix</span><span class="w"> </span><span class="nn">skos:</span><span class="w"> </span><span class="nv">&lt;http://www.w3.org/2004/02/skos/core#&gt;</span><span class="w"> </span><span class="p">.</span><span class="w"></span>
+<span class="k">@prefix</span><span class="w"> </span><span class="nn">vs:</span><span class="w"> </span><span class="nv">&lt;http://www.w3.org/2003/06/sw-vocab-status/ns#&gt;</span><span class="w"> </span><span class="p">.</span><span class="w"></span>
+<span class="k">@prefix</span><span class="w"> </span><span class="nn">wot:</span><span class="w"> </span><span class="nv">&lt;http://xmlns.com/wot/0.1/&gt;</span><span class="w"> </span><span class="p">.</span><span class="w"></span>
+<span class="k">@prefix</span><span class="w"> </span><span class="nn">xml:</span><span class="w"> </span><span class="nv">&lt;http://www.w3.org/XML/1998/namespace&gt;</span><span class="w"> </span><span class="p">.</span><span class="w"></span>
+<span class="k">@prefix</span><span class="w"> </span><span class="nn">xsd:</span><span class="w"> </span><span class="nv">&lt;http://www.w3.org/2001/XMLSchema#&gt;</span><span class="w"> </span><span class="p">.</span><span class="w"></span>
+
+<span class="nn">foaf:</span><span class="nt">OnlineGamingAccount</span><span class="w"> </span><span class="kt">a</span><span class="w"> </span><span class="nn">rdfs:</span><span class="nt">Class</span><span class="p">,</span><span class="w"></span>
+<span class="w">        </span><span class="nn">owl:</span><span class="nt">Class</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="nn">rdfs:</span><span class="nt">label</span><span class="w"> </span><span class="s">&quot;Online Gaming Account&quot;</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="nn">rdfs:</span><span class="nt">comment</span><span class="w"> </span><span class="s">&quot;An online gaming account.&quot;</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="nn">rdfs:</span><span class="nt">isDefinedBy</span><span class="w"> </span><span class="err">foaf</span><span class="p">:</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="nn">rdfs:</span><span class="nt">subClassOf</span><span class="w"> </span><span class="nn">foaf:</span><span class="nt">OnlineAccount</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="nn">vs:</span><span class="nt">term_status</span><span class="w"> </span><span class="s">&quot;unstable&quot;</span><span class="w"> </span><span class="p">.</span><span class="w"></span>
+</pre></div>
+
+
+                
+            </div>
+          </div>
+           </div></div>
+
+
+
+
+
+        
+
+
+
+
+
+
+
+
+
+
+
+	</div><!-- /#page-content-wrapper -->
+
+
+  
+
+
+
+  
+
+
+
+
+  <footer class="footer">
+    <div class="container">
+    
+      <p class="text-muted">Documentation automatically generated on 26th February 2017 with <a href="https://github.com/lambdamusic/OntoSpy">OntoSpy</a> (v1.7.4)</p>
+
+    
+    </div>
+  </footer>
+
+
+</div><!-- /#wrapper -->
+
+
+<!-- Bootstrap core JavaScript
+================================================== -->
+<!-- Placed at the end of the document so the pages load faster -->
+<script src="../static/libs/jquery/1.12.4/jquery.min.js"></script>
+<script src="../static/libs/bootstrap-3.3.7-dist/js/bootstrap.min.js"></script>
+
+<!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+<script src="../static/libs/bootstrap-3.3.7-dist/js/ie10-viewport-bug-workaround.js"></script>
+
+<script src="../static/libs/Chart.js-2.4.0/Chart.bundle.js"></script>
+
+
+<!-- Menu Toggle Script -->
+<script>
+$("#menu-toggle").click(function(e) {
+    e.preventDefault();
+    $("#wrapper").toggleClass("toggled");
+});
+</script>
+
+
+
+
+<script type="text/javascript">
+
+$('#search-input-sidebar').keyup(function() {
+
+  var val = $.trim($(this).val()).replace(/ +/g, ' ').toLowerCase();
+  // var $rows = $(this).next(".entities-list").find("div");
+  var $rows = $(this).parent().parent().find("li.second-level");
+
+  $rows.show().filter(function() {
+      var text = $(this).text().replace(/\s+/g, ' ').toLowerCase();
+      return !~text.indexOf(val);
+  }).hide();
+});
+
+</script>
+
+
+
+
+  <!-- Scroll Sidebar Script -->
+  
+  
+  <script type="text/javascript">
+
+    $(document).ready(function (){
+      $('#sidebar-wrapper').animate({
+          scrollTop: $("#sd_1624").offset().top - 100
+      }, 100);
+    });
+
+  </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  </body>
+</html>

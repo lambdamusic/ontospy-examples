@@ -1,0 +1,1187 @@
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="../static/libs/img/favicon.ico">
+
+	
+		<title>OntoSpy > http://purl.org/ontology/mo/</title>
+	
+
+    <!-- Bootstrap core CSS -->
+    <!-- <link href="../static/libs/bootstrap-3.3.7-dist/css/bootstrap.min.css" rel="stylesheet">  -->
+    <!-- Bootswatch:  -->
+    <!-- cerulean  | cyborg |  flatly |  lumen |  sandstone |   spacelab  |  yeti | cosmo |  darkly |  paper | simplex | superhero |  journal | readable  |   slate |  united -->
+    <link href="../static/libs/bootswatch3.2/lumen/bootstrap.min.css" rel="stylesheet">
+    <link href="../static/custom/css/simple-sidebar.css" rel="stylesheet">
+    <link href="../static/custom/css/familytree.css" rel="stylesheet">
+    <link href="../static/custom/css/tabletree.css" rel="stylesheet">
+
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <link href="../static/libs/bootstrap-3.3.7-dist/css/ie10-viewport-bug-workaround.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="../static/custom/css/sticky-footer-navbar.css" rel="stylesheet">
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+<style type="text/css">
+
+  .lead-plus {font-size: 26.5px;}
+  .label-xs {font-size: 10px;}
+  .label-dark {background: #2c3e50; color: white; padding: 1px;}
+  .margin50 {margin-top: 50px; margin-bottom: 50px;}
+
+  .namespaces {background: #ced2d6; width: 100%;}
+
+
+  /*so that the d3plus tooltip panel doesnt cover the top banner*/
+  .navbar {z-index: 3000;}
+
+
+  .panel-body dt {margin-top: 5px;}
+  .page-header  {margin-top: 30px;}
+  #wrapper {margin-top: 50px;}
+
+  .implementation-panel {
+    overflow: auto;
+    max-height: 500px;
+  }
+
+  tr.table-classproperties {
+      /*background: #f5f5f5;*/
+  }
+  tr.table-classproperties th {
+      font-size: 80%;
+      font-weight: normal;
+  }
+
+
+  tr.table-inheritanceinfo {
+      /*background: #f5f5f5;*/
+      text-align: left;
+  }
+
+  tr.table-inheritanceinfo th {
+      font-size: 90%;
+      font-weight: normal;
+  }
+
+
+  .breadcrumb {
+    margin-top: 20px;
+    margin-bottom: 40px;
+  }
+
+  .breadcrumb a {
+      text-transform: capitalize;
+  }
+  .breadcrumb li {
+      text-transform: none;
+      /*so to catch the uri @todo improve*/
+  }
+
+
+  .fromclass_link {
+    /*color: white;
+    text-decoration: underline;*/
+    /*background: #1c1e52;*/
+    color: inherit;
+    /*padding: 1px;*/
+  }
+
+		.mythumbnail {
+			display: block;
+			padding: 13px;
+			margin-bottom: 30px;
+			line-height: 13.428571;
+			background-color: #fff;
+			border: 1px solid #ddd;
+			border-radius: 30px;
+		}
+
+		.mythumbnail:hover {
+			background: lightyellow;
+			text-decoration: none;
+		}
+
+
+		.img-container{
+		    height:100%;
+			overflow: hidden;
+		    max-height:200px;
+			padding: 10px;
+/*			margin: 20px 0px 20px 0px;*/
+			border: 1em #EAE5E5 solid;
+		}
+
+		.img-container:hover {
+			border: 1px grey solid;
+		}
+
+		img{
+/*		    height:100% !important;*/
+		}
+
+
+		.icon-xxs {
+			font-size: 15px;
+		}
+
+
+    /* dropdown open on hover */
+
+    @media (min-width: 979px) {
+      ul.nav li.dropdown:hover > ul.dropdown-menu {
+        display: block;
+      }
+    }
+
+
+
+/*pygments css*/
+.highlight .hll { background-color: #ffffcc }
+.highlight  { background: #f8f8f8; }
+.highlight .c { color: #408080; font-style: italic } /* Comment */
+.highlight .err { border: 1px solid #FF0000 } /* Error */
+.highlight .k { color: #008000; font-weight: bold } /* Keyword */
+.highlight .o { color: #666666 } /* Operator */
+.highlight .ch { color: #408080; font-style: italic } /* Comment.Hashbang */
+.highlight .cm { color: #408080; font-style: italic } /* Comment.Multiline */
+.highlight .cp { color: #BC7A00 } /* Comment.Preproc */
+.highlight .cpf { color: #408080; font-style: italic } /* Comment.PreprocFile */
+.highlight .c1 { color: #408080; font-style: italic } /* Comment.Single */
+.highlight .cs { color: #408080; font-style: italic } /* Comment.Special */
+.highlight .gd { color: #A00000 } /* Generic.Deleted */
+.highlight .ge { font-style: italic } /* Generic.Emph */
+.highlight .gr { color: #FF0000 } /* Generic.Error */
+.highlight .gh { color: #000080; font-weight: bold } /* Generic.Heading */
+.highlight .gi { color: #00A000 } /* Generic.Inserted */
+.highlight .go { color: #888888 } /* Generic.Output */
+.highlight .gp { color: #000080; font-weight: bold } /* Generic.Prompt */
+.highlight .gs { font-weight: bold } /* Generic.Strong */
+.highlight .gu { color: #800080; font-weight: bold } /* Generic.Subheading */
+.highlight .gt { color: #0044DD } /* Generic.Traceback */
+.highlight .kc { color: #008000; font-weight: bold } /* Keyword.Constant */
+.highlight .kd { color: #008000; font-weight: bold } /* Keyword.Declaration */
+.highlight .kn { color: #008000; font-weight: bold } /* Keyword.Namespace */
+.highlight .kp { color: #008000 } /* Keyword.Pseudo */
+.highlight .kr { color: #008000; font-weight: bold } /* Keyword.Reserved */
+.highlight .kt { color: #B00040 } /* Keyword.Type */
+.highlight .m { color: #666666 } /* Literal.Number */
+.highlight .s { color: #BA2121 } /* Literal.String */
+.highlight .na { color: #7D9029 } /* Name.Attribute */
+.highlight .nb { color: #008000 } /* Name.Builtin */
+.highlight .nc { color: #0000FF; font-weight: bold } /* Name.Class */
+.highlight .no { color: #880000 } /* Name.Constant */
+.highlight .nd { color: #AA22FF } /* Name.Decorator */
+.highlight .ni { color: #999999; font-weight: bold } /* Name.Entity */
+.highlight .ne { color: #D2413A; font-weight: bold } /* Name.Exception */
+.highlight .nf { color: #0000FF } /* Name.Function */
+.highlight .nl { color: #A0A000 } /* Name.Label */
+.highlight .nn { color: #0000FF; font-weight: bold } /* Name.Namespace */
+.highlight .nt { color: #008000; font-weight: bold } /* Name.Tag */
+.highlight .nv { color: #19177C } /* Name.Variable */
+.highlight .ow { color: #AA22FF; font-weight: bold } /* Operator.Word */
+.highlight .w { color: #bbbbbb } /* Text.Whitespace */
+.highlight .mb { color: #666666 } /* Literal.Number.Bin */
+.highlight .mf { color: #666666 } /* Literal.Number.Float */
+.highlight .mh { color: #666666 } /* Literal.Number.Hex */
+.highlight .mi { color: #666666 } /* Literal.Number.Integer */
+.highlight .mo { color: #666666 } /* Literal.Number.Oct */
+.highlight .sa { color: #BA2121 } /* Literal.String.Affix */
+.highlight .sb { color: #BA2121 } /* Literal.String.Backtick */
+.highlight .sc { color: #BA2121 } /* Literal.String.Char */
+.highlight .dl { color: #BA2121 } /* Literal.String.Delimiter */
+.highlight .sd { color: #BA2121; font-style: italic } /* Literal.String.Doc */
+.highlight .s2 { color: #BA2121 } /* Literal.String.Double */
+.highlight .se { color: #BB6622; font-weight: bold } /* Literal.String.Escape */
+.highlight .sh { color: #BA2121 } /* Literal.String.Heredoc */
+.highlight .si { color: #BB6688; font-weight: bold } /* Literal.String.Interpol */
+.highlight .sx { color: #008000 } /* Literal.String.Other */
+.highlight .sr { color: #BB6688 } /* Literal.String.Regex */
+.highlight .s1 { color: #BA2121 } /* Literal.String.Single */
+.highlight .ss { color: #19177C } /* Literal.String.Symbol */
+.highlight .bp { color: #008000 } /* Name.Builtin.Pseudo */
+.highlight .fm { color: #0000FF } /* Name.Function.Magic */
+.highlight .vc { color: #19177C } /* Name.Variable.Class */
+.highlight .vg { color: #19177C } /* Name.Variable.Global */
+.highlight .vi { color: #19177C } /* Name.Variable.Instance */
+.highlight .vm { color: #19177C } /* Name.Variable.Magic */
+.highlight .il { color: #666666 } /* Literal.Number.Integer.Long */
+
+/*overloading this class from pygments*/
+.highlight {
+  overflow: auto;
+}
+
+
+
+
+
+
+
+
+</style>
+
+
+
+
+
+  </head>
+
+  <body>
+
+
+
+    
+<!-- Fixed navbar -->
+<nav class="navbar navbar-default navbar-fixed-top">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+
+      <a class="navbar-brand" id="menu-toggle" title="Toggle sidebar">
+        
+        <span class="glyphicon glyphicon-align-left" aria-hidden="true"></span>
+      </a>
+    </div>
+    <div id="navbar" class="collapse navbar-collapse">
+      <ul class="nav navbar-nav">
+        <li ><a href="index.html"><code style="font-size: 115%;">http://purl.org/ontology/mo/</code></a></li>
+        
+
+       
+
+
+        <li  ><a href="dashboard.html">Dashboard</a></li>
+        <li  ><a href="entities-az.html">Entities A-Z</a></li>
+        <li class="dropdown  " >
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Entities Tree <span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            
+            <li><a href="entities-tree-classes.html">Classes</a>
+            </li>
+            
+            
+            <li><a  href="entities-tree-properties.html">Properties</a>
+            </li>
+            
+            
+          </ul>
+      </li>
+
+      </ul>
+      
+    </div><!--/.nav-collapse -->
+
+  </div>
+</nav>
+
+
+
+
+
+
+<div id="wrapper" class="toggled">
+
+
+    
+
+    
+        
+<!-- Sidebar -->
+<div id="sidebar-wrapper">
+    <ul class="sidebar-nav">
+
+
+        <li>
+          <input style="margin-top: 30px;  margin-bottom: 20px;" type="text" id="search-input-sidebar" name="" value="" placeholder="Type to search">
+        </li>
+
+        
+          <li class="-second-level" id="sd_classes"><a href="entities-tree-classes.html">Classes (60)</a>
+          </li>
+
+            
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_3374"><a  href="class-moactivity.html">mo:Activity</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_3375"><a  href="class-moanalogsignal.html">mo:AnalogSignal</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_3376"><a  href="class-moarrangement.html">mo:Arrangement</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_3377"><a  href="class-moarranger.html">mo:Arranger</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_3378"><a  href="class-moaudiofile.html">mo:AudioFile</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_3379"><a  href="class-mocd.html">mo:CD</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_3380"><a  href="class-mocomposer.html">mo:Composer</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_3381"><a  href="class-mocomposition.html">mo:Composition</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_3382"><a  href="class-moconductor.html">mo:Conductor</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_3383"><a  href="class-mocorporatebody.html">mo:CorporateBody</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_3384"><a  href="class-modat.html">mo:DAT</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_3385"><a  href="class-modcc.html">mo:DCC</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_3386"><a  href="class-modvda.html">mo:DVDA</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_3387"><a  href="class-modigitalsignal.html">mo:DigitalSignal</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_3388"><a  href="class-moed2k.html">mo:ED2K</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_3389"><a  href="class-mofestival.html">mo:Festival</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_3390"><a  href="class-mogenre.html">mo:Genre</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_3391"><a  href="class-moinstrument.html">mo:Instrument</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_3392"><a  href="class-moinstrumentation.html">mo:Instrumentation</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_3393"><a  href="class-molabel.html">mo:Label</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_3394"><a  href="class-molibretto.html">mo:Libretto</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_3395"><a  href="class-molistener.html">mo:Listener</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_3396"><a  href="class-molyrics.html">mo:Lyrics</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_3397"><a  href="class-momd.html">mo:MD</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_3398"><a  href="class-momagnetictape.html">mo:MagneticTape</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_3399"><a  href="class-momedium.html">mo:Medium</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_3400"><a  href="class-momembership.html">mo:Membership</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_3401"><a  href="class-momovement.html">mo:Movement</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_3402"><a  href="class-momusicartist.html">mo:MusicArtist</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_3403"><a  href="class-momusicgroup.html">mo:MusicGroup</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_3404"><a  href="class-momusicalexpression.html">mo:MusicalExpression</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_3405"><a  href="class-momusicalitem.html">mo:MusicalItem</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_3406"><a  href="class-momusicalmanifestation.html">mo:MusicalManifestation</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_3407"><a  href="class-momusicalwork.html">mo:MusicalWork</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_3408"><a  href="class-moorchestration.html">mo:Orchestration</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_3409"><a  href="class-moperformance.html">mo:Performance</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_3410"><a  href="class-moperformer.html">mo:Performer</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_3411"><a  href="class-mopublishedlibretto.html">mo:PublishedLibretto</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_3412"><a  href="class-mopublishedlyrics.html">mo:PublishedLyrics</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_3413"><a  href="class-mopublishedscore.html">mo:PublishedScore</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_3414"><a  href="class-morecord.html">mo:Record</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_3415"><a  href="class-morecording.html">mo:Recording</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_3416"><a  href="class-morecordingsession.html">mo:RecordingSession</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_3417"><a  href="class-morelease.html">mo:Release</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_3418"><a  href="class-moreleaseevent.html">mo:ReleaseEvent</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_3419"><a  href="class-moreleasestatus.html">mo:ReleaseStatus</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_3420"><a  href="class-moreleasetype.html">mo:ReleaseType</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_3421"><a  href="class-mosacd.html">mo:SACD</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_3422"><a  href="class-moscore.html">mo:Score</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_3423"><a  href="class-moshow.html">mo:Show</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_3424"><a  href="class-mosignal.html">mo:Signal</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_3425"><a  href="class-mosignalgroup.html">mo:SignalGroup</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_3426"><a  href="class-mosolomusicartist.html">mo:SoloMusicArtist</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_3427"><a  href="class-mosound.html">mo:Sound</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_3428"><a  href="class-mosoundengineer.html">mo:SoundEngineer</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_3429"><a  href="class-mostream.html">mo:Stream</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_3430"><a  href="class-motorrent.html">mo:Torrent</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_3431"><a  href="class-motrack.html">mo:Track</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_3432"><a  href="class-motranscription.html">mo:Transcription</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_3433"><a  href="class-movinyl.html">mo:Vinyl</a></li>
+          
+        
+
+        
+            <li class="-second-level" id="sd_properties"><a  href="entities-tree-properties.html">Properties (167)</a>
+            </li>
+
+            
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_3434"><a   href="prop-molevel.html">mo:level</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_3435"><a   href="prop-vsterm_status.html">vs:term_status</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_3436"><a   href="prop-moactivity_end.html">mo:activity_end</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_3437"><a   href="prop-moactivity_start.html">mo:activity_start</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_3438"><a   href="prop-mobitspersample.html">mo:bitsPerSample</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_3439"><a class="active"  href="prop-mobpm.html">mo:bpm</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_3440"><a   href="prop-mocatalogue_number.html">mo:catalogue_number</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_3441"><a   href="prop-mochannels.html">mo:channels</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_3442"><a   href="prop-moduration.html">mo:duration</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_3443"><a   href="prop-moean.html">mo:ean</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_3444"><a   href="prop-moencoding.html">mo:encoding</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_3445"><a   href="prop-mogrid.html">mo:grid</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_3446"><a   href="prop-mogtin.html">mo:gtin</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_3447"><a   href="prop-moipi.html">mo:ipi</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_3448"><a   href="prop-moismn.html">mo:ismn</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_3449"><a   href="prop-moisrc.html">mo:isrc</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_3450"><a   href="prop-moiswc.html">mo:iswc</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_3451"><a   href="prop-molc.html">mo:lc</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_3452"><a   href="prop-mometer.html">mo:meter</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_3453"><a   href="prop-momovementnum.html">mo:movementNum</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_3454"><a   href="prop-momovement_number.html">mo:movement_number</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_3455"><a   href="prop-momusicbrainz_guid.html">mo:musicbrainz_guid</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_3456"><a   href="prop-moopus.html">mo:opus</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_3457"><a   href="prop-mopuid.html">mo:puid</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_3458"><a   href="prop-morecord_count.html">mo:record_count</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_3459"><a   href="prop-morecord_number.html">mo:record_number</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_3460"><a   href="prop-morecord_side.html">mo:record_side</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_3461"><a   href="prop-mosamplerate.html">mo:sampleRate</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_3462"><a   href="prop-mosample_rate.html">mo:sample_rate</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_3463"><a   href="prop-motempo.html">mo:tempo</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_3464"><a   href="prop-motext.html">mo:text</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_3465"><a   href="prop-motracknum.html">mo:trackNum</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_3466"><a   href="prop-motrack_count.html">mo:track_count</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_3467"><a   href="prop-motrack_number.html">mo:track_number</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_3468"><a   href="prop-motrmid.html">mo:trmid</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_3469"><a   href="prop-moupc.html">mo:upc</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_3470"><a   href="prop-mouuid.html">mo:uuid</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_3471"><a   href="prop-mosampled_version_of.html">mo:sampled_version_of</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_3472"><a   href="prop-motime.html">mo:time</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_3473"><a   href="prop-moactivity.html">mo:activity</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_3474"><a   href="prop-moamazon_asin.html">mo:amazon_asin</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_3475"><a   href="prop-moarranged_in.html">mo:arranged_in</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_3476"><a   href="prop-moarrangement_of.html">mo:arrangement_of</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_3477"><a   href="prop-moartist.html">mo:artist</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_3478"><a   href="prop-moavailableas.html">mo:availableAs</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_3479"><a   href="prop-moavailable_as.html">mo:available_as</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_3480"><a   href="prop-mobiography.html">mo:biography</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_3481"><a   href="prop-mocollaborated_with.html">mo:collaborated_with</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_3482"><a   href="prop-mocompilation_of.html">mo:compilation_of</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_3483"><a   href="prop-mocompiled.html">mo:compiled</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_3484"><a   href="prop-mocompiler.html">mo:compiler</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_3485"><a   href="prop-mocomposed_in.html">mo:composed_in</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_3486"><a   href="prop-mocomposer.html">mo:composer</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_3487"><a   href="prop-moconducted.html">mo:conducted</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_3488"><a   href="prop-moconductor.html">mo:conductor</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_3489"><a   href="prop-mocontains_sample_from.html">mo:contains_sample_from</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_3490"><a   href="prop-moderived_from.html">mo:derived_from</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_3491"><a   href="prop-modiscography.html">mo:discography</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_3492"><a   href="prop-modiscogs.html">mo:discogs</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_3493"><a   href="prop-modjmix_of.html">mo:djmix_of</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_3494"><a   href="prop-modjmixed.html">mo:djmixed</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_3495"><a   href="prop-modjmixed_by.html">mo:djmixed_by</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_3496"><a   href="prop-modownload.html">mo:download</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_3497"><a   href="prop-moencodes.html">mo:encodes</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_3498"><a   href="prop-moengineer.html">mo:engineer</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_3499"><a   href="prop-moengineered.html">mo:engineered</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_3500"><a   href="prop-moeventhomepage.html">mo:eventHomePage</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_3501"><a   href="prop-moevent_homepage.html">mo:event_homepage</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_3502"><a   href="prop-moexchange_item.html">mo:exchange_item</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_3503"><a   href="prop-mofanpage.html">mo:fanpage</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_3504"><a   href="prop-mofree_download.html">mo:free_download</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_3505"><a   href="prop-mofreedownload.html">mo:freedownload</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_3506"><a   href="prop-mogenre.html">mo:genre</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_3507"><a   href="prop-mogroup.html">mo:group</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_3508"><a   href="prop-mohas_track.html">mo:has_track</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_3509"><a   href="prop-moheadliner.html">mo:headliner</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_3510"><a   href="prop-mohomepage.html">mo:homepage</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_3511"><a   href="prop-moimage.html">mo:image</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_3512"><a   href="prop-moimdb.html">mo:imdb</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_3513"><a   href="prop-moinstrument.html">mo:instrument</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_3514"><a   href="prop-mointerpreter.html">mo:interpreter</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_3515"><a   href="prop-moitem.html">mo:item</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_3516"><a   href="prop-mokey.html">mo:key</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_3517"><a   href="prop-molabel.html">mo:label</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_3518"><a   href="prop-molicence.html">mo:licence</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_3519"><a   href="prop-molistened.html">mo:listened</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_3520"><a   href="prop-molistener.html">mo:listener</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_3521"><a   href="prop-molyrics.html">mo:lyrics</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_3522"><a   href="prop-momailorder.html">mo:mailorder</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_3523"><a   href="prop-momashup_of.html">mo:mashup_of</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_3524"><a   href="prop-momedia_type.html">mo:media_type</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_3525"><a   href="prop-momedley_of.html">mo:medley_of</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_3526"><a   href="prop-momember.html">mo:member</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_3527"><a   href="prop-momember_of.html">mo:member_of</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_3528"><a   href="prop-momembership.html">mo:membership</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_3529"><a   href="prop-momovement.html">mo:movement</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_3530"><a   href="prop-momusicbrainz.html">mo:musicbrainz</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_3531"><a   href="prop-momusicmoz.html">mo:musicmoz</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_3532"><a   href="prop-momyspace.html">mo:myspace</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_3533"><a   href="prop-moolga.html">mo:olga</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_3534"><a   href="prop-moonlinecommunity.html">mo:onlinecommunity</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_3535"><a   href="prop-moorigin.html">mo:origin</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_3536"><a   href="prop-moother_release_of.html">mo:other_release_of</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_3537"><a   href="prop-mopaid_download.html">mo:paid_download</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_3538"><a   href="prop-mopaiddownload.html">mo:paiddownload</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_3539"><a   href="prop-moperformance_of.html">mo:performance_of</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_3540"><a   href="prop-moperformed.html">mo:performed</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_3541"><a   href="prop-moperformed_in.html">mo:performed_in</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_3542"><a   href="prop-moperformer.html">mo:performer</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_3543"><a   href="prop-mopossess_item.html">mo:possess_item</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_3544"><a   href="prop-mopreview.html">mo:preview</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_3545"><a   href="prop-mopreview_download.html">mo:preview_download</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_3546"><a   href="prop-moprimary_instrument.html">mo:primary_instrument</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_3547"><a   href="prop-moproduced.html">mo:produced</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_3548"><a   href="prop-moproduced_score.html">mo:produced_score</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_3549"><a   href="prop-moproduced_signal.html">mo:produced_signal</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_3550"><a   href="prop-moproduced_signal_group.html">mo:produced_signal_group</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_3551"><a   href="prop-moproduced_sound.html">mo:produced_sound</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_3552"><a   href="prop-moproduced_work.html">mo:produced_work</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_3553"><a   href="prop-moproducer.html">mo:producer</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_3554"><a   href="prop-moproducessignal.html">mo:producesSignal</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_3555"><a   href="prop-moproducessound.html">mo:producesSound</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_3556"><a   href="prop-moproduceswork.html">mo:producesWork</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_3557"><a   href="prop-moproductofcomposition.html">mo:productOfComposition</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_3558"><a   href="prop-mopublicationof.html">mo:publicationOf</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_3559"><a   href="prop-mopublication_of.html">mo:publication_of</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_3560"><a   href="prop-mopublished.html">mo:published</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_3561"><a   href="prop-mopublishedas.html">mo:publishedAs</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_3562"><a   href="prop-mopublished_as.html">mo:published_as</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_3563"><a   href="prop-mopublisher.html">mo:publisher</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_3564"><a   href="prop-mopublishinglocation.html">mo:publishingLocation</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_3565"><a   href="prop-mopublishing_location.html">mo:publishing_location</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_3566"><a   href="prop-morecord.html">mo:record</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_3567"><a   href="prop-morecordedas.html">mo:recordedAs</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_3568"><a   href="prop-morecorded_as.html">mo:recorded_as</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_3569"><a   href="prop-morecorded_in.html">mo:recorded_in</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_3570"><a   href="prop-morecording_of.html">mo:recording_of</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_3571"><a   href="prop-morecords.html">mo:records</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_3572"><a   href="prop-morelease.html">mo:release</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_3573"><a   href="prop-moreleasestatus.html">mo:releaseStatus</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_3574"><a   href="prop-moreleasetype.html">mo:releaseType</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_3575"><a   href="prop-morelease_status.html">mo:release_status</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_3576"><a   href="prop-morelease_type.html">mo:release_type</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_3577"><a   href="prop-moremaster_of.html">mo:remaster_of</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_3578"><a   href="prop-moremix_of.html">mo:remix_of</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_3579"><a   href="prop-moremixed.html">mo:remixed</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_3580"><a   href="prop-moremixer.html">mo:remixer</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_3581"><a   href="prop-moreview.html">mo:review</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_3582"><a   href="prop-mosampled.html">mo:sampled</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_3583"><a   href="prop-mosampledversionof.html">mo:sampledVersionOf</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_3584"><a   href="prop-mosampled_version.html">mo:sampled_version</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_3585"><a   href="prop-mosampler.html">mo:sampler</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_3586"><a   href="prop-mosell_item.html">mo:sell_item</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_3587"><a   href="prop-mosignal.html">mo:signal</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_3588"><a   href="prop-mosignaltime.html">mo:signalTime</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_3589"><a   href="prop-mosimilar_to.html">mo:similar_to</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_3590"><a   href="prop-mosinger.html">mo:singer</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_3591"><a   href="prop-mosupporting_musician.html">mo:supporting_musician</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_3592"><a   href="prop-motrack.html">mo:track</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_3593"><a   href="prop-motranslation_of.html">mo:translation_of</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_3594"><a   href="prop-motribute_to.html">mo:tribute_to</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_3595"><a   href="prop-mousedinperformance.html">mo:usedInPerformance</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_3596"><a   href="prop-mousedinrecording.html">mo:usedInRecording</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_3597"><a   href="prop-mousessound.html">mo:usesSound</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_3598"><a   href="prop-mouseswork.html">mo:usesWork</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_3599"><a   href="prop-mowant_item.html">mo:want_item</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_3600"><a   href="prop-mowikipedia.html">mo:wikipedia</a></li>
+          
+
+        
+
+        
+
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+
+    </ul>
+
+</div>
+
+
+<!-- /#sidebar-wrapper -->
+
+    
+
+
+
+
+    <!-- Begin page content -->
+    <div class="container" id="page-content-wrapper">
+
+      
+
+	
+
+
+
+
+        
+
+
+        
+            
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <ol class="breadcrumb">
+    <li>
+      <a href="index.html">Home</a>
+    </li>
+    <li>
+          <a href="entities-az.html">Entities</a>
+    </li>
+    <li>
+          <a href="entities-tree-properties.html">Properties</a>
+    </li>
+      <li class="active">
+            http://purl.org/ontology/mo/bpm
+        </li>
+  </ol>
+
+
+
+
+
+
+
+
+        
+
+
+
+            <h1>
+
+                mo:bpm
+                
+                    <small class="label label-info label-xs ">leaf node</small>
+                  
+
+            </h1>
+
+            <hr>
+
+
+
+            <div class="tree-container">
+            <div class="tree">
+                <ul>
+                    
+
+                        <li><a href="entities-tree-properties.html">rdf:Property</a>
+
+                          <ul>
+                            <li><a style="font-weight: bold;" title="'bpm' - Indicates the BPM of a MusicalWork or a particular Performance Beats per minute: the pace of music measured by the ...">mo:bpm</a>
+
+                            
+                              </li>
+
+                          </ul>
+
+                        </li>
+                    
+
+                </ul>
+            </div>
+            </div>
+
+
+
+
+            <div class="row"><div class="col-md-12">
+               <div class="panel panel-default">
+             <div class="panel-heading">
+               <h3 class="panel-title">URI</h3>
+             </div>
+             <div class="panel-body">
+
+                 <code>http://purl.org/ontology/mo/bpm</code>
+             </div>
+           </div>
+            </div></div>
+
+
+
+            
+             <div class="row"><div class="col-md-12">
+               <div class="panel panel-default">
+             <div class="panel-heading">
+               <h3 class="panel-title">Label</h3>
+             </div>
+             <div class="panel-body">
+
+                 bpm
+             </div>
+           </div>
+            </div></div>
+            
+
+
+            
+            <div class="row"><div class="col-md-12">
+              <div class="panel panel-default">
+            <div class="panel-heading">
+              <h3 class="panel-title">Description</h3>
+            </div>
+            <div class="panel-body">
+
+                
+        Indicates the BPM of a MusicalWork or a particular Performance 
+        Beats per minute: the pace of music measured by the number of beats occurring in 60 seconds.
+    
+            </div>
+          </div>
+           </div></div>
+           
+
+
+
+            
+
+
+
+            
+
+
+            <div class="row"><div class="col-md-12">
+              <div class="panel panel-default">
+            <div class="panel-heading">
+              <h3 class="panel-title">Usage</h3>
+            </div>
+
+            <table class="table table-bordered" style="overflow: auto;">
+
+               <tr class="table-classproperties">
+                   <th>DOMAIN</th><th>PROPERTY</th><th>RANGE</th>
+               </tr>
+               <tr>
+                   <td>
+                     
+                         <a>owl:Thing</a> (inferred)
+                     
+                   </td>
+
+                    <td>
+                      mo:bpm
+                    </td>
+
+                    <td>
+                      
+                          
+                            <a href=".html">http://www.w3.org/2001/XMLSchema#float</a>
+                            
+                          
+                      
+                    </td>
+            </table>
+
+          </div>
+           </div></div>
+
+
+
+           <div class="row"><div class="col-md-12">
+              <div class="panel panel-default">
+            <div class="panel-heading">
+              <h3 class="panel-title">Implementation</h3>
+            </div>
+            <div class="panel-body implementation-panel">
+
+                
+
+                    <div class="highlight"><pre><span></span><span class="k">@prefix</span><span class="w"> </span><span class="nn">ao:</span><span class="w"> </span><span class="nv">&lt;http://purl.org/ontology/ao/core#&gt;</span><span class="w"> </span><span class="p">.</span><span class="w"></span>
+<span class="k">@prefix</span><span class="w"> </span><span class="nn">bio:</span><span class="w"> </span><span class="nv">&lt;http://purl.org/vocab/bio/0.1/&gt;</span><span class="w"> </span><span class="p">.</span><span class="w"></span>
+<span class="k">@prefix</span><span class="w"> </span><span class="nn">cc:</span><span class="w"> </span><span class="nv">&lt;http://web.resource.org/cc/&gt;</span><span class="w"> </span><span class="p">.</span><span class="w"></span>
+<span class="k">@prefix</span><span class="w"> </span><span class="nn">dc:</span><span class="w"> </span><span class="nv">&lt;http://purl.org/dc/elements/1.1/&gt;</span><span class="w"> </span><span class="p">.</span><span class="w"></span>
+<span class="k">@prefix</span><span class="w"> </span><span class="nn">dcterms:</span><span class="w"> </span><span class="nv">&lt;http://purl.org/dc/terms/&gt;</span><span class="w"> </span><span class="p">.</span><span class="w"></span>
+<span class="k">@prefix</span><span class="w"> </span><span class="nn">event:</span><span class="w"> </span><span class="nv">&lt;http://purl.org/NET/c4dm/event.owl#&gt;</span><span class="w"> </span><span class="p">.</span><span class="w"></span>
+<span class="k">@prefix</span><span class="w"> </span><span class="nn">foaf:</span><span class="w"> </span><span class="nv">&lt;http://xmlns.com/foaf/0.1/&gt;</span><span class="w"> </span><span class="p">.</span><span class="w"></span>
+<span class="k">@prefix</span><span class="w"> </span><span class="nn">frbr:</span><span class="w"> </span><span class="nv">&lt;http://purl.org/vocab/frbr/core#&gt;</span><span class="w"> </span><span class="p">.</span><span class="w"></span>
+<span class="k">@prefix</span><span class="w"> </span><span class="nn">geo:</span><span class="w"> </span><span class="nv">&lt;http://www.w3.org/2003/01/geo/wgs84_pos#&gt;</span><span class="w"> </span><span class="p">.</span><span class="w"></span>
+<span class="k">@prefix</span><span class="w"> </span><span class="nn">keys:</span><span class="w"> </span><span class="nv">&lt;http://purl.org/NET/c4dm/keys.owl#&gt;</span><span class="w"> </span><span class="p">.</span><span class="w"></span>
+<span class="k">@prefix</span><span class="w"> </span><span class="nn">mo:</span><span class="w"> </span><span class="nv">&lt;http://purl.org/ontology/mo/&gt;</span><span class="w"> </span><span class="p">.</span><span class="w"></span>
+<span class="k">@prefix</span><span class="w"> </span><span class="nn">owl:</span><span class="w"> </span><span class="nv">&lt;http://www.w3.org/2002/07/owl#&gt;</span><span class="w"> </span><span class="p">.</span><span class="w"></span>
+<span class="k">@prefix</span><span class="w"> </span><span class="nn">rdf:</span><span class="w"> </span><span class="nv">&lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#&gt;</span><span class="w"> </span><span class="p">.</span><span class="w"></span>
+<span class="k">@prefix</span><span class="w"> </span><span class="nn">rdfs:</span><span class="w"> </span><span class="nv">&lt;http://www.w3.org/2000/01/rdf-schema#&gt;</span><span class="w"> </span><span class="p">.</span><span class="w"></span>
+<span class="k">@prefix</span><span class="w"> </span><span class="nn">skos:</span><span class="w"> </span><span class="nv">&lt;http://www.w3.org/2004/02/skos/core#&gt;</span><span class="w"> </span><span class="p">.</span><span class="w"></span>
+<span class="k">@prefix</span><span class="w"> </span><span class="nn">time:</span><span class="w"> </span><span class="nv">&lt;http://www.w3.org/2006/time#&gt;</span><span class="w"> </span><span class="p">.</span><span class="w"></span>
+<span class="k">@prefix</span><span class="w"> </span><span class="nn">vs:</span><span class="w"> </span><span class="nv">&lt;http://www.w3.org/2003/06/sw-vocab-status/ns#&gt;</span><span class="w"> </span><span class="p">.</span><span class="w"></span>
+<span class="k">@prefix</span><span class="w"> </span><span class="nn">wot:</span><span class="w"> </span><span class="nv">&lt;http://xmlns.com/wot/0.1/&gt;</span><span class="w"> </span><span class="p">.</span><span class="w"></span>
+<span class="k">@prefix</span><span class="w"> </span><span class="nn">xml:</span><span class="w"> </span><span class="nv">&lt;http://www.w3.org/XML/1998/namespace&gt;</span><span class="w"> </span><span class="p">.</span><span class="w"></span>
+<span class="k">@prefix</span><span class="w"> </span><span class="nn">xsd:</span><span class="w"> </span><span class="nv">&lt;http://www.w3.org/2001/XMLSchema#&gt;</span><span class="w"> </span><span class="p">.</span><span class="w"></span>
+
+<span class="nn">mo:</span><span class="nt">bpm</span><span class="w"> </span><span class="kt">a</span><span class="w"> </span><span class="nn">owl:</span><span class="nt">DatatypeProperty</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="nn">rdfs:</span><span class="nt">label</span><span class="w"> </span><span class="s">&quot;bpm&quot;</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="nn">mo:</span><span class="nt">level</span><span class="w"> </span><span class="s">&quot;2&quot;</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="nn">rdfs:</span><span class="nt">comment</span><span class="w"> </span><span class="s">&quot;&quot;&quot;</span>
+<span class="s">        Indicates the BPM of a MusicalWork or a particular Performance </span>
+<span class="s">        Beats per minute: the pace of music measured by the number of beats occurring in 60 seconds.</span>
+<span class="s">    &quot;&quot;&quot; ;</span>
+<span class="s">    rdfs:domain [ a owl:Class ;</span>
+<span class="s">            owl:unionOf ( mo:MusicalWork mo:Performance mo:Signal ) ] ;</span>
+<span class="s">    rdfs:isDefinedBy mo: ;</span>
+<span class="s">    rdfs:range xsd:float ;</span>
+<span class="s">    vs:term_status &quot;stable&quot; .</span>
+</pre></div>
+
+
+                
+            </div>
+          </div>
+           </div></div>
+
+
+
+
+        
+
+
+
+
+
+
+
+
+
+
+
+	</div><!-- /#page-content-wrapper -->
+
+
+  
+
+
+
+  
+
+
+
+
+  <footer class="footer">
+    <div class="container">
+    
+      <p class="text-muted">Documentation automatically generated on 26th February 2017 with <a href="https://github.com/lambdamusic/OntoSpy">OntoSpy</a> (v1.7.4)</p>
+
+    
+    </div>
+  </footer>
+
+
+</div><!-- /#wrapper -->
+
+
+<!-- Bootstrap core JavaScript
+================================================== -->
+<!-- Placed at the end of the document so the pages load faster -->
+<script src="../static/libs/jquery/1.12.4/jquery.min.js"></script>
+<script src="../static/libs/bootstrap-3.3.7-dist/js/bootstrap.min.js"></script>
+
+<!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+<script src="../static/libs/bootstrap-3.3.7-dist/js/ie10-viewport-bug-workaround.js"></script>
+
+<script src="../static/libs/Chart.js-2.4.0/Chart.bundle.js"></script>
+
+
+<!-- Menu Toggle Script -->
+<script>
+$("#menu-toggle").click(function(e) {
+    e.preventDefault();
+    $("#wrapper").toggleClass("toggled");
+});
+</script>
+
+
+
+
+<script type="text/javascript">
+
+$('#search-input-sidebar').keyup(function() {
+
+  var val = $.trim($(this).val()).replace(/ +/g, ' ').toLowerCase();
+  // var $rows = $(this).next(".entities-list").find("div");
+  var $rows = $(this).parent().parent().find("li.second-level");
+
+  $rows.show().filter(function() {
+      var text = $(this).text().replace(/\s+/g, ' ').toLowerCase();
+      return !~text.indexOf(val);
+  }).hide();
+});
+
+</script>
+
+
+
+
+  <!-- Scroll Sidebar Script -->
+  
+  
+  <script type="text/javascript">
+
+    $(document).ready(function (){
+      $('#sidebar-wrapper').animate({
+          scrollTop: $("#sd_3439").offset().top - 100
+      }, 100);
+    });
+
+  </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  </body>
+</html>
