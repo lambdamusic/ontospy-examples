@@ -1,0 +1,1421 @@
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix : <http://rdf.muninn-project.org/ontologies/naval#> .
+@prefix person: <http://rdf.muninn-project.org/ontologies/person#> .
+@prefix org: <http://rdf.muninn-project.org/ontologies/organization#> .
+@prefix mil: <http://rdf.muninn-project.org/ontologies/military#> .
+@prefix muninn: <http://rdf.muninn-project.org/ontologies/muninn#> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix dbpedia: <http://dbpedia.org/resource/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix time: <http://www.w3.org/2006/time#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix vs: <http://www.w3.org/2003/06/sw-vocab-status/ns#> .
+@prefix swrl: <http://www.w3.org/2003/11/swrl#> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix void: <http://rdfs.org/ns/void#> .
+@prefix swrlb: <http://www.w3.org/2003/11/swrlb#> .
+@prefix vann: <http://purl.org/vocab/vann/> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix cc: <http://creativecommons.org/ns#> .
+@prefix naval: <http://rdf.muninn-project.org/ontologies/naval> .
+
+<dbpedia:British_E-class_submarine>
+    muninn:wikipedia_version "632667731" .
+
+<http://dbpedia.org/resource/%C3%84ran_class_coastal_defence_ship>
+    muninn:wikipedia_version "499220549" .
+
+dbpedia:Amiral_Baudin_class_ironclad
+    muninn:wikipedia_version "514259980" .
+
+dbpedia:Audacious_class_ironclad
+    muninn:wikipedia_version "507049141" .
+
+dbpedia:Battleship
+    muninn:wikipedia_version "519294588" .
+
+dbpedia:Belleisle_class_ironclad
+    muninn:wikipedia_version "514544116" .
+
+<http://dbpedia.org/resource/Bj%C3%B8rgvin_class_coastal_defence_ship>
+    muninn:wikipedia_version "511843164" .
+
+dbpedia:Capital_ship
+    muninn:wikipedia_version "521057007" .
+
+dbpedia:Coastal_defence_ship
+    muninn:wikipedia_version "515709417" .
+
+dbpedia:Colbert_class_ironclad
+    muninn:wikipedia_version "496390873" .
+
+dbpedia:Defence_class_ironclad
+    muninn:wikipedia_version "496393949" .
+
+dbpedia:Dreadnought
+    muninn:wikipedia_version "517837707" .
+
+dbpedia:Dunkerque_class_battleship
+    muninn:wikipedia_version "520597110" .
+
+dbpedia:Eidsvold_class_coastal_defence_ship
+    muninn:wikipedia_version "515686986" .
+
+dbpedia:Evertsen_class_coastal_defence_ship
+    muninn:wikipedia_version "511584767" .
+
+dbpedia:Fast_battleship
+    muninn:wikipedia_version "517014120" .
+
+dbpedia:Hector_class_ironclad
+    muninn:wikipedia_version "499998593" .
+
+dbpedia:Herluf_Trolle_class_coastal_defense_ship
+    muninn:wikipedia_version "484156178" .
+
+dbpedia:Hydra_class_ironclad
+    muninn:wikipedia_version "517068833" .
+
+dbpedia:Iowa_class_battleship
+    muninn:wikipedia_version "522752035" .
+
+dbpedia:Ironclad_warship
+    muninn:wikipedia_version "521796747" .
+
+dbpedia:Kaiser_class_ironclad
+    muninn:wikipedia_version "517319626" .
+
+<http://dbpedia.org/resource/King_George_V_class_battleship_(1939)>
+    muninn:wikipedia_version "521843003" .
+
+dbpedia:Koningin_Regentes_class_coastal_defense_ship
+    muninn:wikipedia_version "510268196" .
+
+dbpedia:Lion_class_battleship
+    muninn:wikipedia_version "518921843" .
+
+dbpedia:Littorio_class_battleship
+    muninn:wikipedia_version "522271616" .
+
+dbpedia:Lord_Clyde_class_ironclad
+    muninn:wikipedia_version "496940406" .
+
+dbpedia:Magenta_class_ironclad
+    muninn:wikipedia_version "496936345" .
+
+dbpedia:Marceau_class_ironclad
+    muninn:wikipedia_version "514296633" .
+
+dbpedia:Monarch_class_battleship
+    muninn:wikipedia_version "514756041" .
+
+dbpedia:Nelson_class_battleship
+    muninn:wikipedia_version "522717041" .
+
+dbpedia:North_Carolina_class_battleship
+    muninn:wikipedia_version "515483219" .
+
+dbpedia:Oden_class_coastal_defence_ship
+    muninn:wikipedia_version "499932485" .
+
+dbpedia:Odin_class_coastal_defense_ship
+    muninn:wikipedia_version "516900564" .
+
+dbpedia:Pre-dreadnought_battleship
+    muninn:wikipedia_version "518922219" .
+
+dbpedia:Preussen_class_ironclad
+    muninn:wikipedia_version "516167825" .
+
+dbpedia:Prince_Consort_class_ironclad
+    muninn:wikipedia_version "507049485" .
+
+dbpedia:Rhein_class_monitor
+    muninn:wikipedia_version "496397167" .
+
+dbpedia:Richelieu_class_battleship
+    muninn:wikipedia_version "513557432" .
+
+dbpedia:Sachsen_class_ironclad
+    muninn:wikipedia_version "516258802" .
+
+dbpedia:Scorpion_class_ironclad
+    muninn:wikipedia_version "447843970" .
+
+dbpedia:Ship_of_the_line
+    muninn:wikipedia_version "518922607" .
+
+dbpedia:Siegfried_class_coastal_defense_ship
+    muninn:wikipedia_version "516900448" .
+
+<http://dbpedia.org/resource/South_Dakota_class_battleship_(1939)>
+    muninn:wikipedia_version "518333982" .
+
+dbpedia:Svea_class_coastal_defence_ship
+    muninn:wikipedia_version "499803945" .
+
+dbpedia:Sverige_class_coastal_defence_ship
+    muninn:wikipedia_version "514290408" .
+
+dbpedia:Swiftsure_class_ironclad
+    muninn:wikipedia_version "514639517" .
+
+dbpedia:Tordenskjold_class_coastal_defence_ship
+    muninn:wikipedia_version "501115874" .
+
+dbpedia:Treaty_battleship
+    muninn:wikipedia_version "506977180" .
+
+dbpedia:Warrior_class_ironclad
+    muninn:wikipedia_version "479918481" .
+
+<http://en.wikipedia.org/wiki/Hospital_ship>
+    muninn:wikipedia_version "598073439" .
+
+<http://rdf.muninn-project.org/ontologies/datasetdefinition>
+    cc:Jurisdiction dbpedia:Canada ;
+    cc:attributionURL <http://www.muninn-project.org/> ;
+    cc:license <http://creativecommons.org/licenses/by/3.0/> ;
+    dc:creator <http://rdf.muninn-project.org/ww1/2011/11/11/Person/Warren> ;
+    dc:publisher <http://rdf.muninn-project.org/ww1/2011/11/11/Organization/Muninn> ;
+    dc:title "The Muninn Naval Ontology" ;
+    dcterms:subject <http://id.loc.gov/authorities/subjects/sh85121591> ;
+    void:entities "156" ;
+    void:triples "1523" ;
+    a void:Dataset ;
+    rdfs:isDefinedBy <http://rdf.muninn-project.org/ontologies/naval> ;
+    rdfs:label "The Muninn Naval Ontology"@en ;
+    skos:definition "The Muninn Naval Ontology marks up information about maritime establishments."@en ;
+    foaf:name "The Muninn Naval Ontology"@en .
+
+<http://rdf.muninn-project.org/ontologies/naval>
+    dc:creator <http://rdf.muninn-project.org/ww1/2011/11/11/Person/Warren> ;
+    dc:date "20150705"^^xsd:date ;
+    dc:description "The Muninn Naval Ontology marks up information about maritime establishments."@en ;
+    dc:publisher <http://rdf.muninn-project.org/ww1/2011/11/11/Organization/Muninn> ;
+    dc:rights <http://creativecommons.org/licenses/by/3.0/> ;
+    dc:title "The Muninn Naval Ontology" ;
+    vann:preferredNamespacePrefix "naval" ;
+    void:inDataset :datasetdefinition ;
+    a owl:Ontology ;
+    rdfs:comment "The Muninn Naval Ontology marks up information about maritime establishments."@en ;
+    rdfs:label "The Muninn Naval Ontology"@en ;
+    owl:priorVersion <http://rdf.muninn-project.org/ontologies/naval-20140910.owl> ;
+    owl:versionInfo 0.3 ;
+    vs:term_status "Testing" ;
+    skos:definition "Die Muninn Naval Ontology markiert bis Informationen über maritime Einrichtungen."@de, "L'ontologie navale Muninn marque les informations sur les établissements maritimes."@fr, "The Muninn Naval Ontology marks up information about maritime establishments."@en ;
+    foaf:name "The Muninn Naval Ontology"@en .
+
+:AdmiralUshakovClass
+    naval:hasBeamMeters "15.85" ;
+    naval:hasCrewSize "404" ;
+    naval:hasDisplacementMetricTonnes "5051" ;
+    naval:hasDraughtMeters "5.9" ;
+    naval:hasLenghtMeters "87.3" ;
+    naval:hasMaxSpeedKnots "16" ;
+    naval:ownedBy <http://rdf.muninn-project.org/ontologies/Imperial_Japanese_Navy>, <http://rdf.muninn-project.org/ontologies/Russian_Navy> ;
+    org:inEra org:EraGreatWar ;
+    void:inDataset :datasetdefinition ;
+    a :CoastalDefenceShip, :MilitaryShipClass, skos:Concept ;
+    rdfs:isDefinedBy <http://rdf.muninn-project.org/ontologies/naval> ;
+    rdfs:label "Admiral Ushakov class coast defense ship"@en ;
+    owl:sameAs dbpedia:Admiral_Ushakov_class_coast_defense_ship ;
+    skos:definition "The Admiral Ushakov-class were coast defense battleships built for the Imperial Russian Navy during the 1890s to counter armored ships of the Swedish Navy. All three ships were stationed in the Baltic Sea when the Russo-Japanese war began and sailed with the Baltic Fleet around the Cape of Good Hope to the Pacific. Two ships were captured by the Japanese and one was scuttled during the Battle of Tsushima."@en ;
+    foaf:name "Admiral Ushakov Class" .
+
+:AeranClass
+    naval:hasBeamMeters "15.0" ;
+    naval:hasCrewSize "285" ;
+    naval:hasDisplacementMetricTonnes "3258.60" ;
+    naval:hasDraughtMeters "5" ;
+    naval:hasLenghtMeters "87.48" ;
+    naval:hasMaxSpeedKnots "17" ;
+    org:inEra org:EraGreatWar ;
+    void:inDataset :datasetdefinition ;
+    a :CoastalDefenceShip, :MilitaryShipClass, skos:Concept ;
+    rdfs:isDefinedBy <http://rdf.muninn-project.org/ontologies/naval> ;
+    rdfs:label "Äran class coastal defence ship"@en, "Äran-luokka"@fi, "Äranklass"@sv ;
+    owl:sameAs <http://dbpedia.org/resource/%C3%84ran_class_coastal_defence_ship> ;
+    skos:definition "The Äran class was a class of coastal defence ships of the Swedish Navy. The class comprised Äran, Wasa, Tapperheten and Manligheten."@en ;
+    foaf:name "ÄRan Class" .
+
+:AmiralBaudinClass
+    naval:hasBeamMeters "21.2" ;
+    naval:hasCrewSize "650" ;
+    naval:hasDisplacementMetricTonnes "12150" ;
+    naval:hasDraughtMeters "20.7" ;
+    naval:hasLenghtMeters "98.0" ;
+    naval:hasMaxSpeedKnots "16" ;
+    naval:ownedBy <http://rdf.muninn-project.org/ontologies/French_Navy> ;
+    naval:preceededBy dbpedia:Amiral_Baudin_class_ironclad, dbpedia:Terrible_class_battleship ;
+    naval:succeededBy dbpedia:Marceau_class_ironclad ;
+    void:inDataset :datasetdefinition ;
+    a :IroncladWarship, :MilitaryShipClass, skos:Concept ;
+    rdfs:isDefinedBy <http://rdf.muninn-project.org/ontologies/naval> ;
+    rdfs:label "Amiral Baudin class ironclad"@en, "Classe Amiral Baudin"@fr ;
+    owl:sameAs dbpedia:Amiral_Baudin_class_ironclad ;
+    skos:definition "The Amiral Baudin class was a type of ironclad battleships of the French Navy."@en ;
+    foaf:name "Amiral Baudin Class" .
+
+:AudaciousClass
+    naval:hasBeamMeters "16.4592" ;
+    naval:hasCrewSize "450" ;
+    naval:hasDisplacementMetricTonnes "6106" ;
+    naval:hasDraughtMeters "6.8" ;
+    naval:hasLenghtMeters "85.344" ;
+    naval:hasMaxSpeedKPH "25.002" ;
+    void:inDataset :datasetdefinition ;
+    a :IroncladWarship, :MilitaryShipClass, skos:Concept ;
+    rdfs:isDefinedBy <http://rdf.muninn-project.org/ontologies/naval> ;
+    rdfs:label "Audacious class ironclad"@en, "Audacious-luokka (taistelulaiva)"@fi ;
+    owl:sameAs dbpedia:Audacious_class_ironclad ;
+    skos:definition "The Audacious class battleships were designed by Sir Edward Reed at the request of the Board of Admiralty to serve as second-class battleships on distant foreign stations."@en ;
+    foaf:name "Audacious Class" .
+
+:BallastTank
+    void:inDataset :datasetdefinition ;
+    a owl:Class, skos:Concept ;
+    rdfs:isDefinedBy <http://rdf.muninn-project.org/ontologies/naval> ;
+    rdfs:label "Ballast Tank"@en, "Citernes à Ballast"@fr, "Trimmtank"@de ;
+    owl:equivalentClass dbpedia:Ballast_tank .
+
+:BattleShip
+    void:inDataset :datasetdefinition ;
+    a :MilitaryShipFunction, skos:Concept ;
+    rdfs:isDefinedBy <http://rdf.muninn-project.org/ontologies/naval> ;
+    rdfs:label "Acorazado"@es, "Battleship"@en, "Bitevní loď"@cs, "Couraçado"@pt, "Csatahajó"@hu, "Cuirassat"@ca, "Cuirassé"@fr, "Nave da battaglia"@it, "Pancernik"@pl, "Schlachtschiff"@de, "Slagschip"@nl, "Slagskepp"@sv, "Slagskip"@no, "Taistelulaiva"@fi, "Thiết giáp hạm"@vi, "Линкор"@ru, "Лінкор"@uk, "戦艦"@ja, "戰艦"@zh, "전함"@ko ;
+    owl:sameAs dbpedia:Battleship ;
+    owl:subClass :CapitalShip ;
+    skos:definition "A battleship is a large armored warship with a main battery consisting of heavy caliber guns. Battleships are larger, with better arms and armor, than cruisers and destroyers. As the largest armed ships in a fleet, battleships were used to attain command of the sea and represented the apex of a nation's naval power from about 1875 up until World War II."@en ;
+    foaf:name "Battleship" .
+
+:BelleisleClass
+    naval:hasBeamMeters "15.8496" ;
+    naval:hasCrewSize "249" ;
+    naval:hasDisplacementMetricTonnes "4418" ;
+    naval:hasDraughtMeters "6.4" ;
+    naval:hasLenghtMeters "74.676" ;
+    naval:hasMaxSpeedKPH "22.4092" ;
+    void:inDataset :datasetdefinition ;
+    a :IroncladWarship, :MilitaryShipClass, skos:Concept ;
+    rdfs:isDefinedBy <http://rdf.muninn-project.org/ontologies/naval> ;
+    rdfs:label "Belleisle class ironclad"@en, "Clase Belleisle"@es ;
+    owl:sameAs dbpedia:Belleisle_class_ironclad ;
+    skos:definition "The two ships of the Belleisle class, HMS Belleisle and HMS Orion, originally built in Britain for the Turkish Navy, were taken over by the Royal Navy in 1878. In 1878 Russia and Turkey were at war, and it was perceived by the British Government that Britain might be drawn into the conflict. This perception has become known to posterity as \"the Russian war scare of 1878\"."@en ;
+    foaf:name "Belleisle Class" .
+
+:BjoergvinClass
+    naval:hasBeamMeters "16.8" ;
+    naval:hasCrewSize "305" ;
+    naval:hasDisplacementMetricTonnes "4979" ;
+    naval:hasDraughtMeters "5.4" ;
+    naval:hasLenghtMeters "94.0" ;
+    naval:hasMaxSpeedKnots "15" ;
+    naval:ownedBy dbpedia:Royal_Navy ;
+    naval:succeededBy <http://dbpedia.org/resource/Bj%C3%B8rgvin_class_coastal_defence_ship> ;
+    org:inEra org:EraGreatWar ;
+    void:inDataset :datasetdefinition ;
+    a :CoastalDefenceShip, :MilitaryShipClass, skos:Concept ;
+    rdfs:isDefinedBy <http://rdf.muninn-project.org/ontologies/naval> ;
+    rdfs:label "Bjørgvin class coastal defence ship"@en, "Bjørgvin-Klasse"@de, "Bjørgvin-luokka"@fi ;
+    owl:sameAs <http://dbpedia.org/resource/Bj%C3%B8rgvin_class_coastal_defence_ship> ;
+    skos:definition "The Bjørgvin class coastal battleships were ordered by Norway in 1912 to supplement the older Eidsvold and Tordenskjold-class coastal defence ships. The two ships laid down were compulsorily purchased by the Royal Navy when World War I broke out, and classified as monitors. The British government paid Norway £370,000 as compensation for each ship."@en ;
+    foaf:name "Bjørgvin Class" .
+
+:CapitalShip
+    void:inDataset :datasetdefinition ;
+    a :MilitaryShipFunction, skos:Concept ;
+    rdfs:isDefinedBy <http://rdf.muninn-project.org/ontologies/naval> ;
+    rdfs:label "Buque capital"@es, "Capital ship"@en, "Großkampfschiff"@de, "Navire capital"@fr, "主力艦"@ja, "주력함"@ko ;
+    owl:sameAs dbpedia:Capital_ship ;
+    skos:definition "The capital ships of a navy are its most important warships; they generally possess the heaviest firepower and armor and are traditionally much larger than other naval vessels. A capital ship is generally a leading or a primary ship in a naval fleet."@en ;
+    foaf:name "Capital ship" .
+
+:CoastalDefenceShip
+    void:inDataset :datasetdefinition ;
+    a :MilitaryShipFunction, skos:Concept ;
+    rdfs:isDefinedBy <http://rdf.muninn-project.org/ontologies/naval> ;
+    rdfs:label "Coastal defence ship"@en, "Küstenpanzerschiff"@de, "Navio de defesa de costa"@pt, "Pansarskepp"@sv, "Panserskip"@no, "海防戦艦"@ja ;
+    owl:sameAs dbpedia:Coastal_defence_ship ;
+    owl:subClass :BattleShip ;
+    skos:broader :BattleShip ;
+    skos:definition "Coastal defence ships (sometimes called coastal battleships or coast defence ships) were warships built for the purpose of coastal defence, mostly during the period from 1860 to 1920. They were small, often cruiser-sized warships that sacrificed speed and range for armour and armament."@en ;
+    foaf:name "Coastal defence ship" .
+
+:ColbertClass
+    naval:hasBeamMeters "17.6" ;
+    naval:hasDisplacementMetricTonnes "8600" ;
+    naval:hasDraughtMeters "8.1" ;
+    naval:hasLenghtMeters "99.1" ;
+    naval:ownedBy <http://rdf.muninn-project.org/ontologies/French_Navy> ;
+    void:inDataset :datasetdefinition ;
+    a :IroncladWarship, :MilitaryShipClass, skos:Concept ;
+    rdfs:isDefinedBy <http://rdf.muninn-project.org/ontologies/naval> ;
+    rdfs:label "Classe Colbert"@fr, "Colbert class ironclad"@en ;
+    owl:sameAs dbpedia:Colbert_class_ironclad ;
+    skos:definition "The Colbert class was a class of ironclad frigates of the"@en ;
+    foaf:name "Colbert Class" .
+
+:DefenceClass
+    naval:hasBeamMeters "16.4592" ;
+    naval:hasCrewSize "460" ;
+    naval:hasDisplacementMetricTonnes "5579" ;
+    naval:hasDraughtMeters "7.9" ;
+    naval:hasLenghtMeters "92.0496" ;
+    naval:hasMaxSpeedKPH "19.909" ;
+    naval:preceededBy dbpedia:Warrior_class_ironclad ;
+    naval:succeededBy dbpedia:Hector_class_ironclad ;
+    void:inDataset :datasetdefinition ;
+    a :IroncladWarship, :MilitaryShipClass, skos:Concept ;
+    rdfs:isDefinedBy <http://rdf.muninn-project.org/ontologies/naval> ;
+    rdfs:label "Defence class ironclad"@en ;
+    owl:sameAs dbpedia:Defence_class_ironclad ;
+    skos:definition "The Defence class of ironclad battleships were the class which historically immediately followed the first two British ironclads, HMS Warrior and HMS Black Prince. The class consisted of two ships, HMS Defence and HMS Resistance."@en ;
+    foaf:name "Defence Class" .
+
+:DoubleBottomBallastTank
+    void:inDataset :datasetdefinition ;
+    a owl:Class, skos:Concept ;
+    rdfs:isDefinedBy <http://rdf.muninn-project.org/ontologies/naval> ;
+    rdfs:label "Ballast Tank"@en, "Citernes à Ballast"@fr, "Trimmtank"@de ;
+    owl:equivalentClass dbpedia:Ballast_tank ;
+    owl:subClass :BallastTank .
+
+:Dreadnought
+    void:inDataset :datasetdefinition ;
+    a :MilitaryShipFunction, skos:Concept ;
+    rdfs:isDefinedBy <http://rdf.muninn-project.org/ontologies/naval> ;
+    rdfs:label "Dreadnought"@en, "Drednot"@pl, "Дредноут (класс кораблей)"@ru, "弩級戦艦"@ja, "无畏舰"@zh, "드레드노트"@ko ;
+    owl:sameAs dbpedia:Dreadnought ;
+    owl:subClass :BattleShip ;
+    skos:broader :BattleShip ;
+    skos:definition "The dreadnought was the predominant type of battleship in the early 20th-century. The first of the kind, the Royal Navy's Dreadnought, had such an impact when launched in 1906 that similar battleships built after her were referred to as \"dreadnoughts\", and earlier battleships became known as pre-dreadnoughts. Her design had two revolutionary features: an \"all-big-gun\" armament scheme and steam turbine propulsion."@en ;
+    foaf:name "Dreadnought" .
+
+:DunkerqueClass
+    naval:hasBeamMeters "31.1" ;
+    naval:hasCrewSize "1381" ;
+    naval:hasDisplacementMetricTonnes "26500" ;
+    naval:hasDraughtMeters "8.7" ;
+    naval:hasLenghtMeters "215.1" ;
+    naval:hasMaxSpeedKPH "57.5231" ;
+    naval:ownedBy <http://rdf.muninn-project.org/ontologies/French_Navy>, <http://rdf.muninn-project.org/ontologies/Vichy_French_Navy> ;
+    naval:preceededBy <http://en.wikipedia.org/wiki/Bretagne_class_battleship> ;
+    naval:succeededBy :RichelieuClass ;
+    org:inEra org:EraSecondWorldWar ;
+    void:inDataset :datasetdefinition ;
+    a :FastBattleship, :MilitaryShipClass, skos:Concept ;
+    rdfs:isDefinedBy <http://rdf.muninn-project.org/ontologies/naval> ;
+    rdfs:label "Classe Dunkerque"@fr, "Classe Dunkerque (incrociatore da battaglia)"@it, "Dunkerque (lớp thiết giáp hạm)"@vi, "Dunkerque class battleship"@en, "Dunkerque-luokka"@fi, "Pancerniki typu Dunkerque"@pl, "Třída Dunkerque"@cs, "Линейные корабли типа «Дюнкерк»"@ru ;
+    owl:sameAs dbpedia:Dunkerque_class_battleship ;
+    skos:definition "The Dunkerque class battleship was a type of warship constructed for the French Navy in the 1930s. The Dunkerques were designed to counter the German Deutschland class pocket battleships. Their main armament were two quadruple 330 mm turrets forward, with a 225 mm (8.9 in) thick armoured belt. They were smaller, with 26,500-27,300 ton-standard displacement and with a smaller main artillery caliber than the battleships authorized by the Washington Naval Treaty."@en ;
+    foaf:name "Dunkerque Class" .
+
+:EidsvoldClass
+    naval:hasBeamMeters "15.7" ;
+    naval:hasCrewSize "270" ;
+    naval:hasDisplacementMetricTonnes "4233" ;
+    naval:hasDraughtMeters "5.4" ;
+    naval:hasLenghtMeters "94.6" ;
+    naval:preceededBy dbpedia:Tordenskjold_class_coastal_defence_ship ;
+    naval:succeededBy <http://dbpedia.org/resource/Bj%C3%B8rgvin_class_coastal_defence_ship> ;
+    org:inEra org:EraGreatWar ;
+    void:inDataset :datasetdefinition ;
+    a :CoastalDefenceShip, :MilitaryShipClass, skos:Concept ;
+    rdfs:isDefinedBy <http://rdf.muninn-project.org/ontologies/naval> ;
+    rdfs:label "Eidsvold class coastal defence ship"@en, "Eidsvold-luokka"@fi, "Eidsvoldklassen"@no, "Броненосцы типа «Норге»"@ru ;
+    owl:sameAs dbpedia:Eidsvold_class_coastal_defence_ship ;
+    skos:definition "The Eidsvold class was a class of coastal defence ships, two of which were built for the Royal Norwegian Navy in 1899 by Armstrong Whitworth. The class consisted of two ships, the HNoMS Eidsvold and HNoMS Norge. Locally they were referred to as panserskip ."@en ;
+    foaf:name "Eidsvold Class" .
+
+:EvertsenClass
+    naval:hasBeamMeters "14.33" ;
+    naval:hasCrewSize "263" ;
+    naval:hasDisplacementMetricTonnes "3464" ;
+    naval:hasDraughtMeters "5.23" ;
+    naval:hasLenghtMeters "86.2" ;
+    naval:hasMaxSpeedKnots "16" ;
+    naval:ownedBy dbpedia:Royal_Netherlands_Navy ;
+    naval:preceededBy dbpedia:Evertsen_class_coastal_defence_ship ;
+    org:inEra org:EraGreatWar ;
+    void:inDataset :datasetdefinition ;
+    a :CoastalDefenceShip, :MilitaryShipClass, skos:Concept ;
+    rdfs:isDefinedBy <http://rdf.muninn-project.org/ontologies/naval> ;
+    rdfs:label "Evertsen class coastal defence ship"@en ;
+    owl:sameAs dbpedia:Evertsen_class_coastal_defence_ship ;
+    skos:definition "The Evertsen class was a class of coastal defense ships of the Royal Netherlands Navy. The class comprised Evertsen, Piet Hein and Kortenaer."@en ;
+    foaf:name "Evertsen Class" .
+
+:FastBattleship
+    void:inDataset :datasetdefinition ;
+    a :MilitaryShipFunction, skos:Concept ;
+    rdfs:isDefinedBy <http://rdf.muninn-project.org/ontologies/naval> ;
+    rdfs:label "Fast battleship"@en, "Schnelles Schlachtschiff"@de ;
+    owl:sameAs dbpedia:Fast_battleship ;
+    owl:subClass :BattleShip ;
+    skos:broader :BattleShip ;
+    skos:definition "A fast battleship was a battleship which emphasized speed without - in concept - undue compromise of either armor or armament. Most of the early WWI-era dreadnought battleships were typically built with low design speeds, so the term \"fast battleship\" is applied to a design which was considerably faster. The extra speed of a fast battleship was normally required so as to equip the vessel for additional roles besides taking part in the line of battle, such as escorting aircraft carriers."@en ;
+    foaf:name "Fast battleship" .
+
+:Frigate
+    void:inDataset :datasetdefinition ;
+    a :MilitaryShipFunction, skos:Concept ;
+    rdfs:isDefinedBy <http://rdf.muninn-project.org/ontologies/naval> ;
+    rdfs:label "Frigate"@en ;
+    skos:definition "A frigate is any of several types of warship, the term having been used for ships of various sizes and roles over the last few centuries."@en ;
+    foaf:name "Frigate" .
+
+:HectorClass
+    naval:hasBeamMeters "17.0688" ;
+    naval:hasDisplacementMetricTonnes "6818" ;
+    naval:hasDraughtMeters "20.7" ;
+    naval:hasLenghtMeters "85.344" ;
+    naval:hasMaxSpeedKPH "22.224" ;
+    naval:ownedBy dbpedia:Royal_Navy ;
+    naval:succeededBy dbpedia:Hector_class_ironclad ;
+    org:inEra <org:EraEdwardian>, <org:EraGreatWar>, <org:EraVictorian> ;
+    void:inDataset :datasetdefinition ;
+    a :IroncladWarship, :MilitaryShipClass, skos:Concept ;
+    rdfs:isDefinedBy <http://rdf.muninn-project.org/ontologies/naval> ;
+    rdfs:label "Hector class ironclad"@en ;
+    owl:sameAs dbpedia:Hector_class_ironclad ;
+    skos:definition "The Hector class battleships, HMS Hector and HMS Valiant, laid down in 1861, were the class which immediately followed the Defence class into service with the Royal Navy. These two ships were classified at the time of their building as armoured frigates, and were essentially a repeat of the Defence class with somewhat greater speed, armament and armour protection."@en ;
+    foaf:name "Hector Class" .
+
+:HerlufTrolleClass
+    naval:hasBeamMeters "15.06" ;
+    naval:hasCrewSize "254" ;
+    naval:hasDisplacementMetricTonnes "3494" ;
+    naval:hasDraughtMeters "4.93" ;
+    naval:hasLenghtMeters "82.87" ;
+    naval:hasMaxSpeedKnots "15,5" ;
+    naval:ownedBy dbpedia:Royal_Danish_Navy ;
+    org:inEra org:EraGreatWar ;
+    void:inDataset :datasetdefinition ;
+    a :CoastalDefenceShip, :MilitaryShipClass, skos:Concept ;
+    rdfs:isDefinedBy <http://rdf.muninn-project.org/ontologies/naval> ;
+    rdfs:label "Herluf Trolle (1899)"@de, "Herluf Trolle class coastal defense ship"@en ;
+    owl:sameAs dbpedia:Herluf_Trolle_class_coastal_defense_ship ;
+    skos:definition "The Herluf Trolle class was a class of coastal defence ships of the Royal Danish Navy. The class comprised Herluf Trolle, Olfert Fischer and Peder Skram."@en ;
+    foaf:name "Herluf Trolle Class" .
+
+:HospitalShip
+    void:inDataset :datasetdefinition ;
+    a owl:Class, skos:Concept ;
+    rdfs:isDefinedBy <http://rdf.muninn-project.org/ontologies/naval> ;
+    rdfs:label "Hospital Ship"@en, "Hospitalschiff"@de, "Navire Hôpital"@fr ;
+    owl:sameAs <http://en.wikipedia.org/wiki/Hospital_ship> ;
+    owl:subClassOf :Ship ;
+    skos:definition "A hospital ship is a ship designated for primary function as a floating medical treatment facility or hospital. Most are operated by the military forces (mostly navies) of various countries, as they are intended to be used in or near war zones."@en .
+
+:Hull
+    void:inDataset :datasetdefinition ;
+    a owl:Class, skos:Concept ;
+    rdfs:isDefinedBy <http://rdf.muninn-project.org/ontologies/naval> ;
+    rdfs:label "Coque de Navire"@fr, "Schiffen"@de, "Ship's Hull"@en ;
+    foaf:name "Hull" .
+
+:HydraClass
+    naval:hasBeamMeters "15.8" ;
+    naval:hasDisplacementMetricTonnes "4808" ;
+    naval:hasDraughtMeters "5.5" ;
+    naval:hasLenghtMeters "101.803" ;
+    naval:hasMaxSpeedKPH "31.484" ;
+    naval:ownedBy <http://rdf.muninn-project.org/ontologies/GreekNavy> ;
+    void:inDataset :datasetdefinition ;
+    a :IroncladWarship, :MilitaryShipClass, skos:Concept ;
+    rdfs:isDefinedBy <http://rdf.muninn-project.org/ontologies/naval> ;
+    rdfs:label "Hydra class ironclad"@en ;
+    owl:sameAs dbpedia:Hydra_class_ironclad ;
+    skos:definition "The Hydra class of ironclads composed three ships, Hydra, Spetsai, and Psara. The ships were ordered from France in 1885 during the premiership of Charilaos Trikoupis, as part of a wider reorganization and modernization of the Greek armed forces, which had proved themselves inadequate during the Cretan uprising of 1866. Launched in 1889 and 1890, the ships were ready for service with the Greek Navy by 1892."@en ;
+    foaf:name "Hydra Class" .
+
+:IowaClass
+    naval:hasBeamMeters "32.9184" ;
+    naval:hasCrewSize "2700" ;
+    naval:hasDisplacementMetricTonnes "47173" ;
+    naval:hasDraughtMeters "10.9728" ;
+    naval:hasLenghtMeters "271.272" ;
+    naval:hasMaxSpeedKPH "57.412" ;
+    naval:ownedBy <http://rdf.muninn-project.org/ontologies/United_States_Navy> ;
+    naval:preceededBy :SouthDakotaClass ;
+    naval:succeededBy dbpedia:Montana_class_battleship ;
+    void:inDataset :datasetdefinition ;
+    a :MilitaryShipClass, :TreatyBattleship, skos:Concept ;
+    rdfs:isDefinedBy <http://rdf.muninn-project.org/ontologies/naval> ;
+    rdfs:label "Clase Iowa"@es, "Classe Iowa"@fr, "Classe Iowa"@it, "Classe Iowa"@pt, "Iowa class battleship"@en, "Iowa osztály"@hu, "Iowa-Klasse"@de, "Iowa-klass"@sv, "Iowa-klasse"@nl, "Iowa-klassen"@no, "Iowa-luokka"@fi, "Pancerniki typu Iowa"@pl, "Třída Iowa"@cs, "Линейные корабли типа «Айова»"@ru ;
+    owl:sameAs dbpedia:Iowa_class_battleship ;
+    skos:definition "The Iowa-class battleships were a class of fast battleships ordered by the United States Navy in 1939 and 1940 to escort the Fast Carrier Task Forces which would operate in the Pacific Theater of World War II. Six were ordered during the course of World War II, but only four were completed in time to see service in the Pacific Theater. The last two had been laid down, but as a result of the postwar draw down of the armed forces they were canceled prior to completion and eventually scrapped."@en ;
+    foaf:name "Iowa Class" .
+
+:IroncladWarship
+    void:inDataset :datasetdefinition ;
+    a :MilitaryShipFunction, skos:Concept ;
+    rdfs:isDefinedBy <http://rdf.muninn-project.org/ontologies/naval> ;
+    rdfs:label "Cuirassé à coque en fer"@fr, "Ironclad warship"@en, "Okręt pancerny"@pl, "Pansarklädda fartyg"@sv, "Panzerschiff"@de, "Броненосец (тип корабля)"@ru, "装甲艦"@ja, "铁甲舰"@zh ;
+    owl:sameAs dbpedia:Ironclad_warship ;
+    owl:subClass :BattleShip ;
+    skos:broader :BattleShip ;
+    skos:definition "An ironclad was a steam-propelled warship in the early part of the second half of the 19th century, protected by iron or steel armor plates. The ironclad was developed as a result of the vulnerability of wooden warships to explosive or incendiary shells. The first ironclad battleship, La Gloire, was launched by the French Navy in November 1859."@en ;
+    foaf:name "Ironclad warship" .
+
+:KaiserClass
+    naval:hasBeamMeters "19.1" ;
+    naval:hasCrewSize "600" ;
+    naval:hasDisplacementMetricTonnes "7645" ;
+    naval:hasDraughtMeters "24.2" ;
+    naval:hasLenghtMeters "89.34" ;
+    naval:hasMaxSpeedKPH "27.0392" ;
+    naval:ownedBy <http://rdf.muninn-project.org/ontologies/Kaiserliche_Marine> ;
+    void:inDataset :datasetdefinition ;
+    a :IroncladWarship, :MilitaryShipClass, skos:Concept ;
+    rdfs:isDefinedBy <http://rdf.muninn-project.org/ontologies/naval> ;
+    rdfs:label "Clase Kaiser (1875)"@es, "Classe Kaiser (1875)"@fr, "Kaiser class ironclad"@en ;
+    owl:sameAs dbpedia:Kaiser_class_ironclad ;
+    skos:definition "The Kaiser class of ironclad warships was a pair of vessels built for the German Imperial Navy in the early 1870s. The lead ship, Kaiser, was laid down in 1871 and launched in 1874. Deutschland was laid down in 1872 and launched in 1874; both ships were built by the Samuda Brothers shipyard in London. They were the last German capital ships built by a foreign shipyard."@en ;
+    foaf:name "Kaiser Class" .
+
+:KingGeorgeVClass
+    naval:hasBeamMeters "31.3944" ;
+    naval:hasCrewSize "1314" ;
+    naval:hasDisplacementMetricTonnes "34501" ;
+    naval:hasDraughtMeters "9.9" ;
+    naval:hasLenghtMeters "227.076" ;
+    naval:ownedBy dbpedia:Royal_Navy ;
+    naval:preceededBy :NelsonClass ;
+    naval:succeededBy dbpedia:Lion_class_battleship ;
+    void:inDataset :datasetdefinition ;
+    a :FastBattleship, :MilitaryShipClass, :TreatyBattleship, skos:Concept ;
+    rdfs:isDefinedBy <http://rdf.muninn-project.org/ontologies/naval> ;
+    rdfs:label "Clase King George V (1939)"@es, "Classe King George V (1939)"@fr, "Classe King George V (nave da battaglia 1939)"@it, "King George V (lớp thiết giáp hạm) (1939)"@vi, "King George V -luokka (1939)"@fi, "King George V class battleship (1939)"@en, "King George V-klasse (1939)"@nl, "King-George-V-Klasse (1939)"@de, "Pancerniki typu King George V (1940)"@pl, "Třída King George V (1939)"@cs, "V. György király osztály (1939)"@hu, "Линейные корабли типа «Кинг Джордж V» (1939)"@ru ;
+    owl:sameAs <http://dbpedia.org/resource/King_George_V_class_battleship_(1939)> ;
+    skos:definition "The King George V-class battleships were the most modern British battleships used during World War II. Five ships of this class were commissioned: King George V (1940), Prince of Wales (1941), Duke of York (1941), Howe (1942) and Anson (1942). The Washington Naval Treaty of 1922 limited all of the number, displacement, and armaments of warships built following its ratification, and this was extended by the First London Naval Treaty but these treaties were due to expire in 1936."@en ;
+    foaf:name "King George V Class" .
+
+:KoninginRegentesClass
+    naval:hasBeamMeters "15.189" ;
+    naval:hasCrewSize "340" ;
+    naval:hasDisplacementMetricTonnes "5002" ;
+    naval:hasDraughtMeters "5.817" ;
+    naval:hasLenghtMeters "96.622" ;
+    naval:hasMaxSpeedKnots "16.5" ;
+    naval:ownedBy dbpedia:Royal_Netherlands_Navy ;
+    naval:preceededBy dbpedia:Evertsen_class_coastal_defence_ship ;
+    naval:succeededBy <http://dbpedia.org/resource/HNLMS_Marten_Harpertzoon_Tromp_(1904)> ;
+    org:inEra org:EraGreatWar ;
+    void:inDataset :datasetdefinition ;
+    a :CoastalDefenceShip, :MilitaryShipClass, skos:Concept ;
+    rdfs:isDefinedBy <http://rdf.muninn-project.org/ontologies/naval> ;
+    rdfs:label "Koningin Regentes class coastal defense ship"@en ;
+    owl:sameAs dbpedia:Koningin_Regentes_class_coastal_defense_ship ;
+    skos:definition "The Koningin Regentes class was a class of coastal defence ships of the Royal Netherlands Navy. The class comprised Koningin Regentes, De Ruyter and Hertog Hendrik."@en ;
+    foaf:name "Koningin Regentes Class" .
+
+:LionClass
+    naval:hasBeamMeters "32.9184" ;
+    naval:hasCrewSize "1750" ;
+    naval:hasDisplacementMetricTonnes "38600" ;
+    naval:hasDraughtMeters "10" ;
+    naval:hasLenghtMeters "241.706" ;
+    naval:hasMaxSpeedKPH "52.319" ;
+    naval:ownedBy dbpedia:Royal_Navy ;
+    naval:preceededBy :KingGeorgeVClass ;
+    void:inDataset :datasetdefinition ;
+    a :FastBattleship, :MilitaryShipClass, skos:Concept ;
+    rdfs:isDefinedBy <http://rdf.muninn-project.org/ontologies/naval> ;
+    rdfs:label "Clase Lion"@es, "Classe Lion (cuirassé)"@fr, "Lion (lớp thiết giáp hạm)"@vi, "Lion class battleship"@en, "Lion-Klasse (1939)"@de, "Lion-luokka (taistelulaiva)"@fi, "Pancerniki typu Lion"@pl, "Линейные корабли типа «Лайон»"@ru ;
+    owl:sameAs dbpedia:Lion_class_battleship ;
+    skos:definition "The Lion class battleships were a class of six fast battleships designed for the Royal Navy in the late 1930s. They were a larger, improved version of the King George V class with 16-inch (406 mm) guns. Only two ships were laid down before World War II began in September 1939 and a third was ordered during the war, but their construction was suspended shortly afterwards."@en ;
+    foaf:name "Lion Class" .
+
+:LittorioClass
+    naval:hasBeamMeters "32.82" ;
+    naval:hasDisplacementMetricTonnes "Standard:" ;
+    naval:hasDraughtMeters "9.6" ;
+    naval:hasLenghtMeters "237.76" ;
+    naval:hasMaxSpeedKPH "55.56" ;
+    naval:ownedBy <http://rdf.muninn-project.org/ontologies/Regia_Marina> ;
+    naval:succeededBy dbpedia:Caracciolo_class_battleship ;
+    void:inDataset :datasetdefinition ;
+    a :MilitaryShipClass, :TreatyBattleship, skos:Concept ;
+    rdfs:isDefinedBy <http://rdf.muninn-project.org/ontologies/naval> ;
+    rdfs:label "Clase Littorio"@es, "Classe Littorio"@it, "Littorio class battleship"@en, "Littorio-Klasse"@de, "Littorio-klassen"@no, "Pancerniki typu Littorio"@pl, "Линейные корабли типа «Литторио»"@ru ;
+    owl:sameAs dbpedia:Littorio_class_battleship ;
+    skos:definition "The Littorio class, also known as the Vittorio Veneto class, was a class of battleship of the Regia Marina, the Italian navy. The class was composed of four ships: Littorio, Vittorio Veneto, Roma, and Impero. Only the first three ships of the class were completed, however. Built between 1934 and 1942, they were the most modern battleships used by Italy during World War II."@en ;
+    foaf:name "Littorio Class" .
+
+:LordClydeClass
+    naval:hasBeamMeters "17.9832" ;
+    naval:hasCrewSize "605" ;
+    naval:hasDisplacementMetricTonnes "7968" ;
+    naval:hasLenghtMeters "85.344" ;
+    naval:hasMaxSpeedKPH "24.076" ;
+    naval:ownedBy dbpedia:Royal_Navy ;
+    void:inDataset :datasetdefinition ;
+    a :IroncladWarship, :MilitaryShipClass, skos:Concept ;
+    rdfs:isDefinedBy <http://rdf.muninn-project.org/ontologies/naval> ;
+    rdfs:label "Lord Clyde class ironclad"@en ;
+    owl:sameAs dbpedia:Lord_Clyde_class_ironclad ;
+    skos:definition "The Lord Clyde class battleships, which consisted of HMS Lord Clyde and HMS Lord Warden, were wooden-hulled ironclad frigates, designed by Sir Edward Reed, and promoted by the Board of Admiralty for economic reasons, in order to make use of the large stocks of seasoned timber available in the shipyards."@en ;
+    foaf:name "Lord Clyde Class" .
+
+:MagentaClass
+    naval:hasBeamMeters "17.7" ;
+    naval:hasCrewSize "681" ;
+    naval:hasDisplacementMetricTonnes "7129" ;
+    naval:hasLenghtMeters "95.0" ;
+    naval:hasMaxSpeedKnots "12" ;
+    naval:ownedBy <http://rdf.muninn-project.org/ontologies/French_Navy> ;
+    void:inDataset :datasetdefinition ;
+    a :IroncladWarship, :MilitaryShipClass, skos:Concept ;
+    rdfs:isDefinedBy <http://rdf.muninn-project.org/ontologies/naval> ;
+    rdfs:label "Classe Magenta"@fr, "Magenta class ironclad"@en ;
+    owl:sameAs dbpedia:Magenta_class_ironclad ;
+    skos:definition "The Magenta class was a class of broadside ironclads of the French Navy. The type was designed by Dupuy de Lôme. The ships carried 50 guns in broadside. They were the only ironclad two-deckers ever built, and the first ironclad to feature a naval ram"@en ;
+    foaf:name "Magenta Class" .
+
+:MarceauClass
+    naval:hasBeamMeters "20.0" ;
+    naval:hasCrewSize "651" ;
+    naval:hasDisplacementMetricTonnes "10558" ;
+    naval:hasDraughtMeters "8.4" ;
+    naval:hasLenghtMeters "99.0" ;
+    naval:hasMaxSpeedKnots "16" ;
+    naval:preceededBy dbpedia:Amiral_Baudin_class_ironclad, dbpedia:Marceau_class_ironclad ;
+    naval:succeededBy dbpedia:Charles_Martel_class_battleship, dbpedia:French_battleship_Brennus, dbpedia:Marceau_class_ironclad ;
+    void:inDataset :datasetdefinition ;
+    a :IroncladWarship, :MilitaryShipClass, skos:Concept ;
+    rdfs:isDefinedBy <http://rdf.muninn-project.org/ontologies/naval> ;
+    rdfs:label "Classe Marceau"@fr, "Marceau class ironclad"@en ;
+    owl:sameAs dbpedia:Marceau_class_ironclad ;
+    skos:definition "The Marceau class was class of ironclad battleships of the French Navy. They were the last barbette ships built in France. Marceau Builder: La Seyne-sur-Mer Ordered: 27 December 1880 Launched: 24 May 1887 Fate: Broken up in 1922 Magenta Builder: Toulon Ordered: 7 October 1880 Launched:19 April 1890 Fate: Broken up in 1911 Neptune Builder: Brest Ordered: 7 October 1880 Launched: 7 May 1887 Fate: Sunk as target ship in 1913"@en ;
+    foaf:name "Marceau Class" .
+
+:MilitaryShipClass
+    void:inDataset :datasetdefinition ;
+    a owl:Class, skos:Concept ;
+    rdfs:isDefinedBy <http://rdf.muninn-project.org/ontologies/naval> ;
+    rdfs:label "Classe de Navire"@fr, "Schiffsklasse"@de, "Ship Class"@en ;
+    owl:subClassOf :ShipClass .
+
+:MilitaryShipFunction
+    void:inDataset :datasetdefinition ;
+    a owl:Class, skos:Concept ;
+    rdfs:isDefinedBy <http://rdf.muninn-project.org/ontologies/naval> ;
+    rdfs:label " ... "@de, "Fonction de Navire"@fr, "Ship Function"@en ;
+    owl:subClassOf :ShipFunction .
+
+:MilitaryShipType
+    void:inDataset :datasetdefinition ;
+    a owl:Class, skos:Concept ;
+    rdfs:isDefinedBy <http://rdf.muninn-project.org/ontologies/naval> ;
+    rdfs:label " ... "@de, "Military Ship Type"@en, "Type de Navire Militaire"@fr .
+
+:MonarchClass
+    naval:hasBeamMeters "17.0" ;
+    naval:hasCrewSize "469" ;
+    naval:hasDisplacementMetricTonnes "5.878" ;
+    naval:hasDraughtMeters "6.6" ;
+    naval:hasLenghtMeters "99.22" ;
+    naval:hasMaxSpeedKnots "15.5" ;
+    naval:ownedBy <http://rdf.muninn-project.org/ontologies/Austro-Hungarian_Navy> ;
+    org:inEra org:EraGreatWar ;
+    void:inDataset :datasetdefinition ;
+    a :CoastalDefenceShip, :MilitaryShipClass, :PreDreadnought, skos:Concept ;
+    rdfs:isDefinedBy <http://rdf.muninn-project.org/ontologies/naval> ;
+    rdfs:label "Classe Monarch"@fr, "Monarch class battleship"@en, "Monarch-osztály"@hu, "Třída Monarch"@cs ;
+    owl:sameAs dbpedia:Monarch_class_battleship ;
+    skos:definition "The Monarch class was a class of battleships, although resembling coastal defence ships, built by Austria-Hungary at the end of the 19th century. The Monarchs were the first ships of their type to utilize turrets. The class comprised three ships: Monarch, Wien, and Budapest, each armed with two 240 mm (9 in) L/40 guns in two turrets and capable of 15.5 knots (28.7 km/h; 17.8 mph) at full speed."@en ;
+    foaf:name "Monarch Class" .
+
+:NelsonClass
+    naval:hasBeamMeters "32.3088" ;
+    naval:hasCrewSize "1361" ;
+    naval:hasDisplacementMetricTonnes "30799" ;
+    naval:hasDraughtMeters "8.7" ;
+    naval:hasLenghtMeters "201.168" ;
+    naval:hasMaxSpeedKPH "42.596" ;
+    naval:ownedBy dbpedia:Royal_Navy ;
+    naval:preceededBy dbpedia:Nelson_class_battleship ;
+    naval:succeededBy <http://dbpedia.org/resource/King_George_V_class_battleship_(1939)> ;
+    void:inDataset :datasetdefinition ;
+    a :MilitaryShipClass, :TreatyBattleship, skos:Concept ;
+    rdfs:isDefinedBy <http://rdf.muninn-project.org/ontologies/naval> ;
+    rdfs:label "Classe Nelson (cuirassé)"@fr, "Classe Nelson (nave da battaglia 1925)"@it, "Nelson (lớp thiết giáp hạm)"@vi, "Nelson class battleship"@en, "Nelson-Klasse (1925)"@de, "Nelson-luokka (taistelulaiva)"@fi, "Třída Nelson"@cs, "Линейные корабли типа «Нельсон»"@ru ;
+    owl:sameAs dbpedia:Nelson_class_battleship ;
+    skos:definition "The Nelson class was a class of two battleships of the British Royal Navy, built shortly after, and under the terms of, the Washington Naval Treaty of 1922. They were the only British battleships built between the Revenge class (ordered in 1913) and the King George V class, ordered in 1936. The ships were named after famous British admirals: George Brydges Rodney, 1st Baron Rodney of the Battle of Cape St. Vincent and Horatio Nelson, 1st Viscount Nelson of the Battles of the Nile and Trafalgar."@en ;
+    foaf:name "Nelson Class" .
+
+:NorthCarolinaClass
+    naval:hasBeamMeters "33" ;
+    naval:hasDisplacementMetricTonnes "37200" ;
+    naval:hasDraughtMeters "10.3632" ;
+    naval:hasLenghtMeters "221.894" ;
+    naval:hasMaxSpeedKPH "51.856" ;
+    naval:ownedBy <http://rdf.muninn-project.org/ontologies/United_States_Navy> ;
+    naval:preceededBy <http://dbpedia.org/resource/South_Dakota_class_battleship_(1920)> ;
+    naval:succeededBy dbpedia:North_Carolina_class_battleship ;
+    void:inDataset :datasetdefinition ;
+    a :MilitaryShipClass, :TreatyBattleship, skos:Concept ;
+    rdfs:isDefinedBy <http://rdf.muninn-project.org/ontologies/naval> ;
+    rdfs:label "Classe North Carolina"@fr, "North Carolina (lớp thiết giáp hạm)"@vi, "North Carolina class battleship"@en, "North-Carolina-Klasse"@de, "Třída North Carolina"@cs, "Линейные корабли типа «Норт Кэролайн»"@ru ;
+    owl:sameAs dbpedia:North_Carolina_class_battleship ;
+    skos:definition "The North Carolina class was a group of two fast battleships, North Carolina and Washington, built for the United States Navy in the late 1930s and early 1940s. The navy was originally uncertain whether the ships should be fast enough to counter the Japanese Kongō class, which was believed by the United States to be capable of 26 knots (30 mph; 48 km/h), or should sacrifice speed for additional firepower and armor."@en ;
+    foaf:name "North Carolina Class" .
+
+:OdenClass
+    naval:hasBeamMeters "14.78" ;
+    naval:hasCrewSize "252" ;
+    naval:hasDisplacementMetricTonnes "3125.25" ;
+    naval:hasDraughtMeters "5.28" ;
+    naval:hasLenghtMeters "84.8" ;
+    naval:hasMaxSpeedKnots "16.5" ;
+    naval:preceededBy dbpedia:Svea_class_coastal_defence_ship ;
+    naval:succeededBy dbpedia:Oden_class_coastal_defence_ship ;
+    org:inEra org:EraGreatWar ;
+    void:inDataset :datasetdefinition ;
+    a :CoastalDefenceShip, :MilitaryShipClass, skos:Concept ;
+    rdfs:isDefinedBy <http://rdf.muninn-project.org/ontologies/naval> ;
+    rdfs:label "Oden class coastal defence ship"@en, "Oden-luokka"@fi, "Odenklass"@sv ;
+    owl:sameAs dbpedia:Oden_class_coastal_defence_ship ;
+    skos:definition "The Oden class was a class of coastal defence ships of the Swedish Navy. The class comprised Oden, Niord and Thor."@en ;
+    foaf:name "Oden Class" .
+
+:OdinClass
+    naval:hasBeamMeters "15.2" ;
+    naval:hasDisplacementMetricTonnes "3550" ;
+    naval:hasDraughtMeters "5.61" ;
+    naval:hasLenghtMeters "79.0" ;
+    naval:hasMaxSpeedKnots "15" ;
+    naval:ownedBy <http://rdf.muninn-project.org/ontologies/Kaiserliche_Marine> ;
+    org:inEra org:EraGreatWar ;
+    void:inDataset :datasetdefinition ;
+    a :CoastalDefenceShip, :MilitaryShipClass, skos:Concept ;
+    rdfs:isDefinedBy <http://rdf.muninn-project.org/ontologies/naval> ;
+    rdfs:label "Classe Odin"@fr, "Odin class coastal defense ship"@en ;
+    owl:sameAs dbpedia:Odin_class_coastal_defense_ship ;
+    skos:definition "The Odin class was a pair of coastal defense ships built for the German Kaiserliche Marine in the late 19th century. The class comprised two ships: Odin, named after the Norse god Odin, and Ägir, named after the Norse god of the same name. The ships were very similar to the preceding Siegfried-class coast defense ships, and are sometimes considered to be one class of ships. Like the preceding Siegfried class ships, Odin and Ägir were obsolete by the time World War I had started."@en ;
+    foaf:name "Odin Class" .
+
+:PreDreadnought
+    void:inDataset :datasetdefinition ;
+    a :MilitaryShipFunction, skos:Concept ;
+    rdfs:isDefinedBy <http://rdf.muninn-project.org/ontologies/naval> ;
+    rdfs:label "Einheitslinienschiff"@de, "Pre-dreadnought battleship"@en, "Predreadnought"@cs, "Przeddrednot"@pl, "Thiết giáp hạm tiền-dreadnought"@vi, "Додредноут"@ru, "前弩級戦艦"@ja, "前無畏艦"@zh, "전노급전함"@ko ;
+    owl:sameAs dbpedia:Pre-dreadnought_battleship ;
+    owl:subClass :BattleShip ;
+    skos:broader :BattleShip ;
+    skos:definition "Pre-dreadnought battleship is the general term for all of the types of sea-going battleships built between the mid- to late-1880s and 1905. Pre-dreadnoughts replaced the ironclad warships of the 1870s and 1880s. Built from steel, and protected by hardened steel armour, pre-dreadnought battleships carried a main battery of very heavy guns in barbettes (open or with armored gunhouses) supported by one or more secondary batteries of lighter weapons."@en ;
+    foaf:name "Pre-dreadnought battleship" .
+
+:PreceededBy
+    void:inDataset :datasetdefinition ;
+    a owl:ObjectProperty, skos:Concept ;
+    rdfs:domain :ShipClass ;
+    rdfs:isDefinedBy <http://rdf.muninn-project.org/ontologies/naval> ;
+    rdfs:label "Was replaced by this class"@en ;
+    rdfs:range :ShipClass ;
+    skos:definition "Use this to link Queen Marie 1 to Queen Marie 2, etc..."@en ;
+    foaf:name "Next Ship" .
+
+:PreussenClass
+    naval:hasBeamMeters "16.3" ;
+    naval:hasCrewSize "454" ;
+    naval:hasDisplacementMetricTonnes "6821" ;
+    naval:hasDraughtMeters "7.11" ;
+    naval:hasLenghtMeters "96.59" ;
+    naval:hasMaxSpeedKPH "25.928" ;
+    naval:ownedBy <http://rdf.muninn-project.org/ontologies/Kaiserliche_Marine> ;
+    void:inDataset :datasetdefinition ;
+    a :IroncladWarship, :MilitaryShipClass, skos:Concept ;
+    rdfs:isDefinedBy <http://rdf.muninn-project.org/ontologies/naval> ;
+    rdfs:label "Clase Preußen"@es, "Classe Preussen"@fr, "Preussen class ironclad"@en ;
+    owl:sameAs dbpedia:Preussen_class_ironclad ;
+    skos:definition "The Preussen class of armored frigates was a class of three ships built for the German Imperial Navy in the early 1870s. The lead ship, Preussen, was laid down in 1871 and launched in 1873. Friedrich der Grosse also was laid down in 1871 and launched in 1874. Grosser Kurfürst, although the first to be laid down, in 1869, was the last to be completed, launched in 1875. The ships served in the fleet starting in 1876, when Preussen was commissioned."@en ;
+    foaf:name "Preussen Class" .
+
+:PrinceConsortClass
+    naval:hasBeamMeters "17.6784" ;
+    naval:hasCrewSize "605" ;
+    naval:hasDisplacementMetricTonnes "6942" ;
+    naval:hasDraughtMeters "8.4" ;
+    naval:hasLenghtMeters "83.2104" ;
+    naval:hasMaxSpeedKPH "22.224" ;
+    void:inDataset :datasetdefinition ;
+    a :IroncladWarship, :MilitaryShipClass, skos:Concept ;
+    rdfs:isDefinedBy <http://rdf.muninn-project.org/ontologies/naval> ;
+    rdfs:label "Prince Consort class ironclad"@en ;
+    owl:sameAs dbpedia:Prince_Consort_class_ironclad ;
+    skos:definition "The Prince Consort class of battleship were four Royal Navy wooden-hulled broadside ironclads: HMS Royal Oak, HMS Prince Consort, HMS Ocean, and HMS Caledonia. They were originally laid down as Bulwark-class battleships, but were converted to ironclads. Royal Oak was Britain's fifth ironclad battleship completed. Prince Consort, Ocean, and Caledonia were built to a common design and are today known as the Prince Consort class, though contemporaries knew them as the Caledonia class."@en ;
+    foaf:name "Prince Consort Class" .
+
+:RheinClass
+    naval:hasBeamMeters "7.85" ;
+    naval:hasCrewSize "28" ;
+    naval:hasDisplacementMetricTonnes "283.0" ;
+    naval:hasDraughtMeters "1.6" ;
+    naval:hasLenghtMeters "49.6" ;
+    naval:hasMaxSpeedKnots "6.5" ;
+    void:inDataset :datasetdefinition ;
+    a :MilitaryShipClass, :Monitor, skos:Concept ;
+    rdfs:isDefinedBy <http://rdf.muninn-project.org/ontologies/naval> ;
+    rdfs:label "Rhein class monitor"@en ;
+    owl:sameAs dbpedia:Rhein_class_monitor ;
+    skos:definition "The Rhein class of ironclad monitors were a pair of ships built by the German Imperial Navy in the aftermath of the Franco-Prussian War. The class comprised two ships, Rhein and Moselle; both were built by the AG Weser shipyard in Bremen, in 1872–1874. They were armed with a pair of 12 cm (4.7 in) bronze cannon in a revolving gun turret. The ships were intended to protect the German coast in the event of a war with France, but had short service lives, as war did not come."@en ;
+    foaf:name "Rhein Class" .
+
+:RichelieuClass
+    naval:hasBeamMeters "33.0" ;
+    naval:hasCrewSize "1280" ;
+    naval:hasDisplacementMetricTonnes "31751" ;
+    naval:hasDraughtMeters "9.63" ;
+    naval:hasLenghtMeters "247.85" ;
+    naval:hasMaxSpeedKPH "55.56" ;
+    naval:ownedBy <http://rdf.muninn-project.org/ontologies/French_Navy> ;
+    naval:preceededBy dbpedia:Dunkerque_class_battleship ;
+    naval:succeededBy dbpedia:Alsace_class_battleship ;
+    void:inDataset :datasetdefinition ;
+    a :MilitaryShipClass, :TreatyBattleship, skos:Concept ;
+    rdfs:isDefinedBy <http://rdf.muninn-project.org/ontologies/naval> ;
+    rdfs:label "Classe Richelieu"@fr, "Classe Richelieu"@it, "Richelieu (lớp thiết giáp hạm)"@vi, "Richelieu class battleship"@en, "Richelieu osztály"@hu, "Richelieu-Klasse"@de, "Richelieu-luokka"@fi, "Třída Richelieu"@cs, "Линейные корабли типа «Ришелье»"@ru ;
+    owl:sameAs dbpedia:Richelieu_class_battleship ;
+    skos:definition "The Richelieu class battleships were the last and largest battleships of the French Navy, staying in service into the 1960s. They still remain to this day the largest warships ever built by France."@en ;
+    foaf:name "Richelieu Class" .
+
+:SachsenClass
+    naval:hasBeamMeters "18.4" ;
+    naval:hasCrewSize "317" ;
+    naval:hasDisplacementMetricTonnes "7635" ;
+    naval:hasDraughtMeters "6.32" ;
+    naval:hasLenghtMeters "98.2" ;
+    naval:hasMaxSpeedKPH "24.076" ;
+    naval:ownedBy <http://rdf.muninn-project.org/ontologies/Kaiserliche_Marine> ;
+    void:inDataset :datasetdefinition ;
+    a :IroncladWarship, :MilitaryShipClass, skos:Concept ;
+    rdfs:isDefinedBy <http://rdf.muninn-project.org/ontologies/naval> ;
+    rdfs:label "Classe Sachsen"@fr, "Sachsen class ironclad"@en, "Sachsen-Klasse (1877)"@de ;
+    owl:sameAs dbpedia:Sachsen_class_ironclad ;
+    skos:definition "The Sachsen class of armored frigates was a class of four ships built by the German Imperial Navy in the late 1870s to early 1880s. The ships—Sachsen, Bayern, Württemberg, and Baden—were designed to operate as part of an integrated coastal defense network. The ships were intended to sortie from fortified bases to break up an enemy blockade or landing attempt. Armed with six 26 cm (10 in) guns, they were also intended to fight hostile ironclads on relatively equal terms."@en ;
+    foaf:name "Sachsen Class" .
+
+:SailShip
+    void:inDataset :datasetdefinition ;
+    a owl:Class, skos:Concept ;
+    rdfs:isDefinedBy <http://rdf.muninn-project.org/ontologies/naval> ;
+    rdfs:label "Navire à voile"@fr, "Sail Ship"@en, "Schiffen"@de ;
+    owl:subClass :Ship ;
+    foaf:name "Sail Ship" .
+
+:Schooner
+    void:inDataset :datasetdefinition ;
+    a naval:ShipType, skos:Concept ;
+    rdfs:isDefinedBy <http://rdf.muninn-project.org/ontologies/naval> ;
+    rdfs:label "Goélette"@fr, "Schoner"@de, "Schooner"@en ;
+    owl:sameAs dbpedia:Schooner ;
+    foaf:name "Schooner"@en .
+
+:ScorpionClass
+    naval:hasBeamMeters "12.8016" ;
+    naval:hasCrewSize "153" ;
+    naval:hasDisplacementMetricTonnes "2795" ;
+    naval:hasDraughtMeters "5.2" ;
+    naval:hasLenghtMeters "68.2752" ;
+    naval:hasMaxSpeedKPH "19.446" ;
+    naval:ownedBy dbpedia:Royal_Navy ;
+    void:inDataset :datasetdefinition ;
+    a :IroncladWarship, :MilitaryShipClass, skos:Concept ;
+    rdfs:isDefinedBy <http://rdf.muninn-project.org/ontologies/naval> ;
+    rdfs:label "Scorpion class ironclad"@en ;
+    owl:sameAs dbpedia:Scorpion_class_ironclad ;
+    skos:definition "The two Scorpion class ironclads, HMS Scorpion and HMS Wivern, were ordered by the Confederate States Navy in 1862 and seized in 1863 by the British to prevent their delivery. This would have violated the Foreign Enlistment Act, which forbade British subjects to build or arm any ships for governments at war with governments friendly to Great Britain. The Scorpion-class were masted turret ships, each with two gun turrets that were designed to mount a pair of heavy muzzle-loading guns."@en ;
+    foaf:name "Scorpion Class" .
+
+:Ship
+    void:inDataset :datasetdefinition ;
+    a owl:Class, skos:Concept ;
+    rdfs:isDefinedBy <http://rdf.muninn-project.org/ontologies/naval> ;
+    rdfs:label "Navire"@fr, "Schiffen"@de, "Ship"@en ;
+    foaf:name "Ship" .
+
+:ShipClass
+    void:inDataset :datasetdefinition ;
+    a owl:Class, skos:Concept ;
+    rdfs:isDefinedBy <http://rdf.muninn-project.org/ontologies/naval> ;
+    rdfs:label "Classe de Navire"@fr, "Schiffsklasse"@de, "Ship Class"@en .
+
+:ShipDesignation
+    void:inDataset :datasetdefinition ;
+    a owl:Class, skos:Concept ;
+    rdfs:isDefinedBy <http://rdf.muninn-project.org/ontologies/naval> ;
+    rdfs:label ""@de, "Designation de Navire"@fr, "Ship Designation"@en ;
+    foaf:name "Ship Designation" .
+
+:ShipFunction
+    void:inDataset :datasetdefinition ;
+    a owl:Class, skos:Concept ;
+    rdfs:isDefinedBy <http://rdf.muninn-project.org/ontologies/naval> ;
+    rdfs:label " ... "@de, "Fonction de Navire"@fr, "Ship Function"@en .
+
+:ShipOfTheLine
+    void:inDataset :datasetdefinition ;
+    a :MilitaryShipFunction, skos:Concept ;
+    rdfs:isDefinedBy <http://rdf.muninn-project.org/ontologies/naval> ;
+    rdfs:label "Linienschiff"@de, "Linieschip"@nl, "Linjalaiva (sodankäynti)"@fi, "Linjeskepp"@sv, "Linjeskip (marinefartøy)"@no, "Navili de línia"@ca, "Navio de linha"@pt, "Navire de ligne"@fr, "Navío de línea"@es, "Okręt liniowy"@pl, "Ship of the line"@en, "Sorhajó"@hu, "Tàu chiến tuyến"@vi, "Vascello"@it, "Řadová loď"@cs, "Линейный корабль (парусный)"@ru, "Лінійний корабель (вітрильний)"@uk, "戦列艦"@ja, "风帆战列舰"@zh ;
+    owl:sameAs dbpedia:Ship_of_the_line ;
+    owl:subClass :BattleShip ;
+    skos:broader :BattleShip ;
+    skos:definition "A ship of the line was a type of naval warship constructed from the 17th through the mid-19th century to take part in the naval tactic known as the line of battle, in which two columns of opposing warships would manoeuvre to bring the greatest weight of broadside guns to bear. Since these engagements were almost invariably won by the heaviest ships carrying the most powerful guns, the natural progression was to build sailing vessels that were the largest and most powerful of their time."@en ;
+    foaf:name "Ship of the line" .
+
+:ShipType
+    void:inDataset :datasetdefinition ;
+    a owl:Class, skos:Concept ;
+    rdfs:isDefinedBy <http://rdf.muninn-project.org/ontologies/naval> ;
+    rdfs:label " ... "@de, "Ship Type"@en, "Type de Navire"@fr .
+
+:SiegfriedClass
+    naval:hasBeamMeters "14.9" ;
+    naval:hasCrewSize "276" ;
+    naval:hasDisplacementMetricTonnes "3500" ;
+    naval:hasDraughtMeters "5.7" ;
+    naval:hasLenghtMeters "76.4" ;
+    naval:hasMaxSpeedKnots "14" ;
+    naval:ownedBy <http://rdf.muninn-project.org/ontologies/Kaiserliche_Marine> ;
+    org:inEra org:EraGreatWar ;
+    void:inDataset :datasetdefinition ;
+    a :CoastalDefenceShip, :MilitaryShipClass, skos:Concept ;
+    rdfs:isDefinedBy <http://rdf.muninn-project.org/ontologies/naval> ;
+    rdfs:label "Classe Siegfried"@fr, "Siegfried class coastal defense ship"@en, "Siegfried-Klasse"@de, "Siegfriedklasse"@nl ;
+    owl:sameAs dbpedia:Siegfried_class_coastal_defense_ship ;
+    skos:definition "The Siegfried class was a group of six coastal defense ships built by the German Kaiserliche Marine (\"Imperial Navy\") in the late 19th century. The ships were intended to protect the German coastline from naval attacks. The class comprised the lead ship Siegfried, along with her sisters Beowulf, Frithjof, Heimdall, Hildebrand, and Hagen. All six ships were named after Norse mythological figures."@en ;
+    foaf:name "Siegfried Class" .
+
+:SouthDakotaClass
+    naval:hasBeamMeters "32.9794" ;
+    naval:hasDisplacementMetricTonnes "31751" ;
+    naval:hasLenghtMeters "207.264" ;
+    naval:hasMaxSpeedKPH "50.004" ;
+    naval:ownedBy <http://rdf.muninn-project.org/ontologies/United_States_Navy> ;
+    naval:preceededBy :NorthCarolinaClass ;
+    naval:succeededBy :IowaClass ;
+    void:inDataset :datasetdefinition ;
+    a :MilitaryShipClass, :TreatyBattleship, skos:Concept ;
+    rdfs:isDefinedBy <http://rdf.muninn-project.org/ontologies/naval> ;
+    rdfs:label "Clase South Dakota (1942)"@es, "Classe South Dakota"@pt, "Classe South Dakota (nave da battaglia 1939)"@it, "Pancerniki typu South Dakota (1939)"@pl, "South Dakota (lớp thiết giáp hạm) (1939)"@vi, "South Dakota class battleship (1939)"@en, "South-Dakota-Klasse (1942)"@de, "Třída South Dakota (1939)"@cs, "Линейные корабли типа «Саут Дакота»"@ru ;
+    owl:sameAs <http://dbpedia.org/resource/South_Dakota_class_battleship_(1939)> ;
+    skos:definition "The South Dakota-class was a group of four fast battleships built by the United States Navy. They were the second class of battleships to be named after the 40th State; the first class was designed in the 1920s and canceled under the terms of the Washington Naval Treaty. The class comprised four ships: South Dakota, Indiana, Massachusetts, and Alabama."@en ;
+    foaf:name "South Dakota Class" .
+
+:Submarine
+    void:inDataset :datasetdefinition ;
+    a owl:Class, skos:Concept ;
+    rdfs:isDefinedBy <http://rdf.muninn-project.org/ontologies/naval> ;
+    rdfs:label "Sous-marin"@fr, "Submarine"@en, "U-Boot"@de ;
+    owl:subClassOf :Ship .
+
+:SveaClass
+    naval:hasCrewSize "252" ;
+    naval:hasDisplacementMetricTonnes "2902.9" ;
+    naval:hasDraughtMeters "5.18" ;
+    naval:hasLenghtMeters "75.7" ;
+    naval:hasMaxSpeedKnots "16" ;
+    naval:ownedBy dbpedia:Swedish_Navy ;
+    naval:preceededBy dbpedia:Svea_class_coastal_defence_ship ;
+    naval:succeededBy dbpedia:Oden_class_coastal_defence_ship ;
+    org:inEra org:EraGreatWar ;
+    void:inDataset :datasetdefinition ;
+    a :CoastalDefenceShip, :MilitaryShipClass, skos:Concept ;
+    rdfs:isDefinedBy <http://rdf.muninn-project.org/ontologies/naval> ;
+    rdfs:label "Svea class coastal defence ship"@en, "Svea-luokka"@fi, "Sveaklass"@sv ;
+    owl:sameAs dbpedia:Svea_class_coastal_defence_ship ;
+    skos:definition "The Svea class was a class of coastal defence ships of the Swedish Navy. The class comprised Svea, Göta and Thule."@en ;
+    foaf:name "Svea Class" .
+
+:SverigeClass
+    naval:hasBeamMeters "18.6" ;
+    naval:hasCrewSize "443" ;
+    naval:hasDraughtMeters "6.2" ;
+    naval:hasLenghtMeters "121.6" ;
+    naval:hasMaxSpeedKnots "23.5" ;
+    naval:ownedBy dbpedia:Swedish_Navy ;
+    org:inEra org:EraGreatWar ;
+    void:inDataset :datasetdefinition ;
+    a :CoastalDefenceShip, :MilitaryShipClass, skos:Concept ;
+    rdfs:isDefinedBy <http://rdf.muninn-project.org/ontologies/naval> ;
+    rdfs:label "Classe Sveridge"@fr, "Sverige class coastal defence ship"@en, "Sverige-luokka"@fi, "Sverigeklass"@sv ;
+    owl:sameAs dbpedia:Sverige_class_coastal_defence_ship ;
+    skos:definition "The Sverige class coastal defence ships (sometimes incorrectly referred to as coastal battleships) were the largest ships to serve in the Swedish Navy until that point. Their design was completely new and was influenced by the ships of the time. Their armament consisted of four 28.3 cm Bofors guns in two turrets and eight 15.2 cm guns in one double and six single turrets. During the Second World War they were the backbone of the Swedish Navy."@en ;
+    foaf:name "Sverige Class" .
+
+:SwiftsureClass
+    naval:hasBeamMeters "16.764" ;
+    naval:hasCrewSize "450" ;
+    naval:hasDisplacementMetricTonnes "7020" ;
+    naval:hasDraughtMeters "7.44" ;
+    naval:hasLenghtMeters "85.344" ;
+    naval:hasMaxSpeedKPH "25.928" ;
+    naval:ownedBy dbpedia:Royal_Navy ;
+    void:inDataset :datasetdefinition ;
+    a :IroncladWarship, :MilitaryShipClass, skos:Concept ;
+    rdfs:isDefinedBy <http://rdf.muninn-project.org/ontologies/naval> ;
+    rdfs:label "Swiftsure class ironclad"@en, "Swiftsure-luokka (taistelulaiva, 1870)"@fi ;
+    owl:sameAs dbpedia:Swiftsure_class_ironclad ;
+    skos:definition "The Swiftsure class battleships of the late Victorian era were broadside ironclads designed and built specifically for service as Flagships on the Pacific station. In appearance the two ships of the class, HMS Swiftsure and HMS Triumph, were very similar to HMS Audacious; under water their hulls were very similar to that of HMS Defence. The intention was to make the ships good performers under sail, while at the same time being stable ships and good gun platforms."@en ;
+    foaf:name "Swiftsure Class" .
+
+:TordenskjoldClass
+    naval:hasBeamMeters "14.78" ;
+    naval:hasCrewSize "245" ;
+    naval:hasDisplacementMetricTonnes "3858" ;
+    naval:hasDraughtMeters "5.38" ;
+    naval:hasLenghtMeters "92.66" ;
+    naval:hasMaxSpeedKnots "16.9" ;
+    naval:ownedBy dbpedia:Royal_Norwegian_Navy ;
+    naval:preceededBy dbpedia:Tordenskjold_class_coastal_defence_ship ;
+    org:inEra org:EraGreatWar ;
+    void:inDataset :datasetdefinition ;
+    a :CoastalDefenceShip, :MilitaryShipClass, skos:Concept ;
+    rdfs:isDefinedBy <http://rdf.muninn-project.org/ontologies/naval> ;
+    rdfs:label "Tordenskjold class coastal defence ship"@en, "Tordenskjold-klassen"@no, "Броненосцы типа «Харальд Хорфагре»"@ru ;
+    owl:sameAs dbpedia:Tordenskjold_class_coastal_defence_ship ;
+    skos:definition "The Tordenskjold class of coastal defence ships was ordered by Norway as part as the general rearmament in the time leading up to the events in 1905 - when Norway broke out of the union with Sweden - the two ships in the class remained the backbone (alongside the slightly newer Eidsvold class) of the Royal Norwegian Navy until they were considered 'unfit for war' in the mid 1930s."@en ;
+    foaf:name "Tordenskjold Class" .
+
+:TreatyBattleship
+    void:inDataset :datasetdefinition ;
+    a :MilitaryShipFunction, skos:Concept ;
+    rdfs:isDefinedBy <http://rdf.muninn-project.org/ontologies/naval> ;
+    rdfs:label "Treaty battleship"@en, "条約型戦艦"@ja, "条约型战列舰"@zh ;
+    owl:sameAs dbpedia:Treaty_battleship ;
+    owl:subClass :BattleShip ;
+    skos:broader :BattleShip ;
+    skos:definition "A treaty battleship was a battleship built in the 1920s or 1930s under the terms of one of a number of international treaties governing warship construction. Many of these ships played an active role in the Second World War, but none survived long after it."@en ;
+    foaf:name "Treaty battleship" .
+
+:TroopTransport
+    void:inDataset :datasetdefinition ;
+    a owl:Class, skos:Concept ;
+    rdfs:isDefinedBy <http://rdf.muninn-project.org/ontologies/naval> ;
+    rdfs:label "Transport de troupes"@fr, "Troop Ship"@en, "Troop Transport"@en, "Truppentransporter"@de ;
+    owl:sameAs dbpedia:Troopship ;
+    owl:subClass :Ship ;
+    foaf:name "Sail Ship" .
+
+:WarriorClass
+    naval:hasBeamMeters "17.6784" ;
+    naval:hasCrewSize "707" ;
+    naval:hasDisplacementMetricTonnes "9284" ;
+    naval:hasDraughtMeters "8.2" ;
+    naval:hasLenghtMeters "128.016" ;
+    naval:hasMaxSpeedKPH "25.928" ;
+    naval:ownedBy dbpedia:Royal_Navy ;
+    naval:preceededBy dbpedia:Warrior_class_ironclad ;
+    void:inDataset :datasetdefinition ;
+    a :IroncladWarship, :MilitaryShipClass, skos:Concept ;
+    rdfs:isDefinedBy <http://rdf.muninn-project.org/ontologies/naval> ;
+    rdfs:label "Warrior class ironclad"@en, "Warriorklasse"@nl ;
+    owl:sameAs dbpedia:Warrior_class_ironclad ;
+    skos:definition "The Warrior class ironclads were a class of two warships built for the Royal Navy between 1859 and 1862, the first ocean-going ironclads with iron hulls ever constructed. The ships were designed as armoured frigates in response to an invasion scare sparked by the launch of the French ironclad Gloire and her three sisters in 1858."@en ;
+    foaf:name "Warrior Class" .
+
+:Warship
+    void:inDataset :datasetdefinition ;
+    a owl:Class, skos:Concept ;
+    rdfs:isDefinedBy <http://rdf.muninn-project.org/ontologies/naval> ;
+    rdfs:label "Kriegsschiff"@de, "Navire Militare"@fr, "Warship"@en ;
+    owl:subClassOf :Ship .
+
+:eclasssub
+    naval:hasDraughtMeters "3.81" ;
+    naval:ownedBy dbpedia:Royal_Australian_Navy, dbpedia:Royal_Navy ;
+    a naval:MilitaryShipClass ;
+    rdfs:label "British E-class submarine"@en, "Brytyjskie okręty podwodne typu E"@pl, "Classe E (sous-marin)"@fr, "E級潛艇 (英國)"@zh, "E級潜水艦 (イギリス海軍)"@ja, "Подводные лодки типа E"@ru ;
+    owl:sameAs <dbpedia:British_E-class_submarine> ;
+    skos:definition "The British E class submarines started out as improved versions of the British D class submarine."@en ;
+    foaf:name "British E-class submarine"@en .
+
+:eniNumber
+    void:inDataset :datasetdefinition ;
+    a owl:ObjectProperty, skos:Concept ;
+    rdfs:domain :Hull ;
+    rdfs:isDefinedBy <http://rdf.muninn-project.org/ontologies/naval> ;
+    rdfs:label "Hull European Number of Identification"@en ;
+    rdfs:range dbpedia:ENI_number ;
+    owl:subProperty :hullNumber ;
+    foaf:name "ENI" .
+
+:hasAgencyService
+    void:inDataset :datasetdefinition ;
+    a owl:ObjectProperty, skos:Concept ;
+    rdfs:domain :Ship ;
+    rdfs:isDefinedBy <http://rdf.muninn-project.org/ontologies/naval> ;
+    rdfs:label ""@de, "Au service de l'agence"@fr, "has Agency of Service"@en ;
+    skos:definition "Agency that the ship is serving eg: Coast Guard"@en ;
+    foaf:name "has Agency of Service" .
+
+:hasBallastTank
+    void:inDataset :datasetdefinition ;
+    a owl:ObjectProperty, skos:Concept ;
+    rdfs:domain :Ship ;
+    rdfs:isDefinedBy <http://rdf.muninn-project.org/ontologies/naval> ;
+    rdfs:label "A une citernes à Ballast"@fr, "Has Ballast Tank"@en, "L"@de ;
+    rdfs:range :BallastTank ;
+    foaf:name "has Ballast Tank" .
+
+:hasBeam
+    a owl:DatatypeProperty ;
+    rdfs:domain :Hull, :Ship, :ShipClass ;
+    rdfs:label ""@de, ""@fr, "Beam of ship or hull"@en ;
+    skos:definition "Beam of ship or hull."@en .
+
+:hasBuilder
+    void:inDataset :datasetdefinition ;
+    a owl:ObjectProperty, skos:Concept ;
+    rdfs:domain :Hull, :Ship ;
+    rdfs:isDefinedBy <http://rdf.muninn-project.org/ontologies/naval> ;
+    rdfs:label ""@de, "Batie par"@fr, "has Builder"@en ;
+    skos:definition "The original shipbuilder of the hull or ship."@en ;
+    foaf:name "has Builder" .
+
+:hasCallSign
+    void:inDataset :datasetdefinition ;
+    a owl:ObjectProperty, skos:Concept ;
+    rdfs:domain :Ship ;
+    rdfs:isDefinedBy <http://rdf.muninn-project.org/ontologies/naval> ;
+    rdfs:label "Indicatif d'appel"@fr, "Ship Call Sign"@en, "versenden Rufzeichen"@de ;
+    foaf:name "has Call Sign" .
+
+:hasCountryOfService
+    void:inDataset :datasetdefinition ;
+    a owl:ObjectProperty, skos:Concept ;
+    rdfs:domain :Ship ;
+    rdfs:isDefinedBy <http://rdf.muninn-project.org/ontologies/naval> ;
+    rdfs:label "Country of Service"@en, "Land of Service"@de, "Pays de Service"@fr ;
+    rdfs:range dbpedia:Country, org:Country ;
+    foaf:name "Country of Service" .
+
+:hasCrewSize
+    void:inDataset :datasetdefinition ;
+    a owl:DatatypeProperty, skos:Concept ;
+    rdfs:domain :Ship ;
+    rdfs:isDefinedBy <http://rdf.muninn-project.org/ontologies/naval> ;
+    rdfs:label ""@de, ""@fr, "The number of crewmen on board."@en ;
+    skos:definition "The number of crewmen on board."@en .
+
+:hasDisplacement
+    void:inDataset :datasetdefinition ;
+    a owl:DatatypeProperty, skos:Concept ;
+    rdfs:domain :Hull, :Ship ;
+    rdfs:isDefinedBy <http://rdf.muninn-project.org/ontologies/naval> ;
+    rdfs:label ""@de, ""@fr, "Has Displacement"@en ;
+    skos:definition "Displacement of ship, in unspecified condition (Metric Tonnes)."@en .
+
+:hasDraft
+    void:inDataset :datasetdefinition ;
+    a owl:DatatypeProperty, skos:Concept ;
+    rdfs:domain :Hull, :Ship, :ShipClass ;
+    rdfs:isDefinedBy <http://rdf.muninn-project.org/ontologies/naval> ;
+    rdfs:label ""@de, ""@fr, "Draft of ship or hull"@en ;
+    skos:definition "Draft of ship or hull, in unspecified conditions."@en .
+
+:hasFullLoadDisplacement
+    void:inDataset :datasetdefinition ;
+    a owl:DatatypeProperty, skos:Concept ;
+    rdfs:isDefinedBy <http://rdf.muninn-project.org/ontologies/naval> ;
+    rdfs:label ""@de, ""@fr, "Has Full Load Displacement"@en ;
+    owl:subProperty :hasDisplacement ;
+    skos:definition "Displacement of ship, under full load condition."@en .
+
+:hasHeight
+    void:inDataset :datasetdefinition ;
+    a owl:DatatypeProperty, skos:Concept ;
+    rdfs:domain :Hull, :Ship, :ShipClass ;
+    rdfs:isDefinedBy <http://rdf.muninn-project.org/ontologies/naval> ;
+    rdfs:label ""@de, ""@fr, "Height of Ship or Hull"@en ;
+    skos:definition "Height of ship."@en .
+
+:hasHomePort
+    void:inDataset :datasetdefinition ;
+    a owl:ObjectProperty, skos:Concept ;
+    rdfs:domain :Ship ;
+    rdfs:isDefinedBy <http://rdf.muninn-project.org/ontologies/naval> ;
+    rdfs:label "Heimathafen des Schiffes"@de, "Home port of the ship"@en, "Port d'attache du navire"@fr ;
+    rdfs:range dbpedia:Port ;
+    foaf:name "has Home Port" .
+
+:hasInstancesBuilt
+    void:inDataset :datasetdefinition ;
+    a owl:ObjectProperty, skos:Concept ;
+    rdfs:domain :Hull, :Ship ;
+    rdfs:isDefinedBy <http://rdf.muninn-project.org/ontologies/naval> ;
+    rdfs:label "The ships or hulls that were built patterned on this class."@en ;
+    rdfs:range :ShipClass ;
+    foaf:name "has instances built"@en .
+
+:hasLenght
+    a owl:DatatypeProperty ;
+    rdfs:domain :Hull, :Ship, :ShipClass ;
+    rdfs:label ""@de, ""@fr, "Lenght of ship or hull"@en ;
+    skos:definition "Lenght of ship or hull."@en .
+
+:hasMMSINumber
+    void:inDataset :datasetdefinition ;
+    a owl:ObjectProperty, skos:Concept ;
+    rdfs:domain :Ship ;
+    rdfs:isDefinedBy <http://rdf.muninn-project.org/ontologies/naval> ;
+    rdfs:label ""@de, ""@fr, "hasMMSINumber"@en ;
+    skos:definition ""@en ;
+    foaf:name "hasMMSINumber" .
+
+:hasMaxDraft
+    void:inDataset :datasetdefinition ;
+    a owl:DatatypeProperty, skos:Concept ;
+    rdfs:domain :Hull, :Ship ;
+    rdfs:isDefinedBy <http://rdf.muninn-project.org/ontologies/naval> ;
+    rdfs:label ""@de, ""@fr, "Maximum draft of ship or hull"@en ;
+    skos:definition "Maximum draft of ship or hull."@en .
+
+:hasMaxSpeed
+    void:inDataset :datasetdefinition ;
+    a owl:DatatypeProperty, skos:Concept ;
+    rdfs:domain :Hull, :Ship, :ShipClass ;
+    rdfs:isDefinedBy <http://rdf.muninn-project.org/ontologies/naval> ;
+    rdfs:label ""@de, ""@fr, "MaxSpeed"@en ;
+    skos:definition "Beam of ship or hull."@en .
+
+:hasNATOReportingName
+    void:inDataset :datasetdefinition ;
+    a owl:DatatypeProperty, skos:Concept ;
+    rdfs:domain :ShipClass ;
+    rdfs:isDefinedBy <http://rdf.muninn-project.org/ontologies/naval> ;
+    rdfs:label ""@de, ""@fr, "NATO reporting name"@en .
+
+:hasPortOfRegistry
+    void:inDataset :datasetdefinition ;
+    a owl:ObjectProperty, skos:Concept ;
+    rdfs:domain :Ship ;
+    rdfs:isDefinedBy <http://rdf.muninn-project.org/ontologies/naval> ;
+    rdfs:label "Heimathafen des Schiffes"@de, "Le port d'enregistrement du bateau"@fr, "Port shown on ship's registration document"@en ;
+    rdfs:range dbpedia:Port ;
+    foaf:name "has Port Of Registry" .
+
+:hasShipClass
+    void:inDataset :datasetdefinition ;
+    a owl:ObjectProperty, skos:Concept ;
+    rdfs:domain :Hull, :Ship ;
+    rdfs:isDefinedBy <http://rdf.muninn-project.org/ontologies/naval> ;
+    rdfs:label "The named or numbered class referring to the design of this ship."@en ;
+    rdfs:range :ShipClass ;
+    foaf:name "Of Ship Class" .
+
+:hasShipFunction
+    void:inDataset :datasetdefinition ;
+    a owl:ObjectProperty, skos:Concept ;
+    rdfs:domain :Hull, :Ship ;
+    rdfs:isDefinedBy <http://rdf.muninn-project.org/ontologies/naval> ;
+    rdfs:label "The named or numbered class referring to the design of this ship."@en ;
+    rdfs:range :ShipFunction ;
+    foaf:name "Of Ship Function" .
+
+:hasShipNamePrefix
+    void:inDataset :datasetdefinition ;
+    a owl:ObjectProperty, skos:Concept ;
+    rdfs:domain :Ship ;
+    rdfs:isDefinedBy <http://rdf.muninn-project.org/ontologies/naval> ;
+    rdfs:label "...."@en ;
+    rdfs:range dbpedia:Ship_prefix ;
+    foaf:name "hasShipNamePrefix" .
+
+:hullNumber
+    void:inDataset :datasetdefinition ;
+    a owl:ObjectProperty, skos:Concept ;
+    rdfs:domain :Hull ;
+    rdfs:isDefinedBy <http://rdf.muninn-project.org/ontologies/naval> ;
+    rdfs:label "Hull number"@en ;
+    foaf:name "hullNumber" .
+
+:imoNumber
+    void:inDataset :datasetdefinition ;
+    a owl:ObjectProperty, skos:Concept ;
+    rdfs:domain :Hull ;
+    rdfs:isDefinedBy <http://rdf.muninn-project.org/ontologies/naval> ;
+    rdfs:label "Hull IMO number"@en ;
+    rdfs:range dbpedia:IMO_number ;
+    owl:subProperty :hullNumber ;
+    foaf:name "IMO" .
+
+:nextShip
+    void:inDataset :datasetdefinition ;
+    a owl:ObjectProperty, skos:Concept ;
+    rdfs:domain :Ship ;
+    rdfs:isDefinedBy <http://rdf.muninn-project.org/ontologies/naval> ;
+    rdfs:label "Instance suivante de ce navire"@fr, "Next instance of this ship"@en, "Weiter Instanz dieses Schiff"@de ;
+    rdfs:range :Ship ;
+    skos:definition "Use this to link Queen Marie 1 to Queen Marie 2, etc..."@en ;
+    foaf:name "Next Ship" .
+
+:nomenclatureOf
+    void:inDataset :datasetdefinition ;
+    a owl:ObjectProperty, skos:Concept ;
+    rdfs:domain :ShipClass, :ShipFunction ;
+    rdfs:isDefinedBy <http://rdf.muninn-project.org/ontologies/naval> ;
+    rdfs:label "shipClassOf"@en ;
+    foaf:name "nomenclatureOf" .
+
+:ownedBy
+    void:inDataset :datasetdefinition ;
+    a owl:ObjectProperty, skos:Concept ;
+    rdfs:domain :Hull, :Ship ;
+    rdfs:isDefinedBy <http://rdf.muninn-project.org/ontologies/naval> ;
+    rdfs:label ""@en ;
+    foaf:name "Owned By" .
+
+:previousShip
+    void:inDataset :datasetdefinition ;
+    a owl:ObjectProperty, skos:Concept ;
+    rdfs:domain :Ship ;
+    rdfs:isDefinedBy <http://rdf.muninn-project.org/ontologies/naval> ;
+    rdfs:label "Instance précédente de ce navire"@fr, "Previous instance of this ship"@en, "Vorherige Instanz dieses Schiff"@de ;
+    rdfs:range :Ship ;
+    skos:definition "Use this to link Queen Marie 2 to Queen Marie 1, etc..."@en ;
+    foaf:name "Previous Ship" .
+
+:rig
+    void:inDataset :datasetdefinition ;
+    a owl:ObjectProperty, skos:Concept ;
+    rdfs:domain :SailShip ;
+    rdfs:isDefinedBy <http://rdf.muninn-project.org/ontologies/naval> ;
+    rdfs:label "Sail rig"@en ;
+    rdfs:range :sailPlan ;
+    skos:definition "The specific configuration of the sails on a sailing ship."@en ;
+    foaf:name "Sail Rig" .
+
+:sailPlan
+    void:inDataset :datasetdefinition ;
+    a owl:Class, skos:Concept ;
+    rdfs:isDefinedBy <http://rdf.muninn-project.org/ontologies/naval> ;
+    rdfs:label "SailPlan"@en ;
+    owl:equivalentClass dbpedia:Sail_plan ;
+    skos:definition "A sail plan is the configuration of the sails on a sailing ship."@en ;
+    foaf:name "Sail Plan" .
+
+:shipUsedBy
+    void:inDataset :datasetdefinition ;
+    a owl:ObjectProperty, skos:Concept ;
+    rdfs:domain :ShipClass, :ShipFunction ;
+    rdfs:isDefinedBy <http://rdf.muninn-project.org/ontologies/naval> ;
+    rdfs:label "shipUsedBy"@en ;
+    foaf:name "shipUsedBy" .
+
+:succeededBy
+    void:inDataset :datasetdefinition ;
+    a owl:ObjectProperty, skos:Concept ;
+    rdfs:domain :ShipClass ;
+    rdfs:isDefinedBy <http://rdf.muninn-project.org/ontologies/naval> ;
+    rdfs:label "Replaced this class"@en ;
+    rdfs:range :ShipClass ;
+    skos:definition "Use this to link Queen Marie 2 to Queen Marie 1, etc..."@en ;
+    foaf:name "Previous Ship" .
+

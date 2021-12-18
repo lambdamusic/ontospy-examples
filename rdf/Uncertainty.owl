@@ -1,0 +1,102 @@
+<?xml version="1.0"?>
+<rdf:RDF
+    xmlns="http://www.owl-ontologies.com/Ontology1181490123.owl#"
+    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+    xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+    xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+    xmlns:owl="http://www.w3.org/2002/07/owl#"
+  xml:base="http://www.owl-ontologies.com/Ontology1181490123.owl">
+  <owl:Ontology rdf:about=""/>
+  <owl:Class rdf:ID="Vagueness">
+    <rdfs:subClassOf>
+      <owl:Class rdf:ID="UncertaintyType"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:ID="Agent"/>
+  <owl:Class rdf:ID="BeliefFunctions">
+    <rdfs:subClassOf>
+      <owl:Class rdf:ID="UncertaintyModel"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:ID="World"/>
+  <owl:Class rdf:ID="Inconsistency">
+    <rdfs:subClassOf rdf:resource="#UncertaintyType"/>
+  </owl:Class>
+  <owl:Class rdf:ID="Randomness">
+    <rdfs:subClassOf>
+      <owl:Class rdf:ID="Empirical"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:ID="Probability">
+    <rdfs:subClassOf rdf:resource="#UncertaintyModel"/>
+  </owl:Class>
+  <owl:Class rdf:ID="FuzzySets">
+    <rdfs:subClassOf rdf:resource="#UncertaintyModel"/>
+  </owl:Class>
+  <owl:Class rdf:ID="Sentence"/>
+  <owl:Class rdf:ID="Epistemic">
+    <rdfs:subClassOf>
+      <owl:Class rdf:ID="UncertaintyNature"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:ID="Subjective">
+    <rdfs:subClassOf>
+      <owl:Class rdf:ID="UncertaintyDerivation"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:ID="Incompleteness">
+    <rdfs:subClassOf rdf:resource="#UncertaintyType"/>
+  </owl:Class>
+  <owl:Class rdf:ID="Hybrid">
+    <rdfs:subClassOf rdf:resource="#UncertaintyModel"/>
+  </owl:Class>
+  <owl:Class rdf:ID="Ambiguity">
+    <rdfs:subClassOf rdf:resource="#UncertaintyType"/>
+  </owl:Class>
+  <owl:Class rdf:ID="RandomSets">
+    <rdfs:subClassOf rdf:resource="#UncertaintyModel"/>
+  </owl:Class>
+  <owl:Class rdf:ID="RoughSets">
+    <rdfs:subClassOf rdf:resource="#UncertaintyModel"/>
+  </owl:Class>
+  <owl:Class rdf:about="#Empirical">
+    <rdfs:subClassOf rdf:resource="#UncertaintyType"/>
+  </owl:Class>
+  <owl:Class rdf:ID="Uncertainty"/>
+  <owl:Class rdf:ID="Objective">
+    <rdfs:subClassOf rdf:resource="#UncertaintyDerivation"/>
+  </owl:Class>
+  <owl:Class rdf:ID="Aleatory">
+    <rdfs:subClassOf rdf:resource="#UncertaintyNature"/>
+  </owl:Class>
+  <owl:ObjectProperty rdf:ID="saidBy">
+    <rdfs:range rdf:resource="#Agent"/>
+    <rdfs:domain rdf:resource="#Sentence"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="derivationType">
+    <rdfs:domain rdf:resource="#Uncertainty"/>
+    <rdfs:range rdf:resource="#UncertaintyDerivation"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="uncertaintyModel">
+    <rdfs:domain rdf:resource="#Uncertainty"/>
+    <rdfs:range rdf:resource="#UncertaintyModel"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="hasUncertainty">
+    <rdfs:range rdf:resource="#Uncertainty"/>
+    <rdfs:domain rdf:resource="#Sentence"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="uncertaintyType">
+    <rdfs:range rdf:resource="#UncertaintyType"/>
+    <rdfs:domain rdf:resource="#Uncertainty"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="saidAbout">
+    <rdfs:domain rdf:resource="#Sentence"/>
+    <rdfs:range rdf:resource="#World"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="nature">
+    <rdfs:range rdf:resource="#UncertaintyNature"/>
+    <rdfs:domain rdf:resource="#Uncertainty"/>
+  </owl:ObjectProperty>
+</rdf:RDF>
+
+<!-- Created with Protege (with OWL Plugin 3.3.1, Build 430)  http://protege.stanford.edu -->

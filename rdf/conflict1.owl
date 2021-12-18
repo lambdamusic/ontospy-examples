@@ -1,0 +1,1945 @@
+<?xml version="1.0"?>
+
+
+<!DOCTYPE rdf:RDF [
+    <!ENTITY conflict "http://purl.com/net/conflict#" >
+    <!ENTITY owl "http://www.w3.org/2002/07/owl#" >
+    <!ENTITY dc "http://purl.org/dc/elements/1.1/" >
+    <!ENTITY xsd "http://www.w3.org/2001/XMLSchema#" >
+    <!ENTITY owl2xml "http://www.w3.org/2006/12/owl2-xml#" >
+    <!ENTITY rdfs "http://www.w3.org/2000/01/rdf-schema#" >
+    <!ENTITY rdf "http://www.w3.org/1999/02/22-rdf-syntax-ns#" >
+]>
+
+
+<rdf:RDF xmlns="http://purl.com/net/conflict#"
+     xml:base="http://purl.com/net/conflict"
+     xmlns:dc="http://purl.org/dc/elements/1.1/"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:owl2xml="http://www.w3.org/2006/12/owl2-xml#"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:conflict="http://purl.com/net/conflict#">
+    <owl:Ontology rdf:about="">
+        <owl:versionInfo rdf:datatype="&rdf;XMLLiteral"
+            >0.1: created an initial taxonomy from various sources; added inheritance relations with CIDOC-CRM</owl:versionInfo>
+        <dc:title rdf:datatype="&rdf;XMLLiteral"
+            >Conflict: an ontology for historical modeling of  WW1</dc:title>
+        <dc:description
+            >The Conflict ontology is an extension of CIDOC-CRM that serves to characterizes the First World War. </dc:description>
+        <dc:creator
+            >Michele Pasin in the context of the SAILS project [www.michelepasin.org] [http://sailsproject.cerch.kcl.ac.uk/]</dc:creator>
+        <owl:imports rdf:resource="http://www.cidoc-crm.org/rdfs/cidoc_crm_v5.0.2_english_label.rdfs"/>
+    </owl:Ontology>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Annotation properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    <owl:AnnotationProperty rdf:about="&dc;title"/>
+    <owl:AnnotationProperty rdf:about="&dc;description"/>
+    <owl:AnnotationProperty rdf:about="&dc;creator"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://purl.com/net/conflict#follows_plan -->
+
+    <owl:ObjectProperty rdf:about="#follows_plan">
+        <rdfs:domain rdf:resource="#Commission"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://purl.com/net/conflict#has_items -->
+
+    <owl:ObjectProperty rdf:about="#has_items">
+        <rdfs:domain rdf:resource="#Museum_collection"/>
+        <rdfs:range rdf:resource="#Physical"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://purl.com/net/conflict#used_instrument -->
+
+    <owl:ObjectProperty rdf:about="#used_instrument">
+        <rdfs:domain rdf:resource="#Measurement"/>
+        <rdfs:range rdf:resource="#Measuring_Device"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://purl.com/net/conflict#Abstract -->
+
+    <owl:Class rdf:about="#Abstract">
+        <rdfs:subClassOf rdf:resource="&owl;Thing"/>
+        <owl:disjointWith rdf:resource="#Physical"/>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.com/net/conflict#Agent -->
+
+    <owl:Class rdf:about="#Agent">
+        <rdfs:comment
+            >This class and the hierarchy departing from it has been added for clarity, as it gathers together all the agentive entities used in CONFLICT. From the conceptual point of view, these entities just replicate what specified under CIDOC&#39;s  E39Actor. </rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.com/net/conflict#Air_Force -->
+
+    <owl:Class rdf:about="#Air_Force">
+        <rdfs:subClassOf rdf:resource="#Military_organization"/>
+        <rdfs:comment rdf:datatype="&rdf;XMLLiteral"
+            >The branch of a nation&#39;s armed services that conducts military operations in the air</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.com/net/conflict#Airbase -->
+
+    <owl:Class rdf:about="#Airbase">
+        <rdfs:subClassOf rdf:resource="#Military_Base"/>
+        <rdfs:comment rdf:datatype="&rdf;XMLLiteral"
+            >&quot;An airbase (sometimes referred to correctly as an airfield, military airport, or Royal Air Force Station or Air Force Station) is a military airfield that provides basing and support of military aircraft.
+
+They are different from civilian airports in that they do not provide for large volume of passenger transits, and cargo handling is not processed by the customs and immigration facilities.&quot;</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.com/net/conflict#Aircraft_weapon -->
+
+    <owl:Class rdf:about="#Aircraft_weapon">
+        <rdfs:subClassOf rdf:resource="#Weapon_by_User"/>
+        <rdfs:comment rdf:datatype="&xsd;string"
+            >This group of weapons includes all those that are carried on and used by aircrafts, helicopters, or any other aerial vehicle. Aircraft weapons include air-launched torpedoes, missiles or rockets; air-dropped bombs or aircraft mounted guns.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.com/net/conflict#Anti-Aircraft_Weapon -->
+
+    <owl:Class rdf:about="#Anti-Aircraft_Weapon">
+        <rdfs:subClassOf rdf:resource="#Weapon_by_Target"/>
+        <rdfs:comment rdf:datatype="&xsd;string"
+            >Anti-aircraft weapons are designed to target missiles and aerial vehicles in flight in defence of ground or naval forces or objectives, or in order to prevent passage through a particular airspace region. This group of weapons include guns, autocannons and missile systems.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.com/net/conflict#Anti-Fortification_Weapon -->
+
+    <owl:Class rdf:about="#Anti-Fortification_Weapon">
+        <rdfs:subClassOf rdf:resource="#Weapon_by_Target"/>
+        <rdfs:comment rdf:datatype="&xsd;string"
+            >These weapons are designed to target and destroy enemy installations such as field and permanent fortifications. Examples of such weapons include howitzers, &#39;bunker busters&#39; (bombs designed to penetrate targets buried deep underground or hardened targets), and from medieval times, the trebuchet and ballista.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.com/net/conflict#Anti-Personnel_Weapon -->
+
+    <owl:Class rdf:about="#Anti-Personnel_Weapon">
+        <rdfs:subClassOf rdf:resource="#Weapon_by_Target"/>
+        <rdfs:comment rdf:datatype="&xsd;string"
+            >This group of weapons are primarily designed to kill or injure people, either individually or in large numbers. For instance, an anti-personnel landmine is designed not to explode when a vehicle rolls over it, but when triggered by a person will explode into sharp splinters that will tear flesh but have no effect on buildings or vehicles. Examples include claymore mines, cluster bombs and biological weapons.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.com/net/conflict#Anti-Ship_Weapon -->
+
+    <owl:Class rdf:about="#Anti-Ship_Weapon">
+        <rdfs:subClassOf rdf:resource="#Weapon_by_Target"/>
+        <rdfs:comment rdf:datatype="&xsd;string"
+            >This category of weapons includes all those that target ships and other vessels on water. They range from land batteries (used to protect anchorages, harbours and rivers), naval mines (a self-contained explosive device placed in water to destroy ships), torpedoes and anti-ship missiles.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.com/net/conflict#Anti-Submarine_Weapon -->
+
+    <owl:Class rdf:about="#Anti-Submarine_Weapon">
+        <rdfs:subClassOf rdf:resource="#Weapon_by_Target"/>
+        <rdfs:comment rdf:datatype="&xsd;string"
+            >Anti-submarine weapons are used to target submarines and other underwater vessels in order to destroy the vessel or to reduce its capability as a weapon of war. This group includes weapons such as torpedoes, mines, missiles, depth charges, mortars and rockets.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.com/net/conflict#Anti-Tank_Weapon -->
+
+    <owl:Class rdf:about="#Anti-Tank_Weapon">
+        <rdfs:subClassOf rdf:resource="#Weapon_by_Target"/>
+        <rdfs:comment rdf:datatype="&xsd;string"
+            >These weapons are designed to defeat military armoured fighting vehicles, by either destroying its ability to move (known as mobility kill or M-kill), destroying its firepower capability (known as firepower kill or F-kill), or by reducing its ability to fight completely (known as catastrophic kill or K-kill). This last method may entail disabling the weapon system(s) or crew, or the complete destruction of the tank. Examples of anti-tank weapons include grenades, anti-tank guns, High Explosive Anti-Tank (HEAT) weapons, anti-tank mines and wire-guided missiles.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.com/net/conflict#Area_Denial_Weapon -->
+
+    <owl:Class rdf:about="#Area_Denial_Weapon">
+        <rdfs:subClassOf rdf:resource="#Weapon_by_Target"/>
+        <rdfs:comment rdf:datatype="&xsd;string"
+            >This category of weapons are used to prevent an enemy from crossing or occupying an area of land. This may be achieved by making the territory completely inaccessible, or by severely slowing down the enemy. Historical methods include caltrops and the cheval de fries (a frame covered with long spikes or spears), whilst more modern variants include land mines, Agent Orange (a defoliant that leaves areas empty of any vegetation cover), mustard gas and dragon&#39;s teeth (small concrete pyramids used impede the movement of tanks in WW2).</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.com/net/conflict#Arisaka -->
+
+    <owl:Class rdf:about="#Arisaka">
+        <rdfs:subClassOf rdf:resource="#Bolt_action_Rifle"/>
+        <rdfs:comment rdf:datatype="&xsd;string"
+            >The Arisaka was the main rifle used by the Japanese Army during the First World War.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.com/net/conflict#Armoured_Car -->
+
+    <owl:Class rdf:about="#Armoured_Car">
+        <rdfs:subClassOf rdf:resource="#Vehicle_weapon"/>
+        <rdfs:comment rdf:datatype="&xsd;string"
+            >Armoured cars were first used by the British Army for the policing of distant colonial outposts. By the outbreak of First World War the allies in Europe were using armour-plated, open-topped vehicles with machine guns or other light guns or artillery pieces. The most popular British car was the Napier that was first produced in 1912. The design consisted of a number of alternative bodies which enabled the chassis to be adapted quickly for different roles 
+
+Armoured cars were used on the Western Front but they were limited in trench warfare because they could not handle very uneven terrain. The British army used armoured cars with great success in Palestine and in Mesopotamia where they were deployed in what had previously been the Cavalry role of outflanking and pursuit.
+[http://www.spartacus.schoolnet.co.uk/FWWarmouredcars.htm]</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.com/net/conflict#Armoured_Cruiser -->
+
+    <owl:Class rdf:about="#Armoured_Cruiser">
+        <rdfs:subClassOf rdf:resource="#Cruiser"/>
+        <rdfs:comment rdf:datatype="&rdf;XMLLiteral"
+            >&quot;Armoured cruisers were protected by a belt of side armour and an armoured deck. In the Royal Navy this classification was not actually used, the term first class cruiser being used instead for both armoured cruisers and large protected cruisers.&quot;</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.com/net/conflict#Army -->
+
+    <owl:Class rdf:about="#Army">
+        <rdfs:subClassOf rdf:resource="#Military_organization"/>
+        <rdfs:comment rdf:datatype="&rdf;XMLLiteral"
+            >An organized military force equipped for fighting on land</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.com/net/conflict#Artillery_Weapon -->
+
+    <owl:Class rdf:about="#Artillery_Weapon">
+        <rdfs:subClassOf rdf:resource="#Weapon_by_Function"/>
+        <rdfs:comment rdf:datatype="&xsd;string"
+            >Weapons in this category are capable of discharging heavy projectiles over long distances. Modern artillery includes the howitzer, mortar, field gun and rocket artillery.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.com/net/conflict#Battle -->
+
+    <owl:Class rdf:about="#Battle">
+        <rdfs:subClassOf rdf:resource="#Event"/>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.com/net/conflict#Battlecruiser -->
+
+    <owl:Class rdf:about="#Battlecruiser">
+        <rdfs:subClassOf rdf:resource="#Warship"/>
+        <rdfs:comment rdf:datatype="&rdf;XMLLiteral"
+            >A ship with battleship level armament and cruiser level armor; typically faster than a battleship because the reduction in armor allowed mounting of heavier propulsion machinery.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.com/net/conflict#Battleship -->
+
+    <owl:Class rdf:about="#Battleship">
+        <rdfs:subClassOf rdf:resource="#Warship"/>
+        <rdfs:comment rdf:datatype="&rdf;XMLLiteral"
+            >A large, heavily-armoured and heavily-gunned warship.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.com/net/conflict#Bayonet -->
+
+    <owl:Class rdf:about="#Bayonet">
+        <rdfs:subClassOf rdf:resource="#Personal_weapon"/>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.com/net/conflict#Being_on_a_Ship -->
+
+    <owl:Class rdf:about="#Being_on_a_Ship">
+        <rdfs:subClassOf rdf:resource="#State"/>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.com/net/conflict#Berthier -->
+
+    <owl:Class rdf:about="#Berthier">
+        <rdfs:subClassOf rdf:resource="#Bolt_action_Rifle"/>
+        <rdfs:comment rdf:datatype="&xsd;string"
+            >A bolt rifle used by the French army after 1916</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.com/net/conflict#Biological_Weapon -->
+
+    <owl:Class rdf:about="#Biological_Weapon">
+        <rdfs:subClassOf rdf:resource="#Weapon_by_Function"/>
+        <rdfs:comment rdf:datatype="&xsd;string"
+            >Also known as germ warfare, biological weapons are designed to spread biological agents (e.g. viruses, bacteria or toxins), causing infection or disease which is intended to kill, incapacitate, or seriously impair the target population. Weapons may be designed to target humans (e.g. anthrax, smallpox or botulism) or agriculture (e.g. plant diseases such as wheat blast, or animal diseases such as foot and mouth disease). These weapons are classified as weapons of mass destruction by the United Nations.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.com/net/conflict#Birth -->
+
+    <owl:Class rdf:about="#Birth">
+        <rdfs:subClassOf rdf:resource="#Event"/>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.com/net/conflict#Boat -->
+
+    <owl:Class rdf:about="#Boat">
+        <rdfs:subClassOf rdf:resource="#Watercraft"/>
+        <rdfs:comment rdf:datatype="&rdf;XMLLiteral"
+            >Boats are smaller thank Ships and travel most often on inland or coastal waters. A rule of thumb says &quot;a boat can fit on a ship, but a ship can&#39;t fit on a boat&quot;, and a ship usually has sufficient size to carry its own boats, such as lifeboats, dinghies, or runabouts.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.com/net/conflict#Bolt_action_Rifle -->
+
+    <owl:Class rdf:about="#Bolt_action_Rifle">
+        <rdfs:subClassOf rdf:resource="#Personal_weapon"/>
+        <rdfs:comment rdf:datatype="&xsd;string"
+            >Nearly all infantryman in the First World War used bolt action rifles. This type of rifle had been invented by a Scottish immigrant to the United States, James Paris Lee. The bolt is the device that closes the breech of the barrel. The bolt-action rifle had a metal box, into which cartridges were placed on top of a spring. As the bolt was opened, the spring forced the cartridges up against a stop; the bolt pushed the top cartridge into the chamber as it closed. After firing, the opening of the bolt extracted the empty cartridge case, and the return stroke loaded a fresh round. 
+
+http://www.spartacus.schoolnet.co.uk/FWWbolt.htm</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.com/net/conflict#Browning_Machine-Gun -->
+
+    <owl:Class rdf:about="#Browning_Machine-Gun">
+        <rdfs:subClassOf rdf:resource="#MachineGun"/>
+        <rdfs:comment rdf:datatype="&xsd;string"
+            >A machine gun in use by the American army</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.com/net/conflict#Campaign_Operation -->
+
+    <owl:Class rdf:about="#Campaign_Operation">
+        <rdfs:subClassOf rdf:resource="#Combat_Operation"/>
+        <rdfs:comment rdf:datatype="&rdf;XMLLiteral"
+            >&quot;Campaign: this describes either a subset of the theatre operation, or a more limited geographic and operational strategic commitment such as Battle of Britain, and need not represent total national commitment to a conflict, or have broader goals outside of the military impacts.&quot;</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.com/net/conflict#Chemical_Weapon -->
+
+    <owl:Class rdf:about="#Chemical_Weapon">
+        <rdfs:subClassOf rdf:resource="#Weapon_by_Function"/>
+        <rdfs:comment rdf:datatype="&xsd;string"
+            >These weapons use the toxic properties of chemical substances to kill, injure, or incapacitate an enemy. Chemical warfare agents include mustard gas, Sarin and Agent 15. Chemical weapons are classified as weapons of mass destruction by the United Nations, and their production and stockpiling was outlawed by the Chemical Weapons Convention of 1993.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.com/net/conflict#Civil_organization -->
+
+    <owl:Class rdf:about="#Civil_organization">
+        <rdfs:subClassOf rdf:resource="#Organization"/>
+        <rdfs:comment
+            >Civil Organizations involved in the war</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.com/net/conflict#Collection -->
+
+    <owl:Class rdf:about="#Collection">
+        <rdfs:subClassOf rdf:resource="#Physical"/>
+        <owl:disjointWith rdf:resource="#Single_Thing"/>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.com/net/conflict#Combat_Operation -->
+
+    <owl:Class rdf:about="#Combat_Operation">
+        <rdfs:subClassOf rdf:resource="#Military_Operation"/>
+        <rdfs:comment rdf:datatype="&rdf;XMLLiteral"
+            >&quot;Combat, or fighting, is a purposeful violent conflict meant to establish dominance over the opposition. Combat may take place under a certain set of rules or be unregulated. Examples of rules include the Geneva Conventions (covering the treatment of soldiers in war), medieval Chivalry,etc..
+
+Combat in warfare involves two or more opposing military organizations, usually fighting for nations at war (although guerrilla warfare and suppression of insurgencies can fall outside this definition). Warfare falls under the laws of war, which govern its purposes and conduct, and protect the rights of soldiers and non-combatants.
+
+We classify combat operations according to two orthogonal, non-exclusding criteria: 
+
+1) Military operations can be classified by the scale and scope of force employment, and their impact on the wider conflict.
+
+2) Military operations can be classified by the generic active or passive role forces have at the beginning of a conflict
+
+&quot;
+
+
+TIP: in combat (and military operations at large) the actors involves take roles (eg a cruise is flotilla leader)... model this somehow!</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.com/net/conflict#Commer_Ambulance -->
+
+    <owl:Class rdf:about="#Commer_Ambulance">
+        <rdfs:subClassOf rdf:resource="#Military_vehicle"/>
+        <rdfs:comment rdf:datatype="&xsd;string"
+            >At the beginning of the war, Commercial Cars of Luton began producing Commer First Aid lorries. These were used to carry medical stores and stretchers to supply first aid post. The Commer First Aid lorry was a great success and the company were asked to produce an ambulance for moving injured horses. The ambulance could carry two horses.
+[http://www.spartacus.schoolnet.co.uk/FWWambulance.htm]</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.com/net/conflict#Commission -->
+
+    <owl:Class rdf:about="#Commission">
+        <rdfs:subClassOf rdf:resource="#Event"/>
+        <rdfs:comment rdf:datatype="&rdf;XMLLiteral"
+            >a commission event is made by an agent (eg the royal navy_ who invests with power to do something another agent (egt a merchant, or a person)</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.com/net/conflict#CourseAssignment_Report -->
+
+    <owl:Class rdf:about="#CourseAssignment_Report">
+        <rdfs:subClassOf rdf:resource="#Report"/>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.com/net/conflict#Cruiser -->
+
+    <owl:Class rdf:about="#Cruiser">
+        <rdfs:subClassOf rdf:resource="#Warship"/>
+        <rdfs:comment rdf:datatype="&rdf;XMLLiteral"
+            >&quot;A fast independent warship. Traditionally, cruisers were the smallest warships capable of independent action.&quot;
+
+TIP: lost of info about cruisers here: http://en.wikipedia.org/wiki/List_of_cruiser_classes_of_the_Royal_Navy</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.com/net/conflict#Death -->
+
+    <owl:Class rdf:about="#Death">
+        <rdfs:subClassOf rdf:resource="#Event"/>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.com/net/conflict#Defensive -->
+
+    <owl:Class rdf:about="#Defensive">
+        <rdfs:subClassOf rdf:resource="#Combat_Operation"/>
+        <rdfs:comment rdf:datatype="&rdf;XMLLiteral"
+            >&quot;The use of defensive tactics that seek to negate enemy offensive tactics.
+
+A defensive military doctrine implies operation of larger military forces from a largely defensive posture, which at the operational warfare scale assumes the form of defense in depth, and at strategic scale encompasses a large area of operations such as the Maginot Line by large parts of the French Army before World War II.&quot;</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.com/net/conflict#Dennis_Military_Lorry -->
+
+    <owl:Class rdf:about="#Dennis_Military_Lorry">
+        <rdfs:subClassOf rdf:resource="#Vehicle_weapon"/>
+        <rdfs:comment rdf:datatype="&xsd;string"
+            >In the early 1900s the British Army began considering the ways that motor transport could be used during a large-scale war. It was recognised that motor transport would enable the British Army to move troops very quickly. In 1911 the British Army announced its strategy for acquiring motor transport in an emergency. An annual fee of &#163;15 was to be paid for each lorry registered with the British Army. By 1914 this fee had been increased to &#163;110. 
+
+When war was declared in August 1914 a total of 1,200 lorries were acquired by the Army. One of the most successful lorries used by the British Army was the Dennis 3-Ton Lorry. The four-cylinder engine enabled the lorry to reach 55 mph. Even when loaded, it could climb gradients as steep as 1 in 6. Over 7,000 Dennis 3-Ton lorries were built and used during the First World War.
+[http://www.spartacus.schoolnet.co.uk/FWWlorry.htm]</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.com/net/conflict#DepthCharge -->
+
+    <owl:Class rdf:about="#DepthCharge">
+        <rdfs:subClassOf rdf:resource="#Naval_weapon"/>
+        <rdfs:comment rdf:datatype="&rdf;XMLLiteral"
+            >A depth charge is an anti-submarine warfare (ASW) weapon intended to destroy or cripple a target submarine by the shock of exploding near it.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.com/net/conflict#Destroyer -->
+
+    <owl:Class rdf:about="#Destroyer">
+        <rdfs:subClassOf rdf:resource="#Warship"/>
+        <rdfs:comment rdf:datatype="&rdf;XMLLiteral"
+            >A destroyer is a fast and maneuverable yet long-endurance warship intended to escort larger vessels in a fleet, convoy or battle group and defend them against smaller, powerful, short-range attackers.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.com/net/conflict#Dreadnought_Battleship -->
+
+    <owl:Class rdf:about="#Dreadnought_Battleship">
+        <rdfs:subClassOf rdf:resource="#Battleship"/>
+        <rdfs:comment rdf:datatype="&rdf;XMLLiteral"
+            >&quot;The dreadnought was the predominant type of 20th-century battleship. The first of the kind, the Royal Navy&#39;s Dreadnought had such an impact when launched in 1906 that battleships built after her were referred to as &#39;dreadnoughts&#39;, and earlier battleships became known as pre-dreadnoughts. Her design had two revolutionary features: an &#39;all-big-gun&#39; armament scheme and steam turbine propulsion.&quot;</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.com/net/conflict#Educational_event -->
+
+    <owl:Class rdf:about="#Educational_event">
+        <rdfs:subClassOf rdf:resource="#Event"/>
+        <rdfs:comment rdf:datatype="&rdf;XMLLiteral"
+            >The event describing the activity of a person learning in a strctured environment: eg participaring in the Senior Officers Technical Course.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.com/net/conflict#Encounter_Report -->
+
+    <owl:Class rdf:about="#Encounter_Report">
+        <rdfs:subClassOf rdf:resource="#Report"/>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.com/net/conflict#Engagement_Operation -->
+
+    <owl:Class rdf:about="#Engagement_Operation">
+        <rdfs:subClassOf rdf:resource="#Combat_Operation"/>
+        <rdfs:comment rdf:datatype="&rdf;XMLLiteral"
+            >&quot;Engagement: this describes a tactical combat event of contest for specific area or objective by actions of distinct units. For example the Battle of Kursk, also known from its German designation as Operation Citadel, included many separate engagements, several of which were combined into the Battle of Prokhorovka. The &quot;Battle of Kursk&quot; in addition to describing the initial German offensive operation (or simply an offensive), also included two Soviet counter-offensive operations Operation Kutuzov and Operation Polkovodets Rumyantsev.&quot;</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.com/net/conflict#EnterService_Report -->
+
+    <owl:Class rdf:about="#EnterService_Report">
+        <rdfs:subClassOf rdf:resource="#Report"/>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.com/net/conflict#Event -->
+
+    <owl:Class rdf:about="#Event">
+        <rdfs:subClassOf rdf:resource="#Temporal_Entity"/>
+        <rdfs:comment rdf:datatype="&rdf;XMLLiteral"
+            >An event is a temporal entity that involves a change of state, an activity or some sort or dynamic happening</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.com/net/conflict#Explosion -->
+
+    <owl:Class rdf:about="#Explosion">
+        <rdfs:subClassOf rdf:resource="#Event"/>
+        <rdfs:comment rdf:datatype="&rdf;XMLLiteral"
+            >Could be accidental, or the result of a military attack</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.com/net/conflict#Explosive_Weapon -->
+
+    <owl:Class rdf:about="#Explosive_Weapon">
+        <rdfs:subClassOf rdf:resource="#Weapon_by_Function"/>
+        <rdfs:comment rdf:datatype="&xsd;string"
+            >This group of weapons uses a high explosive to spread shrapnel or create blast concussion from a point of detonation, and include devices such as grenades and bombs.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.com/net/conflict#Expression -->
+
+    <owl:Class rdf:about="#Expression">
+        <rdfs:subClassOf rdf:resource="#Abstract"/>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.com/net/conflict#Firearm -->
+
+    <owl:Class rdf:about="#Firearm">
+        <rdfs:subClassOf rdf:resource="#Weapon_by_Function"/>
+        <rdfs:comment rdf:datatype="&xsd;string"
+            >A firearm is a device that launches single or multiple projectiles at high velocity through a controlled explosion, using a propellant such as cordite or gunpowder. Firearms include &#39;small arms&#39; such as handguns (e.g. pistols and revolvers), long guns (e.g. rifles and shotguns),and  automatic weapons (e.g. Lewis gun, machine guns and automatic rifles).</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.com/net/conflict#Flamethrower -->
+
+    <owl:Class rdf:about="#Flamethrower">
+        <rdfs:subClassOf rdf:resource="#Personal_weapon"/>
+        <rdfs:comment rdf:datatype="&xsd;string"
+            >The basic idea of a flamethrower is to spread fire by launching burning fuel.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.com/net/conflict#Flotilla_Leader -->
+
+    <owl:Class rdf:about="#Flotilla_Leader">
+        <rdfs:subClassOf rdf:resource="#Warship"/>
+        <rdfs:comment rdf:datatype="&rdf;XMLLiteral"
+            >&quot;A flotilla leader was a warship suitable for commanding a flotilla of destroyers or other small warships, typically a small cruiser or a large destroyer (known as a destroyer leader). The flotilla leader provided space, equipment and staff for the flotilla commodore (who typically held the rank of captain), including a wireless room, senior engineering and gunnery officers, and administrative staff to support the officers.&quot;</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.com/net/conflict#Ford_Model_T_Patrol_Car -->
+
+    <owl:Class rdf:about="#Ford_Model_T_Patrol_Car">
+        <rdfs:subClassOf rdf:resource="#Vehicle_weapon"/>
+        <rdfs:comment rdf:datatype="&xsd;string"
+            >At the beginning of the First World War Henry Ford refused to let his cars be used in combat conditions. Eventually Ford changed his mind and the Model T was used as a patrol car. The British purchased about 19,000 of these cars during the war. Armed with Lewis guns, the Model T Patrol Car, was used by the British Army in France but they were particularly effective in Palestine, Mesopotamia, Egypt and Libya. The car was used for raiding, reconnaissance and in supporting the cavalry.
+[http://www.spartacus.schoolnet.co.uk/FWWford.htm]</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.com/net/conflict#Fortification_weapon -->
+
+    <owl:Class rdf:about="#Fortification_weapon">
+        <rdfs:subClassOf rdf:resource="#Weapon_by_User"/>
+        <rdfs:comment rdf:datatype="&xsd;string"
+            >Fortification weapons are those that are used primarily within a fortification, or are mounted in a permanent installation. Examples include the 2 &#215; RML 16 inch 80 ton guns installed in the Dover Turret in 1882 (also known as the Admiralty Pier Turret) on the western breakwater of Dover harbour.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.com/net/conflict#Gardner_Machine_Gun -->
+
+    <owl:Class rdf:about="#Gardner_Machine_Gun">
+        <rdfs:subClassOf rdf:resource="#MachineGun"/>
+        <rdfs:comment rdf:datatype="&xsd;string"
+            >In 1861 Richard Jordan Gatling, a trained dentist from North Carolina, produced an effective mechanical gun. The Gatling Gun consisted of six barrels mounted in a revolving frame. The United States Army purchased these guns in 1865 and over the next few years most major armies in Europe obtained this gun. 
+
+The success of Gatling&#39;s automatic gun encouraged others to enter the market. In 1879 the Gardner Machine Gun was demonstrated for the first time. A two-barrelled weapon operated by crank which loaded and fired each barrel in turn. The feed system was a grooved strip into which the rims of a box of cartridges could be slid, after which the box was removed. In public trials the gun fired 10,000 rounds in 27 minutes. This impressed military leaders from Britain and the following year the British Army purchased the gun.
+[http://www.spartacus.schoolnet.co.uk/FWWgardner.htm]</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.com/net/conflict#Grenade -->
+
+    <owl:Class rdf:about="#Grenade">
+        <rdfs:subClassOf rdf:resource="#Explosive_Weapon"/>
+        <rdfs:comment rdf:datatype="&xsd;string"
+            >TODO
+[http://www.spartacus.schoolnet.co.uk/FWWgrenade.htm]</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.com/net/conflict#Grossflammenwerfer -->
+
+    <owl:Class rdf:about="#Grossflammenwerfer">
+        <rdfs:subClassOf rdf:resource="#Flamethrower"/>
+        <rdfs:comment rdf:datatype="&xsd;string"
+            >A type of German flamethrower &quot;Fielder&#39;s second, larger model (the Grossflammenwerfer), worked along the same lines but was not suitable for transport by a single person, but whose maximum range was twice that of the smaller model; it could also sustain flames for a (then) impressive forty seconds, although it was decidedly expensive in its use of fuel.&quot;
+http://www.firstworldwar.com/weaponry/flamethrowers.htm</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.com/net/conflict#Gunboat -->
+
+    <owl:Class rdf:about="#Gunboat">
+        <rdfs:subClassOf rdf:resource="#Warship"/>
+        <rdfs:comment rdf:datatype="&rdf;XMLLiteral"
+            >A gunboat is a naval watercraft designed for the express purpose of carrying one or more guns to bombard coastal targets, as opposed to those military craft designed for naval warfare, or for ferrying troops or supplies.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.com/net/conflict#Hotchkiss -->
+
+    <owl:Class rdf:about="#Hotchkiss">
+        <rdfs:subClassOf rdf:resource="#MachineGun"/>
+        <rdfs:comment rdf:datatype="&xsd;string"
+            >A machine gun in use by the French army</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.com/net/conflict#Image -->
+
+    <owl:Class rdf:about="#Image">
+        <rdfs:subClassOf rdf:resource="#Expression"/>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.com/net/conflict#Incendiary_Weapon -->
+
+    <owl:Class rdf:about="#Incendiary_Weapon">
+        <rdfs:subClassOf rdf:resource="#Weapon_by_Function"/>
+        <rdfs:comment rdf:datatype="&xsd;string"
+            >These weapons are designed to start fires using materials such as petrol, white phosphorus, thermite, napalm or chlorine trifluoride. The Molotov Cocktail is a classic incendiary device often used by rioters, which consists of a glass bottle containing petrol fuel with as a burning cloth wick held in place by the bottle&#39;s stopper.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.com/net/conflict#Infantry_Support_Weapon -->
+
+    <owl:Class rdf:about="#Infantry_Support_Weapon">
+        <rdfs:subClassOf rdf:resource="#Weapon_by_Target"/>
+        <rdfs:comment rdf:datatype="&xsd;string"
+            >These weapons are designed to attack any threats to infantry units, and include devices such as anti-tank rockets, grenade launchers, recoilless rifles and infantry mortars.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.com/net/conflict#Infantry_support_weapon -->
+
+    <owl:Class rdf:about="#Infantry_support_weapon">
+        <rdfs:subClassOf rdf:resource="#Weapon_by_User"/>
+        <rdfs:comment rdf:datatype="&xsd;string"
+            >This style of weapon requires at least 2 individuals to operate it; for example, one person to load the weapon and another to fire it. These weapons are one that are used by members of the infantry, such as recoilless rifles, infantry mortars, light and medium machine guns, rocket-propelled grenade launchers, and large shoulder-launched missile weapons.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.com/net/conflict#Kleinflammenwerfer -->
+
+    <owl:Class rdf:about="#Kleinflammenwerfer">
+        <rdfs:subClassOf rdf:resource="#Flamethrower"/>
+        <rdfs:comment rdf:datatype="&xsd;string"
+            >A type of German flamethrower: &quot;The smaller, lighter Flammenwerfer (the Kleinflammenwerfer) was designed for portable use, carried by a single man.  Using pressurised air and carbon dioxide or nitrogen it belched forth a stream of burning oil for as much as 18 metres.&quot;
+http://www.firstworldwar.com/weaponry/flamethrowers.htm</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.com/net/conflict#Land_Battle -->
+
+    <owl:Class rdf:about="#Land_Battle">
+        <rdfs:subClassOf rdf:resource="#Battle"/>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.com/net/conflict#Lebel -->
+
+    <owl:Class rdf:about="#Lebel">
+        <rdfs:subClassOf rdf:resource="#Bolt_action_Rifle"/>
+        <rdfs:comment rdf:datatype="&xsd;string"
+            >The Lebel was the main rifle used by the French Army during the First World War.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.com/net/conflict#Lee-Enfield -->
+
+    <owl:Class rdf:about="#Lee-Enfield">
+        <rdfs:subClassOf rdf:resource="#Bolt_action_Rifle"/>
+        <rdfs:comment rdf:datatype="&xsd;string"
+            >The Lee-Enfield was the main rifle used by the British Army during the First World War.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.com/net/conflict#Lewis_Gun -->
+
+    <owl:Class rdf:about="#Lewis_Gun">
+        <rdfs:subClassOf rdf:resource="#MachineGun"/>
+        <rdfs:comment rdf:datatype="&xsd;string"
+            >The Lewis Gun, a light machine gun, was developed in the United States in 1911. At 12 kg it was far lighter than the Vickers Machine-Gun and in 1915 the British Army decided to purchase the gun for use on the Western Front. Another advantage of the Lewis is that six of these guns could be made in the time taken to produce one Vickers gun. Although too heavy for efficient portable use, it became the standard support weapon for the British infantry during the First World War.
+[http://www.spartacus.schoolnet.co.uk/FWWlewis.htm]</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.com/net/conflict#Lifeboat -->
+
+    <owl:Class rdf:about="#Lifeboat">
+        <rdfs:subClassOf rdf:resource="#Boat"/>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.com/net/conflict#Light_Cruiser -->
+
+    <owl:Class rdf:about="#Light_Cruiser">
+        <rdfs:subClassOf rdf:resource="#Cruiser"/>
+        <rdfs:comment rdf:datatype="&rdf;XMLLiteral"
+            >&quot;The light armoured cruiser succeeded the protected cruiser; improvements in machinery and armour rendering the latter obsolete. &quot;</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.com/net/conflict#MachineGun -->
+
+    <owl:Class rdf:about="#MachineGun">
+        <rdfs:subClassOf rdf:resource="#Infantry_support_weapon"/>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.com/net/conflict#Machine_Gun_Post -->
+
+    <owl:Class rdf:about="#Machine_Gun_Post">
+        <rdfs:subClassOf rdf:resource="#Military_Post"/>
+        <rdfs:comment rdf:datatype="&xsd;string"
+            >TODO
+[http://www.spartacus.schoolnet.co.uk/FWWposts.htm]
+&quot;Pillboxes or blockhouses were miniature forts developed by the German army to give their trench lines extra strength. The term pillbox was used by the British soldiers because the reinforced concrete construction was the same shape as the boxes in which chemists supplied tablets during the war. Pillboxes generally measured 30 ft. along the front and were about 10 ft. wide. 
+
+German machine-gunners were often housed inside pillboxes. With very thick walls, they were difficult to destroy by artillery barrages. It was possible to fire through narrow slits in the wall, however, during an enemy offensive, the machine-guns were placed either on the top, or at the side of the pillbox. 
+
+The British built very few machine-gun pillboxes. The official reason for not building them was that &quot;such works were not worth the labour or the cost&quot;. Probably the real reason was that the High Command feared that if the troops had such solid defences they would be less offensively-minded. 
+
+Both sides also used smaller machine-gun posts. The British tended to use Bergmann machine-gun rather than Maxims in these posts. Germans built machine-gun posts in large numbers all along the line at Ypres and Messines&quot;</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.com/net/conflict#Mannlicher-Carcano -->
+
+    <owl:Class rdf:about="#Mannlicher-Carcano">
+        <rdfs:subClassOf rdf:resource="#Bolt_action_Rifle"/>
+        <rdfs:comment rdf:datatype="&xsd;string"
+            >The main rifle used by the Italian Army during the First World War.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.com/net/conflict#Mannlicher_M95 -->
+
+    <owl:Class rdf:about="#Mannlicher_M95">
+        <rdfs:subClassOf rdf:resource="#Bolt_action_Rifle"/>
+        <rdfs:comment rdf:datatype="&xsd;string"
+            >The main rifle used by the Austrian Army during the First World War.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.com/net/conflict#Marriage -->
+
+    <owl:Class rdf:about="#Marriage">
+        <rdfs:subClassOf rdf:resource="#Event"/>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.com/net/conflict#Maschinengewehr -->
+
+    <owl:Class rdf:about="#Maschinengewehr">
+        <rdfs:subClassOf rdf:resource="#MachineGun"/>
+        <rdfs:comment rdf:datatype="&xsd;string"
+            >A machine gun in use by the German army</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.com/net/conflict#Mauser_Gewehr -->
+
+    <owl:Class rdf:about="#Mauser_Gewehr">
+        <rdfs:subClassOf rdf:resource="#Bolt_action_Rifle"/>
+        <rdfs:comment rdf:datatype="&xsd;string"
+            >The main rifle used by the Austro-Hungarian Army during the First World War.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.com/net/conflict#Maxim_Gun -->
+
+    <owl:Class rdf:about="#Maxim_Gun">
+        <rdfs:subClassOf rdf:resource="#MachineGun"/>
+        <rdfs:comment rdf:datatype="&xsd;string"
+            >In 1884 Hiram Maxim invented the world&#39;s first automatic portable machine-gun. Maxim used the energy of each bullet&#39;s recoil force to eject the spent cartridge, insert the next and fire it. The machine-gun would therefore fire until the entire belt of bullets was used up. 
+The Maxim Gun was adopted by the British Army in 1889. It was first used by Britain`s colonial forces in the Matabele war in 1893-94. In one engagement, fifty police of the Rhodesian character company fought off 5,000 Matabele warriors with just four Maxim guns. The design was taken over by the Vickers Company and was used by the army for over seventy years.
+
+The Maxim Gun could fire 400-600 rounds of small-calibre ammunition per minute. Each gun had the firepower of about 100 rifles. 
+[http://www.spartacus.schoolnet.co.uk/FWWmachineguns.htm]</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.com/net/conflict#Measurement -->
+
+    <owl:Class rdf:about="#Measurement">
+        <rdfs:subClassOf rdf:resource="#Recording"/>
+        <rdfs:comment rdf:datatype="&rdf;XMLLiteral"
+            >quantifiable recording events // or maybe a scientific measurement where some piece of technology was used
+
+
+Problem: when recording on a ship or on a lighthouse, we need to work out who is doing the recording, what is the devide used, and what role is played by lighthouse or ship!</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.com/net/conflict#Measuring_Device -->
+
+    <owl:Class rdf:about="#Measuring_Device">
+        <rdfs:subClassOf rdf:resource="#Single_Thing"/>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.com/net/conflict#Melee_Weapon -->
+
+    <owl:Class rdf:about="#Melee_Weapon">
+        <rdfs:subClassOf rdf:resource="#Weapon_by_Function"/>
+        <rdfs:comment rdf:datatype="&xsd;string"
+            >A melee weapon is one that operates as a physical extension of the user&#39;s body and does not involve a projectile. Taken from the French word for &#39;mixed&#39; (referring to groups of fighters in close combat) a melee weapon is in contact with both the user and the target when it is in use. Examples include edged weapons such as knives, axes, swords and thrusting spears, as well as blunt weapons, such as clubs, maces and mauls.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.com/net/conflict#Merchant_Ship -->
+
+    <owl:Class rdf:about="#Merchant_Ship">
+        <rdfs:subClassOf rdf:resource="#Ship"/>
+        <rdfs:comment rdf:datatype="&rdf;XMLLiteral"
+            >any sort of ship (eg a cargo ship or freighter) or vessel that carries cargo, goods, and materials from one port to another.
+
+Note that (from Wikipedia) &quot;In wartime, the distinction between warships and merchant ships is often blurred. In war, merchant ships are often armed and used as auxiliary warships, such as the Q-ships of the First World War and the armed merchant cruisers of the Second World War.&quot;
+
+TIP: we&#39;ll have to think about adding an &#39;AUXILIARY SHIP class..</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.com/net/conflict#Merchants_Company -->
+
+    <owl:Class rdf:about="#Merchants_Company">
+        <rdfs:subClassOf rdf:resource="#Civil_organization"/>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.com/net/conflict#Military_Base -->
+
+    <owl:Class rdf:about="#Military_Base">
+        <rdfs:subClassOf rdf:resource="#Single_Thing"/>
+        <rdfs:comment rdf:datatype="&rdf;XMLLiteral"
+            >&quot;A military base is a facility directly owned and operated by and/or for the military or one of its branches that shelters military equipment and personnel, and facilitates training and operations.[citation needed] In general, a military base provides accommodations for one or more units, but it may also be used as a command center, a training ground, or a proving ground.&quot;</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.com/net/conflict#Military_Motor_Bus -->
+
+    <owl:Class rdf:about="#Military_Motor_Bus">
+        <rdfs:subClassOf rdf:resource="#Military_vehicle"/>
+        <rdfs:comment rdf:datatype="&xsd;string"
+            >In 1908 the British Army began testing the feasibility of using commercial motor buses as troop transport in the event of an emergency. The manoeuvres using twenty-four buses were very successful and it was decided that they would be used in future wars. 
+
+In August 1914, Winston Churchill, the First Lord of the Admiralty, asked the London General Omnibus Company to provide buses for the use of moving troops in France. The company asked for volunteers from among their conductors and drivers and eventually 75 crews were chosen and then recruited into the Royal Marines. In September 1914, 75 Diamler buses and crews were shipped to France. Some of the buses were captured by the Germans but the rest remained in France until the end of the war in November, 1918. 
+[http://www.spartacus.schoolnet.co.uk/FWWbus.htm]</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.com/net/conflict#Military_Operation -->
+
+    <owl:Class rdf:about="#Military_Operation">
+        <rdfs:subClassOf rdf:resource="#Event"/>
+        <rdfs:comment rdf:datatype="&rdf;XMLLiteral"
+            >Military operation is the coordinated military actions of a state in response to a developing situation. These actions are designed as a military plan to resolve the situation in the state&#39;s favor. Operations may be of combat or non-combat types, and are referred to by a code name for the purpose of security.
+
+All the military operations can have as subject any of the miliraty forces.
+
+TIP: has code name; add a shortcut for specifying the force involved in the operation
+
+LIST OF MIL.OP. in WW1: http://en.wikipedia.org/wiki/List_of_military_operations#World_War_I</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.com/net/conflict#Military_Plan -->
+
+    <owl:Class rdf:about="#Military_Plan">
+        <rdfs:subClassOf rdf:resource="#Plan"/>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.com/net/conflict#Military_Post -->
+
+    <owl:Class rdf:about="#Military_Post">
+        <rdfs:subClassOf rdf:resource="#Single_Thing"/>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.com/net/conflict#Military_Tactic -->
+
+    <owl:Class rdf:about="#Military_Tactic">
+        <rdfs:subClassOf rdf:resource="#Abstract"/>
+        <rdfs:comment rdf:datatype="&rdf;XMLLiteral"
+            >&quot;the techniques for using weapons or military units in combination for engaging and defeating an enemy in battle.&quot;
+
+EG: http://en.wikipedia.org/wiki/List_of_military_tactics</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.com/net/conflict#Military_organization -->
+
+    <owl:Class rdf:about="#Military_organization">
+        <rdfs:subClassOf rdf:resource="#Organization"/>
+        <rdfs:comment rdf:datatype="&rdf;XMLLiteral"
+            >A country&#39;s military forces, esp. its army, navy, and air force.
+
+TODO: belongs to a nation, usually..</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.com/net/conflict#Military_vehicle -->
+
+    <owl:Class rdf:about="#Military_vehicle">
+        <rdfs:subClassOf rdf:resource="#Single_Thing"/>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.com/net/conflict#Missile -->
+
+    <owl:Class rdf:about="#Missile">
+        <rdfs:subClassOf rdf:resource="#Weapon_by_Function"/>
+        <rdfs:comment rdf:datatype="&xsd;string"
+            >These weapons consist of a projectile that is guided to its target after launch by jet engines or rockets. The missile&#39;s primary destructive power is normally provided by one or more explosive warheads, although other weapon types may also be used.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.com/net/conflict#Moisin-Nagant -->
+
+    <owl:Class rdf:about="#Moisin-Nagant">
+        <rdfs:subClassOf rdf:resource="#Bolt_action_Rifle"/>
+        <rdfs:comment rdf:datatype="&xsd;string"
+            >The main rifle used by the Russian Army during the First World War.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.com/net/conflict#Monitor -->
+
+    <owl:Class rdf:about="#Monitor">
+        <rdfs:subClassOf rdf:resource="#Warship"/>
+        <rdfs:comment rdf:datatype="&rdf;XMLLiteral"
+            >&quot;A monitor was a class of relatively small warship which was neither fast nor strongly armoured but carried disproportionately large guns. They were used by some navies from the 1860s until the end of World War II, and saw their final use by the United States Navy during the Vietnam War
+&quot;</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.com/net/conflict#Mountain_weapon -->
+
+    <owl:Class rdf:about="#Mountain_weapon">
+        <rdfs:subClassOf rdf:resource="#Weapon_by_User"/>
+        <rdfs:comment rdf:datatype="&xsd;string"
+            >Mountain weapons are specially designed artillery pieces for use in mountain warfare. They are capable of being broken down into smaller pieces so that they may be more easily transported over difficult terrain. However, they are now largely obsolete, and have been replaced by wire-guided missiles and mortars.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.com/net/conflict#Museum_collection -->
+
+    <owl:Class rdf:about="#Museum_collection">
+        <rdfs:subClassOf rdf:resource="#Abstract"/>
+        <rdfs:comment rdf:datatype="&rdf;XMLLiteral"
+            >An arbitrary organization of items; eg: a collection at the National Archives. The collection is entirely abstract.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.com/net/conflict#Naval_Base -->
+
+    <owl:Class rdf:about="#Naval_Base">
+        <rdfs:subClassOf rdf:resource="#Military_Base"/>
+        <rdfs:comment rdf:datatype="&rdf;XMLLiteral"
+            >&quot;A naval base (military port) is a military base, where warships and naval ships are deployed when they have no mission at sea or want to restock. Usually ships may also perform some minor repairs.&quot;</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.com/net/conflict#Naval_Battle -->
+
+    <owl:Class rdf:about="#Naval_Battle">
+        <rdfs:subClassOf rdf:resource="#Battle"/>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.com/net/conflict#Naval_Fleet -->
+
+    <owl:Class rdf:about="#Naval_Fleet">
+        <rdfs:subClassOf rdf:resource="#Collection"/>
+        <rdfs:comment rdf:datatype="&rdf;XMLLiteral"
+            >&quot;the largest group of naval vessels under one commander, organized for specific tactical or other purposes : an invasion fleet.&quot; New Oxford American Dictionary</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.com/net/conflict#Naval_Offensive -->
+
+    <owl:Class rdf:about="#Naval_Offensive">
+        <rdfs:subClassOf rdf:resource="#Offensive"/>
+        <rdfs:comment rdf:datatype="&rdf;XMLLiteral"
+            >A naval offensive is the aggressive deployment of naval forces during a military campaign to strategically, operationally or tactically provide secure use of shipping routes[1], or coastal regions for friendly shipping, or deny them to enemy shipping.
+
+TIPS: involves ships; aimed at something</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.com/net/conflict#Naval_Service_Record -->
+
+    <owl:Class rdf:about="#Naval_Service_Record">
+        <rdfs:subClassOf rdf:resource="#Work"/>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.com/net/conflict#Naval_weapon -->
+
+    <owl:Class rdf:about="#Naval_weapon">
+        <rdfs:subClassOf rdf:resource="#Weapon_by_User"/>
+        <rdfs:comment rdf:datatype="&xsd;string"
+            >Naval weapons are those that are mounted on ships or submarines, and include ship-based missile launchers, torpedoes, anti-submarine mortars and anti-aircraft guns.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.com/net/conflict#Navy -->
+
+    <owl:Class rdf:about="#Navy">
+        <rdfs:subClassOf rdf:resource="#Military_organization"/>
+        <rdfs:comment rdf:datatype="&rdf;XMLLiteral"
+            >The branch of a nation&#39;s armed services that conducts military operations at sea.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.com/net/conflict#Non-Lethal_Weapon -->
+
+    <owl:Class rdf:about="#Non-Lethal_Weapon">
+        <rdfs:subClassOf rdf:resource="#Weapon_by_Function"/>
+        <rdfs:comment rdf:datatype="&xsd;string"
+            >This group of weapons includes those that are designed to subdue the without killing, and may include devices such as rubber bullets, stun grenades, water cannon, tasers, sedative darts, tear gas and pepper spray.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.com/net/conflict#Non_Combat_Operation -->
+
+    <owl:Class rdf:about="#Non_Combat_Operation">
+        <rdfs:subClassOf rdf:resource="#Military_Operation"/>
+        <rdfs:comment rdf:datatype="&rdf;XMLLiteral"
+            >&quot;Military Operations Other Than War (MOOTW) focus on deterring war, resolving conflict, promoting peace, and supporting civil authorities in response to domestic crises. The phrase and acronym has been popularized by the United States military in the 1990s, but it has since fallen out of use. The UK military has crafted an equivalent or alternate term &quot;peace support operations&quot; (PSO). Both MOOTW and PSO encompass peacekeeping, peacemaking, peace enforcement and peace building&quot;
+
+TIP: find out whether any of these apply to WW1</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.com/net/conflict#Offensive -->
+
+    <owl:Class rdf:about="#Offensive">
+        <rdfs:subClassOf rdf:resource="#Combat_Operation"/>
+        <rdfs:comment rdf:datatype="&rdf;XMLLiteral"
+            >An offensive is a military operation that seeks through aggressive projection of armed force to occupy territory, gain an objective or achieve some larger strategic, operational or tactical goal. Another term for an offensive often used by the media is &#39;invasion&#39;, or the more general &#39;attack&#39;</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.com/net/conflict#Operational_Battle -->
+
+    <owl:Class rdf:about="#Operational_Battle">
+        <rdfs:subClassOf rdf:resource="#Combat_Operation"/>
+        <rdfs:comment rdf:datatype="&rdf;XMLLiteral"
+            >&quot;Operational battle: this describes a subset of a campaign that will have specific military goals and geographic objectives, as well as clearly defined use of forces such as the Battle of Gallipoli, which operationally was a combined arms operation originally known as the &quot;Dardanelles landings&quot; as part of the Dardanelles Campaign, where about 480,000 Allied troops took part.&quot;</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.com/net/conflict#Organization -->
+
+    <owl:Class rdf:about="#Organization">
+        <rdfs:subClassOf rdf:resource="#Agent"/>
+        <rdfs:comment rdf:datatype="&rdf;XMLLiteral"
+            >Eg The National Archives; the Royal Navy.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.com/net/conflict#Ownership -->
+
+    <owl:Class rdf:about="#Ownership">
+        <rdfs:subClassOf rdf:resource="#State"/>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.com/net/conflict#Person -->
+
+    <owl:Class rdf:about="#Person">
+        <rdfs:subClassOf rdf:resource="#Agent"/>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.com/net/conflict#Personal_weapon -->
+
+    <owl:Class rdf:about="#Personal_weapon">
+        <rdfs:subClassOf rdf:resource="#Weapon_by_User"/>
+        <rdfs:comment rdf:datatype="&xsd;string"
+            >These weapons are designed so that they can be carried and used by a single person, and are used by the military, police, and for personal defence. The term &#39;small arms&#39; is generally limited to firearms such as assault rifles, sniper rifles, pistols, revolvers, submachine guns, squad automatic weapons and light machine guns.
+
+However, personal weapons can also include all types of weapon that can be wielded by one person, such as swords, knives, clubs, crossbows and bayonets.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.com/net/conflict#Physical -->
+
+    <owl:Class rdf:about="#Physical">
+        <rdfs:subClassOf rdf:resource="&owl;Thing"/>
+        <rdfs:comment
+            >The physical (material, in the common-sense meaning of the term) entities in our domain.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.com/net/conflict#Pistol -->
+
+    <owl:Class rdf:about="#Pistol">
+        <rdfs:subClassOf rdf:resource="#Personal_weapon"/>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.com/net/conflict#Plan -->
+
+    <owl:Class rdf:about="#Plan">
+        <rdfs:subClassOf rdf:resource="#Work"/>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.com/net/conflict#Pre-dreadnoughts_Battleship -->
+
+    <owl:Class rdf:about="#Pre-dreadnoughts_Battleship">
+        <rdfs:subClassOf rdf:resource="#Battleship"/>
+        <rdfs:comment rdf:datatype="&rdf;XMLLiteral"
+            >&quot;Pre-dreadnought battleship is the general term for all of the types of sea going battleships built between the mid-1890s and 1905. Pre-dreadnoughts replaced the ironclad warships of the 1870s and 1880s. Built from steel, and protected by hardened steel armour, pre-dreadnought battleships carried a main battery of very heavy guns in barbettes (open or with armored gunhouses) supported by one or more secondary batteries of lighter weapons. They were powered by coal-fuelled triple-expansion steam engines.&quot;</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.com/net/conflict#Profession -->
+
+    <owl:Class rdf:about="#Profession">
+        <rdfs:subClassOf rdf:resource="#Abstract"/>
+        <rdfs:comment rdf:datatype="&rdf;XMLLiteral"
+            >Just a typology of professions relevant to sails</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.com/net/conflict#Protected_Cruiser -->
+
+    <owl:Class rdf:about="#Protected_Cruiser">
+        <rdfs:subClassOf rdf:resource="#Cruiser"/>
+        <rdfs:comment rdf:datatype="&rdf;XMLLiteral"
+            >&quot;Protected cruisers were so-called because their vital machinery spaces were protected by an armoured deck and the arrangement of coal bunkers.&quot;</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.com/net/conflict#Pulemyot_Maxima -->
+
+    <owl:Class rdf:about="#Pulemyot_Maxima">
+        <rdfs:subClassOf rdf:resource="#MachineGun"/>
+        <rdfs:comment rdf:datatype="&xsd;string"
+            >A machine gun in use by the Russian army</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.com/net/conflict#Q-Ship -->
+
+    <owl:Class rdf:about="#Q-Ship">
+        <rdfs:subClassOf rdf:resource="#Merchant_Ship"/>
+        <rdfs:subClassOf rdf:resource="#Warship"/>
+        <rdfs:comment rdf:datatype="&rdf;XMLLiteral"
+            >A merchant ship with concealed weapons, used by the British in World War I and World War II in an attempt to destroy submarines.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.com/net/conflict#Railway_weapon -->
+
+    <owl:Class rdf:about="#Railway_weapon">
+        <rdfs:subClassOf rdf:resource="#Weapon_by_User"/>
+        <rdfs:comment rdf:datatype="&xsd;string"
+            >These large artillery devices are designed to be mounted on railway cars, and often formed part of an armoured train. The first use of railway weapons dates back to the American Civil War, and they were extensively used in the First and Second World War. However, the rise of the aeroplane effectively ended the usefulness of the railway gun, and they were replaced by systems that delivered the payload by aircraft, rocket or missile.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.com/net/conflict#Ranged_Weapon -->
+
+    <owl:Class rdf:about="#Ranged_Weapon">
+        <rdfs:subClassOf rdf:resource="#Weapon_by_Function"/>
+        <rdfs:comment rdf:datatype="&xsd;string"
+            >A ranged weapon one that consists of a projectile, or which launches a projectile, and so targets a distant object or person. Early ranged weapons include slings, darts, catapults, crossbows, boomerangs, trebuchets and ballistas, whilst modern examples include cannons, mortars, grenade launchers and cruise missiles.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.com/net/conflict#Rank -->
+
+    <owl:Class rdf:about="#Rank">
+        <rdfs:subClassOf rdf:resource="#Abstract"/>
+        <rdfs:comment rdf:datatype="&rdf;XMLLiteral"
+            >= military rank; status within organization</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.com/net/conflict#RankAssignment_Report -->
+
+    <owl:Class rdf:about="#RankAssignment_Report">
+        <rdfs:subClassOf rdf:resource="#Report"/>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.com/net/conflict#Recording -->
+
+    <owl:Class rdf:about="#Recording">
+        <rdfs:subClassOf rdf:resource="#Event"/>
+        <rdfs:comment rdf:datatype="&rdf;XMLLiteral"
+            >Recordings are tricky: in our scenario it&#39;s important to have a class&#39; recording&#39; because we want to capture the difference between a piece of information as recorded and as happened / lived.  In the log books and service records, lots of events are recorded but often we are not sure how precise their correspondance with reality is. 
+
+This duality generates a further problem: when should we also instantiate the actual event and when not (eg being on ship, vs the event of an official recording that someone was on a ship) ?</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.com/net/conflict#Report -->
+
+    <owl:Class rdf:about="#Report">
+        <rdfs:subClassOf rdf:resource="#Recording"/>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.com/net/conflict#Rocket -->
+
+    <owl:Class rdf:about="#Rocket">
+        <rdfs:subClassOf rdf:resource="#Weapon_by_Function"/>
+        <rdfs:comment rdf:datatype="&xsd;string"
+            >A rocket is a weapon that uses a chemical propellant to accelerate a projectile; for example a warhead. A rocket and its payload are generally referred to together as a missile</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.com/net/conflict#Scout_Cruiser -->
+
+    <owl:Class rdf:about="#Scout_Cruiser">
+        <rdfs:subClassOf rdf:resource="#Cruiser"/>
+        <rdfs:comment rdf:datatype="&rdf;XMLLiteral"
+            >&quot;The scout cruiser was a smaller, faster, more lightly armed and armoured cruiser than the protected cruiser, intended for fleet scouting duties and acting as a flotilla leader.&quot;</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.com/net/conflict#Seaplane_Carrier -->
+
+    <owl:Class rdf:about="#Seaplane_Carrier">
+        <rdfs:subClassOf rdf:resource="#Warship"/>
+        <rdfs:comment rdf:datatype="&rdf;XMLLiteral"
+            >&quot;A seaplane tender (or seaplane carrier) is a ship that provides facilities for operating seaplanes. These ships were the first aircraft carriers and appeared just before the First World War.&quot;</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.com/net/conflict#Semi-dreadnoughts_Battleship -->
+
+    <owl:Class rdf:about="#Semi-dreadnoughts_Battleship">
+        <rdfs:subClassOf rdf:resource="#Battleship"/>
+        <rdfs:comment rdf:datatype="&rdf;XMLLiteral"
+            >&quot;The semi-dreadnought was a transitional type of battleship offered as an alternative to the all-big-gun dreadnoughts. Where first-generation dreadnoughts dropped the secondary guns and instead carried five or more pairs of 12&quot; guns, the semi-dreadnought generally retained the classic four 12&quot; guns in twin turrets at the ends, augmented with a very heavy secondary battery sited along the sides.&quot;
+
+http://www.cityofart.net/bship/semi_dreds.html</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.com/net/conflict#ServiceRecord_Image -->
+
+    <owl:Class rdf:about="#ServiceRecord_Image">
+        <rdfs:subClassOf rdf:resource="#Image"/>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.com/net/conflict#ServiceRecord_XML_transcription -->
+
+    <owl:Class rdf:about="#ServiceRecord_XML_transcription">
+        <rdfs:subClassOf rdf:resource="#XMLdocument"/>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.com/net/conflict#Ship -->
+
+    <owl:Class rdf:about="#Ship">
+        <rdfs:subClassOf rdf:resource="#Watercraft"/>
+        <rdfs:comment rdf:datatype="&rdf;XMLLiteral"
+            >Ships typically are large ocean-going vessels.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.com/net/conflict#ShipAssignment_Report -->
+
+    <owl:Class rdf:about="#ShipAssignment_Report">
+        <rdfs:subClassOf rdf:resource="#Report"/>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.com/net/conflict#ShipLog_Image -->
+
+    <owl:Class rdf:about="#ShipLog_Image">
+        <rdfs:subClassOf rdf:resource="#Image"/>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.com/net/conflict#ShipLog_Record -->
+
+    <owl:Class rdf:about="#ShipLog_Record">
+        <rdfs:subClassOf rdf:resource="#Work"/>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.com/net/conflict#ShipLog_XML_transcription -->
+
+    <owl:Class rdf:about="#ShipLog_XML_transcription">
+        <rdfs:subClassOf rdf:resource="#XMLdocument"/>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.com/net/conflict#Ship_commission -->
+
+    <owl:Class rdf:about="#Ship_commission">
+        <rdfs:subClassOf rdf:resource="#Commission"/>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.com/net/conflict#Ship_encounter -->
+
+    <owl:Class rdf:about="#Ship_encounter">
+        <rdfs:subClassOf rdf:resource="#Encounter_Report"/>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.com/net/conflict#Ship_journey -->
+
+    <owl:Class rdf:about="#Ship_journey">
+        <rdfs:subClassOf rdf:resource="#Event"/>
+        <rdfs:comment rdf:datatype="&xsd;string"
+            >from/to/ dates / disjoint with ship stationed</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.com/net/conflict#Ship_ownership -->
+
+    <owl:Class rdf:about="#Ship_ownership">
+        <rdfs:subClassOf rdf:resource="#Ownership"/>
+        <rdfs:comment rdf:datatype="&rdf;XMLLiteral"
+            >todo: an owning that has a &#39;ship&#39; as the item owned&#39; eg the Royal Navy owned a ship for its all lifetime</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.com/net/conflict#Ship_stationed -->
+
+    <owl:Class rdf:about="#Ship_stationed">
+        <rdfs:subClassOf rdf:resource="#State"/>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.com/net/conflict#Ship_type -->
+
+    <owl:Class rdf:about="#Ship_type">
+        <rdfs:subClassOf rdf:resource="#Abstract"/>
+        <rdfs:comment rdf:datatype="&rdf;XMLLiteral"
+            >Eg store ship, depot ship</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.com/net/conflict#Shipwreck -->
+
+    <owl:Class rdf:about="#Shipwreck">
+        <rdfs:subClassOf rdf:resource="#Event"/>
+        <rdfs:comment rdf:datatype="&rdf;XMLLiteral"
+            >The destruction of a ship at sea by sinking or breaking up, e.g., in a storm or after running aground.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.com/net/conflict#Single_Thing -->
+
+    <owl:Class rdf:about="#Single_Thing">
+        <rdfs:subClassOf rdf:resource="#Physical"/>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.com/net/conflict#Springfield -->
+
+    <owl:Class rdf:about="#Springfield">
+        <rdfs:subClassOf rdf:resource="#Bolt_action_Rifle"/>
+        <rdfs:comment rdf:datatype="&xsd;string"
+            >The main rifle used by the American Army during the First World War.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.com/net/conflict#State -->
+
+    <owl:Class rdf:about="#State">
+        <rdfs:subClassOf rdf:resource="#Temporal_Entity"/>
+        <rdfs:comment rdf:datatype="&rdf;XMLLiteral"
+            >A state is a temporal entity that doesn&#39;t involve any change or activity</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.com/net/conflict#Storm_encounter -->
+
+    <owl:Class rdf:about="#Storm_encounter">
+        <rdfs:subClassOf rdf:resource="#Encounter_Report"/>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.com/net/conflict#Submarine -->
+
+    <owl:Class rdf:about="#Submarine">
+        <rdfs:subClassOf rdf:resource="#Warship"/>
+        <rdfs:comment rdf:datatype="&rdf;XMLLiteral"
+            >&quot;a warship with a streamlined hull designed to operate completely submerged in the sea for long periods, equipped with an internal store of air and a periscope and typically armed with torpedoes and/or missiles.&quot;</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.com/net/conflict#Suicide_Weapon -->
+
+    <owl:Class rdf:about="#Suicide_Weapon">
+        <rdfs:subClassOf rdf:resource="#Weapon_by_Function"/>
+        <rdfs:comment rdf:datatype="&xsd;string"
+            >A suicide weapon is any type of weapon that is specially designed for a suicide attack, and so exploits the willingness of the operator to not survive the attack. It is typically based on explosives; for example, bombs strapped to the person&#39;s body (often covered with nails, screws, or other items intended to act as fragments) and detonated in the target area. In World War II, Kamikaze pilots would try to crash their aircraft (typically laden with bombs, explosives, full fuel tanks and torpedoes) into Allied targets</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.com/net/conflict#Tank -->
+
+    <owl:Class rdf:about="#Tank">
+        <rdfs:subClassOf rdf:resource="#Vehicle_weapon"/>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.com/net/conflict#Temporal_Entity -->
+
+    <owl:Class rdf:about="#Temporal_Entity">
+        <rdfs:subClassOf rdf:resource="&owl;Thing"/>
+        <rdfs:comment rdf:datatype="&rdf;XMLLiteral"
+            >A temporal entity is a class representing things that have a time span</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.com/net/conflict#Theatre_operation -->
+
+    <owl:Class rdf:about="#Theatre_operation">
+        <rdfs:subClassOf rdf:resource="#Combat_Operation"/>
+        <rdfs:comment rdf:datatype="&rdf;XMLLiteral"
+            >&quot;Theatre: this describes an operation over a large, often continental area of operation and represents a strategic national commitment to the conflict such as Operation Barbarossa, with general goals that encompass areas of consideration outside of the military such as the economic and political impacts.&quot;</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.com/net/conflict#Time -->
+
+    <owl:Class rdf:about="#Time">
+        <rdfs:subClassOf rdf:resource="&owl;Thing"/>
+        <rdfs:comment rdf:datatype="&rdf;XMLLiteral"
+            >Time is analogous to time in CIDOC-CMR: it&#39;s an abstract representation of a time reference (a point in time). A time instance can be reresented in language differently, according to specific time-appellations styles.
+
+TIP: check with CIDOC: are time-spans represented elsewhere?</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.com/net/conflict#Torpedo -->
+
+    <owl:Class rdf:about="#Torpedo">
+        <rdfs:subClassOf rdf:resource="#Naval_weapon"/>
+        <rdfs:subClassOf rdf:resource="#Watercraft"/>
+        <rdfs:comment rdf:datatype="&rdf;XMLLiteral"
+            >A self-propelled explosive projectile weapon, launched above or below the water surface, propelled underwater towards a target, and designed to detonate either on contact with it or in proximity to it.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.com/net/conflict#Torpedo-Boat -->
+
+    <owl:Class rdf:about="#Torpedo-Boat">
+        <rdfs:subClassOf rdf:resource="#Warship"/>
+        <rdfs:comment rdf:datatype="&rdf;XMLLiteral"
+            >A torpedo boat is a relatively small and fast naval vessel designed to carry torpedoes into battle.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.com/net/conflict#Training_Course -->
+
+    <owl:Class rdf:about="#Training_Course">
+        <rdfs:subClassOf rdf:resource="#Abstract"/>
+        <rdfs:comment rdf:datatype="&rdf;XMLLiteral"
+            >The abstract typology that characterizes the contents of a course a person takes part in: eg Senior Officers Technical Course contents.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.com/net/conflict#Trojan_Weapon -->
+
+    <owl:Class rdf:about="#Trojan_Weapon">
+        <rdfs:subClassOf rdf:resource="#Weapon_by_Function"/>
+        <rdfs:comment rdf:datatype="&xsd;string"
+            >This type of weapon appears to be a gift at face value, but it&#39;s actual design is to harm the recipient in some way. The most famous example of this type is the Trojan Horse, which enabled the Greeks to finally enter the city of Troy after a 10-year siege.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.com/net/conflict#U-Boat -->
+
+    <owl:Class rdf:about="#U-Boat">
+        <rdfs:subClassOf rdf:resource="#Submarine"/>
+        <rdfs:comment rdf:datatype="&rdf;XMLLiteral"
+            >A German submarine used in World War I or World War II.
+
+TIP: add property that the owner is German Navy</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.com/net/conflict#Vehicle_weapon -->
+
+    <owl:Class rdf:about="#Vehicle_weapon">
+        <rdfs:subClassOf rdf:resource="#Military_vehicle"/>
+        <rdfs:subClassOf rdf:resource="#Weapon_by_User"/>
+        <rdfs:comment rdf:datatype="&xsd;string"
+            >Vehicle weapons are designed to be mounted on any type of vehicle, and form part of the mounted armament of a military vehicle. Common varieties of this style of weapon include missile launchers and cannons.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.com/net/conflict#Vickers_Gun -->
+
+    <owl:Class rdf:about="#Vickers_Gun">
+        <rdfs:subClassOf rdf:resource="#MachineGun"/>
+        <rdfs:comment rdf:datatype="&xsd;string"
+            >In 1912 the British Army adopted the Vickers as its standard machine gun. Produced by the Vickers Company, it was a modified version of the Maxim Machine-Gun. The Vickers Gun used a 250 round fabric-belt magazine and had the reputation as a highly reliable weapon. 
+
+The .303 Vickers Gun could fire over 600 rounds per minute and had a range of 4,500 yards. Being water-cooled, it could fire continuously for long periods. There were usually six men in a Vickers gun team. In his book, With a Machine Gun to Cambrai, George Coppard, explained how the Vickers Gun Team worked. &quot;Number One was leader and fired the gun, while Number Two controlled the entry of ammo belts into the feed-block. Number Three maintained a supply of ammo to Number Two, and Number Four to Six were reserves and carriers, but all the members of the team were fully trained in handling the gun.&quot; 
+[http://www.spartacus.schoolnet.co.uk/FWWvickers.htm]</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.com/net/conflict#War -->
+
+    <owl:Class rdf:about="#War">
+        <rdfs:subClassOf rdf:resource="#Event"/>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.com/net/conflict#War_Declaration -->
+
+    <owl:Class rdf:about="#War_Declaration">
+        <rdfs:subClassOf rdf:resource="#Event"/>
+        <rdfs:comment rdf:datatype="&rdf;XMLLiteral"
+            >TIPS: It involves parties, dates and places.... &quot;Apart from one major fleet sortie on the declaration of war between Austria and Italy on the 23rd May 1915, and an aborted one in June 1918 when dreadnought &#39;Szent Istvan&#39; was lost, the Austrian heavy ships spent the entire war as a fleet-in-being within the Adriatic Sea, holding down a large portion of the Italian and French battle fleets as well as units of the Royal Navy. &quot;</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.com/net/conflict#Warship -->
+
+    <owl:Class rdf:about="#Warship">
+        <rdfs:subClassOf rdf:resource="#Ship"/>
+        <rdfs:comment rdf:datatype="&rdf;XMLLiteral"
+            >A ship equipped with weapons and designed to take part in warfare at sea; in particular, we refer here to ships that are designed to actively take part in combat actions (in opposition to auxiliary ships, that can be cargo ships re-purposed during a war).
+
+TIP: it usually belongs to Navy</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.com/net/conflict#Watercraft -->
+
+    <owl:Class rdf:about="#Watercraft">
+        <rdfs:subClassOf rdf:resource="#Single_Thing"/>
+        <rdfs:comment rdf:datatype="&rdf;XMLLiteral"
+            >A watercraft is a vessel or craft designed to move across or through water.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.com/net/conflict#Weapon -->
+
+    <owl:Class rdf:about="#Weapon">
+        <rdfs:subClassOf rdf:resource="#Single_Thing"/>
+        <rdfs:comment rdf:datatype="&xsd;string"
+            >A weapon is a tool used with the aim of causing damage or harm (either physical or mental) to living beings. In human society weapons are used to increase the efficacy and efficiency of tasks such as hunting, fighting, the committing of criminal acts, the preserving of law and order, and the waging of war. [http://en.wikipedia.org/wiki/Weapon]
+
+This is a first attempt for a list of weapons relevant to SAILS..... 
+It seems possible to classify weapons in three ways:
+1) by user: what person or unit uses the weapon
+2) by function: the construction of the weapon and principle of operation
+3) by target: the type of target the weapon is designed to attack</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.com/net/conflict#Weapon_by_Function -->
+
+    <owl:Class rdf:about="#Weapon_by_Function">
+        <rdfs:subClassOf rdf:resource="#Weapon"/>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.com/net/conflict#Weapon_by_Target -->
+
+    <owl:Class rdf:about="#Weapon_by_Target">
+        <rdfs:subClassOf rdf:resource="#Weapon"/>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.com/net/conflict#Weapon_by_User -->
+
+    <owl:Class rdf:about="#Weapon_by_User">
+        <rdfs:subClassOf rdf:resource="#Weapon"/>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.com/net/conflict#Weather_recording -->
+
+    <owl:Class rdf:about="#Weather_recording">
+        <rdfs:subClassOf rdf:resource="#Measurement"/>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.com/net/conflict#Weather_recording_document -->
+
+    <owl:Class rdf:about="#Weather_recording_document">
+        <rdfs:subClassOf rdf:resource="#Expression"/>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.com/net/conflict#Webley_MkIV -->
+
+    <owl:Class rdf:about="#Webley_MkIV">
+        <rdfs:subClassOf rdf:resource="#Pistol"/>
+        <rdfs:comment rdf:datatype="&xsd;string"
+            >All officers in the British Army carried pistols during the First World War. They were also issued to the military police, aircrew and operating personnel of tanks and armoured cars. Of those available, the British Army tended to prefer the Webley MkIV. Originally designed in 1887, but improved during the early stages of the war, the Webley was a strong heavy-calibre weapon. It has been estimated that over 300,000 Webley pistols were distributed to British officers during the war.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.com/net/conflict#Work -->
+
+    <owl:Class rdf:about="#Work">
+        <rdfs:subClassOf rdf:resource="#Abstract"/>
+        <rdfs:comment rdf:datatype="&rdf;XMLLiteral">FRBR work</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.com/net/conflict#XMLdocument -->
+
+    <owl:Class rdf:about="#XMLdocument">
+        <rdfs:subClassOf rdf:resource="#Expression"/>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.com/net/conflict#book -->
+
+    <owl:Class rdf:about="#book">
+        <rdfs:subClassOf rdf:resource="#Single_Thing"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.w3.org/2002/07/owl#Thing -->
+
+    <owl:Class rdf:about="&owl;Thing"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Individuals
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://purl.com/net/conflict#Austro-Hungarian_Navy -->
+
+    <owl:Thing rdf:about="#Austro-Hungarian_Navy">
+        <rdf:type rdf:resource="#Navy"/>
+    </owl:Thing>
+    
+
+
+    <!-- http://purl.com/net/conflict#French_Navy -->
+
+    <Navy rdf:about="#French_Navy">
+        <rdf:type rdf:resource="&owl;Thing"/>
+    </Navy>
+    
+
+
+    <!-- http://purl.com/net/conflict#Imperial_Japanese_Navy -->
+
+    <owl:Thing rdf:about="#Imperial_Japanese_Navy">
+        <rdf:type rdf:resource="#Navy"/>
+    </owl:Thing>
+    
+
+
+    <!-- http://purl.com/net/conflict#M&#234;l&#233;e_Weapon -->
+
+    <owl:Thing rdf:about="#M&#234;l&#233;e_Weapon">
+        <rdfs:comment rdf:datatype="&xsd;string"
+            >A melee weapon is one that operates as a physical extension of the user&#39;s body and does not involve a projectile. Taken from the French word for &#39;mixed&#39; (referring to groups of fighters in close combat) a melee weapon is in contact with both the user and the target when it is in use. Examples include edged weapons such as knives, axes, swords and thrusting spears, as well as blunt weapons, such as clubs, maces and mauls.</rdfs:comment>
+    </owl:Thing>
+    
+
+
+    <!-- http://purl.com/net/conflict#Royal_Hellenic_Navy -->
+
+    <Navy rdf:about="#Royal_Hellenic_Navy">
+        <rdf:type rdf:resource="&owl;Thing"/>
+    </Navy>
+    
+
+
+    <!-- http://purl.com/net/conflict#Royal_Navy -->
+
+    <owl:Thing rdf:about="#Royal_Navy">
+        <rdf:type rdf:resource="#Navy"/>
+        <rdfs:comment rdf:datatype="&rdf;XMLLiteral"
+            >The Navy of the United Kingdom</rdfs:comment>
+    </owl:Thing>
+    
+
+
+    <!-- http://purl.com/net/conflict#Turkish_Navy -->
+
+    <Navy rdf:about="#Turkish_Navy">
+        <rdf:type rdf:resource="&owl;Thing"/>
+    </Navy>
+    
+
+
+    <!-- http://purl.com/net/conflict#United_States_Navy -->
+
+    <owl:Thing rdf:about="#United_States_Navy">
+        <rdf:type rdf:resource="#Navy"/>
+    </owl:Thing>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 2.2.1.1138) http://owlapi.sourceforge.net -->
+

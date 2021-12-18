@@ -1,0 +1,936 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE rdf:RDF [
+     <!ENTITY okar     "http://www.labs.fujitsu.com/jp/techinfo/okar/0.92#" >
+     <!ENTITY okarURI  "http://www.labs.fujitsu.com/jp/techinfo/okar/0.92" >
+     <!ENTITY dc       "http://purl.org/dc/elements/1.1/" >
+     <!ENTITY dcterms  "http://purl.org/dc/terms/" >
+     <!ENTITY ical     "http://www.w3.org/2002/12/cal/ical#" >
+     <!ENTITY icalURI  "http://www.w3.org/2002/12/cal/ical" >
+     <!ENTITY vcard    "http://www.w3.org/2001/vcard-rdf/3.0#" >
+     <!ENTITY vcardURI "http://www.w3.org/2001/vcard-rdf/3.0" >
+     <!ENTITY owl      "http://www.w3.org/2002/07/owl#" >
+     <!ENTITY xsd      "http://www.w3.org/2001/XMLSchema#" >
+   ]>
+
+<rdf:RDF
+  xmlns:okar    = "&okar;"
+  xmlns:dc      = "&dc;"
+  xmlns:dcterms = "&dcterms;"
+  xmlns:ical    = "&ical;"
+  xmlns:vcard   = "&vcard;"
+  xmlns:owl     = "&owl;"
+  xmlns:rdf     = "http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+  xmlns:rdfs    = "http://www.w3.org/2000/01/rdf-schema#"
+  xmlns:xsd     = "&xsd;"
+  xml:base      = "&okarURI;"
+  >
+
+  <owl:Ontology rdf:about="&okarURI;">
+    <rdfs:label xml:lang="en">Ontology for Knowledge Activity Resources (OKAR) vocabulary</rdfs:label>
+    <rdfs:label xml:lang="ja">知的業務活動記述オントロジ: OKAR</rdfs:label>
+    <rdfs:comment xml:lang="en">OKAR (Ontology for Knowledge Activity Resources) is a format to describe knowledge activity information. The goal of OKAR is to support improved productivity and knowledge creation in the office.  Fujitsu Laboratories and Ricoh have jointly developed the format using Semantic Web technology, the base technology for the next generation Web. </rdfs:comment>
+    <rdfs:comment xml:lang="ja">OKAR (Ontology for Knowledge Activity Resources)とは、 株式会社富士通研究所と株式会社リコーとが共同開発した、知的業務活動を記述するためのフォーマットです。次世代Webの基盤技術であるセマンティックWebの仕様に基づいて定義されています。OKARでは、業務における生産性向上や知識創造を支援し、推進することを目指しています。</rdfs:comment>
+
+    <!-- import for other vocabularies -->
+    <owl:imports>
+      <owl:Ontology rdf:about="&icalURI;" />
+    </owl:imports>
+    <!-- <owl:imports> 
+            <owl:Ontology rdf:about="&vcardURI;" />
+         </owl:imports> -->
+    <!-- <owl:imports> 
+            <owl:Ontology rdf:about="&dc;" />
+         </owl:imports> -->
+
+    <owl:versionInfo>$Id: OKAR0.92.owl,v 1.2 2005/06/27 09:14:35 igata Exp $</owl:versionInfo>
+
+    <!-- copyright &#x00A9; 2004,2005 Fujitsu Laboratories LTD. &amp; RICOH Company LTD. -->
+
+  </owl:Ontology>
+
+  <!-- *** OKAR Basic Class Definitions *** -->  
+
+  <!-- Agent (OKAR) 2004-11-10 -->
+  <owl:Class rdf:ID="Agent">
+    <rdfs:label xml:lang="en">Agent</rdfs:label>
+    <rdfs:label xml:lang="ja">エージェント</rdfs:label>
+    <rdfs:comment xml:lang="en">The "okar:Agent" class is the class of agents that are the subject of an event or a thing that has an identity. This class includes not only Persons, but also Organizations, Equipments(physical things), Software.</rdfs:comment>
+    <rdfs:comment xml:lang="ja">okar:Agentクラスは、イベントの主体や主体性を持つモノを記述するクラスです。このクラスには「人」だけでなく、「組織」「情報機器(物質的な物)」「ソフトウェア」が含まれます。</rdfs:comment>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty rdf:resource="&vcard;FN" />
+        <owl:minCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:minCardinality>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <owl:disjointWith rdf:resource="#Role" /> 
+    <owl:disjointWith rdf:resource="#Event" /> 
+    <owl:disjointWith rdf:resource="#Artifact" /> 
+    <owl:disjointWith rdf:resource="#Location" /> 
+    <owl:disjointWith rdf:resource="#PersonName" /> 
+    <rdfs:isDefinedBy rdf:resource="&okarURI;" />
+  </owl:Class>
+
+  <!-- Person (OKAR) 2004-11-10 -->
+  <owl:Class rdf:ID="Person">
+    <rdfs:label xml:lang="en">Person</rdfs:label>
+    <rdfs:label xml:lang="ja">人</rdfs:label>
+    <rdfs:comment xml:lang="en">The "okar:Person" class represents people. This class is a subclass of okar:Agent. This class corresponds to foaf:Person.</rdfs:comment>
+    <rdfs:comment xml:lang="ja">okar:Personクラスは、「人」を記述するクラスです。このクラスはokar:Agentのサブクラスです。foaf:Personに対応します。</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="#Agent" />
+    <owl:disjointWith rdf:resource="#Organization" /> 
+    <owl:disjointWith rdf:resource="#Equipment" /> 
+    <owl:disjointWith rdf:resource="#Software" />
+    <rdfs:isDefinedBy rdf:resource="&okarURI;" /> 
+  </owl:Class>
+
+  <!-- Organization (OKAR) 2004-11-10 -->
+  <owl:Class rdf:ID="Organization">
+    <rdfs:label xml:lang="en">Organization</rdfs:label>
+    <rdfs:label xml:lang="ja">組織</rdfs:label>
+    <rdfs:comment xml:lang="en">The okar:Organization class represents a group which has a social institutions such as companies, societies, associations, etc. This class is a subclass of okar:Agent. This class corresponds to foaf:Organization.</rdfs:comment>
+    <rdfs:comment xml:lang="ja">okar:Organizationクラスは、会社や協会団体などの社会的な「組織」を記述するクラスです。このクラスはokar:Agentのサブクラスです。foaf:Organizationに対応します。</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="#Agent" />
+    <owl:disjointWith rdf:resource="#Person" /> 
+    <owl:disjointWith rdf:resource="#Equipment" /> 
+    <owl:disjointWith rdf:resource="#Software" />
+    <rdfs:isDefinedBy rdf:resource="&okarURI;" /> 
+  </owl:Class>
+
+  <!-- Equipment (OKAR) 2004-11-10 -->
+  <owl:Class rdf:ID="Equipment">
+    <rdfs:label xml:lang="en">Equipment</rdfs:label>
+    <rdfs:label xml:lang="ja">機器</rdfs:label>
+    <rdfs:comment xml:lang="en">The okar:Equipment class represents equipment which is physical things such as information devices, etc. This class is a subclass of okar:Agent.</rdfs:comment>
+    <rdfs:comment xml:lang="ja">okar:Equipmentクラスは、情報デバイスなどの物質的な物である「情報機器」を記述するクラスです。このクラスはokar:Agentのサブクラスです。</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="#Agent" />
+    <owl:disjointWith rdf:resource="#Person" /> 
+    <owl:disjointWith rdf:resource="#Organization" /> 
+    <owl:disjointWith rdf:resource="#Software" />
+    <rdfs:isDefinedBy rdf:resource="&okarURI;" /> 
+  </owl:Class>
+
+  <!-- Software (OKAR) 2004-11-10 -->
+  <owl:Class rdf:ID="Software">
+    <rdfs:label xml:lang="en">Software</rdfs:label>
+    <rdfs:label xml:lang="ja">ソフトウェア</rdfs:label>
+    <rdfs:comment xml:lang="en">The okar:Software class represents software such as systems, programs, etc. This class is a subclass of okar:Agent.</rdfs:comment>
+    <rdfs:comment xml:lang="ja">okar:Softwareクラスは、システムやプログラムなどの「ソフトウェア」を記述するクラスです。このクラスはokar:Agentのサブクラスです。</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="#Agent" />
+    <owl:disjointWith rdf:resource="#Person" /> 
+    <owl:disjointWith rdf:resource="#Organization" /> 
+    <owl:disjointWith rdf:resource="#Equipment" /> 
+    <rdfs:isDefinedBy rdf:resource="&okarURI;" />
+  </owl:Class>
+
+  <!-- Role (OKAR) 2004-11-10 -->
+  <owl:Class rdf:ID="Role">
+    <rdfs:label xml:lang="en">Role</rdfs:label>
+    <rdfs:label xml:lang="ja">役割</rdfs:label>
+    <rdfs:comment xml:lang="en">The "okar:Role" class represents multiple roles of okar:Agent. An okar:Agent can have multiple different roles depending on the relationship with other resources.</rdfs:comment>
+    <rdfs:comment xml:lang="ja">okar:Roleクラスは、okar:Agentが持つ多面的な役割を記述するクラスです。１つのokar:Agentは、他のリソースとの関係に依存して複数の異なる役割を持つことができます。</rdfs:comment>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty rdf:resource="#owner" /> 
+        <owl:cardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:cardinality>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <owl:disjointWith rdf:resource="#Agent" />
+    <owl:disjointWith rdf:resource="#Event" /> 
+    <owl:disjointWith rdf:resource="#Artifact" /> 
+    <owl:disjointWith rdf:resource="#Location" /> 
+    <owl:disjointWith rdf:resource="#PersonName" /> 
+    <rdfs:isDefinedBy rdf:resource="&okarURI;" />
+  </owl:Class>
+
+  <!-- Event (OKAR) 2004-11-10 --> 
+  <owl:Class rdf:ID="Event"> 
+    <rdfs:label xml:lang="en">Event</rdfs:label>
+    <rdfs:label xml:lang="ja">イベント</rdfs:label>
+    <rdfs:comment xml:lang="en">The "okar:Event" class represents when, where, who does what. This class includes two subclasses; the "okar:Action" class which represents an action of an okar:Agent, and the "okar:GroupEvent" class which represents cooperation among multiple okar:Agents.</rdfs:comment>
+    <rdfs:comment xml:lang="ja">okar:Eventクラスは、いつ、どこで、で誰が何をしたかを記述するクラスです。１つのokar:Agentが行なうokar:Actionクラスと、複数のokar:Agentが行なうokar:GroupEventクラスをサブクラスとして持ちます。</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="&ical;Vevent" />
+    <owl:disjointWith rdf:resource="#Agent" /> 
+    <owl:disjointWith rdf:resource="#Role" />
+    <owl:disjointWith rdf:resource="#Artifact" /> 
+    <owl:disjointWith rdf:resource="#Location" /> 
+    <owl:disjointWith rdf:resource="#PersonName" /> 
+    <rdfs:isDefinedBy rdf:resource="&okarURI;" />
+  </owl:Class>
+
+  <!-- Action (OKAR) 2004-11-10 --> 
+  <owl:Class rdf:ID="Action">
+    <rdfs:label xml:lang="en">Action</rdfs:label>
+    <rdfs:label xml:lang="ja">アクション</rdfs:label>
+    <rdfs:comment xml:lang="en">The "okar:Action" class represents an action of an okar:Agent such as personal schedules, bussinesstrips, etc. This class is a subclass of okar:Event.</rdfs:comment>
+    <rdfs:comment xml:lang="ja">okar:Actionクラスは、１つのokar:Agentが行なうアクションを記述するクラスです。個人スケジュールや出張などを記述します。このクラスはokar:Eventのサブクラスです。</rdfs:comment>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty rdf:resource="&okar;actor" /> 
+        <owl:maxCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:maxCardinality>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf rdf:resource="#Event" />
+    <owl:disjointWith rdf:resource="#GroupEvent" /> 
+    <rdfs:isDefinedBy rdf:resource="&okarURI;" />
+  </owl:Class>
+
+  <!-- GroupEvent (OKAR) 2004-11-10 --> 
+  <owl:Class rdf:ID="GroupEvent"> 
+    <rdfs:label xml:lang="en">Group Event</rdfs:label>
+    <rdfs:label xml:lang="ja">グループイベント</rdfs:label>
+    <rdfs:comment xml:lang="en">The "okar:GroupEvent" class represents cooperation events among multiple okar:Agents such as meetings, etc. This class is a subclass of okar:Event.</rdfs:comment>
+    <rdfs:comment xml:lang="ja">okar:GroupEventクラスは、複数のokar:Agentによって行なわれる協同イベントを記述するクラスです。ミーティングなどを記述します。このクラスはokar:Eventのサブクラスです。</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="#Event" />
+    <owl:disjointWith rdf:resource="#Action" /> 
+    <rdfs:isDefinedBy rdf:resource="&okarURI;" />
+  </owl:Class>
+
+  <!-- Artifact (OKAR) 2004-11-10 -->
+  <owl:Class rdf:ID="Artifact">
+    <rdfs:label xml:lang="en">Artifact</rdfs:label>
+    <rdfs:label xml:lang="ja">人工物</rdfs:label>
+    <rdfs:comment xml:lang="en">The "okar:Artifact" class represents a result produced by an Agent that is the subject of some events.</rdfs:comment>
+    <rdfs:comment xml:lang="ja">okar:Artifactクラスは、イベントの主体となるエージェントによって作成された成果物を記述するクラスです。</rdfs:comment>
+    <owl:disjointWith rdf:resource="#Agent" /> 
+    <owl:disjointWith rdf:resource="#Role" />
+    <owl:disjointWith rdf:resource="#Event" /> 
+    <owl:disjointWith rdf:resource="#Location" /> 
+    <owl:disjointWith rdf:resource="#PersonName" /> 
+    <rdfs:isDefinedBy rdf:resource="&okarURI;" />
+  </owl:Class>
+
+  <!-- Document (OKAR) 2004-11-10 --> 
+  <owl:Class rdf:ID="Document">
+    <rdfs:label xml:lang="en">Document</rdfs:label>
+    <rdfs:label xml:lang="ja">ドキュメント</rdfs:label>
+    <rdfs:comment xml:lang="en">The "okar:Document" class represents documents using symbol (text or other format) to describe the thoughts and orders of an Agent. This class includes not only text, but also some kind of data format; images, movies, music, etc. This class is a subclass of okar:Artifact.</rdfs:comment>
+    <rdfs:comment xml:lang="ja">okar:Documentクラスは、エージェントの思考や命令を表現するために何かしらのシンボル(テキストやその他のフォーマット)を用いて表現されたドキュメントを記述するクラスです。テキストだけでなく、画像、動画、音楽など、様々なデータを含みます。このクラスはokar:Artifactのサブクラスです。</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="#Artifact" />
+    <rdfs:isDefinedBy rdf:resource="&okarURI;" />
+  </owl:Class>
+
+  <!-- *** Auxiliary Class Definitions *** -->
+
+  <!-- Location (OKAR) 2004-11-10 --> 
+  <owl:Class rdf:ID="Location"> 
+    <rdfs:label xml:lang="en">Location</rdfs:label>
+    <rdfs:label xml:lang="ja">場所</rdfs:label>
+    <rdfs:comment xml:lang="en">The "okar:Location" class represents a place. This class is an auxiliary class and will be replaced with other ontology in future.</rdfs:comment>
+    <rdfs:comment xml:lang="ja">okar:Locationクラスは場所を記述するクラスです。このクラスは補助クラスであり、将来的に他のオントロジで置き換えられます。</rdfs:comment>
+    <owl:disjointWith rdf:resource="#Agent" /> 
+    <owl:disjointWith rdf:resource="#Role" />
+    <owl:disjointWith rdf:resource="#Event" /> 
+    <owl:disjointWith rdf:resource="#Artifact" /> 
+    <owl:disjointWith rdf:resource="#PersonName" /> 
+    <rdfs:isDefinedBy rdf:resource="&okarURI;" />
+  </owl:Class>
+
+  <!-- PersonName (OKAR) 2004-11-10 --> 
+  <owl:Class rdf:ID="PersonName"> 
+    <rdfs:label xml:lang="en">Person Name</rdfs:label>
+    <rdfs:label xml:lang="ja">人名</rdfs:label>
+    <rdfs:comment xml:lang="en">The "okar:PersonName" class represents a structured personal name such as family name, given name, etc. This class is an auxiliary class and will be replaced with other ontology in future.</rdfs:comment>
+    <rdfs:comment xml:lang="ja">okar:PersonNameクラスは氏名などの構造を持った人の名前を記述するクラスです。このクラスは補助クラスであり、将来的に他のオントロジで置き換えられます。</rdfs:comment>
+    <owl:disjointWith rdf:resource="#Agent" /> 
+    <owl:disjointWith rdf:resource="#Role" />
+    <owl:disjointWith rdf:resource="#Event" /> 
+    <owl:disjointWith rdf:resource="#Artifact" /> 
+    <owl:disjointWith rdf:resource="#Location" />
+    <rdfs:isDefinedBy rdf:resource="&okarURI;" /> 
+  </owl:Class>
+
+
+  <!-- *** OKAR Basic Property Definitions *** -->  
+
+  <!-- Death Day (OKAR) 2004-11-10 -->
+  <owl:DatatypeProperty rdf:ID="DDAY">
+    <rdfs:label xml:lang="en">Death Day</rdfs:label>
+    <rdfs:label xml:lang="ja">終了日</rdfs:label>
+    <rdfs:comment xml:lang="en">The "okar:DDAY" property represents the end of the period of okar:Agent or okar:Role. If you want to describe the begin of the period, you can use "vcard:BDAY".</rdfs:comment>
+    <rdfs:comment xml:lang="ja">okar:DDAYプロパティは、okar:Agentやokar:Roleの有効期間の終りを記述するプロパティです。有効期間の始めを記述するにはvcard:BDAYを使用します。</rdfs:comment>
+    <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+    <rdfs:domain>
+      <owl:Class>
+         <owl:unionOf rdf:parseType="Collection">
+           <owl:Class rdf:about="#Agent" />
+           <owl:Class rdf:about="#Role" />
+        </owl:unionOf>
+      </owl:Class>
+    </rdfs:domain>
+    <rdfs:range  rdf:resource="&xsd;dateTime" />
+    <rdfs:isDefinedBy rdf:resource="&okarURI;" /> 
+  </owl:DatatypeProperty>
+
+  <!-- Role Weight (OKAR) 2004-11-10 -->
+  <owl:DatatypeProperty rdf:ID="roleWeight">
+    <rdfs:label xml:lang="en">Role Weight</rdfs:label>
+    <rdfs:label xml:lang="ja">役割の重み</rdfs:label>
+    <rdfs:comment xml:lang="en">The "okar:roleWeight" property is used to express the weight that an okar:Agent spends on each okar:Role. This range is defined as float value, the semantics of value depend on applications.</rdfs:comment>
+    <rdfs:comment xml:lang="ja">okar:roleWeightプロパティは、各okar:Roleに対しokar:Agentが費やす重みを記述するプロパティです。値は浮動少数点であり、値の意味はアプリケーションに依存します。</rdfs:comment>
+    <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+    <rdfs:domain rdf:resource="#Role" />
+    <rdfs:range  rdf:resource="&xsd;float" />
+    <rdfs:isDefinedBy rdf:resource="&okarURI;" /> 
+  </owl:DatatypeProperty>
+
+  <!-- Role Rank: Position in Organization (OKAR) 2004-11-10 -->
+  <owl:DatatypeProperty rdf:ID="roleRank">
+    <rdfs:label xml:lang="en">Role Rank</rdfs:label>
+    <rdfs:label xml:lang="ja">役割のランク</rdfs:label>
+    <rdfs:comment xml:lang="en">The "okar:roleRank" property is mainly used to express a person's position (rank) in the organization. This range is defined as float value, the semantics of value depend on applications.</rdfs:comment>
+    <rdfs:comment xml:lang="ja">okar:roleRoleプロパティは、主に、組織内での人のポジション(ランク)を記述するのに使用されます。値は浮動少数点であり、値の意味はアプリケーションに依存します。</rdfs:comment>
+    <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+    <rdfs:domain>
+      <owl:Class>
+         <owl:intersectionOf rdf:parseType="Collection">
+            <owl:Class rdf:about="#Role" />
+            <owl:Restriction>
+              <owl:onProperty rdf:resource="#owner" />
+              <owl:allValuesFrom rdf:resource="#Person" />
+            </owl:Restriction>
+         </owl:intersectionOf>
+      </owl:Class>
+    </rdfs:domain>
+    <rdfs:range  rdf:resource="&xsd;float" />
+    <rdfs:isDefinedBy rdf:resource="&okarURI;" /> 
+  </owl:DatatypeProperty>
+
+  <!-- Knows (OKAR) 2004-11-10 -->
+  <owl:ObjectProperty rdf:ID="knows"> 
+    <rdfs:label xml:lang="en">knows</rdfs:label>
+    <rdfs:label xml:lang="ja">所有知識</rdfs:label>
+    <rdfs:comment xml:lang="en">The "okar:knows" property represents the special field or the business field of a okar:Agent.  That means a okar:Agent has knowledge about those fields.  NOTE: We don't define the range of okar:knows. That means it is available to use all resources. However, please note this property is defined as owl:ObjectProperty.</rdfs:comment>
+    <rdfs:comment xml:lang="ja">okar:knowsプロパティは、okar:Agentの専門領域やビジネス領域を記述するプロパティです。このプロパティにより、「okar:Agentはその領域の知識を持つ」ことを意味します。［注意］okar:knowsのレンジは定義されていなく、全てのリソースがレンジとなり得ます。ただし、owl:ObjectPropertyで定義されていることに注意してください。</rdfs:comment>
+    <rdfs:domain rdf:resource="#Agent"/>
+    <rdfs:isDefinedBy rdf:resource="&okarURI;" /> 
+  </owl:ObjectProperty>
+
+  <!-- Personal Network: Social Network (OKAR) 2004-11-10 -->
+  <owl:ObjectProperty rdf:ID="mate">
+    <rdfs:label xml:lang="en">mate</rdfs:label>
+    <rdfs:label xml:lang="ja">知合い</rdfs:label>
+    <rdfs:comment xml:lang="en">The "okar:mate" property represents known people of a okar:Agent. For example friends, mates, colleagues, etc. This property corresponds to foaf:knows.</rdfs:comment>
+    <rdfs:comment xml:lang="ja">okar:mateプロパティはokar:Agentの「知合い」を記述するプロパティです。例えば、友達や仕事仲間などがあります。このプロパティはfoaf:knowsに対応します。</rdfs:comment>
+    <rdfs:subPropertyOf rdf:resource="#knows"/>
+    <rdfs:domain rdf:resource="#Person" />
+    <rdfs:range>
+      <owl:Class>
+         <owl:intersectionOf rdf:parseType="Collection">
+            <owl:Class rdf:about="#Role" />
+            <owl:Restriction>
+              <owl:onProperty rdf:resource="#owner" />
+              <owl:allValuesFrom rdf:resource="#Person" />
+            </owl:Restriction>
+         </owl:intersectionOf>
+      </owl:Class>
+    </rdfs:range>
+    <rdfs:isDefinedBy rdf:resource="&okarURI;" /> 
+  </owl:ObjectProperty>
+
+  <!-- From Agent to Role (OKAR) 2004-11-10 -->
+  <owl:ObjectProperty rdf:ID="hasRole"> 
+    <rdfs:label xml:lang="en">has Role</rdfs:label>
+    <rdfs:label xml:lang="ja">持っている役割</rdfs:label>
+    <rdfs:comment xml:lang="en">The "okar:hasRole" property is the property that represents the relation from okar:Agent to okar:Role. This property is an inverse property of "okar:owner". </rdfs:comment>
+    <rdfs:comment xml:lang="ja">okar:hasRoleプロパティはokar:Agentからokar:Roleへの関係を記述するプロパティです。このプロパティはokar:ownerの逆プロパティです。</rdfs:comment>
+    <owl:inverseOf rdf:resource="#owner"/>
+    <rdfs:domain rdf:resource="#Agent"/>
+    <rdfs:range  rdf:resource="#Role" />
+    <rdfs:isDefinedBy rdf:resource="&okarURI;" /> 
+  </owl:ObjectProperty>
+
+  <!-- From Role to Agent (OKAR) 2004-11-10 -->
+  <owl:ObjectProperty rdf:ID="owner"> 
+    <rdfs:label xml:lang="en">Role Owner</rdfs:label>
+    <rdfs:label xml:lang="ja">役割の所有者</rdfs:label>
+    <rdfs:comment xml:lang="en">The "okar:owner" property is the property that represents the relation from okar:Role to okar:Agent. This property is an inverse property of "okar:hasRole". </rdfs:comment>
+    <rdfs:comment xml:lang="ja">okar:ownerプロパティはokar:Roleからokar:Agentへの関係を記述するプロパティです。このプロパティはokar:hasRoleの逆プロパティです。</rdfs:comment>
+    <owl:inverseOf rdf:resource="#hasRole"/>
+    <rdfs:domain rdf:resource="#Role"/>
+    <rdfs:range  rdf:resource="#Agent" />
+    <rdfs:isDefinedBy rdf:resource="&okarURI;" /> 
+  </owl:ObjectProperty>
+
+  <!-- Member (OKAR) 2004-11-10 -->
+  <owl:ObjectProperty rdf:ID="member"> 
+    <rdfs:label xml:lang="en">Member</rdfs:label>
+    <rdfs:label xml:lang="ja">メンバー</rdfs:label>
+    <rdfs:comment xml:lang="en">The "okar:member" property represents a member(staff) in the organization. If you want to describe organization units, you can use "okar:groupMember" property.</rdfs:comment>
+    <rdfs:comment xml:lang="ja">okar:memberプロパティは組織の構成員(スタッフ)を記述するプロパティです。組織の構成ユニット(下位組織)を記述するにはokar:groupMemberを使用します。</rdfs:comment>
+    <rdfs:domain rdf:resource="#Organization" />
+    <rdfs:range>
+      <owl:Class>
+         <owl:intersectionOf rdf:parseType="Collection">
+            <owl:Class rdf:about="#Role" />
+            <owl:Restriction>
+              <owl:onProperty rdf:resource="#owner" />
+              <owl:allValuesFrom rdf:resource="#Person" />
+            </owl:Restriction>
+         </owl:intersectionOf>
+      </owl:Class>
+    </rdfs:range>
+    <rdfs:isDefinedBy rdf:resource="&okarURI;" /> 
+  </owl:ObjectProperty>
+
+  <!-- Leader (OKAR) 2004-11-10 -->
+  <owl:ObjectProperty rdf:ID="leader"> 
+    <rdfs:label xml:lang="en">Leader</rdfs:label>
+    <rdfs:label xml:lang="ja">リーダー</rdfs:label>
+    <rdfs:comment xml:lang="en">The "okar:leader" property represents a leader in the organization. This property is a subproperty of "okar:member".</rdfs:comment>
+    <rdfs:comment xml:lang="ja">okar:leaderプロパティは組織のリーダーを記述するプロパティです。このプロパティはokar:memberのサブプロパティです。</rdfs:comment>
+    <rdfs:subPropertyOf rdf:resource="#member"/>
+    <rdfs:isDefinedBy rdf:resource="&okarURI;" /> 
+
+  </owl:ObjectProperty>
+
+  <!-- Subleader (OKAR) 2004-11-10 -->
+  <owl:ObjectProperty rdf:ID="subLeader"> 
+    <rdfs:label xml:lang="en">Sub Leader</rdfs:label>
+    <rdfs:label xml:lang="ja">サブリーダー</rdfs:label>
+    <rdfs:comment xml:lang="en">The "okar:leader" property represents a sub-leader in the organization. This property is a subproperty of "okar:member".</rdfs:comment>
+    <rdfs:comment xml:lang="ja">okar:subLeaderプロパティは組織のサブリーダーを記述するプロパティです。このプロパティはokar:memberのサブプロパティです。</rdfs:comment>
+    <rdfs:subPropertyOf rdf:resource="#member"/>
+    <rdfs:isDefinedBy rdf:resource="&okarURI;" /> 
+  </owl:ObjectProperty>
+
+  <!-- Reguler Member (OKAR) 2004-11-10 -->
+  <owl:ObjectProperty rdf:ID="regulerMember"> 
+    <rdfs:label xml:lang="en">Reguler Member</rdfs:label>
+    <rdfs:label xml:lang="ja">正規メンバー</rdfs:label>
+    <rdfs:comment xml:lang="en">The "okar:regulerMember" property represents a reguler staff in the organization such as employees, etc. This property is a subproperty of "okar:member".</rdfs:comment>
+    <rdfs:comment xml:lang="ja">okar:regulerMemberプロパティは、従業員などの組織の正規スタッフを記述するプロパティです。このプロパティはokar:memberのサブプロパティです。</rdfs:comment>
+    <rdfs:subPropertyOf rdf:resource="#member"/>
+    <rdfs:isDefinedBy rdf:resource="&okarURI;" /> 
+  </owl:ObjectProperty>
+
+  <!-- Temporary Member (OKAR) 2004-11-10 -->
+  <owl:ObjectProperty rdf:ID="temporaryMember"> 
+    <rdfs:label xml:lang="en">Temporary Member</rdfs:label>
+    <rdfs:label xml:lang="ja">非正規メンバー</rdfs:label>
+    <rdfs:comment xml:lang="en">The "okar:temporaryMember" property represents a temporary staff in the organization such as part-time workers, etc. This property is a subproperty of "okar:member".</rdfs:comment>
+    <rdfs:comment xml:lang="ja">okar:temporaryMemberプロパティはアルバイトなどの組織の一時的なスタッフを記述するプロパティです。このプロパティはokar:memberのサブプロパティです。</rdfs:comment>
+    <rdfs:subPropertyOf rdf:resource="#member"/>
+    <rdfs:isDefinedBy rdf:resource="&okarURI;" /> 
+  </owl:ObjectProperty>
+
+  <!-- Organization Unit (OKAR) 2004-11-10 -->
+  <owl:ObjectProperty rdf:ID="groupMember">
+    <rdfs:label xml:lang="en">Organization Unit</rdfs:label>
+    <rdfs:label xml:lang="ja">下位組織</rdfs:label>
+    <rdfs:comment xml:lang="en">The "okar:groupMember" property represents the lower organizations unit in the upper organization. If you want to describe a member(staff), you can use "okar:member" property.</rdfs:comment>
+    <rdfs:comment xml:lang="ja">okar:groupMemberプロパティは組織の構成ユニット(下位組織)を記述するプロパティです。組織の構成員(スタッフ)を記述するにはokar:memberを使用します。</rdfs:comment>
+    <rdfs:domain rdf:resource="#Organization" />
+    <rdfs:range>
+      <owl:Class>
+         <owl:intersectionOf rdf:parseType="Collection">
+            <owl:Class rdf:about="#Role" />
+            <owl:Restriction>
+              <owl:onProperty rdf:resource="#owner" />
+              <owl:allValuesFrom rdf:resource="#Organization" />
+            </owl:Restriction>
+         </owl:intersectionOf>
+      </owl:Class>
+    </rdfs:range>
+    <rdfs:isDefinedBy rdf:resource="&okarURI;" /> 
+  </owl:ObjectProperty>
+
+  <!-- Reguler Organization Unit (OKAR) 2004-11-10 -->
+  <owl:ObjectProperty rdf:ID="regulerGroupMember"> 
+    <rdfs:label xml:lang="en">Reguler Organization Unit</rdfs:label>
+    <rdfs:label xml:lang="ja">正規下位組織</rdfs:label>
+    <rdfs:comment xml:lang="en">The "okar:regulerGroupMember" property represents a reguler organization unit such as departments, divitions, sections, etc. This property is a subproperty of "okar:groupMember".</rdfs:comment>
+    <rdfs:comment xml:lang="ja">okar:regulerGroupMemberプロパティは、部や課などの正規下位組織を記述するプロパティです。このプロパティはokar:groupMemberのサブプロパティです。</rdfs:comment>
+    <rdf:type rdf:resource="&owl;TransitiveProperty"/>
+    <rdfs:subPropertyOf rdf:resource="#groupMember"/>
+    <rdfs:isDefinedBy rdf:resource="&okarURI;" /> 
+  </owl:ObjectProperty>
+
+  <!-- Temporary Organization Unit (OKAR) 2004-11-10 -->
+  <owl:ObjectProperty rdf:ID="temporaryGroupMember"> 
+    <rdfs:label xml:lang="en">Temporary Organization Unit</rdfs:label>
+    <rdfs:label xml:lang="ja">非正規下位組織</rdfs:label>
+    <rdfs:comment xml:lang="en">The "okar:temporaryGroupMember" property represents a temporary organization unit such as projects, commitee in the campanies, etc. This property is a subproperty of "okar:groupMember".</rdfs:comment>
+    <rdfs:comment xml:lang="ja">okar:temporaryGroupMemberプロパティは、プロジェクトや社内委員会などの一時的な下位組織を記述するプロパティです。このプロパティはokar:groupMemberのサブプロパティです。</rdfs:comment>
+    <rdfs:subPropertyOf rdf:resource="#groupMember"/>
+    <rdfs:isDefinedBy rdf:resource="&okarURI;" /> 
+  </owl:ObjectProperty>
+
+  <!-- Related Role (OKAR) 2004-11-10 -->
+  <owl:ObjectProperty rdf:ID="relatedRole"> 
+    <rdfs:label xml:lang="en">Related Role</rdfs:label>
+    <rdfs:label xml:lang="ja">関連する役割</rdfs:label>
+    <rdfs:comment xml:lang="en">The "okar:relatedRole" property represents a relationship between some okar:Role.</rdfs:comment>
+    <rdfs:comment xml:lang="ja">okar:relatedRoleプロパティは、okar:Role間の関係を記述するプロパティです。</rdfs:comment>
+    <rdf:type rdf:resource="&owl;TransitiveProperty"/>
+    <rdfs:domain rdf:resource="#Role" />
+    <rdfs:range  rdf:resource="#Role" />
+    <rdfs:isDefinedBy rdf:resource="&okarURI;" /> 
+  </owl:ObjectProperty>
+
+  <!-- Purpose (OKAR) 2004-11-10 -->
+  <owl:DatatypeProperty rdf:ID="purpose"> 
+    <rdfs:label xml:lang="en">Purpose of Role</rdfs:label>
+    <rdfs:label xml:lang="ja">役割の目的</rdfs:label>
+    <rdfs:comment xml:lang="en">The "okar:purpose" property represents a purpose of the okar:Role. If you want to describe the title of the role, you can use "vcard:TITLE".</rdfs:comment>
+    <rdfs:comment xml:lang="ja">okar:purposeプロパティは、okar:Roleの目的を記述するプロパティです。役職を記述するには、vcard:TITLEを使用します。</rdfs:comment>
+    <rdfs:domain rdf:resource="#Role"/>
+    <rdfs:range  rdf:resource="&xsd;string" />
+    <rdfs:isDefinedBy rdf:resource="&okarURI;" /> 
+  </owl:DatatypeProperty>
+
+  <!-- Event Location (OKAR) 2004-11-10 -->
+  <owl:ObjectProperty rdf:ID="hasLocation"> 
+    <rdfs:label xml:lang="en">Event Location</rdfs:label>
+    <rdfs:label xml:lang="ja">イベントの場所</rdfs:label>
+    <rdfs:comment xml:lang="en">The "okar:hasLocation" property represents a place where the event occured.  NOTE: &icalURI; defines the range of ical:location as xsd:string (owl:DatatypeProperty). Then we define the new property for describing an event location.</rdfs:comment>
+    <rdfs:comment xml:lang="ja">okar:hasLocationプロパティは、イベントが発生した場所を記述するプロパティです。［注意］&icalURI;では、ical:locationのレンジとしてxsd:stringが定義されています。しかもical:locationはowl:DatatypePropertyとして定義されているため、イベントの発生場所を記述するため、この新しいプロパティを定義しています。</rdfs:comment>
+    <rdfs:domain rdf:resource="#Event" />
+    <rdfs:range  rdf:resource="#Location" />
+    <rdfs:isDefinedBy rdf:resource="&okarURI;" /> 
+  </owl:ObjectProperty>
+
+  <!-- Event Actor (OKAR) 2004-11-10 -->
+  <owl:ObjectProperty rdf:ID="actor"> 
+    <rdfs:label xml:lang="en">Event Actor</rdfs:label>
+    <rdfs:label xml:lang="ja">行為者</rdfs:label>
+    <rdfs:comment xml:lang="en">The "okar:actor" property represents an actor/a subject of the event.</rdfs:comment>
+    <rdfs:comment xml:lang="ja">okar:actorプロパティは、イベントの行為者または主体を記述するプロパティです。</rdfs:comment>
+    <rdfs:domain rdf:resource="#Event" />
+    <rdfs:range  rdf:resource="#Role" />
+    <rdfs:isDefinedBy rdf:resource="&okarURI;" /> 
+  </owl:ObjectProperty>
+
+  <!-- Event Target (OKAR) 2004-11-10 -->
+  <owl:ObjectProperty rdf:ID="target"> 
+    <rdfs:label xml:lang="en">Event Target</rdfs:label>
+    <rdfs:label xml:lang="ja">イベントの対象物</rdfs:label>
+    <rdfs:comment xml:lang="en">The "okar:target" property represents a target/an object/a result of the event.  NOTE: We don't define the range of okar:target. That means it is available to use all resources. However, please note this property is defined as owl:ObjectProperty.</rdfs:comment>
+    <rdfs:comment xml:lang="ja">okar:targetプロパティは、イベントのターゲットや対象物、成果物を記述するプロパティです。［注意］okar:targetのレンジは定義されていなく、全てのリソースがレンジとなり得ます。ただし、owl:ObjectPropertyで定義されていることに注意してください。</rdfs:comment>
+    <rdfs:domain rdf:resource="#Event" />
+    <rdfs:isDefinedBy rdf:resource="&okarURI;" /> 
+  </owl:ObjectProperty>
+
+  <!-- Related Event (OKAR) 2005-06-27 -->
+  <owl:ObjectProperty rdf:ID="relatedEvent"> 
+    <rdfs:label xml:lang="en">Related Event</rdfs:label>
+    <rdfs:label xml:lang="ja">関連イベント</rdfs:label>
+    <rdfs:comment xml:lang="en">The "okar:relatedEvent" property represents a relationship between okar:Event.</rdfs:comment>
+    <rdfs:comment xml:lang="ja">okar:relatedEventプロパティは、okar:Event間の関係を記述するプロパティです。</rdfs:comment>
+    <rdfs:domain rdf:resource="#Event" />
+    <rdfs:range  rdf:resource="#Event" />
+    <rdfs:isDefinedBy rdf:resource="&okarURI;" /> 
+  </owl:ObjectProperty>
+
+  <!-- User (OKAR) 2005-03-31 -->
+  <owl:ObjectProperty rdf:ID="user"> 
+    <rdfs:label xml:lang="en">User</rdfs:label>
+    <rdfs:label xml:lang="ja">利用者</rdfs:label>
+    <rdfs:comment xml:lang="en">The "okar:user" property represents a real user of the okar:Artifact. If you want to describe an intended/a useful user of the artifact, you can use "dcterms:audience".</rdfs:comment>
+    <rdfs:comment xml:lang="ja">okar:userプロパティは、okar:Artifactの実際の利用者を記述するプロパティです。想定される利用者を記述するには、dcterms:audienceを使用します。</rdfs:comment>
+    <rdfs:domain rdf:resource="#Artifact"/>
+    <rdfs:range  rdf:resource="#Role" />
+    <rdfs:isDefinedBy rdf:resource="&okarURI;" /> 
+  </owl:ObjectProperty>
+
+  <!-- *** Extention Definitions for Other Vocabularies *** -->  
+
+  <!-- *** VCARD Vocabularies *** --> 
+  <!-- VCARD vocabraries are used for properties of okar:Agent and okar:Role. -->
+
+  <!-- Formatted Name (vcard) 2004-11-10 -->
+  <owl:DatatypeProperty rdf:about="&vcard;FN">
+    <rdfs:domain>
+      <owl:Class>
+         <owl:unionOf rdf:parseType="Collection">
+            <owl:Class rdf:about="#Agent" />
+            <owl:Class rdf:about="#Role" />
+         </owl:unionOf>
+      </owl:Class>
+    </rdfs:domain>
+    <rdfs:range  rdf:resource="&xsd;string" />
+    <rdfs:isDefinedBy rdf:resource="&vcardURI;" />
+  </owl:DatatypeProperty>
+
+  <!-- Structured Name (vcard) 2004-11-10 -->
+  <owl:ObjectProperty rdf:about="&vcard;N">
+    <rdfs:domain rdf:resource="#Person" />
+    <rdfs:range  rdf:resource="#PersonName" />
+    <rdfs:isDefinedBy rdf:resource="&vcardURI;" />
+  </owl:ObjectProperty>
+
+  <!-- Family Name (vcard) 2004-11-10 -->
+  <owl:DatatypeProperty rdf:about="&vcard;Family"> 
+    <rdfs:domain rdf:resource="#PersonName" />
+    <rdfs:range  rdf:resource="&xsd;string" />
+    <rdfs:isDefinedBy rdf:resource="&vcardURI;" />
+  </owl:DatatypeProperty>
+
+  <!-- Given Name (vcard) 2004-11-10 -->
+  <owl:DatatypeProperty rdf:about="&vcard;Given"> 
+    <rdfs:domain rdf:resource="#PersonName" />
+    <rdfs:range  rdf:resource="&xsd;string" />
+    <rdfs:isDefinedBy rdf:resource="&vcardURI;" />
+  </owl:DatatypeProperty>
+
+  <!-- Additional Name (vcard) 2004-11-10 -->
+  <owl:DatatypeProperty rdf:about="&vcard;Other"> 
+    <rdfs:domain rdf:resource="#PersonName" />
+    <rdfs:range  rdf:resource="&xsd;string" />
+    <rdfs:isDefinedBy rdf:resource="&vcardURI;" />
+  </owl:DatatypeProperty>
+
+  <!-- Honorific Prefix (vcard) 2004-11-10 -->
+  <owl:DatatypeProperty rdf:about="&vcard;Prefix"> 
+    <rdfs:domain rdf:resource="#PersonName" />
+    <rdfs:range  rdf:resource="&xsd;string" />
+    <rdfs:isDefinedBy rdf:resource="&vcardURI;" />
+  </owl:DatatypeProperty>
+
+  <!-- Honorific Suffix (vcard) 2004-11-10 -->
+  <owl:DatatypeProperty rdf:about="&vcard;Suffix"> 
+    <rdfs:domain rdf:resource="#PersonName" />
+    <rdfs:range  rdf:resource="&xsd;string" />
+    <rdfs:isDefinedBy rdf:resource="&vcardURI;" />
+  </owl:DatatypeProperty>
+
+  <!-- Nickname (vcard) 2004-11-10 -->
+  <owl:DatatypeProperty rdf:about="&vcard;NICKNAME"> 
+    <rdfs:domain>
+      <owl:Class>
+         <owl:unionOf rdf:parseType="Collection">
+            <owl:Class rdf:about="#Agent" />
+            <owl:Class rdf:about="#Role" />
+         </owl:unionOf>
+      </owl:Class>
+    </rdfs:domain>
+    <rdfs:range  rdf:resource="&xsd;string" />
+    <rdfs:isDefinedBy rdf:resource="&vcardURI;" />
+  </owl:DatatypeProperty>
+
+  <!-- Photograph (vcard) 2004-11-10 -->
+  <owl:ObjectProperty rdf:about="&vcard;PHOTO">
+    <rdfs:domain>
+      <owl:Class>
+         <owl:unionOf rdf:parseType="Collection">
+           <owl:Class rdf:about="#Agent" />
+           <owl:Class rdf:about="#Role" />
+        </owl:unionOf>
+      </owl:Class>
+    </rdfs:domain>
+    <rdfs:range rdf:resource="#Document"/>
+    <rdfs:isDefinedBy rdf:resource="&vcardURI;" />
+  </owl:ObjectProperty>
+
+  <!-- Logo (vcard) 2004-11-10 -->
+  <owl:ObjectProperty rdf:about="&vcard;LOGO">
+    <rdfs:domain>
+      <owl:Class>
+         <owl:unionOf rdf:parseType="Collection">
+           <owl:Class rdf:about="#Agent" />
+           <owl:Class rdf:about="#Role" />
+        </owl:unionOf>
+      </owl:Class>
+    </rdfs:domain>
+    <rdfs:range rdf:resource="#Document"/>
+    <rdfs:isDefinedBy rdf:resource="&vcardURI;" />
+  </owl:ObjectProperty>
+
+  <!-- Address (vcard) 2004-11-10 -->
+  <owl:ObjectProperty rdf:about="&vcard;ADR"> 
+    <rdfs:domain>
+      <owl:Class>
+         <owl:unionOf rdf:parseType="Collection">
+           <owl:Class rdf:about="#Agent" />
+           <owl:Class rdf:about="#Role" />
+        </owl:unionOf>
+      </owl:Class>
+    </rdfs:domain>
+    <rdfs:range  rdf:resource="#Location" />
+    <rdfs:comment xml:lang="en"> NOTE: &vcardURI; defines the range of vcard:ADR as vcard:ADRTYPES. Neither vcard:ADRTYPES nor okar:Location are in the relation of owl:disjointWith, so any conflicts don't arise. But some specific processing would be required in the applications.</rdfs:comment>
+    <rdfs:comment xml:lang="ja">［注意］&vcardURI;では、vcard:ADRのレンジとしてvcard:ADRTYPESが定義されています。vcard:ADRTYPESとokar:Locationはowl:disjointWithの関係にないため、矛盾は発生しませんが、アプリケーションにおいて特別な処理が必要になるかもしれません。</rdfs:comment>
+    <rdfs:isDefinedBy rdf:resource="&vcardURI;" />
+  </owl:ObjectProperty>
+
+  <!-- Telephone Number (vcard) 2004-11-10 -->
+  <owl:ObjectProperty rdf:about="&vcard;TEL">
+    <rdfs:domain>
+      <owl:Class>
+         <owl:unionOf rdf:parseType="Collection">
+           <owl:Class rdf:about="#Agent" />
+           <owl:Class rdf:about="#Role" />
+        </owl:unionOf>
+      </owl:Class>
+    </rdfs:domain>
+    <rdfs:comment xml:lang="en">NOTE: &vcardURI; defines the range of vcard:TEL as vcard:TELTYPES.</rdfs:comment>
+    <rdfs:comment xml:lang="ja">［注意］&vcardURI;では、vcard:TELのレンジとしてvcard:TELTYPESが定義されています。</rdfs:comment>
+    <rdfs:isDefinedBy rdf:resource="&vcardURI;" />
+  </owl:ObjectProperty>
+
+  <!-- E-mail (vcard) 2004-11-10 -->
+  <owl:ObjectProperty rdf:about="&vcard;EMAIL"> 
+    <rdfs:domain>
+      <owl:Class>
+         <owl:unionOf rdf:parseType="Collection">
+           <owl:Class rdf:about="#Agent" />
+           <owl:Class rdf:about="#Role" />
+        </owl:unionOf>
+      </owl:Class>
+    </rdfs:domain>
+    <rdfs:comment xml:lang="en">NOTE: &vcardURI; defines the range of vcard:EMAIL as vcard:EMAILTYPES.</rdfs:comment>
+    <rdfs:comment xml:lang="ja">［注意］&vcardURI;では、vcard:EMAILのレンジとしてvcard:EMAILTYPESが定義されています。</rdfs:comment>
+    <rdfs:isDefinedBy rdf:resource="&vcardURI;" />
+  </owl:ObjectProperty>
+
+  <!-- Birthday (vcard) 2004-11-10 -->
+  <owl:DatatypeProperty rdf:about="&vcard;BDAY"> 
+    <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+    <rdfs:domain>
+      <owl:Class>
+         <owl:unionOf rdf:parseType="Collection">
+           <owl:Class rdf:about="#Agent" />
+           <owl:Class rdf:about="#Role" />
+        </owl:unionOf>
+      </owl:Class>
+    </rdfs:domain>
+    <rdfs:range rdf:resource="&xsd;dateTime" />
+    <rdfs:isDefinedBy rdf:resource="&vcardURI;" />
+  </owl:DatatypeProperty>
+
+  <!-- Organization (vcard) 2004-11-10 -->
+  <owl:ObjectProperty rdf:about="&vcard;ORG"> 
+    <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+    <rdfs:domain>
+      <owl:Class>
+         <owl:intersectionOf rdf:parseType="Collection">
+            <owl:Class rdf:about="#Role" />
+            <owl:Restriction>
+              <owl:onProperty rdf:resource="#owner" />
+              <owl:allValuesFrom rdf:resource="#Person" />
+            </owl:Restriction>
+         </owl:intersectionOf>
+      </owl:Class>
+    </rdfs:domain>
+    <rdfs:range rdf:resource="#Organization" />
+    <rdfs:comment xml:lang="en">NOTE: One okar:Role must has no/one vcard:ORG property.</rdfs:comment>
+    <rdfs:comment xml:lang="ja">［注意］１つの役割は、０または１つのvcard:ORGプロパティしか持てません。</rdfs:comment>
+    <rdfs:isDefinedBy rdf:resource="&vcardURI;" />
+  </owl:ObjectProperty>
+
+  <!-- Title (vcard) 2004-11-10 -->
+  <owl:DatatypeProperty rdf:about="&vcard;TITLE">
+    <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+    <rdfs:domain rdf:resource="#Role" />
+    <rdfs:range  rdf:resource="&xsd;string" />
+    <rdfs:isDefinedBy rdf:resource="&vcardURI;" />
+  </owl:DatatypeProperty>
+
+  <!-- Occupation (vcard) 2004-11-10 -->
+  <owl:DatatypeProperty rdf:about="&vcard;ROLE">
+    <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+    <rdfs:domain rdf:resource="#Role" />
+    <rdfs:range  rdf:resource="&xsd;string" />
+    <rdfs:isDefinedBy rdf:resource="&vcardURI;" />
+  </owl:DatatypeProperty>
+
+  <!-- Note (vcard) 2004-11-10 -->
+  <owl:DatatypeProperty rdf:about="&vcard;NOTE"> 
+    <rdfs:domain>
+      <owl:Class>
+         <owl:unionOf rdf:parseType="Collection">
+           <owl:Class rdf:about="#Agent" />
+           <owl:Class rdf:about="#Role" />
+        </owl:unionOf>
+      </owl:Class>
+    </rdfs:domain>
+    <rdfs:range  rdf:resource="&xsd;string" />
+    <rdfs:isDefinedBy rdf:resource="&vcardURI;" />
+  </owl:DatatypeProperty>
+
+  <!-- Access Class (vcard) 2004-11-10 -->
+  <owl:DatatypeProperty rdf:about="&vcard;CLASS">
+    <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+    <rdfs:domain>
+      <owl:Class>
+         <owl:unionOf rdf:parseType="Collection">
+           <owl:Class rdf:about="#Agent" />
+           <owl:Class rdf:about="#Role" />
+        </owl:unionOf>
+      </owl:Class>
+    </rdfs:domain>
+    <rdfs:range  rdf:resource="&xsd;string" />
+    <rdfs:isDefinedBy rdf:resource="&vcardURI;" />
+  </owl:DatatypeProperty>
+
+  <!-- Key (vcard) 2004-11-10 -->
+  <owl:DatatypeProperty rdf:about="&vcard;KEY">
+    <rdfs:domain>
+      <owl:Class>
+         <owl:unionOf rdf:parseType="Collection">
+           <owl:Class rdf:about="#Agent" />
+           <owl:Class rdf:about="#Role" />
+        </owl:unionOf>
+      </owl:Class>
+    </rdfs:domain>
+    <rdfs:range  rdf:resource="&xsd;string" />
+    <rdfs:isDefinedBy rdf:resource="&vcardURI;" />
+  </owl:DatatypeProperty>
+
+
+  <!-- *** iCalendar Vocabularies *** --> 
+  <!-- iCalendar vocabraries are used for properties of okar:Event. -->
+
+  <!-- Related Event (iCal) 2005-06-27 -->
+  <!-- NOTE: OKAR WG recommends best practice is to use okar:relatedEvent property for describing the relationship between events, because &icalURI; defines ical:relatedTo as owl:DatatypeProperty, and the range of ical:relatedTo as xsd:string. -->
+  <!-- ［注意］&icalURI;では、ical:relatedToがowl:DatatypePropertyとし
+て、また、ical:relatedToのレンジがxsd:stringとして定義されているため、OKARでは、イベント間の関係を表す場合、okar:relatedEventプロパティの使用を推奨します。-->
+
+  <!-- Attendee (iCal) 2004-11-10 -->
+  <owl:ObjectProperty rdf:about="&ical;attendee">
+    <rdfs:domain rdf:resource="#GroupEvent" />
+    <rdfs:range  rdf:resource="#Role" />
+    <rdfs:comment xml:lang="en"> NOTE: &icalURI; defines the range of ical:attendee as ical:CAL-ADDRESS. Neither ical:CAL-ADDRESS nor okar:Role are in the relation of owl:disjointWith, so any conflicts don't arise. But some specific processing would be required in the applications.</rdfs:comment>
+    <rdfs:comment xml:lang="ja">［注意］&icalURI;では、ical:attendeeのレンジとしてical:CAL-ADDRESSが定義されています。ical:CAL-ADDRESSとokar:Roleはowl:disjointWithの関係にないため、矛盾は発生しませんが、アプリケーションにおいて特別な処理が必要になるかもしれません。</rdfs:comment>
+    <rdfs:isDefinedBy rdf:resource="&icalURI;" />
+  </owl:ObjectProperty>
+
+  <!-- Organizer (iCal) 2004-11-10 -->
+  <owl:ObjectProperty rdf:about="&ical;organizer"> 
+    <rdfs:domain rdf:resource="#GroupEvent" />
+    <rdfs:range  rdf:resource="#Role" />
+    <rdfs:comment xml:lang="en"> NOTE: It has same problem of ical:attendee.</rdfs:comment>
+    <rdfs:comment xml:lang="ja">［注意］ical:attendeeと同じ問題を持っています。</rdfs:comment>
+    <rdfs:isDefinedBy rdf:resource="&icalURI;" />
+  </owl:ObjectProperty>
+
+  <!-- Attached Artifact (iCal) 2004-11-10 -->
+  <owl:ObjectProperty rdf:about="&ical;attach"> 
+    <rdfs:domain rdf:resource="#GroupEvent" />
+    <rdfs:range  rdf:resource="#Artifact" />
+    <rdfs:comment xml:lang="en">NOTE: &icalURI; doesn't define the range of ical:attach.</rdfs:comment>
+    <rdfs:comment xml:lang="ja">［注意］&icalURI;では、ical:attachのレンジが定義されていません。</rdfs:comment>
+    <rdfs:isDefinedBy rdf:resource="&icalURI;" />
+  </owl:ObjectProperty>
+
+
+  <!-- *** Dublin Core Vocabraries *** -->  
+  <!-- Dublin Core vocabraries are used for properties of okar:Artifact. -->
+
+  <!-- Artifact Title (DC) 2004-11-10 -->
+  <owl:DatatypeProperty rdf:about="&dc;title"> 
+    <rdfs:domain rdf:resource="#Artifact" />
+    <rdfs:range  rdf:resource="&xsd;string" />
+    <rdfs:isDefinedBy rdf:resource="&dc;" />
+  </owl:DatatypeProperty>
+
+  <!-- Creator (DC) 2004-11-10 -->
+  <owl:ObjectProperty rdf:about="&dc;creator"> 
+    <rdfs:domain rdf:resource="#Artifact" />
+    <rdfs:range  rdf:resource="#Role" />
+    <rdfs:isDefinedBy rdf:resource="&dc;" />
+  </owl:ObjectProperty>
+
+  <!-- Subject (DC) 2004-11-10 -->
+  <owl:ObjectProperty rdf:about="&dc;subject"> 
+    <rdfs:domain rdf:resource="#Artifact" />
+    <rdfs:comment xml:lang="en"> NOTE: We don't define the range of dc:subject. That means it is available to use all resources. However, please note this property is defined as owl:ObjectProperty.
+    </rdfs:comment>
+    <rdfs:comment xml:lang="ja">［注意］dc:subjectのレンジは定義されていなく、全てのリソースがレンジとなり得ます。ただし、owl:ObjectPropertyで定義されていることに注意してください。</rdfs:comment>
+    <rdfs:isDefinedBy rdf:resource="&dc;" />
+  </owl:ObjectProperty>
+
+  <!-- Description (DC) 2004-11-10 -->
+  <owl:DatatypeProperty rdf:about="&dc;description">
+    <rdfs:domain rdf:resource="#Artifact" />
+    <rdfs:range  rdf:resource="&xsd;string" />
+    <rdfs:isDefinedBy rdf:resource="&dc;" />
+  </owl:DatatypeProperty>
+
+  <!-- Publisher (DC) 2004-11-10 -->
+  <owl:ObjectProperty rdf:about="&dc;publisher"> 
+    <rdfs:domain rdf:resource="#Artifact" />
+    <rdfs:range  rdf:resource="#Role" />
+    <rdfs:isDefinedBy rdf:resource="&dc;" />
+  </owl:ObjectProperty>
+
+  <!-- Contributor (DC) 2004-11-10 -->
+  <owl:ObjectProperty rdf:about="&dc;contributor">
+    <rdfs:domain rdf:resource="#Artifact" />
+    <rdfs:range  rdf:resource="#Role" />
+    <rdfs:isDefinedBy rdf:resource="&dc;" />
+  </owl:ObjectProperty>
+
+  <!-- Date (DC) 2004-11-10 -->
+  <owl:DatatypeProperty rdf:about="&dc;date"> 
+    <rdfs:domain rdf:resource="#Artifact" />
+    <rdfs:range  rdf:resource="&xsd;dateTime"/>
+    <rdfs:isDefinedBy rdf:resource="&dc;" />
+  </owl:DatatypeProperty>
+
+  <!-- Artifact Format (DC) 2004-11-10 -->
+  <owl:DatatypeProperty rdf:about="&dc;format">
+    <rdfs:domain rdf:resource="#Artifact" />
+    <rdfs:range  rdf:resource="&xsd;string" />
+    <rdfs:isDefinedBy rdf:resource="&dc;" />
+  </owl:DatatypeProperty>
+
+  <!-- Source (DC) 2004-11-10 -->
+  <owl:ObjectProperty rdf:about="&dc;source">
+    <rdfs:domain rdf:resource="#Artifact"/>
+    <rdfs:range  rdf:resource="#Artifact"/>
+    <rdfs:isDefinedBy rdf:resource="&dc;" />
+  </owl:ObjectProperty>
+
+  <!-- Related Artifact (DC) 2004-11-10 -->
+  <owl:ObjectProperty rdf:about="&dc;relation"> 
+    <rdfs:domain rdf:resource="#Artifact"/>
+    <rdfs:range  rdf:resource="#Artifact"/>
+    <rdfs:isDefinedBy rdf:resource="&dc;" />
+  </owl:ObjectProperty>
+
+  <!-- Artifact Identifier (DC) 2004-11-10 -->
+  <owl:DatatypeProperty rdf:about="&dc;identifier"> 
+    <rdfs:domain rdf:resource="#Artifact" />
+    <rdfs:range  rdf:resource="&xsd;anyURI" />
+    <rdfs:isDefinedBy rdf:resource="&dc;" />
+  </owl:DatatypeProperty>
+
+  <!-- Artifact Type: Genre (DC) 2004-11-10 -->
+  <owl:ObjectProperty rdf:about="&dc;type"> 
+    <rdfs:domain rdf:resource="#Artifact" />
+    <!-- <rdfs:range  rdf:resource="&dcterms;DCMIType" /> -->
+    <rdfs:comment xml:lang="en"> NOTE: DCMI recommended best practice is to select a value from a controlled vocabulary (for example, the DCMI Type Vocabulary).</rdfs:comment>
+    <rdfs:comment xml:lang="ja">［注意］DCMIでは、例えば、DCMI Type Vocabularyのような制限言語の利用を推奨しています。</rdfs:comment>
+    <rdfs:isDefinedBy rdf:resource="&dc;" />
+  </owl:ObjectProperty>
+
+  <!-- Language (DC) 2004-11-10 -->
+  <owl:DatatypeProperty rdf:about="&dc;language"> 
+    <rdfs:domain rdf:resource="#Artifact" />
+    <rdfs:range  rdf:resource="&xsd;string" />
+    <rdfs:comment xml:lang="en"> NOTE: DCMI recommended best practice is to use RFC 3066. </rdfs:comment>
+    <rdfs:comment xml:lang="ja">［注意］DCMIでは、RFC 3066の利用を推奨しています。</rdfs:comment>
+    <rdfs:isDefinedBy rdf:resource="&dc;" />
+  </owl:DatatypeProperty>
+
+  <!-- Coverage (DC) 2004-11-10 -->
+  <owl:DatatypeProperty rdf:about="&dc;coverage"> 
+    <rdfs:domain rdf:resource="#Artifact" />
+    <rdfs:range  rdf:resource="&xsd;string" />
+    <rdfs:isDefinedBy rdf:resource="&dc;" />
+  </owl:DatatypeProperty>
+
+  <!-- Copy Rights (DC) 2004-11-10 -->
+  <owl:DatatypeProperty rdf:about="&dc;rights"> 
+    <rdfs:domain rdf:resource="#Artifact" />
+    <rdfs:range  rdf:resource="&xsd;string" />
+    <rdfs:isDefinedBy rdf:resource="&dc;" />
+  </owl:DatatypeProperty>
+
+  <!-- Audience(DCMI TERMS) 2005-03-31 -->
+  <owl:ObjectProperty rdf:about="&dcterms;audience"> 
+    <rdfs:domain rdf:resource="#Artifact" />
+    <rdfs:range  rdf:resource="#Role" />
+    <rdfs:isDefinedBy rdf:resource="&dcterms;" />
+  </owl:ObjectProperty>
+
+</rdf:RDF>

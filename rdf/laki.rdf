@@ -1,0 +1,272 @@
+<rdf:RDF
+    xmlns:l_miehikkala="http://ldf.fi/narc-luovutetut1939-55/miehikkala/"
+    xmlns:m_schema="http://ldf.fi/schema/narc-menehtyneet1939-45/"
+    xmlns:l_jatkosota="http://ldf.fi/narc-luovutetut1939-55/jatkosota/"
+    xmlns:s="http://ldf.fi/narc-sotasurmat1918-22/"
+    xmlns:s_schema="http://ldf.fi/schema/narc-sotasurmat1918-22/"
+    xmlns:m="http://ldf.fi/narc-menehtyneet1939-45/"
+    xmlns:koko="http://www.yso.fi/onto/koko/"
+    xmlns:s_lisat="http://ldf.fi/narc-sotasurmat1918-22/lisatieto/"
+    xmlns:l_schema="http://ldf.fi/schema/narc-luovutetut1939-55/"
+    xmlns:void-ext="http://ldf.fi/void-ext#"
+    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+    xmlns:l_talvisota="http://ldf.fi/narc-luovutetut1939-55/talvisota/"
+    xmlns:foaf="http://xmlns.com/foaf/0.1/"
+    xmlns:dcterms="http://purl.org/dc/terms/"
+    xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+    xmlns:saha3="http://seco.tkk.fi/saha3/"
+    xmlns:wgs84_pos="http://www.w3.org/2003/01/geo/wgs84_pos#"
+    xmlns:skos="http://www.w3.org/2004/02/skos/core#"
+    xmlns:adms="http://www.w3.org/ns/adms#"
+    xmlns:dc="http://purl.org/dc/elements/1.1/"
+    xmlns:blue_route="http://ldf.fi/poi/suomenlinna/blue_route/"
+    xmlns:gr="http://purl.org/goodrelations/v1"
+    xmlns:void="http://rdfs.org/ns/void#"
+    xmlns:kulsa="http://kulttuurisampo.fi/annotaatio#"
+    xmlns:s_lahde="http://ldf.fi/narc-sotasurmat1918-22/lahde/"
+    xmlns:vann="http://purl.org/vocab/vann/"
+    xmlns="http://ldf.fi/schema/tour-rdf/"
+    xmlns:l_saksalais="http://ldf.fi/narc-luovutetut1939-55/saksalais/"
+    xmlns:formats="http://www.w3.org/ns/formats/"
+    xmlns:adms-status="http://www.w3.org/ns/adms/status/"
+    xmlns:geo="http://www.w3.org/2003/01/geo/"
+    xmlns:l_internoidut="http://ldf.fi/narc-luovutetut1939-55/internoidut/"
+    xmlns:owl="http://www.w3.org/2002/07/owl#"
+    xmlns:poi="http://schema.onki.fi/poi#"
+    xmlns:time-schema="http://www.yso.fi/onto/time-schema#"
+    xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">
+  <owl:Ontology rdf:about="http://purl.org/finlex/schema/laki/">
+    <dcterms:subject rdf:resource="http://dbpedia.org/resource/Law"/>
+    <dcterms:date rdf:datatype="http://www.w3.org/2001/XMLSchema#date"
+    >2013-06-10</dcterms:date>
+    <void:dataDump rdf:resource="http://ldf.fi/schema/data?graph=http://purl.org/finlex/schema/laki/"/>
+    <dc:creator>Matias Frosterus</dc:creator>
+    <dc:creator>Mika Wahlroos</dc:creator>
+    <dc:creator>Jouni Tuominen</dc:creator>
+    <dcterms:title xml:lang="en">Finlex Legislation Metadata Schema</dcterms:title>
+  </owl:Ontology>
+  <owl:Class rdf:about="http://purl.org/finlex/schema/laki/Subsection">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="http://purl.org/finlex/schema/laki/StatuteItem"/>
+    </rdfs:subClassOf>
+    <rdfs:label xml:lang="fi">Momentti</rdfs:label>
+    <rdfs:label xml:lang="en">Subsection</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:about="http://purl.org/finlex/schema/laki/Text">
+    <rdfs:label xml:lang="fi">Tekstisisältö</rdfs:label>
+    <rdfs:label xml:lang="en">Text content</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:about="http://purl.org/finlex/schema/laki/StatuteItem">
+    <rdfs:label xml:lang="fi">Säädöksen kohta</rdfs:label>
+    <rdfs:label xml:lang="en">Statute item</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:about="http://purl.org/finlex/schema/laki/EnactingClause">
+    <rdfs:label xml:lang="fi">Johtolause</rdfs:label>
+    <rdfs:label xml:lang="en">Enacting clause</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:about="http://purl.org/finlex/schema/laki/Chapter">
+    <rdfs:subClassOf rdf:resource="http://purl.org/finlex/schema/laki/StatuteItem"/>
+    <rdfs:label xml:lang="fi">Luku</rdfs:label>
+    <rdfs:label xml:lang="en">Chapter</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:about="http://purl.org/finlex/schema/laki/Decree">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="http://purl.org/finlex/schema/laki/Statute"/>
+    </rdfs:subClassOf>
+    <rdfs:label xml:lang="fi">Asetus</rdfs:label>
+    <rdfs:label xml:lang="en">Decree</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:about="http://purl.org/finlex/schema/laki/InTextReference">
+    <rdfs:label xml:lang="fi">Viite tekstisisällössä</rdfs:label>
+    <rdfs:label xml:lang="en">Reference in text content</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:about="http://purl.org/finlex/schema/laki/Category">
+    <rdfs:label xml:lang="fi">Luokittelukategoria</rdfs:label>
+    <rdfs:label xml:lang="en">Classification category</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:about="http://purl.org/finlex/schema/laki/Paragraph">
+    <rdfs:subClassOf rdf:resource="http://purl.org/finlex/schema/laki/StatuteItem"/>
+    <rdfs:label xml:lang="fi">Kohta</rdfs:label>
+    <rdfs:label xml:lang="en">Paragraph</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:about="http://purl.org/finlex/schema/laki/Statute">
+    <rdfs:label xml:lang="fi">Säädös</rdfs:label>
+    <rdfs:label xml:lang="en">Statute</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:about="http://purl.org/finlex/schema/laki/Section">
+    <rdfs:subClassOf rdf:resource="http://purl.org/finlex/schema/laki/StatuteItem"/>
+    <rdfs:label xml:lang="fi">Pykälä</rdfs:label>
+    <rdfs:label xml:lang="en">Section</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:about="http://purl.org/finlex/schema/laki/Act">
+    <rdfs:subClassOf rdf:resource="http://purl.org/finlex/schema/laki/Statute"/>
+    <rdfs:label xml:lang="fi">Laki</rdfs:label>
+    <rdfs:label xml:lang="en">Act</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:about="http://purl.org/finlex/schema/laki/SubHeading">
+    <rdfs:label xml:lang="fi">Väliotsikko</rdfs:label>
+    <rdfs:label xml:lang="en">Sub-heading</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:about="http://purl.org/finlex/schema/laki/Part">
+    <rdfs:subClassOf rdf:resource="http://purl.org/finlex/schema/laki/StatuteItem"/>
+    <rdfs:label xml:lang="fi">Osa</rdfs:label>
+    <rdfs:label xml:lang="en">Part</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:about="http://purl.org/finlex/schema/laki/Preamble">
+    <rdfs:label xml:lang="fi">Johdanto</rdfs:label>
+    <rdfs:label xml:lang="en">Preamble</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:about="http://purl.org/finlex/schema/laki/Subparagraph">
+    <rdfs:subClassOf rdf:resource="http://purl.org/finlex/schema/laki/StatuteItem"/>
+    <rdfs:label xml:lang="fi">Alakohta</rdfs:label>
+    <rdfs:label xml:lang="en">Subparagraph</rdfs:label>
+  </owl:Class>
+  <owl:ObjectProperty rdf:about="http://purl.org/finlex/schema/laki/enactingClause">
+    <rdfs:range rdf:resource="http://purl.org/finlex/schema/laki/EnactingClause"/>
+    <rdfs:domain rdf:resource="http://purl.org/finlex/schema/laki/Statute"/>
+    <rdfs:label xml:lang="fi">Johtolause</rdfs:label>
+    <rdfs:label xml:lang="en">Enacting clause</rdfs:label>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="http://purl.org/finlex/schema/laki/text">
+    <rdfs:range rdf:resource="http://purl.org/finlex/schema/laki/Text"/>
+    <rdfs:domain rdf:resource="http://purl.org/finlex/schema/laki/StatuteItem"/>
+    <rdfs:label xml:lang="fi">Tekstisisältö</rdfs:label>
+    <rdfs:label xml:lang="en">Text content</rdfs:label>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="http://purl.org/finlex/schema/laki/basesOn">
+    <rdfs:range rdf:resource="http://purl.org/finlex/schema/laki/Statute"/>
+    <rdfs:domain rdf:resource="http://purl.org/finlex/schema/laki/Statute"/>
+    <rdfs:label xml:lang="fi">Perustuu säädökseen</rdfs:label>
+    <rdfs:label xml:lang="en">Bases on statute</rdfs:label>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="http://purl.org/finlex/schema/laki/repeals">
+    <rdfs:range rdf:parseType="Collection">
+      <owl:Class rdf:about="http://purl.org/finlex/schema/laki/Statute"/>
+      <owl:Class rdf:about="http://purl.org/finlex/schema/laki/StatuteItem"/>
+    </rdfs:range>
+    <rdfs:domain rdf:resource="http://purl.org/finlex/schema/laki/Statute"/>
+    <rdfs:label xml:lang="fi">Kumoaa säädöksen tai säädöksen kohdan</rdfs:label>
+    <rdfs:label xml:lang="en">Repeals statute (item)</rdfs:label>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="http://purl.org/finlex/schema/laki/entryIntoForceBy">
+    <rdfs:range rdf:resource="http://purl.org/finlex/schema/laki/Statute"/>
+    <rdfs:domain rdf:resource="http://purl.org/finlex/schema/laki/Statute"/>
+    <rdfs:label xml:lang="fi">Voimaantulosäädös</rdfs:label>
+    <rdfs:label xml:lang="en">Entry into force statute</rdfs:label>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="http://purl.org/finlex/schema/laki/category">
+    <rdfs:range rdf:resource="http://purl.org/finlex/schema/laki/Category"/>
+    <rdfs:domain rdf:resource="http://purl.org/finlex/schema/laki/Statute"/>
+    <rdfs:label xml:lang="fi">Luokittelukategoria</rdfs:label>
+    <rdfs:label xml:lang="en">Classification category</rdfs:label>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="http://purl.org/finlex/schema/laki/subject">
+    <rdfs:range rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <rdfs:domain rdf:parseType="Collection">
+      <owl:Class rdf:about="http://purl.org/finlex/schema/laki/Statute"/>
+      <owl:Class rdf:about="http://purl.org/finlex/schema/laki/StatuteItem"/>
+    </rdfs:domain>
+    <rdfs:subPropertyOf rdf:resource="http://purl.org/dc/elements/1.1/subject"/>
+    <rdfs:label xml:lang="fi">Aihe</rdfs:label>
+    <rdfs:label xml:lang="en">Subject</rdfs:label>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="http://purl.org/finlex/schema/laki/subHeading">
+    <rdfs:range rdf:resource="http://purl.org/finlex/schema/laki/SubHeading"/>
+    <rdfs:domain rdf:resource="http://purl.org/finlex/schema/laki/Statute"/>
+    <rdfs:label xml:lang="fi">Väliotsikko</rdfs:label>
+    <rdfs:label xml:lang="en">Sub-heading</rdfs:label>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="http://purl.org/finlex/schema/laki/hasReference">
+    <rdfs:range rdf:resource="http://purl.org/finlex/schema/laki/InTextReference"/>
+    <rdfs:domain rdf:resource="http://purl.org/finlex/schema/laki/Text"/>
+    <rdfs:label xml:lang="fi">Sisältää viittauksen</rdfs:label>
+    <rdfs:label xml:lang="en">Has reference</rdfs:label>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="http://purl.org/finlex/schema/laki/refersTo">
+    <rdfs:range rdf:parseType="Collection">
+      <owl:Class rdf:about="http://purl.org/finlex/schema/laki/Statute"/>
+      <owl:Class rdf:about="http://purl.org/finlex/schema/laki/StatuteItem"/>
+      <owl:Class rdf:about="http://purl.org/finlex/schema/laki/InTextReference"/>
+    </rdfs:range>
+    <rdfs:domain rdf:parseType="Collection">
+      <owl:Class rdf:about="http://purl.org/finlex/schema/laki/Statute"/>
+      <owl:Class rdf:about="http://purl.org/finlex/schema/laki/StatuteItem"/>
+    </rdfs:domain>
+    <rdfs:label xml:lang="fi">Viittaa säädökseen tai säädökseen kohtaan</rdfs:label>
+    <rdfs:label xml:lang="en">Refers to statute (item)</rdfs:label>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="http://purl.org/finlex/schema/laki/hasPart">
+    <rdfs:range rdf:resource="http://purl.org/finlex/schema/laki/StatuteItem"/>
+    <rdfs:domain rdf:parseType="Collection">
+      <owl:Class rdf:about="http://purl.org/finlex/schema/laki/Statute"/>
+      <owl:Class rdf:about="http://purl.org/finlex/schema/laki/StatuteItem"/>
+    </rdfs:domain>
+    <rdfs:label xml:lang="en">Has part</rdfs:label>
+    <rdfs:label xml:lang="fi">Osa</rdfs:label>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="http://purl.org/finlex/schema/laki/preamble">
+    <rdfs:range rdf:resource="http://purl.org/finlex/schema/laki/Preamble"/>
+    <rdfs:domain rdf:resource="http://purl.org/finlex/schema/laki/Subsection"/>
+    <rdfs:label xml:lang="fi">Johdanto</rdfs:label>
+    <rdfs:label xml:lang="en">Preamble</rdfs:label>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="http://purl.org/finlex/schema/laki/amends">
+    <rdfs:range rdf:parseType="Collection">
+      <owl:Class rdf:about="http://purl.org/finlex/schema/laki/Statute"/>
+      <owl:Class rdf:about="http://purl.org/finlex/schema/laki/StatuteItem"/>
+    </rdfs:range>
+    <rdfs:domain rdf:resource="http://purl.org/finlex/schema/laki/Statute"/>
+    <rdfs:label xml:lang="fi">Muuttaa säädöstä tai säädöksen kohtaa</rdfs:label>
+    <rdfs:label xml:lang="en">Amends statute (item)</rdfs:label>
+  </owl:ObjectProperty>
+  <owl:DatatypeProperty rdf:about="http://purl.org/finlex/schema/laki/referringText">
+    <rdfs:domain rdf:resource="http://purl.org/finlex/schema/laki/InTextReference"/>
+    <rdfs:label xml:lang="fi">Viittaava teksti</rdfs:label>
+    <rdfs:label xml:lang="en">Referring text</rdfs:label>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:about="http://purl.org/finlex/schema/laki/adoptionDate">
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#date"/>
+    <rdfs:domain rdf:resource="http://purl.org/finlex/schema/laki/Statute"/>
+    <rdfs:subPropertyOf rdf:resource="http://purl.org/dc/elements/1.1/date"/>
+    <rdfs:label xml:lang="fi">Antopäivämäärä</rdfs:label>
+    <rdfs:label xml:lang="en">Date of adoption</rdfs:label>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:about="http://purl.org/finlex/schema/laki/itemHeading">
+    <rdfs:domain rdf:resource="http://purl.org/finlex/schema/laki/StatuteItem"/>
+    <rdfs:label xml:lang="fi">Säädöksen kohdan otsikko</rdfs:label>
+    <rdfs:label xml:lang="en">Item heading</rdfs:label>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:about="http://purl.org/finlex/schema/laki/id">
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:domain rdf:parseType="Collection">
+      <owl:Class rdf:about="http://purl.org/finlex/schema/laki/Statute"/>
+      <owl:Class rdf:about="http://purl.org/finlex/schema/laki/StatuteItem"/>
+    </rdfs:domain>
+    <rdfs:subPropertyOf rdf:resource="http://purl.org/dc/elements/1.1/identifier"/>
+    <rdfs:label xml:lang="fi">Tunniste</rdfs:label>
+    <rdfs:label xml:lang="en">Id</rdfs:label>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:about="http://purl.org/finlex/schema/laki/value">
+    <rdfs:domain rdf:parseType="Collection">
+      <owl:Class rdf:about="http://purl.org/finlex/schema/laki/EnactingClause"/>
+      <owl:Class rdf:about="http://purl.org/finlex/schema/laki/Text"/>
+      <owl:Class rdf:about="http://purl.org/finlex/schema/laki/SubHeading"/>
+      <owl:Class rdf:about="http://purl.org/finlex/schema/laki/Preamble"/>
+    </rdfs:domain>
+    <rdfs:label xml:lang="fi">Arvo</rdfs:label>
+    <rdfs:label xml:lang="en">Value</rdfs:label>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:about="http://purl.org/finlex/schema/laki/entryIntoForceDate">
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#date"/>
+    <rdfs:domain rdf:resource="http://purl.org/finlex/schema/laki/Statute"/>
+    <rdfs:subPropertyOf rdf:resource="http://purl.org/dc/elements/1.1/date"/>
+    <rdfs:label xml:lang="fi">Voimaantulopäivämäärä</rdfs:label>
+    <rdfs:label xml:lang="en">Date of entry into force</rdfs:label>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:about="http://purl.org/finlex/schema/laki/title">
+    <rdfs:domain rdf:resource="http://purl.org/finlex/schema/laki/Statute"/>
+    <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2000/01/rdf-schema#label"/>
+    <rdfs:label xml:lang="fi">Nimike</rdfs:label>
+    <rdfs:label xml:lang="en">Title</rdfs:label>
+  </owl:DatatypeProperty>
+</rdf:RDF>

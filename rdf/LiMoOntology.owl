@@ -1,0 +1,209 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+ 
+<rdf:RDF xml:base="http://purl.org/LiMo/0.1" xmlns="http://purl.org/LiMo/0.1#" xml:LiMo="http://purl.org/LiMo/0.1#" xmlns:xsd="http://www.w3.org/2001/XMLSchema#" xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:owl="http://www.w3.org/2002/07/owl#" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:dcterms="http://purl.org/dc/terms/" xmlns:void="http://rdfs.org/ns/void#" xmlns:skos="http://www.w3.org/2004/02/skos/core#" xmlns:cc="http://creativecommons.org/ns#" xmlns:prov="http://www.w3.org/ns/prov#" xmlns:LiMo="http://purl.org/LiMo/0.1#" xmlns:foaf="http://xmlns.com/foaf/0.1/">
+ 	<owl:Ontology rdf:about="http://purl.org/LiMo/0.1#">
+		<rdfs:label  xml:lang="it">LiMo Ontology</rdfs:label>
+		<owl:versionInfo>V.3 </owl:versionInfo>
+		<dc:date>20 maggio 2013</dc:date>
+		<dc:creator>Silvia Mazzini (Regesta.exe)</dc:creator>
+		<dc:creator>Chiara Veninata  (ACS)</dc:creator>
+		<dc:creator>Andrea Raimondi (EvoDevo)</dc:creator>
+	</owl:Ontology>
+ 
+    <!-- 
+    ///////////// LiMo Ontology/////////////////////////// 
+    ///
+    /// Version: V.3 
+    /// Authors: Silvia Mazzini (Regesta.exe)
+    ///          Chiara Veninata (ACS)
+    ///          Andrea Raimondi (EvoDevo)
+    /// Organization: MISM/Modelli concettuali_Interoperabilità_Semantica_Metadati
+    /////////////////////////////////////////////////////
+      -->
+       
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Annotation properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+ 
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/elements/1.1/description"/>
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/elements/1.1/title"/>
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/elements/1.1/creator"/>
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/terms/isReferencedBy"/>
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/terms/conformsTo"/>
+     
+    
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Datatypes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+ 
+   
+ 
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+ 
+    <owl:ObjectProperty rdf:about="http://purl.org/LiMo/0.1#areDefinedBy">
+        <rdfs:domain rdf:resource="http://purl.org/LiMo/0.1#DistributionConditions"/>
+        <rdfs:range rdf:resource="http://purl.org/LiMo/0.1#LicenseModel"/>
+    </owl:ObjectProperty>
+ 
+    <owl:ObjectProperty rdf:about="http://purl.org/LiMo/0.1#areGuaranteedBy">
+        <rdfs:range rdf:resource="http://purl.org/LiMo/0.1#LicenseModel"/>
+        <rdfs:domain rdf:resource="http://purl.org/LiMo/0.1#Rights"/>
+    </owl:ObjectProperty>
+ 
+    <owl:ObjectProperty rdf:about="http://purl.org/LiMo/0.1#areImposedBy">
+        <rdfs:range rdf:resource="http://purl.org/LiMo/0.1#LicenseModel"/>
+        <rdfs:domain rdf:resource="http://purl.org/LiMo/0.1#UseConditions"/>
+    </owl:ObjectProperty>
+ 
+    <owl:ObjectProperty rdf:about="http://purl.org/LiMo/0.1#coverDatasets">
+        <rdfs:range rdf:resource="http://purl.org/LiMo/0.1#Dataset"/>
+        <rdfs:domain rdf:resource="http://purl.org/LiMo/0.1#LicenseModel"/>
+    </owl:ObjectProperty>
+ 
+    <owl:ObjectProperty rdf:about="http://purl.org/LiMo/0.1#define">
+        <rdfs:range rdf:resource="http://purl.org/LiMo/0.1#DistributionConditions"/>
+        <rdfs:domain rdf:resource="http://purl.org/LiMo/0.1#LicenseModel"/>
+        <owl:inverseOf rdf:resource="http://purl.org/LiMo/0.1#areDefinedBy"/>
+    </owl:ObjectProperty>
+ 
+    <owl:ObjectProperty rdf:about="http://purl.org/LiMo/0.1#guarantee">
+        <rdfs:domain rdf:resource="http://purl.org/LiMo/0.1#LicenseModel"/>
+        <rdfs:range rdf:resource="http://purl.org/LiMo/0.1#Rights"/>
+        <owl:inverseOf rdf:resource="http://purl.org/LiMo/0.1#areGuaranteedBy"/>
+    </owl:ObjectProperty>
+ 
+    <owl:ObjectProperty rdf:about="http://purl.org/LiMo/0.1#hasLicenseModel">
+        <rdfs:domain rdf:resource="http://purl.org/LiMo/0.1#Dataset"/>
+        <rdfs:range rdf:resource="http://purl.org/LiMo/0.1#LicenseModel"/>
+        <owl:inverseOf rdf:resource="http://purl.org/LiMo/0.1#coverDatasets"/>
+    </owl:ObjectProperty>
+ 
+    <owl:ObjectProperty rdf:about="http://purl.org/LiMo/0.1#impose">
+        <rdfs:domain rdf:resource="http://purl.org/LiMo/0.1#LicenseModel"/>
+        <rdfs:range rdf:resource="http://purl.org/LiMo/0.1#UseConditions"/>
+        <owl:inverseOf rdf:resource="http://purl.org/LiMo/0.1#areImposedBy"/>
+    </owl:ObjectProperty>
+ 
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Data properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+    -->
+    <owl:DatatypeProperty rdf:about="http://purl.org/LiMo/0.1#URL">
+        <rdfs:domain rdf:resource="http://purl.org/LiMo/0.1#LicenseModel"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#anyURI"/>
+    </owl:DatatypeProperty>
+     
+    <owl:DatatypeProperty rdf:about="http://purl.org/LiMo/0.1#attributionCondition">
+        <rdfs:domain rdf:resource="http://purl.org/LiMo/0.1#DistributionConditions"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+    </owl:DatatypeProperty>
+ 
+    <owl:DatatypeProperty rdf:about="http://purl.org/LiMo/0.1#createCondition">
+        <rdfs:domain rdf:resource="http://purl.org/LiMo/0.1#Rights"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+    </owl:DatatypeProperty>
+ 
+    <owl:DatatypeProperty rdf:about="http://purl.org/LiMo/0.1#creator">
+        <rdfs:domain rdf:resource="http://purl.org/LiMo/0.1#LicenseModel"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#Name"/>
+    </owl:DatatypeProperty>
+ 
+    <owl:DatatypeProperty rdf:about="http://purl.org/LiMo/0.1#icon">
+        <rdfs:domain rdf:resource="http://purl.org/LiMo/0.1#LicenseModel"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#anyURI"/>
+    </owl:DatatypeProperty>
+     
+    <owl:DatatypeProperty rdf:about="http://purl.org/LiMo/0.1#noCopyrightCondition">
+        <rdfs:domain rdf:resource="http://purl.org/LiMo/0.1#DistributionConditions"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+    </owl:DatatypeProperty>
+ 
+    <owl:DatatypeProperty rdf:about="http://purl.org/LiMo/0.1#nonCommercialCondition">
+        <rdfs:domain rdf:resource="http://purl.org/LiMo/0.1#UseConditions"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+    </owl:DatatypeProperty>
+ 
+    <owl:DatatypeProperty rdf:about="http://purl.org/LiMo/0.1#nonDerivativeWorksCondition">
+        <rdfs:domain rdf:resource="http://purl.org/LiMo/0.1#UseConditions"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+    </owl:DatatypeProperty>
+ 
+    <owl:DatatypeProperty rdf:about="http://purl.org/LiMo/0.1#remixCondition">
+        <rdfs:domain rdf:resource="http://purl.org/LiMo/0.1#Rights"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+    </owl:DatatypeProperty>
+ 
+    <owl:DatatypeProperty rdf:about="http://purl.org/LiMo/0.1#shareAlikeCondition">
+        <rdfs:domain rdf:resource="http://purl.org/LiMo/0.1#DistributionConditions"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+    </owl:DatatypeProperty>
+ 
+    <owl:DatatypeProperty rdf:about="http://purl.org/LiMo/0.1#shareCondition">
+        <rdfs:domain rdf:resource="http://purl.org/LiMo/0.1#Rights"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+    </owl:DatatypeProperty>
+     
+    <owl:ObjectProperty rdf:about="http://purl.org/LiMo/0.1#compatibleWith">
+        <rdfs:domain rdf:resource="http://purl.org/LiMo/0.1#licenseModel"/>
+        <rdfs:range rdf:resource="http://purl.org/LiMo/0.1#licenseModel"/>
+    </owl:ObjectProperty>
+ 
+ 
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+ 
+    <owl:Class rdf:about="http://purl.org/LiMo/0.1#Dataset">
+        <owl:equivalentClass rdf:resource="http://rdfs.org/ns/void#Dataset"/>
+    </owl:Class>
+     
+    <owl:Class rdf:about="http://purl.org/LiMo/0.1#LegalTerms">
+        <rdfs:label xml:lang="it">Termini legali di applicazione della licenza</rdfs:label>
+        <dc:conformsTo>http://creativecommons.org/ns#</dc:conformsTo>
+            <owl:equivalentClass rdf:resource="http://creativecommons.org/ns#Jurisdiction"/>  
+    </owl:Class>
+     
+    <owl:Class rdf:about="http://purl.org/LiMo/0.1#LicenseModel">
+        <rdfs:label xml:lang="it">Modello di Licenza</rdfs:label>
+        <dc:conformsTo>http://opendatacommons.org/licenses</dc:conformsTo>
+        <owl:equivalentClass rdf:resource="http://creativecommons.org/ns#License"/>
+        <owl:equivalentClass rdf:resource="http://purl.org/dc/terms/LicenseDocument"/>
+        <skos:exactMatch rdf:resource="http://eurovoc.europa.eu/259007"/>
+    </owl:Class>   
+ 
+    <owl:Class rdf:about="http://purl.org/LiMo/0.1#Rights">
+        <rdfs:subClassOf rdf:resource="http://purl.org/LiMo/0.1#LegalTerms"/>
+        <rdfs:label xml:lang="it">Diritti concessi dai termini legali</rdfs:label>
+    </owl:Class>
+     
+    <owl:Class rdf:about="http://purl.org/LiMo/0.1#UseConditions">
+        <rdfs:subClassOf rdf:resource="http://purl.org/LiMo/0.1#LegalTerms"/>
+        <rdfs:label xml:lang="it">Condizioni legali d'uso</rdfs:label>
+    </owl:Class>
+     
+ <owl:Class rdf:about="http://purl.org/LiMo/0.1#DistributionConditions">
+        <rdfs:subClassOf rdf:resource="http://purl.org/LiMo/0.1#LegalTerms"/>
+        <rdfs:label xml:lang="it">Condizioni legali di distribuzione</rdfs:label>
+    </owl:Class>
+    </rdf:RDF>
