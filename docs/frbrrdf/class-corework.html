@@ -26,7 +26,7 @@
     <!-- <link href="../static/libs/bootstrap-3_3_7-dist/css/bootstrap.min.css" rel="stylesheet">  -->
     <!-- Bootswatch:  -->
     <!-- cerulean  | cyborg |  flatly |  lumen |  sandstone |   spacelab  |  yeti | cosmo |  darkly |  paper | simplex | superhero |  journal | readable  |   slate |  united -->
-    <link href="../static/libs/bootswatch3_2/cosmo/bootstrap.min.css" rel="stylesheet">
+    <link href="../static/libs/bootswatch3_2/lumen/bootstrap.min.css" rel="stylesheet">
     <link href="../static/custom/css/simple-sidebar.css" rel="stylesheet">
     <link href="../static/custom/css/familytree.css" rel="stylesheet">
     <link href="../static/custom/css/tabletree.css" rel="stylesheet">
@@ -1410,14 +1410,14 @@ span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 
 <span class="s">A work is an abstract entity; there is no single material object one can point to as the work. We recognize the work through individual realizations or expressions of the work, but the work itself exists only in the commonality of content between and among the various expressions of the work. When we speak of Homer&#39;s Iliad as a work, our point of reference is not a particular recitation or text of the work, but the intellectual creation that lies behind all the various expressions of the work. &quot;&quot;&quot;@en ;</span>
 <span class="s">    owl:equivalentClass [ a owl:Class ;</span>
 <span class="s">            owl:intersectionOf ( core:Endeavour [ a owl:Restriction ;</span>
+<span class="s">                        owl:onProperty core:realization ;</span>
+<span class="s">                        owl:someValuesFrom core:Expression ] ) ],</span>
+<span class="s">        [ a owl:Class ;</span>
+<span class="s">            owl:intersectionOf ( core:Endeavour [ a owl:Restriction ;</span>
 <span class="s">                        owl:allValuesFrom core:Work ;</span>
 <span class="s">                        owl:onProperty core:part ] [ a owl:Restriction ;</span>
 <span class="s">                        owl:allValuesFrom core:Work ;</span>
-<span class="s">                        owl:onProperty core:partOf ] ) ],</span>
-<span class="s">        [ a owl:Class ;</span>
-<span class="s">            owl:intersectionOf ( core:Endeavour [ a owl:Restriction ;</span>
-<span class="s">                        owl:onProperty core:realization ;</span>
-<span class="s">                        owl:someValuesFrom core:Expression ] ) ] .</span>
+<span class="s">                        owl:onProperty core:partOf ] ) ] .</span>
 </pre></div>
 
             
@@ -1447,7 +1447,7 @@ span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 
   <footer class="footer">
     <div class="container">
     
-      <p class="text-muted">Documentation automatically generated on Wed, 16 Nov 2022 14:12:50 with <a href="http://lambdamusic.github.io/Ontospy/">Ontospy</a> (v2.1.0)</p>
+      <p class="text-muted">Documentation automatically generated on Wed, 16 Nov 2022 14:21:11 with <a href="http://lambdamusic.github.io/Ontospy/">Ontospy</a> (v2.1.0)</p>
 
     
     </div>
