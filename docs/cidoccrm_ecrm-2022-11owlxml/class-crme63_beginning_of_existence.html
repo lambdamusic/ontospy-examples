@@ -1,0 +1,3025 @@
+
+
+
+
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="../static/custom/favicon.ico">
+
+	
+		<title>Ontospy > http://www.cidoc-crm.org/cidoc-crm/</title>
+	
+
+    <!-- Bootstrap core CSS -->
+    <!-- <link href="../static/libs/bootstrap-3_3_7-dist/css/bootstrap.min.css" rel="stylesheet">  -->
+    <!-- Bootswatch:  -->
+    <!-- cerulean  | cyborg |  flatly |  lumen |  sandstone |   spacelab  |  yeti | cosmo |  darkly |  paper | simplex | superhero |  journal | readable  |   slate |  united -->
+    <link href="../static/libs/bootswatch3_2/slate/bootstrap.min.css" rel="stylesheet">
+    <link href="../static/custom/css/simple-sidebar.css" rel="stylesheet">
+    <link href="../static/custom/css/familytree.css" rel="stylesheet">
+    <link href="../static/custom/css/tabletree.css" rel="stylesheet">
+
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <link href="../static/libs/bootstrap-3_3_7-dist/css/ie10-viewport-bug-workaround.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="../static/custom/css/sticky-footer-navbar.css" rel="stylesheet">
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+<style type="text/css">
+
+  .lead-plus {font-size: 26.5px;}
+  .label-xs {font-size: 10px;}
+  .label-dark {background: #2c3e50; color: white; padding: 1px;}
+  .margin50 {margin-top: 50px; margin-bottom: 50px;}
+
+  .namespaces {background: #ced2d6; width: 100%;}
+
+
+  /*so that the d3plus tooltip panel doesnt cover the top banner*/
+  .navbar {z-index: 3000;}
+
+
+  .panel-body dt {margin-top: 5px;}
+  .page-header  {margin-top: 30px;}
+  #wrapper {margin-top: 50px;}
+
+  .implementation-panel {
+    overflow: auto;
+    /*max-height: 500px;*/
+  }
+
+  tr.table-classproperties {
+      /*background: #f5f5f5;*/
+  }
+  tr.table-classproperties th {
+      font-size: 80%;
+      font-weight: normal;
+  }
+
+
+  tr.table-inheritanceinfo {
+      /*background: #f5f5f5;*/
+      text-align: left;
+  }
+
+  tr.table-inheritanceinfo th {
+      font-size: 90%;
+      font-weight: normal;
+  }
+
+
+  .breadcrumb {
+    margin-top: 20px;
+    margin-bottom: 40px;
+  }
+
+  .breadcrumb a {
+      text-transform: capitalize;
+  }
+  .breadcrumb li {
+      text-transform: none;
+      /*so to catch the uri @todo improve*/
+  }
+
+
+  .fromclass_link {
+    /*color: white;
+    text-decoration: underline;*/
+    /*background: #1c1e52;*/
+    color: inherit;
+    /*padding: 1px;*/
+  }
+
+		.mythumbnail {
+			display: block;
+			padding: 13px;
+			margin-bottom: 30px;
+			line-height: 13.428571;
+			background-color: #fff;
+			border: 1px solid #ddd;
+			border-radius: 30px;
+		}
+
+		.mythumbnail:hover {
+			background: lightyellow;
+			text-decoration: none;
+		}
+
+
+		.img-container{
+		    height:100%;
+			overflow: hidden;
+		    max-height:200px;
+			padding: 10px;
+/*			margin: 20px 0px 20px 0px;*/
+			border: 1em #EAE5E5 solid;
+		}
+
+		.img-container:hover {
+			border: 1px grey solid;
+		}
+
+		img{
+/*		    height:100% !important;*/
+		}
+
+
+		.icon-xxs {
+			font-size: 15px;
+		}
+
+
+    /* dropdown open on hover */
+
+    @media (min-width: 979px) {
+      ul.nav li.dropdown:hover > ul.dropdown-menu {
+        display: block;
+      }
+    }
+
+
+
+/*pygments css*/
+pre { line-height: 125%; }
+td.linenos pre { color: #000000; background-color: #f0f0f0; padding-left: 5px; padding-right: 5px; }
+span.linenos { color: #000000; background-color: #f0f0f0; padding-left: 5px; padding-right: 5px; }
+td.linenos pre.special { color: #000000; background-color: #ffffc0; padding-left: 5px; padding-right: 5px; }
+span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 5px; padding-right: 5px; }
+.highlight .hll { background-color: #ffffcc }
+.highlight { background: #f8f8f8; }
+.highlight .c { color: #408080; font-style: italic } /* Comment */
+.highlight .err { border: 1px solid #FF0000 } /* Error */
+.highlight .k { color: #008000; font-weight: bold } /* Keyword */
+.highlight .o { color: #666666 } /* Operator */
+.highlight .ch { color: #408080; font-style: italic } /* Comment.Hashbang */
+.highlight .cm { color: #408080; font-style: italic } /* Comment.Multiline */
+.highlight .cp { color: #BC7A00 } /* Comment.Preproc */
+.highlight .cpf { color: #408080; font-style: italic } /* Comment.PreprocFile */
+.highlight .c1 { color: #408080; font-style: italic } /* Comment.Single */
+.highlight .cs { color: #408080; font-style: italic } /* Comment.Special */
+.highlight .gd { color: #A00000 } /* Generic.Deleted */
+.highlight .ge { font-style: italic } /* Generic.Emph */
+.highlight .gr { color: #FF0000 } /* Generic.Error */
+.highlight .gh { color: #000080; font-weight: bold } /* Generic.Heading */
+.highlight .gi { color: #00A000 } /* Generic.Inserted */
+.highlight .go { color: #888888 } /* Generic.Output */
+.highlight .gp { color: #000080; font-weight: bold } /* Generic.Prompt */
+.highlight .gs { font-weight: bold } /* Generic.Strong */
+.highlight .gu { color: #800080; font-weight: bold } /* Generic.Subheading */
+.highlight .gt { color: #0044DD } /* Generic.Traceback */
+.highlight .kc { color: #008000; font-weight: bold } /* Keyword.Constant */
+.highlight .kd { color: #008000; font-weight: bold } /* Keyword.Declaration */
+.highlight .kn { color: #008000; font-weight: bold } /* Keyword.Namespace */
+.highlight .kp { color: #008000 } /* Keyword.Pseudo */
+.highlight .kr { color: #008000; font-weight: bold } /* Keyword.Reserved */
+.highlight .kt { color: #B00040 } /* Keyword.Type */
+.highlight .m { color: #666666 } /* Literal.Number */
+.highlight .s { color: #BA2121 } /* Literal.String */
+.highlight .na { color: #7D9029 } /* Name.Attribute */
+.highlight .nb { color: #008000 } /* Name.Builtin */
+.highlight .nc { color: #0000FF; font-weight: bold } /* Name.Class */
+.highlight .no { color: #880000 } /* Name.Constant */
+.highlight .nd { color: #AA22FF } /* Name.Decorator */
+.highlight .ni { color: #999999; font-weight: bold } /* Name.Entity */
+.highlight .ne { color: #D2413A; font-weight: bold } /* Name.Exception */
+.highlight .nf { color: #0000FF } /* Name.Function */
+.highlight .nl { color: #A0A000 } /* Name.Label */
+.highlight .nn { color: #0000FF; font-weight: bold } /* Name.Namespace */
+.highlight .nt { color: #008000; font-weight: bold } /* Name.Tag */
+.highlight .nv { color: #19177C } /* Name.Variable */
+.highlight .ow { color: #AA22FF; font-weight: bold } /* Operator.Word */
+.highlight .w { color: #bbbbbb } /* Text.Whitespace */
+.highlight .mb { color: #666666 } /* Literal.Number.Bin */
+.highlight .mf { color: #666666 } /* Literal.Number.Float */
+.highlight .mh { color: #666666 } /* Literal.Number.Hex */
+.highlight .mi { color: #666666 } /* Literal.Number.Integer */
+.highlight .mo { color: #666666 } /* Literal.Number.Oct */
+.highlight .sa { color: #BA2121 } /* Literal.String.Affix */
+.highlight .sb { color: #BA2121 } /* Literal.String.Backtick */
+.highlight .sc { color: #BA2121 } /* Literal.String.Char */
+.highlight .dl { color: #BA2121 } /* Literal.String.Delimiter */
+.highlight .sd { color: #BA2121; font-style: italic } /* Literal.String.Doc */
+.highlight .s2 { color: #BA2121 } /* Literal.String.Double */
+.highlight .se { color: #BB6622; font-weight: bold } /* Literal.String.Escape */
+.highlight .sh { color: #BA2121 } /* Literal.String.Heredoc */
+.highlight .si { color: #BB6688; font-weight: bold } /* Literal.String.Interpol */
+.highlight .sx { color: #008000 } /* Literal.String.Other */
+.highlight .sr { color: #BB6688 } /* Literal.String.Regex */
+.highlight .s1 { color: #BA2121 } /* Literal.String.Single */
+.highlight .ss { color: #19177C } /* Literal.String.Symbol */
+.highlight .bp { color: #008000 } /* Name.Builtin.Pseudo */
+.highlight .fm { color: #0000FF } /* Name.Function.Magic */
+.highlight .vc { color: #19177C } /* Name.Variable.Class */
+.highlight .vg { color: #19177C } /* Name.Variable.Global */
+.highlight .vi { color: #19177C } /* Name.Variable.Instance */
+.highlight .vm { color: #19177C } /* Name.Variable.Magic */
+.highlight .il { color: #666666 } /* Literal.Number.Integer.Long */
+
+/*overloading this class from pygments*/
+.highlight {
+  overflow: auto;
+}
+
+
+
+
+/* override default footer background for dark themes only */
+.footer {
+  background-color: inherit;
+}
+
+
+
+
+
+</style>
+
+
+
+
+
+  </head>
+
+  <body>
+
+
+  
+<!-- Fixed navbar -->
+<nav class="navbar navbar-default navbar-fixed-top">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+
+      <a class="navbar-brand" id="menu-toggle" title="Toggle sidebar">
+        
+        <span class="glyphicon glyphicon-align-left" aria-hidden="true"></span>
+      </a>
+    </div>
+    <div id="navbar" class="collapse navbar-collapse">
+      <ul class="nav navbar-nav">
+        <li ><a href="index.html"><code style="font-size: 115%;">http://www.cidoc-crm.org/cidoc-crm/</code></a></li>
+
+        <li  ><a href="entities-az.html">Entities A-Z</a></li>
+        
+        <li ><a href="entities-tree-classes.html">Classes</a></li>
+        
+        
+        <li ><a href="entities-tree-properties.html">Properties</a></li>
+        
+        
+        
+        
+        <li  ><a href="statistics.html">Statistics</a></li>
+
+
+
+
+
+      </ul>
+      
+    </div><!--/.nav-collapse -->
+
+  </div>
+</nav>
+
+
+
+
+
+
+
+
+<div id="wrapper" class="toggled">
+
+
+    
+  
+    
+<!-- Sidebar -->
+<div id="sidebar-wrapper">
+    <ul class="sidebar-nav">
+
+
+        <li>
+          <input style="margin-top: 30px;  margin-bottom: 20px;" type="text" id="search-input-sidebar" name="" value="" placeholder="Type to search">
+        </li>
+
+        
+          <li class="-second-level" id="sd_classes"><a href="entities-tree-classes.html">Classes (84)</a>
+          </li>
+
+            
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_3"><a  href="class-crme10_transfer_of_custody.html">crm:E10_Transfer_of_Custody</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_4"><a  href="class-crme11_modification.html">crm:E11_Modification</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_5"><a  href="class-crme12_production.html">crm:E12_Production</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_6"><a  href="class-crme13_attribute_assignment.html">crm:E13_Attribute_Assignment</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_7"><a  href="class-crme14_condition_assessment.html">crm:E14_Condition_Assessment</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_8"><a  href="class-crme15_identifier_assignment.html">crm:E15_Identifier_Assignment</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_9"><a  href="class-crme16_measurement.html">crm:E16_Measurement</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_10"><a  href="class-crme17_type_assignment.html">crm:E17_Type_Assignment</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_11"><a  href="class-crme18_physical_thing.html">crm:E18_Physical_Thing</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_12"><a  href="class-crme19_physical_object.html">crm:E19_Physical_Object</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_13"><a  href="class-crme1_crm_entity.html">crm:E1_CRM_Entity</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_14"><a  href="class-crme20_biological_object.html">crm:E20_Biological_Object</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_15"><a  href="class-crme21_person.html">crm:E21_Person</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_16"><a  href="class-crme22_man-made_object.html">crm:E22_Man-Made_Object</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_17"><a  href="class-crme24_physical_man-made_thing.html">crm:E24_Physical_Man-Made_Thing</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_18"><a  href="class-crme25_man-made_feature.html">crm:E25_Man-Made_Feature</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_19"><a  href="class-crme26_physical_feature.html">crm:E26_Physical_Feature</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_20"><a  href="class-crme27_site.html">crm:E27_Site</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_21"><a  href="class-crme28_conceptual_object.html">crm:E28_Conceptual_Object</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_22"><a  href="class-crme29_design_or_procedure.html">crm:E29_Design_or_Procedure</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_23"><a  href="class-crme2_temporal_entity.html">crm:E2_Temporal_Entity</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_24"><a  href="class-crme30_right.html">crm:E30_Right</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_25"><a  href="class-crme31_document.html">crm:E31_Document</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_26"><a  href="class-crme32_authority_document.html">crm:E32_Authority_Document</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_27"><a  href="class-crme33_linguistic_object.html">crm:E33_Linguistic_Object</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_28"><a  href="class-crme34_inscription.html">crm:E34_Inscription</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_29"><a  href="class-crme35_title.html">crm:E35_Title</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_30"><a  href="class-crme36_visual_item.html">crm:E36_Visual_Item</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_31"><a  href="class-crme37_mark.html">crm:E37_Mark</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_32"><a  href="class-crme38_image.html">crm:E38_Image</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_33"><a  href="class-crme39_actor.html">crm:E39_Actor</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_34"><a  href="class-crme3_condition_state.html">crm:E3_Condition_State</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_35"><a  href="class-crme40_legal_body.html">crm:E40_Legal_Body</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_36"><a  href="class-crme41_appellation.html">crm:E41_Appellation</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_37"><a  href="class-crme42_identifier.html">crm:E42_Identifier</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_38"><a  href="class-crme44_place_appellation.html">crm:E44_Place_Appellation</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_39"><a  href="class-crme45_address.html">crm:E45_Address</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_40"><a  href="class-crme46_section_definition.html">crm:E46_Section_Definition</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_41"><a  href="class-crme47_spatial_coordinates.html">crm:E47_Spatial_Coordinates</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_42"><a  href="class-crme48_place_name.html">crm:E48_Place_Name</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_43"><a  href="class-crme49_time_appellation.html">crm:E49_Time_Appellation</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_44"><a  href="class-crme4_period.html">crm:E4_Period</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_45"><a  href="class-crme50_date.html">crm:E50_Date</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_46"><a  href="class-crme51_contact_point.html">crm:E51_Contact_Point</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_47"><a  href="class-crme52_time-span.html">crm:E52_Time-Span</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_48"><a  href="class-crme53_place.html">crm:E53_Place</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_49"><a  href="class-crme54_dimension.html">crm:E54_Dimension</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_50"><a  href="class-crme55_type.html">crm:E55_Type</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_51"><a  href="class-crme56_language.html">crm:E56_Language</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_52"><a  href="class-crme57_material.html">crm:E57_Material</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_53"><a  href="class-crme58_measurement_unit.html">crm:E58_Measurement_Unit</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_54"><a  href="class-crme5_event.html">crm:E5_Event</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_55"><a class="active" href="class-crme63_beginning_of_existence.html">crm:E63_Beginning_of_Existence</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_56"><a  href="class-crme64_end_of_existence.html">crm:E64_End_of_Existence</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_57"><a  href="class-crme65_creation.html">crm:E65_Creation</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_58"><a  href="class-crme66_formation.html">crm:E66_Formation</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_59"><a  href="class-crme67_birth.html">crm:E67_Birth</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_60"><a  href="class-crme68_dissolution.html">crm:E68_Dissolution</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_61"><a  href="class-crme69_death.html">crm:E69_Death</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_62"><a  href="class-crme6_destruction.html">crm:E6_Destruction</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_63"><a  href="class-crme70_thing.html">crm:E70_Thing</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_64"><a  href="class-crme71_man-made_thing.html">crm:E71_Man-Made_Thing</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_65"><a  href="class-crme72_legal_object.html">crm:E72_Legal_Object</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_66"><a  href="class-crme73_information_object.html">crm:E73_Information_Object</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_67"><a  href="class-crme74_group.html">crm:E74_Group</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_68"><a  href="class-crme75_conceptual_object_appellation.html">crm:E75_Conceptual_Object_Appellation</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_69"><a  href="class-crme77_persistent_item.html">crm:E77_Persistent_Item</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_70"><a  href="class-crme78_collection.html">crm:E78_Collection</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_71"><a  href="class-crme79_part_addition.html">crm:E79_Part_Addition</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_72"><a  href="class-crme7_activity.html">crm:E7_Activity</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_73"><a  href="class-crme80_part_removal.html">crm:E80_Part_Removal</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_74"><a  href="class-crme81_transformation.html">crm:E81_Transformation</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_75"><a  href="class-crme82_actor_appellation.html">crm:E82_Actor_Appellation</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_76"><a  href="class-crme83_type_creation.html">crm:E83_Type_Creation</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_77"><a  href="class-crme84_information_carrier.html">crm:E84_Information_Carrier</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_78"><a  href="class-crme85_joining.html">crm:E85_Joining</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_79"><a  href="class-crme86_leaving.html">crm:E86_Leaving</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_80"><a  href="class-crme87_curation_activity.html">crm:E87_Curation_Activity</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_81"><a  href="class-crme89_propositional_object.html">crm:E89_Propositional_Object</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_82"><a  href="class-crme8_acquisition.html">crm:E8_Acquisition</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_83"><a  href="class-crme90_symbolic_object.html">crm:E90_Symbolic_Object</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_84"><a  href="class-crme92_spacetime_volume.html">crm:E92_Spacetime_Volume</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_85"><a  href="class-crme93_presence.html">crm:E93_Presence</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_86"><a  href="class-crme9_move.html">crm:E9_Move</a></li>
+          
+        
+
+        
+            <li class="-second-level" id="sd_properties"><a  href="entities-tree-properties.html">Properties (285)</a>
+            </li>
+
+            
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_97"><a   href="prop-crmp100_was_death_of.html">crm:P100_was_death_of</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_98"><a   href="prop-crmp100i_died_in.html">crm:P100i_died_in</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_99"><a   href="prop-crmp101_had_as_general_use.html">crm:P101_had_as_general_use</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_100"><a   href="prop-crmp101i_was_use_of.html">crm:P101i_was_use_of</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_101"><a   href="prop-crmp102_has_title.html">crm:P102_has_title</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_102"><a   href="prop-crmp102i_is_title_of.html">crm:P102i_is_title_of</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_103"><a   href="prop-crmp103_was_intended_for.html">crm:P103_was_intended_for</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_104"><a   href="prop-crmp103i_was_intention_of.html">crm:P103i_was_intention_of</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_105"><a   href="prop-crmp104_is_subject_to.html">crm:P104_is_subject_to</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_106"><a   href="prop-crmp104i_applies_to.html">crm:P104i_applies_to</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_107"><a   href="prop-crmp105_right_held_by.html">crm:P105_right_held_by</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_108"><a   href="prop-crmp105i_has_right_on.html">crm:P105i_has_right_on</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_109"><a   href="prop-crmp106_is_composed_of.html">crm:P106_is_composed_of</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_110"><a   href="prop-crmp106i_forms_part_of.html">crm:P106i_forms_part_of</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_111"><a   href="prop-crmp107_has_current_or_former_member.html">crm:P107_has_current_or_former_member</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_112"><a   href="prop-crmp107i_is_current_or_former_member_of.html">crm:P107i_is_current_or_former_member_of</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_113"><a   href="prop-crmp108_has_produced.html">crm:P108_has_produced</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_114"><a   href="prop-crmp108i_was_produced_by.html">crm:P108i_was_produced_by</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_115"><a   href="prop-crmp109_has_current_or_former_curator.html">crm:P109_has_current_or_former_curator</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_116"><a   href="prop-crmp109i_is_current_or_former_curator_of.html">crm:P109i_is_current_or_former_curator_of</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_117"><a   href="prop-crmp10_falls_within.html">crm:P10_falls_within</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_118"><a   href="prop-crmp10i_contains.html">crm:P10i_contains</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_119"><a   href="prop-crmp110_augmented.html">crm:P110_augmented</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_120"><a   href="prop-crmp110i_was_augmented_by.html">crm:P110i_was_augmented_by</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_121"><a   href="prop-crmp111_added.html">crm:P111_added</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_122"><a   href="prop-crmp111i_was_added_by.html">crm:P111i_was_added_by</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_123"><a   href="prop-crmp112_diminished.html">crm:P112_diminished</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_124"><a   href="prop-crmp112i_was_diminished_by.html">crm:P112i_was_diminished_by</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_125"><a   href="prop-crmp113_removed.html">crm:P113_removed</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_126"><a   href="prop-crmp113i_was_removed_by.html">crm:P113i_was_removed_by</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_127"><a   href="prop-crmp114_is_equal_in_time_to.html">crm:P114_is_equal_in_time_to</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_128"><a   href="prop-crmp115_finishes.html">crm:P115_finishes</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_129"><a   href="prop-crmp115i_is_finished_by.html">crm:P115i_is_finished_by</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_130"><a   href="prop-crmp116_starts.html">crm:P116_starts</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_131"><a   href="prop-crmp116i_is_started_by.html">crm:P116i_is_started_by</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_132"><a   href="prop-crmp117_occurs_during.html">crm:P117_occurs_during</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_133"><a   href="prop-crmp117i_includes.html">crm:P117i_includes</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_134"><a   href="prop-crmp118_overlaps_in_time_with.html">crm:P118_overlaps_in_time_with</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_135"><a   href="prop-crmp118i_is_overlapped_in_time_by.html">crm:P118i_is_overlapped_in_time_by</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_136"><a   href="prop-crmp119_meets_in_time_with.html">crm:P119_meets_in_time_with</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_137"><a   href="prop-crmp119i_is_met_in_time_by.html">crm:P119i_is_met_in_time_by</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_138"><a   href="prop-crmp11_had_participant.html">crm:P11_had_participant</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_139"><a   href="prop-crmp11i_participated_in.html">crm:P11i_participated_in</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_140"><a   href="prop-crmp120_occurs_before.html">crm:P120_occurs_before</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_141"><a   href="prop-crmp120i_occurs_after.html">crm:P120i_occurs_after</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_142"><a   href="prop-crmp121_overlaps_with.html">crm:P121_overlaps_with</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_143"><a   href="prop-crmp122_borders_with.html">crm:P122_borders_with</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_144"><a   href="prop-crmp123_resulted_in.html">crm:P123_resulted_in</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_145"><a   href="prop-crmp123i_resulted_from.html">crm:P123i_resulted_from</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_146"><a   href="prop-crmp124_transformed.html">crm:P124_transformed</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_147"><a   href="prop-crmp124i_was_transformed_by.html">crm:P124i_was_transformed_by</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_148"><a   href="prop-crmp125_used_object_of_type.html">crm:P125_used_object_of_type</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_149"><a   href="prop-crmp125i_was_type_of_object_used_in.html">crm:P125i_was_type_of_object_used_in</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_150"><a   href="prop-crmp126_employed.html">crm:P126_employed</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_151"><a   href="prop-crmp126i_was_employed_in.html">crm:P126i_was_employed_in</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_152"><a   href="prop-crmp127_has_broader_term.html">crm:P127_has_broader_term</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_153"><a   href="prop-crmp127i_has_narrower_term.html">crm:P127i_has_narrower_term</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_154"><a   href="prop-crmp128_carries.html">crm:P128_carries</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_155"><a   href="prop-crmp128i_is_carried_by.html">crm:P128i_is_carried_by</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_156"><a   href="prop-crmp129_is_about.html">crm:P129_is_about</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_157"><a   href="prop-crmp129i_is_subject_of.html">crm:P129i_is_subject_of</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_158"><a   href="prop-crmp12_occurred_in_the_presence_of.html">crm:P12_occurred_in_the_presence_of</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_159"><a   href="prop-crmp12i_was_present_at.html">crm:P12i_was_present_at</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_160"><a   href="prop-crmp130_shows_features_of.html">crm:P130_shows_features_of</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_161"><a   href="prop-crmp130i_features_are_also_found_on.html">crm:P130i_features_are_also_found_on</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_162"><a   href="prop-crmp131_is_identified_by.html">crm:P131_is_identified_by</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_163"><a   href="prop-crmp131i_identifies.html">crm:P131i_identifies</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_164"><a   href="prop-crmp132_overlaps_with.html">crm:P132_overlaps_with</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_165"><a   href="prop-crmp133_is_separated_from.html">crm:P133_is_separated_from</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_166"><a   href="prop-crmp134_continued.html">crm:P134_continued</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_167"><a   href="prop-crmp134i_was_continued_by.html">crm:P134i_was_continued_by</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_168"><a   href="prop-crmp135_created_type.html">crm:P135_created_type</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_169"><a   href="prop-crmp135i_was_created_by.html">crm:P135i_was_created_by</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_170"><a   href="prop-crmp136_was_based_on.html">crm:P136_was_based_on</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_171"><a   href="prop-crmp136i_supported_type_creation.html">crm:P136i_supported_type_creation</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_172"><a   href="prop-crmp137_exemplifies.html">crm:P137_exemplifies</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_173"><a   href="prop-crmp137i_is_exemplified_by.html">crm:P137i_is_exemplified_by</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_174"><a   href="prop-crmp138_represents.html">crm:P138_represents</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_175"><a   href="prop-crmp138i_has_representation.html">crm:P138i_has_representation</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_176"><a   href="prop-crmp139_has_alternative_form.html">crm:P139_has_alternative_form</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_177"><a   href="prop-crmp13_destroyed.html">crm:P13_destroyed</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_178"><a   href="prop-crmp13i_was_destroyed_by.html">crm:P13i_was_destroyed_by</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_179"><a   href="prop-crmp140_assigned_attribute_to.html">crm:P140_assigned_attribute_to</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_180"><a   href="prop-crmp140i_was_attributed_by.html">crm:P140i_was_attributed_by</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_181"><a   href="prop-crmp141_assigned.html">crm:P141_assigned</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_182"><a   href="prop-crmp141i_was_assigned_by.html">crm:P141i_was_assigned_by</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_183"><a   href="prop-crmp142_used_constituent.html">crm:P142_used_constituent</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_184"><a   href="prop-crmp142i_was_used_in.html">crm:P142i_was_used_in</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_185"><a   href="prop-crmp143_joined.html">crm:P143_joined</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_186"><a   href="prop-crmp143i_was_joined_by.html">crm:P143i_was_joined_by</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_187"><a   href="prop-crmp144_joined_with.html">crm:P144_joined_with</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_188"><a   href="prop-crmp144i_gained_member_by.html">crm:P144i_gained_member_by</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_189"><a   href="prop-crmp145_separated.html">crm:P145_separated</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_190"><a   href="prop-crmp145i_left_by.html">crm:P145i_left_by</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_191"><a   href="prop-crmp146_separated_from.html">crm:P146_separated_from</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_192"><a   href="prop-crmp146i_lost_member_by.html">crm:P146i_lost_member_by</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_193"><a   href="prop-crmp147_curated.html">crm:P147_curated</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_194"><a   href="prop-crmp147i_was_curated_by.html">crm:P147i_was_curated_by</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_195"><a   href="prop-crmp148_has_component.html">crm:P148_has_component</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_196"><a   href="prop-crmp148i_is_component_of.html">crm:P148i_is_component_of</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_197"><a   href="prop-crmp149_is_identified_by.html">crm:P149_is_identified_by</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_198"><a   href="prop-crmp149i_identifies.html">crm:P149i_identifies</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_199"><a   href="prop-crmp14_carried_out_by.html">crm:P14_carried_out_by</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_200"><a   href="prop-crmp14i_performed.html">crm:P14i_performed</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_201"><a   href="prop-crmp150_defines_typical_parts_of.html">crm:P150_defines_typical_parts_of</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_202"><a   href="prop-crmp150i_defines_typical_wholes_for.html">crm:P150i_defines_typical_wholes_for</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_203"><a   href="prop-crmp151_was_formed_from.html">crm:P151_was_formed_from</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_204"><a   href="prop-crmp151i_participated_in.html">crm:P151i_participated_in</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_205"><a   href="prop-crmp152_has_parent.html">crm:P152_has_parent</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_206"><a   href="prop-crmp152i_is_parent_of.html">crm:P152i_is_parent_of</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_207"><a   href="prop-crmp156_occupies.html">crm:P156_occupies</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_208"><a   href="prop-crmp157_is_at_rest_relative_to.html">crm:P157_is_at_rest_relative_to</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_209"><a   href="prop-crmp157i_provides_reference_space_for.html">crm:P157i_provides_reference_space_for</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_210"><a   href="prop-crmp158_occupied.html">crm:P158_occupied</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_211"><a   href="prop-crmp159_occupied.html">crm:P159_occupied</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_212"><a   href="prop-crmp15_was_influenced_by.html">crm:P15_was_influenced_by</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_213"><a   href="prop-crmp15i_influenced.html">crm:P15i_influenced</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_214"><a   href="prop-crmp160_has_temporal_projection.html">crm:P160_has_temporal_projection</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_215"><a   href="prop-crmp161_has_spatial_projection.html">crm:P161_has_spatial_projection</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_216"><a   href="prop-crmp162_is_restricted_by.html">crm:P162_is_restricted_by</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_217"><a   href="prop-crmp163_is_restricted_by.html">crm:P163_is_restricted_by</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_218"><a   href="prop-crmp164_during.html">crm:P164_during</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_219"><a   href="prop-crmp164i_was_time-span_of.html">crm:P164i_was_time-span_of</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_220"><a   href="prop-crmp165_incorporates.html">crm:P165_incorporates</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_221"><a   href="prop-crmp165i_is_incorporated_in.html">crm:P165i_is_incorporated_in</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_222"><a   href="prop-crmp166_was_a_presence_of.html">crm:P166_was_a_presence_of</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_223"><a   href="prop-crmp166i_had_presence.html">crm:P166i_had_presence</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_224"><a   href="prop-crmp167_was_at.html">crm:P167_was_at</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_225"><a   href="prop-crmp167i_was_place_of.html">crm:P167i_was_place_of</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_87"><a   href="prop-crmp168_place_is_defined_by.html">crm:P168_place_is_defined_by</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_226"><a   href="prop-crmp16_used_specific_object.html">crm:P16_used_specific_object</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_227"><a   href="prop-crmp16i_was_used_for.html">crm:P16i_was_used_for</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_228"><a   href="prop-crmp17_was_motivated_by.html">crm:P17_was_motivated_by</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_229"><a   href="prop-crmp17i_motivated.html">crm:P17i_motivated</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_230"><a   href="prop-crmp19_was_intended_use_of.html">crm:P19_was_intended_use_of</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_231"><a   href="prop-crmp19i_was_made_for.html">crm:P19i_was_made_for</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_232"><a   href="prop-crmp1_is_identified_by.html">crm:P1_is_identified_by</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_233"><a   href="prop-crmp1i_identifies.html">crm:P1i_identifies</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_234"><a   href="prop-crmp20_had_specific_purpose.html">crm:P20_had_specific_purpose</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_235"><a   href="prop-crmp20i_was_purpose_of.html">crm:P20i_was_purpose_of</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_236"><a   href="prop-crmp21_had_general_purpose.html">crm:P21_had_general_purpose</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_237"><a   href="prop-crmp21i_was_purpose_of.html">crm:P21i_was_purpose_of</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_95"><a   href="prop-crmp22_transferred_title_to.html">crm:P22_transferred_title_to</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_96"><a   href="prop-crmp22i_acquired_title_through.html">crm:P22i_acquired_title_through</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_238"><a   href="prop-crmp23_transferred_title_from.html">crm:P23_transferred_title_from</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_239"><a   href="prop-crmp23i_surrendered_title_through.html">crm:P23i_surrendered_title_through</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_240"><a   href="prop-crmp24_transferred_title_of.html">crm:P24_transferred_title_of</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_241"><a   href="prop-crmp24i_changed_ownership_through.html">crm:P24i_changed_ownership_through</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_242"><a   href="prop-crmp25_moved.html">crm:P25_moved</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_243"><a   href="prop-crmp25i_moved_by.html">crm:P25i_moved_by</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_244"><a   href="prop-crmp26_moved_to.html">crm:P26_moved_to</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_245"><a   href="prop-crmp26i_was_destination_of.html">crm:P26i_was_destination_of</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_246"><a   href="prop-crmp27_moved_from.html">crm:P27_moved_from</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_247"><a   href="prop-crmp27i_was_origin_of.html">crm:P27i_was_origin_of</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_248"><a   href="prop-crmp28_custody_surrendered_by.html">crm:P28_custody_surrendered_by</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_249"><a   href="prop-crmp28i_surrendered_custody_through.html">crm:P28i_surrendered_custody_through</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_250"><a   href="prop-crmp29_custody_received_by.html">crm:P29_custody_received_by</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_251"><a   href="prop-crmp29i_received_custody_through.html">crm:P29i_received_custody_through</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_252"><a   href="prop-crmp2_has_type.html">crm:P2_has_type</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_253"><a   href="prop-crmp2i_is_type_of.html">crm:P2i_is_type_of</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_254"><a   href="prop-crmp30_transferred_custody_of.html">crm:P30_transferred_custody_of</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_255"><a   href="prop-crmp30i_custody_transferred_through.html">crm:P30i_custody_transferred_through</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_256"><a   href="prop-crmp31_has_modified.html">crm:P31_has_modified</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_257"><a   href="prop-crmp31i_was_modified_by.html">crm:P31i_was_modified_by</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_258"><a   href="prop-crmp32_used_general_technique.html">crm:P32_used_general_technique</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_259"><a   href="prop-crmp32i_was_technique_of.html">crm:P32i_was_technique_of</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_260"><a   href="prop-crmp33_used_specific_technique.html">crm:P33_used_specific_technique</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_261"><a   href="prop-crmp33i_was_used_by.html">crm:P33i_was_used_by</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_262"><a   href="prop-crmp34_concerned.html">crm:P34_concerned</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_263"><a   href="prop-crmp34i_was_assessed_by.html">crm:P34i_was_assessed_by</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_264"><a   href="prop-crmp35_has_identified.html">crm:P35_has_identified</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_265"><a   href="prop-crmp35i_was_identified_by.html">crm:P35i_was_identified_by</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_266"><a   href="prop-crmp37_assigned.html">crm:P37_assigned</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_267"><a   href="prop-crmp37i_was_assigned_by.html">crm:P37i_was_assigned_by</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_268"><a   href="prop-crmp38_deassigned.html">crm:P38_deassigned</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_269"><a   href="prop-crmp38i_was_deassigned_by.html">crm:P38i_was_deassigned_by</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_270"><a   href="prop-crmp39_measured.html">crm:P39_measured</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_271"><a   href="prop-crmp39i_was_measured_by.html">crm:P39i_was_measured_by</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_88"><a   href="prop-crmp3_has_note.html">crm:P3_has_note</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_272"><a   href="prop-crmp40_observed_dimension.html">crm:P40_observed_dimension</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_273"><a   href="prop-crmp40i_was_observed_in.html">crm:P40i_was_observed_in</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_274"><a   href="prop-crmp41_classified.html">crm:P41_classified</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_275"><a   href="prop-crmp41i_was_classified_by.html">crm:P41i_was_classified_by</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_276"><a   href="prop-crmp42_assigned.html">crm:P42_assigned</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_277"><a   href="prop-crmp42i_was_assigned_by.html">crm:P42i_was_assigned_by</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_278"><a   href="prop-crmp43_has_dimension.html">crm:P43_has_dimension</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_279"><a   href="prop-crmp43i_is_dimension_of.html">crm:P43i_is_dimension_of</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_280"><a   href="prop-crmp44_has_condition.html">crm:P44_has_condition</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_281"><a   href="prop-crmp44i_is_condition_of.html">crm:P44i_is_condition_of</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_282"><a   href="prop-crmp45_consists_of.html">crm:P45_consists_of</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_283"><a   href="prop-crmp45i_is_incorporated_in.html">crm:P45i_is_incorporated_in</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_284"><a   href="prop-crmp46_is_composed_of.html">crm:P46_is_composed_of</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_285"><a   href="prop-crmp46i_forms_part_of.html">crm:P46i_forms_part_of</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_286"><a   href="prop-crmp48_has_preferred_identifier.html">crm:P48_has_preferred_identifier</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_287"><a   href="prop-crmp48i_is_preferred_identifier_of.html">crm:P48i_is_preferred_identifier_of</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_288"><a   href="prop-crmp49_has_former_or_current_keeper.html">crm:P49_has_former_or_current_keeper</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_289"><a   href="prop-crmp49i_is_former_or_current_keeper_of.html">crm:P49i_is_former_or_current_keeper_of</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_290"><a   href="prop-crmp4_has_time-span.html">crm:P4_has_time-span</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_291"><a   href="prop-crmp4i_is_time-span_of.html">crm:P4i_is_time-span_of</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_292"><a   href="prop-crmp50_has_current_keeper.html">crm:P50_has_current_keeper</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_293"><a   href="prop-crmp50i_is_current_keeper_of.html">crm:P50i_is_current_keeper_of</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_294"><a   href="prop-crmp51_has_former_or_current_owner.html">crm:P51_has_former_or_current_owner</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_295"><a   href="prop-crmp51i_is_former_or_current_owner_of.html">crm:P51i_is_former_or_current_owner_of</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_296"><a   href="prop-crmp52_has_current_owner.html">crm:P52_has_current_owner</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_297"><a   href="prop-crmp52i_is_current_owner_of.html">crm:P52i_is_current_owner_of</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_298"><a   href="prop-crmp53_has_former_or_current_location.html">crm:P53_has_former_or_current_location</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_299"><a   href="prop-crmp53i_is_former_or_current_location_of.html">crm:P53i_is_former_or_current_location_of</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_300"><a   href="prop-crmp54_has_current_permanent_location.html">crm:P54_has_current_permanent_location</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_301"><a   href="prop-crmp54i_is_current_permanent_location_of.html">crm:P54i_is_current_permanent_location_of</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_302"><a   href="prop-crmp55_has_current_location.html">crm:P55_has_current_location</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_303"><a   href="prop-crmp55i_currently_holds.html">crm:P55i_currently_holds</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_304"><a   href="prop-crmp56_bears_feature.html">crm:P56_bears_feature</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_305"><a   href="prop-crmp56i_is_found_on.html">crm:P56i_is_found_on</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_89"><a   href="prop-crmp57_has_number_of_parts.html">crm:P57_has_number_of_parts</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_306"><a   href="prop-crmp58_has_section_definition.html">crm:P58_has_section_definition</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_307"><a   href="prop-crmp58i_defines_section.html">crm:P58i_defines_section</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_308"><a   href="prop-crmp59_has_section.html">crm:P59_has_section</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_309"><a   href="prop-crmp59i_is_located_on_or_within.html">crm:P59i_is_located_on_or_within</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_310"><a   href="prop-crmp5_consists_of.html">crm:P5_consists_of</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_311"><a   href="prop-crmp5i_forms_part_of.html">crm:P5i_forms_part_of</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_312"><a   href="prop-crmp62_depicts.html">crm:P62_depicts</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_313"><a   href="prop-crmp62i_is_depicted_by.html">crm:P62i_is_depicted_by</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_314"><a   href="prop-crmp65_shows_visual_item.html">crm:P65_shows_visual_item</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_315"><a   href="prop-crmp65i_is_shown_by.html">crm:P65i_is_shown_by</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_316"><a   href="prop-crmp67_refers_to.html">crm:P67_refers_to</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_317"><a   href="prop-crmp67i_is_referred_to_by.html">crm:P67i_is_referred_to_by</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_318"><a   href="prop-crmp68_foresees_use_of.html">crm:P68_foresees_use_of</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_319"><a   href="prop-crmp68i_use_foreseen_by.html">crm:P68i_use_foreseen_by</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_320"><a   href="prop-crmp69_has_association_with.html">crm:P69_has_association_with</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_321"><a   href="prop-crmp69i_is_associated_with.html">crm:P69i_is_associated_with</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_322"><a   href="prop-crmp70_documents.html">crm:P70_documents</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_323"><a   href="prop-crmp70i_is_documented_in.html">crm:P70i_is_documented_in</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_324"><a   href="prop-crmp71_lists.html">crm:P71_lists</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_325"><a   href="prop-crmp71i_is_listed_in.html">crm:P71i_is_listed_in</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_326"><a   href="prop-crmp72_has_language.html">crm:P72_has_language</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_327"><a   href="prop-crmp72i_is_language_of.html">crm:P72i_is_language_of</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_328"><a   href="prop-crmp73_has_translation.html">crm:P73_has_translation</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_329"><a   href="prop-crmp73i_is_translation_of.html">crm:P73i_is_translation_of</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_330"><a   href="prop-crmp74_has_current_or_former_residence.html">crm:P74_has_current_or_former_residence</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_331"><a   href="prop-crmp74i_is_current_or_former_residence_of.html">crm:P74i_is_current_or_former_residence_of</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_332"><a   href="prop-crmp75_possesses.html">crm:P75_possesses</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_333"><a   href="prop-crmp75i_is_possessed_by.html">crm:P75i_is_possessed_by</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_334"><a   href="prop-crmp76_has_contact_point.html">crm:P76_has_contact_point</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_335"><a   href="prop-crmp76i_provides_access_to.html">crm:P76i_provides_access_to</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_336"><a   href="prop-crmp78_is_identified_by.html">crm:P78_is_identified_by</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_337"><a   href="prop-crmp78i_identifies.html">crm:P78i_identifies</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_90"><a   href="prop-crmp79_beginning_is_qualified_by.html">crm:P79_beginning_is_qualified_by</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_338"><a   href="prop-crmp7_took_place_at.html">crm:P7_took_place_at</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_339"><a   href="prop-crmp7i_witnessed.html">crm:P7i_witnessed</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_91"><a   href="prop-crmp80_end_is_qualified_by.html">crm:P80_end_is_qualified_by</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_92"><a   href="prop-crmp81_ongoing_throughout.html">crm:P81_ongoing_throughout</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_93"><a   href="prop-crmp82_at_some_time_within.html">crm:P82_at_some_time_within</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_340"><a   href="prop-crmp83_had_at_least_duration.html">crm:P83_had_at_least_duration</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_341"><a   href="prop-crmp83i_was_minimum_duration_of.html">crm:P83i_was_minimum_duration_of</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_342"><a   href="prop-crmp84_had_at_most_duration.html">crm:P84_had_at_most_duration</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_343"><a   href="prop-crmp84i_was_maximum_duration_of.html">crm:P84i_was_maximum_duration_of</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_344"><a   href="prop-crmp86_falls_within.html">crm:P86_falls_within</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_345"><a   href="prop-crmp86i_contains.html">crm:P86i_contains</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_346"><a   href="prop-crmp87_is_identified_by.html">crm:P87_is_identified_by</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_347"><a   href="prop-crmp87i_identifies.html">crm:P87i_identifies</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_348"><a   href="prop-crmp89_falls_within.html">crm:P89_falls_within</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_349"><a   href="prop-crmp89i_contains.html">crm:P89i_contains</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_350"><a   href="prop-crmp8_took_place_on_or_within.html">crm:P8_took_place_on_or_within</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_351"><a   href="prop-crmp8i_witnessed.html">crm:P8i_witnessed</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_94"><a   href="prop-crmp90_has_value.html">crm:P90_has_value</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_352"><a   href="prop-crmp91_has_unit.html">crm:P91_has_unit</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_353"><a   href="prop-crmp91i_is_unit_of.html">crm:P91i_is_unit_of</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_354"><a   href="prop-crmp92_brought_into_existence.html">crm:P92_brought_into_existence</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_355"><a   href="prop-crmp92i_was_brought_into_existence_by.html">crm:P92i_was_brought_into_existence_by</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_356"><a   href="prop-crmp93_took_out_of_existence.html">crm:P93_took_out_of_existence</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_357"><a   href="prop-crmp93i_was_taken_out_of_existence_by.html">crm:P93i_was_taken_out_of_existence_by</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_358"><a   href="prop-crmp94_has_created.html">crm:P94_has_created</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_359"><a   href="prop-crmp94i_was_created_by.html">crm:P94i_was_created_by</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_360"><a   href="prop-crmp95_has_formed.html">crm:P95_has_formed</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_361"><a   href="prop-crmp95i_was_formed_by.html">crm:P95i_was_formed_by</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_362"><a   href="prop-crmp96_by_mother.html">crm:P96_by_mother</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_363"><a   href="prop-crmp96i_gave_birth.html">crm:P96i_gave_birth</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_364"><a   href="prop-crmp97_from_father.html">crm:P97_from_father</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_365"><a   href="prop-crmp97i_was_father_for.html">crm:P97i_was_father_for</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_366"><a   href="prop-crmp98_brought_into_life.html">crm:P98_brought_into_life</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_367"><a   href="prop-crmp98i_was_born.html">crm:P98i_was_born</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_368"><a   href="prop-crmp99_dissolved.html">crm:P99_dissolved</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_369"><a   href="prop-crmp99i_was_dissolved_by.html">crm:P99i_was_dissolved_by</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_370"><a   href="prop-crmp9_consists_of.html">crm:P9_consists_of</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_371"><a   href="prop-crmp9i_forms_part_of.html">crm:P9i_forms_part_of</a></li>
+          
+
+        
+
+        
+
+
+        
+
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+
+    </ul>
+
+</div>
+
+
+<!-- /#sidebar-wrapper -->
+  
+
+
+
+    <!-- Begin page content -->
+    <div class="container" id="page-content-wrapper">
+
+      
+
+	
+
+      
+
+    
+    
+        
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <ol class="breadcrumb">
+    <li>
+      <a href="index.html">Home</a>
+    </li>
+    <li>
+          <a href="entities-az.html">Entities</a>
+    </li>
+    <li>
+          <a href="entities-tree-classes.html">Classes</a>
+    </li>
+      <li class="active">
+            crm:E63_Beginning_of_Existence
+        </li>
+  </ol>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+
+    
+    <h1>
+      crm:E63_Beginning_of_Existence
+      
+    </h1>
+
+    <hr>  
+
+    
+    <div class="tree-container">
+      <div class="tree">
+        <ul>
+          
+            
+              <li>
+                <a href="class-crme5_event.html" title="'E5 Event' - Scope note: This class comprises changes of states in cultural, social or physical systems, regardless of scale, brought about by..">crm:E5_Event</a>
+                  <ul>
+                    <li><a style="font-weight: bold;" title="'E63 Beginning of Existence' - Scope note: This class comprises events that bring into existence any E77 Persistent Item. It may be used for temporal..">crm:E63_Beginning_of_Existence</a>
+                    
+                      <ul>
+                      
+                        <li><a href="class-crme12_production.html" title="'E12 Production' - Scope note: This class comprises activities that are designed to, and succeed in, creating one or more new items. It..">crm:E12_Production</a></li>
+                      
+                        <li><a href="class-crme65_creation.html" title="'E65 Creation' - Scope note: This class comprises events that result in the creation of conceptual items or immaterial products, such as legends,..">crm:E65_Creation</a></li>
+                      
+                        <li><a href="class-crme66_formation.html" title="'E66 Formation' - Scope note: This class comprises events that result in the formation of a formal or informal E74 Group of people,..">crm:E66_Formation</a></li>
+                      
+                        <li><a href="class-crme67_birth.html" title="'E67 Birth' - Scope note: This class comprises the births of human beings. E67 Birth is a biological event focussing on the context..">crm:E67_Birth</a></li>
+                      
+                        <li><a href="class-crme81_transformation.html" title="'E81 Transformation' - Scope note: This class comprises the events that result in the simultaneous destruction of one or more than one E77..">crm:E81_Transformation</a></li>
+                      
+                      </ul>
+                    
+                  </li>
+                </ul>
+              </li>
+            
+          
+        </ul>
+      </div>
+    </div>
+
+
+    
+    <div class="row">
+      <div class="col-md-12">
+        <div class="panel panel-default">
+          <div class="panel-heading">
+            <h3 class="panel-title">URI</h3>
+          </div>
+          <div class="panel-body">
+            <code>http://www.cidoc-crm.org/cidoc-crm/E63_Beginning_of_Existence</code>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+    
+    
+      <div class="row">
+        <div class="col-md-12">
+          <div class="panel panel-default">
+          <div class="panel-heading">
+            <h3 class="panel-title">Label</h3>
+          </div>
+          <div class="panel-body">
+            E63 Beginning of Existence
+          </div>
+          </div>
+        </div>
+      </div>
+    
+
+
+    
+    
+      <div class="row">
+        <div class="col-md-12">
+          <div class="panel panel-default">
+            <div class="panel-heading">
+              <h3 class="panel-title">Description</h3>
+            </div>
+            <div class="panel-body">
+              <p>Scope note:<br>
+This class comprises events that bring into existence any E77 Persistent Item.</p>
+
+<p>It may be used for temporal reasoning about things (intellectual products, physical items, groups of people, living beings) beginning to exist; it serves as a hook for determination of a terminus post quem and ante quem.</p>
+
+<p>Examples:<br>
+- the birth of my child<br>
+- the birth of Snoopy, my dog<br>
+- the calving of the iceberg that sank the Titanic<br>
+- the construction of the Eiffel Tower</p>
+
+<p>In First Order Logic:<br>
+E63(x) ⊃ E5(x)</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    
+
+
+    
+    
+      <div class="row">
+        <div class="col-md-12">
+          <div class="panel panel-default">
+            <div class="panel-heading">
+              <h3 class="panel-title">Superclasses (5)</h3>
+            </div>
+            <div class="panel-body">
+              
+                
+                  <li><a href="class-crme5_event.html" title="http://www.cidoc-crm.org/cidoc-crm/E5_Event">crm:E5_Event</a></li>
+                
+                  <li><a href="class-crme4_period.html" title="http://www.cidoc-crm.org/cidoc-crm/E4_Period">crm:E4_Period</a></li>
+                
+                  <li><a href="class-crme2_temporal_entity.html" title="http://www.cidoc-crm.org/cidoc-crm/E2_Temporal_Entity">crm:E2_Temporal_Entity</a></li>
+                
+                  <li><a href="class-crme1_crm_entity.html" title="http://www.cidoc-crm.org/cidoc-crm/E1_CRM_Entity">crm:E1_CRM_Entity</a></li>
+                
+                  <li><a href="class-crme92_spacetime_volume.html" title="http://www.cidoc-crm.org/cidoc-crm/E92_Spacetime_Volume">crm:E92_Spacetime_Volume</a></li>
+                
+              
+            </div>
+          </div>
+        </div>
+      </div>
+    
+
+
+    
+    
+
+
+    
+    
+
+
+    
+    
+      <div class="row">
+        <div class="col-md-12">
+          <div class="panel panel-default">
+            <div class="panel-heading">
+              <h3 class="panel-title">Usage</h3>
+            </div>
+            <div class="panel-body" style="overflow: auto;">
+              <p>Instances of crm:E63_Beginning_of_Existence can have the following properties:</p>
+            </div>
+            <table class="table table-bordered" style="overflow: auto;">
+              <tr class="table-classproperties">
+                <th>PROPERTY</th><th>TYPE</th><th>DESCRIPTION</th><th>RANGE</th>
+              </tr>
+              
+                
+                  
+                      <tr class="table-inheritanceinfo">
+                        <th colspan="4" class="treeinfo">
+                          <span class="label label-default">From class <a title="crm:E63_Beginning_of_Existence" href="class-crme63_beginning_of_existence.html" class="fromclass_link">crm:E63_Beginning_of_Existence</a></span>
+                        </th>
+                      </tr>
+                    
+                      <tr>
+                        <td class="firsttd">
+                          <a class="propcolor" title="crm:P92_brought_into_existence" href="prop-crmp92_brought_into_existence.html">crm:P92_brought_into_existence</a>
+                        </td>
+                        <td class="secondtd">
+                          <i>owl:ObjectProperty<i>
+                        </td>
+                        <td class="thirdtd">
+                          <span>Scope note:
+This property allows an E63 Beginning of Existence event to be linked to the E77 Persistent Item brought into existence by it.
+
+It allows a &#34;start&#34; to be attached to any Persistent Item being documented i.e. E70 Thing, E72 Legal Object, E39 Actor, E41 Appellation, E51 Contact Point and E55 Type.
+
+Examples:
+- the birth of Mozart (E67) brought into existence Mozart (E21)
+
+In First Order Logic:
+P92(x,y) ⊃ E63(x)
+P92(x,y) ⊃ E77(y)
+P92(x,y) ⊃ P12(x,y)</span>
+                        </td>
+                        <td class="fourthtd">
+                          
+                            
+                                
+                                  <a title="crm:E77_Persistent_Item" href="class-crme77_persistent_item.html" class="rdfclass">crm:E77_Persistent_Item</a>
+                                
+                            
+                          
+                        </td>
+                      </tr>
+                    
+                  
+                
+              
+                
+                  
+                      <tr class="table-inheritanceinfo">
+                        <th colspan="4" class="treeinfo">
+                          <span class="label label-default">From class <a title="crm:E5_Event" href="class-crme5_event.html" class="fromclass_link">crm:E5_Event</a></span>
+                        </th>
+                      </tr>
+                    
+                      <tr>
+                        <td class="firsttd">
+                          <a class="propcolor" title="crm:P11_had_participant" href="prop-crmp11_had_participant.html">crm:P11_had_participant</a>
+                        </td>
+                        <td class="secondtd">
+                          <i>owl:ObjectProperty<i>
+                        </td>
+                        <td class="thirdtd">
+                          <span>Scope note:
+This property describes the active or passive participation of instances of E39 Actors in an E5 Event.
+
+It connects the life-line of the related E39 Actor with the E53 Place and E50 Date of the event. The property implies that the Actor was involved in the event but does not imply any causal relationship. The subject of a portrait can be said to have participated in the creation of the portrait.
+
+Examples:
+- Napoleon (E21) participated in The Battle of Waterloo (E7)
+- Maria (E21) participated in Photographing of Maria (E7)
+
+In First Order Logic:
+P11(x,y) ⊃ E5(x)
+P11(x,y) ⊃ E39(y)
+P11(x,y) ⊃ P12(x,y)</span>
+                        </td>
+                        <td class="fourthtd">
+                          
+                            
+                                
+                                  <a title="crm:E39_Actor" href="class-crme39_actor.html" class="rdfclass">crm:E39_Actor</a>
+                                
+                            
+                          
+                        </td>
+                      </tr>
+                    
+                      <tr>
+                        <td class="firsttd">
+                          <a class="propcolor" title="crm:P12_occurred_in_the_presence_of" href="prop-crmp12_occurred_in_the_presence_of.html">crm:P12_occurred_in_the_presence_of</a>
+                        </td>
+                        <td class="secondtd">
+                          <i>owl:ObjectProperty<i>
+                        </td>
+                        <td class="thirdtd">
+                          <span>Scope note:
+This property describes the active or passive presence of an E77 Persistent Item in an E5 Event without implying any specific role.
+
+It connects the history of a thing with the E53 Place and E50 Date of an event. For example, an object may be the desk, now in a museum on which a treaty was signed. The presence of an immaterial thing implies the presence of at least one of its carriers.
+
+Examples:
+- Deckchair 42 (E19) was present at The sinking of the Titanic (E5)
+
+In First Order Logic:
+P12(x,y) ⊃ E5(x)
+P12(x,y) ⊃ E77(y)</span>
+                        </td>
+                        <td class="fourthtd">
+                          
+                            
+                                
+                                  <a title="crm:E77_Persistent_Item" href="class-crme77_persistent_item.html" class="rdfclass">crm:E77_Persistent_Item</a>
+                                
+                            
+                          
+                        </td>
+                      </tr>
+                    
+                      <tr>
+                        <td class="firsttd">
+                          <a class="propcolor" title="crm:P20i_was_purpose_of" href="prop-crmp20i_was_purpose_of.html">crm:P20i_was_purpose_of</a>
+                        </td>
+                        <td class="secondtd">
+                          <i>owl:ObjectProperty<i>
+                        </td>
+                        <td class="thirdtd">
+                          <span></span>
+                        </td>
+                        <td class="fourthtd">
+                          
+                            
+                                
+                                  <a title="crm:E7_Activity" href="class-crme7_activity.html" class="rdfclass">crm:E7_Activity</a>
+                                
+                            
+                          
+                        </td>
+                      </tr>
+                    
+                  
+                
+              
+                
+                  
+                      <tr class="table-inheritanceinfo">
+                        <th colspan="4" class="treeinfo">
+                          <span class="label label-default">From class <a title="crm:E4_Period" href="class-crme4_period.html" class="fromclass_link">crm:E4_Period</a></span>
+                        </th>
+                      </tr>
+                    
+                      <tr>
+                        <td class="firsttd">
+                          <a class="propcolor" title="crm:P158_occupied" href="prop-crmp158_occupied.html">crm:P158_occupied</a>
+                        </td>
+                        <td class="secondtd">
+                          <i>owl:ObjectProperty<i>
+                        </td>
+                        <td class="thirdtd">
+                          <span>Scope note:
+This property associates an instance of E4 Period with the real that is phenomenal, 4 dimensional point set or volume in spacetime that it has occupied. The associated instance of E92 Spacetime Volume includes the trajectories of the participating physical things during their participation in the instance of E4 Period. This consists of the open spaces via which they have interacted and the spaces by which they had the potential to interact during that period or event.
+
+Such interactions took place in the way defined by the type of the respective period or event, such as the air in a meeting room transferring the voices. Another example are the areas controlled by some military power. In case of phenomena spreading out over islands or other separated areas, the trajectories necessary for participants to travel between these areas are not regarded as part of the occupied spacetime volumes. Such instances of E4 Period occupy each a limited number of contiguous spacetime volumes, however there must not be a discontinuity in the total timespan covered by these spacetime volumes. The real spacetime volumes occupied by an instance of E4 Period must not be confused with declarations of spacetime approximating the real extent. In general, instances of E4 Period have fuzzy boundaries in spacetime.
+
+Therefore it cannot be verified, if two different instances of E4 Period occupy exactly the same spacetime volume. We therefore determine that a spacetime volume may only be occupied by one instance of E4 Period.</span>
+                        </td>
+                        <td class="fourthtd">
+                          
+                            
+                                
+                                  <a title="crm:E92_Spacetime_Volume" href="class-crme92_spacetime_volume.html" class="rdfclass">crm:E92_Spacetime_Volume</a>
+                                
+                            
+                          
+                        </td>
+                      </tr>
+                    
+                      <tr>
+                        <td class="firsttd">
+                          <a class="propcolor" title="crm:P7_took_place_at" href="prop-crmp7_took_place_at.html">crm:P7_took_place_at</a>
+                        </td>
+                        <td class="secondtd">
+                          <i>owl:ObjectProperty<i>
+                        </td>
+                        <td class="thirdtd">
+                          <span>Scope note:
+This property describes the spatial location of an instance of E4 Period.
+
+The related E53 Place should be seen as an approximation of the geographical area within which the phenomena that characterise the period in question occurred. P7took place at (witnessed) does not convey any meaning other than spatial positioning (generally on the surface of the earth).  For example, the period &#34;Révolution française&#34; can be said to have taken place in &#34;France&#34;, the &#34;Victorian&#34; period, may be said to have taken place in &#34;Britain&#34; and its colonies, as well as other parts of Europe and north America.
+A period can take place at multiple locations.
+It is a shortcut of the more fully developed path from E4 Period through P161 has spatial projection, E53 Place, P89 falls within (contains) to E53 Place. Describe in words.
+
+Examples 
+- the period &#34;Révolution française&#34; (E4) took place at France (E53)
+
+In First Order Logic:
+P7(x,y) ⊃ E4(x)
+P7(x,y) ⊃ E53(y)</span>
+                        </td>
+                        <td class="fourthtd">
+                          
+                            
+                                
+                                  <a title="crm:E53_Place" href="class-crme53_place.html" class="rdfclass">crm:E53_Place</a>
+                                
+                            
+                          
+                        </td>
+                      </tr>
+                    
+                      <tr>
+                        <td class="firsttd">
+                          <a class="propcolor" title="crm:P8_took_place_on_or_within" href="prop-crmp8_took_place_on_or_within.html">crm:P8_took_place_on_or_within</a>
+                        </td>
+                        <td class="secondtd">
+                          <i>owl:ObjectProperty<i>
+                        </td>
+                        <td class="thirdtd">
+                          <span>Scope note:
+This property describes the location of an instance of E4 Period with respect to an E19 Physical Object.
+P8 took place on or within (witnessed) is a shortcut of the more fully developed path from E4 Period through P7 took place at, E53 Place, P156 occupies (is occupied by) to E18 Physical Thing.
+
+It describes a period that can be located with respect to the space defined by an E19 Physical Object such as a ship or a building. The precise geographical location of the object during the period in question may be unknown or unimportant.
+For example, the French and German armistice of 22 June 1940 was signed in the same railway carriage as the armistice of 11 November 1918.
+
+Examples:
+- the coronation of Queen Elisabeth II (E7) took place on or within Westminster Abbey (E19)
+
+In First Order Logic:
+P8(x,y) ⊃ E4(x)
+P8(x,y) ⊃ E18(y)</span>
+                        </td>
+                        <td class="fourthtd">
+                          
+                            
+                                
+                                  <a title="crm:E18_Physical_Thing" href="class-crme18_physical_thing.html" class="rdfclass">crm:E18_Physical_Thing</a>
+                                
+                            
+                          
+                        </td>
+                      </tr>
+                    
+                      <tr>
+                        <td class="firsttd">
+                          <a class="propcolor" title="crm:P9_consists_of" href="prop-crmp9_consists_of.html">crm:P9_consists_of</a>
+                        </td>
+                        <td class="secondtd">
+                          <i>owl:ObjectProperty<i>
+                        </td>
+                        <td class="thirdtd">
+                          <span>Scope note:
+This property associates an instance of E4 Period with another instance of E4 Period that is defined by a subset of the phenomena that define the former. Therefore the spacetime volume of the latter must fall
+within the spacetime volume of the former.
+
+Examples:
+- Cretan Bronze Age (E4) consists of Middle Minoan (E4)
+
+In First Order Logic:
+P9(x,y) ⊃ E4(x)
+P9(x,y) ⊃ E4(y)
+P9(x,y) ⊃ P10(y,x)</span>
+                        </td>
+                        <td class="fourthtd">
+                          
+                            
+                                
+                                  <a title="crm:E4_Period" href="class-crme4_period.html" class="rdfclass">crm:E4_Period</a>
+                                
+                            
+                          
+                        </td>
+                      </tr>
+                    
+                      <tr>
+                        <td class="firsttd">
+                          <a class="propcolor" title="crm:P9i_forms_part_of" href="prop-crmp9i_forms_part_of.html">crm:P9i_forms_part_of</a>
+                        </td>
+                        <td class="secondtd">
+                          <i>owl:ObjectProperty<i>
+                        </td>
+                        <td class="thirdtd">
+                          <span></span>
+                        </td>
+                        <td class="fourthtd">
+                          
+                            
+                                
+                                  <a title="crm:E4_Period" href="class-crme4_period.html" class="rdfclass">crm:E4_Period</a>
+                                
+                            
+                          
+                        </td>
+                      </tr>
+                    
+                  
+                
+              
+                
+                  
+                      <tr class="table-inheritanceinfo">
+                        <th colspan="4" class="treeinfo">
+                          <span class="label label-default">From class <a title="crm:E2_Temporal_Entity" href="class-crme2_temporal_entity.html" class="fromclass_link">crm:E2_Temporal_Entity</a></span>
+                        </th>
+                      </tr>
+                    
+                      <tr>
+                        <td class="firsttd">
+                          <a class="propcolor" title="crm:P114_is_equal_in_time_to" href="prop-crmp114_is_equal_in_time_to.html">crm:P114_is_equal_in_time_to</a>
+                        </td>
+                        <td class="secondtd">
+                          <i>owl:ObjectProperty<i>
+                        </td>
+                        <td class="thirdtd">
+                          <span>Scope note:
+This symmetric property allows the instances of E2 Temporal Entity with the same E52 Time-Span to be equated.
+This property is only necessary if the time span is unknown (otherwise the equivalence can be calculated).
+
+This property is the same as the &#34;equal&#34; relationship of Allen’s temporal logic (Allen, 1983, pp. 832-843).
+
+Examples:
+- the destruction of the Villa Justinian Tempus (E6) is equal in time to the death of Maximus Venderus (E69)
+
+In First Order Logic:
+P114(x,y) ⊃ E2(x)
+P114(x,y) ⊃ E2(y)
+P114(x,y) ⊃ P114(y,x)</span>
+                        </td>
+                        <td class="fourthtd">
+                          
+                            
+                                
+                                  <a title="crm:E2_Temporal_Entity" href="class-crme2_temporal_entity.html" class="rdfclass">crm:E2_Temporal_Entity</a>
+                                
+                            
+                          
+                        </td>
+                      </tr>
+                    
+                      <tr>
+                        <td class="firsttd">
+                          <a class="propcolor" title="crm:P115_finishes" href="prop-crmp115_finishes.html">crm:P115_finishes</a>
+                        </td>
+                        <td class="secondtd">
+                          <i>owl:ObjectProperty<i>
+                        </td>
+                        <td class="thirdtd">
+                          <span>Scope note:
+This property allows the ending point for a E2 Temporal Entity to be situated by reference to the ending point of another temporal entity of longer duration.
+
+This property is only necessary if the time span is unknown (otherwise the relationship can be calculated). This property is the same as the &#34;finishes / finished-by&#34; relationships of Allen’s temporal logic (Allen, 1983, pp. 832-843).
+
+Examples:
+- Late Bronze Age (E4) finishes Bronze Age (E4)
+
+In First Order Logic:
+P115(x,y) ⊃ E2(x)
+P115(x,y) ⊃ E2(y)</span>
+                        </td>
+                        <td class="fourthtd">
+                          
+                            
+                                
+                                  <a title="crm:E2_Temporal_Entity" href="class-crme2_temporal_entity.html" class="rdfclass">crm:E2_Temporal_Entity</a>
+                                
+                            
+                          
+                        </td>
+                      </tr>
+                    
+                      <tr>
+                        <td class="firsttd">
+                          <a class="propcolor" title="crm:P115i_is_finished_by" href="prop-crmp115i_is_finished_by.html">crm:P115i_is_finished_by</a>
+                        </td>
+                        <td class="secondtd">
+                          <i>owl:ObjectProperty<i>
+                        </td>
+                        <td class="thirdtd">
+                          <span></span>
+                        </td>
+                        <td class="fourthtd">
+                          
+                            
+                                
+                                  <a title="crm:E2_Temporal_Entity" href="class-crme2_temporal_entity.html" class="rdfclass">crm:E2_Temporal_Entity</a>
+                                
+                            
+                          
+                        </td>
+                      </tr>
+                    
+                      <tr>
+                        <td class="firsttd">
+                          <a class="propcolor" title="crm:P116_starts" href="prop-crmp116_starts.html">crm:P116_starts</a>
+                        </td>
+                        <td class="secondtd">
+                          <i>owl:ObjectProperty<i>
+                        </td>
+                        <td class="thirdtd">
+                          <span>Scope note:
+This property allows the starting point for a E2 Temporal Entity to be situated by reference to the starting point of another temporal entity of longer duration.
+
+This property is only necessary if the time span is unknown (otherwise the relationship can be calculated). This property is the same as the &#34;starts / started-by&#34; relationships of Allen’s temporal logic (Allen, 1983, pp. 832-843).
+
+Examples:
+- Early Bronze Age (E4) starts Bronze Age (E4)
+
+In First Order Logic:
+P116(x,y) ⊃ E2(x)
+P116(x,y) ⊃ E2(y)</span>
+                        </td>
+                        <td class="fourthtd">
+                          
+                            
+                                
+                                  <a title="crm:E2_Temporal_Entity" href="class-crme2_temporal_entity.html" class="rdfclass">crm:E2_Temporal_Entity</a>
+                                
+                            
+                          
+                        </td>
+                      </tr>
+                    
+                      <tr>
+                        <td class="firsttd">
+                          <a class="propcolor" title="crm:P116i_is_started_by" href="prop-crmp116i_is_started_by.html">crm:P116i_is_started_by</a>
+                        </td>
+                        <td class="secondtd">
+                          <i>owl:ObjectProperty<i>
+                        </td>
+                        <td class="thirdtd">
+                          <span></span>
+                        </td>
+                        <td class="fourthtd">
+                          
+                            
+                                
+                                  <a title="crm:E2_Temporal_Entity" href="class-crme2_temporal_entity.html" class="rdfclass">crm:E2_Temporal_Entity</a>
+                                
+                            
+                          
+                        </td>
+                      </tr>
+                    
+                      <tr>
+                        <td class="firsttd">
+                          <a class="propcolor" title="crm:P117_occurs_during" href="prop-crmp117_occurs_during.html">crm:P117_occurs_during</a>
+                        </td>
+                        <td class="secondtd">
+                          <i>owl:ObjectProperty<i>
+                        </td>
+                        <td class="thirdtd">
+                          <span>Scope note:
+This property allows the entire E52 Time-Span of an E2 Temporal Entity to be situated within the Time-Span of another temporal entity that starts before and ends after the included temporal entity.
+
+This property is only necessary if the time span is unknown (otherwise the relationship can be calculated). This property is the same as the &#34;during / includes&#34; relationships of Allen’s temporal logic (Allen, 1983, pp. 832-843).
+
+Examples:
+- Middle Saxon period (E4) occurs during Saxon period (E4)
+
+In First Order Logic:
+P117(x,y) ⊃ E2(x)
+P117(x,y) ⊃ E2(y)</span>
+                        </td>
+                        <td class="fourthtd">
+                          
+                            
+                                
+                                  <a title="crm:E2_Temporal_Entity" href="class-crme2_temporal_entity.html" class="rdfclass">crm:E2_Temporal_Entity</a>
+                                
+                            
+                          
+                        </td>
+                      </tr>
+                    
+                      <tr>
+                        <td class="firsttd">
+                          <a class="propcolor" title="crm:P117i_includes" href="prop-crmp117i_includes.html">crm:P117i_includes</a>
+                        </td>
+                        <td class="secondtd">
+                          <i>owl:ObjectProperty<i>
+                        </td>
+                        <td class="thirdtd">
+                          <span></span>
+                        </td>
+                        <td class="fourthtd">
+                          
+                            
+                                
+                                  <a title="crm:E2_Temporal_Entity" href="class-crme2_temporal_entity.html" class="rdfclass">crm:E2_Temporal_Entity</a>
+                                
+                            
+                          
+                        </td>
+                      </tr>
+                    
+                      <tr>
+                        <td class="firsttd">
+                          <a class="propcolor" title="crm:P118_overlaps_in_time_with" href="prop-crmp118_overlaps_in_time_with.html">crm:P118_overlaps_in_time_with</a>
+                        </td>
+                        <td class="secondtd">
+                          <i>owl:ObjectProperty<i>
+                        </td>
+                        <td class="thirdtd">
+                          <span>Scope note:
+This property identifies an overlap between the instances of E52 Time-Span of two instances of E2 Temporal Entity.
+
+It implies a temporal order between the two entities: if A overlaps in time B, then A must start before B, and B must end after A. This property is only necessary if the relevant time spans are unknown (otherwise the relationship can be calculated).
+
+This property is the same as the &#34;overlaps / overlapped-by&#34; relationships of Allen’s temporal logic (Allen, 1983, pp. 832-843).
+
+Examples:
+- the Iron Age (E4) overlaps in time with the Roman period (E4)
+
+In First Order Logic:
+P118(x,y) ⊃ E2(x)
+P118(x,y) ⊃ E2(y)</span>
+                        </td>
+                        <td class="fourthtd">
+                          
+                            
+                                
+                                  <a title="crm:E2_Temporal_Entity" href="class-crme2_temporal_entity.html" class="rdfclass">crm:E2_Temporal_Entity</a>
+                                
+                            
+                          
+                        </td>
+                      </tr>
+                    
+                      <tr>
+                        <td class="firsttd">
+                          <a class="propcolor" title="crm:P118i_is_overlapped_in_time_by" href="prop-crmp118i_is_overlapped_in_time_by.html">crm:P118i_is_overlapped_in_time_by</a>
+                        </td>
+                        <td class="secondtd">
+                          <i>owl:ObjectProperty<i>
+                        </td>
+                        <td class="thirdtd">
+                          <span></span>
+                        </td>
+                        <td class="fourthtd">
+                          
+                            
+                                
+                                  <a title="crm:E2_Temporal_Entity" href="class-crme2_temporal_entity.html" class="rdfclass">crm:E2_Temporal_Entity</a>
+                                
+                            
+                          
+                        </td>
+                      </tr>
+                    
+                      <tr>
+                        <td class="firsttd">
+                          <a class="propcolor" title="crm:P119_meets_in_time_with" href="prop-crmp119_meets_in_time_with.html">crm:P119_meets_in_time_with</a>
+                        </td>
+                        <td class="secondtd">
+                          <i>owl:ObjectProperty<i>
+                        </td>
+                        <td class="thirdtd">
+                          <span>Scope note:
+This property indicates that one E2 Temporal Entity immediately follows another.
+
+It implies a particular order between the two entities: if A meets in time with B, then A must precede B. This property is only necessary if the relevant time spans are unknown (otherwise the relationship can be calculated).
+
+This property is the same as the &#34;meets / met-by&#34; relationships of Allen&#39;s temporal logic (Allen, 1983, pp. 832-843).
+
+Examples:
+- Early Saxon Period (E4) meets in time with Middle Saxon Period (E4)</span>
+                        </td>
+                        <td class="fourthtd">
+                          
+                            
+                                
+                                  <a title="crm:E2_Temporal_Entity" href="class-crme2_temporal_entity.html" class="rdfclass">crm:E2_Temporal_Entity</a>
+                                
+                            
+                          
+                        </td>
+                      </tr>
+                    
+                      <tr>
+                        <td class="firsttd">
+                          <a class="propcolor" title="crm:P119i_is_met_in_time_by" href="prop-crmp119i_is_met_in_time_by.html">crm:P119i_is_met_in_time_by</a>
+                        </td>
+                        <td class="secondtd">
+                          <i>owl:ObjectProperty<i>
+                        </td>
+                        <td class="thirdtd">
+                          <span></span>
+                        </td>
+                        <td class="fourthtd">
+                          
+                            
+                                
+                                  <a title="crm:E2_Temporal_Entity" href="class-crme2_temporal_entity.html" class="rdfclass">crm:E2_Temporal_Entity</a>
+                                
+                            
+                          
+                        </td>
+                      </tr>
+                    
+                      <tr>
+                        <td class="firsttd">
+                          <a class="propcolor" title="crm:P120_occurs_before" href="prop-crmp120_occurs_before.html">crm:P120_occurs_before</a>
+                        </td>
+                        <td class="secondtd">
+                          <i>owl:ObjectProperty<i>
+                        </td>
+                        <td class="thirdtd">
+                          <span>Scope note:
+This property identifies the relative chronological sequence of two temporal entities.
+
+It implies that a temporal gap exists between the end of A and the start of B. This property is only necessary if the relevant time spans are unknown (otherwise the relationship can be calculated).
+
+This property is the same as the &#34;before / after&#34; relationships of Allen’s temporal logic (Allen, 1983, pp. 832-843).
+
+Examples:
+- Early Bronze Age (E4) occurs before Late Bronze age (E4)
+
+In First Order Logic:
+P120(x,y) ⊃ E2(x)
+P120(x,y) ⊃ E2(y)</span>
+                        </td>
+                        <td class="fourthtd">
+                          
+                            
+                                
+                                  <a title="crm:E2_Temporal_Entity" href="class-crme2_temporal_entity.html" class="rdfclass">crm:E2_Temporal_Entity</a>
+                                
+                            
+                          
+                        </td>
+                      </tr>
+                    
+                      <tr>
+                        <td class="firsttd">
+                          <a class="propcolor" title="crm:P120i_occurs_after" href="prop-crmp120i_occurs_after.html">crm:P120i_occurs_after</a>
+                        </td>
+                        <td class="secondtd">
+                          <i>owl:ObjectProperty<i>
+                        </td>
+                        <td class="thirdtd">
+                          <span></span>
+                        </td>
+                        <td class="fourthtd">
+                          
+                            
+                                
+                                  <a title="crm:E2_Temporal_Entity" href="class-crme2_temporal_entity.html" class="rdfclass">crm:E2_Temporal_Entity</a>
+                                
+                            
+                          
+                        </td>
+                      </tr>
+                    
+                      <tr>
+                        <td class="firsttd">
+                          <a class="propcolor" title="crm:P4_has_time-span" href="prop-crmp4_has_time-span.html">crm:P4_has_time-span</a>
+                        </td>
+                        <td class="secondtd">
+                          <i>owl:ObjectProperty<i>
+                        </td>
+                        <td class="thirdtd">
+                          <span>Scope note:
+This property describes the temporal confinement of an instance of an E2 Temporal Entity.
+
+The related E52 Time-Span is understood as the real Time-Span during which the phenomena were active, which make up the temporal entity instance. It does not convey any other meaning than a positioning on the &#34;time-line&#34; of chronology. The Time-Span in turn is approximated by a set of dates (E61 Time Primitive). A temporal entity can have in reality only one Time-Span, but there may exist alternative opinions about it, which we would express by assigning multiple Time-Spans. Related temporal entities may share a Time-Span. Time-Spans may have completely unknown dates but other descriptions by which we can infer knowledge.
+
+Examples:
+- the Yalta Conference (E7) has time-span Yalta Conference time-span (E52)
+
+In First Order Logic:
+P4(x,y) ⊃ E2(x)
+P4(x,y) ⊃ E52(y)</span>
+                        </td>
+                        <td class="fourthtd">
+                          
+                            
+                                
+                                  <a title="crm:E52_Time-Span" href="class-crme52_time-span.html" class="rdfclass">crm:E52_Time-Span</a>
+                                
+                            
+                          
+                        </td>
+                      </tr>
+                    
+                  
+                
+              
+                
+                  
+                      <tr class="table-inheritanceinfo">
+                        <th colspan="4" class="treeinfo">
+                          <span class="label label-default">From class <a title="crm:E1_CRM_Entity" href="class-crme1_crm_entity.html" class="fromclass_link">crm:E1_CRM_Entity</a></span>
+                        </th>
+                      </tr>
+                    
+                      <tr>
+                        <td class="firsttd">
+                          <a class="propcolor" title="crm:P3_has_note" href="prop-crmp3_has_note.html">crm:P3_has_note</a>
+                        </td>
+                        <td class="secondtd">
+                          <i>owl:DatatypeProperty<i>
+                        </td>
+                        <td class="thirdtd">
+                          <span>Scope note:
+This property is a container for all informal descriptions about an object that have not been expressed in terms of CRM constructs.
+
+In particular it captures the characterisation of the item itself, its internal structures, appearance etc.
+Like property P2 has type (is type of), this property is a consequence of the restricted focus of the CRM. The aim is not to capture, in a structured form, everything that can be said about an item; indeed, the CRM formalism is not regarded as sufficient to express everything that can be said. Good practice requires use of distinct note fields for different aspects of a characterisation. The P3.1 has type property of P3 has note allows differentiation of specific notes, e.g. &#34;construction&#34;, &#34;decoration&#34; etc.
+An item may have many notes, but a note is attached to a specific item.
+
+Examples:
+- coffee mug - OXCMS:1983.1.1 (E19) has note &#34;chipped at edge of handle&#34; (E62) has type
+Condition (E55)
+
+In First Order Logic:
+P3(x,y) ⊃ E1(x)
+P3(x,y) ⊃ E62(y)
+P3(x,y,z) ⊃ [P3(x,y) ∧ E55(z)]
+
+Properties: P3.1 has type: E55 Type</span>
+                        </td>
+                        <td class="fourthtd">
+                          
+                              <i>owl:Thing</i>
+                          
+                        </td>
+                      </tr>
+                    
+                      <tr>
+                        <td class="firsttd">
+                          <a class="propcolor" title="crm:P129i_is_subject_of" href="prop-crmp129i_is_subject_of.html">crm:P129i_is_subject_of</a>
+                        </td>
+                        <td class="secondtd">
+                          <i>owl:ObjectProperty<i>
+                        </td>
+                        <td class="thirdtd">
+                          <span></span>
+                        </td>
+                        <td class="fourthtd">
+                          
+                            
+                                
+                                  <a title="crm:E89_Propositional_Object" href="class-crme89_propositional_object.html" class="rdfclass">crm:E89_Propositional_Object</a>
+                                
+                            
+                          
+                        </td>
+                      </tr>
+                    
+                      <tr>
+                        <td class="firsttd">
+                          <a class="propcolor" title="crm:P136i_supported_type_creation" href="prop-crmp136i_supported_type_creation.html">crm:P136i_supported_type_creation</a>
+                        </td>
+                        <td class="secondtd">
+                          <i>owl:ObjectProperty<i>
+                        </td>
+                        <td class="thirdtd">
+                          <span></span>
+                        </td>
+                        <td class="fourthtd">
+                          
+                            
+                                
+                                  <a title="crm:E83_Type_Creation" href="class-crme83_type_creation.html" class="rdfclass">crm:E83_Type_Creation</a>
+                                
+                            
+                          
+                        </td>
+                      </tr>
+                    
+                      <tr>
+                        <td class="firsttd">
+                          <a class="propcolor" title="crm:P137_exemplifies" href="prop-crmp137_exemplifies.html">crm:P137_exemplifies</a>
+                        </td>
+                        <td class="secondtd">
+                          <i>owl:ObjectProperty<i>
+                        </td>
+                        <td class="thirdtd">
+                          <span>Scope note:
+This property allows an item to be declared as a particular example of an E55 Type or taxon
+The P137.1 in the taxonomic role property of P137 exemplifies (is exemplified by) allows differentiation of taxonomic roles. The taxonomic role renders the specific relationship of this example to the Type, such as &#34;prototypical&#34;, &#34;archetypical&#34;, &#34;lectotype&#34;, etc. The taxonomic role &#34;lectotype&#34; is not associated with the Type Creation (E83) itself, but selected in a later phase.
+
+Examples:
+- Object BM000098044 of the Clayton Herbarium (E20) exemplifies Spigelia marilandica (L.) L. (E55) in the taxonomic role lectotype
+
+In First Order Logic:
+P137(x,y) ⊃ E1(x)
+P137(x,y) ⊃ E55(y)
+P137(x,y,z) ⊃ [P137(x,y) ∧ E55(z)]
+P137(x,y) ⊃ P2(x,y)
+
+Properties: P137.1 in the taxonomic role: E55 Type</span>
+                        </td>
+                        <td class="fourthtd">
+                          
+                            
+                                
+                                  <a title="crm:E55_Type" href="class-crme55_type.html" class="rdfclass">crm:E55_Type</a>
+                                
+                            
+                          
+                        </td>
+                      </tr>
+                    
+                      <tr>
+                        <td class="firsttd">
+                          <a class="propcolor" title="crm:P138i_has_representation" href="prop-crmp138i_has_representation.html">crm:P138i_has_representation</a>
+                        </td>
+                        <td class="secondtd">
+                          <i>owl:ObjectProperty<i>
+                        </td>
+                        <td class="thirdtd">
+                          <span></span>
+                        </td>
+                        <td class="fourthtd">
+                          
+                            
+                                
+                                  <a title="crm:E36_Visual_Item" href="class-crme36_visual_item.html" class="rdfclass">crm:E36_Visual_Item</a>
+                                
+                            
+                          
+                        </td>
+                      </tr>
+                    
+                      <tr>
+                        <td class="firsttd">
+                          <a class="propcolor" title="crm:P140i_was_attributed_by" href="prop-crmp140i_was_attributed_by.html">crm:P140i_was_attributed_by</a>
+                        </td>
+                        <td class="secondtd">
+                          <i>owl:ObjectProperty<i>
+                        </td>
+                        <td class="thirdtd">
+                          <span></span>
+                        </td>
+                        <td class="fourthtd">
+                          
+                            
+                                
+                                  <a title="crm:E13_Attribute_Assignment" href="class-crme13_attribute_assignment.html" class="rdfclass">crm:E13_Attribute_Assignment</a>
+                                
+                            
+                          
+                        </td>
+                      </tr>
+                    
+                      <tr>
+                        <td class="firsttd">
+                          <a class="propcolor" title="crm:P141i_was_assigned_by" href="prop-crmp141i_was_assigned_by.html">crm:P141i_was_assigned_by</a>
+                        </td>
+                        <td class="secondtd">
+                          <i>owl:ObjectProperty<i>
+                        </td>
+                        <td class="thirdtd">
+                          <span></span>
+                        </td>
+                        <td class="fourthtd">
+                          
+                            
+                                
+                                  <a title="crm:E13_Attribute_Assignment" href="class-crme13_attribute_assignment.html" class="rdfclass">crm:E13_Attribute_Assignment</a>
+                                
+                            
+                          
+                        </td>
+                      </tr>
+                    
+                      <tr>
+                        <td class="firsttd">
+                          <a class="propcolor" title="crm:P15i_influenced" href="prop-crmp15i_influenced.html">crm:P15i_influenced</a>
+                        </td>
+                        <td class="secondtd">
+                          <i>owl:ObjectProperty<i>
+                        </td>
+                        <td class="thirdtd">
+                          <span></span>
+                        </td>
+                        <td class="fourthtd">
+                          
+                            
+                                
+                                  <a title="crm:E7_Activity" href="class-crme7_activity.html" class="rdfclass">crm:E7_Activity</a>
+                                
+                            
+                          
+                        </td>
+                      </tr>
+                    
+                      <tr>
+                        <td class="firsttd">
+                          <a class="propcolor" title="crm:P17i_motivated" href="prop-crmp17i_motivated.html">crm:P17i_motivated</a>
+                        </td>
+                        <td class="secondtd">
+                          <i>owl:ObjectProperty<i>
+                        </td>
+                        <td class="thirdtd">
+                          <span></span>
+                        </td>
+                        <td class="fourthtd">
+                          
+                            
+                                
+                                  <a title="crm:E7_Activity" href="class-crme7_activity.html" class="rdfclass">crm:E7_Activity</a>
+                                
+                            
+                          
+                        </td>
+                      </tr>
+                    
+                      <tr>
+                        <td class="firsttd">
+                          <a class="propcolor" title="crm:P1_is_identified_by" href="prop-crmp1_is_identified_by.html">crm:P1_is_identified_by</a>
+                        </td>
+                        <td class="secondtd">
+                          <i>owl:ObjectProperty<i>
+                        </td>
+                        <td class="thirdtd">
+                          <span>Scope note:
+This property describes the naming or identification of any real world item by a name or any other identifier.
+
+This property is intended for identifiers in general use, which form part of the world the model intends to describe, and not merely for internal database identifiers which are specific to a technical system, unless these latter also have a more general use outside the technical context. This property includes in particular identification by mathematical expressions such as coordinate systems used for the identification of instances of E53 Place. The property does not reveal anything about when, where and by whom this identifier was used. A more detailed representation can be made using the fully developed (i.e. indirect) path through E15 Identifier Assignment.
+
+Examples:
+- the capital of Italy (E53) is identified by &#34;Rome&#34; (E48)
+- text 25014-32 (E33) is identified by &#34;The Decline and Fall of the Roman Empire&#34; (E35)
+
+In First Order Logic:
+P1(x,y) ⊃ E1(x)
+P1(x,y) ⊃ E41(y)</span>
+                        </td>
+                        <td class="fourthtd">
+                          
+                            
+                                
+                                  <a title="crm:E41_Appellation" href="class-crme41_appellation.html" class="rdfclass">crm:E41_Appellation</a>
+                                
+                            
+                          
+                        </td>
+                      </tr>
+                    
+                      <tr>
+                        <td class="firsttd">
+                          <a class="propcolor" title="crm:P2_has_type" href="prop-crmp2_has_type.html">crm:P2_has_type</a>
+                        </td>
+                        <td class="secondtd">
+                          <i>owl:ObjectProperty<i>
+                        </td>
+                        <td class="thirdtd">
+                          <span>Scope note:
+This property allows sub typing of CRM entities - a form of specialisation – through the use of a terminological hierarchy, or thesaurus.
+
+The CRM is intended to focus on the high-level entities and relationships needed to describe data structures. Consequently, it does not specialise entities any further than is required for this immediate purpose. However, entities in the isA hierarchy of the CRM may by specialised into any number of sub entities, which can be defined in the E55 Type hierarchy. E51 Contact Point, for example, may be specialised into &#34;e-mail address&#34;, &#34;telephone number&#34;, &#34;post office box&#34;, &#34;URL&#34; etc. none of which figures explicitly in the CRM hierarchy. Sub typing obviously requires consistency between the meaning of the terms assigned and the more general intent of the CRM entity in question.
+
+Examples:
+- &#34;enquiries@cidoc-crm.org&#34; (E51) has type e-mail address (E55)
+
+In First Order Logic:
+P2(x,y) ⊃ E1(x)
+P2(x,y) ⊃ E55(y)</span>
+                        </td>
+                        <td class="fourthtd">
+                          
+                            
+                                
+                                  <a title="crm:E55_Type" href="class-crme55_type.html" class="rdfclass">crm:E55_Type</a>
+                                
+                            
+                          
+                        </td>
+                      </tr>
+                    
+                      <tr>
+                        <td class="firsttd">
+                          <a class="propcolor" title="crm:P39i_was_measured_by" href="prop-crmp39i_was_measured_by.html">crm:P39i_was_measured_by</a>
+                        </td>
+                        <td class="secondtd">
+                          <i>owl:ObjectProperty<i>
+                        </td>
+                        <td class="thirdtd">
+                          <span></span>
+                        </td>
+                        <td class="fourthtd">
+                          
+                            
+                                
+                                  <a title="crm:E16_Measurement" href="class-crme16_measurement.html" class="rdfclass">crm:E16_Measurement</a>
+                                
+                            
+                          
+                        </td>
+                      </tr>
+                    
+                      <tr>
+                        <td class="firsttd">
+                          <a class="propcolor" title="crm:P41i_was_classified_by" href="prop-crmp41i_was_classified_by.html">crm:P41i_was_classified_by</a>
+                        </td>
+                        <td class="secondtd">
+                          <i>owl:ObjectProperty<i>
+                        </td>
+                        <td class="thirdtd">
+                          <span></span>
+                        </td>
+                        <td class="fourthtd">
+                          
+                            
+                                
+                                  <a title="crm:E17_Type_Assignment" href="class-crme17_type_assignment.html" class="rdfclass">crm:E17_Type_Assignment</a>
+                                
+                            
+                          
+                        </td>
+                      </tr>
+                    
+                      <tr>
+                        <td class="firsttd">
+                          <a class="propcolor" title="crm:P62i_is_depicted_by" href="prop-crmp62i_is_depicted_by.html">crm:P62i_is_depicted_by</a>
+                        </td>
+                        <td class="secondtd">
+                          <i>owl:ObjectProperty<i>
+                        </td>
+                        <td class="thirdtd">
+                          <span></span>
+                        </td>
+                        <td class="fourthtd">
+                          
+                            
+                                
+                                  <a title="crm:E24_Physical_Man-Made_Thing" href="class-crme24_physical_man-made_thing.html" class="rdfclass">crm:E24_Physical_Man-Made_Thing</a>
+                                
+                            
+                          
+                        </td>
+                      </tr>
+                    
+                      <tr>
+                        <td class="firsttd">
+                          <a class="propcolor" title="crm:P67i_is_referred_to_by" href="prop-crmp67i_is_referred_to_by.html">crm:P67i_is_referred_to_by</a>
+                        </td>
+                        <td class="secondtd">
+                          <i>owl:ObjectProperty<i>
+                        </td>
+                        <td class="thirdtd">
+                          <span></span>
+                        </td>
+                        <td class="fourthtd">
+                          
+                            
+                                
+                                  <a title="crm:E89_Propositional_Object" href="class-crme89_propositional_object.html" class="rdfclass">crm:E89_Propositional_Object</a>
+                                
+                            
+                          
+                        </td>
+                      </tr>
+                    
+                      <tr>
+                        <td class="firsttd">
+                          <a class="propcolor" title="crm:P70i_is_documented_in" href="prop-crmp70i_is_documented_in.html">crm:P70i_is_documented_in</a>
+                        </td>
+                        <td class="secondtd">
+                          <i>owl:ObjectProperty<i>
+                        </td>
+                        <td class="thirdtd">
+                          <span></span>
+                        </td>
+                        <td class="fourthtd">
+                          
+                            
+                                
+                                  <a title="crm:E31_Document" href="class-crme31_document.html" class="rdfclass">crm:E31_Document</a>
+                                
+                            
+                          
+                        </td>
+                      </tr>
+                    
+                      <tr>
+                        <td class="firsttd">
+                          <a class="propcolor" title="crm:P71i_is_listed_in" href="prop-crmp71i_is_listed_in.html">crm:P71i_is_listed_in</a>
+                        </td>
+                        <td class="secondtd">
+                          <i>owl:ObjectProperty<i>
+                        </td>
+                        <td class="thirdtd">
+                          <span></span>
+                        </td>
+                        <td class="fourthtd">
+                          
+                            
+                                
+                                  <a title="crm:E32_Authority_Document" href="class-crme32_authority_document.html" class="rdfclass">crm:E32_Authority_Document</a>
+                                
+                            
+                          
+                        </td>
+                      </tr>
+                    
+                  
+                
+              
+                
+                  
+                      <tr class="table-inheritanceinfo">
+                        <th colspan="4" class="treeinfo">
+                          <span class="label label-default">From class <a title="crm:E92_Spacetime_Volume" href="class-crme92_spacetime_volume.html" class="fromclass_link">crm:E92_Spacetime_Volume</a></span>
+                        </th>
+                      </tr>
+                    
+                      <tr>
+                        <td class="firsttd">
+                          <a class="propcolor" title="crm:P10_falls_within" href="prop-crmp10_falls_within.html">crm:P10_falls_within</a>
+                        </td>
+                        <td class="secondtd">
+                          <i>owl:ObjectProperty<i>
+                        </td>
+                        <td class="thirdtd">
+                          <span>Scope note:
+This property associates an instance of E4 Period with another instance of E4 Period that falls within the spacetime volumes occupied by the latter.
+
+The difference with P9 consists of (forms part of) is subtle. Unlike P9 consists of (forms part of), P10 falls within (contains) does not imply any logical connection between the two periods and it may refer to a period of a completely different nature.
+
+Examples:
+- the Great Plague (E4) falls within The Gothic period (E4)</span>
+                        </td>
+                        <td class="fourthtd">
+                          
+                            
+                                
+                                  <a title="crm:E92_Spacetime_Volume" href="class-crme92_spacetime_volume.html" class="rdfclass">crm:E92_Spacetime_Volume</a>
+                                
+                            
+                          
+                        </td>
+                      </tr>
+                    
+                      <tr>
+                        <td class="firsttd">
+                          <a class="propcolor" title="crm:P10i_contains" href="prop-crmp10i_contains.html">crm:P10i_contains</a>
+                        </td>
+                        <td class="secondtd">
+                          <i>owl:ObjectProperty<i>
+                        </td>
+                        <td class="thirdtd">
+                          <span></span>
+                        </td>
+                        <td class="fourthtd">
+                          
+                            
+                                
+                                  <a title="crm:E92_Spacetime_Volume" href="class-crme92_spacetime_volume.html" class="rdfclass">crm:E92_Spacetime_Volume</a>
+                                
+                            
+                          
+                        </td>
+                      </tr>
+                    
+                      <tr>
+                        <td class="firsttd">
+                          <a class="propcolor" title="crm:P132_overlaps_with" href="prop-crmp132_overlaps_with.html">crm:P132_overlaps_with</a>
+                        </td>
+                        <td class="secondtd">
+                          <i>owl:ObjectProperty<i>
+                        </td>
+                        <td class="thirdtd">
+                          <span>Scope note:
+This symmetric property allows instances of E4 Period that overlap both temporally and spatially to be related, i,e. they share some spatio-temporal extent.
+
+This property does not imply any ordering or sequence between the two periods, either spatial or temporal.
+
+Examples:
+- the &#34;Urnfield&#34; period (E4) overlaps with the &#34;Hallstatt&#34; period (E4)
+
+In First Order Logic: 
+P132(x,y) ⊃ E92(x) 
+P132(x,y) ⊃ E92(y) 
+P132(x,y) ⊃ P132(y,x)</span>
+                        </td>
+                        <td class="fourthtd">
+                          
+                            
+                                
+                                  <a title="crm:E92_Spacetime_Volume" href="class-crme92_spacetime_volume.html" class="rdfclass">crm:E92_Spacetime_Volume</a>
+                                
+                            
+                          
+                        </td>
+                      </tr>
+                    
+                      <tr>
+                        <td class="firsttd">
+                          <a class="propcolor" title="crm:P133_is_separated_from" href="prop-crmp133_is_separated_from.html">crm:P133_is_separated_from</a>
+                        </td>
+                        <td class="secondtd">
+                          <i>owl:ObjectProperty<i>
+                        </td>
+                        <td class="thirdtd">
+                          <span>Scope note:
+This symmetric property allows instances of E4 Period that do not overlap both temporally and spatially, to be related i,e. they do not share any spatio-temporal extent.
+
+This property does not imply any ordering or sequence between the two periods either spatial or temporal.
+
+Examples:
+- the &#34;Hallstatt&#34; period (E4) is separated from the &#34;La Tène&#34; era (E4)
+
+In First Order Logic:
+P133(x,y) ⊃ E92(x) 
+P133(x,y) ⊃ E92(y) 
+P133(x,y) ⊃ P133(y,x)</span>
+                        </td>
+                        <td class="fourthtd">
+                          
+                            
+                                
+                                  <a title="crm:E92_Spacetime_Volume" href="class-crme92_spacetime_volume.html" class="rdfclass">crm:E92_Spacetime_Volume</a>
+                                
+                            
+                          
+                        </td>
+                      </tr>
+                    
+                      <tr>
+                        <td class="firsttd">
+                          <a class="propcolor" title="crm:P160_has_temporal_projection" href="prop-crmp160_has_temporal_projection.html">crm:P160_has_temporal_projection</a>
+                        </td>
+                        <td class="secondtd">
+                          <i>owl:ObjectProperty<i>
+                        </td>
+                        <td class="thirdtd">
+                          <span>Scope note:
+This property describes the temporal projection of an instance of an E92 Spacetime Volume. The property P4 has time-span is the same as P160 has temporal projection if it is used to document an instance of E4 Period or any subclass of it.
+
+Example:
+
+In First Order Logic:
+P160(x,y) ⊃ E92(x)
+P160(x,y)⊃ E52(y)</span>
+                        </td>
+                        <td class="fourthtd">
+                          
+                            
+                                
+                                  <a title="crm:E52_Time-Span" href="class-crme52_time-span.html" class="rdfclass">crm:E52_Time-Span</a>
+                                
+                            
+                          
+                        </td>
+                      </tr>
+                    
+                      <tr>
+                        <td class="firsttd">
+                          <a class="propcolor" title="crm:P161_has_spatial_projection" href="prop-crmp161_has_spatial_projection.html">crm:P161_has_spatial_projection</a>
+                        </td>
+                        <td class="secondtd">
+                          <i>owl:ObjectProperty<i>
+                        </td>
+                        <td class="thirdtd">
+                          <span>Scope note:
+This property associates an instance of a E92 Spacetime Volume with an instance of E53 Place that is the result of the spatial projection of the instance of a E92 Spacetime Volume on a reference space. In general there can be more than one useful reference space to describe the spatial projection of a spacetime volume, such as that of a battle ship versus that of the seafloor. Therefore the projection is not unique. 
+This is part of the fully developed path that is shortcut by P7took place at (witnessed. The more fully developed path from E4 Period through P161 has spatial projection, E53 Place, P89 falls within (contains) to E53 Place.
+
+Example
+
+In First Order Logic:
+P161(x,y) ⊃ E92(x)
+P161(x,y) ⊃ E53(y)</span>
+                        </td>
+                        <td class="fourthtd">
+                          
+                            
+                                
+                                  <a title="crm:E53_Place" href="class-crme53_place.html" class="rdfclass">crm:E53_Place</a>
+                                
+                            
+                          
+                        </td>
+                      </tr>
+                    
+                      <tr>
+                        <td class="firsttd">
+                          <a class="propcolor" title="crm:P166i_had_presence" href="prop-crmp166i_had_presence.html">crm:P166i_had_presence</a>
+                        </td>
+                        <td class="secondtd">
+                          <i>owl:ObjectProperty<i>
+                        </td>
+                        <td class="thirdtd">
+                          <span></span>
+                        </td>
+                        <td class="fourthtd">
+                          
+                            
+                                
+                                  <a title="crm:E93_Presence" href="class-crme93_presence.html" class="rdfclass">crm:E93_Presence</a>
+                                
+                            
+                          
+                        </td>
+                      </tr>
+                    
+                  
+                
+              
+                
+                  
+                      <tr class="table-inheritanceinfo">
+                        <th colspan="4" class="treeinfo">
+                          <span class="label label-default">From class <a title="owl:Thing" href="class-owlthing.html" class="fromclass_link">owl:Thing</a></span>
+                        </th>
+                      </tr>
+                    
+                      <tr>
+                        <td class="firsttd">
+                          <a class="propcolor" title="crm:P14i_performed" href="prop-crmp14i_performed.html">crm:P14i_performed</a>
+                        </td>
+                        <td class="secondtd">
+                          <i>owl:ObjectProperty<i>
+                        </td>
+                        <td class="thirdtd">
+                          <span></span>
+                        </td>
+                        <td class="fourthtd">
+                          
+                            
+                                
+                                  <a title="crm:E7_Activity" href="class-crme7_activity.html" class="rdfclass">crm:E7_Activity</a>
+                                
+                            
+                          
+                        </td>
+                      </tr>
+                    
+                      <tr>
+                        <td class="firsttd">
+                          <a class="propcolor" title="crm:P165i_is_incorporated_in" href="prop-crmp165i_is_incorporated_in.html">crm:P165i_is_incorporated_in</a>
+                        </td>
+                        <td class="secondtd">
+                          <i>owl:ObjectProperty<i>
+                        </td>
+                        <td class="thirdtd">
+                          <span></span>
+                        </td>
+                        <td class="fourthtd">
+                          
+                              <i>owl:Thing</i>
+                          
+                        </td>
+                      </tr>
+                    
+                      <tr>
+                        <td class="firsttd">
+                          <a class="propcolor" title="crm:P22i_acquired_title_through" href="prop-crmp22i_acquired_title_through.html">crm:P22i_acquired_title_through</a>
+                        </td>
+                        <td class="secondtd">
+                          <i>owl:InverseFunctionalProperty<i>
+                        </td>
+                        <td class="thirdtd">
+                          <span></span>
+                        </td>
+                        <td class="fourthtd">
+                          
+                            
+                                
+                                  <a title="crm:E8_Acquisition" href="class-crme8_acquisition.html" class="rdfclass">crm:E8_Acquisition</a>
+                                
+                            
+                          
+                        </td>
+                      </tr>
+                    
+                      <tr>
+                        <td class="firsttd">
+                          <a class="propcolor" title="crm:P23i_surrendered_title_through" href="prop-crmp23i_surrendered_title_through.html">crm:P23i_surrendered_title_through</a>
+                        </td>
+                        <td class="secondtd">
+                          <i>owl:ObjectProperty<i>
+                        </td>
+                        <td class="thirdtd">
+                          <span></span>
+                        </td>
+                        <td class="fourthtd">
+                          
+                            
+                                
+                                  <a title="crm:E8_Acquisition" href="class-crme8_acquisition.html" class="rdfclass">crm:E8_Acquisition</a>
+                                
+                            
+                          
+                        </td>
+                      </tr>
+                    
+                      <tr>
+                        <td class="firsttd">
+                          <a class="propcolor" title="crm:P28i_surrendered_custody_through" href="prop-crmp28i_surrendered_custody_through.html">crm:P28i_surrendered_custody_through</a>
+                        </td>
+                        <td class="secondtd">
+                          <i>owl:ObjectProperty<i>
+                        </td>
+                        <td class="thirdtd">
+                          <span></span>
+                        </td>
+                        <td class="fourthtd">
+                          
+                            
+                                
+                                  <a title="crm:E10_Transfer_of_Custody" href="class-crme10_transfer_of_custody.html" class="rdfclass">crm:E10_Transfer_of_Custody</a>
+                                
+                            
+                          
+                        </td>
+                      </tr>
+                    
+                      <tr>
+                        <td class="firsttd">
+                          <a class="propcolor" title="crm:P29i_received_custody_through" href="prop-crmp29i_received_custody_through.html">crm:P29i_received_custody_through</a>
+                        </td>
+                        <td class="secondtd">
+                          <i>owl:ObjectProperty<i>
+                        </td>
+                        <td class="thirdtd">
+                          <span></span>
+                        </td>
+                        <td class="fourthtd">
+                          
+                            
+                                
+                                  <a title="crm:E10_Transfer_of_Custody" href="class-crme10_transfer_of_custody.html" class="rdfclass">crm:E10_Transfer_of_Custody</a>
+                                
+                            
+                          
+                        </td>
+                      </tr>
+                    
+                      <tr>
+                        <td class="firsttd">
+                          <a class="propcolor" title="crm:P48_has_preferred_identifier" href="prop-crmp48_has_preferred_identifier.html">crm:P48_has_preferred_identifier</a>
+                        </td>
+                        <td class="secondtd">
+                          <i>owl:ObjectProperty<i>
+                        </td>
+                        <td class="thirdtd">
+                          <span>Scope note:
+This property records the preferred E42 Identifier that was used to identify an instance of E1 CRM Entity at the time this property was recorded.
+
+More than one preferred identifier may have been assigned to an item over time.
+Use of this property requires an external mechanism for assigning temporal validity to the respective CRM instance.
+
+P48 has preferred identifier (is preferred identifier of), is a shortcut for the path from E1 CRM Entity through P140 assigned attribute to (was attributed by), E15 Identifier Assignment, P37 assigned (was assigned by) to E42 Identifier. The fact that an identifier is a preferred one for an organisation can be better expressed in a context independent form by assigning a suitable E55 Type to the respective instance of E15 Identifier Assignment using the P2 has type property.
+
+Examples:
+- the pair of Lederhosen donated by Dr Martin Doerr (E22) has preferred identifier &#34;OXCMS:2001.1.32&#34; (E42)
+
+In First Order Logic:
+P48(x,y) ⊃ E1(x)
+P48(x,y) ⊃ E42(y)
+P48(x,y) ⊃ P1(x,y)</span>
+                        </td>
+                        <td class="fourthtd">
+                          
+                            
+                                
+                                  <a title="crm:E42_Identifier" href="class-crme42_identifier.html" class="rdfclass">crm:E42_Identifier</a>
+                                
+                            
+                          
+                        </td>
+                      </tr>
+                    
+                      <tr>
+                        <td class="firsttd">
+                          <a class="propcolor" title="crm:P50i_is_current_keeper_of" href="prop-crmp50i_is_current_keeper_of.html">crm:P50i_is_current_keeper_of</a>
+                        </td>
+                        <td class="secondtd">
+                          <i>owl:ObjectProperty<i>
+                        </td>
+                        <td class="thirdtd">
+                          <span></span>
+                        </td>
+                        <td class="fourthtd">
+                          
+                            
+                                
+                                  <a title="crm:E18_Physical_Thing" href="class-crme18_physical_thing.html" class="rdfclass">crm:E18_Physical_Thing</a>
+                                
+                            
+                          
+                        </td>
+                      </tr>
+                    
+                      <tr>
+                        <td class="firsttd">
+                          <a class="propcolor" title="crm:P52i_is_current_owner_of" href="prop-crmp52i_is_current_owner_of.html">crm:P52i_is_current_owner_of</a>
+                        </td>
+                        <td class="secondtd">
+                          <i>owl:ObjectProperty<i>
+                        </td>
+                        <td class="thirdtd">
+                          <span></span>
+                        </td>
+                        <td class="fourthtd">
+                          
+                            
+                                
+                                  <a title="crm:E18_Physical_Thing" href="class-crme18_physical_thing.html" class="rdfclass">crm:E18_Physical_Thing</a>
+                                
+                            
+                          
+                        </td>
+                      </tr>
+                    
+                  
+                
+              
+            </table>
+          </div>
+        </div>
+      </div>
+    
+
+
+    
+    
+
+
+    
+    <div class="row">
+      <div class="col-md-12">
+        <div class="panel panel-default">
+          <div class="panel-heading">
+            <h3 class="panel-title">Implementation</h3>
+          </div>
+          <div class="panel-body implementation-panel">
+            
+              <div class="highlight"><pre><span></span><span class="k">@prefix</span><span class="w"> </span><span class="nn">crm:</span><span class="w"> </span><span class="nv">&lt;http://www.cidoc-crm.org/cidoc-crm/&gt;</span><span class="w"> </span><span class="p">.</span>
+<span class="k">@prefix</span><span class="w"> </span><span class="nn">ecrm:</span><span class="w"> </span><span class="nv">&lt;http://erlangen-crm.org/current/&gt;</span><span class="w"> </span><span class="p">.</span>
+<span class="k">@prefix</span><span class="w"> </span><span class="nn">owl:</span><span class="w"> </span><span class="nv">&lt;http://www.w3.org/2002/07/owl#&gt;</span><span class="w"> </span><span class="p">.</span>
+<span class="k">@prefix</span><span class="w"> </span><span class="nn">rdfs:</span><span class="w"> </span><span class="nv">&lt;http://www.w3.org/2000/01/rdf-schema#&gt;</span><span class="w"> </span><span class="p">.</span>
+<span class="k">@prefix</span><span class="w"> </span><span class="nn">skos:</span><span class="w"> </span><span class="nv">&lt;http://www.w3.org/2004/02/skos/core#&gt;</span><span class="w"> </span><span class="p">.</span>
+<span class="k">@prefix</span><span class="w"> </span><span class="nn">xsd:</span><span class="w"> </span><span class="nv">&lt;http://www.w3.org/2001/XMLSchema#&gt;</span><span class="w"> </span><span class="p">.</span>
+
+<span class="nn">crm</span><span class="p">:</span><span class="nt">E63_Beginning_of_Existence</span> <span class="kt">a</span> <span class="nn">owl</span><span class="p">:</span><span class="nt">Class</span> <span class="p">;</span>
+    <span class="nn">rdfs</span><span class="p">:</span><span class="nt">label</span> <span class="s">&quot;E63 Beginning of Existence&quot;</span><span class="o">@</span><span class="ge">en</span> <span class="p">;</span>
+    <span class="nn">rdfs</span><span class="p">:</span><span class="nt">comment</span> <span class="s">&quot;&quot;&quot;Scope note:</span>
+<span class="s">This class comprises events that bring into existence any E77 Persistent Item.</span>
+
+<span class="s">It may be used for temporal reasoning about things (intellectual products, physical items, groups of people, living beings) beginning to exist; it serves as a hook for determination of a terminus post quem and ante quem.</span>
+
+<span class="s">Examples:</span>
+<span class="s">- the birth of my child</span>
+<span class="s">- the birth of Snoopy, my dog</span>
+<span class="s">- the calving of the iceberg that sank the Titanic</span>
+<span class="s">- the construction of the Eiffel Tower</span>
+
+<span class="s">In First Order Logic:</span>
+<span class="s">E63(x) ⊃ E5(x)&quot;&quot;&quot;@en ;</span>
+<span class="s">    rdfs:subClassOf [ a owl:Restriction ;</span>
+<span class="s">            owl:onProperty crm:P92_brought_into_existence ;</span>
+<span class="s">            owl:someValuesFrom crm:E77_Persistent_Item ],</span>
+<span class="s">        crm:E5_Event ;</span>
+<span class="s">    owl:equivalentClass ecrm:E63_Beginning_of_Existence ;</span>
+<span class="s">    skos:notation &quot;E63&quot;^^xsd:string .</span>
+</pre></div>
+
+            
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+        
+
+
+
+
+	</div><!-- /#page-content-wrapper -->
+
+
+  
+
+
+
+  
+
+
+
+
+  <footer class="footer">
+    <div class="container">
+    
+      <p class="text-muted">Documentation automatically generated on Wed, 16 Nov 2022 14:12:34 with <a href="http://lambdamusic.github.io/Ontospy/">Ontospy</a> (v2.1.0)</p>
+
+    
+    </div>
+  </footer>
+
+
+</div><!-- /#wrapper -->
+
+
+<!-- Bootstrap core JavaScript
+================================================== -->
+<!-- Placed at the end of the document so the pages load faster -->
+<script src="../static/libs/jquery/1_12_4/jquery.min.js"></script>
+<script src="../static/libs/bootstrap-3_3_7-dist/js/bootstrap.min.js"></script>
+
+<!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+<script src="../static/libs/bootstrap-3_3_7-dist/js/ie10-viewport-bug-workaround.js"></script>
+
+<script src="../static/libs/chartjs-2_4_0/chart.bundle.js"></script>
+
+
+<!-- Menu Toggle Script -->
+<script>
+$("#menu-toggle").click(function(e) {
+    e.preventDefault();
+    $("#wrapper").toggleClass("toggled");
+});
+</script>
+
+
+
+
+<script type="text/javascript">
+
+$('#search-input-sidebar').keyup(function() {
+
+  var val = $.trim($(this).val()).replace(/ +/g, ' ').toLowerCase();
+  // var $rows = $(this).next(".entities-list").find("div");
+  var $rows = $(this).parent().parent().find("li.second-level");
+
+  $rows.show().filter(function() {
+      var text = $(this).text().replace(/\s+/g, ' ').toLowerCase();
+      return !~text.indexOf(val);
+  }).hide();
+});
+
+</script>
+
+
+
+
+  <!-- Scroll Sidebar Script -->
+
+  
+  
+
+  <script type="text/javascript">
+
+    $(document).ready(function (){
+      $('#sidebar-wrapper').animate({
+          scrollTop: $("#sd_55").offset().top - 100
+      }, 100);
+    });
+
+  </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  </body>
+</html>

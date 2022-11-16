@@ -10,23 +10,23 @@
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
     <meta name="description" content="">
     <meta name="author" content="">
-    <link rel="icon" href="../static/libs/img/favicon.ico">
+    <link rel="icon" href="../static/custom/favicon.ico">
 
 	
-		<title>OntoSpy > http://purl.org/spar/frbr</title>
+		<title>Ontospy > http://purl.org/spar/frbr</title>
 	
 
     <!-- Bootstrap core CSS -->
-    <!-- <link href="../static/libs/bootstrap-3.3.7-dist/css/bootstrap.min.css" rel="stylesheet">  -->
+    <!-- <link href="../static/libs/bootstrap-3_3_7-dist/css/bootstrap.min.css" rel="stylesheet">  -->
     <!-- Bootswatch:  -->
     <!-- cerulean  | cyborg |  flatly |  lumen |  sandstone |   spacelab  |  yeti | cosmo |  darkly |  paper | simplex | superhero |  journal | readable  |   slate |  united -->
-    <link href="../static/libs/bootswatch3.2/united/bootstrap.min.css" rel="stylesheet">
+    <link href="../static/libs/bootswatch3_2/cosmo/bootstrap.min.css" rel="stylesheet">
     <link href="../static/custom/css/simple-sidebar.css" rel="stylesheet">
     <link href="../static/custom/css/familytree.css" rel="stylesheet">
     <link href="../static/custom/css/tabletree.css" rel="stylesheet">
 
     <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
-    <link href="../static/libs/bootstrap-3.3.7-dist/css/ie10-viewport-bug-workaround.css" rel="stylesheet">
+    <link href="../static/libs/bootstrap-3_3_7-dist/css/ie10-viewport-bug-workaround.css" rel="stylesheet">
 
     <!-- Custom styles for this template -->
     <link href="../static/custom/css/sticky-footer-navbar.css" rel="stylesheet">
@@ -57,7 +57,7 @@
 
   .implementation-panel {
     overflow: auto;
-    max-height: 500px;
+    /*max-height: 500px;*/
   }
 
   tr.table-classproperties {
@@ -152,8 +152,13 @@
 
 
 /*pygments css*/
+pre { line-height: 125%; }
+td.linenos pre { color: #000000; background-color: #f0f0f0; padding-left: 5px; padding-right: 5px; }
+span.linenos { color: #000000; background-color: #f0f0f0; padding-left: 5px; padding-right: 5px; }
+td.linenos pre.special { color: #000000; background-color: #ffffc0; padding-left: 5px; padding-right: 5px; }
+span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 5px; padding-right: 5px; }
 .highlight .hll { background-color: #ffffcc }
-.highlight  { background: #f8f8f8; }
+.highlight { background: #f8f8f8; }
 .highlight .c { color: #408080; font-style: italic } /* Comment */
 .highlight .err { border: 1px solid #FF0000 } /* Error */
 .highlight .k { color: #008000; font-weight: bold } /* Keyword */
@@ -266,27 +271,22 @@
     <div id="navbar" class="collapse navbar-collapse">
       <ul class="nav navbar-nav">
         <li ><a href="index.html"><code style="font-size: 115%;">http://purl.org/spar/frbr</code></a></li>
-        
 
-       
-
-
-        <li  ><a href="dashboard.html">Dashboard</a></li>
         <li  ><a href="entities-az.html">Entities A-Z</a></li>
-        <li class="dropdown  " >
-          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Entities Tree <span class="caret"></span></a>
-          <ul class="dropdown-menu">
-            
-            <li><a href="entities-tree-classes.html">Classes</a>
-            </li>
-            
-            
-            <li><a  href="entities-tree-properties.html">Properties</a>
-            </li>
-            
-            
-          </ul>
-      </li>
+        
+        <li ><a href="entities-tree-classes.html">Classes</a></li>
+        
+        
+        <li ><a href="entities-tree-properties.html">Properties</a></li>
+        
+        
+        
+        
+        <li  ><a href="statistics.html">Statistics</a></li>
+
+
+
+
 
       </ul>
       
@@ -294,6 +294,9 @@
 
   </div>
 </nav>
+
+
+
 
 
 
@@ -322,31 +325,31 @@
 
             
           
-              <li class="second-level" style="line-height: 20px;" id="sd_1999"><a  href="class-coreconcept.html">core:Concept</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_1737"><a  href="class-coreconcept.html">core:Concept</a></li>
           
-              <li class="second-level" style="line-height: 20px;" id="sd_2000"><a  href="class-corecorporatebody.html">core:CorporateBody</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_1738"><a  href="class-corecorporatebody.html">core:CorporateBody</a></li>
           
-              <li class="second-level" style="line-height: 20px;" id="sd_2001"><a  href="class-coreendeavour.html">core:Endeavour</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_1739"><a  href="class-coreendeavour.html">core:Endeavour</a></li>
           
-              <li class="second-level" style="line-height: 20px;" id="sd_2002"><a  href="class-coreevent.html">core:Event</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_1740"><a  href="class-coreevent.html">core:Event</a></li>
           
-              <li class="second-level" style="line-height: 20px;" id="sd_2003"><a  href="class-coreexpression.html">core:Expression</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_1741"><a  href="class-coreexpression.html">core:Expression</a></li>
           
-              <li class="second-level" style="line-height: 20px;" id="sd_2004"><a  href="class-coreitem.html">core:Item</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_1742"><a  href="class-coreitem.html">core:Item</a></li>
           
-              <li class="second-level" style="line-height: 20px;" id="sd_2005"><a  href="class-coremanifestation.html">core:Manifestation</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_1743"><a  href="class-coremanifestation.html">core:Manifestation</a></li>
           
-              <li class="second-level" style="line-height: 20px;" id="sd_2006"><a  href="class-coreobject.html">core:Object</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_1744"><a  href="class-coreobject.html">core:Object</a></li>
           
-              <li class="second-level" style="line-height: 20px;" id="sd_2007"><a  href="class-coreperson.html">core:Person</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_1745"><a  href="class-coreperson.html">core:Person</a></li>
           
-              <li class="second-level" style="line-height: 20px;" id="sd_2008"><a  href="class-coreplace.html">core:Place</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_1746"><a  href="class-coreplace.html">core:Place</a></li>
           
-              <li class="second-level" style="line-height: 20px;" id="sd_2009"><a  href="class-coreresponsibleentity.html">core:ResponsibleEntity</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_1747"><a  href="class-coreresponsibleentity.html">core:ResponsibleEntity</a></li>
           
-              <li class="second-level" style="line-height: 20px;" id="sd_2010"><a  href="class-coresubject.html">core:Subject</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_1748"><a  href="class-coresubject.html">core:Subject</a></li>
           
-              <li class="second-level" style="line-height: 20px;" id="sd_2011"><a  href="class-corework.html">core:Work</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_1749"><a  href="class-corework.html">core:Work</a></li>
           
         
 
@@ -356,126 +359,129 @@
 
             
           
-              <li class="second-level" style="line-height: 20px;" id="sd_2012"><a   href="prop-dccreator.html">dc:creator</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_1761"><a   href="prop-coreabridgement.html">core:abridgement</a></li>
           
-              <li class="second-level" style="line-height: 20px;" id="sd_2013"><a   href="prop-dcdate.html">dc:date</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_1762"><a   href="prop-coreabridgementof.html">core:abridgementOf</a></li>
           
-              <li class="second-level" style="line-height: 20px;" id="sd_2014"><a   href="prop-dcdescription.html">dc:description</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_1763"><a   href="prop-coreadaption.html">core:adaption</a></li>
           
-              <li class="second-level" style="line-height: 20px;" id="sd_2015"><a   href="prop-dcrights.html">dc:rights</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_1764"><a   href="prop-coreadaptionof.html">core:adaptionOf</a></li>
           
-              <li class="second-level" style="line-height: 20px;" id="sd_2016"><a   href="prop-dctitle.html">dc:title</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_1765"><a   href="prop-corealternate.html">core:alternate</a></li>
           
-              <li class="second-level" style="line-height: 20px;" id="sd_2017"><a   href="prop-rdfscomment.html">rdfs:comment</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_1766"><a   href="prop-corealternateof.html">core:alternateOf</a></li>
           
-              <li class="second-level" style="line-height: 20px;" id="sd_2018"><a   href="prop-rdfsisdefinedby.html">rdfs:isDefinedBy</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_1767"><a   href="prop-corearrangement.html">core:arrangement</a></li>
           
-              <li class="second-level" style="line-height: 20px;" id="sd_2019"><a   href="prop-rdfslabel.html">rdfs:label</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_1768"><a   href="prop-corearrangementof.html">core:arrangementOf</a></li>
           
-              <li class="second-level" style="line-height: 20px;" id="sd_2020"><a   href="prop-skosnote.html">skos:note</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_1769"><a   href="prop-corecomplement.html">core:complement</a></li>
           
-              <li class="second-level" style="line-height: 20px;" id="sd_2021"><a   href="prop-coreexemplarof.html">core:exemplarOf</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_1770"><a   href="prop-corecomplementof.html">core:complementOf</a></li>
           
-              <li class="second-level" style="line-height: 20px;" id="sd_2022"><a   href="prop-corerealizationof.html">core:realizationOf</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_1771"><a   href="prop-corecreator.html">core:creator</a></li>
           
-              <li class="second-level" style="line-height: 20px;" id="sd_2023"><a   href="prop-coreabridgement.html">core:abridgement</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_1772"><a   href="prop-corecreatorof.html">core:creatorOf</a></li>
           
-              <li class="second-level" style="line-height: 20px;" id="sd_2024"><a   href="prop-coreabridgementof.html">core:abridgementOf</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_1773"><a   href="prop-coreembodiment.html">core:embodiment</a></li>
           
-              <li class="second-level" style="line-height: 20px;" id="sd_2025"><a   href="prop-coreadaption.html">core:adaption</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_1774"><a   href="prop-coreembodimentof.html">core:embodimentOf</a></li>
           
-              <li class="second-level" style="line-height: 20px;" id="sd_2026"><a   href="prop-coreadaptionof.html">core:adaptionOf</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_1775"><a   href="prop-coreexemplar.html">core:exemplar</a></li>
           
-              <li class="second-level" style="line-height: 20px;" id="sd_2027"><a   href="prop-corealternate.html">core:alternate</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_1759"><a   href="prop-coreexemplarof.html">core:exemplarOf</a></li>
           
-              <li class="second-level" style="line-height: 20px;" id="sd_2028"><a   href="prop-corealternateof.html">core:alternateOf</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_1776"><a   href="prop-coreimitation.html">core:imitation</a></li>
           
-              <li class="second-level" style="line-height: 20px;" id="sd_2029"><a   href="prop-corearrangement.html">core:arrangement</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_1777"><a   href="prop-coreimitationof.html">core:imitationOf</a></li>
           
-              <li class="second-level" style="line-height: 20px;" id="sd_2030"><a   href="prop-corearrangementof.html">core:arrangementOf</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_1778"><a class="active"  href="prop-coreowner.html">core:owner</a></li>
           
-              <li class="second-level" style="line-height: 20px;" id="sd_2031"><a   href="prop-corecomplement.html">core:complement</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_1779"><a   href="prop-coreownerof.html">core:ownerOf</a></li>
           
-              <li class="second-level" style="line-height: 20px;" id="sd_2032"><a   href="prop-corecomplementof.html">core:complementOf</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_1780"><a   href="prop-corepart.html">core:part</a></li>
           
-              <li class="second-level" style="line-height: 20px;" id="sd_2033"><a   href="prop-corecreator.html">core:creator</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_1781"><a   href="prop-corepartof.html">core:partOf</a></li>
           
-              <li class="second-level" style="line-height: 20px;" id="sd_2034"><a   href="prop-corecreatorof.html">core:creatorOf</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_1782"><a   href="prop-coreproducer.html">core:producer</a></li>
           
-              <li class="second-level" style="line-height: 20px;" id="sd_2035"><a   href="prop-coreembodiment.html">core:embodiment</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_1783"><a   href="prop-coreproducerof.html">core:producerOf</a></li>
           
-              <li class="second-level" style="line-height: 20px;" id="sd_2036"><a   href="prop-coreembodimentof.html">core:embodimentOf</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_1784"><a   href="prop-corerealization.html">core:realization</a></li>
           
-              <li class="second-level" style="line-height: 20px;" id="sd_2037"><a   href="prop-coreexemplar.html">core:exemplar</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_1760"><a   href="prop-corerealizationof.html">core:realizationOf</a></li>
           
-              <li class="second-level" style="line-height: 20px;" id="sd_2038"><a   href="prop-coreimitation.html">core:imitation</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_1785"><a   href="prop-corerealizer.html">core:realizer</a></li>
           
-              <li class="second-level" style="line-height: 20px;" id="sd_2039"><a   href="prop-coreimitationof.html">core:imitationOf</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_1786"><a   href="prop-corerealizerof.html">core:realizerOf</a></li>
           
-              <li class="second-level" style="line-height: 20px;" id="sd_2040"><a class="active"  href="prop-coreowner.html">core:owner</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_1787"><a   href="prop-corereconfiguration.html">core:reconfiguration</a></li>
           
-              <li class="second-level" style="line-height: 20px;" id="sd_2041"><a   href="prop-coreownerof.html">core:ownerOf</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_1788"><a   href="prop-corereconfigurationof.html">core:reconfigurationOf</a></li>
           
-              <li class="second-level" style="line-height: 20px;" id="sd_2042"><a   href="prop-corepart.html">core:part</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_1789"><a   href="prop-corerelatedendeavour.html">core:relatedEndeavour</a></li>
           
-              <li class="second-level" style="line-height: 20px;" id="sd_2043"><a   href="prop-corepartof.html">core:partOf</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_1790"><a   href="prop-corereproduction.html">core:reproduction</a></li>
           
-              <li class="second-level" style="line-height: 20px;" id="sd_2044"><a   href="prop-coreproducer.html">core:producer</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_1791"><a   href="prop-corereproductionof.html">core:reproductionOf</a></li>
           
-              <li class="second-level" style="line-height: 20px;" id="sd_2045"><a   href="prop-coreproducerof.html">core:producerOf</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_1792"><a   href="prop-coreresponsibleentity.html">core:responsibleEntity</a></li>
           
-              <li class="second-level" style="line-height: 20px;" id="sd_2046"><a   href="prop-corerealization.html">core:realization</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_1793"><a   href="prop-coreresponsibleentityof.html">core:responsibleEntityOf</a></li>
           
-              <li class="second-level" style="line-height: 20px;" id="sd_2047"><a   href="prop-corerealizer.html">core:realizer</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_1794"><a   href="prop-corerevision.html">core:revision</a></li>
           
-              <li class="second-level" style="line-height: 20px;" id="sd_2048"><a   href="prop-corerealizerof.html">core:realizerOf</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_1795"><a   href="prop-corerevisionof.html">core:revisionOf</a></li>
           
-              <li class="second-level" style="line-height: 20px;" id="sd_2049"><a   href="prop-corereconfiguration.html">core:reconfiguration</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_1796"><a   href="prop-coresubject.html">core:subject</a></li>
           
-              <li class="second-level" style="line-height: 20px;" id="sd_2050"><a   href="prop-corereconfigurationof.html">core:reconfigurationOf</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_1797"><a   href="prop-coresubjectof.html">core:subjectOf</a></li>
           
-              <li class="second-level" style="line-height: 20px;" id="sd_2051"><a   href="prop-corerelatedendeavour.html">core:relatedEndeavour</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_1798"><a   href="prop-coresuccessor.html">core:successor</a></li>
           
-              <li class="second-level" style="line-height: 20px;" id="sd_2052"><a   href="prop-corereproduction.html">core:reproduction</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_1799"><a   href="prop-coresuccessorof.html">core:successorOf</a></li>
           
-              <li class="second-level" style="line-height: 20px;" id="sd_2053"><a   href="prop-corereproductionof.html">core:reproductionOf</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_1800"><a   href="prop-coresummarization.html">core:summarization</a></li>
           
-              <li class="second-level" style="line-height: 20px;" id="sd_2054"><a   href="prop-coreresponsibleentity.html">core:responsibleEntity</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_1801"><a   href="prop-coresummarizationof.html">core:summarizationOf</a></li>
           
-              <li class="second-level" style="line-height: 20px;" id="sd_2055"><a   href="prop-coreresponsibleentityof.html">core:responsibleEntityOf</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_1802"><a   href="prop-coresupplement.html">core:supplement</a></li>
           
-              <li class="second-level" style="line-height: 20px;" id="sd_2056"><a   href="prop-corerevision.html">core:revision</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_1803"><a   href="prop-coresupplementof.html">core:supplementOf</a></li>
           
-              <li class="second-level" style="line-height: 20px;" id="sd_2057"><a   href="prop-corerevisionof.html">core:revisionOf</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_1804"><a   href="prop-coretransformation.html">core:transformation</a></li>
           
-              <li class="second-level" style="line-height: 20px;" id="sd_2058"><a   href="prop-coresubject.html">core:subject</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_1805"><a   href="prop-coretransformationof.html">core:transformationOf</a></li>
           
-              <li class="second-level" style="line-height: 20px;" id="sd_2059"><a   href="prop-coresubjectof.html">core:subjectOf</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_1806"><a   href="prop-coretranslation.html">core:translation</a></li>
           
-              <li class="second-level" style="line-height: 20px;" id="sd_2060"><a   href="prop-coresuccessor.html">core:successor</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_1807"><a   href="prop-coretranslationof.html">core:translationOf</a></li>
           
-              <li class="second-level" style="line-height: 20px;" id="sd_2061"><a   href="prop-coresuccessorof.html">core:successorOf</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_1750"><a   href="prop-dccreator.html">dc:creator</a></li>
           
-              <li class="second-level" style="line-height: 20px;" id="sd_2062"><a   href="prop-coresummarization.html">core:summarization</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_1751"><a   href="prop-dcdate.html">dc:date</a></li>
           
-              <li class="second-level" style="line-height: 20px;" id="sd_2063"><a   href="prop-coresummarizationof.html">core:summarizationOf</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_1752"><a   href="prop-dcdescription.html">dc:description</a></li>
           
-              <li class="second-level" style="line-height: 20px;" id="sd_2064"><a   href="prop-coresupplement.html">core:supplement</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_1753"><a   href="prop-dcrights.html">dc:rights</a></li>
           
-              <li class="second-level" style="line-height: 20px;" id="sd_2065"><a   href="prop-coresupplementof.html">core:supplementOf</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_1754"><a   href="prop-dctitle.html">dc:title</a></li>
           
-              <li class="second-level" style="line-height: 20px;" id="sd_2066"><a   href="prop-coretransformation.html">core:transformation</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_1808"><a   href="prop-owltopobjectproperty.html">owl:topObjectProperty</a></li>
           
-              <li class="second-level" style="line-height: 20px;" id="sd_2067"><a   href="prop-coretransformationof.html">core:transformationOf</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_1755"><a   href="prop-rdfscomment.html">rdfs:comment</a></li>
           
-              <li class="second-level" style="line-height: 20px;" id="sd_2068"><a   href="prop-coretranslation.html">core:translation</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_1756"><a   href="prop-rdfsisdefinedby.html">rdfs:isDefinedBy</a></li>
           
-              <li class="second-level" style="line-height: 20px;" id="sd_2069"><a   href="prop-coretranslationof.html">core:translationOf</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_1757"><a   href="prop-rdfslabel.html">rdfs:label</a></li>
           
-              <li class="second-level" style="line-height: 20px;" id="sd_2070"><a   href="prop-owltopobjectproperty.html">owl:topObjectProperty</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_1758"><a   href="prop-skosnote.html">skos:note</a></li>
           
 
         
+
+        
+
 
         
 
@@ -493,7 +499,6 @@
 
 
 <!-- /#sidebar-wrapper -->
-
     
 
 
@@ -558,6 +563,12 @@
 
 
 
+
+
+
+
+
+
   <ol class="breadcrumb">
     <li>
       <a href="index.html">Home</a>
@@ -569,9 +580,16 @@
           <a href="entities-tree-properties.html">Properties</a>
     </li>
       <li class="active">
-            http://purl.org/vocab/frbr/core#owner
+            core:owner
         </li>
   </ol>
+
+
+
+
+
+
+
 
 
 
@@ -665,7 +683,7 @@
             </div>
             <div class="panel-body">
 
-                An item linked to its owner.
+                <p>An item linked to its owner.</p>
             </div>
           </div>
            </div></div>
@@ -683,7 +701,7 @@
                     <div class="panel-body">
 
                     
-                            <li><a href="prop-coreresponsibleentity.html">core:responsibleEntity</a></li><li><a href="prop-owltopobjectproperty.html">owl:topObjectProperty</a></li>
+                            <li><a href="prop-coreresponsibleentity.html" title="http://purl.org/vocab/frbr/core#responsibleEntity">core:responsibleEntity</a></li><li><a href="prop-owltopobjectproperty.html" title="http://www.w3.org/2002/07/owl#topObjectProperty">owl:topObjectProperty</a></li>
                     
 
                     </div>
@@ -712,7 +730,9 @@
                    <td>
                      
                          
-                           <a href="class-coreitem.html">core:Item</a>
+                         
+                              <a href="class-coreitem.html" title="http://purl.org/vocab/frbr/core#Item">core:Item</a>
+                           
                            
                          
                      
@@ -743,25 +763,15 @@
 
                 
 
-                    <div class="highlight"><pre><span></span><span class="k">@prefix</span><span class="w"> </span><span class="nn">:</span><span class="w"> </span><span class="nv">&lt;http://purl.org/spar/frbr/&gt;</span><span class="w"> </span><span class="p">.</span><span class="w"></span>
-<span class="k">@prefix</span><span class="w"> </span><span class="nn">core:</span><span class="w"> </span><span class="nv">&lt;http://purl.org/vocab/frbr/core#&gt;</span><span class="w"> </span><span class="p">.</span><span class="w"></span>
-<span class="k">@prefix</span><span class="w"> </span><span class="nn">dc:</span><span class="w"> </span><span class="nv">&lt;http://purl.org/dc/elements/1.1/&gt;</span><span class="w"> </span><span class="p">.</span><span class="w"></span>
-<span class="k">@prefix</span><span class="w"> </span><span class="nn">dcterms:</span><span class="w"> </span><span class="nv">&lt;http://purl.org/dc/terms/&gt;</span><span class="w"> </span><span class="p">.</span><span class="w"></span>
-<span class="k">@prefix</span><span class="w"> </span><span class="nn">owl:</span><span class="w"> </span><span class="nv">&lt;http://www.w3.org/2002/07/owl#&gt;</span><span class="w"> </span><span class="p">.</span><span class="w"></span>
-<span class="k">@prefix</span><span class="w"> </span><span class="nn">rdf:</span><span class="w"> </span><span class="nv">&lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#&gt;</span><span class="w"> </span><span class="p">.</span><span class="w"></span>
-<span class="k">@prefix</span><span class="w"> </span><span class="nn">rdfs:</span><span class="w"> </span><span class="nv">&lt;http://www.w3.org/2000/01/rdf-schema#&gt;</span><span class="w"> </span><span class="p">.</span><span class="w"></span>
-<span class="k">@prefix</span><span class="w"> </span><span class="nn">skos:</span><span class="w"> </span><span class="nv">&lt;http://www.w3.org/2008/05/skos#&gt;</span><span class="w"> </span><span class="p">.</span><span class="w"></span>
-<span class="k">@prefix</span><span class="w"> </span><span class="nn">skos1:</span><span class="w"> </span><span class="nv">&lt;http://www.w3.org/2004/02/skos/core#&gt;</span><span class="w"> </span><span class="p">.</span><span class="w"></span>
-<span class="k">@prefix</span><span class="w"> </span><span class="nn">swrl:</span><span class="w"> </span><span class="nv">&lt;http://www.w3.org/2003/11/swrl#&gt;</span><span class="w"> </span><span class="p">.</span><span class="w"></span>
-<span class="k">@prefix</span><span class="w"> </span><span class="nn">swrlb:</span><span class="w"> </span><span class="nv">&lt;http://www.w3.org/2003/11/swrlb#&gt;</span><span class="w"> </span><span class="p">.</span><span class="w"></span>
-<span class="k">@prefix</span><span class="w"> </span><span class="nn">xml:</span><span class="w"> </span><span class="nv">&lt;http://www.w3.org/XML/1998/namespace&gt;</span><span class="w"> </span><span class="p">.</span><span class="w"></span>
-<span class="k">@prefix</span><span class="w"> </span><span class="nn">xsd:</span><span class="w"> </span><span class="nv">&lt;http://www.w3.org/2001/XMLSchema#&gt;</span><span class="w"> </span><span class="p">.</span><span class="w"></span>
+                    <div class="highlight"><pre><span></span><span class="k">@prefix</span><span class="w"> </span><span class="nn">core:</span><span class="w"> </span><span class="nv">&lt;http://purl.org/vocab/frbr/core#&gt;</span><span class="w"> </span><span class="p">.</span>
+<span class="k">@prefix</span><span class="w"> </span><span class="nn">owl:</span><span class="w"> </span><span class="nv">&lt;http://www.w3.org/2002/07/owl#&gt;</span><span class="w"> </span><span class="p">.</span>
+<span class="k">@prefix</span><span class="w"> </span><span class="nn">rdfs:</span><span class="w"> </span><span class="nv">&lt;http://www.w3.org/2000/01/rdf-schema#&gt;</span><span class="w"> </span><span class="p">.</span>
 
-<span class="nn">core:</span><span class="nt">owner</span><span class="w"> </span><span class="kt">a</span><span class="w"> </span><span class="nn">owl:</span><span class="nt">ObjectProperty</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
-<span class="w">    </span><span class="nn">rdfs:</span><span class="nt">label</span><span class="w"> </span><span class="s">&quot;has owner&quot;</span><span class="o">@</span><span class="ge">en</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
-<span class="w">    </span><span class="nn">rdfs:</span><span class="nt">comment</span><span class="w"> </span><span class="s">&quot;An item linked to its owner.&quot;</span><span class="o">@</span><span class="ge">en</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
-<span class="w">    </span><span class="nn">rdfs:</span><span class="nt">domain</span><span class="w"> </span><span class="nn">core:</span><span class="nt">Item</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
-<span class="w">    </span><span class="nn">rdfs:</span><span class="nt">subPropertyOf</span><span class="w"> </span><span class="nn">core:</span><span class="nt">responsibleEntity</span><span class="w"> </span><span class="p">.</span><span class="w"></span>
+<span class="nn">core</span><span class="p">:</span><span class="nt">owner</span> <span class="kt">a</span> <span class="nn">owl</span><span class="p">:</span><span class="nt">ObjectProperty</span> <span class="p">;</span>
+    <span class="nn">rdfs</span><span class="p">:</span><span class="nt">label</span> <span class="s">&quot;has owner&quot;</span><span class="o">@</span><span class="ge">en</span> <span class="p">;</span>
+    <span class="nn">rdfs</span><span class="p">:</span><span class="nt">comment</span> <span class="s">&quot;An item linked to its owner.&quot;</span><span class="o">@</span><span class="ge">en</span> <span class="p">;</span>
+    <span class="nn">rdfs</span><span class="p">:</span><span class="nt">domain</span> <span class="nn">core</span><span class="p">:</span><span class="nt">Item</span> <span class="p">;</span>
+    <span class="nn">rdfs</span><span class="p">:</span><span class="nt">subPropertyOf</span> <span class="nn">core</span><span class="p">:</span><span class="nt">responsibleEntity</span> <span class="p">.</span>
 </pre></div>
 
 
@@ -800,7 +810,7 @@
   <footer class="footer">
     <div class="container">
     
-      <p class="text-muted">Documentation automatically generated on 26th February 2017 with <a href="https://github.com/lambdamusic/OntoSpy">OntoSpy</a> (v1.7.4)</p>
+      <p class="text-muted">Documentation automatically generated on Wed, 16 Nov 2022 14:12:50 with <a href="http://lambdamusic.github.io/Ontospy/">Ontospy</a> (v2.1.0)</p>
 
     
     </div>
@@ -813,13 +823,13 @@
 <!-- Bootstrap core JavaScript
 ================================================== -->
 <!-- Placed at the end of the document so the pages load faster -->
-<script src="../static/libs/jquery/1.12.4/jquery.min.js"></script>
-<script src="../static/libs/bootstrap-3.3.7-dist/js/bootstrap.min.js"></script>
+<script src="../static/libs/jquery/1_12_4/jquery.min.js"></script>
+<script src="../static/libs/bootstrap-3_3_7-dist/js/bootstrap.min.js"></script>
 
 <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
-<script src="../static/libs/bootstrap-3.3.7-dist/js/ie10-viewport-bug-workaround.js"></script>
+<script src="../static/libs/bootstrap-3_3_7-dist/js/ie10-viewport-bug-workaround.js"></script>
 
-<script src="../static/libs/Chart.js-2.4.0/Chart.bundle.js"></script>
+<script src="../static/libs/chartjs-2_4_0/chart.bundle.js"></script>
 
 
 <!-- Menu Toggle Script -->
@@ -853,13 +863,15 @@ $('#search-input-sidebar').keyup(function() {
 
 
   <!-- Scroll Sidebar Script -->
+
   
   
+
   <script type="text/javascript">
 
     $(document).ready(function (){
       $('#sidebar-wrapper').animate({
-          scrollTop: $("#sd_2040").offset().top - 100
+          scrollTop: $("#sd_1778").offset().top - 100
       }, 100);
     });
 

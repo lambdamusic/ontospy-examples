@@ -1,6 +1,12 @@
 
 
 
+
+
+
+
+
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -10,23 +16,23 @@
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
     <meta name="description" content="">
     <meta name="author" content="">
-    <link rel="icon" href="../static/libs/img/favicon.ico">
+    <link rel="icon" href="../static/custom/favicon.ico">
 
 	
-		<title>OntoSpy > http://www.dfki.de/~cullrich/instrucionalobjects.owl</title>
+		<title>Ontospy > http://www.dfki.de/~cullrich/instrucionalobjects.owl</title>
 	
 
     <!-- Bootstrap core CSS -->
-    <!-- <link href="../static/libs/bootstrap-3.3.7-dist/css/bootstrap.min.css" rel="stylesheet">  -->
+    <!-- <link href="../static/libs/bootstrap-3_3_7-dist/css/bootstrap.min.css" rel="stylesheet">  -->
     <!-- Bootswatch:  -->
     <!-- cerulean  | cyborg |  flatly |  lumen |  sandstone |   spacelab  |  yeti | cosmo |  darkly |  paper | simplex | superhero |  journal | readable  |   slate |  united -->
-    <link href="../static/libs/bootswatch3.2/flatly/bootstrap.min.css" rel="stylesheet">
+    <link href="../static/libs/bootswatch3_2/lumen/bootstrap.min.css" rel="stylesheet">
     <link href="../static/custom/css/simple-sidebar.css" rel="stylesheet">
     <link href="../static/custom/css/familytree.css" rel="stylesheet">
     <link href="../static/custom/css/tabletree.css" rel="stylesheet">
 
     <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
-    <link href="../static/libs/bootstrap-3.3.7-dist/css/ie10-viewport-bug-workaround.css" rel="stylesheet">
+    <link href="../static/libs/bootstrap-3_3_7-dist/css/ie10-viewport-bug-workaround.css" rel="stylesheet">
 
     <!-- Custom styles for this template -->
     <link href="../static/custom/css/sticky-footer-navbar.css" rel="stylesheet">
@@ -57,7 +63,7 @@
 
   .implementation-panel {
     overflow: auto;
-    max-height: 500px;
+    /*max-height: 500px;*/
   }
 
   tr.table-classproperties {
@@ -152,8 +158,13 @@
 
 
 /*pygments css*/
+pre { line-height: 125%; }
+td.linenos pre { color: #000000; background-color: #f0f0f0; padding-left: 5px; padding-right: 5px; }
+span.linenos { color: #000000; background-color: #f0f0f0; padding-left: 5px; padding-right: 5px; }
+td.linenos pre.special { color: #000000; background-color: #ffffc0; padding-left: 5px; padding-right: 5px; }
+span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 5px; padding-right: 5px; }
 .highlight .hll { background-color: #ffffcc }
-.highlight  { background: #f8f8f8; }
+.highlight { background: #f8f8f8; }
 .highlight .c { color: #408080; font-style: italic } /* Comment */
 .highlight .err { border: 1px solid #FF0000 } /* Error */
 .highlight .k { color: #008000; font-weight: bold } /* Keyword */
@@ -245,8 +256,7 @@
   <body>
 
 
-
-    
+  
 <!-- Fixed navbar -->
 <nav class="navbar navbar-default navbar-fixed-top">
   <div class="container-fluid">
@@ -266,27 +276,22 @@
     <div id="navbar" class="collapse navbar-collapse">
       <ul class="nav navbar-nav">
         <li ><a href="index.html"><code style="font-size: 115%;">http://www.dfki.de/~cullrich/instrucionalobjects.owl</code></a></li>
-        
 
-       
-
-
-        <li  ><a href="dashboard.html">Dashboard</a></li>
         <li  ><a href="entities-az.html">Entities A-Z</a></li>
-        <li class="dropdown  " >
-          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Entities Tree <span class="caret"></span></a>
-          <ul class="dropdown-menu">
-            
-            <li><a href="entities-tree-classes.html">Classes</a>
-            </li>
-            
-            
-            <li><a  href="entities-tree-properties.html">Properties</a>
-            </li>
-            
-            
-          </ul>
-      </li>
+        
+        <li ><a href="entities-tree-classes.html">Classes</a></li>
+        
+        
+        <li ><a href="entities-tree-properties.html">Properties</a></li>
+        
+        
+        
+        
+        <li  ><a href="statistics.html">Statistics</a></li>
+
+
+
+
 
       </ul>
       
@@ -300,13 +305,14 @@
 
 
 
+
+
 <div id="wrapper" class="toggled">
 
 
     
-
+  
     
-        
 <!-- Sidebar -->
 <div id="sidebar-wrapper">
     <ul class="sidebar-nav">
@@ -322,67 +328,67 @@
 
             
           
-              <li class="second-level" style="line-height: 20px;" id="sd_2897"><a  href="class-instrucionalobjectsowlauxiliary.html">instrucionalobjects.owl:Auxiliary</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_762"><a  href="class-instrucionalobjectsowlauxiliary.html">instrucionalobjects.owl:Auxiliary</a></li>
           
-              <li class="second-level" style="line-height: 20px;" id="sd_2898"><a  href="class-instrucionalobjectsowlbloomcompetency.html">instrucionalobjects.owl:BloomCompetency</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_763"><a  href="class-instrucionalobjectsowlbloomcompetency.html">instrucionalobjects.owl:BloomCompetency</a></li>
           
-              <li class="second-level" style="line-height: 20px;" id="sd_2899"><a  href="class-instrucionalobjectsowlcompetence.html">instrucionalobjects.owl:Competence</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_764"><a  href="class-instrucionalobjectsowlcompetence.html">instrucionalobjects.owl:Competence</a></li>
           
-              <li class="second-level" style="line-height: 20px;" id="sd_2900"><a  href="class-instrucionalobjectsowlcompetencyexample.html">instrucionalobjects.owl:CompetencyExample</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_765"><a  href="class-instrucionalobjectsowlcompetencyexample.html">instrucionalobjects.owl:CompetencyExample</a></li>
           
-              <li class="second-level" style="line-height: 20px;" id="sd_2901"><a  href="class-instrucionalobjectsowlcompetencyexercise.html">instrucionalobjects.owl:CompetencyExercise</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_766"><a  href="class-instrucionalobjectsowlcompetencyexercise.html">instrucionalobjects.owl:CompetencyExercise</a></li>
           
-              <li class="second-level" style="line-height: 20px;" id="sd_2902"><a  href="class-instrucionalobjectsowlconclusion.html">instrucionalobjects.owl:Conclusion</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_767"><a  href="class-instrucionalobjectsowlconclusion.html">instrucionalobjects.owl:Conclusion</a></li>
           
-              <li class="second-level" style="line-height: 20px;" id="sd_2903"><a  href="class-instrucionalobjectsowlcounterexample.html">instrucionalobjects.owl:CounterExample</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_768"><a  href="class-instrucionalobjectsowlcounterexample.html">instrucionalobjects.owl:CounterExample</a></li>
           
-              <li class="second-level" style="line-height: 20px;" id="sd_2904"><a  href="class-instrucionalobjectsowldefinition.html">instrucionalobjects.owl:Definition</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_769"><a  href="class-instrucionalobjectsowldefinition.html">instrucionalobjects.owl:Definition</a></li>
           
-              <li class="second-level" style="line-height: 20px;" id="sd_2905"><a  href="class-instrucionalobjectsowldemonstration.html">instrucionalobjects.owl:Demonstration</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_770"><a  href="class-instrucionalobjectsowldemonstration.html">instrucionalobjects.owl:Demonstration</a></li>
           
-              <li class="second-level" style="line-height: 20px;" id="sd_2906"><a  href="class-instrucionalobjectsowlevidence.html">instrucionalobjects.owl:Evidence</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_771"><a  href="class-instrucionalobjectsowlevidence.html">instrucionalobjects.owl:Evidence</a></li>
           
-              <li class="second-level" style="line-height: 20px;" id="sd_2907"><a  href="class-instrucionalobjectsowlexample.html">instrucionalobjects.owl:Example</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_772"><a  href="class-instrucionalobjectsowlexample.html">instrucionalobjects.owl:Example</a></li>
           
-              <li class="second-level" style="line-height: 20px;" id="sd_2908"><a  href="class-instrucionalobjectsowlexercise.html">instrucionalobjects.owl:Exercise</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_773"><a  href="class-instrucionalobjectsowlexercise.html">instrucionalobjects.owl:Exercise</a></li>
           
-              <li class="second-level" style="line-height: 20px;" id="sd_2909"><a  href="class-instrucionalobjectsowlexplanation.html">instrucionalobjects.owl:Explanation</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_774"><a  href="class-instrucionalobjectsowlexplanation.html">instrucionalobjects.owl:Explanation</a></li>
           
-              <li class="second-level" style="line-height: 20px;" id="sd_2910"><a  href="class-instrucionalobjectsowlexploration.html">instrucionalobjects.owl:Exploration</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_775"><a  href="class-instrucionalobjectsowlexploration.html">instrucionalobjects.owl:Exploration</a></li>
           
-              <li class="second-level" style="line-height: 20px;" id="sd_2911"><a  href="class-instrucionalobjectsowlfact.html">instrucionalobjects.owl:Fact</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_776"><a  href="class-instrucionalobjectsowlfact.html">instrucionalobjects.owl:Fact</a></li>
           
-              <li class="second-level" style="line-height: 20px;" id="sd_2912"><a  href="class-instrucionalobjectsowlfundamental.html">instrucionalobjects.owl:Fundamental</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_777"><a  href="class-instrucionalobjectsowlfundamental.html">instrucionalobjects.owl:Fundamental</a></li>
           
-              <li class="second-level" style="line-height: 20px;" id="sd_2913"><a  href="class-instrucionalobjectsowlillustration.html">instrucionalobjects.owl:Illustration</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_778"><a  href="class-instrucionalobjectsowlillustration.html">instrucionalobjects.owl:Illustration</a></li>
           
-              <li class="second-level" style="line-height: 20px;" id="sd_2914"><a  href="class-instrucionalobjectsowlinstructionalobject.html">instrucionalobjects.owl:InstructionalObject</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_779"><a  href="class-instrucionalobjectsowlinstructionalobject.html">instrucionalobjects.owl:InstructionalObject</a></li>
           
-              <li class="second-level" style="line-height: 20px;" id="sd_2915"><a  href="class-instrucionalobjectsowlinteractivity.html">instrucionalobjects.owl:Interactivity</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_780"><a  href="class-instrucionalobjectsowlinteractivity.html">instrucionalobjects.owl:Interactivity</a></li>
           
-              <li class="second-level" style="line-height: 20px;" id="sd_2916"><a  href="class-instrucionalobjectsowlintroduction.html">instrucionalobjects.owl:Introduction</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_781"><a  href="class-instrucionalobjectsowlintroduction.html">instrucionalobjects.owl:Introduction</a></li>
           
-              <li class="second-level" style="line-height: 20px;" id="sd_2917"><a  href="class-instrucionalobjectsowlinvitation.html">instrucionalobjects.owl:Invitation</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_782"><a  href="class-instrucionalobjectsowlinvitation.html">instrucionalobjects.owl:Invitation</a></li>
           
-              <li class="second-level" style="line-height: 20px;" id="sd_2918"><a  href="class-instrucionalobjectsowllaw.html">instrucionalobjects.owl:Law</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_783"><a  href="class-instrucionalobjectsowllaw.html">instrucionalobjects.owl:Law</a></li>
           
-              <li class="second-level" style="line-height: 20px;" id="sd_2919"><a  href="class-instrucionalobjectsowllawofnature.html">instrucionalobjects.owl:LawOfNature</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_784"><a  href="class-instrucionalobjectsowllawofnature.html">instrucionalobjects.owl:LawOfNature</a></li>
           
-              <li class="second-level" style="line-height: 20px;" id="sd_2920"><a class="active" href="class-instrucionalobjectsowlpisacompentency.html">instrucionalobjects.owl:PisaCompentency</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_785"><a class="active" href="class-instrucionalobjectsowlpisacompentency.html">instrucionalobjects.owl:PisaCompentency</a></li>
           
-              <li class="second-level" style="line-height: 20px;" id="sd_2921"><a  href="class-instrucionalobjectsowlpolicy.html">instrucionalobjects.owl:Policy</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_786"><a  href="class-instrucionalobjectsowlpolicy.html">instrucionalobjects.owl:Policy</a></li>
           
-              <li class="second-level" style="line-height: 20px;" id="sd_2922"><a  href="class-instrucionalobjectsowlprocedure.html">instrucionalobjects.owl:Procedure</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_787"><a  href="class-instrucionalobjectsowlprocedure.html">instrucionalobjects.owl:Procedure</a></li>
           
-              <li class="second-level" style="line-height: 20px;" id="sd_2923"><a  href="class-instrucionalobjectsowlprocess.html">instrucionalobjects.owl:Process</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_788"><a  href="class-instrucionalobjectsowlprocess.html">instrucionalobjects.owl:Process</a></li>
           
-              <li class="second-level" style="line-height: 20px;" id="sd_2924"><a  href="class-instrucionalobjectsowlproof.html">instrucionalobjects.owl:Proof</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_789"><a  href="class-instrucionalobjectsowlproof.html">instrucionalobjects.owl:Proof</a></li>
           
-              <li class="second-level" style="line-height: 20px;" id="sd_2925"><a  href="class-instrucionalobjectsowlrealworldproblem.html">instrucionalobjects.owl:RealWorldProblem</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_790"><a  href="class-instrucionalobjectsowlrealworldproblem.html">instrucionalobjects.owl:RealWorldProblem</a></li>
           
-              <li class="second-level" style="line-height: 20px;" id="sd_2926"><a  href="class-instrucionalobjectsowlremark.html">instrucionalobjects.owl:Remark</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_791"><a  href="class-instrucionalobjectsowlremark.html">instrucionalobjects.owl:Remark</a></li>
           
-              <li class="second-level" style="line-height: 20px;" id="sd_2927"><a  href="class-instrucionalobjectsowltheorem.html">instrucionalobjects.owl:Theorem</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_792"><a  href="class-instrucionalobjectsowltheorem.html">instrucionalobjects.owl:Theorem</a></li>
           
         
 
@@ -392,24 +398,27 @@
 
             
           
-              <li class="second-level" style="line-height: 20px;" id="sd_2928"><a   href="prop-instrucionalobjectsowlhasdifficulty.html">instrucionalobjects.owl:hasDifficulty</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_797"><a   href="prop-instrucionalobjectsowlhascompetency.html">instrucionalobjects.owl:hasCompetency</a></li>
           
-              <li class="second-level" style="line-height: 20px;" id="sd_2929"><a   href="prop-instrucionalobjectsowlhasfield.html">instrucionalobjects.owl:hasField</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_793"><a   href="prop-instrucionalobjectsowlhasdifficulty.html">instrucionalobjects.owl:hasDifficulty</a></li>
           
-              <li class="second-level" style="line-height: 20px;" id="sd_2930"><a   href="prop-instrucionalobjectsowlhaslearningcontext.html">instrucionalobjects.owl:hasLearningContext</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_794"><a   href="prop-instrucionalobjectsowlhasfield.html">instrucionalobjects.owl:hasField</a></li>
           
-              <li class="second-level" style="line-height: 20px;" id="sd_2931"><a   href="prop-instrucionalobjectsowlhastypicallearningtime.html">instrucionalobjects.owl:hasTypicalLearningTime</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_795"><a   href="prop-instrucionalobjectsowlhaslearningcontext.html">instrucionalobjects.owl:hasLearningContext</a></li>
           
-              <li class="second-level" style="line-height: 20px;" id="sd_2932"><a   href="prop-instrucionalobjectsowlhascompetency.html">instrucionalobjects.owl:hasCompetency</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_796"><a   href="prop-instrucionalobjectsowlhastypicallearningtime.html">instrucionalobjects.owl:hasTypicalLearningTime</a></li>
           
-              <li class="second-level" style="line-height: 20px;" id="sd_2933"><a   href="prop-instrucionalobjectsowlisfor.html">instrucionalobjects.owl:isFor</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_798"><a   href="prop-instrucionalobjectsowlisfor.html">instrucionalobjects.owl:isFor</a></li>
           
-              <li class="second-level" style="line-height: 20px;" id="sd_2934"><a   href="prop-instrucionalobjectsowlisrequiredby.html">instrucionalobjects.owl:isRequiredBy</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_799"><a   href="prop-instrucionalobjectsowlisrequiredby.html">instrucionalobjects.owl:isRequiredBy</a></li>
           
-              <li class="second-level" style="line-height: 20px;" id="sd_2935"><a   href="prop-instrucionalobjectsowlrequires.html">instrucionalobjects.owl:requires</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_800"><a   href="prop-instrucionalobjectsowlrequires.html">instrucionalobjects.owl:requires</a></li>
           
 
         
+
+        
+
 
         
 
@@ -427,9 +436,7 @@
 
 
 <!-- /#sidebar-wrapper -->
-
-    
-
+  
 
 
 
@@ -440,18 +447,17 @@
 
 	
 
+      
 
-
-
-
-
+    
+    
         
 
 
 
 
-        
-            
+
+
 
 
 
@@ -502,7 +508,7 @@
           <a href="entities-tree-classes.html">Classes</a>
     </li>
       <li class="active">
-            http://www.dfki.de/~cullrich/instrucionalobjects.owl#PisaCompentency
+            instrucionalobjects.owl:PisaCompentency
         </li>
   </ol>
 
@@ -518,245 +524,167 @@
 
 
 
-        
 
 
 
 
 
-            <h1>
-
-                instrucionalobjects.owl:PisaCompentency
-                
-                    <small class="label label-info label-xs">leaf node</small>
-                  
-
-            </h1>
-            <hr>
 
 
+    
 
-            <div class="tree-container">
-            <div class="tree">
-                <ul>
+    
+    <h1>
+      instrucionalobjects.owl:PisaCompentency
+      
+        <small class="label label-info label-xs">leaf node</small>
+      
+    </h1>
+
+    <hr>  
+
+    
+    <div class="tree-container">
+      <div class="tree">
+        <ul>
+          
+            
+              <li>
+                <a href="class-instrucionalobjectsowlcompetence.html" title="'Competence'">instrucionalobjects.owl:Competence</a>
+                  <ul>
+                    <li><a style="font-weight: bold;" title="'PisaCompentency'">instrucionalobjects.owl:PisaCompentency</a>
                     
-
-                        
-
-                        <li>
-
-                          <a href="class-instrucionalobjectsowlcompetence.html" title="'Competence'">instrucionalobjects.owl:Competence</a>
-
-                          <ul>
-
-                            <li><a style="font-weight: bold;" title="'PisaCompentency'">instrucionalobjects.owl:PisaCompentency</a>
-                            
-                              </li>
-
-                          </ul>
-
-                          </li>
-                        
-
-                    
-
+                  </li>
                 </ul>
-            </div>
-            </div>
+              </li>
+            
+          
+        </ul>
+      </div>
+    </div>
 
 
-
-
-           <div class="row"><div class="col-md-12">
-              <div class="panel panel-default">
-            <div class="panel-heading">
-              <h3 class="panel-title">URI</h3>
-            </div>
-            <div class="panel-body">
-
-                <code>http://www.dfki.de/~cullrich/instrucionalobjects.owl#PisaCompentency</code>
-            </div>
+    
+    <div class="row">
+      <div class="col-md-12">
+        <div class="panel panel-default">
+          <div class="panel-heading">
+            <h3 class="panel-title">URI</h3>
           </div>
-           </div></div>
-
-           
-            <div class="row"><div class="col-md-12">
-              <div class="panel panel-default">
-            <div class="panel-heading">
-              <h3 class="panel-title">Label</h3>
-            </div>
-            <div class="panel-body">
-
-                PisaCompentency
-            </div>
+          <div class="panel-body">
+            <code>http://www.dfki.de/~cullrich/instrucionalobjects.owl#PisaCompentency</code>
           </div>
-           </div></div>
-           
+        </div>
+      </div>
+    </div>
 
 
+    
+    
+      <div class="row">
+        <div class="col-md-12">
+          <div class="panel panel-default">
+          <div class="panel-heading">
+            <h3 class="panel-title">Label</h3>
+          </div>
+          <div class="panel-body">
+            PisaCompentency
+          </div>
+          </div>
+        </div>
+      </div>
+    
 
-           
+
+    
+    
 
 
-
-
-           
-            <div class="row"><div class="col-md-12">
-              <div class="panel panel-default">
+    
+    
+      <div class="row">
+        <div class="col-md-12">
+          <div class="panel panel-default">
             <div class="panel-heading">
               <h3 class="panel-title">Superclasses (1)</h3>
             </div>
             <div class="panel-body">
-
-            
-                    <li><a href="class-instrucionalobjectsowlcompetence.html">instrucionalobjects.owl:Competence</a></li>
-            
-
+              
+                
+                  <li><a href="class-instrucionalobjectsowlcompetence.html" title="http://www.dfki.de/~cullrich/instrucionalobjects.owl#Competence">instrucionalobjects.owl:Competence</a></li>
+                
+              
             </div>
           </div>
-           </div></div>
-           
+        </div>
+      </div>
+    
 
 
+    
+    
 
-         
-           <div class="row"><div class="col-md-12">
-              <div class="panel panel-default">
+
+    
+    
+
+
+    
+    
+      <div class="row">
+        <div class="col-md-12">
+          <div class="panel panel-default">
             <div class="panel-heading">
               <h3 class="panel-title">Usage</h3>
             </div>
             <div class="panel-body" style="overflow: auto;">
-
-                <p>Instances of instrucionalobjects.owl:PisaCompentency can have the following properties:</p>
+              <p>Instances of instrucionalobjects.owl:PisaCompentency can have the following properties:</p>
             </div>
-             <table class="table table-bordered" style="overflow: auto;">
-
-                <tr class="table-classproperties">
-                    <th>PROPERTY</th><th>DESCRIPTION</th><th>RANGE</th>
-                </tr>
-
+            <table class="table table-bordered" style="overflow: auto;">
+              <tr class="table-classproperties">
+                <th>PROPERTY</th><th>TYPE</th><th>DESCRIPTION</th><th>RANGE</th>
+              </tr>
+              
                 
-
-                    
-
-                    
-
-                    
-
+                  
                 
-
-                    
-
-                    
-
-                        <tr class="table-inheritanceinfo">
-                            <th colspan="3" class="treeinfo"><span class="label label-default">From class <a title="owl:Thing" href="class-owlthing.html" class="fromclass_link">owl:Thing</a></span>
-                            </th>
-                        </tr>
-
-                            
-                            <tr>
-                                <td class="firsttd">
-                                    <a class="propcolor" title="instrucionalobjects.owl:hasDifficulty" href="prop-instrucionalobjectsowlhasdifficulty.html">instrucionalobjects.owl:hasDifficulty</a>
-                                </td>
-                                <td class="thirdtd">
-                                    <span>How hard it is to work through the learning object for the typical target audience.</span>
-                                </td>
-                                <td class="secondtd">
-                                    
-                                    
-
-                                        <a title="" href=".html" class="rdfclass"></a>
-
-                                    
-                                    
-                                </td>
-                            </tr>
-
-                            
-                            <tr>
-                                <td class="firsttd">
-                                    <a class="propcolor" title="instrucionalobjects.owl:hasCompetency" href="prop-instrucionalobjectsowlhascompetency.html">instrucionalobjects.owl:hasCompetency</a>
-                                </td>
-                                <td class="thirdtd">
-                                    <span>The competencies that an element trains.</span>
-                                </td>
-                                <td class="secondtd">
-                                    
-                                    
-
-                                        <a title="instrucionalobjects.owl:Competence" href="class-instrucionalobjectsowlcompetence.html" class="rdfclass">instrucionalobjects.owl:Competence</a>
-
-                                    
-                                    
-                                </td>
-                            </tr>
-
-                            
-
-                    
-
-                    
-
-                
-
+              
             </table>
-
-
           </div>
-           </div></div>
-
-        
-
-
+        </div>
+      </div>
+    
 
 
+    
+    
 
 
-           <div class="row"><div class="col-md-12">
-              <div class="panel panel-default">
-            <div class="panel-heading">
-              <h3 class="panel-title">Implementation</h3>
-            </div>
-            <div class="panel-body implementation-panel">
+    
+    <div class="row">
+      <div class="col-md-12">
+        <div class="panel panel-default">
+          <div class="panel-heading">
+            <h3 class="panel-title">Implementation</h3>
+          </div>
+          <div class="panel-body implementation-panel">
+            
+              <div class="highlight"><pre><span></span><span class="k">@prefix</span><span class="w"> </span><span class="nn">:</span><span class="w"> </span><span class="nv">&lt;http://www.dfki.de/~cullrich/instrucionalobjects.owl#&gt;</span><span class="w"> </span><span class="p">.</span>
+<span class="k">@prefix</span><span class="w"> </span><span class="nn">owl:</span><span class="w"> </span><span class="nv">&lt;http://www.w3.org/2002/07/owl#&gt;</span><span class="w"> </span><span class="p">.</span>
+<span class="k">@prefix</span><span class="w"> </span><span class="nn">rdfs:</span><span class="w"> </span><span class="nv">&lt;http://www.w3.org/2000/01/rdf-schema#&gt;</span><span class="w"> </span><span class="p">.</span>
 
-                
-
-                    <div class="highlight"><pre><span></span><span class="k">@prefix</span><span class="w"> </span><span class="nn">:</span><span class="w"> </span><span class="nv">&lt;http://www.dfki.de/~cullrich/instrucionalobjects.owl#&gt;</span><span class="w"> </span><span class="p">.</span><span class="w"></span>
-<span class="k">@prefix</span><span class="w"> </span><span class="nn">daml:</span><span class="w"> </span><span class="nv">&lt;http://www.daml.org/2001/03/daml+oil#&gt;</span><span class="w"> </span><span class="p">.</span><span class="w"></span>
-<span class="k">@prefix</span><span class="w"> </span><span class="nn">dc:</span><span class="w"> </span><span class="nv">&lt;http://purl.org/dc/elements/1.1/&gt;</span><span class="w"> </span><span class="p">.</span><span class="w"></span>
-<span class="k">@prefix</span><span class="w"> </span><span class="nn">dcterms:</span><span class="w"> </span><span class="nv">&lt;http://purl.org/dc/terms/&gt;</span><span class="w"> </span><span class="p">.</span><span class="w"></span>
-<span class="k">@prefix</span><span class="w"> </span><span class="nn">owl:</span><span class="w"> </span><span class="nv">&lt;http://www.w3.org/2002/07/owl#&gt;</span><span class="w"> </span><span class="p">.</span><span class="w"></span>
-<span class="k">@prefix</span><span class="w"> </span><span class="nn">p1:</span><span class="w"> </span><span class="nv">&lt;http://dublincore.org/usage/documents/principles/#&gt;</span><span class="w"> </span><span class="p">.</span><span class="w"></span>
-<span class="k">@prefix</span><span class="w"> </span><span class="nn">protege:</span><span class="w"> </span><span class="nv">&lt;http://protege.stanford.edu/plugins/owl/protege#&gt;</span><span class="w"> </span><span class="p">.</span><span class="w"></span>
-<span class="k">@prefix</span><span class="w"> </span><span class="nn">rdf:</span><span class="w"> </span><span class="nv">&lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#&gt;</span><span class="w"> </span><span class="p">.</span><span class="w"></span>
-<span class="k">@prefix</span><span class="w"> </span><span class="nn">rdfs:</span><span class="w"> </span><span class="nv">&lt;http://www.w3.org/2000/01/rdf-schema#&gt;</span><span class="w"> </span><span class="p">.</span><span class="w"></span>
-<span class="k">@prefix</span><span class="w"> </span><span class="nn">skos:</span><span class="w"> </span><span class="nv">&lt;http://www.w3.org/2004/02/skos/core#&gt;</span><span class="w"> </span><span class="p">.</span><span class="w"></span>
-<span class="k">@prefix</span><span class="w"> </span><span class="nn">xml:</span><span class="w"> </span><span class="nv">&lt;http://www.w3.org/XML/1998/namespace&gt;</span><span class="w"> </span><span class="p">.</span><span class="w"></span>
-<span class="k">@prefix</span><span class="w"> </span><span class="nn">xsd:</span><span class="w"> </span><span class="nv">&lt;http://www.w3.org/2001/XMLSchema#&gt;</span><span class="w"> </span><span class="p">.</span><span class="w"></span>
-
-<span class="nn">:</span><span class="nt">PisaCompentency</span><span class="w"> </span><span class="kt">a</span><span class="w"> </span><span class="nn">owl:</span><span class="nt">Class</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
-<span class="w">    </span><span class="nn">rdfs:</span><span class="nt">subClassOf</span><span class="w"> </span><span class="nn">:</span><span class="nt">Competence</span><span class="w"> </span><span class="p">.</span><span class="w"></span>
+<span class="p">:</span><span class="nt">PisaCompentency</span> <span class="kt">a</span> <span class="nn">owl</span><span class="p">:</span><span class="nt">Class</span> <span class="p">;</span>
+    <span class="nn">rdfs</span><span class="p">:</span><span class="nt">subClassOf</span> <span class="p">:</span><span class="nt">Competence</span> <span class="p">.</span>
 </pre></div>
 
-
-                
-            </div>
+            
           </div>
-           </div></div>
-
-
-
+        </div>
+      </div>
+    </div>
 
 
         
-
-
-
-
-
-
-
 
 
 
@@ -776,7 +704,7 @@
   <footer class="footer">
     <div class="container">
     
-      <p class="text-muted">Documentation automatically generated on 26th February 2017 with <a href="https://github.com/lambdamusic/OntoSpy">OntoSpy</a> (v1.7.4)</p>
+      <p class="text-muted">Documentation automatically generated on Wed, 16 Nov 2022 14:12:39 with <a href="http://lambdamusic.github.io/Ontospy/">Ontospy</a> (v2.1.0)</p>
 
     
     </div>
@@ -789,13 +717,13 @@
 <!-- Bootstrap core JavaScript
 ================================================== -->
 <!-- Placed at the end of the document so the pages load faster -->
-<script src="../static/libs/jquery/1.12.4/jquery.min.js"></script>
-<script src="../static/libs/bootstrap-3.3.7-dist/js/bootstrap.min.js"></script>
+<script src="../static/libs/jquery/1_12_4/jquery.min.js"></script>
+<script src="../static/libs/bootstrap-3_3_7-dist/js/bootstrap.min.js"></script>
 
 <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
-<script src="../static/libs/bootstrap-3.3.7-dist/js/ie10-viewport-bug-workaround.js"></script>
+<script src="../static/libs/bootstrap-3_3_7-dist/js/ie10-viewport-bug-workaround.js"></script>
 
-<script src="../static/libs/Chart.js-2.4.0/Chart.bundle.js"></script>
+<script src="../static/libs/chartjs-2_4_0/chart.bundle.js"></script>
 
 
 <!-- Menu Toggle Script -->
@@ -829,13 +757,15 @@ $('#search-input-sidebar').keyup(function() {
 
 
   <!-- Scroll Sidebar Script -->
+
   
   
+
   <script type="text/javascript">
 
     $(document).ready(function (){
       $('#sidebar-wrapper').animate({
-          scrollTop: $("#sd_2920").offset().top - 100
+          scrollTop: $("#sd_785").offset().top - 100
       }, 100);
     });
 

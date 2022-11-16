@@ -10,23 +10,23 @@
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
     <meta name="description" content="">
     <meta name="author" content="">
-    <link rel="icon" href="../static/libs/img/favicon.ico">
+    <link rel="icon" href="../static/custom/favicon.ico">
 
 	
-		<title>OntoSpy > http://www.loa-cnr.it/Files/DLPOnts/DOLCE_Lite_397.owl</title>
+		<title>Ontospy > http://www.loa-cnr.it/Files/DLPOnts/DOLCE_Lite_397.owl</title>
 	
 
     <!-- Bootstrap core CSS -->
-    <!-- <link href="../static/libs/bootstrap-3.3.7-dist/css/bootstrap.min.css" rel="stylesheet">  -->
+    <!-- <link href="../static/libs/bootstrap-3_3_7-dist/css/bootstrap.min.css" rel="stylesheet">  -->
     <!-- Bootswatch:  -->
     <!-- cerulean  | cyborg |  flatly |  lumen |  sandstone |   spacelab  |  yeti | cosmo |  darkly |  paper | simplex | superhero |  journal | readable  |   slate |  united -->
-    <link href="../static/libs/bootswatch3.2/paper/bootstrap.min.css" rel="stylesheet">
+    <link href="../static/libs/bootswatch3_2/lumen/bootstrap.min.css" rel="stylesheet">
     <link href="../static/custom/css/simple-sidebar.css" rel="stylesheet">
     <link href="../static/custom/css/familytree.css" rel="stylesheet">
     <link href="../static/custom/css/tabletree.css" rel="stylesheet">
 
     <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
-    <link href="../static/libs/bootstrap-3.3.7-dist/css/ie10-viewport-bug-workaround.css" rel="stylesheet">
+    <link href="../static/libs/bootstrap-3_3_7-dist/css/ie10-viewport-bug-workaround.css" rel="stylesheet">
 
     <!-- Custom styles for this template -->
     <link href="../static/custom/css/sticky-footer-navbar.css" rel="stylesheet">
@@ -57,7 +57,7 @@
 
   .implementation-panel {
     overflow: auto;
-    max-height: 500px;
+    /*max-height: 500px;*/
   }
 
   tr.table-classproperties {
@@ -152,8 +152,13 @@
 
 
 /*pygments css*/
+pre { line-height: 125%; }
+td.linenos pre { color: #000000; background-color: #f0f0f0; padding-left: 5px; padding-right: 5px; }
+span.linenos { color: #000000; background-color: #f0f0f0; padding-left: 5px; padding-right: 5px; }
+td.linenos pre.special { color: #000000; background-color: #ffffc0; padding-left: 5px; padding-right: 5px; }
+span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 5px; padding-right: 5px; }
 .highlight .hll { background-color: #ffffcc }
-.highlight  { background: #f8f8f8; }
+.highlight { background: #f8f8f8; }
 .highlight .c { color: #408080; font-style: italic } /* Comment */
 .highlight .err { border: 1px solid #FF0000 } /* Error */
 .highlight .k { color: #008000; font-weight: bold } /* Keyword */
@@ -266,27 +271,22 @@
     <div id="navbar" class="collapse navbar-collapse">
       <ul class="nav navbar-nav">
         <li ><a href="index.html"><code style="font-size: 115%;">http://www.loa-cnr.it/Files/DLPOnts/DOLCE_Lite_397.owl</code></a></li>
-        
 
-       
-
-
-        <li  ><a href="dashboard.html">Dashboard</a></li>
         <li  ><a href="entities-az.html">Entities A-Z</a></li>
-        <li class="dropdown  " >
-          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Entities Tree <span class="caret"></span></a>
-          <ul class="dropdown-menu">
-            
-            <li><a href="entities-tree-classes.html">Classes</a>
-            </li>
-            
-            
-            <li><a  href="entities-tree-properties.html">Properties</a>
-            </li>
-            
-            
-          </ul>
-      </li>
+        
+        <li ><a href="entities-tree-classes.html">Classes</a></li>
+        
+        
+        <li ><a href="entities-tree-properties.html">Properties</a></li>
+        
+        
+        
+        
+        <li  ><a href="statistics.html">Statistics</a></li>
+
+
+
+
 
       </ul>
       
@@ -294,6 +294,9 @@
 
   </div>
 </nav>
+
+
+
 
 
 
@@ -322,79 +325,79 @@
 
             
           
-              <li class="second-level" style="line-height: 20px;" id="sd_886"><a  href="class-dolabstract.html">dol:abstract</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_434"><a  href="class-dolabstract.html">dol:abstract</a></li>
           
-              <li class="second-level" style="line-height: 20px;" id="sd_887"><a  href="class-dolabstract-quality.html">dol:abstract-quality</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_435"><a  href="class-dolabstract-quality.html">dol:abstract-quality</a></li>
           
-              <li class="second-level" style="line-height: 20px;" id="sd_888"><a  href="class-dolabstract-region.html">dol:abstract-region</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_436"><a  href="class-dolabstract-region.html">dol:abstract-region</a></li>
           
-              <li class="second-level" style="line-height: 20px;" id="sd_889"><a  href="class-dolaccomplishment.html">dol:accomplishment</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_437"><a  href="class-dolaccomplishment.html">dol:accomplishment</a></li>
           
-              <li class="second-level" style="line-height: 20px;" id="sd_890"><a  href="class-dolachievement.html">dol:achievement</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_438"><a  href="class-dolachievement.html">dol:achievement</a></li>
           
-              <li class="second-level" style="line-height: 20px;" id="sd_891"><a  href="class-dolamount-of-matter.html">dol:amount-of-matter</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_439"><a  href="class-dolamount-of-matter.html">dol:amount-of-matter</a></li>
           
-              <li class="second-level" style="line-height: 20px;" id="sd_892"><a  href="class-dolarbitrary-sum.html">dol:arbitrary-sum</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_440"><a  href="class-dolarbitrary-sum.html">dol:arbitrary-sum</a></li>
           
-              <li class="second-level" style="line-height: 20px;" id="sd_893"><a  href="class-doldependent-place.html">dol:dependent-place</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_441"><a  href="class-doldependent-place.html">dol:dependent-place</a></li>
           
-              <li class="second-level" style="line-height: 20px;" id="sd_894"><a  href="class-dolendurant.html">dol:endurant</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_442"><a  href="class-dolendurant.html">dol:endurant</a></li>
           
-              <li class="second-level" style="line-height: 20px;" id="sd_895"><a  href="class-dolevent.html">dol:event</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_443"><a  href="class-dolevent.html">dol:event</a></li>
           
-              <li class="second-level" style="line-height: 20px;" id="sd_896"><a  href="class-dolfeature.html">dol:feature</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_444"><a  href="class-dolfeature.html">dol:feature</a></li>
           
-              <li class="second-level" style="line-height: 20px;" id="sd_897"><a  href="class-dolnon-physical-endurant.html">dol:non-physical-endurant</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_445"><a  href="class-dolnon-physical-endurant.html">dol:non-physical-endurant</a></li>
           
-              <li class="second-level" style="line-height: 20px;" id="sd_898"><a  href="class-dolnon-physical-object.html">dol:non-physical-object</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_446"><a  href="class-dolnon-physical-object.html">dol:non-physical-object</a></li>
           
-              <li class="second-level" style="line-height: 20px;" id="sd_899"><a  href="class-dolparticular.html">dol:particular</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_447"><a  href="class-dolparticular.html">dol:particular</a></li>
           
-              <li class="second-level" style="line-height: 20px;" id="sd_900"><a  href="class-dolperdurant.html">dol:perdurant</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_448"><a  href="class-dolperdurant.html">dol:perdurant</a></li>
           
-              <li class="second-level" style="line-height: 20px;" id="sd_901"><a  href="class-dolphysical-endurant.html">dol:physical-endurant</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_449"><a  href="class-dolphysical-endurant.html">dol:physical-endurant</a></li>
           
-              <li class="second-level" style="line-height: 20px;" id="sd_902"><a  href="class-dolphysical-object.html">dol:physical-object</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_450"><a  href="class-dolphysical-object.html">dol:physical-object</a></li>
           
-              <li class="second-level" style="line-height: 20px;" id="sd_903"><a  href="class-dolphysical-quality.html">dol:physical-quality</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_451"><a  href="class-dolphysical-quality.html">dol:physical-quality</a></li>
           
-              <li class="second-level" style="line-height: 20px;" id="sd_904"><a  href="class-dolphysical-region.html">dol:physical-region</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_452"><a  href="class-dolphysical-region.html">dol:physical-region</a></li>
           
-              <li class="second-level" style="line-height: 20px;" id="sd_905"><a  href="class-dolprocess.html">dol:process</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_453"><a  href="class-dolprocess.html">dol:process</a></li>
           
-              <li class="second-level" style="line-height: 20px;" id="sd_906"><a  href="class-dolproposition.html">dol:proposition</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_454"><a  href="class-dolproposition.html">dol:proposition</a></li>
           
-              <li class="second-level" style="line-height: 20px;" id="sd_907"><a  href="class-dolquale.html">dol:quale</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_455"><a  href="class-dolquale.html">dol:quale</a></li>
           
-              <li class="second-level" style="line-height: 20px;" id="sd_908"><a  href="class-dolquality.html">dol:quality</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_456"><a  href="class-dolquality.html">dol:quality</a></li>
           
-              <li class="second-level" style="line-height: 20px;" id="sd_909"><a  href="class-dolquality-space.html">dol:quality-space</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_457"><a  href="class-dolquality-space.html">dol:quality-space</a></li>
           
-              <li class="second-level" style="line-height: 20px;" id="sd_910"><a  href="class-dolregion.html">dol:region</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_458"><a  href="class-dolregion.html">dol:region</a></li>
           
-              <li class="second-level" style="line-height: 20px;" id="sd_911"><a  href="class-dolrelevant-part.html">dol:relevant-part</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_459"><a  href="class-dolrelevant-part.html">dol:relevant-part</a></li>
           
-              <li class="second-level" style="line-height: 20px;" id="sd_912"><a  href="class-dolset.html">dol:set</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_460"><a  href="class-dolset.html">dol:set</a></li>
           
-              <li class="second-level" style="line-height: 20px;" id="sd_913"><a  href="class-dolspace-region.html">dol:space-region</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_461"><a  href="class-dolspace-region.html">dol:space-region</a></li>
           
-              <li class="second-level" style="line-height: 20px;" id="sd_914"><a  href="class-dolspatial-location_q.html">dol:spatial-location_q</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_462"><a  href="class-dolspatial-location_q.html">dol:spatial-location_q</a></li>
           
-              <li class="second-level" style="line-height: 20px;" id="sd_915"><a  href="class-dolspatio-temporal-particular.html">dol:spatio-temporal-particular</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_463"><a  href="class-dolspatio-temporal-particular.html">dol:spatio-temporal-particular</a></li>
           
-              <li class="second-level" style="line-height: 20px;" id="sd_916"><a  href="class-dolspatio-temporal-region.html">dol:spatio-temporal-region</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_464"><a  href="class-dolspatio-temporal-region.html">dol:spatio-temporal-region</a></li>
           
-              <li class="second-level" style="line-height: 20px;" id="sd_917"><a  href="class-dolstate.html">dol:state</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_465"><a  href="class-dolstate.html">dol:state</a></li>
           
-              <li class="second-level" style="line-height: 20px;" id="sd_918"><a  href="class-dolstative.html">dol:stative</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_466"><a  href="class-dolstative.html">dol:stative</a></li>
           
-              <li class="second-level" style="line-height: 20px;" id="sd_919"><a  href="class-doltemporal-location_q.html">dol:temporal-location_q</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_467"><a  href="class-doltemporal-location_q.html">dol:temporal-location_q</a></li>
           
-              <li class="second-level" style="line-height: 20px;" id="sd_920"><a  href="class-doltemporal-quality.html">dol:temporal-quality</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_468"><a  href="class-doltemporal-quality.html">dol:temporal-quality</a></li>
           
-              <li class="second-level" style="line-height: 20px;" id="sd_921"><a  href="class-doltemporal-region.html">dol:temporal-region</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_469"><a  href="class-doltemporal-region.html">dol:temporal-region</a></li>
           
-              <li class="second-level" style="line-height: 20px;" id="sd_922"><a  href="class-doltime-interval.html">dol:time-interval</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_470"><a  href="class-doltime-interval.html">dol:time-interval</a></li>
           
         
 
@@ -404,148 +407,151 @@
 
             
           
-              <li class="second-level" style="line-height: 20px;" id="sd_923"><a   href="prop-dollife.html">dol:life</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_473"><a   href="prop-dolabstract-location.html">dol:abstract-location</a></li>
           
-              <li class="second-level" style="line-height: 20px;" id="sd_924"><a   href="prop-dollife-of.html">dol:life-of</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_474"><a   href="prop-dolabstract-location-of.html">dol:abstract-location-of</a></li>
           
-              <li class="second-level" style="line-height: 20px;" id="sd_925"><a   href="prop-dolabstract-location.html">dol:abstract-location</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_475"><a   href="prop-dolatomic-part.html">dol:atomic-part</a></li>
           
-              <li class="second-level" style="line-height: 20px;" id="sd_926"><a   href="prop-dolabstract-location-of.html">dol:abstract-location-of</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_476"><a   href="prop-dolatomic-part-of.html">dol:atomic-part-of</a></li>
           
-              <li class="second-level" style="line-height: 20px;" id="sd_927"><a   href="prop-dolatomic-part.html">dol:atomic-part</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_477"><a   href="prop-dolboundary.html">dol:boundary</a></li>
           
-              <li class="second-level" style="line-height: 20px;" id="sd_928"><a   href="prop-dolatomic-part-of.html">dol:atomic-part-of</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_478"><a   href="prop-dolboundary-of.html">dol:boundary-of</a></li>
           
-              <li class="second-level" style="line-height: 20px;" id="sd_929"><a   href="prop-dolboundary.html">dol:boundary</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_479"><a   href="prop-dolconstant-participant.html">dol:constant-participant</a></li>
           
-              <li class="second-level" style="line-height: 20px;" id="sd_930"><a   href="prop-dolboundary-of.html">dol:boundary-of</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_480"><a   href="prop-dolconstant-participant-in.html">dol:constant-participant-in</a></li>
           
-              <li class="second-level" style="line-height: 20px;" id="sd_931"><a   href="prop-dolconstant-participant.html">dol:constant-participant</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_481"><a   href="prop-dolexact-location.html">dol:exact-location</a></li>
           
-              <li class="second-level" style="line-height: 20px;" id="sd_932"><a   href="prop-dolconstant-participant-in.html">dol:constant-participant-in</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_482"><a   href="prop-dolexact-location-of.html">dol:exact-location-of</a></li>
           
-              <li class="second-level" style="line-height: 20px;" id="sd_933"><a   href="prop-dolexact-location.html">dol:exact-location</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_483"><a   href="prop-dolgeneric-constituent.html">dol:generic-constituent</a></li>
           
-              <li class="second-level" style="line-height: 20px;" id="sd_934"><a   href="prop-dolexact-location-of.html">dol:exact-location-of</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_484"><a   href="prop-dolgeneric-constituent-of.html">dol:generic-constituent-of</a></li>
           
-              <li class="second-level" style="line-height: 20px;" id="sd_935"><a   href="prop-dolgeneric-constituent.html">dol:generic-constituent</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_485"><a   href="prop-dolgeneric-dependent.html">dol:generic-dependent</a></li>
           
-              <li class="second-level" style="line-height: 20px;" id="sd_936"><a   href="prop-dolgeneric-constituent-of.html">dol:generic-constituent-of</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_486"><a   href="prop-dolgeneric-location.html">dol:generic-location</a></li>
           
-              <li class="second-level" style="line-height: 20px;" id="sd_937"><a   href="prop-dolgeneric-dependent.html">dol:generic-dependent</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_487"><a   href="prop-dolgeneric-location-of.html">dol:generic-location-of</a></li>
           
-              <li class="second-level" style="line-height: 20px;" id="sd_938"><a   href="prop-dolgeneric-location.html">dol:generic-location</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_488"><a   href="prop-dolgenerically-dependent-on.html">dol:generically-dependent-on</a></li>
           
-              <li class="second-level" style="line-height: 20px;" id="sd_939"><a   href="prop-dolgeneric-location-of.html">dol:generic-location-of</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_489"><a   href="prop-dolhas-quale.html">dol:has-quale</a></li>
           
-              <li class="second-level" style="line-height: 20px;" id="sd_940"><a   href="prop-dolgenerically-dependent-on.html">dol:generically-dependent-on</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_490"><a   href="prop-dolhas-quality.html">dol:has-quality</a></li>
           
-              <li class="second-level" style="line-height: 20px;" id="sd_941"><a   href="prop-dolhas-quale.html">dol:has-quale</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_491"><a   href="prop-dolhas-t-quality.html">dol:has-t-quality</a></li>
           
-              <li class="second-level" style="line-height: 20px;" id="sd_942"><a   href="prop-dolhas-quality.html">dol:has-quality</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_492"><a   href="prop-dolhost.html">dol:host</a></li>
           
-              <li class="second-level" style="line-height: 20px;" id="sd_943"><a   href="prop-dolhas-t-quality.html">dol:has-t-quality</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_493"><a   href="prop-dolhost-of.html">dol:host-of</a></li>
           
-              <li class="second-level" style="line-height: 20px;" id="sd_944"><a   href="prop-dolhost.html">dol:host</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_494"><a   href="prop-dolidentity-c.html">dol:identity-c</a></li>
           
-              <li class="second-level" style="line-height: 20px;" id="sd_945"><a   href="prop-dolhost-of.html">dol:host-of</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_495"><a   href="prop-dolidentity-n.html">dol:identity-n</a></li>
           
-              <li class="second-level" style="line-height: 20px;" id="sd_946"><a   href="prop-dolidentity-c.html">dol:identity-c</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_496"><a   href="prop-dolimmediate-relation.html">dol:immediate-relation</a></li>
           
-              <li class="second-level" style="line-height: 20px;" id="sd_947"><a   href="prop-dolidentity-n.html">dol:identity-n</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_497"><a   href="prop-dolimmediate-relation-i.html">dol:immediate-relation-i</a></li>
           
-              <li class="second-level" style="line-height: 20px;" id="sd_948"><a   href="prop-dolimmediate-relation.html">dol:immediate-relation</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_498"><a   href="prop-dolinherent-in.html">dol:inherent-in</a></li>
           
-              <li class="second-level" style="line-height: 20px;" id="sd_949"><a   href="prop-dolimmediate-relation-i.html">dol:immediate-relation-i</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_471"><a   href="prop-dollife.html">dol:life</a></li>
           
-              <li class="second-level" style="line-height: 20px;" id="sd_950"><a   href="prop-dolinherent-in.html">dol:inherent-in</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_472"><a   href="prop-dollife-of.html">dol:life-of</a></li>
           
-              <li class="second-level" style="line-height: 20px;" id="sd_951"><a   href="prop-dolmediated-relation.html">dol:mediated-relation</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_499"><a   href="prop-dolmediated-relation.html">dol:mediated-relation</a></li>
           
-              <li class="second-level" style="line-height: 20px;" id="sd_952"><a   href="prop-dolmediated-relation-i.html">dol:mediated-relation-i</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_500"><a   href="prop-dolmediated-relation-i.html">dol:mediated-relation-i</a></li>
           
-              <li class="second-level" style="line-height: 20px;" id="sd_953"><a   href="prop-dolmereologically-coincides.html">dol:mereologically-coincides</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_501"><a   href="prop-dolmereologically-coincides.html">dol:mereologically-coincides</a></li>
           
-              <li class="second-level" style="line-height: 20px;" id="sd_954"><a   href="prop-doloverlaps.html">dol:overlaps</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_502"><a   href="prop-doloverlaps.html">dol:overlaps</a></li>
           
-              <li class="second-level" style="line-height: 20px;" id="sd_955"><a   href="prop-dolpart.html">dol:part</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_503"><a   href="prop-dolpart.html">dol:part</a></li>
           
-              <li class="second-level" style="line-height: 20px;" id="sd_956"><a class="active"  href="prop-dolpart-of.html">dol:part-of</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_504"><a class="active"  href="prop-dolpart-of.html">dol:part-of</a></li>
           
-              <li class="second-level" style="line-height: 20px;" id="sd_957"><a   href="prop-dolparticipant.html">dol:participant</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_505"><a   href="prop-dolparticipant.html">dol:participant</a></li>
           
-              <li class="second-level" style="line-height: 20px;" id="sd_958"><a   href="prop-dolparticipant-in.html">dol:participant-in</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_506"><a   href="prop-dolparticipant-in.html">dol:participant-in</a></li>
           
-              <li class="second-level" style="line-height: 20px;" id="sd_959"><a   href="prop-dolpartly-compresent.html">dol:partly-compresent</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_507"><a   href="prop-dolpartly-compresent.html">dol:partly-compresent</a></li>
           
-              <li class="second-level" style="line-height: 20px;" id="sd_960"><a   href="prop-dolphysical-location.html">dol:physical-location</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_508"><a   href="prop-dolphysical-location.html">dol:physical-location</a></li>
           
-              <li class="second-level" style="line-height: 20px;" id="sd_961"><a   href="prop-dolphysical-location-of.html">dol:physical-location-of</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_509"><a   href="prop-dolphysical-location-of.html">dol:physical-location-of</a></li>
           
-              <li class="second-level" style="line-height: 20px;" id="sd_962"><a   href="prop-dolproper-part.html">dol:proper-part</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_510"><a   href="prop-dolproper-part.html">dol:proper-part</a></li>
           
-              <li class="second-level" style="line-height: 20px;" id="sd_963"><a   href="prop-dolproper-part-of.html">dol:proper-part-of</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_511"><a   href="prop-dolproper-part-of.html">dol:proper-part-of</a></li>
           
-              <li class="second-level" style="line-height: 20px;" id="sd_964"><a   href="prop-dolq-location.html">dol:q-location</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_512"><a   href="prop-dolq-location.html">dol:q-location</a></li>
           
-              <li class="second-level" style="line-height: 20px;" id="sd_965"><a   href="prop-dolq-location-of.html">dol:q-location-of</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_513"><a   href="prop-dolq-location-of.html">dol:q-location-of</a></li>
           
-              <li class="second-level" style="line-height: 20px;" id="sd_966"><a   href="prop-dolq-present-at.html">dol:q-present-at</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_514"><a   href="prop-dolq-present-at.html">dol:q-present-at</a></li>
           
-              <li class="second-level" style="line-height: 20px;" id="sd_967"><a   href="prop-dolquale-of.html">dol:quale-of</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_515"><a   href="prop-dolquale-of.html">dol:quale-of</a></li>
           
-              <li class="second-level" style="line-height: 20px;" id="sd_968"><a   href="prop-dolr-location.html">dol:r-location</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_516"><a   href="prop-dolr-location.html">dol:r-location</a></li>
           
-              <li class="second-level" style="line-height: 20px;" id="sd_969"><a   href="prop-dolr-location-of.html">dol:r-location-of</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_517"><a   href="prop-dolr-location-of.html">dol:r-location-of</a></li>
           
-              <li class="second-level" style="line-height: 20px;" id="sd_970"><a   href="prop-dolsibling-part.html">dol:sibling-part</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_518"><a   href="prop-dolsibling-part.html">dol:sibling-part</a></li>
           
-              <li class="second-level" style="line-height: 20px;" id="sd_971"><a   href="prop-dolspatio-temporal-presence-of.html">dol:spatio-temporal-presence-of</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_519"><a   href="prop-dolspatio-temporal-presence-of.html">dol:spatio-temporal-presence-of</a></li>
           
-              <li class="second-level" style="line-height: 20px;" id="sd_972"><a   href="prop-dolspatio-temporally-present-at.html">dol:spatio-temporally-present-at</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_520"><a   href="prop-dolspatio-temporally-present-at.html">dol:spatio-temporally-present-at</a></li>
           
-              <li class="second-level" style="line-height: 20px;" id="sd_973"><a   href="prop-dolspecific-constant-constituent.html">dol:specific-constant-constituent</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_521"><a   href="prop-dolspecific-constant-constituent.html">dol:specific-constant-constituent</a></li>
           
-              <li class="second-level" style="line-height: 20px;" id="sd_974"><a   href="prop-dolspecific-constant-constituent-of.html">dol:specific-constant-constituent-of</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_522"><a   href="prop-dolspecific-constant-constituent-of.html">dol:specific-constant-constituent-of</a></li>
           
-              <li class="second-level" style="line-height: 20px;" id="sd_975"><a   href="prop-dolspecific-constant-dependent.html">dol:specific-constant-dependent</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_523"><a   href="prop-dolspecific-constant-dependent.html">dol:specific-constant-dependent</a></li>
           
-              <li class="second-level" style="line-height: 20px;" id="sd_976"><a   href="prop-dolspecifically-constantly-dependent-on.html">dol:specifically-constantly-dependent-on</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_524"><a   href="prop-dolspecifically-constantly-dependent-on.html">dol:specifically-constantly-dependent-on</a></li>
           
-              <li class="second-level" style="line-height: 20px;" id="sd_977"><a   href="prop-dolstrong-connection.html">dol:strong-connection</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_525"><a   href="prop-dolstrong-connection.html">dol:strong-connection</a></li>
           
-              <li class="second-level" style="line-height: 20px;" id="sd_978"><a   href="prop-dolt-inherent-in.html">dol:t-inherent-in</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_526"><a   href="prop-dolt-inherent-in.html">dol:t-inherent-in</a></li>
           
-              <li class="second-level" style="line-height: 20px;" id="sd_979"><a   href="prop-doltemporary-atomic-part.html">dol:temporary-atomic-part</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_527"><a   href="prop-doltemporary-atomic-part.html">dol:temporary-atomic-part</a></li>
           
-              <li class="second-level" style="line-height: 20px;" id="sd_980"><a   href="prop-doltemporary-atomic-part-of.html">dol:temporary-atomic-part-of</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_528"><a   href="prop-doltemporary-atomic-part-of.html">dol:temporary-atomic-part-of</a></li>
           
-              <li class="second-level" style="line-height: 20px;" id="sd_981"><a   href="prop-doltemporary-part.html">dol:temporary-part</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_529"><a   href="prop-doltemporary-part.html">dol:temporary-part</a></li>
           
-              <li class="second-level" style="line-height: 20px;" id="sd_982"><a   href="prop-doltemporary-part-of.html">dol:temporary-part-of</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_530"><a   href="prop-doltemporary-part-of.html">dol:temporary-part-of</a></li>
           
-              <li class="second-level" style="line-height: 20px;" id="sd_983"><a   href="prop-doltemporary-participant.html">dol:temporary-participant</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_531"><a   href="prop-doltemporary-participant.html">dol:temporary-participant</a></li>
           
-              <li class="second-level" style="line-height: 20px;" id="sd_984"><a   href="prop-doltemporary-participant-in.html">dol:temporary-participant-in</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_532"><a   href="prop-doltemporary-participant-in.html">dol:temporary-participant-in</a></li>
           
-              <li class="second-level" style="line-height: 20px;" id="sd_985"><a   href="prop-doltemporary-proper-part.html">dol:temporary-proper-part</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_533"><a   href="prop-doltemporary-proper-part.html">dol:temporary-proper-part</a></li>
           
-              <li class="second-level" style="line-height: 20px;" id="sd_986"><a   href="prop-doltemporary-proper-part-of.html">dol:temporary-proper-part-of</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_534"><a   href="prop-doltemporary-proper-part-of.html">dol:temporary-proper-part-of</a></li>
           
-              <li class="second-level" style="line-height: 20px;" id="sd_987"><a   href="prop-doltime-of-q-presence-of.html">dol:time-of-q-presence-of</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_535"><a   href="prop-doltime-of-q-presence-of.html">dol:time-of-q-presence-of</a></li>
           
-              <li class="second-level" style="line-height: 20px;" id="sd_988"><a   href="prop-doltotal-constant-participant.html">dol:total-constant-participant</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_536"><a   href="prop-doltotal-constant-participant.html">dol:total-constant-participant</a></li>
           
-              <li class="second-level" style="line-height: 20px;" id="sd_989"><a   href="prop-doltotal-constant-participant-in.html">dol:total-constant-participant-in</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_537"><a   href="prop-doltotal-constant-participant-in.html">dol:total-constant-participant-in</a></li>
           
-              <li class="second-level" style="line-height: 20px;" id="sd_990"><a   href="prop-doltotal-temporary-participant.html">dol:total-temporary-participant</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_538"><a   href="prop-doltotal-temporary-participant.html">dol:total-temporary-participant</a></li>
           
-              <li class="second-level" style="line-height: 20px;" id="sd_991"><a   href="prop-doltotal-temporary-participant-in.html">dol:total-temporary-participant-in</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_539"><a   href="prop-doltotal-temporary-participant-in.html">dol:total-temporary-participant-in</a></li>
           
-              <li class="second-level" style="line-height: 20px;" id="sd_992"><a   href="prop-dolweak-connection.html">dol:weak-connection</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_540"><a   href="prop-dolweak-connection.html">dol:weak-connection</a></li>
           
 
         
+
+        
+
 
         
 
@@ -563,7 +569,6 @@
 
 
 <!-- /#sidebar-wrapper -->
-
     
 
 
@@ -628,6 +633,12 @@
 
 
 
+
+
+
+
+
+
   <ol class="breadcrumb">
     <li>
       <a href="index.html">Home</a>
@@ -639,9 +650,16 @@
           <a href="entities-tree-properties.html">Properties</a>
     </li>
       <li class="active">
-            http://www.loa-cnr.it/ontologies/DOLCE-Lite#part-of
+            dol:part-of
         </li>
   </ol>
+
+
+
+
+
+
+
 
 
 
@@ -743,7 +761,7 @@
                     <div class="panel-body">
 
                     
-                            <li><a href="prop-dolimmediate-relation-i.html">dol:immediate-relation-i</a></li>
+                            <li><a href="prop-dolimmediate-relation-i.html" title="http://www.loa-cnr.it/ontologies/DOLCE-Lite#immediate-relation-i">dol:immediate-relation-i</a></li>
                     
 
                     </div>
@@ -763,7 +781,7 @@
                   </div>
                   <div class="panel-body">
 
-                      <li><a href="prop-dolatomic-part-of.html">dol:atomic-part-of</a></li><li><a href="prop-dolproper-part-of.html">dol:proper-part-of</a></li><li><a href="prop-doltemporary-part-of.html">dol:temporary-part-of</a></li>
+                      <li><a href="prop-dolatomic-part-of.html" title="http://www.loa-cnr.it/ontologies/DOLCE-Lite#atomic-part-of">dol:atomic-part-of</a></li><li><a href="prop-dolproper-part-of.html" title="http://www.loa-cnr.it/ontologies/DOLCE-Lite#proper-part-of">dol:proper-part-of</a></li><li><a href="prop-doltemporary-part-of.html" title="http://www.loa-cnr.it/ontologies/DOLCE-Lite#temporary-part-of">dol:temporary-part-of</a></li>
 
 
                   </div>
@@ -788,7 +806,9 @@
                    <td>
                      
                          
-                           <a href="class-dolparticular.html">dol:particular</a>
+                         
+                              <a href="class-dolparticular.html" title="http://www.loa-cnr.it/ontologies/DOLCE-Lite#particular">dol:particular</a>
+                           
                            
                          
                      
@@ -801,7 +821,9 @@
                     <td>
                       
                           
-                            <a href="class-dolparticular.html">dol:particular</a>
+                          
+                               <a href="class-dolparticular.html" title="http://www.loa-cnr.it/ontologies/DOLCE-Lite#particular">dol:particular</a>
+                            
                             
                           
                       
@@ -822,22 +844,16 @@
 
                 
 
-                    <div class="highlight"><pre><span></span><span class="k">@prefix</span><span class="w"> </span><span class="nn">:</span><span class="w"> </span><span class="nv">&lt;http://www.loa-cnr.it/Files/DLPOnts/DOLCE_Lite_397.owl#&gt;</span><span class="w"> </span><span class="p">.</span><span class="w"></span>
-<span class="k">@prefix</span><span class="w"> </span><span class="nn">dc:</span><span class="w"> </span><span class="nv">&lt;http://purl.org/dc/elements/1.1/&gt;</span><span class="w"> </span><span class="p">.</span><span class="w"></span>
-<span class="k">@prefix</span><span class="w"> </span><span class="nn">dol:</span><span class="w"> </span><span class="nv">&lt;http://www.loa-cnr.it/ontologies/DOLCE-Lite#&gt;</span><span class="w"> </span><span class="p">.</span><span class="w"></span>
-<span class="k">@prefix</span><span class="w"> </span><span class="nn">owl:</span><span class="w"> </span><span class="nv">&lt;http://www.w3.org/2002/07/owl#&gt;</span><span class="w"> </span><span class="p">.</span><span class="w"></span>
-<span class="k">@prefix</span><span class="w"> </span><span class="nn">rdf:</span><span class="w"> </span><span class="nv">&lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#&gt;</span><span class="w"> </span><span class="p">.</span><span class="w"></span>
-<span class="k">@prefix</span><span class="w"> </span><span class="nn">rdfs:</span><span class="w"> </span><span class="nv">&lt;http://www.w3.org/2000/01/rdf-schema#&gt;</span><span class="w"> </span><span class="p">.</span><span class="w"></span>
-<span class="k">@prefix</span><span class="w"> </span><span class="nn">skos:</span><span class="w"> </span><span class="nv">&lt;http://www.w3.org/2004/02/skos/core#&gt;</span><span class="w"> </span><span class="p">.</span><span class="w"></span>
-<span class="k">@prefix</span><span class="w"> </span><span class="nn">xml:</span><span class="w"> </span><span class="nv">&lt;http://www.w3.org/XML/1998/namespace&gt;</span><span class="w"> </span><span class="p">.</span><span class="w"></span>
-<span class="k">@prefix</span><span class="w"> </span><span class="nn">xsd:</span><span class="w"> </span><span class="nv">&lt;http://www.w3.org/2001/XMLSchema#&gt;</span><span class="w"> </span><span class="p">.</span><span class="w"></span>
+                    <div class="highlight"><pre><span></span><span class="k">@prefix</span><span class="w"> </span><span class="nn">dol:</span><span class="w"> </span><span class="nv">&lt;http://www.loa-cnr.it/ontologies/DOLCE-Lite#&gt;</span><span class="w"> </span><span class="p">.</span>
+<span class="k">@prefix</span><span class="w"> </span><span class="nn">owl:</span><span class="w"> </span><span class="nv">&lt;http://www.w3.org/2002/07/owl#&gt;</span><span class="w"> </span><span class="p">.</span>
+<span class="k">@prefix</span><span class="w"> </span><span class="nn">rdfs:</span><span class="w"> </span><span class="nv">&lt;http://www.w3.org/2000/01/rdf-schema#&gt;</span><span class="w"> </span><span class="p">.</span>
 
-<span class="nn">dol:</span><span class="nt">part-of</span><span class="w"> </span><span class="kt">a</span><span class="w"> </span><span class="nn">owl:</span><span class="nt">ObjectProperty</span><span class="p">,</span><span class="w"></span>
-<span class="w">        </span><span class="nn">owl:</span><span class="nt">TransitiveProperty</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
-<span class="w">    </span><span class="nn">rdfs:</span><span class="nt">domain</span><span class="w"> </span><span class="nn">dol:</span><span class="nt">particular</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
-<span class="w">    </span><span class="nn">rdfs:</span><span class="nt">range</span><span class="w"> </span><span class="nn">dol:</span><span class="nt">particular</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
-<span class="w">    </span><span class="nn">rdfs:</span><span class="nt">subPropertyOf</span><span class="w"> </span><span class="nn">dol:</span><span class="nt">immediate-relation-i</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
-<span class="w">    </span><span class="nn">owl:</span><span class="nt">inverseOf</span><span class="w"> </span><span class="nn">dol:</span><span class="nt">part</span><span class="w"> </span><span class="p">.</span><span class="w"></span>
+<span class="nn">dol</span><span class="p">:</span><span class="nt">part-of</span> <span class="kt">a</span> <span class="nn">owl</span><span class="p">:</span><span class="nt">ObjectProperty</span><span class="p">,</span>
+        <span class="nn">owl</span><span class="p">:</span><span class="nt">TransitiveProperty</span> <span class="p">;</span>
+    <span class="nn">rdfs</span><span class="p">:</span><span class="nt">domain</span> <span class="nn">dol</span><span class="p">:</span><span class="nt">particular</span> <span class="p">;</span>
+    <span class="nn">rdfs</span><span class="p">:</span><span class="nt">range</span> <span class="nn">dol</span><span class="p">:</span><span class="nt">particular</span> <span class="p">;</span>
+    <span class="nn">rdfs</span><span class="p">:</span><span class="nt">subPropertyOf</span> <span class="nn">dol</span><span class="p">:</span><span class="nt">immediate-relation-i</span> <span class="p">;</span>
+    <span class="nn">owl</span><span class="p">:</span><span class="nt">inverseOf</span> <span class="nn">dol</span><span class="p">:</span><span class="nt">part</span> <span class="p">.</span>
 </pre></div>
 
 
@@ -876,7 +892,7 @@
   <footer class="footer">
     <div class="container">
     
-      <p class="text-muted">Documentation automatically generated on 26th February 2017 with <a href="https://github.com/lambdamusic/OntoSpy">OntoSpy</a> (v1.7.4)</p>
+      <p class="text-muted">Documentation automatically generated on Wed, 16 Nov 2022 14:12:36 with <a href="http://lambdamusic.github.io/Ontospy/">Ontospy</a> (v2.1.0)</p>
 
     
     </div>
@@ -889,13 +905,13 @@
 <!-- Bootstrap core JavaScript
 ================================================== -->
 <!-- Placed at the end of the document so the pages load faster -->
-<script src="../static/libs/jquery/1.12.4/jquery.min.js"></script>
-<script src="../static/libs/bootstrap-3.3.7-dist/js/bootstrap.min.js"></script>
+<script src="../static/libs/jquery/1_12_4/jquery.min.js"></script>
+<script src="../static/libs/bootstrap-3_3_7-dist/js/bootstrap.min.js"></script>
 
 <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
-<script src="../static/libs/bootstrap-3.3.7-dist/js/ie10-viewport-bug-workaround.js"></script>
+<script src="../static/libs/bootstrap-3_3_7-dist/js/ie10-viewport-bug-workaround.js"></script>
 
-<script src="../static/libs/Chart.js-2.4.0/Chart.bundle.js"></script>
+<script src="../static/libs/chartjs-2_4_0/chart.bundle.js"></script>
 
 
 <!-- Menu Toggle Script -->
@@ -929,13 +945,15 @@ $('#search-input-sidebar').keyup(function() {
 
 
   <!-- Scroll Sidebar Script -->
+
   
   
+
   <script type="text/javascript">
 
     $(document).ready(function (){
       $('#sidebar-wrapper').animate({
-          scrollTop: $("#sd_956").offset().top - 100
+          scrollTop: $("#sd_504").offset().top - 100
       }, 100);
     });
 

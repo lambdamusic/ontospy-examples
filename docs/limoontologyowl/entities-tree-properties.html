@@ -10,23 +10,23 @@
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
     <meta name="description" content="">
     <meta name="author" content="">
-    <link rel="icon" href="../static/libs/img/favicon.ico">
+    <link rel="icon" href="../static/custom/favicon.ico">
 
 	
-		<title>OntoSpy > http://purl.org/LiMo/0.1#</title>
+		<title>Ontospy > http://purl.org/LiMo/0.1#</title>
 	
 
     <!-- Bootstrap core CSS -->
-    <!-- <link href="../static/libs/bootstrap-3.3.7-dist/css/bootstrap.min.css" rel="stylesheet">  -->
+    <!-- <link href="../static/libs/bootstrap-3_3_7-dist/css/bootstrap.min.css" rel="stylesheet">  -->
     <!-- Bootswatch:  -->
     <!-- cerulean  | cyborg |  flatly |  lumen |  sandstone |   spacelab  |  yeti | cosmo |  darkly |  paper | simplex | superhero |  journal | readable  |   slate |  united -->
-    <link href="../static/libs/bootswatch3.2/flatly/bootstrap.min.css" rel="stylesheet">
+    <link href="../static/libs/bootswatch3_2/sandstone/bootstrap.min.css" rel="stylesheet">
     <link href="../static/custom/css/simple-sidebar.css" rel="stylesheet">
     <link href="../static/custom/css/familytree.css" rel="stylesheet">
     <link href="../static/custom/css/tabletree.css" rel="stylesheet">
 
     <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
-    <link href="../static/libs/bootstrap-3.3.7-dist/css/ie10-viewport-bug-workaround.css" rel="stylesheet">
+    <link href="../static/libs/bootstrap-3_3_7-dist/css/ie10-viewport-bug-workaround.css" rel="stylesheet">
 
     <!-- Custom styles for this template -->
     <link href="../static/custom/css/sticky-footer-navbar.css" rel="stylesheet">
@@ -57,7 +57,7 @@
 
   .implementation-panel {
     overflow: auto;
-    max-height: 500px;
+    /*max-height: 500px;*/
   }
 
   tr.table-classproperties {
@@ -152,7 +152,80 @@
 
 
 /*pygments css*/
-
+pre { line-height: 125%; }
+td.linenos pre { color: #000000; background-color: #f0f0f0; padding-left: 5px; padding-right: 5px; }
+span.linenos { color: #000000; background-color: #f0f0f0; padding-left: 5px; padding-right: 5px; }
+td.linenos pre.special { color: #000000; background-color: #ffffc0; padding-left: 5px; padding-right: 5px; }
+span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 5px; padding-right: 5px; }
+.highlight .hll { background-color: #ffffcc }
+.highlight { background: #f8f8f8; }
+.highlight .c { color: #408080; font-style: italic } /* Comment */
+.highlight .err { border: 1px solid #FF0000 } /* Error */
+.highlight .k { color: #008000; font-weight: bold } /* Keyword */
+.highlight .o { color: #666666 } /* Operator */
+.highlight .ch { color: #408080; font-style: italic } /* Comment.Hashbang */
+.highlight .cm { color: #408080; font-style: italic } /* Comment.Multiline */
+.highlight .cp { color: #BC7A00 } /* Comment.Preproc */
+.highlight .cpf { color: #408080; font-style: italic } /* Comment.PreprocFile */
+.highlight .c1 { color: #408080; font-style: italic } /* Comment.Single */
+.highlight .cs { color: #408080; font-style: italic } /* Comment.Special */
+.highlight .gd { color: #A00000 } /* Generic.Deleted */
+.highlight .ge { font-style: italic } /* Generic.Emph */
+.highlight .gr { color: #FF0000 } /* Generic.Error */
+.highlight .gh { color: #000080; font-weight: bold } /* Generic.Heading */
+.highlight .gi { color: #00A000 } /* Generic.Inserted */
+.highlight .go { color: #888888 } /* Generic.Output */
+.highlight .gp { color: #000080; font-weight: bold } /* Generic.Prompt */
+.highlight .gs { font-weight: bold } /* Generic.Strong */
+.highlight .gu { color: #800080; font-weight: bold } /* Generic.Subheading */
+.highlight .gt { color: #0044DD } /* Generic.Traceback */
+.highlight .kc { color: #008000; font-weight: bold } /* Keyword.Constant */
+.highlight .kd { color: #008000; font-weight: bold } /* Keyword.Declaration */
+.highlight .kn { color: #008000; font-weight: bold } /* Keyword.Namespace */
+.highlight .kp { color: #008000 } /* Keyword.Pseudo */
+.highlight .kr { color: #008000; font-weight: bold } /* Keyword.Reserved */
+.highlight .kt { color: #B00040 } /* Keyword.Type */
+.highlight .m { color: #666666 } /* Literal.Number */
+.highlight .s { color: #BA2121 } /* Literal.String */
+.highlight .na { color: #7D9029 } /* Name.Attribute */
+.highlight .nb { color: #008000 } /* Name.Builtin */
+.highlight .nc { color: #0000FF; font-weight: bold } /* Name.Class */
+.highlight .no { color: #880000 } /* Name.Constant */
+.highlight .nd { color: #AA22FF } /* Name.Decorator */
+.highlight .ni { color: #999999; font-weight: bold } /* Name.Entity */
+.highlight .ne { color: #D2413A; font-weight: bold } /* Name.Exception */
+.highlight .nf { color: #0000FF } /* Name.Function */
+.highlight .nl { color: #A0A000 } /* Name.Label */
+.highlight .nn { color: #0000FF; font-weight: bold } /* Name.Namespace */
+.highlight .nt { color: #008000; font-weight: bold } /* Name.Tag */
+.highlight .nv { color: #19177C } /* Name.Variable */
+.highlight .ow { color: #AA22FF; font-weight: bold } /* Operator.Word */
+.highlight .w { color: #bbbbbb } /* Text.Whitespace */
+.highlight .mb { color: #666666 } /* Literal.Number.Bin */
+.highlight .mf { color: #666666 } /* Literal.Number.Float */
+.highlight .mh { color: #666666 } /* Literal.Number.Hex */
+.highlight .mi { color: #666666 } /* Literal.Number.Integer */
+.highlight .mo { color: #666666 } /* Literal.Number.Oct */
+.highlight .sa { color: #BA2121 } /* Literal.String.Affix */
+.highlight .sb { color: #BA2121 } /* Literal.String.Backtick */
+.highlight .sc { color: #BA2121 } /* Literal.String.Char */
+.highlight .dl { color: #BA2121 } /* Literal.String.Delimiter */
+.highlight .sd { color: #BA2121; font-style: italic } /* Literal.String.Doc */
+.highlight .s2 { color: #BA2121 } /* Literal.String.Double */
+.highlight .se { color: #BB6622; font-weight: bold } /* Literal.String.Escape */
+.highlight .sh { color: #BA2121 } /* Literal.String.Heredoc */
+.highlight .si { color: #BB6688; font-weight: bold } /* Literal.String.Interpol */
+.highlight .sx { color: #008000 } /* Literal.String.Other */
+.highlight .sr { color: #BB6688 } /* Literal.String.Regex */
+.highlight .s1 { color: #BA2121 } /* Literal.String.Single */
+.highlight .ss { color: #19177C } /* Literal.String.Symbol */
+.highlight .bp { color: #008000 } /* Name.Builtin.Pseudo */
+.highlight .fm { color: #0000FF } /* Name.Function.Magic */
+.highlight .vc { color: #19177C } /* Name.Variable.Class */
+.highlight .vg { color: #19177C } /* Name.Variable.Global */
+.highlight .vi { color: #19177C } /* Name.Variable.Instance */
+.highlight .vm { color: #19177C } /* Name.Variable.Magic */
+.highlight .il { color: #666666 } /* Literal.Number.Integer.Long */
 
 /*overloading this class from pygments*/
 .highlight {
@@ -199,27 +272,22 @@
     <div id="navbar" class="collapse navbar-collapse">
       <ul class="nav navbar-nav">
         <li ><a href="index.html"><code style="font-size: 115%;">http://purl.org/LiMo/0.1#</code></a></li>
-        
 
-       
-
-
-        <li  ><a href="dashboard.html">Dashboard</a></li>
         <li  ><a href="entities-az.html">Entities A-Z</a></li>
-        <li class="dropdown active " >
-          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Entities Tree <span class="caret"></span></a>
-          <ul class="dropdown-menu">
-            
-            <li><a href="entities-tree-classes.html">Classes</a>
-            </li>
-            
-            
-            <li><a class="active" href="entities-tree-properties.html">Properties</a>
-            </li>
-            
-            
-          </ul>
-      </li>
+        
+        <li ><a href="entities-tree-classes.html">Classes</a></li>
+        
+        
+        <li class="active"><a href="entities-tree-properties.html">Properties</a></li>
+        
+        
+        
+        
+        <li  ><a href="statistics.html">Statistics</a></li>
+
+
+
+
 
       </ul>
       
@@ -227,8 +295,11 @@
 
   </div>
 </nav>
-
   
+
+
+
+
 
 
 
@@ -256,17 +327,17 @@
 
             
           
-              <li class="second-level" style="line-height: 20px;" id="sd_3341"><a  href="class-01dataset.html">0.1:Dataset</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_809"><a  href="class-01dataset.html">0.1:Dataset</a></li>
           
-              <li class="second-level" style="line-height: 20px;" id="sd_3342"><a  href="class-01distributionconditions.html">0.1:DistributionConditions</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_810"><a  href="class-01distributionconditions.html">0.1:DistributionConditions</a></li>
           
-              <li class="second-level" style="line-height: 20px;" id="sd_3343"><a  href="class-01legalterms.html">0.1:LegalTerms</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_811"><a  href="class-01legalterms.html">0.1:LegalTerms</a></li>
           
-              <li class="second-level" style="line-height: 20px;" id="sd_3344"><a  href="class-01licensemodel.html">0.1:LicenseModel</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_812"><a  href="class-01licensemodel.html">0.1:LicenseModel</a></li>
           
-              <li class="second-level" style="line-height: 20px;" id="sd_3345"><a  href="class-01rights.html">0.1:Rights</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_813"><a  href="class-01rights.html">0.1:Rights</a></li>
           
-              <li class="second-level" style="line-height: 20px;" id="sd_3346"><a  href="class-01useconditions.html">0.1:UseConditions</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_814"><a  href="class-01useconditions.html">0.1:UseConditions</a></li>
           
         
 
@@ -276,58 +347,61 @@
 
             
           
-              <li class="second-level" style="line-height: 20px;" id="sd_3347"><a   href="prop-dccreator.html">dc:creator</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_820"><a   href="prop-01url.html">0.1:URL</a></li>
           
-              <li class="second-level" style="line-height: 20px;" id="sd_3348"><a   href="prop-dcdescription.html">dc:description</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_831"><a   href="prop-01aredefinedby.html">0.1:areDefinedBy</a></li>
           
-              <li class="second-level" style="line-height: 20px;" id="sd_3349"><a   href="prop-dctitle.html">dc:title</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_832"><a   href="prop-01areguaranteedby.html">0.1:areGuaranteedBy</a></li>
           
-              <li class="second-level" style="line-height: 20px;" id="sd_3350"><a   href="prop-dctermsconformsto.html">dcterms:conformsTo</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_833"><a   href="prop-01areimposedby.html">0.1:areImposedBy</a></li>
           
-              <li class="second-level" style="line-height: 20px;" id="sd_3351"><a   href="prop-dctermsisreferencedby.html">dcterms:isReferencedBy</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_821"><a   href="prop-01attributioncondition.html">0.1:attributionCondition</a></li>
           
-              <li class="second-level" style="line-height: 20px;" id="sd_3352"><a   href="prop-01url.html">0.1:URL</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_834"><a   href="prop-01compatiblewith.html">0.1:compatibleWith</a></li>
           
-              <li class="second-level" style="line-height: 20px;" id="sd_3353"><a   href="prop-01attributioncondition.html">0.1:attributionCondition</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_835"><a   href="prop-01coverdatasets.html">0.1:coverDatasets</a></li>
           
-              <li class="second-level" style="line-height: 20px;" id="sd_3354"><a   href="prop-01createcondition.html">0.1:createCondition</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_822"><a   href="prop-01createcondition.html">0.1:createCondition</a></li>
           
-              <li class="second-level" style="line-height: 20px;" id="sd_3355"><a   href="prop-01creator.html">0.1:creator</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_823"><a   href="prop-01creator.html">0.1:creator</a></li>
           
-              <li class="second-level" style="line-height: 20px;" id="sd_3356"><a   href="prop-01icon.html">0.1:icon</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_836"><a   href="prop-01define.html">0.1:define</a></li>
           
-              <li class="second-level" style="line-height: 20px;" id="sd_3357"><a   href="prop-01nocopyrightcondition.html">0.1:noCopyrightCondition</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_837"><a   href="prop-01guarantee.html">0.1:guarantee</a></li>
           
-              <li class="second-level" style="line-height: 20px;" id="sd_3358"><a   href="prop-01noncommercialcondition.html">0.1:nonCommercialCondition</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_838"><a   href="prop-01haslicensemodel.html">0.1:hasLicenseModel</a></li>
           
-              <li class="second-level" style="line-height: 20px;" id="sd_3359"><a   href="prop-01nonderivativeworkscondition.html">0.1:nonDerivativeWorksCondition</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_824"><a   href="prop-01icon.html">0.1:icon</a></li>
           
-              <li class="second-level" style="line-height: 20px;" id="sd_3360"><a   href="prop-01remixcondition.html">0.1:remixCondition</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_839"><a   href="prop-01impose.html">0.1:impose</a></li>
           
-              <li class="second-level" style="line-height: 20px;" id="sd_3361"><a   href="prop-01sharealikecondition.html">0.1:shareAlikeCondition</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_825"><a   href="prop-01nocopyrightcondition.html">0.1:noCopyrightCondition</a></li>
           
-              <li class="second-level" style="line-height: 20px;" id="sd_3362"><a   href="prop-01sharecondition.html">0.1:shareCondition</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_826"><a   href="prop-01noncommercialcondition.html">0.1:nonCommercialCondition</a></li>
           
-              <li class="second-level" style="line-height: 20px;" id="sd_3363"><a   href="prop-01aredefinedby.html">0.1:areDefinedBy</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_827"><a   href="prop-01nonderivativeworkscondition.html">0.1:nonDerivativeWorksCondition</a></li>
           
-              <li class="second-level" style="line-height: 20px;" id="sd_3364"><a   href="prop-01areguaranteedby.html">0.1:areGuaranteedBy</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_828"><a   href="prop-01remixcondition.html">0.1:remixCondition</a></li>
           
-              <li class="second-level" style="line-height: 20px;" id="sd_3365"><a   href="prop-01areimposedby.html">0.1:areImposedBy</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_829"><a   href="prop-01sharealikecondition.html">0.1:shareAlikeCondition</a></li>
           
-              <li class="second-level" style="line-height: 20px;" id="sd_3366"><a   href="prop-01compatiblewith.html">0.1:compatibleWith</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_830"><a   href="prop-01sharecondition.html">0.1:shareCondition</a></li>
           
-              <li class="second-level" style="line-height: 20px;" id="sd_3367"><a   href="prop-01coverdatasets.html">0.1:coverDatasets</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_815"><a   href="prop-dccreator.html">dc:creator</a></li>
           
-              <li class="second-level" style="line-height: 20px;" id="sd_3368"><a   href="prop-01define.html">0.1:define</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_816"><a   href="prop-dcdescription.html">dc:description</a></li>
           
-              <li class="second-level" style="line-height: 20px;" id="sd_3369"><a   href="prop-01guarantee.html">0.1:guarantee</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_817"><a   href="prop-dctitle.html">dc:title</a></li>
           
-              <li class="second-level" style="line-height: 20px;" id="sd_3370"><a   href="prop-01haslicensemodel.html">0.1:hasLicenseModel</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_818"><a   href="prop-dctermsconformsto.html">dcterms:conformsTo</a></li>
           
-              <li class="second-level" style="line-height: 20px;" id="sd_3371"><a   href="prop-01impose.html">0.1:impose</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_819"><a   href="prop-dctermsisreferencedby.html">dcterms:isReferencedBy</a></li>
           
 
         
+
+        
+
 
         
 
@@ -345,7 +419,6 @@
 
 
 <!-- /#sidebar-wrapper -->
-
     
 
 
@@ -422,6 +495,19 @@
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
     
 
 
@@ -429,7 +515,7 @@
 
   <div class="page-header">
 
-      <h3>Entities Tree: Properties
+      <h3>Properties Tree
       </h3>
       <input id="search-input" type="text" class="form-control" placeholder="Filter...">
 
@@ -445,25 +531,33 @@
       <div class="panel-body entities-list">
 
           <table class="h"><tr>
-							<td class="tc" colspan=4><a title="http://purl.org/dc/elements/1.1/creator" class="treelinks" href="prop-dccreator.html">dc:creator</a></td>
-						  </tr><tr>
-							<td class="tc" colspan=4><a title="http://purl.org/dc/elements/1.1/description" class="treelinks" href="prop-dcdescription.html">dc:description</a></td>
-						  </tr><tr>
-							<td class="tc" colspan=4><a title="http://purl.org/dc/elements/1.1/title" class="treelinks" href="prop-dctitle.html">dc:title</a></td>
-						  </tr><tr>
-							<td class="tc" colspan=4><a title="http://purl.org/dc/terms/conformsTo" class="treelinks" href="prop-dctermsconformsto.html">dcterms:conformsTo</a></td>
-						  </tr><tr>
-							<td class="tc" colspan=4><a title="http://purl.org/dc/terms/isReferencedBy" class="treelinks" href="prop-dctermsisreferencedby.html">dcterms:isReferencedBy</a></td>
-						  </tr><tr>
 							<td class="tc" colspan=4><a title="http://purl.org/LiMo/0.1#URL" class="treelinks" href="prop-01url.html">0.1:URL</a></td>
 						  </tr><tr>
+							<td class="tc" colspan=4><a title="http://purl.org/LiMo/0.1#areDefinedBy" class="treelinks" href="prop-01aredefinedby.html">0.1:areDefinedBy</a></td>
+						  </tr><tr>
+							<td class="tc" colspan=4><a title="http://purl.org/LiMo/0.1#areGuaranteedBy" class="treelinks" href="prop-01areguaranteedby.html">0.1:areGuaranteedBy</a></td>
+						  </tr><tr>
+							<td class="tc" colspan=4><a title="http://purl.org/LiMo/0.1#areImposedBy" class="treelinks" href="prop-01areimposedby.html">0.1:areImposedBy</a></td>
+						  </tr><tr>
 							<td class="tc" colspan=4><a title="http://purl.org/LiMo/0.1#attributionCondition" class="treelinks" href="prop-01attributioncondition.html">0.1:attributionCondition</a></td>
+						  </tr><tr>
+							<td class="tc" colspan=4><a title="http://purl.org/LiMo/0.1#compatibleWith" class="treelinks" href="prop-01compatiblewith.html">0.1:compatibleWith</a></td>
+						  </tr><tr>
+							<td class="tc" colspan=4><a title="http://purl.org/LiMo/0.1#coverDatasets" class="treelinks" href="prop-01coverdatasets.html">0.1:coverDatasets</a></td>
 						  </tr><tr>
 							<td class="tc" colspan=4><a title="http://purl.org/LiMo/0.1#createCondition" class="treelinks" href="prop-01createcondition.html">0.1:createCondition</a></td>
 						  </tr><tr>
 							<td class="tc" colspan=4><a title="http://purl.org/LiMo/0.1#creator" class="treelinks" href="prop-01creator.html">0.1:creator</a></td>
 						  </tr><tr>
+							<td class="tc" colspan=4><a title="http://purl.org/LiMo/0.1#define" class="treelinks" href="prop-01define.html">0.1:define</a></td>
+						  </tr><tr>
+							<td class="tc" colspan=4><a title="http://purl.org/LiMo/0.1#guarantee" class="treelinks" href="prop-01guarantee.html">0.1:guarantee</a></td>
+						  </tr><tr>
+							<td class="tc" colspan=4><a title="http://purl.org/LiMo/0.1#hasLicenseModel" class="treelinks" href="prop-01haslicensemodel.html">0.1:hasLicenseModel</a></td>
+						  </tr><tr>
 							<td class="tc" colspan=4><a title="http://purl.org/LiMo/0.1#icon" class="treelinks" href="prop-01icon.html">0.1:icon</a></td>
+						  </tr><tr>
+							<td class="tc" colspan=4><a title="http://purl.org/LiMo/0.1#impose" class="treelinks" href="prop-01impose.html">0.1:impose</a></td>
 						  </tr><tr>
 							<td class="tc" colspan=4><a title="http://purl.org/LiMo/0.1#noCopyrightCondition" class="treelinks" href="prop-01nocopyrightcondition.html">0.1:noCopyrightCondition</a></td>
 						  </tr><tr>
@@ -477,23 +571,15 @@
 						  </tr><tr>
 							<td class="tc" colspan=4><a title="http://purl.org/LiMo/0.1#shareCondition" class="treelinks" href="prop-01sharecondition.html">0.1:shareCondition</a></td>
 						  </tr><tr>
-							<td class="tc" colspan=4><a title="http://purl.org/LiMo/0.1#areDefinedBy" class="treelinks" href="prop-01aredefinedby.html">0.1:areDefinedBy</a></td>
+							<td class="tc" colspan=4><a title="http://purl.org/dc/elements/1.1/creator" class="treelinks" href="prop-dccreator.html">dc:creator</a></td>
 						  </tr><tr>
-							<td class="tc" colspan=4><a title="http://purl.org/LiMo/0.1#areGuaranteedBy" class="treelinks" href="prop-01areguaranteedby.html">0.1:areGuaranteedBy</a></td>
+							<td class="tc" colspan=4><a title="http://purl.org/dc/elements/1.1/description" class="treelinks" href="prop-dcdescription.html">dc:description</a></td>
 						  </tr><tr>
-							<td class="tc" colspan=4><a title="http://purl.org/LiMo/0.1#areImposedBy" class="treelinks" href="prop-01areimposedby.html">0.1:areImposedBy</a></td>
+							<td class="tc" colspan=4><a title="http://purl.org/dc/elements/1.1/title" class="treelinks" href="prop-dctitle.html">dc:title</a></td>
 						  </tr><tr>
-							<td class="tc" colspan=4><a title="http://purl.org/LiMo/0.1#compatibleWith" class="treelinks" href="prop-01compatiblewith.html">0.1:compatibleWith</a></td>
+							<td class="tc" colspan=4><a title="http://purl.org/dc/terms/conformsTo" class="treelinks" href="prop-dctermsconformsto.html">dcterms:conformsTo</a></td>
 						  </tr><tr>
-							<td class="tc" colspan=4><a title="http://purl.org/LiMo/0.1#coverDatasets" class="treelinks" href="prop-01coverdatasets.html">0.1:coverDatasets</a></td>
-						  </tr><tr>
-							<td class="tc" colspan=4><a title="http://purl.org/LiMo/0.1#define" class="treelinks" href="prop-01define.html">0.1:define</a></td>
-						  </tr><tr>
-							<td class="tc" colspan=4><a title="http://purl.org/LiMo/0.1#guarantee" class="treelinks" href="prop-01guarantee.html">0.1:guarantee</a></td>
-						  </tr><tr>
-							<td class="tc" colspan=4><a title="http://purl.org/LiMo/0.1#hasLicenseModel" class="treelinks" href="prop-01haslicensemodel.html">0.1:hasLicenseModel</a></td>
-						  </tr><tr>
-							<td class="tc" colspan=4><a title="http://purl.org/LiMo/0.1#impose" class="treelinks" href="prop-01impose.html">0.1:impose</a></td>
+							<td class="tc" colspan=4><a title="http://purl.org/dc/terms/isReferencedBy" class="treelinks" href="prop-dctermsisreferencedby.html">dcterms:isReferencedBy</a></td>
 						  </tr></table>
 
 
@@ -530,7 +616,7 @@
   <footer class="footer">
     <div class="container">
     
-      <p class="text-muted">Documentation automatically generated on 26th February 2017 with <a href="https://github.com/lambdamusic/OntoSpy">OntoSpy</a> (v1.7.4)</p>
+      <p class="text-muted">Documentation automatically generated on Wed, 16 Nov 2022 14:12:39 with <a href="http://lambdamusic.github.io/Ontospy/">Ontospy</a> (v2.1.0)</p>
 
     
     </div>
@@ -543,13 +629,13 @@
 <!-- Bootstrap core JavaScript
 ================================================== -->
 <!-- Placed at the end of the document so the pages load faster -->
-<script src="../static/libs/jquery/1.12.4/jquery.min.js"></script>
-<script src="../static/libs/bootstrap-3.3.7-dist/js/bootstrap.min.js"></script>
+<script src="../static/libs/jquery/1_12_4/jquery.min.js"></script>
+<script src="../static/libs/bootstrap-3_3_7-dist/js/bootstrap.min.js"></script>
 
 <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
-<script src="../static/libs/bootstrap-3.3.7-dist/js/ie10-viewport-bug-workaround.js"></script>
+<script src="../static/libs/bootstrap-3_3_7-dist/js/ie10-viewport-bug-workaround.js"></script>
 
-<script src="../static/libs/Chart.js-2.4.0/Chart.bundle.js"></script>
+<script src="../static/libs/chartjs-2_4_0/chart.bundle.js"></script>
 
 
 <!-- Menu Toggle Script -->
@@ -580,6 +666,22 @@ $('#search-input-sidebar').keyup(function() {
 </script>
 
 
+
+
+  <!-- Scroll Sidebar Script -->
+
+  
+  
+
+  <script type="text/javascript">
+
+    $(document).ready(function (){
+      $('#sidebar-wrapper').animate({
+          scrollTop: $("#sd_814").offset().top - 100
+      }, 100);
+    });
+
+  </script>
 
 
 

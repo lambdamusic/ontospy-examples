@@ -10,23 +10,23 @@
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
     <meta name="description" content="">
     <meta name="author" content="">
-    <link rel="icon" href="../static/libs/img/favicon.ico">
+    <link rel="icon" href="../static/custom/favicon.ico">
 
 	
-		<title>OntoSpy > http://semanticbible.org/ns/2006/NTNames</title>
+		<title>Ontospy > http://semanticbible.org/ns/2006/NTNames</title>
 	
 
     <!-- Bootstrap core CSS -->
-    <!-- <link href="../static/libs/bootstrap-3.3.7-dist/css/bootstrap.min.css" rel="stylesheet">  -->
+    <!-- <link href="../static/libs/bootstrap-3_3_7-dist/css/bootstrap.min.css" rel="stylesheet">  -->
     <!-- Bootswatch:  -->
     <!-- cerulean  | cyborg |  flatly |  lumen |  sandstone |   spacelab  |  yeti | cosmo |  darkly |  paper | simplex | superhero |  journal | readable  |   slate |  united -->
-    <link href="../static/libs/bootswatch3.2/darkly/bootstrap.min.css" rel="stylesheet">
+    <link href="../static/libs/bootswatch3_2/readable/bootstrap.min.css" rel="stylesheet">
     <link href="../static/custom/css/simple-sidebar.css" rel="stylesheet">
     <link href="../static/custom/css/familytree.css" rel="stylesheet">
     <link href="../static/custom/css/tabletree.css" rel="stylesheet">
 
     <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
-    <link href="../static/libs/bootstrap-3.3.7-dist/css/ie10-viewport-bug-workaround.css" rel="stylesheet">
+    <link href="../static/libs/bootstrap-3_3_7-dist/css/ie10-viewport-bug-workaround.css" rel="stylesheet">
 
     <!-- Custom styles for this template -->
     <link href="../static/custom/css/sticky-footer-navbar.css" rel="stylesheet">
@@ -57,7 +57,7 @@
 
   .implementation-panel {
     overflow: auto;
-    max-height: 500px;
+    /*max-height: 500px;*/
   }
 
   tr.table-classproperties {
@@ -152,8 +152,13 @@
 
 
 /*pygments css*/
+pre { line-height: 125%; }
+td.linenos pre { color: #000000; background-color: #f0f0f0; padding-left: 5px; padding-right: 5px; }
+span.linenos { color: #000000; background-color: #f0f0f0; padding-left: 5px; padding-right: 5px; }
+td.linenos pre.special { color: #000000; background-color: #ffffc0; padding-left: 5px; padding-right: 5px; }
+span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 5px; padding-right: 5px; }
 .highlight .hll { background-color: #ffffcc }
-.highlight  { background: #f8f8f8; }
+.highlight { background: #f8f8f8; }
 .highlight .c { color: #408080; font-style: italic } /* Comment */
 .highlight .err { border: 1px solid #FF0000 } /* Error */
 .highlight .k { color: #008000; font-weight: bold } /* Keyword */
@@ -230,11 +235,6 @@
 
 
 
-/* override default footer background for dark themes only */
-.footer {
-  background-color: inherit;
-}
-
 
 
 
@@ -271,27 +271,22 @@
     <div id="navbar" class="collapse navbar-collapse">
       <ul class="nav navbar-nav">
         <li ><a href="index.html"><code style="font-size: 115%;">http://semanticbible.org/ns/2006/NTNames</code></a></li>
-        
 
-       
-
-
-        <li  ><a href="dashboard.html">Dashboard</a></li>
         <li  ><a href="entities-az.html">Entities A-Z</a></li>
-        <li class="dropdown  " >
-          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Entities Tree <span class="caret"></span></a>
-          <ul class="dropdown-menu">
-            
-            <li><a href="entities-tree-classes.html">Classes</a>
-            </li>
-            
-            
-            <li><a  href="entities-tree-properties.html">Properties</a>
-            </li>
-            
-            
-          </ul>
-      </li>
+        
+        <li ><a href="entities-tree-classes.html">Classes</a></li>
+        
+        
+        <li ><a href="entities-tree-properties.html">Properties</a></li>
+        
+        
+        
+        
+        <li  ><a href="statistics.html">Statistics</a></li>
+
+
+
+
 
       </ul>
       
@@ -299,6 +294,9 @@
 
   </div>
 </nav>
+
+
+
 
 
 
@@ -327,101 +325,101 @@
 
             
           
-              <li class="second-level" style="line-height: 20px;" id="sd_7013"><a  href="class-ntnamesagent.html">NTNames:Agent</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_4115"><a  href="class-ntnamesagent.html">NTNames:Agent</a></li>
           
-              <li class="second-level" style="line-height: 20px;" id="sd_7014"><a  href="class-ntnamesangel.html">NTNames:Angel</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_4116"><a  href="class-ntnamesangel.html">NTNames:Angel</a></li>
           
-              <li class="second-level" style="line-height: 20px;" id="sd_7015"><a  href="class-ntnamesbeliefgroup.html">NTNames:BeliefGroup</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_4117"><a  href="class-ntnamesbeliefgroup.html">NTNames:BeliefGroup</a></li>
           
-              <li class="second-level" style="line-height: 20px;" id="sd_7016"><a  href="class-ntnamesbeliefsystem.html">NTNames:BeliefSystem</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_4118"><a  href="class-ntnamesbeliefsystem.html">NTNames:BeliefSystem</a></li>
           
-              <li class="second-level" style="line-height: 20px;" id="sd_7017"><a  href="class-ntnamescharacter.html">NTNames:Character</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_4119"><a  href="class-ntnamescharacter.html">NTNames:Character</a></li>
           
-              <li class="second-level" style="line-height: 20px;" id="sd_7018"><a  href="class-ntnamescitizenshipattribute.html">NTNames:CitizenshipAttribute</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_4120"><a  href="class-ntnamescitizenshipattribute.html">NTNames:CitizenshipAttribute</a></li>
           
-              <li class="second-level" style="line-height: 20px;" id="sd_7019"><a  href="class-ntnamescity.html">NTNames:City</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_4121"><a  href="class-ntnamescity.html">NTNames:City</a></li>
           
-              <li class="second-level" style="line-height: 20px;" id="sd_7020"><a  href="class-ntnamescognitiveagent.html">NTNames:CognitiveAgent</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_4122"><a  href="class-ntnamescognitiveagent.html">NTNames:CognitiveAgent</a></li>
           
-              <li class="second-level" style="line-height: 20px;" id="sd_7021"><a  href="class-ntnamescontentbearingobject.html">NTNames:ContentBearingObject</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_4123"><a  href="class-ntnamescontentbearingobject.html">NTNames:ContentBearingObject</a></li>
           
-              <li class="second-level" style="line-height: 20px;" id="sd_7022"><a  href="class-ntnamesethnicgroup.html">NTNames:EthnicGroup</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_4124"><a  href="class-ntnamesethnicgroup.html">NTNames:EthnicGroup</a></li>
           
-              <li class="second-level" style="line-height: 20px;" id="sd_7023"><a  href="class-ntnamesethnicityattribute.html">NTNames:EthnicityAttribute</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_4125"><a  href="class-ntnamesethnicityattribute.html">NTNames:EthnicityAttribute</a></li>
           
-              <li class="second-level" style="line-height: 20px;" id="sd_7024"><a  href="class-ntnamesevilsupernaturalbeing.html">NTNames:EvilSupernaturalBeing</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_4126"><a  href="class-ntnamesevilsupernaturalbeing.html">NTNames:EvilSupernaturalBeing</a></li>
           
-              <li class="second-level" style="line-height: 20px;" id="sd_7025"><a  href="class-ntnamesfixedholiday.html">NTNames:FixedHoliday</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_4127"><a  href="class-ntnamesfixedholiday.html">NTNames:FixedHoliday</a></li>
           
-              <li class="second-level" style="line-height: 20px;" id="sd_7026"><a  href="class-ntnamesfreshwaterarea.html">NTNames:FreshWaterArea</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_4128"><a  href="class-ntnamesfreshwaterarea.html">NTNames:FreshWaterArea</a></li>
           
-              <li class="second-level" style="line-height: 20px;" id="sd_7027"><a  href="class-ntnamesgeographicarea.html">NTNames:GeographicArea</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_4129"><a  href="class-ntnamesgeographicarea.html">NTNames:GeographicArea</a></li>
           
-              <li class="second-level" style="line-height: 20px;" id="sd_7028"><a  href="class-ntnamesgeographiclocation.html">NTNames:GeographicLocation</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_4130"><a  href="class-ntnamesgeographiclocation.html">NTNames:GeographicLocation</a></li>
           
-              <li class="second-level" style="line-height: 20px;" id="sd_7029"><a  href="class-ntnamesgeopoliticalarea.html">NTNames:GeopoliticalArea</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_4131"><a  href="class-ntnamesgeopoliticalarea.html">NTNames:GeopoliticalArea</a></li>
           
-              <li class="second-level" style="line-height: 20px;" id="sd_7030"><a  href="class-ntnamesgod.html">NTNames:God</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_4132"><a  href="class-ntnamesgod.html">NTNames:God</a></li>
           
-              <li class="second-level" style="line-height: 20px;" id="sd_7031"><a  href="class-ntnamesgroup.html">NTNames:Group</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_4133"><a  href="class-ntnamesgroup.html">NTNames:Group</a></li>
           
-              <li class="second-level" style="line-height: 20px;" id="sd_7032"><a  href="class-ntnamesgroupofpeople.html">NTNames:GroupOfPeople</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_4134"><a  href="class-ntnamesgroupofpeople.html">NTNames:GroupOfPeople</a></li>
           
-              <li class="second-level" style="line-height: 20px;" id="sd_7033"><a  href="class-ntnameshuman.html">NTNames:Human</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_4135"><a  href="class-ntnameshuman.html">NTNames:Human</a></li>
           
-              <li class="second-level" style="line-height: 20px;" id="sd_7034"><a  href="class-ntnameshumanattribute.html">NTNames:HumanAttribute</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_4136"><a  href="class-ntnameshumanattribute.html">NTNames:HumanAttribute</a></li>
           
-              <li class="second-level" style="line-height: 20px;" id="sd_7035"><a  href="class-ntnamesisland.html">NTNames:Island</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_4137"><a  href="class-ntnamesisland.html">NTNames:Island</a></li>
           
-              <li class="second-level" style="line-height: 20px;" id="sd_7036"><a  href="class-ntnameslandarea.html">NTNames:LandArea</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_4138"><a  href="class-ntnameslandarea.html">NTNames:LandArea</a></li>
           
-              <li class="second-level" style="line-height: 20px;" id="sd_7037"><a  href="class-ntnamesman.html">NTNames:Man</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_4139"><a  href="class-ntnamesman.html">NTNames:Man</a></li>
           
-              <li class="second-level" style="line-height: 20px;" id="sd_7038"><a  href="class-ntnamesmountain.html">NTNames:Mountain</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_4140"><a  href="class-ntnamesmountain.html">NTNames:Mountain</a></li>
           
-              <li class="second-level" style="line-height: 20px;" id="sd_7039"><a  href="class-ntnamesnation.html">NTNames:Nation</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_4141"><a  href="class-ntnamesnation.html">NTNames:Nation</a></li>
           
-              <li class="second-level" style="line-height: 20px;" id="sd_7040"><a  href="class-ntnamesnaturallanguage.html">NTNames:NaturalLanguage</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_4142"><a  href="class-ntnamesnaturallanguage.html">NTNames:NaturalLanguage</a></li>
           
-              <li class="second-level" style="line-height: 20px;" id="sd_7041"><a  href="class-ntnamesobject.html">NTNames:Object</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_4143"><a  href="class-ntnamesobject.html">NTNames:Object</a></li>
           
-              <li class="second-level" style="line-height: 20px;" id="sd_7042"><a  href="class-ntnamesorganization.html">NTNames:Organization</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_4144"><a  href="class-ntnamesorganization.html">NTNames:Organization</a></li>
           
-              <li class="second-level" style="line-height: 20px;" id="sd_7043"><a  href="class-ntnamespoliticalattribute.html">NTNames:PoliticalAttribute</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_4145"><a  href="class-ntnamespoliticalattribute.html">NTNames:PoliticalAttribute</a></li>
           
-              <li class="second-level" style="line-height: 20px;" id="sd_7044"><a  href="class-ntnamespoliticalbeliefsystem.html">NTNames:PoliticalBeliefSystem</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_4146"><a  href="class-ntnamespoliticalbeliefsystem.html">NTNames:PoliticalBeliefSystem</a></li>
           
-              <li class="second-level" style="line-height: 20px;" id="sd_7045"><a  href="class-ntnamespoliticalorganization.html">NTNames:PoliticalOrganization</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_4147"><a  href="class-ntnamespoliticalorganization.html">NTNames:PoliticalOrganization</a></li>
           
-              <li class="second-level" style="line-height: 20px;" id="sd_7046"><a  href="class-ntnamesregion.html">NTNames:Region</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_4148"><a  href="class-ntnamesregion.html">NTNames:Region</a></li>
           
-              <li class="second-level" style="line-height: 20px;" id="sd_7047"><a  href="class-ntnamesreligiousbelief.html">NTNames:ReligiousBelief</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_4149"><a  href="class-ntnamesreligiousbelief.html">NTNames:ReligiousBelief</a></li>
           
-              <li class="second-level" style="line-height: 20px;" id="sd_7048"><a  href="class-ntnamesreligiousbeliefsystem.html">NTNames:ReligiousBeliefSystem</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_4150"><a  href="class-ntnamesreligiousbeliefsystem.html">NTNames:ReligiousBeliefSystem</a></li>
           
-              <li class="second-level" style="line-height: 20px;" id="sd_7049"><a  href="class-ntnamesreligiousorganization.html">NTNames:ReligiousOrganization</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_4151"><a  href="class-ntnamesreligiousorganization.html">NTNames:ReligiousOrganization</a></li>
           
-              <li class="second-level" style="line-height: 20px;" id="sd_7050"><a  href="class-ntnamesresidencegroup.html">NTNames:ResidenceGroup</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_4152"><a  href="class-ntnamesresidencegroup.html">NTNames:ResidenceGroup</a></li>
           
-              <li class="second-level" style="line-height: 20px;" id="sd_7051"><a  href="class-ntnamesresidencyattribute.html">NTNames:ResidencyAttribute</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_4153"><a  href="class-ntnamesresidencyattribute.html">NTNames:ResidencyAttribute</a></li>
           
-              <li class="second-level" style="line-height: 20px;" id="sd_7052"><a  href="class-ntnamessaltwaterarea.html">NTNames:SaltWaterArea</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_4154"><a  href="class-ntnamessaltwaterarea.html">NTNames:SaltWaterArea</a></li>
           
-              <li class="second-level" style="line-height: 20px;" id="sd_7053"><a  href="class-ntnamesseries.html">NTNames:Series</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_4155"><a  href="class-ntnamesseries.html">NTNames:Series</a></li>
           
-              <li class="second-level" style="line-height: 20px;" id="sd_7054"><a  href="class-ntnamessonofgod.html">NTNames:SonOfGod</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_4156"><a  href="class-ntnamessonofgod.html">NTNames:SonOfGod</a></li>
           
-              <li class="second-level" style="line-height: 20px;" id="sd_7055"><a  href="class-ntnamesstateorprovince.html">NTNames:StateOrProvince</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_4157"><a  href="class-ntnamesstateorprovince.html">NTNames:StateOrProvince</a></li>
           
-              <li class="second-level" style="line-height: 20px;" id="sd_7056"><a  href="class-ntnamessupernaturalbeing.html">NTNames:SupernaturalBeing</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_4158"><a  href="class-ntnamessupernaturalbeing.html">NTNames:SupernaturalBeing</a></li>
           
-              <li class="second-level" style="line-height: 20px;" id="sd_7057"><a  href="class-ntnamessupernaturalregion.html">NTNames:SupernaturalRegion</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_4159"><a  href="class-ntnamessupernaturalregion.html">NTNames:SupernaturalRegion</a></li>
           
-              <li class="second-level" style="line-height: 20px;" id="sd_7058"><a  href="class-ntnamestribe.html">NTNames:Tribe</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_4160"><a  href="class-ntnamestribe.html">NTNames:Tribe</a></li>
           
-              <li class="second-level" style="line-height: 20px;" id="sd_7059"><a  href="class-ntnameswaterarea.html">NTNames:WaterArea</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_4161"><a  href="class-ntnameswaterarea.html">NTNames:WaterArea</a></li>
           
-              <li class="second-level" style="line-height: 20px;" id="sd_7060"><a  href="class-ntnameswoman.html">NTNames:Woman</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_4162"><a  href="class-ntnameswoman.html">NTNames:Woman</a></li>
           
         
 
@@ -431,84 +429,87 @@
 
             
           
-              <li class="second-level" style="line-height: 20px;" id="sd_7061"><a   href="prop-ntnameslnid.html">NTNames:LNID</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_4163"><a   href="prop-ntnameslnid.html">NTNames:LNID</a></li>
           
-              <li class="second-level" style="line-height: 20px;" id="sd_7062"><a   href="prop-ntnamesaltitude.html">NTNames:altitude</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_4164"><a   href="prop-ntnamesaltitude.html">NTNames:altitude</a></li>
           
-              <li class="second-level" style="line-height: 20px;" id="sd_7063"><a   href="prop-ntnamesdescription.html">NTNames:description</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_4176"><a   href="prop-ntnamesantagonistof.html">NTNames:antagonistOf</a></li>
           
-              <li class="second-level" style="line-height: 20px;" id="sd_7064"><a   href="prop-ntnameshasonlygenealogymention.html">NTNames:hasOnlyGenealogyMention</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_4177"><a   href="prop-ntnameschildof.html">NTNames:childOf</a></li>
           
-              <li class="second-level" style="line-height: 20px;" id="sd_7065"><a   href="prop-ntnameslatitude.html">NTNames:latitude</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_4178"><a   href="prop-ntnamescollaborateswith.html">NTNames:collaboratesWith</a></li>
           
-              <li class="second-level" style="line-height: 20px;" id="sd_7066"><a   href="prop-ntnameslongitude.html">NTNames:longitude</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_4165"><a   href="prop-ntnamesdescription.html">NTNames:description</a></li>
           
-              <li class="second-level" style="line-height: 20px;" id="sd_7067"><a   href="prop-ntnamesname_en.html">NTNames:name_en</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_4179"><a   href="prop-ntnamesenemyof.html">NTNames:enemyOf</a></li>
           
-              <li class="second-level" style="line-height: 20px;" id="sd_7068"><a   href="prop-ntnamesname_grc.html">NTNames:name_grc</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_4180"><a   href="prop-ntnamesethnicity.html">NTNames:ethnicity</a></li>
           
-              <li class="second-level" style="line-height: 20px;" id="sd_7069"><a   href="prop-ntnamesoccupation.html">NTNames:occupation</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_4181"><a   href="prop-ntnamesethnicityof.html">NTNames:ethnicityOf</a></li>
           
-              <li class="second-level" style="line-height: 20px;" id="sd_7070"><a   href="prop-ntnameslocation.html">NTNames:location</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_4182"><a   href="prop-ntnameshasantagonist.html">NTNames:hasAntagonist</a></li>
           
-              <li class="second-level" style="line-height: 20px;" id="sd_7071"><a   href="prop-ntnamesnativeplace.html">NTNames:nativePlace</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_4183"><a   href="prop-ntnameshasenemy.html">NTNames:hasEnemy</a></li>
           
-              <li class="second-level" style="line-height: 20px;" id="sd_7072"><a   href="prop-ntnameslocationof.html">NTNames:locationOf</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_4166"><a   href="prop-ntnameshasonlygenealogymention.html">NTNames:hasOnlyGenealogyMention</a></li>
           
-              <li class="second-level" style="line-height: 20px;" id="sd_7073"><a   href="prop-ntnamesnativeplaceof.html">NTNames:nativePlaceOf</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_4184"><a   href="prop-ntnamesknows.html">NTNames:knows</a></li>
           
-              <li class="second-level" style="line-height: 20px;" id="sd_7074"><a   href="prop-ntnamesantagonistof.html">NTNames:antagonistOf</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_4167"><a   href="prop-ntnameslatitude.html">NTNames:latitude</a></li>
           
-              <li class="second-level" style="line-height: 20px;" id="sd_7075"><a   href="prop-ntnameschildof.html">NTNames:childOf</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_4172"><a   href="prop-ntnameslocation.html">NTNames:location</a></li>
           
-              <li class="second-level" style="line-height: 20px;" id="sd_7076"><a   href="prop-ntnamescollaborateswith.html">NTNames:collaboratesWith</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_4174"><a   href="prop-ntnameslocationof.html">NTNames:locationOf</a></li>
           
-              <li class="second-level" style="line-height: 20px;" id="sd_7077"><a   href="prop-ntnamesenemyof.html">NTNames:enemyOf</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_4168"><a   href="prop-ntnameslongitude.html">NTNames:longitude</a></li>
           
-              <li class="second-level" style="line-height: 20px;" id="sd_7078"><a   href="prop-ntnamesethnicity.html">NTNames:ethnicity</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_4185"><a   href="prop-ntnamesmember.html">NTNames:member</a></li>
           
-              <li class="second-level" style="line-height: 20px;" id="sd_7079"><a   href="prop-ntnamesethnicityof.html">NTNames:ethnicityOf</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_4186"><a   href="prop-ntnamesmemberof.html">NTNames:memberOf</a></li>
           
-              <li class="second-level" style="line-height: 20px;" id="sd_7080"><a   href="prop-ntnameshasantagonist.html">NTNames:hasAntagonist</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_4169"><a   href="prop-ntnamesname_en.html">NTNames:name_en</a></li>
           
-              <li class="second-level" style="line-height: 20px;" id="sd_7081"><a   href="prop-ntnameshasenemy.html">NTNames:hasEnemy</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_4170"><a   href="prop-ntnamesname_grc.html">NTNames:name_grc</a></li>
           
-              <li class="second-level" style="line-height: 20px;" id="sd_7082"><a   href="prop-ntnamesknows.html">NTNames:knows</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_4173"><a   href="prop-ntnamesnativeplace.html">NTNames:nativePlace</a></li>
           
-              <li class="second-level" style="line-height: 20px;" id="sd_7083"><a   href="prop-ntnamesmember.html">NTNames:member</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_4175"><a   href="prop-ntnamesnativeplaceof.html">NTNames:nativePlaceOf</a></li>
           
-              <li class="second-level" style="line-height: 20px;" id="sd_7084"><a   href="prop-ntnamesmemberof.html">NTNames:memberOf</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_4171"><a   href="prop-ntnamesoccupation.html">NTNames:occupation</a></li>
           
-              <li class="second-level" style="line-height: 20px;" id="sd_7085"><a   href="prop-ntnamesparentof.html">NTNames:parentOf</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_4187"><a   href="prop-ntnamesparentof.html">NTNames:parentOf</a></li>
           
-              <li class="second-level" style="line-height: 20px;" id="sd_7086"><a   href="prop-ntnamespoliticalbelief.html">NTNames:politicalBelief</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_4188"><a   href="prop-ntnamespoliticalbelief.html">NTNames:politicalBelief</a></li>
           
-              <li class="second-level" style="line-height: 20px;" id="sd_7087"><a   href="prop-ntnamespossiblysamepersonas.html">NTNames:possiblySamePersonAs</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_4189"><a   href="prop-ntnamespossiblysamepersonas.html">NTNames:possiblySamePersonAs</a></li>
           
-              <li class="second-level" style="line-height: 20px;" id="sd_7088"><a   href="prop-ntnamesrelativeof.html">NTNames:relativeOf</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_4190"><a   href="prop-ntnamesrelativeof.html">NTNames:relativeOf</a></li>
           
-              <li class="second-level" style="line-height: 20px;" id="sd_7089"><a   href="prop-ntnamesreligiousbelief.html">NTNames:religiousBelief</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_4191"><a   href="prop-ntnamesreligiousbelief.html">NTNames:religiousBelief</a></li>
           
-              <li class="second-level" style="line-height: 20px;" id="sd_7090"><a   href="prop-ntnamesreligiousbeliefof.html">NTNames:religiousBeliefOf</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_4192"><a   href="prop-ntnamesreligiousbeliefof.html">NTNames:religiousBeliefOf</a></li>
           
-              <li class="second-level" style="line-height: 20px;" id="sd_7091"><a   href="prop-ntnamesresidentplace.html">NTNames:residentPlace</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_4193"><a   href="prop-ntnamesresidentplace.html">NTNames:residentPlace</a></li>
           
-              <li class="second-level" style="line-height: 20px;" id="sd_7092"><a class="active"  href="prop-ntnamesresidentplaceof.html">NTNames:residentPlaceOf</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_4194"><a class="active"  href="prop-ntnamesresidentplaceof.html">NTNames:residentPlaceOf</a></li>
           
-              <li class="second-level" style="line-height: 20px;" id="sd_7093"><a   href="prop-ntnamessiblingof.html">NTNames:siblingOf</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_4195"><a   href="prop-ntnamessiblingof.html">NTNames:siblingOf</a></li>
           
-              <li class="second-level" style="line-height: 20px;" id="sd_7094"><a   href="prop-ntnamesspouseof.html">NTNames:spouseOf</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_4196"><a   href="prop-ntnamesspouseof.html">NTNames:spouseOf</a></li>
           
-              <li class="second-level" style="line-height: 20px;" id="sd_7095"><a   href="prop-ntnamessubregion.html">NTNames:subregion</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_4197"><a   href="prop-ntnamessubregion.html">NTNames:subregion</a></li>
           
-              <li class="second-level" style="line-height: 20px;" id="sd_7096"><a   href="prop-ntnamessubregionof.html">NTNames:subregionOf</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_4198"><a   href="prop-ntnamessubregionof.html">NTNames:subregionOf</a></li>
           
-              <li class="second-level" style="line-height: 20px;" id="sd_7097"><a   href="prop-ntnamesvisitedplace.html">NTNames:visitedPlace</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_4199"><a   href="prop-ntnamesvisitedplace.html">NTNames:visitedPlace</a></li>
           
-              <li class="second-level" style="line-height: 20px;" id="sd_7098"><a   href="prop-ntnamesvisitedplaceof.html">NTNames:visitedPlaceOf</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_4200"><a   href="prop-ntnamesvisitedplaceof.html">NTNames:visitedPlaceOf</a></li>
           
 
         
+
+        
+
 
         
 
@@ -526,7 +527,6 @@
 
 
 <!-- /#sidebar-wrapper -->
-
     
 
 
@@ -591,6 +591,12 @@
 
 
 
+
+
+
+
+
+
   <ol class="breadcrumb">
     <li>
       <a href="index.html">Home</a>
@@ -602,9 +608,16 @@
           <a href="entities-tree-properties.html">Properties</a>
     </li>
       <li class="active">
-            http://semanticbible.org/ns/2006/NTNames#residentPlaceOf
+            NTNames:residentPlaceOf
         </li>
   </ol>
+
+
+
+
+
+
+
 
 
 
@@ -704,7 +717,7 @@
                     <div class="panel-body">
 
                     
-                            <li><a href="prop-ntnamesvisitedplaceof.html">NTNames:visitedPlaceOf</a></li>
+                            <li><a href="prop-ntnamesvisitedplaceof.html" title="http://semanticbible.org/ns/2006/NTNames#visitedPlaceOf">NTNames:visitedPlaceOf</a></li>
                     
 
                     </div>
@@ -733,7 +746,14 @@
                    <td>
                      
                          
-                           <a href="class-ntnamesregion.html">NTNames:Region</a>
+                         
+                              <a href="class-ntnamesregion.html" title="http://semanticbible.org/ns/2006/NTNames#Region">NTNames:Region</a>
+                           
+                           , 
+                         
+                         
+                              <a>Blank node</a> (see implementation)
+                           
                            
                          
                      
@@ -764,22 +784,17 @@
 
                 
 
-                    <div class="highlight"><pre><span></span><span class="k">@prefix</span><span class="w"> </span><span class="nn">:</span><span class="w"> </span><span class="nv">&lt;http://semanticbible.org/ns/2006/NTNames#&gt;</span><span class="w"> </span><span class="p">.</span><span class="w"></span>
-<span class="k">@prefix</span><span class="w"> </span><span class="nn">dc:</span><span class="w"> </span><span class="nv">&lt;http://purl.org/dc/elements/1.1/&gt;</span><span class="w"> </span><span class="p">.</span><span class="w"></span>
-<span class="k">@prefix</span><span class="w"> </span><span class="nn">owl:</span><span class="w"> </span><span class="nv">&lt;http://www.w3.org/2002/07/owl#&gt;</span><span class="w"> </span><span class="p">.</span><span class="w"></span>
-<span class="k">@prefix</span><span class="w"> </span><span class="nn">rdf:</span><span class="w"> </span><span class="nv">&lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#&gt;</span><span class="w"> </span><span class="p">.</span><span class="w"></span>
-<span class="k">@prefix</span><span class="w"> </span><span class="nn">rdfs:</span><span class="w"> </span><span class="nv">&lt;http://www.w3.org/2000/01/rdf-schema#&gt;</span><span class="w"> </span><span class="p">.</span><span class="w"></span>
-<span class="k">@prefix</span><span class="w"> </span><span class="nn">rss:</span><span class="w"> </span><span class="nv">&lt;http://purl.org/rss/1.0/&gt;</span><span class="w"> </span><span class="p">.</span><span class="w"></span>
-<span class="k">@prefix</span><span class="w"> </span><span class="nn">skos:</span><span class="w"> </span><span class="nv">&lt;http://www.w3.org/2004/02/skos/core#&gt;</span><span class="w"> </span><span class="p">.</span><span class="w"></span>
-<span class="k">@prefix</span><span class="w"> </span><span class="nn">xml:</span><span class="w"> </span><span class="nv">&lt;http://www.w3.org/XML/1998/namespace&gt;</span><span class="w"> </span><span class="p">.</span><span class="w"></span>
-<span class="k">@prefix</span><span class="w"> </span><span class="nn">xsd:</span><span class="w"> </span><span class="nv">&lt;http://www.w3.org/2001/XMLSchema#&gt;</span><span class="w"> </span><span class="p">.</span><span class="w"></span>
+                    <div class="highlight"><pre><span></span><span class="k">@prefix</span><span class="w"> </span><span class="nn">:</span><span class="w"> </span><span class="nv">&lt;http://semanticbible.org/ns/2006/NTNames#&gt;</span><span class="w"> </span><span class="p">.</span>
+<span class="k">@prefix</span><span class="w"> </span><span class="nn">owl:</span><span class="w"> </span><span class="nv">&lt;http://www.w3.org/2002/07/owl#&gt;</span><span class="w"> </span><span class="p">.</span>
+<span class="k">@prefix</span><span class="w"> </span><span class="nn">rdf:</span><span class="w"> </span><span class="nv">&lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#&gt;</span><span class="w"> </span><span class="p">.</span>
+<span class="k">@prefix</span><span class="w"> </span><span class="nn">rdfs:</span><span class="w"> </span><span class="nv">&lt;http://www.w3.org/2000/01/rdf-schema#&gt;</span><span class="w"> </span><span class="p">.</span>
 
-<span class="nn">:</span><span class="nt">residentPlaceOf</span><span class="w"> </span><span class="kt">a</span><span class="w"> </span><span class="nn">owl:</span><span class="nt">ObjectProperty</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
-<span class="w">    </span><span class="nn">rdfs:</span><span class="nt">domain</span><span class="w"> </span><span class="nn">:</span><span class="nt">Region</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
-<span class="w">    </span><span class="nn">rdfs:</span><span class="nt">range</span><span class="w"> </span><span class="p">[</span><span class="w"> </span><span class="kt">a</span><span class="w"> </span><span class="nn">owl:</span><span class="nt">Class</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
-<span class="w">            </span><span class="nn">owl:</span><span class="nt">unionOf</span><span class="w"> </span><span class="p">(</span><span class="w"> </span><span class="nn">:</span><span class="nt">Human</span><span class="w"> </span><span class="nn">:</span><span class="nt">GroupOfPeople</span><span class="w"> </span><span class="p">)</span><span class="w"> </span><span class="p">]</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
-<span class="w">    </span><span class="nn">rdfs:</span><span class="nt">subPropertyOf</span><span class="w"> </span><span class="nn">:</span><span class="nt">visitedPlaceOf</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
-<span class="w">    </span><span class="nn">owl:</span><span class="nt">inverseOf</span><span class="w"> </span><span class="nn">:</span><span class="nt">residentPlace</span><span class="w"> </span><span class="p">.</span><span class="w"></span>
+<span class="p">:</span><span class="nt">residentPlaceOf</span> <span class="kt">a</span> <span class="nn">owl</span><span class="p">:</span><span class="nt">ObjectProperty</span> <span class="p">;</span>
+    <span class="nn">rdfs</span><span class="p">:</span><span class="nt">domain</span> <span class="p">:</span><span class="nt">Region</span> <span class="p">;</span>
+    <span class="nn">rdfs</span><span class="p">:</span><span class="nt">range</span> <span class="p">[</span> <span class="kt">a</span> <span class="nn">owl</span><span class="p">:</span><span class="nt">Class</span> <span class="p">;</span>
+            <span class="nn">owl</span><span class="p">:</span><span class="nt">unionOf</span> <span class="p">(</span> <span class="p">:</span><span class="nt">Human</span> <span class="p">:</span><span class="nt">GroupOfPeople</span> <span class="p">)</span> <span class="p">]</span> <span class="p">;</span>
+    <span class="nn">rdfs</span><span class="p">:</span><span class="nt">subPropertyOf</span> <span class="p">:</span><span class="nt">visitedPlaceOf</span> <span class="p">;</span>
+    <span class="nn">owl</span><span class="p">:</span><span class="nt">inverseOf</span> <span class="p">:</span><span class="nt">residentPlace</span> <span class="p">.</span>
 </pre></div>
 
 
@@ -818,7 +833,7 @@
   <footer class="footer">
     <div class="container">
     
-      <p class="text-muted">Documentation automatically generated on 26th February 2017 with <a href="https://github.com/lambdamusic/OntoSpy">OntoSpy</a> (v1.7.4)</p>
+      <p class="text-muted">Documentation automatically generated on Wed, 16 Nov 2022 14:13:16 with <a href="http://lambdamusic.github.io/Ontospy/">Ontospy</a> (v2.1.0)</p>
 
     
     </div>
@@ -831,13 +846,13 @@
 <!-- Bootstrap core JavaScript
 ================================================== -->
 <!-- Placed at the end of the document so the pages load faster -->
-<script src="../static/libs/jquery/1.12.4/jquery.min.js"></script>
-<script src="../static/libs/bootstrap-3.3.7-dist/js/bootstrap.min.js"></script>
+<script src="../static/libs/jquery/1_12_4/jquery.min.js"></script>
+<script src="../static/libs/bootstrap-3_3_7-dist/js/bootstrap.min.js"></script>
 
 <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
-<script src="../static/libs/bootstrap-3.3.7-dist/js/ie10-viewport-bug-workaround.js"></script>
+<script src="../static/libs/bootstrap-3_3_7-dist/js/ie10-viewport-bug-workaround.js"></script>
 
-<script src="../static/libs/Chart.js-2.4.0/Chart.bundle.js"></script>
+<script src="../static/libs/chartjs-2_4_0/chart.bundle.js"></script>
 
 
 <!-- Menu Toggle Script -->
@@ -871,13 +886,15 @@ $('#search-input-sidebar').keyup(function() {
 
 
   <!-- Scroll Sidebar Script -->
+
   
   
+
   <script type="text/javascript">
 
     $(document).ready(function (){
       $('#sidebar-wrapper').animate({
-          scrollTop: $("#sd_7092").offset().top - 100
+          scrollTop: $("#sd_4194").offset().top - 100
       }, 100);
     });
 

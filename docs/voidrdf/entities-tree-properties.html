@@ -10,23 +10,23 @@
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
     <meta name="description" content="">
     <meta name="author" content="">
-    <link rel="icon" href="../static/libs/img/favicon.ico">
+    <link rel="icon" href="../static/custom/favicon.ico">
 
 	
-		<title>OntoSpy > http://vocab.deri.ie/void</title>
+		<title>Ontospy > http://vocab.deri.ie/void</title>
 	
 
     <!-- Bootstrap core CSS -->
-    <!-- <link href="../static/libs/bootstrap-3.3.7-dist/css/bootstrap.min.css" rel="stylesheet">  -->
+    <!-- <link href="../static/libs/bootstrap-3_3_7-dist/css/bootstrap.min.css" rel="stylesheet">  -->
     <!-- Bootswatch:  -->
     <!-- cerulean  | cyborg |  flatly |  lumen |  sandstone |   spacelab  |  yeti | cosmo |  darkly |  paper | simplex | superhero |  journal | readable  |   slate |  united -->
-    <link href="../static/libs/bootswatch3.2/slate/bootstrap.min.css" rel="stylesheet">
+    <link href="../static/libs/bootswatch3_2/slate/bootstrap.min.css" rel="stylesheet">
     <link href="../static/custom/css/simple-sidebar.css" rel="stylesheet">
     <link href="../static/custom/css/familytree.css" rel="stylesheet">
     <link href="../static/custom/css/tabletree.css" rel="stylesheet">
 
     <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
-    <link href="../static/libs/bootstrap-3.3.7-dist/css/ie10-viewport-bug-workaround.css" rel="stylesheet">
+    <link href="../static/libs/bootstrap-3_3_7-dist/css/ie10-viewport-bug-workaround.css" rel="stylesheet">
 
     <!-- Custom styles for this template -->
     <link href="../static/custom/css/sticky-footer-navbar.css" rel="stylesheet">
@@ -57,7 +57,7 @@
 
   .implementation-panel {
     overflow: auto;
-    max-height: 500px;
+    /*max-height: 500px;*/
   }
 
   tr.table-classproperties {
@@ -152,7 +152,80 @@
 
 
 /*pygments css*/
-
+pre { line-height: 125%; }
+td.linenos pre { color: #000000; background-color: #f0f0f0; padding-left: 5px; padding-right: 5px; }
+span.linenos { color: #000000; background-color: #f0f0f0; padding-left: 5px; padding-right: 5px; }
+td.linenos pre.special { color: #000000; background-color: #ffffc0; padding-left: 5px; padding-right: 5px; }
+span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 5px; padding-right: 5px; }
+.highlight .hll { background-color: #ffffcc }
+.highlight { background: #f8f8f8; }
+.highlight .c { color: #408080; font-style: italic } /* Comment */
+.highlight .err { border: 1px solid #FF0000 } /* Error */
+.highlight .k { color: #008000; font-weight: bold } /* Keyword */
+.highlight .o { color: #666666 } /* Operator */
+.highlight .ch { color: #408080; font-style: italic } /* Comment.Hashbang */
+.highlight .cm { color: #408080; font-style: italic } /* Comment.Multiline */
+.highlight .cp { color: #BC7A00 } /* Comment.Preproc */
+.highlight .cpf { color: #408080; font-style: italic } /* Comment.PreprocFile */
+.highlight .c1 { color: #408080; font-style: italic } /* Comment.Single */
+.highlight .cs { color: #408080; font-style: italic } /* Comment.Special */
+.highlight .gd { color: #A00000 } /* Generic.Deleted */
+.highlight .ge { font-style: italic } /* Generic.Emph */
+.highlight .gr { color: #FF0000 } /* Generic.Error */
+.highlight .gh { color: #000080; font-weight: bold } /* Generic.Heading */
+.highlight .gi { color: #00A000 } /* Generic.Inserted */
+.highlight .go { color: #888888 } /* Generic.Output */
+.highlight .gp { color: #000080; font-weight: bold } /* Generic.Prompt */
+.highlight .gs { font-weight: bold } /* Generic.Strong */
+.highlight .gu { color: #800080; font-weight: bold } /* Generic.Subheading */
+.highlight .gt { color: #0044DD } /* Generic.Traceback */
+.highlight .kc { color: #008000; font-weight: bold } /* Keyword.Constant */
+.highlight .kd { color: #008000; font-weight: bold } /* Keyword.Declaration */
+.highlight .kn { color: #008000; font-weight: bold } /* Keyword.Namespace */
+.highlight .kp { color: #008000 } /* Keyword.Pseudo */
+.highlight .kr { color: #008000; font-weight: bold } /* Keyword.Reserved */
+.highlight .kt { color: #B00040 } /* Keyword.Type */
+.highlight .m { color: #666666 } /* Literal.Number */
+.highlight .s { color: #BA2121 } /* Literal.String */
+.highlight .na { color: #7D9029 } /* Name.Attribute */
+.highlight .nb { color: #008000 } /* Name.Builtin */
+.highlight .nc { color: #0000FF; font-weight: bold } /* Name.Class */
+.highlight .no { color: #880000 } /* Name.Constant */
+.highlight .nd { color: #AA22FF } /* Name.Decorator */
+.highlight .ni { color: #999999; font-weight: bold } /* Name.Entity */
+.highlight .ne { color: #D2413A; font-weight: bold } /* Name.Exception */
+.highlight .nf { color: #0000FF } /* Name.Function */
+.highlight .nl { color: #A0A000 } /* Name.Label */
+.highlight .nn { color: #0000FF; font-weight: bold } /* Name.Namespace */
+.highlight .nt { color: #008000; font-weight: bold } /* Name.Tag */
+.highlight .nv { color: #19177C } /* Name.Variable */
+.highlight .ow { color: #AA22FF; font-weight: bold } /* Operator.Word */
+.highlight .w { color: #bbbbbb } /* Text.Whitespace */
+.highlight .mb { color: #666666 } /* Literal.Number.Bin */
+.highlight .mf { color: #666666 } /* Literal.Number.Float */
+.highlight .mh { color: #666666 } /* Literal.Number.Hex */
+.highlight .mi { color: #666666 } /* Literal.Number.Integer */
+.highlight .mo { color: #666666 } /* Literal.Number.Oct */
+.highlight .sa { color: #BA2121 } /* Literal.String.Affix */
+.highlight .sb { color: #BA2121 } /* Literal.String.Backtick */
+.highlight .sc { color: #BA2121 } /* Literal.String.Char */
+.highlight .dl { color: #BA2121 } /* Literal.String.Delimiter */
+.highlight .sd { color: #BA2121; font-style: italic } /* Literal.String.Doc */
+.highlight .s2 { color: #BA2121 } /* Literal.String.Double */
+.highlight .se { color: #BB6622; font-weight: bold } /* Literal.String.Escape */
+.highlight .sh { color: #BA2121 } /* Literal.String.Heredoc */
+.highlight .si { color: #BB6688; font-weight: bold } /* Literal.String.Interpol */
+.highlight .sx { color: #008000 } /* Literal.String.Other */
+.highlight .sr { color: #BB6688 } /* Literal.String.Regex */
+.highlight .s1 { color: #BA2121 } /* Literal.String.Single */
+.highlight .ss { color: #19177C } /* Literal.String.Symbol */
+.highlight .bp { color: #008000 } /* Name.Builtin.Pseudo */
+.highlight .fm { color: #0000FF } /* Name.Function.Magic */
+.highlight .vc { color: #19177C } /* Name.Variable.Class */
+.highlight .vg { color: #19177C } /* Name.Variable.Global */
+.highlight .vi { color: #19177C } /* Name.Variable.Instance */
+.highlight .vm { color: #19177C } /* Name.Variable.Magic */
+.highlight .il { color: #666666 } /* Literal.Number.Integer.Long */
 
 /*overloading this class from pygments*/
 .highlight {
@@ -204,27 +277,22 @@
     <div id="navbar" class="collapse navbar-collapse">
       <ul class="nav navbar-nav">
         <li ><a href="index.html"><code style="font-size: 115%;">http://vocab.deri.ie/void</code></a></li>
-        
 
-       
-
-
-        <li  ><a href="dashboard.html">Dashboard</a></li>
         <li  ><a href="entities-az.html">Entities A-Z</a></li>
-        <li class="dropdown active " >
-          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Entities Tree <span class="caret"></span></a>
-          <ul class="dropdown-menu">
-            
-            <li><a href="entities-tree-classes.html">Classes</a>
-            </li>
-            
-            
-            <li><a class="active" href="entities-tree-properties.html">Properties</a>
-            </li>
-            
-            
-          </ul>
-      </li>
+        
+        <li ><a href="entities-tree-classes.html">Classes</a></li>
+        
+        
+        <li class="active"><a href="entities-tree-properties.html">Properties</a></li>
+        
+        
+        
+        
+        <li  ><a href="statistics.html">Statistics</a></li>
+
+
+
+
 
       </ul>
       
@@ -232,8 +300,11 @@
 
   </div>
 </nav>
-
   
+
+
+
+
 
 
 
@@ -256,18 +327,20 @@
         </li>
 
         
-          <li class="-second-level" id="sd_classes"><a href="entities-tree-classes.html">Classes (4)</a>
+          <li class="-second-level" id="sd_classes"><a href="entities-tree-classes.html">Classes (5)</a>
           </li>
 
             
           
-              <li class="second-level" style="line-height: 20px;" id="sd_7407"><a  href="class-httprdfsorgnsvoiddataset.html">http://rdfs.org/ns/void#Dataset</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_4307"><a  href="class-foafdocument.html">foaf:Document</a></li>
           
-              <li class="second-level" style="line-height: 20px;" id="sd_7408"><a  href="class-httprdfsorgnsvoiddatasetdescription.html">http://rdfs.org/ns/void#DatasetDescription</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_4303"><a  href="class-voiddataset.html">void:Dataset</a></li>
           
-              <li class="second-level" style="line-height: 20px;" id="sd_7409"><a  href="class-httprdfsorgnsvoidlinkset.html">http://rdfs.org/ns/void#Linkset</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_4304"><a  href="class-voiddatasetdescription.html">void:DatasetDescription</a></li>
           
-              <li class="second-level" style="line-height: 20px;" id="sd_7410"><a  href="class-httprdfsorgnsvoidtechnicalfeature.html">http://rdfs.org/ns/void#TechnicalFeature</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_4305"><a  href="class-voidlinkset.html">void:Linkset</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_4306"><a  href="class-voidtechnicalfeature.html">void:TechnicalFeature</a></li>
           
         
 
@@ -277,62 +350,65 @@
 
             
           
-              <li class="second-level" style="line-height: 20px;" id="sd_7411"><a   href="prop-httprdfsorgnsvoidclass.html">http://rdfs.org/ns/void#class</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_4308"><a   href="prop-voidclass.html">void:class</a></li>
           
-              <li class="second-level" style="line-height: 20px;" id="sd_7412"><a   href="prop-httprdfsorgnsvoidclasspartition.html">http://rdfs.org/ns/void#classPartition</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_4309"><a   href="prop-voidclasspartition.html">void:classPartition</a></li>
           
-              <li class="second-level" style="line-height: 20px;" id="sd_7413"><a   href="prop-httprdfsorgnsvoidclasses.html">http://rdfs.org/ns/void#classes</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_4310"><a   href="prop-voidclasses.html">void:classes</a></li>
           
-              <li class="second-level" style="line-height: 20px;" id="sd_7414"><a   href="prop-httprdfsorgnsvoiddatadump.html">http://rdfs.org/ns/void#dataDump</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_4311"><a   href="prop-voiddatadump.html">void:dataDump</a></li>
           
-              <li class="second-level" style="line-height: 20px;" id="sd_7415"><a   href="prop-httprdfsorgnsvoiddistinctobjects.html">http://rdfs.org/ns/void#distinctObjects</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_4312"><a   href="prop-voiddistinctobjects.html">void:distinctObjects</a></li>
           
-              <li class="second-level" style="line-height: 20px;" id="sd_7416"><a   href="prop-httprdfsorgnsvoiddistinctsubjects.html">http://rdfs.org/ns/void#distinctSubjects</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_4313"><a   href="prop-voiddistinctsubjects.html">void:distinctSubjects</a></li>
           
-              <li class="second-level" style="line-height: 20px;" id="sd_7417"><a   href="prop-httprdfsorgnsvoiddocuments.html">http://rdfs.org/ns/void#documents</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_4314"><a   href="prop-voiddocuments.html">void:documents</a></li>
           
-              <li class="second-level" style="line-height: 20px;" id="sd_7418"><a   href="prop-httprdfsorgnsvoidentities.html">http://rdfs.org/ns/void#entities</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_4315"><a   href="prop-voidentities.html">void:entities</a></li>
           
-              <li class="second-level" style="line-height: 20px;" id="sd_7419"><a   href="prop-httprdfsorgnsvoidexampleresource.html">http://rdfs.org/ns/void#exampleResource</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_4316"><a   href="prop-voidexampleresource.html">void:exampleResource</a></li>
           
-              <li class="second-level" style="line-height: 20px;" id="sd_7420"><a   href="prop-httprdfsorgnsvoidfeature.html">http://rdfs.org/ns/void#feature</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_4317"><a   href="prop-voidfeature.html">void:feature</a></li>
           
-              <li class="second-level" style="line-height: 20px;" id="sd_7421"><a   href="prop-httprdfsorgnsvoidindataset.html">http://rdfs.org/ns/void#inDataset</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_4318"><a   href="prop-voidindataset.html">void:inDataset</a></li>
           
-              <li class="second-level" style="line-height: 20px;" id="sd_7422"><a   href="prop-httprdfsorgnsvoidlinkpredicate.html">http://rdfs.org/ns/void#linkPredicate</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_4319"><a   href="prop-voidlinkpredicate.html">void:linkPredicate</a></li>
           
-              <li class="second-level" style="line-height: 20px;" id="sd_7423"><a   href="prop-httprdfsorgnsvoidobjectstarget.html">http://rdfs.org/ns/void#objectsTarget</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_4320"><a   href="prop-voidobjectstarget.html">void:objectsTarget</a></li>
           
-              <li class="second-level" style="line-height: 20px;" id="sd_7424"><a   href="prop-httprdfsorgnsvoidopensearchdescription.html">http://rdfs.org/ns/void#openSearchDescription</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_4321"><a   href="prop-voidopensearchdescription.html">void:openSearchDescription</a></li>
           
-              <li class="second-level" style="line-height: 20px;" id="sd_7425"><a   href="prop-httprdfsorgnsvoidproperties.html">http://rdfs.org/ns/void#properties</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_4322"><a   href="prop-voidproperties.html">void:properties</a></li>
           
-              <li class="second-level" style="line-height: 20px;" id="sd_7426"><a   href="prop-httprdfsorgnsvoidproperty.html">http://rdfs.org/ns/void#property</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_4323"><a   href="prop-voidproperty.html">void:property</a></li>
           
-              <li class="second-level" style="line-height: 20px;" id="sd_7427"><a   href="prop-httprdfsorgnsvoidpropertypartition.html">http://rdfs.org/ns/void#propertyPartition</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_4324"><a   href="prop-voidpropertypartition.html">void:propertyPartition</a></li>
           
-              <li class="second-level" style="line-height: 20px;" id="sd_7428"><a   href="prop-httprdfsorgnsvoidrootresource.html">http://rdfs.org/ns/void#rootResource</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_4325"><a   href="prop-voidrootresource.html">void:rootResource</a></li>
           
-              <li class="second-level" style="line-height: 20px;" id="sd_7429"><a   href="prop-httprdfsorgnsvoidsparqlendpoint.html">http://rdfs.org/ns/void#sparqlEndpoint</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_4326"><a   href="prop-voidsparqlendpoint.html">void:sparqlEndpoint</a></li>
           
-              <li class="second-level" style="line-height: 20px;" id="sd_7430"><a   href="prop-httprdfsorgnsvoidsubjectstarget.html">http://rdfs.org/ns/void#subjectsTarget</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_4327"><a   href="prop-voidsubjectstarget.html">void:subjectsTarget</a></li>
           
-              <li class="second-level" style="line-height: 20px;" id="sd_7431"><a   href="prop-httprdfsorgnsvoidsubset.html">http://rdfs.org/ns/void#subset</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_4328"><a   href="prop-voidsubset.html">void:subset</a></li>
           
-              <li class="second-level" style="line-height: 20px;" id="sd_7432"><a   href="prop-httprdfsorgnsvoidtarget.html">http://rdfs.org/ns/void#target</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_4329"><a   href="prop-voidtarget.html">void:target</a></li>
           
-              <li class="second-level" style="line-height: 20px;" id="sd_7433"><a   href="prop-httprdfsorgnsvoidtriples.html">http://rdfs.org/ns/void#triples</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_4330"><a   href="prop-voidtriples.html">void:triples</a></li>
           
-              <li class="second-level" style="line-height: 20px;" id="sd_7434"><a   href="prop-httprdfsorgnsvoidurilookupendpoint.html">http://rdfs.org/ns/void#uriLookupEndpoint</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_4331"><a   href="prop-voidurilookupendpoint.html">void:uriLookupEndpoint</a></li>
           
-              <li class="second-level" style="line-height: 20px;" id="sd_7435"><a   href="prop-httprdfsorgnsvoiduriregexpattern.html">http://rdfs.org/ns/void#uriRegexPattern</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_4332"><a   href="prop-voiduriregexpattern.html">void:uriRegexPattern</a></li>
           
-              <li class="second-level" style="line-height: 20px;" id="sd_7436"><a   href="prop-httprdfsorgnsvoidurispace.html">http://rdfs.org/ns/void#uriSpace</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_4333"><a   href="prop-voidurispace.html">void:uriSpace</a></li>
           
-              <li class="second-level" style="line-height: 20px;" id="sd_7437"><a   href="prop-httprdfsorgnsvoidvocabulary.html">http://rdfs.org/ns/void#vocabulary</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_4334"><a   href="prop-voidvocabulary.html">void:vocabulary</a></li>
           
 
         
+
+        
+
 
         
 
@@ -350,7 +426,6 @@
 
 
 <!-- /#sidebar-wrapper -->
-
     
 
 
@@ -427,6 +502,19 @@
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
     
 
 
@@ -434,7 +522,7 @@
 
   <div class="page-header">
 
-      <h3>Entities Tree: Properties
+      <h3>Properties Tree
       </h3>
       <input id="search-input" type="text" class="form-control" placeholder="Filter...">
 
@@ -450,69 +538,69 @@
       <div class="panel-body entities-list">
 
           <table class="h"><tr>
-							<td class="tc" colspan=4><a title="http://rdfs.org/ns/void#class" class="treelinks" href="prop-httprdfsorgnsvoidclass.html">http://rdfs.org/ns/void#class</a></td>
+							<td class="tc" colspan=4><a title="http://rdfs.org/ns/void#class" class="treelinks" href="prop-voidclass.html">void:class</a></td>
 						  </tr><tr>
-							<td class="tc" colspan=4><a title="http://rdfs.org/ns/void#classes" class="treelinks" href="prop-httprdfsorgnsvoidclasses.html">http://rdfs.org/ns/void#classes</a></td>
+							<td class="tc" colspan=4><a title="http://rdfs.org/ns/void#classes" class="treelinks" href="prop-voidclasses.html">void:classes</a></td>
 						  </tr><tr>
-							<td class="tc" colspan=4><a title="http://rdfs.org/ns/void#dataDump" class="treelinks" href="prop-httprdfsorgnsvoiddatadump.html">http://rdfs.org/ns/void#dataDump</a></td>
+							<td class="tc" colspan=4><a title="http://rdfs.org/ns/void#dataDump" class="treelinks" href="prop-voiddatadump.html">void:dataDump</a></td>
 						  </tr><tr>
-							<td class="tc" colspan=4><a title="http://rdfs.org/ns/void#distinctObjects" class="treelinks" href="prop-httprdfsorgnsvoiddistinctobjects.html">http://rdfs.org/ns/void#distinctObjects</a></td>
+							<td class="tc" colspan=4><a title="http://rdfs.org/ns/void#distinctObjects" class="treelinks" href="prop-voiddistinctobjects.html">void:distinctObjects</a></td>
 						  </tr><tr>
-							<td class="tc" colspan=4><a title="http://rdfs.org/ns/void#distinctSubjects" class="treelinks" href="prop-httprdfsorgnsvoiddistinctsubjects.html">http://rdfs.org/ns/void#distinctSubjects</a></td>
+							<td class="tc" colspan=4><a title="http://rdfs.org/ns/void#distinctSubjects" class="treelinks" href="prop-voiddistinctsubjects.html">void:distinctSubjects</a></td>
 						  </tr><tr>
-							<td class="tc" colspan=4><a title="http://rdfs.org/ns/void#documents" class="treelinks" href="prop-httprdfsorgnsvoiddocuments.html">http://rdfs.org/ns/void#documents</a></td>
+							<td class="tc" colspan=4><a title="http://rdfs.org/ns/void#documents" class="treelinks" href="prop-voiddocuments.html">void:documents</a></td>
 						  </tr><tr>
-							<td class="tc" colspan=4><a title="http://rdfs.org/ns/void#entities" class="treelinks" href="prop-httprdfsorgnsvoidentities.html">http://rdfs.org/ns/void#entities</a></td>
+							<td class="tc" colspan=4><a title="http://rdfs.org/ns/void#entities" class="treelinks" href="prop-voidentities.html">void:entities</a></td>
 						  </tr><tr>
-							<td class="tc" colspan=4><a title="http://rdfs.org/ns/void#exampleResource" class="treelinks" href="prop-httprdfsorgnsvoidexampleresource.html">http://rdfs.org/ns/void#exampleResource</a></td>
+							<td class="tc" colspan=4><a title="http://rdfs.org/ns/void#exampleResource" class="treelinks" href="prop-voidexampleresource.html">void:exampleResource</a></td>
 						  </tr><tr>
-							<td class="tc" colspan=4><a title="http://rdfs.org/ns/void#feature" class="treelinks" href="prop-httprdfsorgnsvoidfeature.html">http://rdfs.org/ns/void#feature</a></td>
+							<td class="tc" colspan=4><a title="http://rdfs.org/ns/void#feature" class="treelinks" href="prop-voidfeature.html">void:feature</a></td>
 						  </tr><tr>
-							<td class="tc" colspan=4><a title="http://rdfs.org/ns/void#inDataset" class="treelinks" href="prop-httprdfsorgnsvoidindataset.html">http://rdfs.org/ns/void#inDataset</a></td>
+							<td class="tc" colspan=4><a title="http://rdfs.org/ns/void#inDataset" class="treelinks" href="prop-voidindataset.html">void:inDataset</a></td>
 						  </tr><tr>
-							<td class="tc" colspan=4><a title="http://rdfs.org/ns/void#linkPredicate" class="treelinks" href="prop-httprdfsorgnsvoidlinkpredicate.html">http://rdfs.org/ns/void#linkPredicate</a></td>
+							<td class="tc" colspan=4><a title="http://rdfs.org/ns/void#linkPredicate" class="treelinks" href="prop-voidlinkpredicate.html">void:linkPredicate</a></td>
 						  </tr><tr>
-							<td class="tc" colspan=4><a title="http://rdfs.org/ns/void#openSearchDescription" class="treelinks" href="prop-httprdfsorgnsvoidopensearchdescription.html">http://rdfs.org/ns/void#openSearchDescription</a></td>
+							<td class="tc" colspan=4><a title="http://rdfs.org/ns/void#openSearchDescription" class="treelinks" href="prop-voidopensearchdescription.html">void:openSearchDescription</a></td>
 						  </tr><tr>
-							<td class="tc" colspan=4><a title="http://rdfs.org/ns/void#properties" class="treelinks" href="prop-httprdfsorgnsvoidproperties.html">http://rdfs.org/ns/void#properties</a></td>
+							<td class="tc" colspan=4><a title="http://rdfs.org/ns/void#properties" class="treelinks" href="prop-voidproperties.html">void:properties</a></td>
 						  </tr><tr>
-							<td class="tc" colspan=4><a title="http://rdfs.org/ns/void#property" class="treelinks" href="prop-httprdfsorgnsvoidproperty.html">http://rdfs.org/ns/void#property</a></td>
+							<td class="tc" colspan=4><a title="http://rdfs.org/ns/void#property" class="treelinks" href="prop-voidproperty.html">void:property</a></td>
 						  </tr><tr>
-							<td class="tc" colspan=4><a title="http://rdfs.org/ns/void#rootResource" class="treelinks" href="prop-httprdfsorgnsvoidrootresource.html">http://rdfs.org/ns/void#rootResource</a></td>
+							<td class="tc" colspan=4><a title="http://rdfs.org/ns/void#rootResource" class="treelinks" href="prop-voidrootresource.html">void:rootResource</a></td>
 						  </tr><tr>
-							<td class="tc" colspan=4><a title="http://rdfs.org/ns/void#sparqlEndpoint" class="treelinks" href="prop-httprdfsorgnsvoidsparqlendpoint.html">http://rdfs.org/ns/void#sparqlEndpoint</a></td>
+							<td class="tc" colspan=4><a title="http://rdfs.org/ns/void#sparqlEndpoint" class="treelinks" href="prop-voidsparqlendpoint.html">void:sparqlEndpoint</a></td>
 						  </tr><tr>
-							<td class="tc" colspan=4><a title="http://rdfs.org/ns/void#subset" class="treelinks" href="prop-httprdfsorgnsvoidsubset.html">http://rdfs.org/ns/void#subset</a></td>
+							<td class="tc" colspan=4><a title="http://rdfs.org/ns/void#subset" class="treelinks" href="prop-voidsubset.html">void:subset</a></td>
 						  </tr> <tr>
 							<td class="space"></td>
 							<td class="bar"></td>
 							<td class="space"></td>
 							<td><table class="h"><tr>
-							<td class="tc" colspan=4><a title="http://rdfs.org/ns/void#classPartition" class="treelinks" href="prop-httprdfsorgnsvoidclasspartition.html">http://rdfs.org/ns/void#classPartition</a></td>
+							<td class="tc" colspan=4><a title="http://rdfs.org/ns/void#classPartition" class="treelinks" href="prop-voidclasspartition.html">void:classPartition</a></td>
 						  </tr><tr>
-							<td class="tc" colspan=4><a title="http://rdfs.org/ns/void#propertyPartition" class="treelinks" href="prop-httprdfsorgnsvoidpropertypartition.html">http://rdfs.org/ns/void#propertyPartition</a></td>
+							<td class="tc" colspan=4><a title="http://rdfs.org/ns/void#propertyPartition" class="treelinks" href="prop-voidpropertypartition.html">void:propertyPartition</a></td>
 						  </tr></table></td>
 							</tr><tr>
-							<td class="tc" colspan=4><a title="http://rdfs.org/ns/void#target" class="treelinks" href="prop-httprdfsorgnsvoidtarget.html">http://rdfs.org/ns/void#target</a></td>
+							<td class="tc" colspan=4><a title="http://rdfs.org/ns/void#target" class="treelinks" href="prop-voidtarget.html">void:target</a></td>
 						  </tr> <tr>
 							<td class="space"></td>
 							<td class="bar"></td>
 							<td class="space"></td>
 							<td><table class="h"><tr>
-							<td class="tc" colspan=4><a title="http://rdfs.org/ns/void#objectsTarget" class="treelinks" href="prop-httprdfsorgnsvoidobjectstarget.html">http://rdfs.org/ns/void#objectsTarget</a></td>
+							<td class="tc" colspan=4><a title="http://rdfs.org/ns/void#objectsTarget" class="treelinks" href="prop-voidobjectstarget.html">void:objectsTarget</a></td>
 						  </tr><tr>
-							<td class="tc" colspan=4><a title="http://rdfs.org/ns/void#subjectsTarget" class="treelinks" href="prop-httprdfsorgnsvoidsubjectstarget.html">http://rdfs.org/ns/void#subjectsTarget</a></td>
+							<td class="tc" colspan=4><a title="http://rdfs.org/ns/void#subjectsTarget" class="treelinks" href="prop-voidsubjectstarget.html">void:subjectsTarget</a></td>
 						  </tr></table></td>
 							</tr><tr>
-							<td class="tc" colspan=4><a title="http://rdfs.org/ns/void#triples" class="treelinks" href="prop-httprdfsorgnsvoidtriples.html">http://rdfs.org/ns/void#triples</a></td>
+							<td class="tc" colspan=4><a title="http://rdfs.org/ns/void#triples" class="treelinks" href="prop-voidtriples.html">void:triples</a></td>
 						  </tr><tr>
-							<td class="tc" colspan=4><a title="http://rdfs.org/ns/void#uriLookupEndpoint" class="treelinks" href="prop-httprdfsorgnsvoidurilookupendpoint.html">http://rdfs.org/ns/void#uriLookupEndpoint</a></td>
+							<td class="tc" colspan=4><a title="http://rdfs.org/ns/void#uriLookupEndpoint" class="treelinks" href="prop-voidurilookupendpoint.html">void:uriLookupEndpoint</a></td>
 						  </tr><tr>
-							<td class="tc" colspan=4><a title="http://rdfs.org/ns/void#uriRegexPattern" class="treelinks" href="prop-httprdfsorgnsvoiduriregexpattern.html">http://rdfs.org/ns/void#uriRegexPattern</a></td>
+							<td class="tc" colspan=4><a title="http://rdfs.org/ns/void#uriRegexPattern" class="treelinks" href="prop-voiduriregexpattern.html">void:uriRegexPattern</a></td>
 						  </tr><tr>
-							<td class="tc" colspan=4><a title="http://rdfs.org/ns/void#uriSpace" class="treelinks" href="prop-httprdfsorgnsvoidurispace.html">http://rdfs.org/ns/void#uriSpace</a></td>
+							<td class="tc" colspan=4><a title="http://rdfs.org/ns/void#uriSpace" class="treelinks" href="prop-voidurispace.html">void:uriSpace</a></td>
 						  </tr><tr>
-							<td class="tc" colspan=4><a title="http://rdfs.org/ns/void#vocabulary" class="treelinks" href="prop-httprdfsorgnsvoidvocabulary.html">http://rdfs.org/ns/void#vocabulary</a></td>
+							<td class="tc" colspan=4><a title="http://rdfs.org/ns/void#vocabulary" class="treelinks" href="prop-voidvocabulary.html">void:vocabulary</a></td>
 						  </tr></table>
 
 
@@ -549,7 +637,7 @@
   <footer class="footer">
     <div class="container">
     
-      <p class="text-muted">Documentation automatically generated on 26th February 2017 with <a href="https://github.com/lambdamusic/OntoSpy">OntoSpy</a> (v1.7.4)</p>
+      <p class="text-muted">Documentation automatically generated on Wed, 16 Nov 2022 14:13:17 with <a href="http://lambdamusic.github.io/Ontospy/">Ontospy</a> (v2.1.0)</p>
 
     
     </div>
@@ -562,13 +650,13 @@
 <!-- Bootstrap core JavaScript
 ================================================== -->
 <!-- Placed at the end of the document so the pages load faster -->
-<script src="../static/libs/jquery/1.12.4/jquery.min.js"></script>
-<script src="../static/libs/bootstrap-3.3.7-dist/js/bootstrap.min.js"></script>
+<script src="../static/libs/jquery/1_12_4/jquery.min.js"></script>
+<script src="../static/libs/bootstrap-3_3_7-dist/js/bootstrap.min.js"></script>
 
 <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
-<script src="../static/libs/bootstrap-3.3.7-dist/js/ie10-viewport-bug-workaround.js"></script>
+<script src="../static/libs/bootstrap-3_3_7-dist/js/ie10-viewport-bug-workaround.js"></script>
 
-<script src="../static/libs/Chart.js-2.4.0/Chart.bundle.js"></script>
+<script src="../static/libs/chartjs-2_4_0/chart.bundle.js"></script>
 
 
 <!-- Menu Toggle Script -->
@@ -599,6 +687,22 @@ $('#search-input-sidebar').keyup(function() {
 </script>
 
 
+
+
+  <!-- Scroll Sidebar Script -->
+
+  
+  
+
+  <script type="text/javascript">
+
+    $(document).ready(function (){
+      $('#sidebar-wrapper').animate({
+          scrollTop: $("#sd_4306").offset().top - 100
+      }, 100);
+    });
+
+  </script>
 
 
 

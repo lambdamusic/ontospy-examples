@@ -10,23 +10,23 @@
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
     <meta name="description" content="">
     <meta name="author" content="">
-    <link rel="icon" href="../static/libs/img/favicon.ico">
+    <link rel="icon" href="../static/custom/favicon.ico">
 
 	
-		<title>OntoSpy > http://www.w3.org/2006/time</title>
+		<title>Ontospy > http://www.w3.org/2006/time</title>
 	
 
     <!-- Bootstrap core CSS -->
-    <!-- <link href="../static/libs/bootstrap-3.3.7-dist/css/bootstrap.min.css" rel="stylesheet">  -->
+    <!-- <link href="../static/libs/bootstrap-3_3_7-dist/css/bootstrap.min.css" rel="stylesheet">  -->
     <!-- Bootswatch:  -->
     <!-- cerulean  | cyborg |  flatly |  lumen |  sandstone |   spacelab  |  yeti | cosmo |  darkly |  paper | simplex | superhero |  journal | readable  |   slate |  united -->
-    <link href="../static/libs/bootswatch3.2/simplex/bootstrap.min.css" rel="stylesheet">
+    <link href="../static/libs/bootswatch3_2/darkly/bootstrap.min.css" rel="stylesheet">
     <link href="../static/custom/css/simple-sidebar.css" rel="stylesheet">
     <link href="../static/custom/css/familytree.css" rel="stylesheet">
     <link href="../static/custom/css/tabletree.css" rel="stylesheet">
 
     <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
-    <link href="../static/libs/bootstrap-3.3.7-dist/css/ie10-viewport-bug-workaround.css" rel="stylesheet">
+    <link href="../static/libs/bootstrap-3_3_7-dist/css/ie10-viewport-bug-workaround.css" rel="stylesheet">
 
     <!-- Custom styles for this template -->
     <link href="../static/custom/css/sticky-footer-navbar.css" rel="stylesheet">
@@ -57,7 +57,7 @@
 
   .implementation-panel {
     overflow: auto;
-    max-height: 500px;
+    /*max-height: 500px;*/
   }
 
   tr.table-classproperties {
@@ -162,6 +162,11 @@
 
 
 
+/* override default footer background for dark themes only */
+.footer {
+  background-color: inherit;
+}
+
 
 
 
@@ -200,27 +205,22 @@
     <div id="navbar" class="collapse navbar-collapse">
       <ul class="nav navbar-nav">
         <li class="active"><a href="index.html"><code style="font-size: 115%;">http://www.w3.org/2006/time</code></a></li>
-        
 
-       
-
-
-        <li  ><a href="dashboard.html">Dashboard</a></li>
         <li  ><a href="entities-az.html">Entities A-Z</a></li>
-        <li class="dropdown  " >
-          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Entities Tree <span class="caret"></span></a>
-          <ul class="dropdown-menu">
-            
-            <li><a href="entities-tree-classes.html">Classes</a>
-            </li>
-            
-            
-            <li><a  href="entities-tree-properties.html">Properties</a>
-            </li>
-            
-            
-          </ul>
-      </li>
+        
+        <li ><a href="entities-tree-classes.html">Classes</a></li>
+        
+        
+        <li ><a href="entities-tree-properties.html">Properties</a></li>
+        
+        
+        
+        
+        <li  ><a href="statistics.html">Statistics</a></li>
+
+
+
+
 
       </ul>
       
@@ -229,8 +229,11 @@
   </div>
 </nav>
 
-
     
+
+
+
+
 
 
 
@@ -258,29 +261,29 @@
 
             
           
-              <li class="second-level" style="line-height: 20px;" id="sd_7163"><a  href="class-timedatetimedescription.html">time:DateTimeDescription</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_4223"><a  href="class-timedatetimedescription.html">time:DateTimeDescription</a></li>
           
-              <li class="second-level" style="line-height: 20px;" id="sd_7164"><a  href="class-timedatetimeinterval.html">time:DateTimeInterval</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_4224"><a  href="class-timedatetimeinterval.html">time:DateTimeInterval</a></li>
           
-              <li class="second-level" style="line-height: 20px;" id="sd_7165"><a  href="class-timedayofweek.html">time:DayOfWeek</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_4225"><a  href="class-timedayofweek.html">time:DayOfWeek</a></li>
           
-              <li class="second-level" style="line-height: 20px;" id="sd_7166"><a  href="class-timedurationdescription.html">time:DurationDescription</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_4226"><a  href="class-timedurationdescription.html">time:DurationDescription</a></li>
           
-              <li class="second-level" style="line-height: 20px;" id="sd_7167"><a  href="class-timeinstant.html">time:Instant</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_4227"><a  href="class-timeinstant.html">time:Instant</a></li>
           
-              <li class="second-level" style="line-height: 20px;" id="sd_7168"><a  href="class-timeinterval.html">time:Interval</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_4228"><a  href="class-timeinterval.html">time:Interval</a></li>
           
-              <li class="second-level" style="line-height: 20px;" id="sd_7169"><a  href="class-timejanuary.html">time:January</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_4229"><a  href="class-timejanuary.html">time:January</a></li>
           
-              <li class="second-level" style="line-height: 20px;" id="sd_7170"><a  href="class-timeproperinterval.html">time:ProperInterval</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_4230"><a  href="class-timeproperinterval.html">time:ProperInterval</a></li>
           
-              <li class="second-level" style="line-height: 20px;" id="sd_7171"><a  href="class-timetemporalentity.html">time:TemporalEntity</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_4231"><a  href="class-timetemporalentity.html">time:TemporalEntity</a></li>
           
-              <li class="second-level" style="line-height: 20px;" id="sd_7172"><a  href="class-timetemporalunit.html">time:TemporalUnit</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_4232"><a  href="class-timetemporalunit.html">time:TemporalUnit</a></li>
           
-              <li class="second-level" style="line-height: 20px;" id="sd_7173"><a  href="class-timeyear.html">time:Year</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_4233"><a  href="class-timeyear.html">time:Year</a></li>
           
-              <li class="second-level" style="line-height: 20px;" id="sd_7174"><a  href="class-tzonttimezone.html">tzont:TimeZone</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_4234"><a  href="class-tzonttimezone.html">tzont:TimeZone</a></li>
           
         
 
@@ -290,90 +293,93 @@
 
             
           
-              <li class="second-level" style="line-height: 20px;" id="sd_7175"><a   href="prop-timeday.html">time:day</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_4252"><a   href="prop-timeafter.html">time:after</a></li>
           
-              <li class="second-level" style="line-height: 20px;" id="sd_7176"><a   href="prop-timedayofyear.html">time:dayOfYear</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_4253"><a   href="prop-timebefore.html">time:before</a></li>
           
-              <li class="second-level" style="line-height: 20px;" id="sd_7177"><a   href="prop-timedays.html">time:days</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_4235"><a   href="prop-timeday.html">time:day</a></li>
           
-              <li class="second-level" style="line-height: 20px;" id="sd_7178"><a   href="prop-timehour.html">time:hour</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_4254"><a   href="prop-timedayofweek.html">time:dayOfWeek</a></li>
           
-              <li class="second-level" style="line-height: 20px;" id="sd_7179"><a   href="prop-timehours.html">time:hours</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_4236"><a   href="prop-timedayofyear.html">time:dayOfYear</a></li>
           
-              <li class="second-level" style="line-height: 20px;" id="sd_7180"><a   href="prop-timeinxsddatetime.html">time:inXSDDateTime</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_4237"><a   href="prop-timedays.html">time:days</a></li>
           
-              <li class="second-level" style="line-height: 20px;" id="sd_7181"><a   href="prop-timeminute.html">time:minute</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_4255"><a   href="prop-timehasbeginning.html">time:hasBeginning</a></li>
           
-              <li class="second-level" style="line-height: 20px;" id="sd_7182"><a   href="prop-timeminutes.html">time:minutes</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_4256"><a   href="prop-timehasdatetimedescription.html">time:hasDateTimeDescription</a></li>
           
-              <li class="second-level" style="line-height: 20px;" id="sd_7183"><a   href="prop-timemonth.html">time:month</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_4257"><a   href="prop-timehasdurationdescription.html">time:hasDurationDescription</a></li>
           
-              <li class="second-level" style="line-height: 20px;" id="sd_7184"><a   href="prop-timemonths.html">time:months</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_4258"><a   href="prop-timehasend.html">time:hasEnd</a></li>
           
-              <li class="second-level" style="line-height: 20px;" id="sd_7185"><a   href="prop-timesecond.html">time:second</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_4238"><a   href="prop-timehour.html">time:hour</a></li>
           
-              <li class="second-level" style="line-height: 20px;" id="sd_7186"><a   href="prop-timeseconds.html">time:seconds</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_4239"><a   href="prop-timehours.html">time:hours</a></li>
           
-              <li class="second-level" style="line-height: 20px;" id="sd_7187"><a   href="prop-timeweek.html">time:week</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_4259"><a   href="prop-timeindatetime.html">time:inDateTime</a></li>
           
-              <li class="second-level" style="line-height: 20px;" id="sd_7188"><a   href="prop-timeweeks.html">time:weeks</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_4240"><a   href="prop-timeinxsddatetime.html">time:inXSDDateTime</a></li>
           
-              <li class="second-level" style="line-height: 20px;" id="sd_7189"><a   href="prop-timexsddatetime.html">time:xsdDateTime</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_4260"><a   href="prop-timeinside.html">time:inside</a></li>
           
-              <li class="second-level" style="line-height: 20px;" id="sd_7190"><a   href="prop-timeyear.html">time:year</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_4261"><a   href="prop-timeintervalafter.html">time:intervalAfter</a></li>
           
-              <li class="second-level" style="line-height: 20px;" id="sd_7191"><a   href="prop-timeyears.html">time:years</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_4262"><a   href="prop-timeintervalbefore.html">time:intervalBefore</a></li>
           
-              <li class="second-level" style="line-height: 20px;" id="sd_7192"><a   href="prop-timeafter.html">time:after</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_4263"><a   href="prop-timeintervalcontains.html">time:intervalContains</a></li>
           
-              <li class="second-level" style="line-height: 20px;" id="sd_7193"><a   href="prop-timebefore.html">time:before</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_4264"><a   href="prop-timeintervalduring.html">time:intervalDuring</a></li>
           
-              <li class="second-level" style="line-height: 20px;" id="sd_7194"><a   href="prop-timedayofweek.html">time:dayOfWeek</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_4265"><a   href="prop-timeintervalequals.html">time:intervalEquals</a></li>
           
-              <li class="second-level" style="line-height: 20px;" id="sd_7195"><a   href="prop-timehasbeginning.html">time:hasBeginning</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_4266"><a   href="prop-timeintervalfinishedby.html">time:intervalFinishedBy</a></li>
           
-              <li class="second-level" style="line-height: 20px;" id="sd_7196"><a   href="prop-timehasdatetimedescription.html">time:hasDateTimeDescription</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_4267"><a   href="prop-timeintervalfinishes.html">time:intervalFinishes</a></li>
           
-              <li class="second-level" style="line-height: 20px;" id="sd_7197"><a   href="prop-timehasdurationdescription.html">time:hasDurationDescription</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_4268"><a   href="prop-timeintervalmeets.html">time:intervalMeets</a></li>
           
-              <li class="second-level" style="line-height: 20px;" id="sd_7198"><a   href="prop-timehasend.html">time:hasEnd</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_4269"><a   href="prop-timeintervalmetby.html">time:intervalMetBy</a></li>
           
-              <li class="second-level" style="line-height: 20px;" id="sd_7199"><a   href="prop-timeindatetime.html">time:inDateTime</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_4270"><a   href="prop-timeintervaloverlappedby.html">time:intervalOverlappedBy</a></li>
           
-              <li class="second-level" style="line-height: 20px;" id="sd_7200"><a   href="prop-timeinside.html">time:inside</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_4271"><a   href="prop-timeintervaloverlaps.html">time:intervalOverlaps</a></li>
           
-              <li class="second-level" style="line-height: 20px;" id="sd_7201"><a   href="prop-timeintervalafter.html">time:intervalAfter</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_4272"><a   href="prop-timeintervalstartedby.html">time:intervalStartedBy</a></li>
           
-              <li class="second-level" style="line-height: 20px;" id="sd_7202"><a   href="prop-timeintervalbefore.html">time:intervalBefore</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_4273"><a   href="prop-timeintervalstarts.html">time:intervalStarts</a></li>
           
-              <li class="second-level" style="line-height: 20px;" id="sd_7203"><a   href="prop-timeintervalcontains.html">time:intervalContains</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_4241"><a   href="prop-timeminute.html">time:minute</a></li>
           
-              <li class="second-level" style="line-height: 20px;" id="sd_7204"><a   href="prop-timeintervalduring.html">time:intervalDuring</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_4242"><a   href="prop-timeminutes.html">time:minutes</a></li>
           
-              <li class="second-level" style="line-height: 20px;" id="sd_7205"><a   href="prop-timeintervalequals.html">time:intervalEquals</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_4243"><a   href="prop-timemonth.html">time:month</a></li>
           
-              <li class="second-level" style="line-height: 20px;" id="sd_7206"><a   href="prop-timeintervalfinishedby.html">time:intervalFinishedBy</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_4244"><a   href="prop-timemonths.html">time:months</a></li>
           
-              <li class="second-level" style="line-height: 20px;" id="sd_7207"><a   href="prop-timeintervalfinishes.html">time:intervalFinishes</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_4245"><a   href="prop-timesecond.html">time:second</a></li>
           
-              <li class="second-level" style="line-height: 20px;" id="sd_7208"><a   href="prop-timeintervalmeets.html">time:intervalMeets</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_4246"><a   href="prop-timeseconds.html">time:seconds</a></li>
           
-              <li class="second-level" style="line-height: 20px;" id="sd_7209"><a   href="prop-timeintervalmetby.html">time:intervalMetBy</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_4274"><a   href="prop-timetimezone.html">time:timeZone</a></li>
           
-              <li class="second-level" style="line-height: 20px;" id="sd_7210"><a   href="prop-timeintervaloverlappedby.html">time:intervalOverlappedBy</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_4275"><a   href="prop-timeunittype.html">time:unitType</a></li>
           
-              <li class="second-level" style="line-height: 20px;" id="sd_7211"><a   href="prop-timeintervaloverlaps.html">time:intervalOverlaps</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_4247"><a   href="prop-timeweek.html">time:week</a></li>
           
-              <li class="second-level" style="line-height: 20px;" id="sd_7212"><a   href="prop-timeintervalstartedby.html">time:intervalStartedBy</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_4248"><a   href="prop-timeweeks.html">time:weeks</a></li>
           
-              <li class="second-level" style="line-height: 20px;" id="sd_7213"><a   href="prop-timeintervalstarts.html">time:intervalStarts</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_4249"><a   href="prop-timexsddatetime.html">time:xsdDateTime</a></li>
           
-              <li class="second-level" style="line-height: 20px;" id="sd_7214"><a   href="prop-timetimezone.html">time:timeZone</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_4250"><a   href="prop-timeyear.html">time:year</a></li>
           
-              <li class="second-level" style="line-height: 20px;" id="sd_7215"><a   href="prop-timeunittype.html">time:unitType</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_4251"><a   href="prop-timeyears.html">time:years</a></li>
           
 
         
+
+        
+
 
         
 
@@ -391,7 +397,6 @@
 
 
 <!-- /#sidebar-wrapper -->
-
     
 
 
@@ -414,6 +419,19 @@
     Home
   </li>
 </ol>
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -498,20 +516,31 @@
               </dl>
                 
                     <dl>
-                        
-                            <dt>rdf:type</dt>
-                            <dd>http://www.w3.org/2002/07/owl#Ontology</dd>
-                        
-                            <dt>rdfs:comment</dt>
-                            <dd>
-      An OWL Ontology of Time (OWL-Time).
-    </dd>
-                        
-                            <dt>rdfs:seeAlso</dt>
-                            <dd>http://www.w3.org/TR/owl-time</dd>
-                        
+                      
+                          
+                                <dt>rdf:type</dt>
+                              
+                          
+                    <dd><p>http://www.w3.org/2002/07/owl#Ontology</p></dd>
+                    
+                          
+                                <dt>rdfs:comment</dt>
+                              
+                          
+                    <dd><p><br>
+      An OWL Ontology of Time (OWL-Time).<br>
+    </p></dd>
+                    
+                          
+                                <dt>rdfs:seeAlso</dt>
+                              
+                          
+                    <dd><p>http://www.w3.org/TR/owl-time</p></dd>
+                    
                     </dl>
                 
+
+
             </div>
           </div>
            </div></div>
@@ -603,6 +632,15 @@
 
                   
 
+                      <dt>Data Shapes</dt>
+                      <dd>0</dd>
+
+                  
+
+                    
+
+                  
+
                     
 
                 </dl>
@@ -632,8 +670,12 @@
                  <dl class="-dl-horizontal" style="--margin-left: -100px;">
 
                  
-                     <dt><span class="label label-info">:</span></dt>
+                     <dt><span class="label label-info"></span></dt>
                      <dd><a href="http://www.w3.org/2006/time#" target="_blank">http://www.w3.org/2006/time#</a></dd>
+
+                 
+                     <dt><span class="label label-info">dc</span></dt>
+                     <dd><a href="http://purl.org/dc/elements/1.1/" target="_blank">http://purl.org/dc/elements/1.1/</a></dd>
 
                  
                      <dt><span class="label label-info">owl</span></dt>
@@ -648,12 +690,24 @@
                      <dd><a href="http://www.w3.org/2000/01/rdf-schema#" target="_blank">http://www.w3.org/2000/01/rdf-schema#</a></dd>
 
                  
+                     <dt><span class="label label-info">sh</span></dt>
+                     <dd><a href="http://www.w3.org/ns/shacl#" target="_blank">http://www.w3.org/ns/shacl#</a></dd>
+
+                 
                      <dt><span class="label label-info">skos</span></dt>
                      <dd><a href="http://www.w3.org/2004/02/skos/core#" target="_blank">http://www.w3.org/2004/02/skos/core#</a></dd>
 
                  
                      <dt><span class="label label-info">tzont</span></dt>
                      <dd><a href="http://www.w3.org/2006/timezone#" target="_blank">http://www.w3.org/2006/timezone#</a></dd>
+
+                 
+                     <dt><span class="label label-info">vann</span></dt>
+                     <dd><a href="http://purl.org/vocab/vann/" target="_blank">http://purl.org/vocab/vann/</a></dd>
+
+                 
+                     <dt><span class="label label-info">void</span></dt>
+                     <dd><a href="http://rdfs.org/ns/void#" target="_blank">http://rdfs.org/ns/void#</a></dd>
 
                  
                      <dt><span class="label label-info">xml</span></dt>
@@ -703,7 +757,7 @@
   <footer class="footer">
     <div class="container">
     
-      <p class="text-muted">Documentation automatically generated on 26th February 2017 with <a href="https://github.com/lambdamusic/OntoSpy">OntoSpy</a> (v1.7.4)</p>
+      <p class="text-muted">Documentation automatically generated on Wed, 16 Nov 2022 14:13:17 with <a href="http://lambdamusic.github.io/Ontospy/">Ontospy</a> (v2.1.0)</p>
 
     
     </div>
@@ -716,13 +770,13 @@
 <!-- Bootstrap core JavaScript
 ================================================== -->
 <!-- Placed at the end of the document so the pages load faster -->
-<script src="../static/libs/jquery/1.12.4/jquery.min.js"></script>
-<script src="../static/libs/bootstrap-3.3.7-dist/js/bootstrap.min.js"></script>
+<script src="../static/libs/jquery/1_12_4/jquery.min.js"></script>
+<script src="../static/libs/bootstrap-3_3_7-dist/js/bootstrap.min.js"></script>
 
 <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
-<script src="../static/libs/bootstrap-3.3.7-dist/js/ie10-viewport-bug-workaround.js"></script>
+<script src="../static/libs/bootstrap-3_3_7-dist/js/ie10-viewport-bug-workaround.js"></script>
 
-<script src="../static/libs/Chart.js-2.4.0/Chart.bundle.js"></script>
+<script src="../static/libs/chartjs-2_4_0/chart.bundle.js"></script>
 
 
 <!-- Menu Toggle Script -->

@@ -10,23 +10,23 @@
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
     <meta name="description" content="">
     <meta name="author" content="">
-    <link rel="icon" href="../static/libs/img/favicon.ico">
+    <link rel="icon" href="../static/custom/favicon.ico">
 
 	
-		<title>OntoSpy > http://vocab.org/whisky/terms</title>
+		<title>Ontospy > http://vocab.org/whisky/terms</title>
 	
 
     <!-- Bootstrap core CSS -->
-    <!-- <link href="../static/libs/bootstrap-3.3.7-dist/css/bootstrap.min.css" rel="stylesheet">  -->
+    <!-- <link href="../static/libs/bootstrap-3_3_7-dist/css/bootstrap.min.css" rel="stylesheet">  -->
     <!-- Bootswatch:  -->
     <!-- cerulean  | cyborg |  flatly |  lumen |  sandstone |   spacelab  |  yeti | cosmo |  darkly |  paper | simplex | superhero |  journal | readable  |   slate |  united -->
-    <link href="../static/libs/bootswatch3.2/lumen/bootstrap.min.css" rel="stylesheet">
+    <link href="../static/libs/bootswatch3_2/darkly/bootstrap.min.css" rel="stylesheet">
     <link href="../static/custom/css/simple-sidebar.css" rel="stylesheet">
     <link href="../static/custom/css/familytree.css" rel="stylesheet">
     <link href="../static/custom/css/tabletree.css" rel="stylesheet">
 
     <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
-    <link href="../static/libs/bootstrap-3.3.7-dist/css/ie10-viewport-bug-workaround.css" rel="stylesheet">
+    <link href="../static/libs/bootstrap-3_3_7-dist/css/ie10-viewport-bug-workaround.css" rel="stylesheet">
 
     <!-- Custom styles for this template -->
     <link href="../static/custom/css/sticky-footer-navbar.css" rel="stylesheet">
@@ -57,7 +57,7 @@
 
   .implementation-panel {
     overflow: auto;
-    max-height: 500px;
+    /*max-height: 500px;*/
   }
 
   tr.table-classproperties {
@@ -162,6 +162,11 @@
 
 
 
+/* override default footer background for dark themes only */
+.footer {
+  background-color: inherit;
+}
+
 
 
 
@@ -199,27 +204,22 @@
     <div id="navbar" class="collapse navbar-collapse">
       <ul class="nav navbar-nav">
         <li ><a href="index.html"><code style="font-size: 115%;">http://vocab.org/whisky/terms</code></a></li>
-        
 
-       
-
-
-        <li  ><a href="dashboard.html">Dashboard</a></li>
         <li  ><a href="entities-az.html">Entities A-Z</a></li>
-        <li class="dropdown active " >
-          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Entities Tree <span class="caret"></span></a>
-          <ul class="dropdown-menu">
-            
-            <li><a class="active"href="entities-tree-classes.html">Classes</a>
-            </li>
-            
-            
-            <li><a  href="entities-tree-properties.html">Properties</a>
-            </li>
-            
-            
-          </ul>
-      </li>
+        
+        <li class="active"><a href="entities-tree-classes.html">Classes</a></li>
+        
+        
+        <li ><a href="entities-tree-properties.html">Properties</a></li>
+        
+        
+        
+        
+        <li  ><a href="statistics.html">Statistics</a></li>
+
+
+
+
 
       </ul>
       
@@ -227,8 +227,11 @@
 
   </div>
 </nav>
-
   
+
+
+
+
 
 
 
@@ -251,22 +254,28 @@
         </li>
 
         
-          <li class="-second-level" id="sd_classes"><a class="active"href="entities-tree-classes.html">Classes (6)</a>
+          <li class="-second-level" id="sd_classes"><a class="active"href="entities-tree-classes.html">Classes (9)</a>
           </li>
 
             
           
-              <li class="second-level" style="line-height: 20px;" id="sd_7450"><a  href="class-httpvocaborgwhiskytermsbrand.html">http://vocab.org/whisky/terms/Brand</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_4358"><a  href="class-foaforganization.html">foaf:Organization</a></li>
           
-              <li class="second-level" style="line-height: 20px;" id="sd_7451"><a  href="class-httpvocaborgwhiskytermscask.html">http://vocab.org/whisky/terms/Cask</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_4350"><a  href="class-httpumbelorgumbelacliquidtangiblething.html">http://umbel.org/umbel/ac/LiquidTangibleThing</a></li>
           
-              <li class="second-level" style="line-height: 20px;" id="sd_7452"><a  href="class-httpvocaborgwhiskytermsdistillery.html">http://vocab.org/whisky/terms/Distillery</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_4351"><a  href="class-httpvocaborgwhiskytermsbrand.html">http://vocab.org/whisky/terms/Brand</a></li>
           
-              <li class="second-level" style="line-height: 20px;" id="sd_7453"><a  href="class-httpvocaborgwhiskytermswatersource.html">http://vocab.org/whisky/terms/WaterSource</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_4352"><a  href="class-httpvocaborgwhiskytermscask.html">http://vocab.org/whisky/terms/Cask</a></li>
           
-              <li class="second-level" style="line-height: 20px;" id="sd_7454"><a  href="class-httpvocaborgwhiskytermswhisky.html">http://vocab.org/whisky/terms/Whisky</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_4353"><a  href="class-httpvocaborgwhiskytermsdistillery.html">http://vocab.org/whisky/terms/Distillery</a></li>
           
-              <li class="second-level" style="line-height: 20px;" id="sd_7455"><a  href="class-httpvocaborgwhiskytermswhiskyreview.html">http://vocab.org/whisky/terms/WhiskyReview</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_4354"><a  href="class-httpvocaborgwhiskytermsregion.html">http://vocab.org/whisky/terms/Region</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_4355"><a  href="class-httpvocaborgwhiskytermswatersource.html">http://vocab.org/whisky/terms/WaterSource</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_4356"><a  href="class-httpvocaborgwhiskytermswhisky.html">http://vocab.org/whisky/terms/Whisky</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_4357"><a  href="class-httpvocaborgwhiskytermswhiskyreview.html">http://vocab.org/whisky/terms/WhiskyReview</a></li>
           
         
 
@@ -276,48 +285,51 @@
 
             
           
-              <li class="second-level" style="line-height: 20px;" id="sd_7456"><a   href="prop-httpvocaborgwhiskytermsabv.html">http://vocab.org/whisky/terms/abv</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_4359"><a   href="prop-httpvocaborgwhiskytermsabv.html">http://vocab.org/whisky/terms/abv</a></li>
           
-              <li class="second-level" style="line-height: 20px;" id="sd_7457"><a   href="prop-httpvocaborgwhiskytermsage.html">http://vocab.org/whisky/terms/age</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_4360"><a   href="prop-httpvocaborgwhiskytermsage.html">http://vocab.org/whisky/terms/age</a></li>
           
-              <li class="second-level" style="line-height: 20px;" id="sd_7458"><a   href="prop-httpvocaborgwhiskytermsagingcask.html">http://vocab.org/whisky/terms/agingCask</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_4361"><a   href="prop-httpvocaborgwhiskytermsagingcask.html">http://vocab.org/whisky/terms/agingCask</a></li>
           
-              <li class="second-level" style="line-height: 20px;" id="sd_7459"><a   href="prop-httpvocaborgwhiskytermsbody.html">http://vocab.org/whisky/terms/body</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_4362"><a   href="prop-httpvocaborgwhiskytermsbody.html">http://vocab.org/whisky/terms/body</a></li>
           
-              <li class="second-level" style="line-height: 20px;" id="sd_7460"><a   href="prop-httpvocaborgwhiskytermsbrand.html">http://vocab.org/whisky/terms/brand</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_4363"><a   href="prop-httpvocaborgwhiskytermsbrand.html">http://vocab.org/whisky/terms/brand</a></li>
           
-              <li class="second-level" style="line-height: 20px;" id="sd_7461"><a   href="prop-httpvocaborgwhiskytermscharacter.html">http://vocab.org/whisky/terms/character</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_4364"><a   href="prop-httpvocaborgwhiskytermscharacter.html">http://vocab.org/whisky/terms/character</a></li>
           
-              <li class="second-level" style="line-height: 20px;" id="sd_7462"><a   href="prop-httpvocaborgwhiskytermscolour.html">http://vocab.org/whisky/terms/colour</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_4365"><a   href="prop-httpvocaborgwhiskytermscolour.html">http://vocab.org/whisky/terms/colour</a></li>
           
-              <li class="second-level" style="line-height: 20px;" id="sd_7463"><a   href="prop-httpvocaborgwhiskytermscolourdescription.html">http://vocab.org/whisky/terms/colourDescription</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_4366"><a   href="prop-httpvocaborgwhiskytermscolourdescription.html">http://vocab.org/whisky/terms/colourDescription</a></li>
           
-              <li class="second-level" style="line-height: 20px;" id="sd_7464"><a   href="prop-httpvocaborgwhiskytermsdistillery.html">http://vocab.org/whisky/terms/distillery</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_4367"><a   href="prop-httpvocaborgwhiskytermsdistillery.html">http://vocab.org/whisky/terms/distillery</a></li>
           
-              <li class="second-level" style="line-height: 20px;" id="sd_7465"><a   href="prop-httpvocaborgwhiskytermsexpressionlabel.html">http://vocab.org/whisky/terms/expressionLabel</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_4368"><a   href="prop-httpvocaborgwhiskytermsexpressionlabel.html">http://vocab.org/whisky/terms/expressionLabel</a></li>
           
-              <li class="second-level" style="line-height: 20px;" id="sd_7466"><a   href="prop-httpvocaborgwhiskytermsfinish.html">http://vocab.org/whisky/terms/finish</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_4369"><a   href="prop-httpvocaborgwhiskytermsfinish.html">http://vocab.org/whisky/terms/finish</a></li>
           
-              <li class="second-level" style="line-height: 20px;" id="sd_7467"><a   href="prop-httpvocaborgwhiskytermsfinishingcask.html">http://vocab.org/whisky/terms/finishingCask</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_4370"><a   href="prop-httpvocaborgwhiskytermsfinishingcask.html">http://vocab.org/whisky/terms/finishingCask</a></li>
           
-              <li class="second-level" style="line-height: 20px;" id="sd_7468"><a   href="prop-httpvocaborgwhiskytermsgrain.html">http://vocab.org/whisky/terms/grain</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_4371"><a   href="prop-httpvocaborgwhiskytermsgrain.html">http://vocab.org/whisky/terms/grain</a></li>
           
-              <li class="second-level" style="line-height: 20px;" id="sd_7469"><a   href="prop-httpvocaborgwhiskytermsmaterial.html">http://vocab.org/whisky/terms/material</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_4372"><a   href="prop-httpvocaborgwhiskytermsmaterial.html">http://vocab.org/whisky/terms/material</a></li>
           
-              <li class="second-level" style="line-height: 20px;" id="sd_7470"><a   href="prop-httpvocaborgwhiskytermsnose.html">http://vocab.org/whisky/terms/nose</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_4373"><a   href="prop-httpvocaborgwhiskytermsnose.html">http://vocab.org/whisky/terms/nose</a></li>
           
-              <li class="second-level" style="line-height: 20px;" id="sd_7471"><a   href="prop-httpvocaborgwhiskytermsowner.html">http://vocab.org/whisky/terms/owner</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_4374"><a   href="prop-httpvocaborgwhiskytermsowner.html">http://vocab.org/whisky/terms/owner</a></li>
           
-              <li class="second-level" style="line-height: 20px;" id="sd_7472"><a   href="prop-httpvocaborgwhiskytermspalate.html">http://vocab.org/whisky/terms/palate</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_4375"><a   href="prop-httpvocaborgwhiskytermspalate.html">http://vocab.org/whisky/terms/palate</a></li>
           
-              <li class="second-level" style="line-height: 20px;" id="sd_7473"><a   href="prop-httpvocaborgwhiskytermspreviouscontents.html">http://vocab.org/whisky/terms/previousContents</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_4376"><a   href="prop-httpvocaborgwhiskytermspreviouscontents.html">http://vocab.org/whisky/terms/previousContents</a></li>
           
-              <li class="second-level" style="line-height: 20px;" id="sd_7474"><a   href="prop-httpvocaborgwhiskytermsregion.html">http://vocab.org/whisky/terms/region</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_4377"><a   href="prop-httpvocaborgwhiskytermsregion.html">http://vocab.org/whisky/terms/region</a></li>
           
-              <li class="second-level" style="line-height: 20px;" id="sd_7475"><a   href="prop-httpvocaborgwhiskytermswatersource.html">http://vocab.org/whisky/terms/waterSource</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_4378"><a   href="prop-httpvocaborgwhiskytermswatersource.html">http://vocab.org/whisky/terms/waterSource</a></li>
           
 
         
+
+        
+
 
         
 
@@ -335,7 +347,6 @@
 
 
 <!-- /#sidebar-wrapper -->
-
     
 
 
@@ -412,6 +423,19 @@
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
     
 
 
@@ -419,7 +443,7 @@
 
   <div class="page-header">
 
-      <h3>Entities Tree: Classes
+      <h3>Classes Tree
       </h3>
       <input id="search-input" type="text" class="form-control" placeholder="Filter...">
 
@@ -435,11 +459,17 @@
       <div class="panel-body entities-list">
 
           <table class="h"><tr>
+							<td class="tc" colspan=4><a title="http://xmlns.com/foaf/0.1/Organization" class="treelinks" href="class-foaforganization.html">foaf:Organization</a></td>
+						  </tr><tr>
+							<td class="tc" colspan=4><a title="http://umbel.org/umbel/ac/LiquidTangibleThing" class="treelinks" href="class-httpumbelorgumbelacliquidtangiblething.html">http://umbel.org/umbel/ac/LiquidTangibleThing</a></td>
+						  </tr><tr>
 							<td class="tc" colspan=4><a title="http://vocab.org/whisky/terms/Brand" class="treelinks" href="class-httpvocaborgwhiskytermsbrand.html">http://vocab.org/whisky/terms/Brand</a></td>
 						  </tr><tr>
 							<td class="tc" colspan=4><a title="http://vocab.org/whisky/terms/Cask" class="treelinks" href="class-httpvocaborgwhiskytermscask.html">http://vocab.org/whisky/terms/Cask</a></td>
 						  </tr><tr>
 							<td class="tc" colspan=4><a title="http://vocab.org/whisky/terms/Distillery" class="treelinks" href="class-httpvocaborgwhiskytermsdistillery.html">http://vocab.org/whisky/terms/Distillery</a></td>
+						  </tr><tr>
+							<td class="tc" colspan=4><a title="http://vocab.org/whisky/terms/Region" class="treelinks" href="class-httpvocaborgwhiskytermsregion.html">http://vocab.org/whisky/terms/Region</a></td>
 						  </tr><tr>
 							<td class="tc" colspan=4><a title="http://vocab.org/whisky/terms/WaterSource" class="treelinks" href="class-httpvocaborgwhiskytermswatersource.html">http://vocab.org/whisky/terms/WaterSource</a></td>
 						  </tr><tr>
@@ -482,7 +512,7 @@
   <footer class="footer">
     <div class="container">
     
-      <p class="text-muted">Documentation automatically generated on 26th February 2017 with <a href="https://github.com/lambdamusic/OntoSpy">OntoSpy</a> (v1.7.4)</p>
+      <p class="text-muted">Documentation automatically generated on Wed, 16 Nov 2022 14:13:18 with <a href="http://lambdamusic.github.io/Ontospy/">Ontospy</a> (v2.1.0)</p>
 
     
     </div>
@@ -495,13 +525,13 @@
 <!-- Bootstrap core JavaScript
 ================================================== -->
 <!-- Placed at the end of the document so the pages load faster -->
-<script src="../static/libs/jquery/1.12.4/jquery.min.js"></script>
-<script src="../static/libs/bootstrap-3.3.7-dist/js/bootstrap.min.js"></script>
+<script src="../static/libs/jquery/1_12_4/jquery.min.js"></script>
+<script src="../static/libs/bootstrap-3_3_7-dist/js/bootstrap.min.js"></script>
 
 <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
-<script src="../static/libs/bootstrap-3.3.7-dist/js/ie10-viewport-bug-workaround.js"></script>
+<script src="../static/libs/bootstrap-3_3_7-dist/js/ie10-viewport-bug-workaround.js"></script>
 
-<script src="../static/libs/Chart.js-2.4.0/Chart.bundle.js"></script>
+<script src="../static/libs/chartjs-2_4_0/chart.bundle.js"></script>
 
 
 <!-- Menu Toggle Script -->

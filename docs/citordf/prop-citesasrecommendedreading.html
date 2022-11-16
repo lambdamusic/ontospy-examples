@@ -10,23 +10,23 @@
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
     <meta name="description" content="">
     <meta name="author" content="">
-    <link rel="icon" href="../static/libs/img/favicon.ico">
+    <link rel="icon" href="../static/custom/favicon.ico">
 
 	
-		<title>OntoSpy > http://purl.org/spar/cito/</title>
+		<title>Ontospy > http://purl.org/spar/cito/</title>
 	
 
     <!-- Bootstrap core CSS -->
-    <!-- <link href="../static/libs/bootstrap-3.3.7-dist/css/bootstrap.min.css" rel="stylesheet">  -->
+    <!-- <link href="../static/libs/bootstrap-3_3_7-dist/css/bootstrap.min.css" rel="stylesheet">  -->
     <!-- Bootswatch:  -->
     <!-- cerulean  | cyborg |  flatly |  lumen |  sandstone |   spacelab  |  yeti | cosmo |  darkly |  paper | simplex | superhero |  journal | readable  |   slate |  united -->
-    <link href="../static/libs/bootswatch3.2/lumen/bootstrap.min.css" rel="stylesheet">
+    <link href="../static/libs/bootswatch3_2/readable/bootstrap.min.css" rel="stylesheet">
     <link href="../static/custom/css/simple-sidebar.css" rel="stylesheet">
     <link href="../static/custom/css/familytree.css" rel="stylesheet">
     <link href="../static/custom/css/tabletree.css" rel="stylesheet">
 
     <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
-    <link href="../static/libs/bootstrap-3.3.7-dist/css/ie10-viewport-bug-workaround.css" rel="stylesheet">
+    <link href="../static/libs/bootstrap-3_3_7-dist/css/ie10-viewport-bug-workaround.css" rel="stylesheet">
 
     <!-- Custom styles for this template -->
     <link href="../static/custom/css/sticky-footer-navbar.css" rel="stylesheet">
@@ -57,7 +57,7 @@
 
   .implementation-panel {
     overflow: auto;
-    max-height: 500px;
+    /*max-height: 500px;*/
   }
 
   tr.table-classproperties {
@@ -152,8 +152,13 @@
 
 
 /*pygments css*/
+pre { line-height: 125%; }
+td.linenos pre { color: #000000; background-color: #f0f0f0; padding-left: 5px; padding-right: 5px; }
+span.linenos { color: #000000; background-color: #f0f0f0; padding-left: 5px; padding-right: 5px; }
+td.linenos pre.special { color: #000000; background-color: #ffffc0; padding-left: 5px; padding-right: 5px; }
+span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 5px; padding-right: 5px; }
 .highlight .hll { background-color: #ffffcc }
-.highlight  { background: #f8f8f8; }
+.highlight { background: #f8f8f8; }
 .highlight .c { color: #408080; font-style: italic } /* Comment */
 .highlight .err { border: 1px solid #FF0000 } /* Error */
 .highlight .k { color: #008000; font-weight: bold } /* Keyword */
@@ -266,27 +271,22 @@
     <div id="navbar" class="collapse navbar-collapse">
       <ul class="nav navbar-nav">
         <li ><a href="index.html"><code style="font-size: 115%;">http://purl.org/spar/cito/</code></a></li>
-        
 
-       
-
-
-        <li  ><a href="dashboard.html">Dashboard</a></li>
         <li  ><a href="entities-az.html">Entities A-Z</a></li>
-        <li class="dropdown  " >
-          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Entities Tree <span class="caret"></span></a>
-          <ul class="dropdown-menu">
-            
-            <li><a href="entities-tree-classes.html">Classes</a>
-            </li>
-            
-            
-            <li><a  href="entities-tree-properties.html">Properties</a>
-            </li>
-            
-            
-          </ul>
-      </li>
+        
+        <li ><a href="entities-tree-classes.html">Classes</a></li>
+        
+        
+        <li ><a href="entities-tree-properties.html">Properties</a></li>
+        
+        
+        
+        
+        <li  ><a href="statistics.html">Statistics</a></li>
+
+
+
+
 
       </ul>
       
@@ -294,6 +294,9 @@
 
   </div>
 </nav>
+
+
+
 
 
 
@@ -322,7 +325,7 @@
 
             
           
-              <li class="second-level" style="line-height: 20px;" id="sd_420"><a  href="class-citationact.html">:CitationAct</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_936"><a  href="class-citationact.html">:CitationAct</a></li>
           
         
 
@@ -332,214 +335,217 @@
 
             
           
-              <li class="second-level" style="line-height: 20px;" id="sd_421"><a   href="prop-dccontributor.html">dc:contributor</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_947"><a   href="prop-agreeswith.html">:agreesWith</a></li>
           
-              <li class="second-level" style="line-height: 20px;" id="sd_422"><a   href="prop-dccreator.html">dc:creator</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_948"><a   href="prop-cites.html">:cites</a></li>
           
-              <li class="second-level" style="line-height: 20px;" id="sd_423"><a   href="prop-dcdate.html">dc:date</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_949"><a   href="prop-citesasauthority.html">:citesAsAuthority</a></li>
           
-              <li class="second-level" style="line-height: 20px;" id="sd_424"><a   href="prop-dcdescription.html">dc:description</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_950"><a   href="prop-citesasdatasource.html">:citesAsDataSource</a></li>
           
-              <li class="second-level" style="line-height: 20px;" id="sd_425"><a   href="prop-dcrights.html">dc:rights</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_951"><a   href="prop-citesasevidence.html">:citesAsEvidence</a></li>
           
-              <li class="second-level" style="line-height: 20px;" id="sd_426"><a   href="prop-dctitle.html">dc:title</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_952"><a   href="prop-citesasmetadatadocument.html">:citesAsMetadataDocument</a></li>
           
-              <li class="second-level" style="line-height: 20px;" id="sd_427"><a   href="prop-rdfscomment.html">rdfs:comment</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_953"><a   href="prop-citesaspotentialsolution.html">:citesAsPotentialSolution</a></li>
           
-              <li class="second-level" style="line-height: 20px;" id="sd_428"><a   href="prop-rdfslabel.html">rdfs:label</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_954"><a class="active"  href="prop-citesasrecommendedreading.html">:citesAsRecommendedReading</a></li>
           
-              <li class="second-level" style="line-height: 20px;" id="sd_429"><a   href="prop-owlpriorversion.html">owl:priorVersion</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_955"><a   href="prop-citesasrelated.html">:citesAsRelated</a></li>
           
-              <li class="second-level" style="line-height: 20px;" id="sd_430"><a   href="prop-owlversioninfo.html">owl:versionInfo</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_956"><a   href="prop-citesassourcedocument.html">:citesAsSourceDocument</a></li>
           
-              <li class="second-level" style="line-height: 20px;" id="sd_431"><a   href="prop-agreeswith.html">:agreesWith</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_957"><a   href="prop-citesforinformation.html">:citesForInformation</a></li>
           
-              <li class="second-level" style="line-height: 20px;" id="sd_432"><a   href="prop-cites.html">:cites</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_958"><a   href="prop-compiles.html">:compiles</a></li>
           
-              <li class="second-level" style="line-height: 20px;" id="sd_433"><a   href="prop-citesasauthority.html">:citesAsAuthority</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_959"><a   href="prop-confirms.html">:confirms</a></li>
           
-              <li class="second-level" style="line-height: 20px;" id="sd_434"><a   href="prop-citesasdatasource.html">:citesAsDataSource</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_960"><a   href="prop-containsassertionfrom.html">:containsAssertionFrom</a></li>
           
-              <li class="second-level" style="line-height: 20px;" id="sd_435"><a   href="prop-citesasevidence.html">:citesAsEvidence</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_961"><a   href="prop-corrects.html">:corrects</a></li>
           
-              <li class="second-level" style="line-height: 20px;" id="sd_436"><a   href="prop-citesasmetadatadocument.html">:citesAsMetadataDocument</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_962"><a   href="prop-credits.html">:credits</a></li>
           
-              <li class="second-level" style="line-height: 20px;" id="sd_437"><a   href="prop-citesaspotentialsolution.html">:citesAsPotentialSolution</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_963"><a   href="prop-critiques.html">:critiques</a></li>
           
-              <li class="second-level" style="line-height: 20px;" id="sd_438"><a class="active"  href="prop-citesasrecommendedreading.html">:citesAsRecommendedReading</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_964"><a   href="prop-derides.html">:derides</a></li>
           
-              <li class="second-level" style="line-height: 20px;" id="sd_439"><a   href="prop-citesasrelated.html">:citesAsRelated</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_965"><a   href="prop-describes.html">:describes</a></li>
           
-              <li class="second-level" style="line-height: 20px;" id="sd_440"><a   href="prop-citesassourcedocument.html">:citesAsSourceDocument</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_966"><a   href="prop-disagreeswith.html">:disagreesWith</a></li>
           
-              <li class="second-level" style="line-height: 20px;" id="sd_441"><a   href="prop-citesforinformation.html">:citesForInformation</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_967"><a   href="prop-discusses.html">:discusses</a></li>
           
-              <li class="second-level" style="line-height: 20px;" id="sd_442"><a   href="prop-compiles.html">:compiles</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_968"><a   href="prop-disputes.html">:disputes</a></li>
           
-              <li class="second-level" style="line-height: 20px;" id="sd_443"><a   href="prop-confirms.html">:confirms</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_969"><a   href="prop-documents.html">:documents</a></li>
           
-              <li class="second-level" style="line-height: 20px;" id="sd_444"><a   href="prop-containsassertionfrom.html">:containsAssertionFrom</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_970"><a   href="prop-extends.html">:extends</a></li>
           
-              <li class="second-level" style="line-height: 20px;" id="sd_445"><a   href="prop-corrects.html">:corrects</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_971"><a   href="prop-givesbackgroundto.html">:givesBackgroundTo</a></li>
           
-              <li class="second-level" style="line-height: 20px;" id="sd_446"><a   href="prop-credits.html">:credits</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_972"><a   href="prop-givessupportto.html">:givesSupportTo</a></li>
           
-              <li class="second-level" style="line-height: 20px;" id="sd_447"><a   href="prop-critiques.html">:critiques</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_973"><a   href="prop-hascitationcharacterization.html">:hasCitationCharacterization</a></li>
           
-              <li class="second-level" style="line-height: 20px;" id="sd_448"><a   href="prop-derides.html">:derides</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_974"><a   href="prop-hascitedentity.html">:hasCitedEntity</a></li>
           
-              <li class="second-level" style="line-height: 20px;" id="sd_449"><a   href="prop-describes.html">:describes</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_975"><a   href="prop-hascitingentity.html">:hasCitingEntity</a></li>
           
-              <li class="second-level" style="line-height: 20px;" id="sd_450"><a   href="prop-disagreeswith.html">:disagreesWith</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_976"><a   href="prop-hasreplyfrom.html">:hasReplyFrom</a></li>
           
-              <li class="second-level" style="line-height: 20px;" id="sd_451"><a   href="prop-discusses.html">:discusses</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_977"><a   href="prop-includesexcerptfrom.html">:includesExcerptFrom</a></li>
           
-              <li class="second-level" style="line-height: 20px;" id="sd_452"><a   href="prop-disputes.html">:disputes</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_978"><a   href="prop-includesquotationfrom.html">:includesQuotationFrom</a></li>
           
-              <li class="second-level" style="line-height: 20px;" id="sd_453"><a   href="prop-documents.html">:documents</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_979"><a   href="prop-isagreedwithby.html">:isAgreedWithBy</a></li>
           
-              <li class="second-level" style="line-height: 20px;" id="sd_454"><a   href="prop-extends.html">:extends</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_980"><a   href="prop-iscitedasauthorityby.html">:isCitedAsAuthorityBy</a></li>
           
-              <li class="second-level" style="line-height: 20px;" id="sd_455"><a   href="prop-givesbackgroundto.html">:givesBackgroundTo</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_981"><a   href="prop-iscitedasdatasourceby.html">:isCitedAsDataSourceBy</a></li>
           
-              <li class="second-level" style="line-height: 20px;" id="sd_456"><a   href="prop-givessupportto.html">:givesSupportTo</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_982"><a   href="prop-iscitedasevidenceby.html">:isCitedAsEvidenceBy</a></li>
           
-              <li class="second-level" style="line-height: 20px;" id="sd_457"><a   href="prop-hascitationcharacterization.html">:hasCitationCharacterization</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_983"><a   href="prop-iscitedasmetadatadocumentby.html">:isCitedAsMetadataDocumentBy</a></li>
           
-              <li class="second-level" style="line-height: 20px;" id="sd_458"><a   href="prop-hascitedentity.html">:hasCitedEntity</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_984"><a   href="prop-iscitedaspontentialsolutionby.html">:isCitedAsPontentialSolutionBy</a></li>
           
-              <li class="second-level" style="line-height: 20px;" id="sd_459"><a   href="prop-hascitingentity.html">:hasCitingEntity</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_985"><a   href="prop-iscitedasrecommendedreading.html">:isCitedAsRecommendedReading</a></li>
           
-              <li class="second-level" style="line-height: 20px;" id="sd_460"><a   href="prop-hasreplyfrom.html">:hasReplyFrom</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_986"><a   href="prop-iscitedasrelatedby.html">:isCitedAsRelatedBy</a></li>
           
-              <li class="second-level" style="line-height: 20px;" id="sd_461"><a   href="prop-includesexcerptfrom.html">:includesExcerptFrom</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_987"><a   href="prop-iscitedassourcedocumentby.html">:isCitedAsSourceDocumentBy</a></li>
           
-              <li class="second-level" style="line-height: 20px;" id="sd_462"><a   href="prop-includesquotationfrom.html">:includesQuotationFrom</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_988"><a   href="prop-iscitedby.html">:isCitedBy</a></li>
           
-              <li class="second-level" style="line-height: 20px;" id="sd_463"><a   href="prop-isagreedwithby.html">:isAgreedWithBy</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_989"><a   href="prop-iscitedforinformationby.html">:isCitedForInformationBy</a></li>
           
-              <li class="second-level" style="line-height: 20px;" id="sd_464"><a   href="prop-iscitedasauthorityby.html">:isCitedAsAuthorityBy</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_990"><a   href="prop-iscompiledby.html">:isCompiledBy</a></li>
           
-              <li class="second-level" style="line-height: 20px;" id="sd_465"><a   href="prop-iscitedasdatasourceby.html">:isCitedAsDataSourceBy</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_991"><a   href="prop-isconfirmedby.html">:isConfirmedBy</a></li>
           
-              <li class="second-level" style="line-height: 20px;" id="sd_466"><a   href="prop-iscitedasevidenceby.html">:isCitedAsEvidenceBy</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_992"><a   href="prop-iscorrectedby.html">:isCorrectedBy</a></li>
           
-              <li class="second-level" style="line-height: 20px;" id="sd_467"><a   href="prop-iscitedasmetadatadocumentby.html">:isCitedAsMetadataDocumentBy</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_993"><a   href="prop-iscreditedby.html">:isCreditedBy</a></li>
           
-              <li class="second-level" style="line-height: 20px;" id="sd_468"><a   href="prop-iscitedaspontentialsolutionby.html">:isCitedAsPontentialSolutionBy</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_994"><a   href="prop-iscritiquedby.html">:isCritiquedBy</a></li>
           
-              <li class="second-level" style="line-height: 20px;" id="sd_469"><a   href="prop-iscitedasrecommendedreading.html">:isCitedAsRecommendedReading</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_995"><a   href="prop-isderidedby.html">:isDeridedBy</a></li>
           
-              <li class="second-level" style="line-height: 20px;" id="sd_470"><a   href="prop-iscitedasrelatedby.html">:isCitedAsRelatedBy</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_996"><a   href="prop-isdescribedby.html">:isDescribedBy</a></li>
           
-              <li class="second-level" style="line-height: 20px;" id="sd_471"><a   href="prop-iscitedassourcedocumentby.html">:isCitedAsSourceDocumentBy</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_997"><a   href="prop-isdisagreedwithby.html">:isDisagreedWithBy</a></li>
           
-              <li class="second-level" style="line-height: 20px;" id="sd_472"><a   href="prop-iscitedby.html">:isCitedBy</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_998"><a   href="prop-isdiscussedby.html">:isDiscussedBy</a></li>
           
-              <li class="second-level" style="line-height: 20px;" id="sd_473"><a   href="prop-iscitedforinformationby.html">:isCitedForInformationBy</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_999"><a   href="prop-isdisputedby.html">:isDisputedBy</a></li>
           
-              <li class="second-level" style="line-height: 20px;" id="sd_474"><a   href="prop-iscompiledby.html">:isCompiledBy</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_1000"><a   href="prop-isdocumentedby.html">:isDocumentedBy</a></li>
           
-              <li class="second-level" style="line-height: 20px;" id="sd_475"><a   href="prop-isconfirmedby.html">:isConfirmedBy</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_1001"><a   href="prop-isextendedby.html">:isExtendedBy</a></li>
           
-              <li class="second-level" style="line-height: 20px;" id="sd_476"><a   href="prop-iscorrectedby.html">:isCorrectedBy</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_1002"><a   href="prop-isparodiedby.html">:isParodiedBy</a></li>
           
-              <li class="second-level" style="line-height: 20px;" id="sd_477"><a   href="prop-iscreditedby.html">:isCreditedBy</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_1003"><a   href="prop-isplagiarizedby.html">:isPlagiarizedBy</a></li>
           
-              <li class="second-level" style="line-height: 20px;" id="sd_478"><a   href="prop-iscritiquedby.html">:isCritiquedBy</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_1004"><a   href="prop-isqualifiedby.html">:isQualifiedBy</a></li>
           
-              <li class="second-level" style="line-height: 20px;" id="sd_479"><a   href="prop-isderidedby.html">:isDeridedBy</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_1005"><a   href="prop-isrefutedby.html">:isRefutedBy</a></li>
           
-              <li class="second-level" style="line-height: 20px;" id="sd_480"><a   href="prop-isdescribedby.html">:isDescribedBy</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_1006"><a   href="prop-isretractedby.html">:isRetractedBy</a></li>
           
-              <li class="second-level" style="line-height: 20px;" id="sd_481"><a   href="prop-isdisagreedwithby.html">:isDisagreedWithBy</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_1007"><a   href="prop-isreviewedby.html">:isReviewedBy</a></li>
           
-              <li class="second-level" style="line-height: 20px;" id="sd_482"><a   href="prop-isdiscussedby.html">:isDiscussedBy</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_1008"><a   href="prop-isridiculedby.html">:isRidiculedBy</a></li>
           
-              <li class="second-level" style="line-height: 20px;" id="sd_483"><a   href="prop-isdisputedby.html">:isDisputedBy</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_1009"><a   href="prop-isspeculatedonby.html">:isSpeculatedOnBy</a></li>
           
-              <li class="second-level" style="line-height: 20px;" id="sd_484"><a   href="prop-isdocumentedby.html">:isDocumentedBy</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_1010"><a   href="prop-issupportedby.html">:isSupportedBy</a></li>
           
-              <li class="second-level" style="line-height: 20px;" id="sd_485"><a   href="prop-isextendedby.html">:isExtendedBy</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_1011"><a   href="prop-isupdatedby.html">:isUpdatedBy</a></li>
           
-              <li class="second-level" style="line-height: 20px;" id="sd_486"><a   href="prop-isparodiedby.html">:isParodiedBy</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_1012"><a   href="prop-likes.html">:likes</a></li>
           
-              <li class="second-level" style="line-height: 20px;" id="sd_487"><a   href="prop-isplagiarizedby.html">:isPlagiarizedBy</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_1013"><a   href="prop-obtainsbackgroundfrom.html">:obtainsBackgroundFrom</a></li>
           
-              <li class="second-level" style="line-height: 20px;" id="sd_488"><a   href="prop-isqualifiedby.html">:isQualifiedBy</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_1014"><a   href="prop-obtainssupportfrom.html">:obtainsSupportFrom</a></li>
           
-              <li class="second-level" style="line-height: 20px;" id="sd_489"><a   href="prop-isrefutedby.html">:isRefutedBy</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_1015"><a   href="prop-parodies.html">:parodies</a></li>
           
-              <li class="second-level" style="line-height: 20px;" id="sd_490"><a   href="prop-isretractedby.html">:isRetractedBy</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_1016"><a   href="prop-plagiarizes.html">:plagiarizes</a></li>
           
-              <li class="second-level" style="line-height: 20px;" id="sd_491"><a   href="prop-isreviewedby.html">:isReviewedBy</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_1017"><a   href="prop-providesassertionfor.html">:providesAssertionFor</a></li>
           
-              <li class="second-level" style="line-height: 20px;" id="sd_492"><a   href="prop-isridiculedby.html">:isRidiculedBy</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_1018"><a   href="prop-providesconclusionsfor.html">:providesConclusionsFor</a></li>
           
-              <li class="second-level" style="line-height: 20px;" id="sd_493"><a   href="prop-isspeculatedonby.html">:isSpeculatedOnBy</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_1019"><a   href="prop-providesdatafor.html">:providesDataFor</a></li>
           
-              <li class="second-level" style="line-height: 20px;" id="sd_494"><a   href="prop-issupportedby.html">:isSupportedBy</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_1020"><a   href="prop-providesexcerptfor.html">:providesExcerptFor</a></li>
           
-              <li class="second-level" style="line-height: 20px;" id="sd_495"><a   href="prop-isupdatedby.html">:isUpdatedBy</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_1021"><a   href="prop-providesmethodfor.html">:providesMethodFor</a></li>
           
-              <li class="second-level" style="line-height: 20px;" id="sd_496"><a   href="prop-likes.html">:likes</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_1022"><a   href="prop-providesquotationfor.html">:providesQuotationFor</a></li>
           
-              <li class="second-level" style="line-height: 20px;" id="sd_497"><a   href="prop-obtainsbackgroundfrom.html">:obtainsBackgroundFrom</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_1023"><a   href="prop-qualifies.html">:qualifies</a></li>
           
-              <li class="second-level" style="line-height: 20px;" id="sd_498"><a   href="prop-obtainssupportfrom.html">:obtainsSupportFrom</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_1024"><a   href="prop-refutes.html">:refutes</a></li>
           
-              <li class="second-level" style="line-height: 20px;" id="sd_499"><a   href="prop-parodies.html">:parodies</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_1025"><a   href="prop-repliesto.html">:repliesTo</a></li>
           
-              <li class="second-level" style="line-height: 20px;" id="sd_500"><a   href="prop-plagiarizes.html">:plagiarizes</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_1026"><a   href="prop-retracts.html">:retracts</a></li>
           
-              <li class="second-level" style="line-height: 20px;" id="sd_501"><a   href="prop-providesassertionfor.html">:providesAssertionFor</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_1027"><a   href="prop-reviews.html">:reviews</a></li>
           
-              <li class="second-level" style="line-height: 20px;" id="sd_502"><a   href="prop-providesconclusionsfor.html">:providesConclusionsFor</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_1028"><a   href="prop-ridicules.html">:ridicules</a></li>
           
-              <li class="second-level" style="line-height: 20px;" id="sd_503"><a   href="prop-providesdatafor.html">:providesDataFor</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_1029"><a   href="prop-sharesauthorinstitutionwith.html">:sharesAuthorInstitutionWith</a></li>
           
-              <li class="second-level" style="line-height: 20px;" id="sd_504"><a   href="prop-providesexcerptfor.html">:providesExcerptFor</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_1030"><a   href="prop-sharesauthorswith.html">:sharesAuthorsWith</a></li>
           
-              <li class="second-level" style="line-height: 20px;" id="sd_505"><a   href="prop-providesmethodfor.html">:providesMethodFor</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_1031"><a   href="prop-sharesfundingagencywith.html">:sharesFundingAgencyWith</a></li>
           
-              <li class="second-level" style="line-height: 20px;" id="sd_506"><a   href="prop-providesquotationfor.html">:providesQuotationFor</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_1032"><a   href="prop-speculateson.html">:speculatesOn</a></li>
           
-              <li class="second-level" style="line-height: 20px;" id="sd_507"><a   href="prop-qualifies.html">:qualifies</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_1033"><a   href="prop-supports.html">:supports</a></li>
           
-              <li class="second-level" style="line-height: 20px;" id="sd_508"><a   href="prop-refutes.html">:refutes</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_1034"><a   href="prop-updates.html">:updates</a></li>
           
-              <li class="second-level" style="line-height: 20px;" id="sd_509"><a   href="prop-repliesto.html">:repliesTo</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_1035"><a   href="prop-usesconclusionsfrom.html">:usesConclusionsFrom</a></li>
           
-              <li class="second-level" style="line-height: 20px;" id="sd_510"><a   href="prop-retracts.html">:retracts</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_1036"><a   href="prop-usesdatafrom.html">:usesDataFrom</a></li>
           
-              <li class="second-level" style="line-height: 20px;" id="sd_511"><a   href="prop-reviews.html">:reviews</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_1037"><a   href="prop-usesmethodin.html">:usesMethodIn</a></li>
           
-              <li class="second-level" style="line-height: 20px;" id="sd_512"><a   href="prop-ridicules.html">:ridicules</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_937"><a   href="prop-dccontributor.html">dc:contributor</a></li>
           
-              <li class="second-level" style="line-height: 20px;" id="sd_513"><a   href="prop-sharesauthorinstitutionwith.html">:sharesAuthorInstitutionWith</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_938"><a   href="prop-dccreator.html">dc:creator</a></li>
           
-              <li class="second-level" style="line-height: 20px;" id="sd_514"><a   href="prop-sharesauthorswith.html">:sharesAuthorsWith</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_939"><a   href="prop-dcdate.html">dc:date</a></li>
           
-              <li class="second-level" style="line-height: 20px;" id="sd_515"><a   href="prop-sharesfundingagencywith.html">:sharesFundingAgencyWith</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_940"><a   href="prop-dcdescription.html">dc:description</a></li>
           
-              <li class="second-level" style="line-height: 20px;" id="sd_516"><a   href="prop-speculateson.html">:speculatesOn</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_941"><a   href="prop-dcrights.html">dc:rights</a></li>
           
-              <li class="second-level" style="line-height: 20px;" id="sd_517"><a   href="prop-supports.html">:supports</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_942"><a   href="prop-dctitle.html">dc:title</a></li>
           
-              <li class="second-level" style="line-height: 20px;" id="sd_518"><a   href="prop-updates.html">:updates</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_1038"><a   href="prop-discourse-relationshipsrefersto.html">discourse-relationships:refersTo</a></li>
           
-              <li class="second-level" style="line-height: 20px;" id="sd_519"><a   href="prop-usesconclusionsfrom.html">:usesConclusionsFrom</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_945"><a   href="prop-owlpriorversion.html">owl:priorVersion</a></li>
           
-              <li class="second-level" style="line-height: 20px;" id="sd_520"><a   href="prop-usesdatafrom.html">:usesDataFrom</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_1039"><a   href="prop-owltopobjectproperty.html">owl:topObjectProperty</a></li>
           
-              <li class="second-level" style="line-height: 20px;" id="sd_521"><a   href="prop-usesmethodin.html">:usesMethodIn</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_946"><a   href="prop-owlversioninfo.html">owl:versionInfo</a></li>
           
-              <li class="second-level" style="line-height: 20px;" id="sd_522"><a   href="prop-discourse-relationshipsrefersto.html">discourse-relationships:refersTo</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_943"><a   href="prop-rdfscomment.html">rdfs:comment</a></li>
           
-              <li class="second-level" style="line-height: 20px;" id="sd_523"><a   href="prop-owltopobjectproperty.html">owl:topObjectProperty</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_944"><a   href="prop-rdfslabel.html">rdfs:label</a></li>
           
 
         
+
+        
+
 
         
 
@@ -557,7 +563,6 @@
 
 
 <!-- /#sidebar-wrapper -->
-
     
 
 
@@ -622,6 +627,12 @@
 
 
 
+
+
+
+
+
+
   <ol class="breadcrumb">
     <li>
       <a href="index.html">Home</a>
@@ -633,9 +644,16 @@
           <a href="entities-tree-properties.html">Properties</a>
     </li>
       <li class="active">
-            http://purl.org/spar/cito/citesAsRecommendedReading
+            :citesAsRecommendedReading
         </li>
   </ol>
+
+
+
+
+
+
+
 
 
 
@@ -670,11 +688,11 @@
 
                         <li>
 
-                          <a href="prop-cites.html" title="'cites' - The citing entity cites the cited entity, either directly and explicitly (as in the reference list of a journal article), ...">:cites</a>
+                          <a href="prop-cites.html" title="'cites' - The citing entity cites the cited entity, either directly and explicitly (as in the reference list of a journal article),..">:cites</a>
 
                           <ul>
 
-                            <li><a style="font-weight: bold;" title="'cites as recommended reading' - The citing entity cites the cited entity as an item of recommended reading. This property can be used, for example, ...">:citesAsRecommendedReading</a>
+                            <li><a style="font-weight: bold;" title="'cites as recommended reading' - The citing entity cites the cited entity as an item of recommended reading. This property can be used, for example,..">:citesAsRecommendedReading</a>
                             
                               </li>
 
@@ -729,7 +747,7 @@
             </div>
             <div class="panel-body">
 
-                The citing entity cites the cited entity as an item of recommended reading.  This property can be used, for example, to describe references in a lecture reading list, where the cited references are relevant to the general topic of the lecture, but might not be individually cited within the text of the lecture.  Similarly, it could be used to describe items in a &#39;Suggested further reading&#39; list at the end of a book chapter.
+                <p>The citing entity cites the cited entity as an item of recommended reading.  This property can be used, for example, to describe references in a lecture reading list, where the cited references are relevant to the general topic of the lecture, but might not be individually cited within the text of the lecture.  Similarly, it could be used to describe items in a &#39;Suggested further reading&#39; list at the end of a book chapter.</p>
             </div>
           </div>
            </div></div>
@@ -747,7 +765,7 @@
                     <div class="panel-body">
 
                     
-                            <li><a href="prop-cites.html">:cites</a></li><li><a href="prop-discourse-relationshipsrefersto.html">discourse-relationships:refersTo</a></li>
+                            <li><a href="prop-cites.html" title="http://purl.org/spar/cito/cites">:cites</a></li><li><a href="prop-discourse-relationshipsrefersto.html" title="http://purl.org/swan/2.0/discourse-relationships/refersTo">discourse-relationships:refersTo</a></li>
                     
 
                     </div>
@@ -804,23 +822,16 @@
 
                 
 
-                    <div class="highlight"><pre><span></span><span class="k">@prefix</span><span class="w"> </span><span class="nn">:</span><span class="w"> </span><span class="nv">&lt;http://purl.org/spar/cito/&gt;</span><span class="w"> </span><span class="p">.</span><span class="w"></span>
-<span class="k">@prefix</span><span class="w"> </span><span class="nn">cito:</span><span class="w"> </span><span class="nv">&lt;http://purl.org/spar/cito/cito:&gt;</span><span class="w"> </span><span class="p">.</span><span class="w"></span>
-<span class="k">@prefix</span><span class="w"> </span><span class="nn">dc:</span><span class="w"> </span><span class="nv">&lt;http://purl.org/dc/elements/1.1/&gt;</span><span class="w"> </span><span class="p">.</span><span class="w"></span>
-<span class="k">@prefix</span><span class="w"> </span><span class="nn">discourse-relationships:</span><span class="w"> </span><span class="nv">&lt;http://purl.org/swan/2.0/discourse-relationships/&gt;</span><span class="w"> </span><span class="p">.</span><span class="w"></span>
-<span class="k">@prefix</span><span class="w"> </span><span class="nn">owl:</span><span class="w"> </span><span class="nv">&lt;http://www.w3.org/2002/07/owl#&gt;</span><span class="w"> </span><span class="p">.</span><span class="w"></span>
-<span class="k">@prefix</span><span class="w"> </span><span class="nn">rdf:</span><span class="w"> </span><span class="nv">&lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#&gt;</span><span class="w"> </span><span class="p">.</span><span class="w"></span>
-<span class="k">@prefix</span><span class="w"> </span><span class="nn">rdfs:</span><span class="w"> </span><span class="nv">&lt;http://www.w3.org/2000/01/rdf-schema#&gt;</span><span class="w"> </span><span class="p">.</span><span class="w"></span>
-<span class="k">@prefix</span><span class="w"> </span><span class="nn">sit:</span><span class="w"> </span><span class="nv">&lt;http://www.ontologydesignpatterns.org/cp/owl/situation.owl#&gt;</span><span class="w"> </span><span class="p">.</span><span class="w"></span>
-<span class="k">@prefix</span><span class="w"> </span><span class="nn">skos:</span><span class="w"> </span><span class="nv">&lt;http://www.w3.org/2004/02/skos/core#&gt;</span><span class="w"> </span><span class="p">.</span><span class="w"></span>
-<span class="k">@prefix</span><span class="w"> </span><span class="nn">xml:</span><span class="w"> </span><span class="nv">&lt;http://www.w3.org/XML/1998/namespace&gt;</span><span class="w"> </span><span class="p">.</span><span class="w"></span>
-<span class="k">@prefix</span><span class="w"> </span><span class="nn">xsd:</span><span class="w"> </span><span class="nv">&lt;http://www.w3.org/2001/XMLSchema#&gt;</span><span class="w"> </span><span class="p">.</span><span class="w"></span>
+                    <div class="highlight"><pre><span></span><span class="k">@prefix</span><span class="w"> </span><span class="nn">:</span><span class="w"> </span><span class="nv">&lt;http://purl.org/spar/cito/&gt;</span><span class="w"> </span><span class="p">.</span>
+<span class="k">@prefix</span><span class="w"> </span><span class="nn">dc:</span><span class="w"> </span><span class="nv">&lt;http://purl.org/dc/elements/1.1/&gt;</span><span class="w"> </span><span class="p">.</span>
+<span class="k">@prefix</span><span class="w"> </span><span class="nn">owl:</span><span class="w"> </span><span class="nv">&lt;http://www.w3.org/2002/07/owl#&gt;</span><span class="w"> </span><span class="p">.</span>
+<span class="k">@prefix</span><span class="w"> </span><span class="nn">rdfs:</span><span class="w"> </span><span class="nv">&lt;http://www.w3.org/2000/01/rdf-schema#&gt;</span><span class="w"> </span><span class="p">.</span>
 
-<span class="nn">:</span><span class="nt">citesAsRecommendedReading</span><span class="w"> </span><span class="kt">a</span><span class="w"> </span><span class="nn">owl:</span><span class="nt">ObjectProperty</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
-<span class="w">    </span><span class="nn">rdfs:</span><span class="nt">label</span><span class="w"> </span><span class="s">&quot;cites as recommended reading&quot;</span><span class="o">@</span><span class="ge">en</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
-<span class="w">    </span><span class="nn">dc:</span><span class="nt">description</span><span class="w"> </span><span class="s">&quot;Example: To our knowledge, [X] is the best source of exercises about UML, making it a valuable proposal for beginners.&quot;</span><span class="o">@</span><span class="ge">en</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
-<span class="w">    </span><span class="nn">rdfs:</span><span class="nt">comment</span><span class="w"> </span><span class="s">&quot;The citing entity cites the cited entity as an item of recommended reading.  This property can be used, for example, to describe references in a lecture reading list, where the cited references are relevant to the general topic of the lecture, but might not be individually cited within the text of the lecture.  Similarly, it could be used to describe items in a &#39;Suggested further reading&#39; list at the end of a book chapter.&quot;</span><span class="o">@</span><span class="ge">en</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
-<span class="w">    </span><span class="nn">rdfs:</span><span class="nt">subPropertyOf</span><span class="w"> </span><span class="nn">:</span><span class="nt">cites</span><span class="w"> </span><span class="p">.</span><span class="w"></span>
+<span class="p">:</span><span class="nt">citesAsRecommendedReading</span> <span class="kt">a</span> <span class="nn">owl</span><span class="p">:</span><span class="nt">ObjectProperty</span> <span class="p">;</span>
+    <span class="nn">rdfs</span><span class="p">:</span><span class="nt">label</span> <span class="s">&quot;cites as recommended reading&quot;</span><span class="o">@</span><span class="ge">en</span> <span class="p">;</span>
+    <span class="nn">dc</span><span class="p">:</span><span class="nt">description</span> <span class="s">&quot;Example: To our knowledge, [X] is the best source of exercises about UML, making it a valuable proposal for beginners.&quot;</span><span class="o">@</span><span class="ge">en</span> <span class="p">;</span>
+    <span class="nn">rdfs</span><span class="p">:</span><span class="nt">comment</span> <span class="s">&quot;The citing entity cites the cited entity as an item of recommended reading.  This property can be used, for example, to describe references in a lecture reading list, where the cited references are relevant to the general topic of the lecture, but might not be individually cited within the text of the lecture.  Similarly, it could be used to describe items in a &#39;Suggested further reading&#39; list at the end of a book chapter.&quot;</span><span class="o">@</span><span class="ge">en</span> <span class="p">;</span>
+    <span class="nn">rdfs</span><span class="p">:</span><span class="nt">subPropertyOf</span> <span class="p">:</span><span class="nt">cites</span> <span class="p">.</span>
 </pre></div>
 
 
@@ -859,7 +870,7 @@
   <footer class="footer">
     <div class="container">
     
-      <p class="text-muted">Documentation automatically generated on 26th February 2017 with <a href="https://github.com/lambdamusic/OntoSpy">OntoSpy</a> (v1.7.4)</p>
+      <p class="text-muted">Documentation automatically generated on Wed, 16 Nov 2022 14:12:41 with <a href="http://lambdamusic.github.io/Ontospy/">Ontospy</a> (v2.1.0)</p>
 
     
     </div>
@@ -872,13 +883,13 @@
 <!-- Bootstrap core JavaScript
 ================================================== -->
 <!-- Placed at the end of the document so the pages load faster -->
-<script src="../static/libs/jquery/1.12.4/jquery.min.js"></script>
-<script src="../static/libs/bootstrap-3.3.7-dist/js/bootstrap.min.js"></script>
+<script src="../static/libs/jquery/1_12_4/jquery.min.js"></script>
+<script src="../static/libs/bootstrap-3_3_7-dist/js/bootstrap.min.js"></script>
 
 <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
-<script src="../static/libs/bootstrap-3.3.7-dist/js/ie10-viewport-bug-workaround.js"></script>
+<script src="../static/libs/bootstrap-3_3_7-dist/js/ie10-viewport-bug-workaround.js"></script>
 
-<script src="../static/libs/Chart.js-2.4.0/Chart.bundle.js"></script>
+<script src="../static/libs/chartjs-2_4_0/chart.bundle.js"></script>
 
 
 <!-- Menu Toggle Script -->
@@ -912,13 +923,15 @@ $('#search-input-sidebar').keyup(function() {
 
 
   <!-- Scroll Sidebar Script -->
+
   
   
+
   <script type="text/javascript">
 
     $(document).ready(function (){
       $('#sidebar-wrapper').animate({
-          scrollTop: $("#sd_438").offset().top - 100
+          scrollTop: $("#sd_954").offset().top - 100
       }, 100);
     });
 

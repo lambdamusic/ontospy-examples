@@ -10,23 +10,23 @@
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
     <meta name="description" content="">
     <meta name="author" content="">
-    <link rel="icon" href="../static/libs/img/favicon.ico">
+    <link rel="icon" href="../static/custom/favicon.ico">
 
 	
-		<title>OntoSpy > http://purl.org/vocab/vann/</title>
+		<title>Ontospy > http://purl.org/vocab/vann/</title>
 	
 
     <!-- Bootstrap core CSS -->
-    <!-- <link href="../static/libs/bootstrap-3.3.7-dist/css/bootstrap.min.css" rel="stylesheet">  -->
+    <!-- <link href="../static/libs/bootstrap-3_3_7-dist/css/bootstrap.min.css" rel="stylesheet">  -->
     <!-- Bootswatch:  -->
     <!-- cerulean  | cyborg |  flatly |  lumen |  sandstone |   spacelab  |  yeti | cosmo |  darkly |  paper | simplex | superhero |  journal | readable  |   slate |  united -->
-    <link href="../static/libs/bootswatch3.2/superhero/bootstrap.min.css" rel="stylesheet">
+    <link href="../static/libs/bootswatch3_2/slate/bootstrap.min.css" rel="stylesheet">
     <link href="../static/custom/css/simple-sidebar.css" rel="stylesheet">
     <link href="../static/custom/css/familytree.css" rel="stylesheet">
     <link href="../static/custom/css/tabletree.css" rel="stylesheet">
 
     <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
-    <link href="../static/libs/bootstrap-3.3.7-dist/css/ie10-viewport-bug-workaround.css" rel="stylesheet">
+    <link href="../static/libs/bootstrap-3_3_7-dist/css/ie10-viewport-bug-workaround.css" rel="stylesheet">
 
     <!-- Custom styles for this template -->
     <link href="../static/custom/css/sticky-footer-navbar.css" rel="stylesheet">
@@ -57,7 +57,7 @@
 
   .implementation-panel {
     overflow: auto;
-    max-height: 500px;
+    /*max-height: 500px;*/
   }
 
   tr.table-classproperties {
@@ -183,8 +183,8 @@
 
 
 
-  
-      
+
+
 <!-- Fixed navbar -->
 <nav class="navbar navbar-default navbar-fixed-top">
   <div class="container-fluid">
@@ -204,24 +204,20 @@
     <div id="navbar" class="collapse navbar-collapse">
       <ul class="nav navbar-nav">
         <li ><a href="index.html"><code style="font-size: 115%;">http://purl.org/vocab/vann/</code></a></li>
-        
 
-       
-
-
-        <li  ><a href="dashboard.html">Dashboard</a></li>
         <li class="active" ><a href="entities-az.html">Entities A-Z</a></li>
-        <li class="dropdown  " >
-          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Entities Tree <span class="caret"></span></a>
-          <ul class="dropdown-menu">
-            
-            
-            <li><a  href="entities-tree-properties.html">Properties</a>
-            </li>
-            
-            
-          </ul>
-      </li>
+        
+        
+        <li ><a href="entities-tree-properties.html">Properties</a></li>
+        
+        
+        
+        
+        <li  ><a href="statistics.html">Statistics</a></li>
+
+
+
+
 
       </ul>
       
@@ -230,7 +226,10 @@
   </div>
 </nav>
 
-  
+
+
+
+
 
 
 
@@ -241,8 +240,8 @@
 
     
 
-    
-        
+
+
 <!-- Sidebar -->
 <div id="sidebar-wrapper">
     <ul class="sidebar-nav">
@@ -260,20 +259,23 @@
 
             
           
-              <li class="second-level" style="line-height: 20px;" id="sd_7251"><a   href="prop-vannchanges.html">vann:changes</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_4295"><a   href="prop-vannchanges.html">vann:changes</a></li>
           
-              <li class="second-level" style="line-height: 20px;" id="sd_7252"><a   href="prop-vannexample.html">vann:example</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_4296"><a   href="prop-vannexample.html">vann:example</a></li>
           
-              <li class="second-level" style="line-height: 20px;" id="sd_7253"><a   href="prop-vannpreferrednamespaceprefix.html">vann:preferredNamespacePrefix</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_4297"><a   href="prop-vannpreferrednamespaceprefix.html">vann:preferredNamespacePrefix</a></li>
           
-              <li class="second-level" style="line-height: 20px;" id="sd_7254"><a   href="prop-vannpreferrednamespaceuri.html">vann:preferredNamespaceUri</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_4298"><a   href="prop-vannpreferrednamespaceuri.html">vann:preferredNamespaceUri</a></li>
           
-              <li class="second-level" style="line-height: 20px;" id="sd_7255"><a   href="prop-vanntermgroup.html">vann:termGroup</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_4299"><a   href="prop-vanntermgroup.html">vann:termGroup</a></li>
           
-              <li class="second-level" style="line-height: 20px;" id="sd_7256"><a   href="prop-vannusagenote.html">vann:usageNote</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_4300"><a   href="prop-vannusagenote.html">vann:usageNote</a></li>
           
 
         
+
+        
+
 
         
 
@@ -292,7 +294,6 @@
 
 <!-- /#sidebar-wrapper -->
 
-    
 
 
 
@@ -305,8 +306,8 @@
 	
 
 
-    
-        
+
+
 
 
 
@@ -364,116 +365,137 @@
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="page-header">
+
+  <h3>Entities A-Z
+    
+  </h3>
+  <input id="search-input" type="text" class="form-control" placeholder="Filter...">
+
+</div>
+
+
+<div class="row">
+
+  
+  <div class="col-md-6">
+
     
 
 
 
-        <div class="page-header">
-
-            <h3>Entities A-Z
-
-            </h3>
-            <input id="search-input" type="text" class="form-control" placeholder="Filter...">
-
-        </div>
-
-
-      <div class="row">
-
-        
-        <div class="col-md-6">
-
-        
+    
 
 
 
-           
+    
 
 
 
-
-        </div>
-         
-
-
-        
-        <div class="col-md-6">
-
-
-           
-              <div class="row">
-                <div class="col-md-12">
-                  <div class="panel panel-default">
-                <div class="panel-heading">
-                  <h3 class="panel-title">Properties (6)</h3>
-                </div>
-                <div class="panel-body entities-list" style="overflow: auto;">
-                   <dl>
-
-                   
-                       <dt><a href="prop-vannchanges.html">vann:changes</a></dt>
-                       <dd>
-
-                       </dd>
-
-                   
-                       <dt><a href="prop-vannexample.html">vann:example</a></dt>
-                       <dd>
-
-                       </dd>
-
-                   
-                       <dt><a href="prop-vannpreferrednamespaceprefix.html">vann:preferredNamespacePrefix</a></dt>
-                       <dd>
-
-                       </dd>
-
-                   
-                       <dt><a href="prop-vannpreferrednamespaceuri.html">vann:preferredNamespaceUri</a></dt>
-                       <dd>
-
-                       </dd>
-
-                   
-                       <dt><a href="prop-vanntermgroup.html">vann:termGroup</a></dt>
-                       <dd>
-
-                       </dd>
-
-                   
-                       <dt><a href="prop-vannusagenote.html">vann:usageNote</a></dt>
-                       <dd>
-
-                       </dd>
-
-                   
-
-                  </dl>
-                </div>
-              </div>
-                </div>
-              </div>
-        
-
-
-
-
-
-        </div>
-         
-
-      </div>
-
-
-
-
-    <div class="container margin50">
-
-
-    </div> <!-- /container -->
+  </div> <!-- end of col-md-6 -->
+  
 
 
   
+  <div class="col-md-6">
+
+
+    
+    <div class="row">
+      <div class="col-md-12">
+        <div class="panel panel-default">
+          <div class="panel-heading">
+            <h3 class="panel-title">Properties (6)</h3>
+          </div>
+          <div class="panel-body entities-list" style="overflow: auto;">
+            <dl>
+
+              
+              <dt><a href="prop-vannchanges.html">vann:changes</a></dt>
+              <dd>
+                
+              </dd>
+
+              
+              <dt><a href="prop-vannexample.html">vann:example</a></dt>
+              <dd>
+                
+              </dd>
+
+              
+              <dt><a href="prop-vannpreferrednamespaceprefix.html">vann:preferredNamespacePrefix</a></dt>
+              <dd>
+                
+              </dd>
+
+              
+              <dt><a href="prop-vannpreferrednamespaceuri.html">vann:preferredNamespaceUri</a></dt>
+              <dd>
+                
+              </dd>
+
+              
+              <dt><a href="prop-vanntermgroup.html">vann:termGroup</a></dt>
+              <dd>
+                
+              </dd>
+
+              
+              <dt><a href="prop-vannusagenote.html">vann:usageNote</a></dt>
+              <dd>
+                
+              </dd>
+
+              
+
+            </dl>
+          </div>
+        </div>
+      </div>
+    </div> <!-- end of row -->
+    
+
+
+
+
+
+    
+
+
+
+
+  </div>
+  
+
+</div>
+
+
+
+
+<div class="container margin50">
+
+
+</div> <!-- /container -->
+
+
+
 
 
 	</div><!-- /#page-content-wrapper -->
@@ -491,7 +513,7 @@
   <footer class="footer">
     <div class="container">
     
-      <p class="text-muted">Documentation automatically generated on 26th February 2017 with <a href="https://github.com/lambdamusic/OntoSpy">OntoSpy</a> (v1.7.4)</p>
+      <p class="text-muted">Documentation automatically generated on Wed, 16 Nov 2022 14:13:17 with <a href="http://lambdamusic.github.io/Ontospy/">Ontospy</a> (v2.1.0)</p>
 
     
     </div>
@@ -504,13 +526,13 @@
 <!-- Bootstrap core JavaScript
 ================================================== -->
 <!-- Placed at the end of the document so the pages load faster -->
-<script src="../static/libs/jquery/1.12.4/jquery.min.js"></script>
-<script src="../static/libs/bootstrap-3.3.7-dist/js/bootstrap.min.js"></script>
+<script src="../static/libs/jquery/1_12_4/jquery.min.js"></script>
+<script src="../static/libs/bootstrap-3_3_7-dist/js/bootstrap.min.js"></script>
 
 <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
-<script src="../static/libs/bootstrap-3.3.7-dist/js/ie10-viewport-bug-workaround.js"></script>
+<script src="../static/libs/bootstrap-3_3_7-dist/js/ie10-viewport-bug-workaround.js"></script>
 
-<script src="../static/libs/Chart.js-2.4.0/Chart.bundle.js"></script>
+<script src="../static/libs/chartjs-2_4_0/chart.bundle.js"></script>
 
 
 <!-- Menu Toggle Script -->
@@ -550,20 +572,20 @@ $('#search-input-sidebar').keyup(function() {
 
 <script type="text/javascript">
 
-// http://stackoverflow.com/questions/9127498/how-to-perform-a-real-time-search-and-filter-on-a-html-table
+  // http://stackoverflow.com/questions/9127498/how-to-perform-a-real-time-search-and-filter-on-a-html-table
 
-  $('#search-input').keyup(function() {
+  $('#search-input').keyup(function () {
 
     var val = $.trim($(this).val()).replace(/ +/g, ' ').toLowerCase();
 
     // var $rows = $(this).next(".entities-list").find("div");
     var $rows = $(this).parent().next().find(".entities-list dt");
 
-    $rows.show().filter(function() {
-        var text = $(this).text().replace(/\s+/g, ' ').toLowerCase();
-        return !~text.indexOf(val);
+    $rows.show().filter(function () {
+      var text = $(this).text().replace(/\s+/g, ' ').toLowerCase();
+      return !~text.indexOf(val);
     }).hide();
-});
+  });
 
 
 </script>

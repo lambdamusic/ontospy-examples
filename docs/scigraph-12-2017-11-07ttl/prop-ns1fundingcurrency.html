@@ -1,0 +1,1299 @@
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="../static/custom/favicon.ico">
+
+	
+		<title>Ontospy > http://scigraph.springernature.com/ontologies/core/</title>
+	
+
+    <!-- Bootstrap core CSS -->
+    <!-- <link href="../static/libs/bootstrap-3_3_7-dist/css/bootstrap.min.css" rel="stylesheet">  -->
+    <!-- Bootswatch:  -->
+    <!-- cerulean  | cyborg |  flatly |  lumen |  sandstone |   spacelab  |  yeti | cosmo |  darkly |  paper | simplex | superhero |  journal | readable  |   slate |  united -->
+    <link href="../static/libs/bootswatch3_2/united/bootstrap.min.css" rel="stylesheet">
+    <link href="../static/custom/css/simple-sidebar.css" rel="stylesheet">
+    <link href="../static/custom/css/familytree.css" rel="stylesheet">
+    <link href="../static/custom/css/tabletree.css" rel="stylesheet">
+
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <link href="../static/libs/bootstrap-3_3_7-dist/css/ie10-viewport-bug-workaround.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="../static/custom/css/sticky-footer-navbar.css" rel="stylesheet">
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+<style type="text/css">
+
+  .lead-plus {font-size: 26.5px;}
+  .label-xs {font-size: 10px;}
+  .label-dark {background: #2c3e50; color: white; padding: 1px;}
+  .margin50 {margin-top: 50px; margin-bottom: 50px;}
+
+  .namespaces {background: #ced2d6; width: 100%;}
+
+
+  /*so that the d3plus tooltip panel doesnt cover the top banner*/
+  .navbar {z-index: 3000;}
+
+
+  .panel-body dt {margin-top: 5px;}
+  .page-header  {margin-top: 30px;}
+  #wrapper {margin-top: 50px;}
+
+  .implementation-panel {
+    overflow: auto;
+    /*max-height: 500px;*/
+  }
+
+  tr.table-classproperties {
+      /*background: #f5f5f5;*/
+  }
+  tr.table-classproperties th {
+      font-size: 80%;
+      font-weight: normal;
+  }
+
+
+  tr.table-inheritanceinfo {
+      /*background: #f5f5f5;*/
+      text-align: left;
+  }
+
+  tr.table-inheritanceinfo th {
+      font-size: 90%;
+      font-weight: normal;
+  }
+
+
+  .breadcrumb {
+    margin-top: 20px;
+    margin-bottom: 40px;
+  }
+
+  .breadcrumb a {
+      text-transform: capitalize;
+  }
+  .breadcrumb li {
+      text-transform: none;
+      /*so to catch the uri @todo improve*/
+  }
+
+
+  .fromclass_link {
+    /*color: white;
+    text-decoration: underline;*/
+    /*background: #1c1e52;*/
+    color: inherit;
+    /*padding: 1px;*/
+  }
+
+		.mythumbnail {
+			display: block;
+			padding: 13px;
+			margin-bottom: 30px;
+			line-height: 13.428571;
+			background-color: #fff;
+			border: 1px solid #ddd;
+			border-radius: 30px;
+		}
+
+		.mythumbnail:hover {
+			background: lightyellow;
+			text-decoration: none;
+		}
+
+
+		.img-container{
+		    height:100%;
+			overflow: hidden;
+		    max-height:200px;
+			padding: 10px;
+/*			margin: 20px 0px 20px 0px;*/
+			border: 1em #EAE5E5 solid;
+		}
+
+		.img-container:hover {
+			border: 1px grey solid;
+		}
+
+		img{
+/*		    height:100% !important;*/
+		}
+
+
+		.icon-xxs {
+			font-size: 15px;
+		}
+
+
+    /* dropdown open on hover */
+
+    @media (min-width: 979px) {
+      ul.nav li.dropdown:hover > ul.dropdown-menu {
+        display: block;
+      }
+    }
+
+
+
+/*pygments css*/
+pre { line-height: 125%; }
+td.linenos pre { color: #000000; background-color: #f0f0f0; padding-left: 5px; padding-right: 5px; }
+span.linenos { color: #000000; background-color: #f0f0f0; padding-left: 5px; padding-right: 5px; }
+td.linenos pre.special { color: #000000; background-color: #ffffc0; padding-left: 5px; padding-right: 5px; }
+span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 5px; padding-right: 5px; }
+.highlight .hll { background-color: #ffffcc }
+.highlight { background: #f8f8f8; }
+.highlight .c { color: #408080; font-style: italic } /* Comment */
+.highlight .err { border: 1px solid #FF0000 } /* Error */
+.highlight .k { color: #008000; font-weight: bold } /* Keyword */
+.highlight .o { color: #666666 } /* Operator */
+.highlight .ch { color: #408080; font-style: italic } /* Comment.Hashbang */
+.highlight .cm { color: #408080; font-style: italic } /* Comment.Multiline */
+.highlight .cp { color: #BC7A00 } /* Comment.Preproc */
+.highlight .cpf { color: #408080; font-style: italic } /* Comment.PreprocFile */
+.highlight .c1 { color: #408080; font-style: italic } /* Comment.Single */
+.highlight .cs { color: #408080; font-style: italic } /* Comment.Special */
+.highlight .gd { color: #A00000 } /* Generic.Deleted */
+.highlight .ge { font-style: italic } /* Generic.Emph */
+.highlight .gr { color: #FF0000 } /* Generic.Error */
+.highlight .gh { color: #000080; font-weight: bold } /* Generic.Heading */
+.highlight .gi { color: #00A000 } /* Generic.Inserted */
+.highlight .go { color: #888888 } /* Generic.Output */
+.highlight .gp { color: #000080; font-weight: bold } /* Generic.Prompt */
+.highlight .gs { font-weight: bold } /* Generic.Strong */
+.highlight .gu { color: #800080; font-weight: bold } /* Generic.Subheading */
+.highlight .gt { color: #0044DD } /* Generic.Traceback */
+.highlight .kc { color: #008000; font-weight: bold } /* Keyword.Constant */
+.highlight .kd { color: #008000; font-weight: bold } /* Keyword.Declaration */
+.highlight .kn { color: #008000; font-weight: bold } /* Keyword.Namespace */
+.highlight .kp { color: #008000 } /* Keyword.Pseudo */
+.highlight .kr { color: #008000; font-weight: bold } /* Keyword.Reserved */
+.highlight .kt { color: #B00040 } /* Keyword.Type */
+.highlight .m { color: #666666 } /* Literal.Number */
+.highlight .s { color: #BA2121 } /* Literal.String */
+.highlight .na { color: #7D9029 } /* Name.Attribute */
+.highlight .nb { color: #008000 } /* Name.Builtin */
+.highlight .nc { color: #0000FF; font-weight: bold } /* Name.Class */
+.highlight .no { color: #880000 } /* Name.Constant */
+.highlight .nd { color: #AA22FF } /* Name.Decorator */
+.highlight .ni { color: #999999; font-weight: bold } /* Name.Entity */
+.highlight .ne { color: #D2413A; font-weight: bold } /* Name.Exception */
+.highlight .nf { color: #0000FF } /* Name.Function */
+.highlight .nl { color: #A0A000 } /* Name.Label */
+.highlight .nn { color: #0000FF; font-weight: bold } /* Name.Namespace */
+.highlight .nt { color: #008000; font-weight: bold } /* Name.Tag */
+.highlight .nv { color: #19177C } /* Name.Variable */
+.highlight .ow { color: #AA22FF; font-weight: bold } /* Operator.Word */
+.highlight .w { color: #bbbbbb } /* Text.Whitespace */
+.highlight .mb { color: #666666 } /* Literal.Number.Bin */
+.highlight .mf { color: #666666 } /* Literal.Number.Float */
+.highlight .mh { color: #666666 } /* Literal.Number.Hex */
+.highlight .mi { color: #666666 } /* Literal.Number.Integer */
+.highlight .mo { color: #666666 } /* Literal.Number.Oct */
+.highlight .sa { color: #BA2121 } /* Literal.String.Affix */
+.highlight .sb { color: #BA2121 } /* Literal.String.Backtick */
+.highlight .sc { color: #BA2121 } /* Literal.String.Char */
+.highlight .dl { color: #BA2121 } /* Literal.String.Delimiter */
+.highlight .sd { color: #BA2121; font-style: italic } /* Literal.String.Doc */
+.highlight .s2 { color: #BA2121 } /* Literal.String.Double */
+.highlight .se { color: #BB6622; font-weight: bold } /* Literal.String.Escape */
+.highlight .sh { color: #BA2121 } /* Literal.String.Heredoc */
+.highlight .si { color: #BB6688; font-weight: bold } /* Literal.String.Interpol */
+.highlight .sx { color: #008000 } /* Literal.String.Other */
+.highlight .sr { color: #BB6688 } /* Literal.String.Regex */
+.highlight .s1 { color: #BA2121 } /* Literal.String.Single */
+.highlight .ss { color: #19177C } /* Literal.String.Symbol */
+.highlight .bp { color: #008000 } /* Name.Builtin.Pseudo */
+.highlight .fm { color: #0000FF } /* Name.Function.Magic */
+.highlight .vc { color: #19177C } /* Name.Variable.Class */
+.highlight .vg { color: #19177C } /* Name.Variable.Global */
+.highlight .vi { color: #19177C } /* Name.Variable.Instance */
+.highlight .vm { color: #19177C } /* Name.Variable.Magic */
+.highlight .il { color: #666666 } /* Literal.Number.Integer.Long */
+
+/*overloading this class from pygments*/
+.highlight {
+  overflow: auto;
+}
+
+
+
+
+
+
+
+
+</style>
+
+
+
+
+
+  </head>
+
+  <body>
+
+
+
+    
+<!-- Fixed navbar -->
+<nav class="navbar navbar-default navbar-fixed-top">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+
+      <a class="navbar-brand" id="menu-toggle" title="Toggle sidebar">
+        
+        <span class="glyphicon glyphicon-align-left" aria-hidden="true"></span>
+      </a>
+    </div>
+    <div id="navbar" class="collapse navbar-collapse">
+      <ul class="nav navbar-nav">
+        <li ><a href="index.html"><code style="font-size: 115%;">http://scigraph.springernature.com/ontologies/core/</code></a></li>
+
+        <li  ><a href="entities-az.html">Entities A-Z</a></li>
+        
+        <li ><a href="entities-tree-classes.html">Classes</a></li>
+        
+        
+        <li ><a href="entities-tree-properties.html">Properties</a></li>
+        
+        
+        
+        
+        <li  ><a href="statistics.html">Statistics</a></li>
+
+
+
+
+
+      </ul>
+      
+    </div><!--/.nav-collapse -->
+
+  </div>
+</nav>
+
+
+
+
+
+
+
+
+
+<div id="wrapper" class="toggled">
+
+
+    
+
+    
+        
+<!-- Sidebar -->
+<div id="sidebar-wrapper">
+    <ul class="sidebar-nav">
+
+
+        <li>
+          <input style="margin-top: 30px;  margin-bottom: 20px;" type="text" id="search-input-sidebar" name="" value="" placeholder="Type to search">
+        </li>
+
+        
+          <li class="-second-level" id="sd_classes"><a href="entities-tree-classes.html">Classes (49)</a>
+          </li>
+
+            
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_3686"><a  href="class-ns1accesstype.html">ns1:AccessType</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_3687"><a  href="class-ns1affiliation.html">ns1:Affiliation</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_3688"><a  href="class-ns1agent.html">ns1:Agent</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_3689"><a  href="class-ns1aggregationevent.html">ns1:AggregationEvent</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_3690"><a  href="class-ns1annotation.html">ns1:Annotation</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_3691"><a  href="class-ns1annotationevent.html">ns1:AnnotationEvent</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_3692"><a  href="class-ns1article.html">ns1:Article</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_3693"><a  href="class-ns1articletype.html">ns1:ArticleType</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_3694"><a  href="class-ns1book.html">ns1:Book</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_3695"><a  href="class-ns1bookchapter.html">ns1:BookChapter</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_3696"><a  href="class-ns1bookedition.html">ns1:BookEdition</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_3697"><a  href="class-ns1bookseries.html">ns1:BookSeries</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_3698"><a  href="class-ns1categorizationevent.html">ns1:CategorizationEvent</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_3699"><a  href="class-ns1category.html">ns1:Category</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_3700"><a  href="class-ns1citationmetricsevent.html">ns1:CitationMetricsEvent</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_3701"><a  href="class-ns1concept.html">ns1:Concept</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_3702"><a  href="class-ns1conference.html">ns1:Conference</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_3703"><a  href="class-ns1conferenceseries.html">ns1:ConferenceSeries</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_3704"><a  href="class-ns1contract.html">ns1:Contract</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_3705"><a  href="class-ns1contribution.html">ns1:Contribution</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_3706"><a  href="class-ns1event.html">ns1:Event</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_3707"><a  href="class-ns1fieldofresearchcode.html">ns1:FieldOfResearchCode</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_3708"><a  href="class-ns1grant.html">ns1:Grant</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_3709"><a  href="class-ns1impactfactormetricsevent.html">ns1:ImpactFactorMetricsEvent</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_3710"><a  href="class-ns1indexcheckevent.html">ns1:IndexCheckEvent</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_3711"><a  href="class-ns1intangible.html">ns1:Intangible</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_3712"><a  href="class-ns1journal.html">ns1:Journal</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_3713"><a  href="class-ns1journalbrand.html">ns1:JournalBrand</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_3714"><a  href="class-ns1metricsevent.html">ns1:MetricsEvent</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_3715"><a  href="class-ns1monograph.html">ns1:Monograph</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_3716"><a  href="class-ns1organization.html">ns1:Organization</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_3717"><a  href="class-ns1person.html">ns1:Person</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_3718"><a  href="class-ns1product.html">ns1:Product</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_3719"><a  href="class-ns1productmarketcode.html">ns1:ProductMarketCode</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_3720"><a  href="class-ns1publication.html">ns1:Publication</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_3721"><a  href="class-ns1publicationevent.html">ns1:PublicationEvent</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_3722"><a  href="class-ns1publicationstate.html">ns1:PublicationState</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_3723"><a  href="class-ns1publishevent.html">ns1:PublishEvent</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_3724"><a  href="class-ns1publishstate.html">ns1:PublishState</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_3725"><a  href="class-ns1publisher.html">ns1:Publisher</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_3726"><a  href="class-ns1reviewevent.html">ns1:ReviewEvent</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_3727"><a  href="class-ns1reviewstate.html">ns1:ReviewState</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_3728"><a  href="class-ns1serial.html">ns1:Serial</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_3729"><a  href="class-ns1subject.html">ns1:Subject</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_3730"><a  href="class-ns1tangible.html">ns1:Tangible</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_3731"><a  href="class-ns1technicalarticletype.html">ns1:TechnicalArticleType</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_3732"><a  href="class-ns1thing.html">ns1:Thing</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_3733"><a  href="class-ns1work.html">ns1:Work</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_3734"><a  href="class-skosconcept.html">skos:Concept</a></li>
+          
+        
+
+        
+            <li class="-second-level" id="sd_properties"><a  href="entities-tree-properties.html">Properties (233)</a>
+            </li>
+
+            
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_3745"><a   href="prop-ns1abstract.html">ns1:abstract</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_3746"><a   href="prop-ns1abstractrights.html">ns1:abstractRights</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_3747"><a   href="prop-ns1abstracttranslated.html">ns1:abstractTranslated</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_3748"><a   href="prop-ns1accessrights.html">ns1:accessRights</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_3749"><a   href="prop-ns1acronym.html">ns1:acronym</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_3750"><a   href="prop-ns1annotationagent.html">ns1:annotationAgent</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_3751"><a   href="prop-ns1annotationcategory.html">ns1:annotationCategory</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_3752"><a   href="prop-ns1articleid.html">ns1:articleId</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_3753"><a   href="prop-ns1articletype.html">ns1:articleType</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_3754"><a   href="prop-ns1bibliographyrights.html">ns1:bibliographyRights</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_3755"><a   href="prop-ns1body.html">ns1:body</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_3756"><a   href="prop-ns1bodyhtmlrights.html">ns1:bodyHtmlRights</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_3757"><a   href="prop-ns1bodypdfrights.html">ns1:bodyPdfRights</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_3758"><a   href="prop-ns1bodyxml.html">ns1:bodyXml</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_3759"><a   href="prop-ns1booktype.html">ns1:bookType</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_3760"><a   href="prop-ns1category.html">ns1:category</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_3761"><a   href="prop-ns1chaptercount.html">ns1:chapterCount</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_3762"><a   href="prop-ns1chapternumber.html">ns1:chapterNumber</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_3763"><a   href="prop-ns1citationrank.html">ns1:citationRank</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_3764"><a   href="prop-ns1city.html">ns1:city</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_3765"><a   href="prop-ns1code.html">ns1:code</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_3735"><a   href="prop-ns1conceptscheme.html">ns1:conceptScheme</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_3766"><a   href="prop-ns1content.html">ns1:content</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_3767"><a   href="prop-ns1copyrightholder.html">ns1:copyrightHolder</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_3768"><a   href="prop-ns1copyrightyear.html">ns1:copyrightYear</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_3769"><a   href="prop-ns1count.html">ns1:count</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_3770"><a   href="prop-ns1country.html">ns1:country</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_3771"><a   href="prop-ns1coverdate.html">ns1:coverDate</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_3772"><a   href="prop-ns1coveryear.html">ns1:coverYear</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_3773"><a   href="prop-ns1coveryearmonth.html">ns1:coverYearMonth</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_3774"><a   href="prop-ns1database.html">ns1:database</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_3775"><a   href="prop-ns1date.html">ns1:date</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_3776"><a   href="prop-ns1dateend.html">ns1:dateEnd</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_3777"><a   href="prop-ns1dateinfo.html">ns1:dateInfo</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_3778"><a   href="prop-ns1datestart.html">ns1:dateStart</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_3779"><a   href="prop-ns1datetime.html">ns1:datetime</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_3780"><a   href="prop-ns1dblpid.html">ns1:dblpId</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_3781"><a   href="prop-ns1ddsid.html">ns1:ddsId</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_3782"><a   href="prop-ns1ddsidjournalbrand.html">ns1:ddsIdJournalBrand</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_3783"><a   href="prop-ns1description.html">ns1:description</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_3784"><a   href="prop-ns1dimensionsid.html">ns1:dimensionsId</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_3785"><a   href="prop-ns1doi.html">ns1:doi</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_3891"><a   href="prop-ns1doilink.html">ns1:doiLink</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_3786"><a   href="prop-ns1editionnumber.html">ns1:editionNumber</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_3787"><a   href="prop-ns1email.html">ns1:email</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_3788"><a   href="prop-ns1endyear.html">ns1:endYear</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_3789"><a   href="prop-ns1esmrights.html">ns1:esmRights</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_3736"><a   href="prop-ns1example.html">ns1:example</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_3790"><a   href="prop-ns1familyname.html">ns1:familyName</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_3791"><a   href="prop-ns1fundingamount.html">ns1:fundingAmount</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_3792"><a class="active"  href="prop-ns1fundingcurrency.html">ns1:fundingCurrency</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_3793"><a   href="prop-ns1givenname.html">ns1:givenName</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_3892"><a   href="prop-ns1hasaffiliation.html">ns1:hasAffiliation</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_3893"><a   href="prop-ns1hasagent.html">ns1:hasAgent</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_3894"><a   href="prop-ns1hasannotationagent.html">ns1:hasAnnotationAgent</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_3895"><a   href="prop-ns1hasannotationcategory.html">ns1:hasAnnotationCategory</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_3896"><a   href="prop-ns1hasannotationthing.html">ns1:hasAnnotationThing</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_3897"><a   href="prop-ns1hasarticle.html">ns1:hasArticle</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_3898"><a   href="prop-ns1hasarticletype.html">ns1:hasArticleType</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_3899"><a   href="prop-ns1hasbook.html">ns1:hasBook</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_3900"><a   href="prop-ns1hasbookchapter.html">ns1:hasBookChapter</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_3901"><a   href="prop-ns1hasbookedition.html">ns1:hasBookEdition</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_3902"><a   href="prop-ns1hasbookseries.html">ns1:hasBookSeries</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_3903"><a   href="prop-ns1hascategory.html">ns1:hasCategory</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_3904"><a   href="prop-ns1hascitationmetricsevent.html">ns1:hasCitationMetricsEvent</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_3905"><a   href="prop-ns1hasconference.html">ns1:hasConference</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_3906"><a   href="prop-ns1hasconferenceseries.html">ns1:hasConferenceSeries</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_3907"><a   href="prop-ns1hascontributingorganization.html">ns1:hasContributingOrganization</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_3908"><a   href="prop-ns1hascontribution.html">ns1:hasContribution</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_3909"><a   href="prop-ns1hasfieldofresearchcode.html">ns1:hasFieldOfResearchCode</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_3910"><a   href="prop-ns1hasfundedpublication.html">ns1:hasFundedPublication</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_3911"><a   href="prop-ns1hasfundingorganization.html">ns1:hasFundingOrganization</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_3912"><a   href="prop-ns1hasimpactfactormetricsevent.html">ns1:hasImpactFactorMetricsEvent</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_3913"><a   href="prop-ns1hasjournal.html">ns1:hasJournal</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_3914"><a   href="prop-ns1hasjournalbrand.html">ns1:hasJournalBrand</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_3915"><a   href="prop-ns1hasmetricsevent.html">ns1:hasMetricsEvent</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_3916"><a   href="prop-ns1hasorganization.html">ns1:hasOrganization</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_3917"><a   href="prop-ns1hasperson.html">ns1:hasPerson</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_3918"><a   href="prop-ns1hasprincipalinvestigator.html">ns1:hasPrincipalInvestigator</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_3919"><a   href="prop-ns1hasproduct.html">ns1:hasProduct</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_3920"><a   href="prop-ns1hasproductmarketcode.html">ns1:hasProductMarketCode</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_3921"><a   href="prop-ns1haspublication.html">ns1:hasPublication</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_3922"><a   href="prop-ns1haspublishevent.html">ns1:hasPublishEvent</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_3923"><a   href="prop-ns1haspublishstate.html">ns1:hasPublishState</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_3924"><a   href="prop-ns1haspublisher.html">ns1:hasPublisher</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_3925"><a   href="prop-ns1hasrecipientorganization.html">ns1:hasRecipientOrganization</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_3926"><a   href="prop-ns1hasreviewevent.html">ns1:hasReviewEvent</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_3927"><a   href="prop-ns1hasreviewstate.html">ns1:hasReviewState</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_3928"><a   href="prop-ns1hasroot.html">ns1:hasRoot</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_3929"><a   href="prop-ns1hasserial.html">ns1:hasSerial</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_3737"><a   href="prop-ns1hassubject.html">ns1:hasSubject</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_3930"><a   href="prop-ns1hastechnicalarticletype.html">ns1:hasTechnicalArticleType</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_3931"><a   href="prop-ns1haswork.html">ns1:hasWork</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_3932"><a   href="prop-ns1homepage.html">ns1:homepage</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_3794"><a   href="prop-ns1id.html">ns1:id</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_3795"><a   href="prop-ns1impactfactor.html">ns1:impactFactor</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_3796"><a   href="prop-ns1impactfactorfiveyear.html">ns1:impactFactorFiveYear</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_3797"><a   href="prop-ns1imprint.html">ns1:imprint</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_3798"><a   href="prop-ns1indexingdatabase.html">ns1:indexingDatabase</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_3799"><a   href="prop-ns1intellectualunitid.html">ns1:intellectualUnitId</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_3800"><a   href="prop-ns1isactivepublication.html">ns1:isActivePublication</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_3933"><a   href="prop-ns1isaffiliationof.html">ns1:isAffiliationOf</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_3934"><a   href="prop-ns1isagentof.html">ns1:isAgentOf</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_3935"><a   href="prop-ns1isarticleof.html">ns1:isArticleOf</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_3936"><a   href="prop-ns1isarticletypeof.html">ns1:isArticleTypeOf</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_3937"><a   href="prop-ns1isbookchapterof.html">ns1:isBookChapterOf</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_3938"><a   href="prop-ns1isbookeditionof.html">ns1:isBookEditionOf</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_3939"><a   href="prop-ns1isbookof.html">ns1:isBookOf</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_3940"><a   href="prop-ns1isbookseriesof.html">ns1:isBookSeriesOf</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_3941"><a   href="prop-ns1iscategoryof.html">ns1:isCategoryOf</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_3942"><a   href="prop-ns1isconferenceseriesof.html">ns1:isConferenceSeriesOf</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_3801"><a   href="prop-ns1iscontentpublished.html">ns1:isContentPublished</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_3943"><a   href="prop-ns1iscontributionof.html">ns1:isContributionOf</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_3802"><a   href="prop-ns1iscorresponding.html">ns1:isCorresponding</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_3944"><a   href="prop-ns1isfieldofresearchcodeof.html">ns1:isFieldOfResearchCodeOf</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_3945"><a   href="prop-ns1isfundedpublicationof.html">ns1:isFundedPublicationOf</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_3946"><a   href="prop-ns1isfundingorganizationof.html">ns1:isFundingOrganizationOf</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_3803"><a   href="prop-ns1isgroup.html">ns1:isGroup</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_3804"><a   href="prop-ns1ishistoricaljournal.html">ns1:isHistoricalJournal</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_3805"><a   href="prop-ns1isissuebased.html">ns1:isIssueBased</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_3947"><a   href="prop-ns1isjournalbrandof.html">ns1:isJournalBrandOf</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_3948"><a   href="prop-ns1isjournalof.html">ns1:isJournalOf</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_3806"><a   href="prop-ns1isleaf.html">ns1:isLeaf</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_3807"><a   href="prop-ns1isopenaccess.html">ns1:isOpenAccess</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_3949"><a   href="prop-ns1isorganizationof.html">ns1:isOrganizationOf</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_3950"><a   href="prop-ns1ispersonof.html">ns1:isPersonOf</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_3951"><a   href="prop-ns1isprincipalinvestigatorof.html">ns1:isPrincipalInvestigatorOf</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_3952"><a   href="prop-ns1isproductmarketcodeof.html">ns1:isProductMarketCodeOf</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_3953"><a   href="prop-ns1ispublicationof.html">ns1:isPublicationOf</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_3954"><a   href="prop-ns1ispublisheventof.html">ns1:isPublishEventOf</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_3955"><a   href="prop-ns1ispublishstateof.html">ns1:isPublishStateOf</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_3956"><a   href="prop-ns1ispublisherof.html">ns1:isPublisherOf</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_3957"><a   href="prop-ns1isrecipientorganizationof.html">ns1:isRecipientOrganizationOf</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_3958"><a   href="prop-ns1isrevieweventof.html">ns1:isReviewEventOf</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_3959"><a   href="prop-ns1isreviewstateof.html">ns1:isReviewStateOf</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_3808"><a   href="prop-ns1isroot.html">ns1:isRoot</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_3960"><a   href="prop-ns1isrootof.html">ns1:isRootOf</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_3961"><a   href="prop-ns1isserialof.html">ns1:isSerialOf</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_3962"><a   href="prop-ns1issubjectof.html">ns1:isSubjectOf</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_3963"><a   href="prop-ns1isworkof.html">ns1:isWorkOf</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_3809"><a   href="prop-ns1isbn.html">ns1:isbn</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_3810"><a   href="prop-ns1issn.html">ns1:issn</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_3811"><a   href="prop-ns1issnelectronic.html">ns1:issnElectronic</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_3812"><a   href="prop-ns1issnprint.html">ns1:issnPrint</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_3813"><a   href="prop-ns1issue.html">ns1:issue</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_3814"><a   href="prop-ns1issueend.html">ns1:issueEnd</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_3815"><a   href="prop-ns1issuestart.html">ns1:issueStart</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_3738"><a   href="prop-ns1keyproperty.html">ns1:keyProperty</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_3816"><a   href="prop-ns1label.html">ns1:label</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_3817"><a   href="prop-ns1labeltreedepth0.html">ns1:labelTreeDepth0</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_3818"><a   href="prop-ns1labeltreedepth1.html">ns1:labelTreeDepth1</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_3819"><a   href="prop-ns1labeltreedepth2.html">ns1:labelTreeDepth2</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_3820"><a   href="prop-ns1labeltreedepth3.html">ns1:labelTreeDepth3</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_3821"><a   href="prop-ns1labeltreedepth4.html">ns1:labelTreeDepth4</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_3822"><a   href="prop-ns1labeltreedepth5.html">ns1:labelTreeDepth5</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_3823"><a   href="prop-ns1labeltreedepth6.html">ns1:labelTreeDepth6</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_3824"><a   href="prop-ns1labeltreedepth7.html">ns1:labelTreeDepth7</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_3825"><a   href="prop-ns1language.html">ns1:language</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_3826"><a   href="prop-ns1license.html">ns1:license</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_3827"><a   href="prop-ns1medium.html">ns1:medium</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_3964"><a   href="prop-ns1mesh.html">ns1:mesh</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_3828"><a   href="prop-ns1meshterm.html">ns1:meshTerm</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_3829"><a   href="prop-ns1metadatarights.html">ns1:metadataRights</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_3830"><a   href="prop-ns1name.html">ns1:name</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_3831"><a   href="prop-ns1nameinfo.html">ns1:nameInfo</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_3739"><a   href="prop-ns1namespace.html">ns1:namespace</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_3832"><a   href="prop-ns1npgid.html">ns1:npgId</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_3833"><a   href="prop-ns1number.html">ns1:number</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_3834"><a   href="prop-ns1oldcode.html">ns1:oldCode</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_3835"><a   href="prop-ns1openaccess.html">ns1:openAccess</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_3836"><a   href="prop-ns1order.html">ns1:order</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_3837"><a   href="prop-ns1othercode.html">ns1:otherCode</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_3740"><a   href="prop-ns1otherwebpage.html">ns1:otherWebpage</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_3838"><a   href="prop-ns1pageend.html">ns1:pageEnd</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_3839"><a   href="prop-ns1pagestart.html">ns1:pageStart</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_3840"><a   href="prop-ns1pages.html">ns1:pages</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_3841"><a   href="prop-ns1pcode.html">ns1:pcode</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_3842"><a   href="prop-ns1placeinfo.html">ns1:placeInfo</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_3843"><a   href="prop-ns1plurallabel.html">ns1:pluralLabel</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_3844"><a   href="prop-ns1publicationdate.html">ns1:publicationDate</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_3845"><a   href="prop-ns1publicationdatetime.html">ns1:publicationDateTime</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_3846"><a   href="prop-ns1publicationenddate.html">ns1:publicationEndDate</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_3847"><a   href="prop-ns1publicationendyear.html">ns1:publicationEndYear</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_3848"><a   href="prop-ns1publicationendyearmonth.html">ns1:publicationEndYearMonth</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_3849"><a   href="prop-ns1publicationname.html">ns1:publicationName</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_3850"><a   href="prop-ns1publicationnumber.html">ns1:publicationNumber</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_3851"><a   href="prop-ns1publicationstartdate.html">ns1:publicationStartDate</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_3852"><a   href="prop-ns1publicationstartyear.html">ns1:publicationStartYear</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_3853"><a   href="prop-ns1publicationstartyearmonth.html">ns1:publicationStartYearMonth</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_3854"><a   href="prop-ns1publicationyear.html">ns1:publicationYear</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_3855"><a   href="prop-ns1publicationyearmonth.html">ns1:publicationYearMonth</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_3856"><a   href="prop-ns1publishedcity.html">ns1:publishedCity</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_3857"><a   href="prop-ns1publishedcountry.html">ns1:publishedCountry</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_3858"><a   href="prop-ns1publisheddivision.html">ns1:publishedDivision</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_3859"><a   href="prop-ns1publishedfamilyname.html">ns1:publishedFamilyName</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_3860"><a   href="prop-ns1publishedgivenname.html">ns1:publishedGivenName</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_3861"><a   href="prop-ns1publishedname.html">ns1:publishedName</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_3862"><a   href="prop-ns1publishedpostbox.html">ns1:publishedPostbox</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_3863"><a   href="prop-ns1publishedpostcode.html">ns1:publishedPostcode</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_3864"><a   href="prop-ns1publishedstate.html">ns1:publishedState</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_3865"><a   href="prop-ns1publishedstreet.html">ns1:publishedStreet</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_3866"><a   href="prop-ns1publisher.html">ns1:publisher</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_3867"><a   href="prop-ns1pubmedid.html">ns1:pubmedId</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_3965"><a   href="prop-ns1relation.html">ns1:relation</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_3966"><a   href="prop-ns1replacedby.html">ns1:replacedBy</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_3967"><a   href="prop-ns1replaces.html">ns1:replaces</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_3868"><a   href="prop-ns1rights.html">ns1:rights</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_3869"><a   href="prop-ns1role.html">ns1:role</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_3870"><a   href="prop-ns1scigraphid.html">ns1:scigraphId</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_3871"><a   href="prop-ns1score.html">ns1:score</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_3741"><a   href="prop-ns1shapedataclient.html">ns1:shapeDataClient</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_3742"><a   href="prop-ns1shapedatagraph.html">ns1:shapeDataGraph</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_3743"><a   href="prop-ns1shapetype.html">ns1:shapeType</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_3872"><a   href="prop-ns1shorttitle.html">ns1:shortTitle</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_3873"><a   href="prop-ns1startyear.html">ns1:startYear</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_3874"><a   href="prop-ns1submittedby.html">ns1:submittedBy</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_3875"><a   href="prop-ns1subtitle.html">ns1:subtitle</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_3876"><a   href="prop-ns1subtitlexml.html">ns1:subtitleXml</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_3877"><a   href="prop-ns1subtypelabel.html">ns1:subtypeLabel</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_3878"><a   href="prop-ns1test.html">ns1:test</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_3879"><a   href="prop-ns1timestamp.html">ns1:timestamp</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_3880"><a   href="prop-ns1title.html">ns1:title</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_3881"><a   href="prop-ns1titleaddedyear.html">ns1:titleAddedYear</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_3882"><a   href="prop-ns1titletranslated.html">ns1:titleTranslated</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_3883"><a   href="prop-ns1titlexml.html">ns1:titleXml</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_3884"><a   href="prop-ns1treedepth.html">ns1:treeDepth</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_3885"><a   href="prop-ns1volume.html">ns1:volume</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_3886"><a   href="prop-ns1volumecount.html">ns1:volumeCount</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_3887"><a   href="prop-ns1volumeend.html">ns1:volumeEnd</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_3888"><a   href="prop-ns1volumestart.html">ns1:volumeStart</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_3744"><a   href="prop-ns1webpage.html">ns1:webpage</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_3889"><a   href="prop-ns1year.html">ns1:year</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_3890"><a   href="prop-ns1yearmonth.html">ns1:yearMonth</a></li>
+          
+
+        
+
+        
+
+
+        
+
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+
+    </ul>
+
+</div>
+
+
+<!-- /#sidebar-wrapper -->
+    
+
+
+
+
+    <!-- Begin page content -->
+    <div class="container" id="page-content-wrapper">
+
+      
+
+	
+
+
+
+
+        
+
+
+        
+            
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <ol class="breadcrumb">
+    <li>
+      <a href="index.html">Home</a>
+    </li>
+    <li>
+          <a href="entities-az.html">Entities</a>
+    </li>
+    <li>
+          <a href="entities-tree-properties.html">Properties</a>
+    </li>
+      <li class="active">
+            ns1:fundingCurrency
+        </li>
+  </ol>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+
+
+
+            <h1>
+
+                ns1:fundingCurrency
+                
+                    <small class="label label-info label-xs ">leaf node</small>
+                  
+
+            </h1>
+
+            <hr>
+
+
+
+            <div class="tree-container">
+            <div class="tree">
+                <ul>
+                    
+
+                        <li><a href="entities-tree-properties.html">rdf:Property</a>
+
+                          <ul>
+                            <li><a style="font-weight: bold;" title="'Property: funding currency' - The :fundingCurrency property specifies the currency for the original funding of a grant as a string.">ns1:fundingCurrency</a>
+
+                            
+                              </li>
+
+                          </ul>
+
+                        </li>
+                    
+
+                </ul>
+            </div>
+            </div>
+
+
+
+
+            <div class="row"><div class="col-md-12">
+               <div class="panel panel-default">
+             <div class="panel-heading">
+               <h3 class="panel-title">URI</h3>
+             </div>
+             <div class="panel-body">
+
+                 <code>http://scigraph.springernature.com/ontologies/core/fundingCurrency</code>
+             </div>
+           </div>
+            </div></div>
+
+
+
+            
+             <div class="row"><div class="col-md-12">
+               <div class="panel panel-default">
+             <div class="panel-heading">
+               <h3 class="panel-title">Label</h3>
+             </div>
+             <div class="panel-body">
+
+                 Property: funding currency
+             </div>
+           </div>
+            </div></div>
+            
+
+
+            
+            <div class="row"><div class="col-md-12">
+              <div class="panel panel-default">
+            <div class="panel-heading">
+              <h3 class="panel-title">Description</h3>
+            </div>
+            <div class="panel-body">
+
+                <p>The :fundingCurrency property specifies the currency for the original funding of a grant as a string.</p>
+            </div>
+          </div>
+           </div></div>
+           
+
+
+
+            
+
+
+
+            
+
+
+            <div class="row"><div class="col-md-12">
+              <div class="panel panel-default">
+            <div class="panel-heading">
+              <h3 class="panel-title">Usage</h3>
+            </div>
+
+            <table class="table table-bordered" style="overflow: auto;">
+
+               <tr class="table-classproperties">
+                   <th>DOMAIN</th><th>PROPERTY</th><th>RANGE</th>
+               </tr>
+               <tr>
+                   <td>
+                     
+                         
+                         
+                              <a href="class-ns1grant.html" title="http://scigraph.springernature.com/ontologies/core/Grant">ns1:Grant</a>
+                           
+                           
+                         
+                     
+                   </td>
+
+                    <td>
+                      ns1:fundingCurrency
+                    </td>
+
+                    <td>
+                      
+                          
+                          
+                               <a href="http://www.w3.org/2001/XMLSchema#string" target="_blank" title="http://www.w3.org/2001/XMLSchema#string">xsd:string</a>
+                             
+                            
+                          
+                      
+                    </td>
+            </table>
+
+          </div>
+           </div></div>
+
+
+
+           <div class="row"><div class="col-md-12">
+              <div class="panel panel-default">
+            <div class="panel-heading">
+              <h3 class="panel-title">Implementation</h3>
+            </div>
+            <div class="panel-body implementation-panel">
+
+                
+
+                    <div class="highlight"><pre><span></span><span class="k">@prefix</span><span class="w"> </span><span class="nn">ns1:</span><span class="w"> </span><span class="nv">&lt;http://scigraph.springernature.com/ontologies/core/&gt;</span><span class="w"> </span><span class="p">.</span>
+<span class="k">@prefix</span><span class="w"> </span><span class="nn">owl:</span><span class="w"> </span><span class="nv">&lt;http://www.w3.org/2002/07/owl#&gt;</span><span class="w"> </span><span class="p">.</span>
+<span class="k">@prefix</span><span class="w"> </span><span class="nn">rdfs:</span><span class="w"> </span><span class="nv">&lt;http://www.w3.org/2000/01/rdf-schema#&gt;</span><span class="w"> </span><span class="p">.</span>
+<span class="k">@prefix</span><span class="w"> </span><span class="nn">xsd:</span><span class="w"> </span><span class="nv">&lt;http://www.w3.org/2001/XMLSchema#&gt;</span><span class="w"> </span><span class="p">.</span>
+
+<span class="nn">ns1</span><span class="p">:</span><span class="nt">fundingCurrency</span> <span class="kt">a</span> <span class="nn">owl</span><span class="p">:</span><span class="nt">DatatypeProperty</span> <span class="p">;</span>
+    <span class="nn">rdfs</span><span class="p">:</span><span class="nt">label</span> <span class="s">&quot;Property: funding currency&quot;</span><span class="o">@</span><span class="ge">en</span> <span class="p">;</span>
+    <span class="nn">rdfs</span><span class="p">:</span><span class="nt">comment</span> <span class="s">&quot;The :fundingCurrency property specifies the currency for the original funding of a grant as a string.&quot;</span><span class="o">@</span><span class="ge">en</span> <span class="p">;</span>
+    <span class="nn">rdfs</span><span class="p">:</span><span class="nt">domain</span> <span class="nn">ns1</span><span class="p">:</span><span class="nt">Grant</span> <span class="p">;</span>
+    <span class="nn">rdfs</span><span class="p">:</span><span class="nt">isDefinedBy</span> <span class="nn">ns1</span><span class="p">:</span> <span class="p">;</span>
+    <span class="nn">rdfs</span><span class="p">:</span><span class="nt">range</span> <span class="nn">xsd</span><span class="p">:</span><span class="nt">string</span> <span class="p">.</span>
+</pre></div>
+
+
+                
+            </div>
+          </div>
+           </div></div>
+
+
+
+
+        
+
+
+
+
+
+
+
+
+
+
+
+	</div><!-- /#page-content-wrapper -->
+
+
+  
+
+
+
+  
+
+
+
+
+  <footer class="footer">
+    <div class="container">
+    
+      <p class="text-muted">Documentation automatically generated on Wed, 16 Nov 2022 14:13:15 with <a href="http://lambdamusic.github.io/Ontospy/">Ontospy</a> (v2.1.0)</p>
+
+    
+    </div>
+  </footer>
+
+
+</div><!-- /#wrapper -->
+
+
+<!-- Bootstrap core JavaScript
+================================================== -->
+<!-- Placed at the end of the document so the pages load faster -->
+<script src="../static/libs/jquery/1_12_4/jquery.min.js"></script>
+<script src="../static/libs/bootstrap-3_3_7-dist/js/bootstrap.min.js"></script>
+
+<!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+<script src="../static/libs/bootstrap-3_3_7-dist/js/ie10-viewport-bug-workaround.js"></script>
+
+<script src="../static/libs/chartjs-2_4_0/chart.bundle.js"></script>
+
+
+<!-- Menu Toggle Script -->
+<script>
+$("#menu-toggle").click(function(e) {
+    e.preventDefault();
+    $("#wrapper").toggleClass("toggled");
+});
+</script>
+
+
+
+
+<script type="text/javascript">
+
+$('#search-input-sidebar').keyup(function() {
+
+  var val = $.trim($(this).val()).replace(/ +/g, ' ').toLowerCase();
+  // var $rows = $(this).next(".entities-list").find("div");
+  var $rows = $(this).parent().parent().find("li.second-level");
+
+  $rows.show().filter(function() {
+      var text = $(this).text().replace(/\s+/g, ' ').toLowerCase();
+      return !~text.indexOf(val);
+  }).hide();
+});
+
+</script>
+
+
+
+
+  <!-- Scroll Sidebar Script -->
+
+  
+  
+
+  <script type="text/javascript">
+
+    $(document).ready(function (){
+      $('#sidebar-wrapper').animate({
+          scrollTop: $("#sd_3792").offset().top - 100
+      }, 100);
+    });
+
+  </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  </body>
+</html>

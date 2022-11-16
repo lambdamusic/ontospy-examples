@@ -10,23 +10,23 @@
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
     <meta name="description" content="">
     <meta name="author" content="">
-    <link rel="icon" href="../static/libs/img/favicon.ico">
+    <link rel="icon" href="../static/custom/favicon.ico">
 
 	
-		<title>OntoSpy > http://purl.org/vocab/vann/</title>
+		<title>Ontospy > http://purl.org/vocab/vann/</title>
 	
 
     <!-- Bootstrap core CSS -->
-    <!-- <link href="../static/libs/bootstrap-3.3.7-dist/css/bootstrap.min.css" rel="stylesheet">  -->
+    <!-- <link href="../static/libs/bootstrap-3_3_7-dist/css/bootstrap.min.css" rel="stylesheet">  -->
     <!-- Bootswatch:  -->
     <!-- cerulean  | cyborg |  flatly |  lumen |  sandstone |   spacelab  |  yeti | cosmo |  darkly |  paper | simplex | superhero |  journal | readable  |   slate |  united -->
-    <link href="../static/libs/bootswatch3.2/superhero/bootstrap.min.css" rel="stylesheet">
+    <link href="../static/libs/bootswatch3_2/slate/bootstrap.min.css" rel="stylesheet">
     <link href="../static/custom/css/simple-sidebar.css" rel="stylesheet">
     <link href="../static/custom/css/familytree.css" rel="stylesheet">
     <link href="../static/custom/css/tabletree.css" rel="stylesheet">
 
     <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
-    <link href="../static/libs/bootstrap-3.3.7-dist/css/ie10-viewport-bug-workaround.css" rel="stylesheet">
+    <link href="../static/libs/bootstrap-3_3_7-dist/css/ie10-viewport-bug-workaround.css" rel="stylesheet">
 
     <!-- Custom styles for this template -->
     <link href="../static/custom/css/sticky-footer-navbar.css" rel="stylesheet">
@@ -57,7 +57,7 @@
 
   .implementation-panel {
     overflow: auto;
-    max-height: 500px;
+    /*max-height: 500px;*/
   }
 
   tr.table-classproperties {
@@ -205,24 +205,20 @@
     <div id="navbar" class="collapse navbar-collapse">
       <ul class="nav navbar-nav">
         <li class="active"><a href="index.html"><code style="font-size: 115%;">http://purl.org/vocab/vann/</code></a></li>
-        
 
-       
-
-
-        <li  ><a href="dashboard.html">Dashboard</a></li>
         <li  ><a href="entities-az.html">Entities A-Z</a></li>
-        <li class="dropdown  " >
-          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Entities Tree <span class="caret"></span></a>
-          <ul class="dropdown-menu">
-            
-            
-            <li><a  href="entities-tree-properties.html">Properties</a>
-            </li>
-            
-            
-          </ul>
-      </li>
+        
+        
+        <li ><a href="entities-tree-properties.html">Properties</a></li>
+        
+        
+        
+        
+        <li  ><a href="statistics.html">Statistics</a></li>
+
+
+
+
 
       </ul>
       
@@ -231,8 +227,11 @@
   </div>
 </nav>
 
-
     
+
+
+
+
 
 
 
@@ -262,20 +261,23 @@
 
             
           
-              <li class="second-level" style="line-height: 20px;" id="sd_7251"><a   href="prop-vannchanges.html">vann:changes</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_4295"><a   href="prop-vannchanges.html">vann:changes</a></li>
           
-              <li class="second-level" style="line-height: 20px;" id="sd_7252"><a   href="prop-vannexample.html">vann:example</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_4296"><a   href="prop-vannexample.html">vann:example</a></li>
           
-              <li class="second-level" style="line-height: 20px;" id="sd_7253"><a   href="prop-vannpreferrednamespaceprefix.html">vann:preferredNamespacePrefix</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_4297"><a   href="prop-vannpreferrednamespaceprefix.html">vann:preferredNamespacePrefix</a></li>
           
-              <li class="second-level" style="line-height: 20px;" id="sd_7254"><a   href="prop-vannpreferrednamespaceuri.html">vann:preferredNamespaceUri</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_4298"><a   href="prop-vannpreferrednamespaceuri.html">vann:preferredNamespaceUri</a></li>
           
-              <li class="second-level" style="line-height: 20px;" id="sd_7255"><a   href="prop-vanntermgroup.html">vann:termGroup</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_4299"><a   href="prop-vanntermgroup.html">vann:termGroup</a></li>
           
-              <li class="second-level" style="line-height: 20px;" id="sd_7256"><a   href="prop-vannusagenote.html">vann:usageNote</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_4300"><a   href="prop-vannusagenote.html">vann:usageNote</a></li>
           
 
         
+
+        
+
 
         
 
@@ -293,7 +295,6 @@
 
 
 <!-- /#sidebar-wrapper -->
-
     
 
 
@@ -316,6 +317,19 @@
     Home
   </li>
 </ol>
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -400,42 +414,77 @@
               </dl>
                 
                     <dl>
-                        
-                            <dt>dct:creator</dt>
-                            <dd>http://iandavis.com/id/me</dd>
-                        
-                            <dt>dct:date</dt>
-                            <dd>2010-06-07</dd>
-                        
-                            <dt>dct:description</dt>
-                            <dd>This document describes a vocabulary for annotating descriptions of vocabularies with examples and usage notes.</dd>
-                        
-                            <dt>dct:identifier</dt>
-                            <dd>http://purl.org/vocab/vann/vann-vocab-20050401</dd>
-                        
-                            <dt>dct:isVersionOf</dt>
-                            <dd>http://purl.org/vocab/vann/</dd>
-                        
-                            <dt>dct:replaces</dt>
-                            <dd>http://purl.org/vocab/vann/vann-vocab-20040305</dd>
-                        
-                            <dt>dct:rights</dt>
-                            <dd>Copyright © 2005 Ian Davis</dd>
-                        
-                            <dt>dct:title</dt>
-                            <dd>VANN: A vocabulary for annotating vocabulary descriptions</dd>
-                        
-                            <dt>rdf:type</dt>
-                            <dd>http://www.w3.org/2002/07/owl#Ontology</dd>
-                        
-                            <dt>vann:preferredNamespacePrefix</dt>
-                            <dd>vann</dd>
-                        
-                            <dt>vann:preferredNamespaceUri</dt>
-                            <dd>http://purl.org/vocab/vann/</dd>
-                        
+                      
+                          
+                                <dt>dct:creator</dt>
+                              
+                          
+                    <dd><p>http://iandavis.com/id/me</p></dd>
+                    
+                          
+                                <dt>dct:date</dt>
+                              
+                          
+                    <dd><p>2010-06-07</p></dd>
+                    
+                          
+                                <dt>dct:description</dt>
+                              
+                          
+                    <dd><p>This document describes a vocabulary for annotating descriptions of vocabularies with examples and usage notes.</p></dd>
+                    
+                          
+                                <dt>dct:identifier</dt>
+                              
+                          
+                    <dd><p>http://purl.org/vocab/vann/vann-vocab-20050401</p></dd>
+                    
+                          
+                                <dt>dct:isVersionOf</dt>
+                              
+                          
+                    <dd><p>http://purl.org/vocab/vann/</p></dd>
+                    
+                          
+                                <dt>dct:replaces</dt>
+                              
+                          
+                    <dd><p>http://purl.org/vocab/vann/vann-vocab-20040305</p></dd>
+                    
+                          
+                                <dt>dct:rights</dt>
+                              
+                          
+                    <dd><p>Copyright © 2005 Ian Davis</p></dd>
+                    
+                          
+                                <dt>dct:title</dt>
+                              
+                          
+                    <dd><p>VANN: A vocabulary for annotating vocabulary descriptions</p></dd>
+                    
+                          
+                                <dt>rdf:type</dt>
+                              
+                          
+                    <dd><p>http://www.w3.org/2002/07/owl#Ontology</p></dd>
+                    
+                          
+                                <dt>vann:preferredNamespacePrefix</dt>
+                              
+                          
+                    <dd><p>vann</p></dd>
+                    
+                          
+                                <dt>vann:preferredNamespaceUri</dt>
+                              
+                          
+                    <dd><p>http://purl.org/vocab/vann/</p></dd>
+                    
                     </dl>
                 
+
+
             </div>
           </div>
            </div></div>
@@ -527,6 +576,15 @@
 
                   
 
+                      <dt>Data Shapes</dt>
+                      <dd>0</dd>
+
+                  
+
+                    
+
+                  
+
                     
 
                 </dl>
@@ -584,12 +642,20 @@
                      <dd><a href="http://www.w3.org/2000/01/rdf-schema#" target="_blank">http://www.w3.org/2000/01/rdf-schema#</a></dd>
 
                  
+                     <dt><span class="label label-info">sh</span></dt>
+                     <dd><a href="http://www.w3.org/ns/shacl#" target="_blank">http://www.w3.org/ns/shacl#</a></dd>
+
+                 
                      <dt><span class="label label-info">skos</span></dt>
                      <dd><a href="http://www.w3.org/2004/02/skos/core#" target="_blank">http://www.w3.org/2004/02/skos/core#</a></dd>
 
                  
                      <dt><span class="label label-info">vann</span></dt>
                      <dd><a href="http://purl.org/vocab/vann/" target="_blank">http://purl.org/vocab/vann/</a></dd>
+
+                 
+                     <dt><span class="label label-info">void</span></dt>
+                     <dd><a href="http://rdfs.org/ns/void#" target="_blank">http://rdfs.org/ns/void#</a></dd>
 
                  
                      <dt><span class="label label-info">xml</span></dt>
@@ -639,7 +705,7 @@
   <footer class="footer">
     <div class="container">
     
-      <p class="text-muted">Documentation automatically generated on 26th February 2017 with <a href="https://github.com/lambdamusic/OntoSpy">OntoSpy</a> (v1.7.4)</p>
+      <p class="text-muted">Documentation automatically generated on Wed, 16 Nov 2022 14:13:17 with <a href="http://lambdamusic.github.io/Ontospy/">Ontospy</a> (v2.1.0)</p>
 
     
     </div>
@@ -652,13 +718,13 @@
 <!-- Bootstrap core JavaScript
 ================================================== -->
 <!-- Placed at the end of the document so the pages load faster -->
-<script src="../static/libs/jquery/1.12.4/jquery.min.js"></script>
-<script src="../static/libs/bootstrap-3.3.7-dist/js/bootstrap.min.js"></script>
+<script src="../static/libs/jquery/1_12_4/jquery.min.js"></script>
+<script src="../static/libs/bootstrap-3_3_7-dist/js/bootstrap.min.js"></script>
 
 <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
-<script src="../static/libs/bootstrap-3.3.7-dist/js/ie10-viewport-bug-workaround.js"></script>
+<script src="../static/libs/bootstrap-3_3_7-dist/js/ie10-viewport-bug-workaround.js"></script>
 
-<script src="../static/libs/Chart.js-2.4.0/Chart.bundle.js"></script>
+<script src="../static/libs/chartjs-2_4_0/chart.bundle.js"></script>
 
 
 <!-- Menu Toggle Script -->

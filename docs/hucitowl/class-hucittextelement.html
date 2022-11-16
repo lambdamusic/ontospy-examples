@@ -1,6 +1,12 @@
 
 
 
+
+
+
+
+
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -10,23 +16,23 @@
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
     <meta name="description" content="">
     <meta name="author" content="">
-    <link rel="icon" href="../static/libs/img/favicon.ico">
+    <link rel="icon" href="../static/custom/favicon.ico">
 
 	
-		<title>OntoSpy > http://purl.org/net/hucit</title>
+		<title>Ontospy > http://purl.org/net/hucit</title>
 	
 
     <!-- Bootstrap core CSS -->
-    <!-- <link href="../static/libs/bootstrap-3.3.7-dist/css/bootstrap.min.css" rel="stylesheet">  -->
+    <!-- <link href="../static/libs/bootstrap-3_3_7-dist/css/bootstrap.min.css" rel="stylesheet">  -->
     <!-- Bootswatch:  -->
     <!-- cerulean  | cyborg |  flatly |  lumen |  sandstone |   spacelab  |  yeti | cosmo |  darkly |  paper | simplex | superhero |  journal | readable  |   slate |  united -->
-    <link href="../static/libs/bootswatch3.2/lumen/bootstrap.min.css" rel="stylesheet">
+    <link href="../static/libs/bootswatch3_2/yeti/bootstrap.min.css" rel="stylesheet">
     <link href="../static/custom/css/simple-sidebar.css" rel="stylesheet">
     <link href="../static/custom/css/familytree.css" rel="stylesheet">
     <link href="../static/custom/css/tabletree.css" rel="stylesheet">
 
     <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
-    <link href="../static/libs/bootstrap-3.3.7-dist/css/ie10-viewport-bug-workaround.css" rel="stylesheet">
+    <link href="../static/libs/bootstrap-3_3_7-dist/css/ie10-viewport-bug-workaround.css" rel="stylesheet">
 
     <!-- Custom styles for this template -->
     <link href="../static/custom/css/sticky-footer-navbar.css" rel="stylesheet">
@@ -57,7 +63,7 @@
 
   .implementation-panel {
     overflow: auto;
-    max-height: 500px;
+    /*max-height: 500px;*/
   }
 
   tr.table-classproperties {
@@ -152,8 +158,13 @@
 
 
 /*pygments css*/
+pre { line-height: 125%; }
+td.linenos pre { color: #000000; background-color: #f0f0f0; padding-left: 5px; padding-right: 5px; }
+span.linenos { color: #000000; background-color: #f0f0f0; padding-left: 5px; padding-right: 5px; }
+td.linenos pre.special { color: #000000; background-color: #ffffc0; padding-left: 5px; padding-right: 5px; }
+span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 5px; padding-right: 5px; }
 .highlight .hll { background-color: #ffffcc }
-.highlight  { background: #f8f8f8; }
+.highlight { background: #f8f8f8; }
 .highlight .c { color: #408080; font-style: italic } /* Comment */
 .highlight .err { border: 1px solid #FF0000 } /* Error */
 .highlight .k { color: #008000; font-weight: bold } /* Keyword */
@@ -245,8 +256,7 @@
   <body>
 
 
-
-    
+  
 <!-- Fixed navbar -->
 <nav class="navbar navbar-default navbar-fixed-top">
   <div class="container-fluid">
@@ -266,27 +276,22 @@
     <div id="navbar" class="collapse navbar-collapse">
       <ul class="nav navbar-nav">
         <li ><a href="index.html"><code style="font-size: 115%;">http://purl.org/net/hucit</code></a></li>
-        
 
-       
-
-
-        <li  ><a href="dashboard.html">Dashboard</a></li>
         <li  ><a href="entities-az.html">Entities A-Z</a></li>
-        <li class="dropdown  " >
-          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Entities Tree <span class="caret"></span></a>
-          <ul class="dropdown-menu">
-            
-            <li><a href="entities-tree-classes.html">Classes</a>
-            </li>
-            
-            
-            <li><a  href="entities-tree-properties.html">Properties</a>
-            </li>
-            
-            
-          </ul>
-      </li>
+        
+        <li ><a href="entities-tree-classes.html">Classes</a></li>
+        
+        
+        <li ><a href="entities-tree-properties.html">Properties</a></li>
+        
+        
+        
+        
+        <li  ><a href="statistics.html">Statistics</a></li>
+
+
+
+
 
       </ul>
       
@@ -300,13 +305,14 @@
 
 
 
+
+
 <div id="wrapper" class="toggled">
 
 
     
-
+  
     
-        
 <!-- Sidebar -->
 <div id="sidebar-wrapper">
     <ul class="sidebar-nav">
@@ -322,25 +328,25 @@
 
             
           
-              <li class="second-level" style="line-height: 20px;" id="sd_2864"><a  href="class-hucitcanonicalcitation.html">hucit:CanonicalCitation</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_2672"><a  href="class-hucitcanonicalcitation.html">hucit:CanonicalCitation</a></li>
           
-              <li class="second-level" style="line-height: 20px;" id="sd_2865"><a  href="class-hucitcanonicaltextstructure.html">hucit:CanonicalTextStructure</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_2673"><a  href="class-hucitcanonicaltextstructure.html">hucit:CanonicalTextStructure</a></li>
           
-              <li class="second-level" style="line-height: 20px;" id="sd_2866"><a  href="class-hucitcitation.html">hucit:Citation</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_2674"><a  href="class-hucitcitation.html">hucit:Citation</a></li>
           
-              <li class="second-level" style="line-height: 20px;" id="sd_2867"><a  href="class-hucitcitationstyle.html">hucit:CitationStyle</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_2675"><a  href="class-hucitcitationstyle.html">hucit:CitationStyle</a></li>
           
-              <li class="second-level" style="line-height: 20px;" id="sd_2868"><a  href="class-hucitconceptualobject.html">hucit:ConceptualObject</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_2676"><a  href="class-hucitconceptualobject.html">hucit:ConceptualObject</a></li>
           
-              <li class="second-level" style="line-height: 20px;" id="sd_2869"><a  href="class-hucitexpression.html">hucit:Expression</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_2677"><a  href="class-hucitexpression.html">hucit:Expression</a></li>
           
-              <li class="second-level" style="line-height: 20px;" id="sd_2870"><a  href="class-hucitselfcontainedexpression.html">hucit:SelfContainedExpression</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_2678"><a  href="class-hucitselfcontainedexpression.html">hucit:SelfContainedExpression</a></li>
           
-              <li class="second-level" style="line-height: 20px;" id="sd_2871"><a class="active" href="class-hucittextelement.html">hucit:TextElement</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_2679"><a class="active" href="class-hucittextelement.html">hucit:TextElement</a></li>
           
-              <li class="second-level" style="line-height: 20px;" id="sd_2872"><a  href="class-hucittextstructure.html">hucit:TextStructure</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_2680"><a  href="class-hucittextstructure.html">hucit:TextStructure</a></li>
           
-              <li class="second-level" style="line-height: 20px;" id="sd_2873"><a  href="class-hucitwork.html">hucit:Work</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_2681"><a  href="class-hucitwork.html">hucit:Work</a></li>
           
         
 
@@ -350,50 +356,53 @@
 
             
           
-              <li class="second-level" style="line-height: 20px;" id="sd_2874"><a   href="prop-dccreator.html">dc:creator</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_2682"><a   href="prop-dccreator.html">dc:creator</a></li>
           
-              <li class="second-level" style="line-height: 20px;" id="sd_2875"><a   href="prop-dcdescription.html">dc:description</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_2683"><a   href="prop-dcdescription.html">dc:description</a></li>
           
-              <li class="second-level" style="line-height: 20px;" id="sd_2876"><a   href="prop-rdfscomment.html">rdfs:comment</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_2688"><a   href="prop-hucitelement_part_of.html">hucit:element_part_of</a></li>
           
-              <li class="second-level" style="line-height: 20px;" id="sd_2877"><a   href="prop-rdfslabel.html">rdfs:label</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_2696"><a   href="prop-hucitfollows.html">hucit:follows</a></li>
           
-              <li class="second-level" style="line-height: 20px;" id="sd_2878"><a   href="prop-owldeprecated.html">owl:deprecated</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_2697"><a   href="prop-hucithas_canonical_structure.html">hucit:has_canonical_structure</a></li>
           
-              <li class="second-level" style="line-height: 20px;" id="sd_2879"><a   href="prop-owlversioninfo.html">owl:versionInfo</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_2689"><a   href="prop-hucithas_content.html">hucit:has_content</a></li>
           
-              <li class="second-level" style="line-height: 20px;" id="sd_2880"><a   href="prop-hucitelement_part_of.html">hucit:element_part_of</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_2690"><a   href="prop-hucithas_element.html">hucit:has_element</a></li>
           
-              <li class="second-level" style="line-height: 20px;" id="sd_2881"><a   href="prop-hucithas_content.html">hucit:has_content</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_2691"><a   href="prop-hucithas_form.html">hucit:has_form</a></li>
           
-              <li class="second-level" style="line-height: 20px;" id="sd_2882"><a   href="prop-hucithas_element.html">hucit:has_element</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_2698"><a   href="prop-hucithas_part.html">hucit:has_part</a></li>
           
-              <li class="second-level" style="line-height: 20px;" id="sd_2883"><a   href="prop-hucithas_form.html">hucit:has_form</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_2692"><a   href="prop-hucithas_structure.html">hucit:has_structure</a></li>
           
-              <li class="second-level" style="line-height: 20px;" id="sd_2884"><a   href="prop-hucithas_structure.html">hucit:has_structure</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_2699"><a   href="prop-hucitis_canonical_structure_of.html">hucit:is_canonical_structure_of</a></li>
           
-              <li class="second-level" style="line-height: 20px;" id="sd_2885"><a   href="prop-hucitis_identified_by.html">hucit:is_identified_by</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_2693"><a   href="prop-hucitis_identified_by.html">hucit:is_identified_by</a></li>
           
-              <li class="second-level" style="line-height: 20px;" id="sd_2886"><a   href="prop-hucitis_structure_of.html">hucit:is_structure_of</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_2700"><a   href="prop-hucitis_part_of.html">hucit:is_part_of</a></li>
           
-              <li class="second-level" style="line-height: 20px;" id="sd_2887"><a   href="prop-hucitresolves_to.html">hucit:resolves_to</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_2694"><a   href="prop-hucitis_structure_of.html">hucit:is_structure_of</a></li>
           
-              <li class="second-level" style="line-height: 20px;" id="sd_2888"><a   href="prop-hucitfollows.html">hucit:follows</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_2701"><a   href="prop-hucitprecedes.html">hucit:precedes</a></li>
           
-              <li class="second-level" style="line-height: 20px;" id="sd_2889"><a   href="prop-hucithas_canonical_structure.html">hucit:has_canonical_structure</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_2695"><a   href="prop-hucitresolves_to.html">hucit:resolves_to</a></li>
           
-              <li class="second-level" style="line-height: 20px;" id="sd_2890"><a   href="prop-hucithas_part.html">hucit:has_part</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_2686"><a   href="prop-owldeprecated.html">owl:deprecated</a></li>
           
-              <li class="second-level" style="line-height: 20px;" id="sd_2891"><a   href="prop-hucitis_canonical_structure_of.html">hucit:is_canonical_structure_of</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_2702"><a   href="prop-owltopobjectproperty.html">owl:topObjectProperty</a></li>
           
-              <li class="second-level" style="line-height: 20px;" id="sd_2892"><a   href="prop-hucitis_part_of.html">hucit:is_part_of</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_2687"><a   href="prop-owlversioninfo.html">owl:versionInfo</a></li>
           
-              <li class="second-level" style="line-height: 20px;" id="sd_2893"><a   href="prop-hucitprecedes.html">hucit:precedes</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_2684"><a   href="prop-rdfscomment.html">rdfs:comment</a></li>
           
-              <li class="second-level" style="line-height: 20px;" id="sd_2894"><a   href="prop-owltopobjectproperty.html">owl:topObjectProperty</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_2685"><a   href="prop-rdfslabel.html">rdfs:label</a></li>
           
 
         
+
+        
+
 
         
 
@@ -411,9 +420,7 @@
 
 
 <!-- /#sidebar-wrapper -->
-
-    
-
+  
 
 
 
@@ -424,18 +431,17 @@
 
 	
 
+      
 
-
-
-
-
+    
+    
         
 
 
 
 
-        
-            
+
+
 
 
 
@@ -486,7 +492,7 @@
           <a href="entities-tree-classes.html">Classes</a>
     </li>
       <li class="active">
-            http://purl.org/net/hucit#TextElement
+            hucit:TextElement
         </li>
   </ol>
 
@@ -502,460 +508,473 @@
 
 
 
-        
 
 
 
 
 
-            <h1>
-
-                hucit:TextElement
-                
-                    <small class="label label-info label-xs">leaf node</small>
-                  
-
-            </h1>
-            <hr>
 
 
+    
 
-            <div class="tree-container">
-            <div class="tree">
-                <ul>
+    
+    <h1>
+      hucit:TextElement
+      
+        <small class="label label-info label-xs">leaf node</small>
+      
+    </h1>
+
+    <hr>  
+
+    
+    <div class="tree-container">
+      <div class="tree">
+        <ul>
+          
+            
+              <li>
+                <a href="class-hucitconceptualobject.html" title="'Conceptual Object' - Needs to be aligned to CIDOC-CRM">hucit:ConceptualObject</a>
+                  <ul>
+                    <li><a style="font-weight: bold;" title="'Text Element' - The elements (e.g. chapter, title, page) a textual structure is composed of. When encoding a text, for instance using TEI,..">hucit:TextElement</a>
                     
-
-                        
-
-                        <li>
-
-                          <a href="class-hucitconceptualobject.html" title="'Conceptual Object' - Needs to be aligned to CIDOC-CRM">hucit:ConceptualObject</a>
-
-                          <ul>
-
-                            <li><a style="font-weight: bold;" title="'Text Element' - The elements (e.g. chapter, title, page) a textual structure is composed of. When encoding a text, for instance using TEI, ...">hucit:TextElement</a>
-                            
-                              </li>
-
-                          </ul>
-
-                          </li>
-                        
-
-                    
-
+                  </li>
                 </ul>
-            </div>
-            </div>
+              </li>
+            
+          
+        </ul>
+      </div>
+    </div>
 
 
-
-
-           <div class="row"><div class="col-md-12">
-              <div class="panel panel-default">
-            <div class="panel-heading">
-              <h3 class="panel-title">URI</h3>
-            </div>
-            <div class="panel-body">
-
-                <code>http://purl.org/net/hucit#TextElement</code>
-            </div>
+    
+    <div class="row">
+      <div class="col-md-12">
+        <div class="panel panel-default">
+          <div class="panel-heading">
+            <h3 class="panel-title">URI</h3>
           </div>
-           </div></div>
-
-           
-            <div class="row"><div class="col-md-12">
-              <div class="panel panel-default">
-            <div class="panel-heading">
-              <h3 class="panel-title">Label</h3>
-            </div>
-            <div class="panel-body">
-
-                Text Element
-            </div>
+          <div class="panel-body">
+            <code>http://purl.org/net/hucit#TextElement</code>
           </div>
-           </div></div>
-           
+        </div>
+      </div>
+    </div>
 
 
+    
+    
+      <div class="row">
+        <div class="col-md-12">
+          <div class="panel panel-default">
+          <div class="panel-heading">
+            <h3 class="panel-title">Label</h3>
+          </div>
+          <div class="panel-body">
+            Text Element
+          </div>
+          </div>
+        </div>
+      </div>
+    
 
-           
-            <div class="row"><div class="col-md-12">
-              <div class="panel panel-default">
+
+    
+    
+      <div class="row">
+        <div class="col-md-12">
+          <div class="panel panel-default">
             <div class="panel-heading">
               <h3 class="panel-title">Description</h3>
             </div>
             <div class="panel-body">
+              <p>The elements (e.g. chapter, title, page) a textual structure is composed of. </p>
 
-                The elements (e.g. chapter, title, page) a textual structure is composed of. 
+<p>When encoding a text, for instance using TEI, the elements of a textual structured can be captured by using the relevant mark-up elements (such as &lt;p&gt; for a paragraph, &lt;div&gt; for a book or a chapter, etc.). </p>
 
-When encoding a text, for instance using TEI, the elements of a textual structured can be captured by using the relevant mark-up elements (such as &lt;p&gt; for a paragraph, &lt;div&gt; for a book or a chapter, etc.). 
-
-The CTS Protocol defines a system of URNs to identify such text elements. (explain)
+<p>The CTS Protocol defines a system of URNs to identify such text elements. (explain)</p>
             </div>
           </div>
-           </div></div>
-           
+        </div>
+      </div>
+    
 
 
-
-
-           
-            <div class="row"><div class="col-md-12">
-              <div class="panel panel-default">
+    
+    
+      <div class="row">
+        <div class="col-md-12">
+          <div class="panel panel-default">
             <div class="panel-heading">
               <h3 class="panel-title">Superclasses (1)</h3>
             </div>
             <div class="panel-body">
-
-            
-                    <li><a href="class-hucitconceptualobject.html">hucit:ConceptualObject</a></li>
-            
-
+              
+                
+                  <li><a href="class-hucitconceptualobject.html" title="http://purl.org/net/hucit#ConceptualObject">hucit:ConceptualObject</a></li>
+                
+              
             </div>
           </div>
-           </div></div>
-           
+        </div>
+      </div>
+    
 
 
+    
+    
 
-         
-           <div class="row"><div class="col-md-12">
-              <div class="panel panel-default">
+
+    
+    
+
+
+    
+    
+      <div class="row">
+        <div class="col-md-12">
+          <div class="panel panel-default">
             <div class="panel-heading">
               <h3 class="panel-title">Usage</h3>
             </div>
             <div class="panel-body" style="overflow: auto;">
-
-                <p>Instances of hucit:TextElement can have the following properties:</p>
+              <p>Instances of hucit:TextElement can have the following properties:</p>
             </div>
-             <table class="table table-bordered" style="overflow: auto;">
-
-                <tr class="table-classproperties">
-                    <th>PROPERTY</th><th>DESCRIPTION</th><th>RANGE</th>
-                </tr>
-
+            <table class="table table-bordered" style="overflow: auto;">
+              <tr class="table-classproperties">
+                <th>PROPERTY</th><th>TYPE</th><th>DESCRIPTION</th><th>RANGE</th>
+              </tr>
+              
                 
-
+                  
+                      <tr class="table-inheritanceinfo">
+                        <th colspan="4" class="treeinfo">
+                          <span class="label label-default">From class <a title="hucit:TextElement" href="class-hucittextelement.html" class="fromclass_link">hucit:TextElement</a></span>
+                        </th>
+                      </tr>
                     
-
+                      <tr>
+                        <td class="firsttd">
+                          <a class="propcolor" title="hucit:element_part_of" href="prop-hucitelement_part_of.html">hucit:element_part_of</a>
+                        </td>
+                        <td class="secondtd">
+                          <i>owl:FunctionalProperty<i>
+                        </td>
+                        <td class="thirdtd">
+                          <span></span>
+                        </td>
+                        <td class="fourthtd">
+                          
+                            
+                                
+                                  <a title="hucit:TextStructure" href="class-hucittextstructure.html" class="rdfclass">hucit:TextStructure</a>
+                                
+                            
+                          
+                        </td>
+                      </tr>
                     
-
-                        <tr class="table-inheritanceinfo">
-                            <th colspan="3" class="treeinfo"><span class="label label-default">From class <a title="hucit:TextElement" href="class-hucittextelement.html" class="fromclass_link">hucit:TextElement</a></span>
-                            </th>
-                        </tr>
-
-                            
-                            <tr>
-                                <td class="firsttd">
-                                    <a class="propcolor" title="hucit:element_part_of" href="prop-hucitelement_part_of.html">hucit:element_part_of</a>
-                                </td>
-                                <td class="thirdtd">
-                                    <span>--</span>
-                                </td>
-                                <td class="secondtd">
-                                    
-                                    
-
-                                        <a title="hucit:TextStructure" href="class-hucittextstructure.html" class="rdfclass">hucit:TextStructure</a>
-
-                                    
-                                    
-                                </td>
-                            </tr>
-
-                            
-                            <tr>
-                                <td class="firsttd">
-                                    <a class="propcolor" title="hucit:resolves_to" href="prop-hucitresolves_to.html">hucit:resolves_to</a>
-                                </td>
-                                <td class="thirdtd">
-                                    <span>--</span>
-                                </td>
-                                <td class="secondtd">
-                                    
-                                        <i>owl:Thing</i>
-                                    
-                                </td>
-                            </tr>
-
-                            
-                            <tr>
-                                <td class="firsttd">
-                                    <a class="propcolor" title="hucit:follows" href="prop-hucitfollows.html">hucit:follows</a>
-                                </td>
-                                <td class="thirdtd">
-                                    <span>--</span>
-                                </td>
-                                <td class="secondtd">
-                                    
-                                    
-
-                                        <a title="hucit:TextElement" href="class-hucittextelement.html" class="rdfclass">hucit:TextElement</a>
-
-                                    
-                                    
-                                </td>
-                            </tr>
-
-                            
-                            <tr>
-                                <td class="firsttd">
-                                    <a class="propcolor" title="hucit:has_part" href="prop-hucithas_part.html">hucit:has_part</a>
-                                </td>
-                                <td class="thirdtd">
-                                    <span>--</span>
-                                </td>
-                                <td class="secondtd">
-                                    
-                                    
-
-                                        <a title="hucit:TextElement" href="class-hucittextelement.html" class="rdfclass">hucit:TextElement</a>
-
-                                    
-                                    
-                                </td>
-                            </tr>
-
-                            
-                            <tr>
-                                <td class="firsttd">
-                                    <a class="propcolor" title="hucit:is_part_of" href="prop-hucitis_part_of.html">hucit:is_part_of</a>
-                                </td>
-                                <td class="thirdtd">
-                                    <span>--</span>
-                                </td>
-                                <td class="secondtd">
-                                    
-                                    
-
-                                        <a title="hucit:TextElement" href="class-hucittextelement.html" class="rdfclass">hucit:TextElement</a>
-
-                                    
-                                    
-                                </td>
-                            </tr>
-
-                            
-                            <tr>
-                                <td class="firsttd">
-                                    <a class="propcolor" title="hucit:precedes" href="prop-hucitprecedes.html">hucit:precedes</a>
-                                </td>
-                                <td class="thirdtd">
-                                    <span>--</span>
-                                </td>
-                                <td class="secondtd">
-                                    
-                                    
-
-                                        <a title="hucit:TextElement" href="class-hucittextelement.html" class="rdfclass">hucit:TextElement</a>
-
-                                    
-                                    
-                                </td>
-                            </tr>
-
-                            
-
+                      <tr>
+                        <td class="firsttd">
+                          <a class="propcolor" title="hucit:resolves_to" href="prop-hucitresolves_to.html">hucit:resolves_to</a>
+                        </td>
+                        <td class="secondtd">
+                          <i>owl:FunctionalProperty<i>
+                        </td>
+                        <td class="thirdtd">
+                          <span></span>
+                        </td>
+                        <td class="fourthtd">
+                          
+                              <i>owl:Thing</i>
+                          
+                        </td>
+                      </tr>
                     
-
+                      <tr>
+                        <td class="firsttd">
+                          <a class="propcolor" title="hucit:follows" href="prop-hucitfollows.html">hucit:follows</a>
+                        </td>
+                        <td class="secondtd">
+                          <i>owl:ObjectProperty<i>
+                        </td>
+                        <td class="thirdtd">
+                          <span></span>
+                        </td>
+                        <td class="fourthtd">
+                          
+                            
+                                
+                                  <a title="hucit:TextElement" href="class-hucittextelement.html" class="rdfclass">hucit:TextElement</a>
+                                
+                            
+                          
+                        </td>
+                      </tr>
                     
-
+                      <tr>
+                        <td class="firsttd">
+                          <a class="propcolor" title="hucit:has_part" href="prop-hucithas_part.html">hucit:has_part</a>
+                        </td>
+                        <td class="secondtd">
+                          <i>owl:ObjectProperty<i>
+                        </td>
+                        <td class="thirdtd">
+                          <span></span>
+                        </td>
+                        <td class="fourthtd">
+                          
+                            
+                                
+                                  <a title="hucit:TextElement" href="class-hucittextelement.html" class="rdfclass">hucit:TextElement</a>
+                                
+                            
+                          
+                        </td>
+                      </tr>
+                    
+                      <tr>
+                        <td class="firsttd">
+                          <a class="propcolor" title="hucit:is_part_of" href="prop-hucitis_part_of.html">hucit:is_part_of</a>
+                        </td>
+                        <td class="secondtd">
+                          <i>owl:ObjectProperty<i>
+                        </td>
+                        <td class="thirdtd">
+                          <span></span>
+                        </td>
+                        <td class="fourthtd">
+                          
+                            
+                                
+                                  <a title="hucit:TextElement" href="class-hucittextelement.html" class="rdfclass">hucit:TextElement</a>
+                                
+                            
+                          
+                        </td>
+                      </tr>
+                    
+                      <tr>
+                        <td class="firsttd">
+                          <a class="propcolor" title="hucit:precedes" href="prop-hucitprecedes.html">hucit:precedes</a>
+                        </td>
+                        <td class="secondtd">
+                          <i>owl:ObjectProperty<i>
+                        </td>
+                        <td class="thirdtd">
+                          <span></span>
+                        </td>
+                        <td class="fourthtd">
+                          
+                            
+                                
+                                  <a title="hucit:TextElement" href="class-hucittextelement.html" class="rdfclass">hucit:TextElement</a>
+                                
+                            
+                          
+                        </td>
+                      </tr>
+                    
+                  
                 
-
-                    
-
-                    
-
-                        <tr class="table-inheritanceinfo">
-                            <th colspan="3" class="treeinfo"><span class="label label-default">From class <a title="owl:Thing" href="class-owlthing.html" class="fromclass_link">owl:Thing</a></span>
-                            </th>
-                        </tr>
-
-                            
-                            <tr>
-                                <td class="firsttd">
-                                    <a class="propcolor" title="dc:creator" href="prop-dccreator.html">dc:creator</a>
-                                </td>
-                                <td class="thirdtd">
-                                    <span>--</span>
-                                </td>
-                                <td class="secondtd">
-                                    
-                                        <i>owl:Thing</i>
-                                    
-                                </td>
-                            </tr>
-
-                            
-                            <tr>
-                                <td class="firsttd">
-                                    <a class="propcolor" title="dc:description" href="prop-dcdescription.html">dc:description</a>
-                                </td>
-                                <td class="thirdtd">
-                                    <span>--</span>
-                                </td>
-                                <td class="secondtd">
-                                    
-                                        <i>owl:Thing</i>
-                                    
-                                </td>
-                            </tr>
-
-                            
-                            <tr>
-                                <td class="firsttd">
-                                    <a class="propcolor" title="rdfs:comment" href="prop-rdfscomment.html">rdfs:comment</a>
-                                </td>
-                                <td class="thirdtd">
-                                    <span>--</span>
-                                </td>
-                                <td class="secondtd">
-                                    
-                                        <i>owl:Thing</i>
-                                    
-                                </td>
-                            </tr>
-
-                            
-                            <tr>
-                                <td class="firsttd">
-                                    <a class="propcolor" title="rdfs:label" href="prop-rdfslabel.html">rdfs:label</a>
-                                </td>
-                                <td class="thirdtd">
-                                    <span>--</span>
-                                </td>
-                                <td class="secondtd">
-                                    
-                                        <i>owl:Thing</i>
-                                    
-                                </td>
-                            </tr>
-
-                            
-                            <tr>
-                                <td class="firsttd">
-                                    <a class="propcolor" title="owl:deprecated" href="prop-owldeprecated.html">owl:deprecated</a>
-                                </td>
-                                <td class="thirdtd">
-                                    <span>--</span>
-                                </td>
-                                <td class="secondtd">
-                                    
-                                        <i>owl:Thing</i>
-                                    
-                                </td>
-                            </tr>
-
-                            
-                            <tr>
-                                <td class="firsttd">
-                                    <a class="propcolor" title="owl:versionInfo" href="prop-owlversioninfo.html">owl:versionInfo</a>
-                                </td>
-                                <td class="thirdtd">
-                                    <span>--</span>
-                                </td>
-                                <td class="secondtd">
-                                    
-                                        <i>owl:Thing</i>
-                                    
-                                </td>
-                            </tr>
-
-                            
-                            <tr>
-                                <td class="firsttd">
-                                    <a class="propcolor" title="hucit:is_identified_by" href="prop-hucitis_identified_by.html">hucit:is_identified_by</a>
-                                </td>
-                                <td class="thirdtd">
-                                    <span>--</span>
-                                </td>
-                                <td class="secondtd">
-                                    
-                                    
-
-                                        <a title="hucit:TextElement" href="class-hucittextelement.html" class="rdfclass">hucit:TextElement</a>
-
-                                    
-                                    
-                                </td>
-                            </tr>
-
-                            
-                            <tr>
-                                <td class="firsttd">
-                                    <a class="propcolor" title="hucit:is_canonical_structure_of" href="prop-hucitis_canonical_structure_of.html">hucit:is_canonical_structure_of</a>
-                                </td>
-                                <td class="thirdtd">
-                                    <span>--</span>
-                                </td>
-                                <td class="secondtd">
-                                    
-                                        <i>owl:Thing</i>
-                                    
-                                </td>
-                            </tr>
-
-                            
-                            <tr>
-                                <td class="firsttd">
-                                    <a class="propcolor" title="owl:topObjectProperty" href="prop-owltopobjectproperty.html">owl:topObjectProperty</a>
-                                </td>
-                                <td class="thirdtd">
-                                    <span>--</span>
-                                </td>
-                                <td class="secondtd">
-                                    
-                                        <i>owl:Thing</i>
-                                    
-                                </td>
-                            </tr>
-
-                            
-
-                    
-
-                    
-
+              
                 
-
+                  
+                      <tr class="table-inheritanceinfo">
+                        <th colspan="4" class="treeinfo">
+                          <span class="label label-default">From class <a title="owl:Thing" href="class-owlthing.html" class="fromclass_link">owl:Thing</a></span>
+                        </th>
+                      </tr>
+                    
+                      <tr>
+                        <td class="firsttd">
+                          <a class="propcolor" title="dc:creator" href="prop-dccreator.html">dc:creator</a>
+                        </td>
+                        <td class="secondtd">
+                          <i>owl:AnnotationProperty<i>
+                        </td>
+                        <td class="thirdtd">
+                          <span></span>
+                        </td>
+                        <td class="fourthtd">
+                          
+                              <i>owl:Thing</i>
+                          
+                        </td>
+                      </tr>
+                    
+                      <tr>
+                        <td class="firsttd">
+                          <a class="propcolor" title="dc:description" href="prop-dcdescription.html">dc:description</a>
+                        </td>
+                        <td class="secondtd">
+                          <i>owl:AnnotationProperty<i>
+                        </td>
+                        <td class="thirdtd">
+                          <span></span>
+                        </td>
+                        <td class="fourthtd">
+                          
+                              <i>owl:Thing</i>
+                          
+                        </td>
+                      </tr>
+                    
+                      <tr>
+                        <td class="firsttd">
+                          <a class="propcolor" title="hucit:is_canonical_structure_of" href="prop-hucitis_canonical_structure_of.html">hucit:is_canonical_structure_of</a>
+                        </td>
+                        <td class="secondtd">
+                          <i>owl:ObjectProperty<i>
+                        </td>
+                        <td class="thirdtd">
+                          <span></span>
+                        </td>
+                        <td class="fourthtd">
+                          
+                              <i>owl:Thing</i>
+                          
+                        </td>
+                      </tr>
+                    
+                      <tr>
+                        <td class="firsttd">
+                          <a class="propcolor" title="hucit:is_identified_by" href="prop-hucitis_identified_by.html">hucit:is_identified_by</a>
+                        </td>
+                        <td class="secondtd">
+                          <i>owl:FunctionalProperty<i>
+                        </td>
+                        <td class="thirdtd">
+                          <span></span>
+                        </td>
+                        <td class="fourthtd">
+                          
+                            
+                                
+                                  <a title="hucit:TextElement" href="class-hucittextelement.html" class="rdfclass">hucit:TextElement</a>
+                                
+                            
+                          
+                        </td>
+                      </tr>
+                    
+                      <tr>
+                        <td class="firsttd">
+                          <a class="propcolor" title="owl:deprecated" href="prop-owldeprecated.html">owl:deprecated</a>
+                        </td>
+                        <td class="secondtd">
+                          <i>owl:AnnotationProperty<i>
+                        </td>
+                        <td class="thirdtd">
+                          <span></span>
+                        </td>
+                        <td class="fourthtd">
+                          
+                              <i>owl:Thing</i>
+                          
+                        </td>
+                      </tr>
+                    
+                      <tr>
+                        <td class="firsttd">
+                          <a class="propcolor" title="owl:topObjectProperty" href="prop-owltopobjectproperty.html">owl:topObjectProperty</a>
+                        </td>
+                        <td class="secondtd">
+                          <i>owl:ObjectProperty<i>
+                        </td>
+                        <td class="thirdtd">
+                          <span></span>
+                        </td>
+                        <td class="fourthtd">
+                          
+                              <i>owl:Thing</i>
+                          
+                        </td>
+                      </tr>
+                    
+                      <tr>
+                        <td class="firsttd">
+                          <a class="propcolor" title="owl:versionInfo" href="prop-owlversioninfo.html">owl:versionInfo</a>
+                        </td>
+                        <td class="secondtd">
+                          <i>owl:AnnotationProperty<i>
+                        </td>
+                        <td class="thirdtd">
+                          <span></span>
+                        </td>
+                        <td class="fourthtd">
+                          
+                              <i>owl:Thing</i>
+                          
+                        </td>
+                      </tr>
+                    
+                      <tr>
+                        <td class="firsttd">
+                          <a class="propcolor" title="rdfs:comment" href="prop-rdfscomment.html">rdfs:comment</a>
+                        </td>
+                        <td class="secondtd">
+                          <i>owl:AnnotationProperty<i>
+                        </td>
+                        <td class="thirdtd">
+                          <span></span>
+                        </td>
+                        <td class="fourthtd">
+                          
+                              <i>owl:Thing</i>
+                          
+                        </td>
+                      </tr>
+                    
+                      <tr>
+                        <td class="firsttd">
+                          <a class="propcolor" title="rdfs:label" href="prop-rdfslabel.html">rdfs:label</a>
+                        </td>
+                        <td class="secondtd">
+                          <i>owl:AnnotationProperty<i>
+                        </td>
+                        <td class="thirdtd">
+                          <span></span>
+                        </td>
+                        <td class="fourthtd">
+                          
+                              <i>owl:Thing</i>
+                          
+                        </td>
+                      </tr>
+                    
+                  
+                
+              
             </table>
-
-
           </div>
-           </div></div>
-
-        
-
-
+        </div>
+      </div>
+    
 
 
+    
+    
 
 
-           <div class="row"><div class="col-md-12">
-              <div class="panel panel-default">
-            <div class="panel-heading">
-              <h3 class="panel-title">Implementation</h3>
-            </div>
-            <div class="panel-body implementation-panel">
+    
+    <div class="row">
+      <div class="col-md-12">
+        <div class="panel panel-default">
+          <div class="panel-heading">
+            <h3 class="panel-title">Implementation</h3>
+          </div>
+          <div class="panel-body implementation-panel">
+            
+              <div class="highlight"><pre><span></span><span class="k">@prefix</span><span class="w"> </span><span class="nn">:</span><span class="w"> </span><span class="nv">&lt;http://purl.org/net/hucit#&gt;</span><span class="w"> </span><span class="p">.</span>
+<span class="k">@prefix</span><span class="w"> </span><span class="nn">owl:</span><span class="w"> </span><span class="nv">&lt;http://www.w3.org/2002/07/owl#&gt;</span><span class="w"> </span><span class="p">.</span>
+<span class="k">@prefix</span><span class="w"> </span><span class="nn">rdfs:</span><span class="w"> </span><span class="nv">&lt;http://www.w3.org/2000/01/rdf-schema#&gt;</span><span class="w"> </span><span class="p">.</span>
+<span class="k">@prefix</span><span class="w"> </span><span class="nn">xsd:</span><span class="w"> </span><span class="nv">&lt;http://www.w3.org/2001/XMLSchema#&gt;</span><span class="w"> </span><span class="p">.</span>
 
-                
-
-                    <div class="highlight"><pre><span></span><span class="k">@prefix</span><span class="w"> </span><span class="nn">:</span><span class="w"> </span><span class="nv">&lt;http://purl.org/net/hucit#&gt;</span><span class="w"> </span><span class="p">.</span><span class="w"></span>
-<span class="k">@prefix</span><span class="w"> </span><span class="nn">dc:</span><span class="w"> </span><span class="nv">&lt;http://purl.org/dc/elements/1.1/&gt;</span><span class="w"> </span><span class="p">.</span><span class="w"></span>
-<span class="k">@prefix</span><span class="w"> </span><span class="nn">efrbroo:</span><span class="w"> </span><span class="nv">&lt;http://erlangen-crm.org/efrbroo/&gt;</span><span class="w"> </span><span class="p">.</span><span class="w"></span>
-<span class="k">@prefix</span><span class="w"> </span><span class="nn">owl:</span><span class="w"> </span><span class="nv">&lt;http://www.w3.org/2002/07/owl#&gt;</span><span class="w"> </span><span class="p">.</span><span class="w"></span>
-<span class="k">@prefix</span><span class="w"> </span><span class="nn">owl2xml:</span><span class="w"> </span><span class="nv">&lt;http://www.w3.org/2006/12/owl2-xml#&gt;</span><span class="w"> </span><span class="p">.</span><span class="w"></span>
-<span class="k">@prefix</span><span class="w"> </span><span class="nn">rdf:</span><span class="w"> </span><span class="nv">&lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#&gt;</span><span class="w"> </span><span class="p">.</span><span class="w"></span>
-<span class="k">@prefix</span><span class="w"> </span><span class="nn">rdfs:</span><span class="w"> </span><span class="nv">&lt;http://www.w3.org/2000/01/rdf-schema#&gt;</span><span class="w"> </span><span class="p">.</span><span class="w"></span>
-<span class="k">@prefix</span><span class="w"> </span><span class="nn">skos:</span><span class="w"> </span><span class="nv">&lt;http://www.w3.org/2004/02/skos/core#&gt;</span><span class="w"> </span><span class="p">.</span><span class="w"></span>
-<span class="k">@prefix</span><span class="w"> </span><span class="nn">xml:</span><span class="w"> </span><span class="nv">&lt;http://www.w3.org/XML/1998/namespace&gt;</span><span class="w"> </span><span class="p">.</span><span class="w"></span>
-<span class="k">@prefix</span><span class="w"> </span><span class="nn">xsd:</span><span class="w"> </span><span class="nv">&lt;http://www.w3.org/2001/XMLSchema#&gt;</span><span class="w"> </span><span class="p">.</span><span class="w"></span>
-
-<span class="nn">:</span><span class="nt">TextElement</span><span class="w"> </span><span class="kt">a</span><span class="w"> </span><span class="nn">owl:</span><span class="nt">Class</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
-<span class="w">    </span><span class="nn">rdfs:</span><span class="nt">label</span><span class="w"> </span><span class="s">&quot;Text Element&quot;</span><span class="o">@</span><span class="ge">en</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
-<span class="w">    </span><span class="nn">rdfs:</span><span class="nt">comment</span><span class="w"> </span><span class="s">&quot;&quot;&quot;The elements (e.g. chapter, title, page) a textual structure is composed of. </span>
+<span class="p">:</span><span class="nt">TextElement</span> <span class="kt">a</span> <span class="nn">owl</span><span class="p">:</span><span class="nt">Class</span> <span class="p">;</span>
+    <span class="nn">rdfs</span><span class="p">:</span><span class="nt">label</span> <span class="s">&quot;Text Element&quot;</span><span class="o">@</span><span class="ge">en</span> <span class="p">;</span>
+    <span class="nn">rdfs</span><span class="p">:</span><span class="nt">comment</span> <span class="s">&quot;&quot;&quot;The elements (e.g. chapter, title, page) a textual structure is composed of. </span>
 
 <span class="s">When encoding a text, for instance using TEI, the elements of a textual structured can be captured by using the relevant mark-up elements (such as &lt;p&gt; for a paragraph, &lt;div&gt; for a book or a chapter, etc.). </span>
 
@@ -963,24 +982,14 @@ The CTS Protocol defines a system of URNs to identify such text elements. (expla
 <span class="s">    rdfs:subClassOf :ConceptualObject .</span>
 </pre></div>
 
-
-                
-            </div>
+            
           </div>
-           </div></div>
-
-
-
+        </div>
+      </div>
+    </div>
 
 
         
-
-
-
-
-
-
-
 
 
 
@@ -1000,7 +1009,7 @@ The CTS Protocol defines a system of URNs to identify such text elements. (expla
   <footer class="footer">
     <div class="container">
     
-      <p class="text-muted">Documentation automatically generated on 26th February 2017 with <a href="https://github.com/lambdamusic/OntoSpy">OntoSpy</a> (v1.7.4)</p>
+      <p class="text-muted">Documentation automatically generated on Wed, 16 Nov 2022 14:13:03 with <a href="http://lambdamusic.github.io/Ontospy/">Ontospy</a> (v2.1.0)</p>
 
     
     </div>
@@ -1013,13 +1022,13 @@ The CTS Protocol defines a system of URNs to identify such text elements. (expla
 <!-- Bootstrap core JavaScript
 ================================================== -->
 <!-- Placed at the end of the document so the pages load faster -->
-<script src="../static/libs/jquery/1.12.4/jquery.min.js"></script>
-<script src="../static/libs/bootstrap-3.3.7-dist/js/bootstrap.min.js"></script>
+<script src="../static/libs/jquery/1_12_4/jquery.min.js"></script>
+<script src="../static/libs/bootstrap-3_3_7-dist/js/bootstrap.min.js"></script>
 
 <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
-<script src="../static/libs/bootstrap-3.3.7-dist/js/ie10-viewport-bug-workaround.js"></script>
+<script src="../static/libs/bootstrap-3_3_7-dist/js/ie10-viewport-bug-workaround.js"></script>
 
-<script src="../static/libs/Chart.js-2.4.0/Chart.bundle.js"></script>
+<script src="../static/libs/chartjs-2_4_0/chart.bundle.js"></script>
 
 
 <!-- Menu Toggle Script -->
@@ -1053,13 +1062,15 @@ $('#search-input-sidebar').keyup(function() {
 
 
   <!-- Scroll Sidebar Script -->
+
   
   
+
   <script type="text/javascript">
 
     $(document).ready(function (){
       $('#sidebar-wrapper').animate({
-          scrollTop: $("#sd_2871").offset().top - 100
+          scrollTop: $("#sd_2679").offset().top - 100
       }, 100);
     });
 

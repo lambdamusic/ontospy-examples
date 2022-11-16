@@ -1,6 +1,12 @@
 
 
 
+
+
+
+
+
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -10,23 +16,23 @@
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
     <meta name="description" content="">
     <meta name="author" content="">
-    <link rel="icon" href="../static/libs/img/favicon.ico">
+    <link rel="icon" href="../static/custom/favicon.ico">
 
 	
-		<title>OntoSpy > http://www.co-ode.org/ontologies/pizza/pizza.owl</title>
+		<title>Ontospy > http://www.co-ode.org/ontologies/pizza/pizza.owl</title>
 	
 
     <!-- Bootstrap core CSS -->
-    <!-- <link href="../static/libs/bootstrap-3.3.7-dist/css/bootstrap.min.css" rel="stylesheet">  -->
+    <!-- <link href="../static/libs/bootstrap-3_3_7-dist/css/bootstrap.min.css" rel="stylesheet">  -->
     <!-- Bootswatch:  -->
     <!-- cerulean  | cyborg |  flatly |  lumen |  sandstone |   spacelab  |  yeti | cosmo |  darkly |  paper | simplex | superhero |  journal | readable  |   slate |  united -->
-    <link href="../static/libs/bootswatch3.2/sandstone/bootstrap.min.css" rel="stylesheet">
+    <link href="../static/libs/bootswatch3_2/darkly/bootstrap.min.css" rel="stylesheet">
     <link href="../static/custom/css/simple-sidebar.css" rel="stylesheet">
     <link href="../static/custom/css/familytree.css" rel="stylesheet">
     <link href="../static/custom/css/tabletree.css" rel="stylesheet">
 
     <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
-    <link href="../static/libs/bootstrap-3.3.7-dist/css/ie10-viewport-bug-workaround.css" rel="stylesheet">
+    <link href="../static/libs/bootstrap-3_3_7-dist/css/ie10-viewport-bug-workaround.css" rel="stylesheet">
 
     <!-- Custom styles for this template -->
     <link href="../static/custom/css/sticky-footer-navbar.css" rel="stylesheet">
@@ -57,7 +63,7 @@
 
   .implementation-panel {
     overflow: auto;
-    max-height: 500px;
+    /*max-height: 500px;*/
   }
 
   tr.table-classproperties {
@@ -152,8 +158,13 @@
 
 
 /*pygments css*/
+pre { line-height: 125%; }
+td.linenos pre { color: #000000; background-color: #f0f0f0; padding-left: 5px; padding-right: 5px; }
+span.linenos { color: #000000; background-color: #f0f0f0; padding-left: 5px; padding-right: 5px; }
+td.linenos pre.special { color: #000000; background-color: #ffffc0; padding-left: 5px; padding-right: 5px; }
+span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 5px; padding-right: 5px; }
 .highlight .hll { background-color: #ffffcc }
-.highlight  { background: #f8f8f8; }
+.highlight { background: #f8f8f8; }
 .highlight .c { color: #408080; font-style: italic } /* Comment */
 .highlight .err { border: 1px solid #FF0000 } /* Error */
 .highlight .k { color: #008000; font-weight: bold } /* Keyword */
@@ -230,6 +241,11 @@
 
 
 
+/* override default footer background for dark themes only */
+.footer {
+  background-color: inherit;
+}
+
 
 
 
@@ -245,8 +261,7 @@
   <body>
 
 
-
-    
+  
 <!-- Fixed navbar -->
 <nav class="navbar navbar-default navbar-fixed-top">
   <div class="container-fluid">
@@ -266,27 +281,22 @@
     <div id="navbar" class="collapse navbar-collapse">
       <ul class="nav navbar-nav">
         <li ><a href="index.html"><code style="font-size: 115%;">http://www.co-ode.org/ontologies/pizza/pizza.owl</code></a></li>
-        
 
-       
-
-
-        <li  ><a href="dashboard.html">Dashboard</a></li>
         <li  ><a href="entities-az.html">Entities A-Z</a></li>
-        <li class="dropdown  " >
-          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Entities Tree <span class="caret"></span></a>
-          <ul class="dropdown-menu">
-            
-            <li><a href="entities-tree-classes.html">Classes</a>
-            </li>
-            
-            
-            <li><a  href="entities-tree-properties.html">Properties</a>
-            </li>
-            
-            
-          </ul>
-      </li>
+        
+        <li ><a href="entities-tree-classes.html">Classes</a></li>
+        
+        
+        <li ><a href="entities-tree-properties.html">Properties</a></li>
+        
+        
+        
+        
+        <li  ><a href="statistics.html">Statistics</a></li>
+
+
+
+
 
       </ul>
       
@@ -300,13 +310,14 @@
 
 
 
+
+
 <div id="wrapper" class="toggled">
 
 
     
-
+  
     
-        
 <!-- Sidebar -->
 <div id="sidebar-wrapper">
     <ul class="sidebar-nav">
@@ -322,203 +333,203 @@
 
             
           
-              <li class="second-level" style="line-height: 20px;" id="sd_4285"><a  href="class-pizzaowlamerican.html">pizza.owl:American</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_3332"><a  href="class-pizzaowlamerican.html">pizza.owl:American</a></li>
           
-              <li class="second-level" style="line-height: 20px;" id="sd_4286"><a  href="class-pizzaowlamericanhot.html">pizza.owl:AmericanHot</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_3333"><a  href="class-pizzaowlamericanhot.html">pizza.owl:AmericanHot</a></li>
           
-              <li class="second-level" style="line-height: 20px;" id="sd_4287"><a  href="class-pizzaowlanchoviestopping.html">pizza.owl:AnchoviesTopping</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_3334"><a  href="class-pizzaowlanchoviestopping.html">pizza.owl:AnchoviesTopping</a></li>
           
-              <li class="second-level" style="line-height: 20px;" id="sd_4288"><a  href="class-pizzaowlartichoketopping.html">pizza.owl:ArtichokeTopping</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_3335"><a  href="class-pizzaowlartichoketopping.html">pizza.owl:ArtichokeTopping</a></li>
           
-              <li class="second-level" style="line-height: 20px;" id="sd_4289"><a  href="class-pizzaowlasparagustopping.html">pizza.owl:AsparagusTopping</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_3336"><a  href="class-pizzaowlasparagustopping.html">pizza.owl:AsparagusTopping</a></li>
           
-              <li class="second-level" style="line-height: 20px;" id="sd_4290"><a  href="class-pizzaowlcajun.html">pizza.owl:Cajun</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_3337"><a  href="class-pizzaowlcajun.html">pizza.owl:Cajun</a></li>
           
-              <li class="second-level" style="line-height: 20px;" id="sd_4291"><a  href="class-pizzaowlcajunspicetopping.html">pizza.owl:CajunSpiceTopping</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_3338"><a  href="class-pizzaowlcajunspicetopping.html">pizza.owl:CajunSpiceTopping</a></li>
           
-              <li class="second-level" style="line-height: 20px;" id="sd_4292"><a  href="class-pizzaowlcapertopping.html">pizza.owl:CaperTopping</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_3339"><a  href="class-pizzaowlcapertopping.html">pizza.owl:CaperTopping</a></li>
           
-              <li class="second-level" style="line-height: 20px;" id="sd_4293"><a  href="class-pizzaowlcapricciosa.html">pizza.owl:Capricciosa</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_3340"><a  href="class-pizzaowlcapricciosa.html">pizza.owl:Capricciosa</a></li>
           
-              <li class="second-level" style="line-height: 20px;" id="sd_4294"><a  href="class-pizzaowlcaprina.html">pizza.owl:Caprina</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_3341"><a  href="class-pizzaowlcaprina.html">pizza.owl:Caprina</a></li>
           
-              <li class="second-level" style="line-height: 20px;" id="sd_4295"><a  href="class-pizzaowlcheesetopping.html">pizza.owl:CheeseTopping</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_3342"><a  href="class-pizzaowlcheesetopping.html">pizza.owl:CheeseTopping</a></li>
           
-              <li class="second-level" style="line-height: 20px;" id="sd_4296"><a  href="class-pizzaowlcheeseypizza.html">pizza.owl:CheeseyPizza</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_3343"><a  href="class-pizzaowlcheeseypizza.html">pizza.owl:CheeseyPizza</a></li>
           
-              <li class="second-level" style="line-height: 20px;" id="sd_4297"><a  href="class-pizzaowlcheeseyvegetabletopping.html">pizza.owl:CheeseyVegetableTopping</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_3344"><a  href="class-pizzaowlcheeseyvegetabletopping.html">pizza.owl:CheeseyVegetableTopping</a></li>
           
-              <li class="second-level" style="line-height: 20px;" id="sd_4298"><a  href="class-pizzaowlchickentopping.html">pizza.owl:ChickenTopping</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_3345"><a  href="class-pizzaowlchickentopping.html">pizza.owl:ChickenTopping</a></li>
           
-              <li class="second-level" style="line-height: 20px;" id="sd_4299"><a  href="class-pizzaowlcountry.html">pizza.owl:Country</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_3346"><a  href="class-pizzaowlcountry.html">pizza.owl:Country</a></li>
           
-              <li class="second-level" style="line-height: 20px;" id="sd_4300"><a  href="class-pizzaowldeeppanbase.html">pizza.owl:DeepPanBase</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_3347"><a  href="class-pizzaowldeeppanbase.html">pizza.owl:DeepPanBase</a></li>
           
-              <li class="second-level" style="line-height: 20px;" id="sd_4301"><a  href="class-pizzaowldomainconcept.html">pizza.owl:DomainConcept</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_3348"><a  href="class-pizzaowldomainconcept.html">pizza.owl:DomainConcept</a></li>
           
-              <li class="second-level" style="line-height: 20px;" id="sd_4302"><a  href="class-pizzaowlfiorentina.html">pizza.owl:Fiorentina</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_3349"><a  href="class-pizzaowlfiorentina.html">pizza.owl:Fiorentina</a></li>
           
-              <li class="second-level" style="line-height: 20px;" id="sd_4303"><a  href="class-pizzaowlfishtopping.html">pizza.owl:FishTopping</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_3350"><a  href="class-pizzaowlfishtopping.html">pizza.owl:FishTopping</a></li>
           
-              <li class="second-level" style="line-height: 20px;" id="sd_4304"><a  href="class-pizzaowlfood.html">pizza.owl:Food</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_3351"><a  href="class-pizzaowlfood.html">pizza.owl:Food</a></li>
           
-              <li class="second-level" style="line-height: 20px;" id="sd_4305"><a  href="class-pizzaowlfourcheesestopping.html">pizza.owl:FourCheesesTopping</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_3352"><a  href="class-pizzaowlfourcheesestopping.html">pizza.owl:FourCheesesTopping</a></li>
           
-              <li class="second-level" style="line-height: 20px;" id="sd_4306"><a  href="class-pizzaowlfourseasons.html">pizza.owl:FourSeasons</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_3353"><a  href="class-pizzaowlfourseasons.html">pizza.owl:FourSeasons</a></li>
           
-              <li class="second-level" style="line-height: 20px;" id="sd_4307"><a  href="class-pizzaowlfruittopping.html">pizza.owl:FruitTopping</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_3354"><a  href="class-pizzaowlfruittopping.html">pizza.owl:FruitTopping</a></li>
           
-              <li class="second-level" style="line-height: 20px;" id="sd_4308"><a  href="class-pizzaowlfruttidimare.html">pizza.owl:FruttiDiMare</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_3355"><a  href="class-pizzaowlfruttidimare.html">pizza.owl:FruttiDiMare</a></li>
           
-              <li class="second-level" style="line-height: 20px;" id="sd_4309"><a  href="class-pizzaowlgarlictopping.html">pizza.owl:GarlicTopping</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_3356"><a  href="class-pizzaowlgarlictopping.html">pizza.owl:GarlicTopping</a></li>
           
-              <li class="second-level" style="line-height: 20px;" id="sd_4310"><a  href="class-pizzaowlgiardiniera.html">pizza.owl:Giardiniera</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_3357"><a  href="class-pizzaowlgiardiniera.html">pizza.owl:Giardiniera</a></li>
           
-              <li class="second-level" style="line-height: 20px;" id="sd_4311"><a  href="class-pizzaowlgoatscheesetopping.html">pizza.owl:GoatsCheeseTopping</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_3358"><a  href="class-pizzaowlgoatscheesetopping.html">pizza.owl:GoatsCheeseTopping</a></li>
           
-              <li class="second-level" style="line-height: 20px;" id="sd_4312"><a  href="class-pizzaowlgorgonzolatopping.html">pizza.owl:GorgonzolaTopping</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_3359"><a  href="class-pizzaowlgorgonzolatopping.html">pizza.owl:GorgonzolaTopping</a></li>
           
-              <li class="second-level" style="line-height: 20px;" id="sd_4313"><a  href="class-pizzaowlgreenpeppertopping.html">pizza.owl:GreenPepperTopping</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_3360"><a  href="class-pizzaowlgreenpeppertopping.html">pizza.owl:GreenPepperTopping</a></li>
           
-              <li class="second-level" style="line-height: 20px;" id="sd_4314"><a  href="class-pizzaowlhamtopping.html">pizza.owl:HamTopping</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_3361"><a  href="class-pizzaowlhamtopping.html">pizza.owl:HamTopping</a></li>
           
-              <li class="second-level" style="line-height: 20px;" id="sd_4315"><a  href="class-pizzaowlherbspicetopping.html">pizza.owl:HerbSpiceTopping</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_3362"><a  href="class-pizzaowlherbspicetopping.html">pizza.owl:HerbSpiceTopping</a></li>
           
-              <li class="second-level" style="line-height: 20px;" id="sd_4316"><a  href="class-pizzaowlhot.html">pizza.owl:Hot</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_3363"><a  href="class-pizzaowlhot.html">pizza.owl:Hot</a></li>
           
-              <li class="second-level" style="line-height: 20px;" id="sd_4317"><a  href="class-pizzaowlhotgreenpeppertopping.html">pizza.owl:HotGreenPepperTopping</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_3364"><a  href="class-pizzaowlhotgreenpeppertopping.html">pizza.owl:HotGreenPepperTopping</a></li>
           
-              <li class="second-level" style="line-height: 20px;" id="sd_4318"><a  href="class-pizzaowlhotspicedbeeftopping.html">pizza.owl:HotSpicedBeefTopping</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_3365"><a  href="class-pizzaowlhotspicedbeeftopping.html">pizza.owl:HotSpicedBeefTopping</a></li>
           
-              <li class="second-level" style="line-height: 20px;" id="sd_4319"><a  href="class-pizzaowlicecream.html">pizza.owl:IceCream</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_3366"><a  href="class-pizzaowlicecream.html">pizza.owl:IceCream</a></li>
           
-              <li class="second-level" style="line-height: 20px;" id="sd_4320"><a  href="class-pizzaowlinterestingpizza.html">pizza.owl:InterestingPizza</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_3367"><a  href="class-pizzaowlinterestingpizza.html">pizza.owl:InterestingPizza</a></li>
           
-              <li class="second-level" style="line-height: 20px;" id="sd_4321"><a  href="class-pizzaowljalapenopeppertopping.html">pizza.owl:JalapenoPepperTopping</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_3368"><a  href="class-pizzaowljalapenopeppertopping.html">pizza.owl:JalapenoPepperTopping</a></li>
           
-              <li class="second-level" style="line-height: 20px;" id="sd_4322"><a  href="class-pizzaowllareine.html">pizza.owl:LaReine</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_3369"><a  href="class-pizzaowllareine.html">pizza.owl:LaReine</a></li>
           
-              <li class="second-level" style="line-height: 20px;" id="sd_4323"><a  href="class-pizzaowlleektopping.html">pizza.owl:LeekTopping</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_3370"><a  href="class-pizzaowlleektopping.html">pizza.owl:LeekTopping</a></li>
           
-              <li class="second-level" style="line-height: 20px;" id="sd_4324"><a  href="class-pizzaowlmargherita.html">pizza.owl:Margherita</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_3371"><a  href="class-pizzaowlmargherita.html">pizza.owl:Margherita</a></li>
           
-              <li class="second-level" style="line-height: 20px;" id="sd_4325"><a  href="class-pizzaowlmeattopping.html">pizza.owl:MeatTopping</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_3372"><a  href="class-pizzaowlmeattopping.html">pizza.owl:MeatTopping</a></li>
           
-              <li class="second-level" style="line-height: 20px;" id="sd_4326"><a  href="class-pizzaowlmeatypizza.html">pizza.owl:MeatyPizza</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_3373"><a  href="class-pizzaowlmeatypizza.html">pizza.owl:MeatyPizza</a></li>
           
-              <li class="second-level" style="line-height: 20px;" id="sd_4327"><a  href="class-pizzaowlmedium.html">pizza.owl:Medium</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_3374"><a  href="class-pizzaowlmedium.html">pizza.owl:Medium</a></li>
           
-              <li class="second-level" style="line-height: 20px;" id="sd_4328"><a  href="class-pizzaowlmild.html">pizza.owl:Mild</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_3375"><a  href="class-pizzaowlmild.html">pizza.owl:Mild</a></li>
           
-              <li class="second-level" style="line-height: 20px;" id="sd_4329"><a  href="class-pizzaowlmixedseafoodtopping.html">pizza.owl:MixedSeafoodTopping</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_3376"><a  href="class-pizzaowlmixedseafoodtopping.html">pizza.owl:MixedSeafoodTopping</a></li>
           
-              <li class="second-level" style="line-height: 20px;" id="sd_4330"><a  href="class-pizzaowlmozzarellatopping.html">pizza.owl:MozzarellaTopping</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_3377"><a  href="class-pizzaowlmozzarellatopping.html">pizza.owl:MozzarellaTopping</a></li>
           
-              <li class="second-level" style="line-height: 20px;" id="sd_4331"><a  href="class-pizzaowlmushroom.html">pizza.owl:Mushroom</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_3378"><a  href="class-pizzaowlmushroom.html">pizza.owl:Mushroom</a></li>
           
-              <li class="second-level" style="line-height: 20px;" id="sd_4332"><a  href="class-pizzaowlmushroomtopping.html">pizza.owl:MushroomTopping</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_3379"><a  href="class-pizzaowlmushroomtopping.html">pizza.owl:MushroomTopping</a></li>
           
-              <li class="second-level" style="line-height: 20px;" id="sd_4333"><a  href="class-pizzaowlnamedpizza.html">pizza.owl:NamedPizza</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_3380"><a  href="class-pizzaowlnamedpizza.html">pizza.owl:NamedPizza</a></li>
           
-              <li class="second-level" style="line-height: 20px;" id="sd_4334"><a  href="class-pizzaowlnapoletana.html">pizza.owl:Napoletana</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_3381"><a  href="class-pizzaowlnapoletana.html">pizza.owl:Napoletana</a></li>
           
-              <li class="second-level" style="line-height: 20px;" id="sd_4335"><a  href="class-pizzaowlnonvegetarianpizza.html">pizza.owl:NonVegetarianPizza</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_3382"><a  href="class-pizzaowlnonvegetarianpizza.html">pizza.owl:NonVegetarianPizza</a></li>
           
-              <li class="second-level" style="line-height: 20px;" id="sd_4336"><a  href="class-pizzaowlnuttopping.html">pizza.owl:NutTopping</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_3383"><a  href="class-pizzaowlnuttopping.html">pizza.owl:NutTopping</a></li>
           
-              <li class="second-level" style="line-height: 20px;" id="sd_4337"><a  href="class-pizzaowlolivetopping.html">pizza.owl:OliveTopping</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_3384"><a  href="class-pizzaowlolivetopping.html">pizza.owl:OliveTopping</a></li>
           
-              <li class="second-level" style="line-height: 20px;" id="sd_4338"><a  href="class-pizzaowloniontopping.html">pizza.owl:OnionTopping</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_3385"><a  href="class-pizzaowloniontopping.html">pizza.owl:OnionTopping</a></li>
           
-              <li class="second-level" style="line-height: 20px;" id="sd_4339"><a  href="class-pizzaowlparmahamtopping.html">pizza.owl:ParmaHamTopping</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_3386"><a  href="class-pizzaowlparmahamtopping.html">pizza.owl:ParmaHamTopping</a></li>
           
-              <li class="second-level" style="line-height: 20px;" id="sd_4340"><a  href="class-pizzaowlparmense.html">pizza.owl:Parmense</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_3387"><a  href="class-pizzaowlparmense.html">pizza.owl:Parmense</a></li>
           
-              <li class="second-level" style="line-height: 20px;" id="sd_4341"><a  href="class-pizzaowlparmesantopping.html">pizza.owl:ParmesanTopping</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_3388"><a  href="class-pizzaowlparmesantopping.html">pizza.owl:ParmesanTopping</a></li>
           
-              <li class="second-level" style="line-height: 20px;" id="sd_4342"><a  href="class-pizzaowlpeperonatatopping.html">pizza.owl:PeperonataTopping</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_3389"><a  href="class-pizzaowlpeperonatatopping.html">pizza.owl:PeperonataTopping</a></li>
           
-              <li class="second-level" style="line-height: 20px;" id="sd_4343"><a  href="class-pizzaowlpeperonisausagetopping.html">pizza.owl:PeperoniSausageTopping</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_3390"><a  href="class-pizzaowlpeperonisausagetopping.html">pizza.owl:PeperoniSausageTopping</a></li>
           
-              <li class="second-level" style="line-height: 20px;" id="sd_4344"><a  href="class-pizzaowlpeppertopping.html">pizza.owl:PepperTopping</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_3391"><a  href="class-pizzaowlpeppertopping.html">pizza.owl:PepperTopping</a></li>
           
-              <li class="second-level" style="line-height: 20px;" id="sd_4345"><a  href="class-pizzaowlpetitpoistopping.html">pizza.owl:PetitPoisTopping</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_3392"><a  href="class-pizzaowlpetitpoistopping.html">pizza.owl:PetitPoisTopping</a></li>
           
-              <li class="second-level" style="line-height: 20px;" id="sd_4346"><a  href="class-pizzaowlpinekernels.html">pizza.owl:PineKernels</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_3393"><a  href="class-pizzaowlpinekernels.html">pizza.owl:PineKernels</a></li>
           
-              <li class="second-level" style="line-height: 20px;" id="sd_4347"><a  href="class-pizzaowlpizza.html">pizza.owl:Pizza</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_3394"><a  href="class-pizzaowlpizza.html">pizza.owl:Pizza</a></li>
           
-              <li class="second-level" style="line-height: 20px;" id="sd_4348"><a  href="class-pizzaowlpizzabase.html">pizza.owl:PizzaBase</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_3395"><a  href="class-pizzaowlpizzabase.html">pizza.owl:PizzaBase</a></li>
           
-              <li class="second-level" style="line-height: 20px;" id="sd_4349"><a  href="class-pizzaowlpizzatopping.html">pizza.owl:PizzaTopping</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_3396"><a  href="class-pizzaowlpizzatopping.html">pizza.owl:PizzaTopping</a></li>
           
-              <li class="second-level" style="line-height: 20px;" id="sd_4350"><a  href="class-pizzaowlpolloadastra.html">pizza.owl:PolloAdAstra</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_3397"><a  href="class-pizzaowlpolloadastra.html">pizza.owl:PolloAdAstra</a></li>
           
-              <li class="second-level" style="line-height: 20px;" id="sd_4351"><a  href="class-pizzaowlprawnstopping.html">pizza.owl:PrawnsTopping</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_3398"><a  href="class-pizzaowlprawnstopping.html">pizza.owl:PrawnsTopping</a></li>
           
-              <li class="second-level" style="line-height: 20px;" id="sd_4352"><a  href="class-pizzaowlprincecarlo.html">pizza.owl:PrinceCarlo</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_3399"><a  href="class-pizzaowlprincecarlo.html">pizza.owl:PrinceCarlo</a></li>
           
-              <li class="second-level" style="line-height: 20px;" id="sd_4353"><a  href="class-pizzaowlquattroformaggi.html">pizza.owl:QuattroFormaggi</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_3400"><a  href="class-pizzaowlquattroformaggi.html">pizza.owl:QuattroFormaggi</a></li>
           
-              <li class="second-level" style="line-height: 20px;" id="sd_4354"><a  href="class-pizzaowlrealitalianpizza.html">pizza.owl:RealItalianPizza</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_3401"><a  href="class-pizzaowlrealitalianpizza.html">pizza.owl:RealItalianPizza</a></li>
           
-              <li class="second-level" style="line-height: 20px;" id="sd_4355"><a  href="class-pizzaowlredoniontopping.html">pizza.owl:RedOnionTopping</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_3402"><a  href="class-pizzaowlredoniontopping.html">pizza.owl:RedOnionTopping</a></li>
           
-              <li class="second-level" style="line-height: 20px;" id="sd_4356"><a  href="class-pizzaowlrockettopping.html">pizza.owl:RocketTopping</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_3403"><a  href="class-pizzaowlrockettopping.html">pizza.owl:RocketTopping</a></li>
           
-              <li class="second-level" style="line-height: 20px;" id="sd_4357"><a  href="class-pizzaowlrosa.html">pizza.owl:Rosa</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_3404"><a  href="class-pizzaowlrosa.html">pizza.owl:Rosa</a></li>
           
-              <li class="second-level" style="line-height: 20px;" id="sd_4358"><a  href="class-pizzaowlrosemarytopping.html">pizza.owl:RosemaryTopping</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_3405"><a  href="class-pizzaowlrosemarytopping.html">pizza.owl:RosemaryTopping</a></li>
           
-              <li class="second-level" style="line-height: 20px;" id="sd_4359"><a  href="class-pizzaowlsaucetopping.html">pizza.owl:SauceTopping</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_3406"><a  href="class-pizzaowlsaucetopping.html">pizza.owl:SauceTopping</a></li>
           
-              <li class="second-level" style="line-height: 20px;" id="sd_4360"><a  href="class-pizzaowlsiciliana.html">pizza.owl:Siciliana</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_3407"><a  href="class-pizzaowlsiciliana.html">pizza.owl:Siciliana</a></li>
           
-              <li class="second-level" style="line-height: 20px;" id="sd_4361"><a  href="class-pizzaowlslicedtomatotopping.html">pizza.owl:SlicedTomatoTopping</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_3408"><a  href="class-pizzaowlslicedtomatotopping.html">pizza.owl:SlicedTomatoTopping</a></li>
           
-              <li class="second-level" style="line-height: 20px;" id="sd_4362"><a  href="class-pizzaowlsloppygiuseppe.html">pizza.owl:SloppyGiuseppe</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_3409"><a  href="class-pizzaowlsloppygiuseppe.html">pizza.owl:SloppyGiuseppe</a></li>
           
-              <li class="second-level" style="line-height: 20px;" id="sd_4363"><a  href="class-pizzaowlsoho.html">pizza.owl:Soho</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_3410"><a  href="class-pizzaowlsoho.html">pizza.owl:Soho</a></li>
           
-              <li class="second-level" style="line-height: 20px;" id="sd_4364"><a  href="class-pizzaowlspiciness.html">pizza.owl:Spiciness</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_3411"><a  href="class-pizzaowlspiciness.html">pizza.owl:Spiciness</a></li>
           
-              <li class="second-level" style="line-height: 20px;" id="sd_4365"><a  href="class-pizzaowlspicypizza.html">pizza.owl:SpicyPizza</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_3412"><a  href="class-pizzaowlspicypizza.html">pizza.owl:SpicyPizza</a></li>
           
-              <li class="second-level" style="line-height: 20px;" id="sd_4366"><a  href="class-pizzaowlspicypizzaequivalent.html">pizza.owl:SpicyPizzaEquivalent</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_3413"><a  href="class-pizzaowlspicypizzaequivalent.html">pizza.owl:SpicyPizzaEquivalent</a></li>
           
-              <li class="second-level" style="line-height: 20px;" id="sd_4367"><a  href="class-pizzaowlspicytopping.html">pizza.owl:SpicyTopping</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_3414"><a  href="class-pizzaowlspicytopping.html">pizza.owl:SpicyTopping</a></li>
           
-              <li class="second-level" style="line-height: 20px;" id="sd_4368"><a class="active" href="class-pizzaowlspinachtopping.html">pizza.owl:SpinachTopping</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_3415"><a class="active" href="class-pizzaowlspinachtopping.html">pizza.owl:SpinachTopping</a></li>
           
-              <li class="second-level" style="line-height: 20px;" id="sd_4369"><a  href="class-pizzaowlsultanatopping.html">pizza.owl:SultanaTopping</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_3416"><a  href="class-pizzaowlsultanatopping.html">pizza.owl:SultanaTopping</a></li>
           
-              <li class="second-level" style="line-height: 20px;" id="sd_4370"><a  href="class-pizzaowlsundriedtomatotopping.html">pizza.owl:SundriedTomatoTopping</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_3417"><a  href="class-pizzaowlsundriedtomatotopping.html">pizza.owl:SundriedTomatoTopping</a></li>
           
-              <li class="second-level" style="line-height: 20px;" id="sd_4371"><a  href="class-pizzaowlsweetpeppertopping.html">pizza.owl:SweetPepperTopping</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_3418"><a  href="class-pizzaowlsweetpeppertopping.html">pizza.owl:SweetPepperTopping</a></li>
           
-              <li class="second-level" style="line-height: 20px;" id="sd_4372"><a  href="class-pizzaowlthinandcrispybase.html">pizza.owl:ThinAndCrispyBase</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_3419"><a  href="class-pizzaowlthinandcrispybase.html">pizza.owl:ThinAndCrispyBase</a></li>
           
-              <li class="second-level" style="line-height: 20px;" id="sd_4373"><a  href="class-pizzaowlthinandcrispypizza.html">pizza.owl:ThinAndCrispyPizza</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_3420"><a  href="class-pizzaowlthinandcrispypizza.html">pizza.owl:ThinAndCrispyPizza</a></li>
           
-              <li class="second-level" style="line-height: 20px;" id="sd_4374"><a  href="class-pizzaowltobascopeppersauce.html">pizza.owl:TobascoPepperSauce</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_3421"><a  href="class-pizzaowltobascopeppersauce.html">pizza.owl:TobascoPepperSauce</a></li>
           
-              <li class="second-level" style="line-height: 20px;" id="sd_4375"><a  href="class-pizzaowltomatotopping.html">pizza.owl:TomatoTopping</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_3422"><a  href="class-pizzaowltomatotopping.html">pizza.owl:TomatoTopping</a></li>
           
-              <li class="second-level" style="line-height: 20px;" id="sd_4376"><a  href="class-pizzaowlunclosedpizza.html">pizza.owl:UnclosedPizza</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_3423"><a  href="class-pizzaowlunclosedpizza.html">pizza.owl:UnclosedPizza</a></li>
           
-              <li class="second-level" style="line-height: 20px;" id="sd_4377"><a  href="class-pizzaowlvaluepartition.html">pizza.owl:ValuePartition</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_3424"><a  href="class-pizzaowlvaluepartition.html">pizza.owl:ValuePartition</a></li>
           
-              <li class="second-level" style="line-height: 20px;" id="sd_4378"><a  href="class-pizzaowlvegetabletopping.html">pizza.owl:VegetableTopping</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_3425"><a  href="class-pizzaowlvegetabletopping.html">pizza.owl:VegetableTopping</a></li>
           
-              <li class="second-level" style="line-height: 20px;" id="sd_4379"><a  href="class-pizzaowlvegetarianpizza.html">pizza.owl:VegetarianPizza</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_3426"><a  href="class-pizzaowlvegetarianpizza.html">pizza.owl:VegetarianPizza</a></li>
           
-              <li class="second-level" style="line-height: 20px;" id="sd_4380"><a  href="class-pizzaowlvegetarianpizzaequivalent1.html">pizza.owl:VegetarianPizzaEquivalent1</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_3427"><a  href="class-pizzaowlvegetarianpizzaequivalent1.html">pizza.owl:VegetarianPizzaEquivalent1</a></li>
           
-              <li class="second-level" style="line-height: 20px;" id="sd_4381"><a  href="class-pizzaowlvegetarianpizzaequivalent2.html">pizza.owl:VegetarianPizzaEquivalent2</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_3428"><a  href="class-pizzaowlvegetarianpizzaequivalent2.html">pizza.owl:VegetarianPizzaEquivalent2</a></li>
           
-              <li class="second-level" style="line-height: 20px;" id="sd_4382"><a  href="class-pizzaowlvegetariantopping.html">pizza.owl:VegetarianTopping</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_3429"><a  href="class-pizzaowlvegetariantopping.html">pizza.owl:VegetarianTopping</a></li>
           
-              <li class="second-level" style="line-height: 20px;" id="sd_4383"><a  href="class-pizzaowlveneziana.html">pizza.owl:Veneziana</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_3430"><a  href="class-pizzaowlveneziana.html">pizza.owl:Veneziana</a></li>
           
         
 
@@ -528,24 +539,27 @@
 
             
           
-              <li class="second-level" style="line-height: 20px;" id="sd_4384"><a   href="prop-pizzaowlhasbase.html">pizza.owl:hasBase</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_3431"><a   href="prop-pizzaowlhasbase.html">pizza.owl:hasBase</a></li>
           
-              <li class="second-level" style="line-height: 20px;" id="sd_4385"><a   href="prop-pizzaowlhasspiciness.html">pizza.owl:hasSpiciness</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_3436"><a   href="prop-pizzaowlhascountryoforigin.html">pizza.owl:hasCountryOfOrigin</a></li>
           
-              <li class="second-level" style="line-height: 20px;" id="sd_4386"><a   href="prop-pizzaowlisbaseof.html">pizza.owl:isBaseOf</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_3437"><a   href="prop-pizzaowlhasingredient.html">pizza.owl:hasIngredient</a></li>
           
-              <li class="second-level" style="line-height: 20px;" id="sd_4387"><a   href="prop-pizzaowlistoppingof.html">pizza.owl:isToppingOf</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_3432"><a   href="prop-pizzaowlhasspiciness.html">pizza.owl:hasSpiciness</a></li>
           
-              <li class="second-level" style="line-height: 20px;" id="sd_4388"><a   href="prop-pizzaowlhastopping.html">pizza.owl:hasTopping</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_3435"><a   href="prop-pizzaowlhastopping.html">pizza.owl:hasTopping</a></li>
           
-              <li class="second-level" style="line-height: 20px;" id="sd_4389"><a   href="prop-pizzaowlhascountryoforigin.html">pizza.owl:hasCountryOfOrigin</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_3433"><a   href="prop-pizzaowlisbaseof.html">pizza.owl:isBaseOf</a></li>
           
-              <li class="second-level" style="line-height: 20px;" id="sd_4390"><a   href="prop-pizzaowlhasingredient.html">pizza.owl:hasIngredient</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_3438"><a   href="prop-pizzaowlisingredientof.html">pizza.owl:isIngredientOf</a></li>
           
-              <li class="second-level" style="line-height: 20px;" id="sd_4391"><a   href="prop-pizzaowlisingredientof.html">pizza.owl:isIngredientOf</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_3434"><a   href="prop-pizzaowlistoppingof.html">pizza.owl:isToppingOf</a></li>
           
 
         
+
+        
+
 
         
 
@@ -563,9 +577,7 @@
 
 
 <!-- /#sidebar-wrapper -->
-
-    
-
+  
 
 
 
@@ -576,18 +588,17 @@
 
 	
 
+      
 
-
-
-
-
+    
+    
         
 
 
 
 
-        
-            
+
+
 
 
 
@@ -638,7 +649,7 @@
           <a href="entities-tree-classes.html">Classes</a>
     </li>
       <li class="active">
-            http://www.co-ode.org/ontologies/pizza/pizza.owl#SpinachTopping
+            pizza.owl:SpinachTopping
         </li>
   </ol>
 
@@ -654,343 +665,323 @@
 
 
 
-        
 
 
 
 
 
-            <h1>
-
-                pizza.owl:SpinachTopping
-                
-                    <small class="label label-info label-xs">leaf node</small>
-                  
-
-            </h1>
-            <hr>
 
 
+    
 
-            <div class="tree-container">
-            <div class="tree">
-                <ul>
+    
+    <h1>
+      pizza.owl:SpinachTopping
+      
+        <small class="label label-info label-xs">leaf node</small>
+      
+    </h1>
+
+    <hr>  
+
+    
+    <div class="tree-container">
+      <div class="tree">
+        <ul>
+          
+            
+              <li>
+                <a href="class-pizzaowlvegetabletopping.html" title="'CoberturaDeVegetais'">pizza.owl:VegetableTopping</a>
+                  <ul>
+                    <li><a style="font-weight: bold;" title="'CoberturaDeEspinafre'">pizza.owl:SpinachTopping</a>
                     
-
-                        
-
-                        <li>
-
-                          <a href="class-pizzaowlvegetabletopping.html" title="'CoberturaDeVegetais'">pizza.owl:VegetableTopping</a>
-
-                          <ul>
-
-                            <li><a style="font-weight: bold;" title="'CoberturaDeEspinafre'">pizza.owl:SpinachTopping</a>
-                            
-                              </li>
-
-                          </ul>
-
-                          </li>
-                        
-
-                    
-
+                  </li>
                 </ul>
-            </div>
-            </div>
+              </li>
+            
+          
+        </ul>
+      </div>
+    </div>
 
 
-
-
-           <div class="row"><div class="col-md-12">
-              <div class="panel panel-default">
-            <div class="panel-heading">
-              <h3 class="panel-title">URI</h3>
-            </div>
-            <div class="panel-body">
-
-                <code>http://www.co-ode.org/ontologies/pizza/pizza.owl#SpinachTopping</code>
-            </div>
+    
+    <div class="row">
+      <div class="col-md-12">
+        <div class="panel panel-default">
+          <div class="panel-heading">
+            <h3 class="panel-title">URI</h3>
           </div>
-           </div></div>
-
-           
-            <div class="row"><div class="col-md-12">
-              <div class="panel panel-default">
-            <div class="panel-heading">
-              <h3 class="panel-title">Label</h3>
-            </div>
-            <div class="panel-body">
-
-                CoberturaDeEspinafre
-            </div>
+          <div class="panel-body">
+            <code>http://www.co-ode.org/ontologies/pizza/pizza.owl#SpinachTopping</code>
           </div>
-           </div></div>
-           
+        </div>
+      </div>
+    </div>
 
 
+    
+    
+      <div class="row">
+        <div class="col-md-12">
+          <div class="panel panel-default">
+          <div class="panel-heading">
+            <h3 class="panel-title">Label</h3>
+          </div>
+          <div class="panel-body">
+            CoberturaDeEspinafre
+          </div>
+          </div>
+        </div>
+      </div>
+    
 
-           
+
+    
+    
 
 
-
-
-           
-            <div class="row"><div class="col-md-12">
-              <div class="panel panel-default">
+    
+    
+      <div class="row">
+        <div class="col-md-12">
+          <div class="panel panel-default">
             <div class="panel-heading">
               <h3 class="panel-title">Superclasses (4)</h3>
             </div>
             <div class="panel-body">
-
-            
-                    <li><a href="class-pizzaowlvegetabletopping.html">pizza.owl:VegetableTopping</a></li><li><a href="class-pizzaowlpizzatopping.html">pizza.owl:PizzaTopping</a></li><li><a href="class-pizzaowlfood.html">pizza.owl:Food</a></li><li><a href="class-pizzaowldomainconcept.html">pizza.owl:DomainConcept</a></li>
-            
-
+              
+                
+                  <li><a href="class-pizzaowlvegetabletopping.html" title="http://www.co-ode.org/ontologies/pizza/pizza.owl#VegetableTopping">pizza.owl:VegetableTopping</a></li>
+                
+                  <li><a href="class-pizzaowlpizzatopping.html" title="http://www.co-ode.org/ontologies/pizza/pizza.owl#PizzaTopping">pizza.owl:PizzaTopping</a></li>
+                
+                  <li><a href="class-pizzaowlfood.html" title="http://www.co-ode.org/ontologies/pizza/pizza.owl#Food">pizza.owl:Food</a></li>
+                
+                  <li><a href="class-pizzaowldomainconcept.html" title="http://www.co-ode.org/ontologies/pizza/pizza.owl#DomainConcept">pizza.owl:DomainConcept</a></li>
+                
+              
             </div>
           </div>
-           </div></div>
-           
+        </div>
+      </div>
+    
 
 
+    
+    
 
-         
-           <div class="row"><div class="col-md-12">
-              <div class="panel panel-default">
+
+    
+    
+
+
+    
+    
+      <div class="row">
+        <div class="col-md-12">
+          <div class="panel panel-default">
             <div class="panel-heading">
               <h3 class="panel-title">Usage</h3>
             </div>
             <div class="panel-body" style="overflow: auto;">
-
-                <p>Instances of pizza.owl:SpinachTopping can have the following properties:</p>
+              <p>Instances of pizza.owl:SpinachTopping can have the following properties:</p>
             </div>
-             <table class="table table-bordered" style="overflow: auto;">
-
-                <tr class="table-classproperties">
-                    <th>PROPERTY</th><th>DESCRIPTION</th><th>RANGE</th>
-                </tr>
-
+            <table class="table table-bordered" style="overflow: auto;">
+              <tr class="table-classproperties">
+                <th>PROPERTY</th><th>TYPE</th><th>DESCRIPTION</th><th>RANGE</th>
+              </tr>
+              
                 
-
-                    
-
-                    
-
-                    
-
+                  
                 
-
-                    
-
-                    
-
-                        <tr class="table-inheritanceinfo">
-                            <th colspan="3" class="treeinfo"><span class="label label-default">From class <a title="pizza.owl:PizzaTopping" href="class-pizzaowlpizzatopping.html" class="fromclass_link">pizza.owl:PizzaTopping</a></span>
-                            </th>
-                        </tr>
-
-                            
-                            <tr>
-                                <td class="firsttd">
-                                    <a class="propcolor" title="pizza.owl:isToppingOf" href="prop-pizzaowlistoppingof.html">pizza.owl:isToppingOf</a>
-                                </td>
-                                <td class="thirdtd">
-                                    <span>Any given instance of topping should only be added to a single pizza (no cheap half-measures on our pizzas)</span>
-                                </td>
-                                <td class="secondtd">
-                                    
-                                    
-
-                                        <a title="pizza.owl:Pizza" href="class-pizzaowlpizza.html" class="rdfclass">pizza.owl:Pizza</a>
-
-                                    
-                                    
-                                </td>
-                            </tr>
-
-                            
-
-                    
-
-                    
-
+              
                 
-
+                  
+                      <tr class="table-inheritanceinfo">
+                        <th colspan="4" class="treeinfo">
+                          <span class="label label-default">From class <a title="pizza.owl:PizzaTopping" href="class-pizzaowlpizzatopping.html" class="fromclass_link">pizza.owl:PizzaTopping</a></span>
+                        </th>
+                      </tr>
                     
-
-                    
-
-                        <tr class="table-inheritanceinfo">
-                            <th colspan="3" class="treeinfo"><span class="label label-default">From class <a title="pizza.owl:Food" href="class-pizzaowlfood.html" class="fromclass_link">pizza.owl:Food</a></span>
-                            </th>
-                        </tr>
-
+                      <tr>
+                        <td class="firsttd">
+                          <a class="propcolor" title="pizza.owl:isToppingOf" href="prop-pizzaowlistoppingof.html">pizza.owl:isToppingOf</a>
+                        </td>
+                        <td class="secondtd">
+                          <i>owl:FunctionalProperty<i>
+                        </td>
+                        <td class="thirdtd">
+                          <span>Any given instance of topping should only be added to a single pizza (no cheap half-measures on our pizzas)</span>
+                        </td>
+                        <td class="fourthtd">
+                          
                             
-                            <tr>
-                                <td class="firsttd">
-                                    <a class="propcolor" title="pizza.owl:hasIngredient" href="prop-pizzaowlhasingredient.html">pizza.owl:hasIngredient</a>
-                                </td>
-                                <td class="thirdtd">
-                                    <span>NB Transitive - the ingredients of ingredients are ingredients of the whole</span>
-                                </td>
-                                <td class="secondtd">
-                                    
-                                    
-
-                                        <a title="pizza.owl:Food" href="class-pizzaowlfood.html" class="rdfclass">pizza.owl:Food</a>
-
-                                    
-                                    
-                                </td>
-                            </tr>
-
+                                
+                                  <a title="pizza.owl:Pizza" href="class-pizzaowlpizza.html" class="rdfclass">pizza.owl:Pizza</a>
+                                
                             
-                            <tr>
-                                <td class="firsttd">
-                                    <a class="propcolor" title="pizza.owl:isIngredientOf" href="prop-pizzaowlisingredientof.html">pizza.owl:isIngredientOf</a>
-                                </td>
-                                <td class="thirdtd">
-                                    <span>The inverse property tree to hasIngredient - all subproperties and attributes of the properties should reflect those under hasIngredient.</span>
-                                </td>
-                                <td class="secondtd">
-                                    
-                                    
-
-                                        <a title="pizza.owl:Food" href="class-pizzaowlfood.html" class="rdfclass">pizza.owl:Food</a>
-
-                                    
-                                    
-                                </td>
-                            </tr>
-
-                            
-
+                          
+                        </td>
+                      </tr>
                     
-
-                    
-
+                  
                 
-
-                    
-
-                    
-
-                        <tr class="table-inheritanceinfo">
-                            <th colspan="3" class="treeinfo"><span class="label label-default">From class <a title="owl:Thing" href="class-owlthing.html" class="fromclass_link">owl:Thing</a></span>
-                            </th>
-                        </tr>
-
-                            
-                            <tr>
-                                <td class="firsttd">
-                                    <a class="propcolor" title="pizza.owl:hasSpiciness" href="prop-pizzaowlhasspiciness.html">pizza.owl:hasSpiciness</a>
-                                </td>
-                                <td class="thirdtd">
-                                    <span>A property created to be used with the ValuePartition - Spiciness.</span>
-                                </td>
-                                <td class="secondtd">
-                                    
-                                    
-
-                                        <a title="pizza.owl:Spiciness" href="class-pizzaowlspiciness.html" class="rdfclass">pizza.owl:Spiciness</a>
-
-                                    
-                                    
-                                </td>
-                            </tr>
-
-                            
-                            <tr>
-                                <td class="firsttd">
-                                    <a class="propcolor" title="pizza.owl:hasCountryOfOrigin" href="prop-pizzaowlhascountryoforigin.html">pizza.owl:hasCountryOfOrigin</a>
-                                </td>
-                                <td class="thirdtd">
-                                    <span>--</span>
-                                </td>
-                                <td class="secondtd">
-                                    
-                                        <i>owl:Thing</i>
-                                    
-                                </td>
-                            </tr>
-
-                            
-
-                    
-
-                    
-
+              
                 
-
+                  
+                      <tr class="table-inheritanceinfo">
+                        <th colspan="4" class="treeinfo">
+                          <span class="label label-default">From class <a title="pizza.owl:Food" href="class-pizzaowlfood.html" class="fromclass_link">pizza.owl:Food</a></span>
+                        </th>
+                      </tr>
+                    
+                      <tr>
+                        <td class="firsttd">
+                          <a class="propcolor" title="pizza.owl:hasIngredient" href="prop-pizzaowlhasingredient.html">pizza.owl:hasIngredient</a>
+                        </td>
+                        <td class="secondtd">
+                          <i>owl:ObjectProperty<i>
+                        </td>
+                        <td class="thirdtd">
+                          <span>NB Transitive - the ingredients of ingredients are ingredients of the whole</span>
+                        </td>
+                        <td class="fourthtd">
+                          
+                            
+                                
+                                  <a title="pizza.owl:Food" href="class-pizzaowlfood.html" class="rdfclass">pizza.owl:Food</a>
+                                
+                            
+                          
+                        </td>
+                      </tr>
+                    
+                      <tr>
+                        <td class="firsttd">
+                          <a class="propcolor" title="pizza.owl:isIngredientOf" href="prop-pizzaowlisingredientof.html">pizza.owl:isIngredientOf</a>
+                        </td>
+                        <td class="secondtd">
+                          <i>owl:ObjectProperty<i>
+                        </td>
+                        <td class="thirdtd">
+                          <span>The inverse property tree to hasIngredient - all subproperties and attributes of the properties should reflect those under hasIngredient.</span>
+                        </td>
+                        <td class="fourthtd">
+                          
+                            
+                                
+                                  <a title="pizza.owl:Food" href="class-pizzaowlfood.html" class="rdfclass">pizza.owl:Food</a>
+                                
+                            
+                          
+                        </td>
+                      </tr>
+                    
+                  
+                
+              
+                
+                  
+                      <tr class="table-inheritanceinfo">
+                        <th colspan="4" class="treeinfo">
+                          <span class="label label-default">From class <a title="owl:Thing" href="class-owlthing.html" class="fromclass_link">owl:Thing</a></span>
+                        </th>
+                      </tr>
+                    
+                      <tr>
+                        <td class="firsttd">
+                          <a class="propcolor" title="pizza.owl:hasCountryOfOrigin" href="prop-pizzaowlhascountryoforigin.html">pizza.owl:hasCountryOfOrigin</a>
+                        </td>
+                        <td class="secondtd">
+                          <i>owl:ObjectProperty<i>
+                        </td>
+                        <td class="thirdtd">
+                          <span></span>
+                        </td>
+                        <td class="fourthtd">
+                          
+                              <i>owl:Thing</i>
+                          
+                        </td>
+                      </tr>
+                    
+                      <tr>
+                        <td class="firsttd">
+                          <a class="propcolor" title="pizza.owl:hasSpiciness" href="prop-pizzaowlhasspiciness.html">pizza.owl:hasSpiciness</a>
+                        </td>
+                        <td class="secondtd">
+                          <i>owl:FunctionalProperty<i>
+                        </td>
+                        <td class="thirdtd">
+                          <span>A property created to be used with the ValuePartition - Spiciness.</span>
+                        </td>
+                        <td class="fourthtd">
+                          
+                            
+                                
+                                  <a title="pizza.owl:Spiciness" href="class-pizzaowlspiciness.html" class="rdfclass">pizza.owl:Spiciness</a>
+                                
+                            
+                          
+                        </td>
+                      </tr>
+                    
+                  
+                
+              
             </table>
-
-
           </div>
-           </div></div>
-
-        
-
-
+        </div>
+      </div>
+    
 
 
+    
+    
 
 
-           <div class="row"><div class="col-md-12">
-              <div class="panel panel-default">
-            <div class="panel-heading">
-              <h3 class="panel-title">Implementation</h3>
-            </div>
-            <div class="panel-body implementation-panel">
+    
+    <div class="row">
+      <div class="col-md-12">
+        <div class="panel panel-default">
+          <div class="panel-heading">
+            <h3 class="panel-title">Implementation</h3>
+          </div>
+          <div class="panel-body implementation-panel">
+            
+              <div class="highlight"><pre><span></span><span class="k">@prefix</span><span class="w"> </span><span class="nn">:</span><span class="w"> </span><span class="nv">&lt;http://www.co-ode.org/ontologies/pizza/pizza.owl#&gt;</span><span class="w"> </span><span class="p">.</span>
+<span class="k">@prefix</span><span class="w"> </span><span class="nn">owl:</span><span class="w"> </span><span class="nv">&lt;http://www.w3.org/2002/07/owl#&gt;</span><span class="w"> </span><span class="p">.</span>
+<span class="k">@prefix</span><span class="w"> </span><span class="nn">rdfs:</span><span class="w"> </span><span class="nv">&lt;http://www.w3.org/2000/01/rdf-schema#&gt;</span><span class="w"> </span><span class="p">.</span>
 
-                
-
-                    <div class="highlight"><pre><span></span><span class="k">@prefix</span><span class="w"> </span><span class="nn">:</span><span class="w"> </span><span class="nv">&lt;http://www.co-ode.org/ontologies/pizza/pizza.owl#&gt;</span><span class="w"> </span><span class="p">.</span><span class="w"></span>
-<span class="k">@prefix</span><span class="w"> </span><span class="nn">owl:</span><span class="w"> </span><span class="nv">&lt;http://www.w3.org/2002/07/owl#&gt;</span><span class="w"> </span><span class="p">.</span><span class="w"></span>
-<span class="k">@prefix</span><span class="w"> </span><span class="nn">rdf:</span><span class="w"> </span><span class="nv">&lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#&gt;</span><span class="w"> </span><span class="p">.</span><span class="w"></span>
-<span class="k">@prefix</span><span class="w"> </span><span class="nn">rdfs:</span><span class="w"> </span><span class="nv">&lt;http://www.w3.org/2000/01/rdf-schema#&gt;</span><span class="w"> </span><span class="p">.</span><span class="w"></span>
-<span class="k">@prefix</span><span class="w"> </span><span class="nn">skos:</span><span class="w"> </span><span class="nv">&lt;http://www.w3.org/2004/02/skos/core#&gt;</span><span class="w"> </span><span class="p">.</span><span class="w"></span>
-<span class="k">@prefix</span><span class="w"> </span><span class="nn">xml:</span><span class="w"> </span><span class="nv">&lt;http://www.w3.org/XML/1998/namespace&gt;</span><span class="w"> </span><span class="p">.</span><span class="w"></span>
-<span class="k">@prefix</span><span class="w"> </span><span class="nn">xsd:</span><span class="w"> </span><span class="nv">&lt;http://www.w3.org/2001/XMLSchema#&gt;</span><span class="w"> </span><span class="p">.</span><span class="w"></span>
-
-<span class="nn">:</span><span class="nt">SpinachTopping</span><span class="w"> </span><span class="kt">a</span><span class="w"> </span><span class="nn">owl:</span><span class="nt">Class</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
-<span class="w">    </span><span class="nn">rdfs:</span><span class="nt">label</span><span class="w"> </span><span class="s">&quot;CoberturaDeEspinafre&quot;</span><span class="o">@</span><span class="ge">pt</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
-<span class="w">    </span><span class="nn">rdfs:</span><span class="nt">subClassOf</span><span class="w"> </span><span class="p">[</span><span class="w"> </span><span class="kt">a</span><span class="w"> </span><span class="nn">owl:</span><span class="nt">Restriction</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
-<span class="w">            </span><span class="nn">owl:</span><span class="nt">onProperty</span><span class="w"> </span><span class="nn">:</span><span class="nt">hasSpiciness</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
-<span class="w">            </span><span class="nn">owl:</span><span class="nt">someValuesFrom</span><span class="w"> </span><span class="nn">:</span><span class="nt">Mild</span><span class="w"> </span><span class="p">],</span><span class="w"></span>
-<span class="w">        </span><span class="nn">:</span><span class="nt">VegetableTopping</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
-<span class="w">    </span><span class="nn">owl:</span><span class="nt">disjointWith</span><span class="w"> </span><span class="nn">:</span><span class="nt">ArtichokeTopping</span><span class="p">,</span><span class="w"></span>
-<span class="w">        </span><span class="nn">:</span><span class="nt">AsparagusTopping</span><span class="p">,</span><span class="w"></span>
-<span class="w">        </span><span class="nn">:</span><span class="nt">CaperTopping</span><span class="p">,</span><span class="w"></span>
-<span class="w">        </span><span class="nn">:</span><span class="nt">GarlicTopping</span><span class="p">,</span><span class="w"></span>
-<span class="w">        </span><span class="nn">:</span><span class="nt">LeekTopping</span><span class="p">,</span><span class="w"></span>
-<span class="w">        </span><span class="nn">:</span><span class="nt">MushroomTopping</span><span class="p">,</span><span class="w"></span>
-<span class="w">        </span><span class="nn">:</span><span class="nt">OliveTopping</span><span class="p">,</span><span class="w"></span>
-<span class="w">        </span><span class="nn">:</span><span class="nt">OnionTopping</span><span class="p">,</span><span class="w"></span>
-<span class="w">        </span><span class="nn">:</span><span class="nt">PepperTopping</span><span class="p">,</span><span class="w"></span>
-<span class="w">        </span><span class="nn">:</span><span class="nt">PetitPoisTopping</span><span class="p">,</span><span class="w"></span>
-<span class="w">        </span><span class="nn">:</span><span class="nt">RocketTopping</span><span class="p">,</span><span class="w"></span>
-<span class="w">        </span><span class="nn">:</span><span class="nt">TomatoTopping</span><span class="w"> </span><span class="p">.</span><span class="w"></span>
+<span class="p">:</span><span class="nt">SpinachTopping</span> <span class="kt">a</span> <span class="nn">owl</span><span class="p">:</span><span class="nt">Class</span> <span class="p">;</span>
+    <span class="nn">rdfs</span><span class="p">:</span><span class="nt">label</span> <span class="s">&quot;CoberturaDeEspinafre&quot;</span><span class="o">@</span><span class="ge">pt</span> <span class="p">;</span>
+    <span class="nn">rdfs</span><span class="p">:</span><span class="nt">subClassOf</span> <span class="p">[</span> <span class="kt">a</span> <span class="nn">owl</span><span class="p">:</span><span class="nt">Restriction</span> <span class="p">;</span>
+            <span class="nn">owl</span><span class="p">:</span><span class="nt">onProperty</span> <span class="p">:</span><span class="nt">hasSpiciness</span> <span class="p">;</span>
+            <span class="nn">owl</span><span class="p">:</span><span class="nt">someValuesFrom</span> <span class="p">:</span><span class="nt">Mild</span> <span class="p">],</span>
+        <span class="p">:</span><span class="nt">VegetableTopping</span> <span class="p">;</span>
+    <span class="nn">owl</span><span class="p">:</span><span class="nt">disjointWith</span> <span class="p">:</span><span class="nt">ArtichokeTopping</span><span class="p">,</span>
+        <span class="p">:</span><span class="nt">AsparagusTopping</span><span class="p">,</span>
+        <span class="p">:</span><span class="nt">CaperTopping</span><span class="p">,</span>
+        <span class="p">:</span><span class="nt">GarlicTopping</span><span class="p">,</span>
+        <span class="p">:</span><span class="nt">LeekTopping</span><span class="p">,</span>
+        <span class="p">:</span><span class="nt">MushroomTopping</span><span class="p">,</span>
+        <span class="p">:</span><span class="nt">OliveTopping</span><span class="p">,</span>
+        <span class="p">:</span><span class="nt">OnionTopping</span><span class="p">,</span>
+        <span class="p">:</span><span class="nt">PepperTopping</span><span class="p">,</span>
+        <span class="p">:</span><span class="nt">PetitPoisTopping</span><span class="p">,</span>
+        <span class="p">:</span><span class="nt">RocketTopping</span><span class="p">,</span>
+        <span class="p">:</span><span class="nt">TomatoTopping</span> <span class="p">.</span>
 </pre></div>
 
-
-                
-            </div>
+            
           </div>
-           </div></div>
-
-
-
+        </div>
+      </div>
+    </div>
 
 
         
-
-
-
-
-
-
-
 
 
 
@@ -1010,7 +1001,7 @@
   <footer class="footer">
     <div class="container">
     
-      <p class="text-muted">Documentation automatically generated on 26th February 2017 with <a href="https://github.com/lambdamusic/OntoSpy">OntoSpy</a> (v1.7.4)</p>
+      <p class="text-muted">Documentation automatically generated on Wed, 16 Nov 2022 14:13:10 with <a href="http://lambdamusic.github.io/Ontospy/">Ontospy</a> (v2.1.0)</p>
 
     
     </div>
@@ -1023,13 +1014,13 @@
 <!-- Bootstrap core JavaScript
 ================================================== -->
 <!-- Placed at the end of the document so the pages load faster -->
-<script src="../static/libs/jquery/1.12.4/jquery.min.js"></script>
-<script src="../static/libs/bootstrap-3.3.7-dist/js/bootstrap.min.js"></script>
+<script src="../static/libs/jquery/1_12_4/jquery.min.js"></script>
+<script src="../static/libs/bootstrap-3_3_7-dist/js/bootstrap.min.js"></script>
 
 <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
-<script src="../static/libs/bootstrap-3.3.7-dist/js/ie10-viewport-bug-workaround.js"></script>
+<script src="../static/libs/bootstrap-3_3_7-dist/js/ie10-viewport-bug-workaround.js"></script>
 
-<script src="../static/libs/Chart.js-2.4.0/Chart.bundle.js"></script>
+<script src="../static/libs/chartjs-2_4_0/chart.bundle.js"></script>
 
 
 <!-- Menu Toggle Script -->
@@ -1063,13 +1054,15 @@ $('#search-input-sidebar').keyup(function() {
 
 
   <!-- Scroll Sidebar Script -->
+
   
   
+
   <script type="text/javascript">
 
     $(document).ready(function (){
       $('#sidebar-wrapper').animate({
-          scrollTop: $("#sd_4368").offset().top - 100
+          scrollTop: $("#sd_3415").offset().top - 100
       }, 100);
     });
 

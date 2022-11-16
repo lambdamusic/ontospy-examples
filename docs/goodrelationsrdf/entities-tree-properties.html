@@ -10,23 +10,23 @@
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
     <meta name="description" content="">
     <meta name="author" content="">
-    <link rel="icon" href="../static/libs/img/favicon.ico">
+    <link rel="icon" href="../static/custom/favicon.ico">
 
 	
-		<title>OntoSpy > http://purl.org/goodrelations/v1</title>
+		<title>Ontospy > http://purl.org/goodrelations/v1</title>
 	
 
     <!-- Bootstrap core CSS -->
-    <!-- <link href="../static/libs/bootstrap-3.3.7-dist/css/bootstrap.min.css" rel="stylesheet">  -->
+    <!-- <link href="../static/libs/bootstrap-3_3_7-dist/css/bootstrap.min.css" rel="stylesheet">  -->
     <!-- Bootswatch:  -->
     <!-- cerulean  | cyborg |  flatly |  lumen |  sandstone |   spacelab  |  yeti | cosmo |  darkly |  paper | simplex | superhero |  journal | readable  |   slate |  united -->
-    <link href="../static/libs/bootswatch3.2/united/bootstrap.min.css" rel="stylesheet">
+    <link href="../static/libs/bootswatch3_2/slate/bootstrap.min.css" rel="stylesheet">
     <link href="../static/custom/css/simple-sidebar.css" rel="stylesheet">
     <link href="../static/custom/css/familytree.css" rel="stylesheet">
     <link href="../static/custom/css/tabletree.css" rel="stylesheet">
 
     <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
-    <link href="../static/libs/bootstrap-3.3.7-dist/css/ie10-viewport-bug-workaround.css" rel="stylesheet">
+    <link href="../static/libs/bootstrap-3_3_7-dist/css/ie10-viewport-bug-workaround.css" rel="stylesheet">
 
     <!-- Custom styles for this template -->
     <link href="../static/custom/css/sticky-footer-navbar.css" rel="stylesheet">
@@ -57,7 +57,7 @@
 
   .implementation-panel {
     overflow: auto;
-    max-height: 500px;
+    /*max-height: 500px;*/
   }
 
   tr.table-classproperties {
@@ -152,7 +152,80 @@
 
 
 /*pygments css*/
-
+pre { line-height: 125%; }
+td.linenos pre { color: #000000; background-color: #f0f0f0; padding-left: 5px; padding-right: 5px; }
+span.linenos { color: #000000; background-color: #f0f0f0; padding-left: 5px; padding-right: 5px; }
+td.linenos pre.special { color: #000000; background-color: #ffffc0; padding-left: 5px; padding-right: 5px; }
+span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 5px; padding-right: 5px; }
+.highlight .hll { background-color: #ffffcc }
+.highlight { background: #f8f8f8; }
+.highlight .c { color: #408080; font-style: italic } /* Comment */
+.highlight .err { border: 1px solid #FF0000 } /* Error */
+.highlight .k { color: #008000; font-weight: bold } /* Keyword */
+.highlight .o { color: #666666 } /* Operator */
+.highlight .ch { color: #408080; font-style: italic } /* Comment.Hashbang */
+.highlight .cm { color: #408080; font-style: italic } /* Comment.Multiline */
+.highlight .cp { color: #BC7A00 } /* Comment.Preproc */
+.highlight .cpf { color: #408080; font-style: italic } /* Comment.PreprocFile */
+.highlight .c1 { color: #408080; font-style: italic } /* Comment.Single */
+.highlight .cs { color: #408080; font-style: italic } /* Comment.Special */
+.highlight .gd { color: #A00000 } /* Generic.Deleted */
+.highlight .ge { font-style: italic } /* Generic.Emph */
+.highlight .gr { color: #FF0000 } /* Generic.Error */
+.highlight .gh { color: #000080; font-weight: bold } /* Generic.Heading */
+.highlight .gi { color: #00A000 } /* Generic.Inserted */
+.highlight .go { color: #888888 } /* Generic.Output */
+.highlight .gp { color: #000080; font-weight: bold } /* Generic.Prompt */
+.highlight .gs { font-weight: bold } /* Generic.Strong */
+.highlight .gu { color: #800080; font-weight: bold } /* Generic.Subheading */
+.highlight .gt { color: #0044DD } /* Generic.Traceback */
+.highlight .kc { color: #008000; font-weight: bold } /* Keyword.Constant */
+.highlight .kd { color: #008000; font-weight: bold } /* Keyword.Declaration */
+.highlight .kn { color: #008000; font-weight: bold } /* Keyword.Namespace */
+.highlight .kp { color: #008000 } /* Keyword.Pseudo */
+.highlight .kr { color: #008000; font-weight: bold } /* Keyword.Reserved */
+.highlight .kt { color: #B00040 } /* Keyword.Type */
+.highlight .m { color: #666666 } /* Literal.Number */
+.highlight .s { color: #BA2121 } /* Literal.String */
+.highlight .na { color: #7D9029 } /* Name.Attribute */
+.highlight .nb { color: #008000 } /* Name.Builtin */
+.highlight .nc { color: #0000FF; font-weight: bold } /* Name.Class */
+.highlight .no { color: #880000 } /* Name.Constant */
+.highlight .nd { color: #AA22FF } /* Name.Decorator */
+.highlight .ni { color: #999999; font-weight: bold } /* Name.Entity */
+.highlight .ne { color: #D2413A; font-weight: bold } /* Name.Exception */
+.highlight .nf { color: #0000FF } /* Name.Function */
+.highlight .nl { color: #A0A000 } /* Name.Label */
+.highlight .nn { color: #0000FF; font-weight: bold } /* Name.Namespace */
+.highlight .nt { color: #008000; font-weight: bold } /* Name.Tag */
+.highlight .nv { color: #19177C } /* Name.Variable */
+.highlight .ow { color: #AA22FF; font-weight: bold } /* Operator.Word */
+.highlight .w { color: #bbbbbb } /* Text.Whitespace */
+.highlight .mb { color: #666666 } /* Literal.Number.Bin */
+.highlight .mf { color: #666666 } /* Literal.Number.Float */
+.highlight .mh { color: #666666 } /* Literal.Number.Hex */
+.highlight .mi { color: #666666 } /* Literal.Number.Integer */
+.highlight .mo { color: #666666 } /* Literal.Number.Oct */
+.highlight .sa { color: #BA2121 } /* Literal.String.Affix */
+.highlight .sb { color: #BA2121 } /* Literal.String.Backtick */
+.highlight .sc { color: #BA2121 } /* Literal.String.Char */
+.highlight .dl { color: #BA2121 } /* Literal.String.Delimiter */
+.highlight .sd { color: #BA2121; font-style: italic } /* Literal.String.Doc */
+.highlight .s2 { color: #BA2121 } /* Literal.String.Double */
+.highlight .se { color: #BB6622; font-weight: bold } /* Literal.String.Escape */
+.highlight .sh { color: #BA2121 } /* Literal.String.Heredoc */
+.highlight .si { color: #BB6688; font-weight: bold } /* Literal.String.Interpol */
+.highlight .sx { color: #008000 } /* Literal.String.Other */
+.highlight .sr { color: #BB6688 } /* Literal.String.Regex */
+.highlight .s1 { color: #BA2121 } /* Literal.String.Single */
+.highlight .ss { color: #19177C } /* Literal.String.Symbol */
+.highlight .bp { color: #008000 } /* Name.Builtin.Pseudo */
+.highlight .fm { color: #0000FF } /* Name.Function.Magic */
+.highlight .vc { color: #19177C } /* Name.Variable.Class */
+.highlight .vg { color: #19177C } /* Name.Variable.Global */
+.highlight .vi { color: #19177C } /* Name.Variable.Instance */
+.highlight .vm { color: #19177C } /* Name.Variable.Magic */
+.highlight .il { color: #666666 } /* Literal.Number.Integer.Long */
 
 /*overloading this class from pygments*/
 .highlight {
@@ -161,6 +234,11 @@
 
 
 
+
+/* override default footer background for dark themes only */
+.footer {
+  background-color: inherit;
+}
 
 
 
@@ -199,27 +277,22 @@
     <div id="navbar" class="collapse navbar-collapse">
       <ul class="nav navbar-nav">
         <li ><a href="index.html"><code style="font-size: 115%;">http://purl.org/goodrelations/v1</code></a></li>
-        
 
-       
-
-
-        <li  ><a href="dashboard.html">Dashboard</a></li>
         <li  ><a href="entities-az.html">Entities A-Z</a></li>
-        <li class="dropdown active " >
-          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Entities Tree <span class="caret"></span></a>
-          <ul class="dropdown-menu">
-            
-            <li><a href="entities-tree-classes.html">Classes</a>
-            </li>
-            
-            
-            <li><a class="active" href="entities-tree-properties.html">Properties</a>
-            </li>
-            
-            
-          </ul>
-      </li>
+        
+        <li ><a href="entities-tree-classes.html">Classes</a></li>
+        
+        
+        <li class="active"><a href="entities-tree-properties.html">Properties</a></li>
+        
+        
+        
+        
+        <li  ><a href="statistics.html">Statistics</a></li>
+
+
+
+
 
       </ul>
       
@@ -227,8 +300,11 @@
 
   </div>
 </nav>
-
   
+
+
+
+
 
 
 
@@ -256,79 +332,79 @@
 
             
           
-              <li class="second-level" style="line-height: 20px;" id="sd_2682"><a  href="class-gractualproductorserviceinstance.html">gr:ActualProductOrServiceInstance</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_2415"><a  href="class-gractualproductorserviceinstance.html">gr:ActualProductOrServiceInstance</a></li>
           
-              <li class="second-level" style="line-height: 20px;" id="sd_2683"><a  href="class-grbrand.html">gr:Brand</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_2416"><a  href="class-grbrand.html">gr:Brand</a></li>
           
-              <li class="second-level" style="line-height: 20px;" id="sd_2684"><a  href="class-grbusinessentity.html">gr:BusinessEntity</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_2417"><a  href="class-grbusinessentity.html">gr:BusinessEntity</a></li>
           
-              <li class="second-level" style="line-height: 20px;" id="sd_2685"><a  href="class-grbusinessentitytype.html">gr:BusinessEntityType</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_2418"><a  href="class-grbusinessentitytype.html">gr:BusinessEntityType</a></li>
           
-              <li class="second-level" style="line-height: 20px;" id="sd_2686"><a  href="class-grbusinessfunction.html">gr:BusinessFunction</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_2419"><a  href="class-grbusinessfunction.html">gr:BusinessFunction</a></li>
           
-              <li class="second-level" style="line-height: 20px;" id="sd_2687"><a  href="class-grdayofweek.html">gr:DayOfWeek</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_2420"><a  href="class-grdayofweek.html">gr:DayOfWeek</a></li>
           
-              <li class="second-level" style="line-height: 20px;" id="sd_2688"><a  href="class-grdeliverychargespecification.html">gr:DeliveryChargeSpecification</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_2421"><a  href="class-grdeliverychargespecification.html">gr:DeliveryChargeSpecification</a></li>
           
-              <li class="second-level" style="line-height: 20px;" id="sd_2689"><a  href="class-grdeliverymethod.html">gr:DeliveryMethod</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_2422"><a  href="class-grdeliverymethod.html">gr:DeliveryMethod</a></li>
           
-              <li class="second-level" style="line-height: 20px;" id="sd_2690"><a  href="class-grdeliverymodeparcelservice.html">gr:DeliveryModeParcelService</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_2423"><a  href="class-grdeliverymodeparcelservice.html">gr:DeliveryModeParcelService</a></li>
           
-              <li class="second-level" style="line-height: 20px;" id="sd_2691"><a  href="class-grindividual.html">gr:Individual</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_2424"><a  href="class-grindividual.html">gr:Individual</a></li>
           
-              <li class="second-level" style="line-height: 20px;" id="sd_2692"><a  href="class-grlicense.html">gr:License</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_2425"><a  href="class-grlicense.html">gr:License</a></li>
           
-              <li class="second-level" style="line-height: 20px;" id="sd_2693"><a  href="class-grlocation.html">gr:Location</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_2426"><a  href="class-grlocation.html">gr:Location</a></li>
           
-              <li class="second-level" style="line-height: 20px;" id="sd_2694"><a  href="class-grlocationofsalesorserviceprovisioning.html">gr:LocationOfSalesOrServiceProvisioning</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_2427"><a  href="class-grlocationofsalesorserviceprovisioning.html">gr:LocationOfSalesOrServiceProvisioning</a></li>
           
-              <li class="second-level" style="line-height: 20px;" id="sd_2695"><a  href="class-grn-ary-relations.html">gr:N-Ary-Relations</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_2428"><a  href="class-grn-ary-relations.html">gr:N-Ary-Relations</a></li>
           
-              <li class="second-level" style="line-height: 20px;" id="sd_2696"><a  href="class-groffering.html">gr:Offering</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_2429"><a  href="class-groffering.html">gr:Offering</a></li>
           
-              <li class="second-level" style="line-height: 20px;" id="sd_2697"><a  href="class-gropeninghoursspecification.html">gr:OpeningHoursSpecification</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_2430"><a  href="class-gropeninghoursspecification.html">gr:OpeningHoursSpecification</a></li>
           
-              <li class="second-level" style="line-height: 20px;" id="sd_2698"><a  href="class-grpaymentchargespecification.html">gr:PaymentChargeSpecification</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_2431"><a  href="class-grpaymentchargespecification.html">gr:PaymentChargeSpecification</a></li>
           
-              <li class="second-level" style="line-height: 20px;" id="sd_2699"><a  href="class-grpaymentmethod.html">gr:PaymentMethod</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_2432"><a  href="class-grpaymentmethod.html">gr:PaymentMethod</a></li>
           
-              <li class="second-level" style="line-height: 20px;" id="sd_2700"><a  href="class-grpaymentmethodcreditcard.html">gr:PaymentMethodCreditCard</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_2433"><a  href="class-grpaymentmethodcreditcard.html">gr:PaymentMethodCreditCard</a></li>
           
-              <li class="second-level" style="line-height: 20px;" id="sd_2701"><a  href="class-grpricespecification.html">gr:PriceSpecification</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_2434"><a  href="class-grpricespecification.html">gr:PriceSpecification</a></li>
           
-              <li class="second-level" style="line-height: 20px;" id="sd_2702"><a  href="class-grproductorservice.html">gr:ProductOrService</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_2435"><a  href="class-grproductorservice.html">gr:ProductOrService</a></li>
           
-              <li class="second-level" style="line-height: 20px;" id="sd_2703"><a  href="class-grproductorservicemodel.html">gr:ProductOrServiceModel</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_2436"><a  href="class-grproductorservicemodel.html">gr:ProductOrServiceModel</a></li>
           
-              <li class="second-level" style="line-height: 20px;" id="sd_2704"><a  href="class-grproductorservicessomeinstancesplaceholder.html">gr:ProductOrServicesSomeInstancesPlaceholder</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_2437"><a  href="class-grproductorservicessomeinstancesplaceholder.html">gr:ProductOrServicesSomeInstancesPlaceholder</a></li>
           
-              <li class="second-level" style="line-height: 20px;" id="sd_2705"><a  href="class-grqualitativevalue.html">gr:QualitativeValue</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_2438"><a  href="class-grqualitativevalue.html">gr:QualitativeValue</a></li>
           
-              <li class="second-level" style="line-height: 20px;" id="sd_2706"><a  href="class-grquantitativevalue.html">gr:QuantitativeValue</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_2439"><a  href="class-grquantitativevalue.html">gr:QuantitativeValue</a></li>
           
-              <li class="second-level" style="line-height: 20px;" id="sd_2707"><a  href="class-grquantitativevaluefloat.html">gr:QuantitativeValueFloat</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_2440"><a  href="class-grquantitativevaluefloat.html">gr:QuantitativeValueFloat</a></li>
           
-              <li class="second-level" style="line-height: 20px;" id="sd_2708"><a  href="class-grquantitativevalueinteger.html">gr:QuantitativeValueInteger</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_2441"><a  href="class-grquantitativevalueinteger.html">gr:QuantitativeValueInteger</a></li>
           
-              <li class="second-level" style="line-height: 20px;" id="sd_2709"><a  href="class-grsomeitems.html">gr:SomeItems</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_2442"><a  href="class-grsomeitems.html">gr:SomeItems</a></li>
           
-              <li class="second-level" style="line-height: 20px;" id="sd_2710"><a  href="class-grtypeandquantitynode.html">gr:TypeAndQuantityNode</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_2443"><a  href="class-grtypeandquantitynode.html">gr:TypeAndQuantityNode</a></li>
           
-              <li class="second-level" style="line-height: 20px;" id="sd_2711"><a  href="class-grunitpricespecification.html">gr:UnitPriceSpecification</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_2444"><a  href="class-grunitpricespecification.html">gr:UnitPriceSpecification</a></li>
           
-              <li class="second-level" style="line-height: 20px;" id="sd_2712"><a  href="class-grwarrantypromise.html">gr:WarrantyPromise</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_2445"><a  href="class-grwarrantypromise.html">gr:WarrantyPromise</a></li>
           
-              <li class="second-level" style="line-height: 20px;" id="sd_2713"><a  href="class-grwarrantyscope.html">gr:WarrantyScope</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_2446"><a  href="class-grwarrantyscope.html">gr:WarrantyScope</a></li>
           
-              <li class="second-level" style="line-height: 20px;" id="sd_2714"><a  href="class-httpschemaorgoffer.html">http://schema.org/Offer</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_2447"><a  href="class-httpschemaorgoffer.html">http://schema.org/Offer</a></li>
           
-              <li class="second-level" style="line-height: 20px;" id="sd_2715"><a  href="class-httpschemaorgorganization.html">http://schema.org/Organization</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_2448"><a  href="class-httpschemaorgorganization.html">http://schema.org/Organization</a></li>
           
-              <li class="second-level" style="line-height: 20px;" id="sd_2716"><a  href="class-httpschemaorgperson.html">http://schema.org/Person</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_2449"><a  href="class-httpschemaorgperson.html">http://schema.org/Person</a></li>
           
-              <li class="second-level" style="line-height: 20px;" id="sd_2717"><a  href="class-httpschemaorgplace.html">http://schema.org/Place</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_2450"><a  href="class-httpschemaorgplace.html">http://schema.org/Place</a></li>
           
-              <li class="second-level" style="line-height: 20px;" id="sd_2718"><a  href="class-httpschemaorgproduct.html">http://schema.org/Product</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_2451"><a  href="class-httpschemaorgproduct.html">http://schema.org/Product</a></li>
           
         
 
@@ -338,232 +414,235 @@
 
             
           
-              <li class="second-level" style="line-height: 20px;" id="sd_2719"><a   href="prop-dccontributor.html">dc:contributor</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_2452"><a   href="prop-dccontributor.html">dc:contributor</a></li>
           
-              <li class="second-level" style="line-height: 20px;" id="sd_2720"><a   href="prop-dccreator.html">dc:creator</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_2453"><a   href="prop-dccreator.html">dc:creator</a></li>
           
-              <li class="second-level" style="line-height: 20px;" id="sd_2721"><a   href="prop-dcrights.html">dc:rights</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_2454"><a   href="prop-dcrights.html">dc:rights</a></li>
           
-              <li class="second-level" style="line-height: 20px;" id="sd_2722"><a   href="prop-dcsubject.html">dc:subject</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_2455"><a   href="prop-dcsubject.html">dc:subject</a></li>
           
-              <li class="second-level" style="line-height: 20px;" id="sd_2723"><a   href="prop-dctitle.html">dc:title</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_2456"><a   href="prop-dctitle.html">dc:title</a></li>
           
-              <li class="second-level" style="line-height: 20px;" id="sd_2724"><a   href="prop-dctermslicense.html">dcterms:license</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_2457"><a   href="prop-dctermslicense.html">dcterms:license</a></li>
           
-              <li class="second-level" style="line-height: 20px;" id="sd_2725"><a   href="prop-grdisplayposition.html">gr:displayPosition</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_2563"><a   href="prop-foafdepiction.html">foaf:depiction</a></li>
           
-              <li class="second-level" style="line-height: 20px;" id="sd_2726"><a   href="prop-grrelatedwebservice.html">gr:relatedWebService</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_2461"><a   href="prop-foafhomepage.html">foaf:homepage</a></li>
           
-              <li class="second-level" style="line-height: 20px;" id="sd_2727"><a   href="prop-owldeprecated.html">owl:deprecated</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_2511"><a   href="prop-gracceptedpaymentmethods.html">gr:acceptedPaymentMethods</a></li>
           
-              <li class="second-level" style="line-height: 20px;" id="sd_2728"><a   href="prop-foafhomepage.html">foaf:homepage</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_2512"><a   href="prop-graddon.html">gr:addOn</a></li>
           
-              <li class="second-level" style="line-height: 20px;" id="sd_2729"><a   href="prop-gramountofthisgood.html">gr:amountOfThisGood</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_2513"><a   href="prop-gradvancebookingrequirement.html">gr:advanceBookingRequirement</a></li>
           
-              <li class="second-level" style="line-height: 20px;" id="sd_2730"><a   href="prop-gravailabilityends.html">gr:availabilityEnds</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_2462"><a   href="prop-gramountofthisgood.html">gr:amountOfThisGood</a></li>
           
-              <li class="second-level" style="line-height: 20px;" id="sd_2731"><a   href="prop-gravailabilitystarts.html">gr:availabilityStarts</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_2514"><a   href="prop-grappliestodeliverymethod.html">gr:appliesToDeliveryMethod</a></li>
           
-              <li class="second-level" style="line-height: 20px;" id="sd_2732"><a   href="prop-grbillingincrement.html">gr:billingIncrement</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_2515"><a   href="prop-grappliestopaymentmethod.html">gr:appliesToPaymentMethod</a></li>
           
-              <li class="second-level" style="line-height: 20px;" id="sd_2733"><a   href="prop-grcategory.html">gr:category</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_2463"><a   href="prop-gravailabilityends.html">gr:availabilityEnds</a></li>
           
-              <li class="second-level" style="line-height: 20px;" id="sd_2734"><a   href="prop-grcloses.html">gr:closes</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_2464"><a   href="prop-gravailabilitystarts.html">gr:availabilityStarts</a></li>
           
-              <li class="second-level" style="line-height: 20px;" id="sd_2735"><a   href="prop-grcolor.html">gr:color</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_2516"><a   href="prop-gravailableatorfrom.html">gr:availableAtOrFrom</a></li>
           
-              <li class="second-level" style="line-height: 20px;" id="sd_2736"><a   href="prop-grcondition.html">gr:condition</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_2517"><a   href="prop-gravailabledeliverymethods.html">gr:availableDeliveryMethods</a></li>
           
-              <li class="second-level" style="line-height: 20px;" id="sd_2737"><a   href="prop-grdatatypeproductorserviceproperty.html">gr:datatypeProductOrServiceProperty</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_2465"><a   href="prop-grbillingincrement.html">gr:billingIncrement</a></li>
           
-              <li class="second-level" style="line-height: 20px;" id="sd_2738"><a   href="prop-grdescription.html">gr:description</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_2466"><a   href="prop-grcategory.html">gr:category</a></li>
           
-              <li class="second-level" style="line-height: 20px;" id="sd_2739"><a   href="prop-grdurationofwarrantyinmonths.html">gr:durationOfWarrantyInMonths</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_2467"><a   href="prop-grcloses.html">gr:closes</a></li>
           
-              <li class="second-level" style="line-height: 20px;" id="sd_2740"><a   href="prop-greligibleregions.html">gr:eligibleRegions</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_2468"><a   href="prop-grcolor.html">gr:color</a></li>
           
-              <li class="second-level" style="line-height: 20px;" id="sd_2741"><a   href="prop-grhascurrency.html">gr:hasCurrency</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_2469"><a   href="prop-grcondition.html">gr:condition</a></li>
           
-              <li class="second-level" style="line-height: 20px;" id="sd_2742"><a   href="prop-grhascurrencyvalue.html">gr:hasCurrencyValue</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_2470"><a   href="prop-grdatatypeproductorserviceproperty.html">gr:datatypeProductOrServiceProperty</a></li>
           
-              <li class="second-level" style="line-height: 20px;" id="sd_2743"><a   href="prop-grhasduns.html">gr:hasDUNS</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_2518"><a   href="prop-grdeliveryleadtime.html">gr:deliveryLeadTime</a></li>
           
-              <li class="second-level" style="line-height: 20px;" id="sd_2744"><a   href="prop-grhasean_ucc-13.html">gr:hasEAN_UCC-13</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_2519"><a   href="prop-grdepth.html">gr:depth</a></li>
           
-              <li class="second-level" style="line-height: 20px;" id="sd_2745"><a   href="prop-grhasgtin-14.html">gr:hasGTIN-14</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_2471"><a   href="prop-grdescription.html">gr:description</a></li>
           
-              <li class="second-level" style="line-height: 20px;" id="sd_2746"><a   href="prop-grhasgtin-8.html">gr:hasGTIN-8</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_2458"><a   href="prop-grdisplayposition.html">gr:displayPosition</a></li>
           
-              <li class="second-level" style="line-height: 20px;" id="sd_2747"><a   href="prop-grhasgloballocationnumber.html">gr:hasGlobalLocationNumber</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_2472"><a   href="prop-grdurationofwarrantyinmonths.html">gr:durationOfWarrantyInMonths</a></li>
           
-              <li class="second-level" style="line-height: 20px;" id="sd_2748"><a   href="prop-grhasisicv4.html">gr:hasISICv4</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_2520"><a   href="prop-greligiblecustomertypes.html">gr:eligibleCustomerTypes</a></li>
           
-              <li class="second-level" style="line-height: 20px;" id="sd_2749"><a   href="prop-grhasmpn.html">gr:hasMPN</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_2521"><a   href="prop-greligibleduration.html">gr:eligibleDuration</a></li>
           
-              <li class="second-level" style="line-height: 20px;" id="sd_2750"><a   href="prop-grhasmaxcurrencyvalue.html">gr:hasMaxCurrencyValue</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_2473"><a   href="prop-greligibleregions.html">gr:eligibleRegions</a></li>
           
-              <li class="second-level" style="line-height: 20px;" id="sd_2751"><a   href="prop-grhasmaxvalue.html">gr:hasMaxValue</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_2522"><a   href="prop-greligibletransactionvolume.html">gr:eligibleTransactionVolume</a></li>
           
-              <li class="second-level" style="line-height: 20px;" id="sd_2752"><a   href="prop-grhasmaxvaluefloat.html">gr:hasMaxValueFloat</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_2523"><a   href="prop-grequal.html">gr:equal</a></li>
           
-              <li class="second-level" style="line-height: 20px;" id="sd_2753"><a   href="prop-grhasmaxvalueinteger.html">gr:hasMaxValueInteger</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_2524"><a   href="prop-grgreater.html">gr:greater</a></li>
           
-              <li class="second-level" style="line-height: 20px;" id="sd_2754"><a   href="prop-grhasmincurrencyvalue.html">gr:hasMinCurrencyValue</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_2525"><a   href="prop-grgreaterorequal.html">gr:greaterOrEqual</a></li>
           
-              <li class="second-level" style="line-height: 20px;" id="sd_2755"><a   href="prop-grhasminvalue.html">gr:hasMinValue</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_2526"><a   href="prop-grhasbrand.html">gr:hasBrand</a></li>
           
-              <li class="second-level" style="line-height: 20px;" id="sd_2756"><a   href="prop-grhasminvaluefloat.html">gr:hasMinValueFloat</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_2527"><a   href="prop-grhasbusinessfunction.html">gr:hasBusinessFunction</a></li>
           
-              <li class="second-level" style="line-height: 20px;" id="sd_2757"><a   href="prop-grhasminvalueinteger.html">gr:hasMinValueInteger</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_2474"><a   href="prop-grhascurrency.html">gr:hasCurrency</a></li>
           
-              <li class="second-level" style="line-height: 20px;" id="sd_2758"><a   href="prop-grhasnaics.html">gr:hasNAICS</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_2475"><a   href="prop-grhascurrencyvalue.html">gr:hasCurrencyValue</a></li>
           
-              <li class="second-level" style="line-height: 20px;" id="sd_2759"><a   href="prop-grhasstockkeepingunit.html">gr:hasStockKeepingUnit</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_2476"><a   href="prop-grhasduns.html">gr:hasDUNS</a></li>
           
-              <li class="second-level" style="line-height: 20px;" id="sd_2760"><a   href="prop-grhasunitofmeasurement.html">gr:hasUnitOfMeasurement</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_2477"><a   href="prop-grhasean_ucc-13.html">gr:hasEAN_UCC-13</a></li>
           
-              <li class="second-level" style="line-height: 20px;" id="sd_2761"><a   href="prop-grhasvalue.html">gr:hasValue</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_2528"><a   href="prop-grhaseligiblequantity.html">gr:hasEligibleQuantity</a></li>
           
-              <li class="second-level" style="line-height: 20px;" id="sd_2762"><a   href="prop-grhasvaluefloat.html">gr:hasValueFloat</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_2478"><a   href="prop-grhasgtin-14.html">gr:hasGTIN-14</a></li>
           
-              <li class="second-level" style="line-height: 20px;" id="sd_2763"><a   href="prop-grhasvalueinteger.html">gr:hasValueInteger</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_2479"><a   href="prop-grhasgtin-8.html">gr:hasGTIN-8</a></li>
           
-              <li class="second-level" style="line-height: 20px;" id="sd_2764"><a   href="prop-grislistprice.html">gr:isListPrice</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_2480"><a   href="prop-grhasgloballocationnumber.html">gr:hasGlobalLocationNumber</a></li>
           
-              <li class="second-level" style="line-height: 20px;" id="sd_2765"><a   href="prop-grlegalname.html">gr:legalName</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_2481"><a   href="prop-grhasisicv4.html">gr:hasISICv4</a></li>
           
-              <li class="second-level" style="line-height: 20px;" id="sd_2766"><a   href="prop-grname.html">gr:name</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_2529"><a   href="prop-grhasinventorylevel.html">gr:hasInventoryLevel</a></li>
           
-              <li class="second-level" style="line-height: 20px;" id="sd_2767"><a   href="prop-gropens.html">gr:opens</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_2482"><a   href="prop-grhasmpn.html">gr:hasMPN</a></li>
           
-              <li class="second-level" style="line-height: 20px;" id="sd_2768"><a   href="prop-grpricetype.html">gr:priceType</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_2530"><a   href="prop-grhasmakeandmodel.html">gr:hasMakeAndModel</a></li>
           
-              <li class="second-level" style="line-height: 20px;" id="sd_2769"><a   href="prop-grserialnumber.html">gr:serialNumber</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_2531"><a   href="prop-grhasmanufacturer.html">gr:hasManufacturer</a></li>
           
-              <li class="second-level" style="line-height: 20px;" id="sd_2770"><a   href="prop-grtaxid.html">gr:taxID</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_2483"><a   href="prop-grhasmaxcurrencyvalue.html">gr:hasMaxCurrencyValue</a></li>
           
-              <li class="second-level" style="line-height: 20px;" id="sd_2771"><a   href="prop-grvalidfrom.html">gr:validFrom</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_2484"><a   href="prop-grhasmaxvalue.html">gr:hasMaxValue</a></li>
           
-              <li class="second-level" style="line-height: 20px;" id="sd_2772"><a   href="prop-grvalidthrough.html">gr:validThrough</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_2485"><a   href="prop-grhasmaxvaluefloat.html">gr:hasMaxValueFloat</a></li>
           
-              <li class="second-level" style="line-height: 20px;" id="sd_2773"><a   href="prop-grvalueaddedtaxincluded.html">gr:valueAddedTaxIncluded</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_2486"><a   href="prop-grhasmaxvalueinteger.html">gr:hasMaxValueInteger</a></li>
           
-              <li class="second-level" style="line-height: 20px;" id="sd_2774"><a   href="prop-grvatid.html">gr:vatID</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_2487"><a   href="prop-grhasmincurrencyvalue.html">gr:hasMinCurrencyValue</a></li>
           
-              <li class="second-level" style="line-height: 20px;" id="sd_2775"><a   href="prop-httpschemaorgdescription.html">http://schema.org/description</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_2488"><a   href="prop-grhasminvalue.html">gr:hasMinValue</a></li>
           
-              <li class="second-level" style="line-height: 20px;" id="sd_2776"><a   href="prop-httpschemaorgname.html">http://schema.org/name</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_2489"><a   href="prop-grhasminvaluefloat.html">gr:hasMinValueFloat</a></li>
           
-              <li class="second-level" style="line-height: 20px;" id="sd_2777"><a   href="prop-httpschemaorgproductid.html">http://schema.org/productID</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_2490"><a   href="prop-grhasminvalueinteger.html">gr:hasMinValueInteger</a></li>
           
-              <li class="second-level" style="line-height: 20px;" id="sd_2778"><a   href="prop-gracceptedpaymentmethods.html">gr:acceptedPaymentMethods</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_2491"><a   href="prop-grhasnaics.html">gr:hasNAICS</a></li>
           
-              <li class="second-level" style="line-height: 20px;" id="sd_2779"><a   href="prop-graddon.html">gr:addOn</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_2532"><a   href="prop-grhasnext.html">gr:hasNext</a></li>
           
-              <li class="second-level" style="line-height: 20px;" id="sd_2780"><a   href="prop-gradvancebookingrequirement.html">gr:advanceBookingRequirement</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_2533"><a   href="prop-grhasopeninghoursdayofweek.html">gr:hasOpeningHoursDayOfWeek</a></li>
           
-              <li class="second-level" style="line-height: 20px;" id="sd_2781"><a   href="prop-grappliestodeliverymethod.html">gr:appliesToDeliveryMethod</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_2534"><a   href="prop-grhasopeninghoursspecification.html">gr:hasOpeningHoursSpecification</a></li>
           
-              <li class="second-level" style="line-height: 20px;" id="sd_2782"><a   href="prop-grappliestopaymentmethod.html">gr:appliesToPaymentMethod</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_2535"><a   href="prop-grhaspos.html">gr:hasPOS</a></li>
           
-              <li class="second-level" style="line-height: 20px;" id="sd_2783"><a   href="prop-gravailableatorfrom.html">gr:availableAtOrFrom</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_2536"><a   href="prop-grhasprevious.html">gr:hasPrevious</a></li>
           
-              <li class="second-level" style="line-height: 20px;" id="sd_2784"><a   href="prop-gravailabledeliverymethods.html">gr:availableDeliveryMethods</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_2537"><a   href="prop-grhaspricespecification.html">gr:hasPriceSpecification</a></li>
           
-              <li class="second-level" style="line-height: 20px;" id="sd_2785"><a   href="prop-grdeliveryleadtime.html">gr:deliveryLeadTime</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_2492"><a   href="prop-grhasstockkeepingunit.html">gr:hasStockKeepingUnit</a></li>
           
-              <li class="second-level" style="line-height: 20px;" id="sd_2786"><a   href="prop-grdepth.html">gr:depth</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_2493"><a   href="prop-grhasunitofmeasurement.html">gr:hasUnitOfMeasurement</a></li>
           
-              <li class="second-level" style="line-height: 20px;" id="sd_2787"><a   href="prop-greligiblecustomertypes.html">gr:eligibleCustomerTypes</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_2494"><a   href="prop-grhasvalue.html">gr:hasValue</a></li>
           
-              <li class="second-level" style="line-height: 20px;" id="sd_2788"><a   href="prop-greligibleduration.html">gr:eligibleDuration</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_2495"><a   href="prop-grhasvaluefloat.html">gr:hasValueFloat</a></li>
           
-              <li class="second-level" style="line-height: 20px;" id="sd_2789"><a   href="prop-greligibletransactionvolume.html">gr:eligibleTransactionVolume</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_2496"><a   href="prop-grhasvalueinteger.html">gr:hasValueInteger</a></li>
           
-              <li class="second-level" style="line-height: 20px;" id="sd_2790"><a   href="prop-grequal.html">gr:equal</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_2538"><a   href="prop-grhaswarrantypromise.html">gr:hasWarrantyPromise</a></li>
           
-              <li class="second-level" style="line-height: 20px;" id="sd_2791"><a   href="prop-grgreater.html">gr:greater</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_2539"><a   href="prop-grhaswarrantyscope.html">gr:hasWarrantyScope</a></li>
           
-              <li class="second-level" style="line-height: 20px;" id="sd_2792"><a   href="prop-grgreaterorequal.html">gr:greaterOrEqual</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_2540"><a   href="prop-grheight.html">gr:height</a></li>
           
-              <li class="second-level" style="line-height: 20px;" id="sd_2793"><a   href="prop-grhasbrand.html">gr:hasBrand</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_2541"><a   href="prop-grincludes.html">gr:includes</a></li>
           
-              <li class="second-level" style="line-height: 20px;" id="sd_2794"><a   href="prop-grhasbusinessfunction.html">gr:hasBusinessFunction</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_2542"><a   href="prop-grincludesobject.html">gr:includesObject</a></li>
           
-              <li class="second-level" style="line-height: 20px;" id="sd_2795"><a   href="prop-grhaseligiblequantity.html">gr:hasEligibleQuantity</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_2543"><a   href="prop-grisaccessoryorsparepartfor.html">gr:isAccessoryOrSparePartFor</a></li>
           
-              <li class="second-level" style="line-height: 20px;" id="sd_2796"><a   href="prop-grhasinventorylevel.html">gr:hasInventoryLevel</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_2544"><a   href="prop-grisconsumablefor.html">gr:isConsumableFor</a></li>
           
-              <li class="second-level" style="line-height: 20px;" id="sd_2797"><a   href="prop-grhasmakeandmodel.html">gr:hasMakeAndModel</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_2497"><a   href="prop-grislistprice.html">gr:isListPrice</a></li>
           
-              <li class="second-level" style="line-height: 20px;" id="sd_2798"><a   href="prop-grhasmanufacturer.html">gr:hasManufacturer</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_2545"><a   href="prop-grissimilarto.html">gr:isSimilarTo</a></li>
           
-              <li class="second-level" style="line-height: 20px;" id="sd_2799"><a   href="prop-grhasnext.html">gr:hasNext</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_2546"><a   href="prop-grisvariantof.html">gr:isVariantOf</a></li>
           
-              <li class="second-level" style="line-height: 20px;" id="sd_2800"><a   href="prop-grhasopeninghoursdayofweek.html">gr:hasOpeningHoursDayOfWeek</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_2498"><a   href="prop-grlegalname.html">gr:legalName</a></li>
           
-              <li class="second-level" style="line-height: 20px;" id="sd_2801"><a   href="prop-grhasopeninghoursspecification.html">gr:hasOpeningHoursSpecification</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_2547"><a   href="prop-grlesser.html">gr:lesser</a></li>
           
-              <li class="second-level" style="line-height: 20px;" id="sd_2802"><a   href="prop-grhaspos.html">gr:hasPOS</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_2548"><a   href="prop-grlesserorequal.html">gr:lesserOrEqual</a></li>
           
-              <li class="second-level" style="line-height: 20px;" id="sd_2803"><a   href="prop-grhasprevious.html">gr:hasPrevious</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_2499"><a   href="prop-grname.html">gr:name</a></li>
           
-              <li class="second-level" style="line-height: 20px;" id="sd_2804"><a   href="prop-grhaspricespecification.html">gr:hasPriceSpecification</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_2549"><a   href="prop-grnonequal.html">gr:nonEqual</a></li>
           
-              <li class="second-level" style="line-height: 20px;" id="sd_2805"><a   href="prop-grhaswarrantypromise.html">gr:hasWarrantyPromise</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_2550"><a   href="prop-groffers.html">gr:offers</a></li>
           
-              <li class="second-level" style="line-height: 20px;" id="sd_2806"><a   href="prop-grhaswarrantyscope.html">gr:hasWarrantyScope</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_2500"><a   href="prop-gropens.html">gr:opens</a></li>
           
-              <li class="second-level" style="line-height: 20px;" id="sd_2807"><a   href="prop-grheight.html">gr:height</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_2551"><a   href="prop-growns.html">gr:owns</a></li>
           
-              <li class="second-level" style="line-height: 20px;" id="sd_2808"><a   href="prop-grincludes.html">gr:includes</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_2552"><a   href="prop-grpredecessorof.html">gr:predecessorOf</a></li>
           
-              <li class="second-level" style="line-height: 20px;" id="sd_2809"><a   href="prop-grincludesobject.html">gr:includesObject</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_2501"><a   href="prop-grpricetype.html">gr:priceType</a></li>
           
-              <li class="second-level" style="line-height: 20px;" id="sd_2810"><a   href="prop-grisaccessoryorsparepartfor.html">gr:isAccessoryOrSparePartFor</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_2553"><a   href="prop-grqualitativeproductorserviceproperty.html">gr:qualitativeProductOrServiceProperty</a></li>
           
-              <li class="second-level" style="line-height: 20px;" id="sd_2811"><a   href="prop-grisconsumablefor.html">gr:isConsumableFor</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_2554"><a   href="prop-grquantitativeproductorserviceproperty.html">gr:quantitativeProductOrServiceProperty</a></li>
           
-              <li class="second-level" style="line-height: 20px;" id="sd_2812"><a   href="prop-grissimilarto.html">gr:isSimilarTo</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_2459"><a   href="prop-grrelatedwebservice.html">gr:relatedWebService</a></li>
           
-              <li class="second-level" style="line-height: 20px;" id="sd_2813"><a   href="prop-grisvariantof.html">gr:isVariantOf</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_2555"><a   href="prop-grseeks.html">gr:seeks</a></li>
           
-              <li class="second-level" style="line-height: 20px;" id="sd_2814"><a   href="prop-grlesser.html">gr:lesser</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_2502"><a   href="prop-grserialnumber.html">gr:serialNumber</a></li>
           
-              <li class="second-level" style="line-height: 20px;" id="sd_2815"><a   href="prop-grlesserorequal.html">gr:lesserOrEqual</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_2556"><a   href="prop-grsuccessorof.html">gr:successorOf</a></li>
           
-              <li class="second-level" style="line-height: 20px;" id="sd_2816"><a   href="prop-grnonequal.html">gr:nonEqual</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_2503"><a   href="prop-grtaxid.html">gr:taxID</a></li>
           
-              <li class="second-level" style="line-height: 20px;" id="sd_2817"><a   href="prop-groffers.html">gr:offers</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_2557"><a   href="prop-grtypeofgood.html">gr:typeOfGood</a></li>
           
-              <li class="second-level" style="line-height: 20px;" id="sd_2818"><a   href="prop-growns.html">gr:owns</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_2504"><a   href="prop-grvalidfrom.html">gr:validFrom</a></li>
           
-              <li class="second-level" style="line-height: 20px;" id="sd_2819"><a   href="prop-grpredecessorof.html">gr:predecessorOf</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_2505"><a   href="prop-grvalidthrough.html">gr:validThrough</a></li>
           
-              <li class="second-level" style="line-height: 20px;" id="sd_2820"><a   href="prop-grqualitativeproductorserviceproperty.html">gr:qualitativeProductOrServiceProperty</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_2506"><a   href="prop-grvalueaddedtaxincluded.html">gr:valueAddedTaxIncluded</a></li>
           
-              <li class="second-level" style="line-height: 20px;" id="sd_2821"><a   href="prop-grquantitativeproductorserviceproperty.html">gr:quantitativeProductOrServiceProperty</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_2558"><a   href="prop-grvaluereference.html">gr:valueReference</a></li>
           
-              <li class="second-level" style="line-height: 20px;" id="sd_2822"><a   href="prop-grseeks.html">gr:seeks</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_2507"><a   href="prop-grvatid.html">gr:vatID</a></li>
           
-              <li class="second-level" style="line-height: 20px;" id="sd_2823"><a   href="prop-grsuccessorof.html">gr:successorOf</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_2559"><a   href="prop-grweight.html">gr:weight</a></li>
           
-              <li class="second-level" style="line-height: 20px;" id="sd_2824"><a   href="prop-grtypeofgood.html">gr:typeOfGood</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_2560"><a   href="prop-grwidth.html">gr:width</a></li>
           
-              <li class="second-level" style="line-height: 20px;" id="sd_2825"><a   href="prop-grvaluereference.html">gr:valueReference</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_2508"><a   href="prop-httpschemaorgdescription.html">http://schema.org/description</a></li>
           
-              <li class="second-level" style="line-height: 20px;" id="sd_2826"><a   href="prop-grweight.html">gr:weight</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_2561"><a   href="prop-httpschemaorgimage.html">http://schema.org/image</a></li>
           
-              <li class="second-level" style="line-height: 20px;" id="sd_2827"><a   href="prop-grwidth.html">gr:width</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_2562"><a   href="prop-httpschemaorgmanufacturer.html">http://schema.org/manufacturer</a></li>
           
-              <li class="second-level" style="line-height: 20px;" id="sd_2828"><a   href="prop-httpschemaorgimage.html">http://schema.org/image</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_2509"><a   href="prop-httpschemaorgname.html">http://schema.org/name</a></li>
           
-              <li class="second-level" style="line-height: 20px;" id="sd_2829"><a   href="prop-httpschemaorgmanufacturer.html">http://schema.org/manufacturer</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_2510"><a   href="prop-httpschemaorgproductid.html">http://schema.org/productID</a></li>
           
-              <li class="second-level" style="line-height: 20px;" id="sd_2830"><a   href="prop-foafdepiction.html">foaf:depiction</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_2460"><a   href="prop-owldeprecated.html">owl:deprecated</a></li>
           
 
         
+
+        
+
 
         
 
@@ -581,7 +660,6 @@
 
 
 <!-- /#sidebar-wrapper -->
-
     
 
 
@@ -658,6 +736,19 @@
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
     
 
 
@@ -665,7 +756,7 @@
 
   <div class="page-header">
 
-      <h3>Entities Tree: Properties
+      <h3>Properties Tree
       </h3>
       <input id="search-input" type="text" class="form-control" placeholder="Filter...">
 
@@ -693,19 +784,29 @@
 						  </tr><tr>
 							<td class="tc" colspan=4><a title="http://purl.org/dc/terms/license" class="treelinks" href="prop-dctermslicense.html">dcterms:license</a></td>
 						  </tr><tr>
-							<td class="tc" colspan=4><a title="http://purl.org/goodrelations/v1#displayPosition" class="treelinks" href="prop-grdisplayposition.html">gr:displayPosition</a></td>
-						  </tr><tr>
-							<td class="tc" colspan=4><a title="http://purl.org/goodrelations/v1#relatedWebService" class="treelinks" href="prop-grrelatedwebservice.html">gr:relatedWebService</a></td>
-						  </tr><tr>
-							<td class="tc" colspan=4><a title="http://www.w3.org/2002/07/owl#deprecated" class="treelinks" href="prop-owldeprecated.html">owl:deprecated</a></td>
+							<td class="tc" colspan=4><a title="http://xmlns.com/foaf/0.1/depiction" class="treelinks" href="prop-foafdepiction.html">foaf:depiction</a></td>
 						  </tr><tr>
 							<td class="tc" colspan=4><a title="http://xmlns.com/foaf/0.1/homepage" class="treelinks" href="prop-foafhomepage.html">foaf:homepage</a></td>
 						  </tr><tr>
+							<td class="tc" colspan=4><a title="http://purl.org/goodrelations/v1#acceptedPaymentMethods" class="treelinks" href="prop-gracceptedpaymentmethods.html">gr:acceptedPaymentMethods</a></td>
+						  </tr><tr>
+							<td class="tc" colspan=4><a title="http://purl.org/goodrelations/v1#addOn" class="treelinks" href="prop-graddon.html">gr:addOn</a></td>
+						  </tr><tr>
+							<td class="tc" colspan=4><a title="http://purl.org/goodrelations/v1#advanceBookingRequirement" class="treelinks" href="prop-gradvancebookingrequirement.html">gr:advanceBookingRequirement</a></td>
+						  </tr><tr>
 							<td class="tc" colspan=4><a title="http://purl.org/goodrelations/v1#amountOfThisGood" class="treelinks" href="prop-gramountofthisgood.html">gr:amountOfThisGood</a></td>
+						  </tr><tr>
+							<td class="tc" colspan=4><a title="http://purl.org/goodrelations/v1#appliesToDeliveryMethod" class="treelinks" href="prop-grappliestodeliverymethod.html">gr:appliesToDeliveryMethod</a></td>
+						  </tr><tr>
+							<td class="tc" colspan=4><a title="http://purl.org/goodrelations/v1#appliesToPaymentMethod" class="treelinks" href="prop-grappliestopaymentmethod.html">gr:appliesToPaymentMethod</a></td>
 						  </tr><tr>
 							<td class="tc" colspan=4><a title="http://purl.org/goodrelations/v1#availabilityEnds" class="treelinks" href="prop-gravailabilityends.html">gr:availabilityEnds</a></td>
 						  </tr><tr>
 							<td class="tc" colspan=4><a title="http://purl.org/goodrelations/v1#availabilityStarts" class="treelinks" href="prop-gravailabilitystarts.html">gr:availabilityStarts</a></td>
+						  </tr><tr>
+							<td class="tc" colspan=4><a title="http://purl.org/goodrelations/v1#availableAtOrFrom" class="treelinks" href="prop-gravailableatorfrom.html">gr:availableAtOrFrom</a></td>
+						  </tr><tr>
+							<td class="tc" colspan=4><a title="http://purl.org/goodrelations/v1#availableDeliveryMethods" class="treelinks" href="prop-gravailabledeliverymethods.html">gr:availableDeliveryMethods</a></td>
 						  </tr><tr>
 							<td class="tc" colspan=4><a title="http://purl.org/goodrelations/v1#billingIncrement" class="treelinks" href="prop-grbillingincrement.html">gr:billingIncrement</a></td>
 						  </tr><tr>
@@ -724,19 +825,47 @@
 							<td class="tc" colspan=4><a title="http://purl.org/goodrelations/v1#color" class="treelinks" href="prop-grcolor.html">gr:color</a></td>
 						  </tr></table></td>
 							</tr><tr>
+							<td class="tc" colspan=4><a title="http://purl.org/goodrelations/v1#deliveryLeadTime" class="treelinks" href="prop-grdeliveryleadtime.html">gr:deliveryLeadTime</a></td>
+						  </tr><tr>
 							<td class="tc" colspan=4><a title="http://purl.org/goodrelations/v1#description" class="treelinks" href="prop-grdescription.html">gr:description</a></td>
+						  </tr><tr>
+							<td class="tc" colspan=4><a title="http://purl.org/goodrelations/v1#displayPosition" class="treelinks" href="prop-grdisplayposition.html">gr:displayPosition</a></td>
 						  </tr><tr>
 							<td class="tc" colspan=4><a title="http://purl.org/goodrelations/v1#durationOfWarrantyInMonths" class="treelinks" href="prop-grdurationofwarrantyinmonths.html">gr:durationOfWarrantyInMonths</a></td>
 						  </tr><tr>
+							<td class="tc" colspan=4><a title="http://purl.org/goodrelations/v1#eligibleCustomerTypes" class="treelinks" href="prop-greligiblecustomertypes.html">gr:eligibleCustomerTypes</a></td>
+						  </tr><tr>
+							<td class="tc" colspan=4><a title="http://purl.org/goodrelations/v1#eligibleDuration" class="treelinks" href="prop-greligibleduration.html">gr:eligibleDuration</a></td>
+						  </tr><tr>
 							<td class="tc" colspan=4><a title="http://purl.org/goodrelations/v1#eligibleRegions" class="treelinks" href="prop-greligibleregions.html">gr:eligibleRegions</a></td>
+						  </tr><tr>
+							<td class="tc" colspan=4><a title="http://purl.org/goodrelations/v1#eligibleTransactionVolume" class="treelinks" href="prop-greligibletransactionvolume.html">gr:eligibleTransactionVolume</a></td>
+						  </tr><tr>
+							<td class="tc" colspan=4><a title="http://purl.org/goodrelations/v1#equal" class="treelinks" href="prop-grequal.html">gr:equal</a></td>
+						  </tr><tr>
+							<td class="tc" colspan=4><a title="http://purl.org/goodrelations/v1#greater" class="treelinks" href="prop-grgreater.html">gr:greater</a></td>
+						  </tr><tr>
+							<td class="tc" colspan=4><a title="http://purl.org/goodrelations/v1#greaterOrEqual" class="treelinks" href="prop-grgreaterorequal.html">gr:greaterOrEqual</a></td>
+						  </tr><tr>
+							<td class="tc" colspan=4><a title="http://purl.org/goodrelations/v1#hasBrand" class="treelinks" href="prop-grhasbrand.html">gr:hasBrand</a></td>
+						  </tr><tr>
+							<td class="tc" colspan=4><a title="http://purl.org/goodrelations/v1#hasBusinessFunction" class="treelinks" href="prop-grhasbusinessfunction.html">gr:hasBusinessFunction</a></td>
 						  </tr><tr>
 							<td class="tc" colspan=4><a title="http://purl.org/goodrelations/v1#hasCurrency" class="treelinks" href="prop-grhascurrency.html">gr:hasCurrency</a></td>
 						  </tr><tr>
 							<td class="tc" colspan=4><a title="http://purl.org/goodrelations/v1#hasDUNS" class="treelinks" href="prop-grhasduns.html">gr:hasDUNS</a></td>
 						  </tr><tr>
+							<td class="tc" colspan=4><a title="http://purl.org/goodrelations/v1#hasEligibleQuantity" class="treelinks" href="prop-grhaseligiblequantity.html">gr:hasEligibleQuantity</a></td>
+						  </tr><tr>
 							<td class="tc" colspan=4><a title="http://purl.org/goodrelations/v1#hasGlobalLocationNumber" class="treelinks" href="prop-grhasgloballocationnumber.html">gr:hasGlobalLocationNumber</a></td>
 						  </tr><tr>
 							<td class="tc" colspan=4><a title="http://purl.org/goodrelations/v1#hasISICv4" class="treelinks" href="prop-grhasisicv4.html">gr:hasISICv4</a></td>
+						  </tr><tr>
+							<td class="tc" colspan=4><a title="http://purl.org/goodrelations/v1#hasInventoryLevel" class="treelinks" href="prop-grhasinventorylevel.html">gr:hasInventoryLevel</a></td>
+						  </tr><tr>
+							<td class="tc" colspan=4><a title="http://purl.org/goodrelations/v1#hasMakeAndModel" class="treelinks" href="prop-grhasmakeandmodel.html">gr:hasMakeAndModel</a></td>
+						  </tr><tr>
+							<td class="tc" colspan=4><a title="http://purl.org/goodrelations/v1#hasManufacturer" class="treelinks" href="prop-grhasmanufacturer.html">gr:hasManufacturer</a></td>
 						  </tr><tr>
 							<td class="tc" colspan=4><a title="http://purl.org/goodrelations/v1#hasMaxCurrencyValue" class="treelinks" href="prop-grhasmaxcurrencyvalue.html">gr:hasMaxCurrencyValue</a></td>
 						  </tr> <tr>
@@ -812,21 +941,86 @@
 							</tr><tr>
 							<td class="tc" colspan=4><a title="http://purl.org/goodrelations/v1#hasNAICS" class="treelinks" href="prop-grhasnaics.html">gr:hasNAICS</a></td>
 						  </tr><tr>
+							<td class="tc" colspan=4><a title="http://purl.org/goodrelations/v1#hasNext" class="treelinks" href="prop-grhasnext.html">gr:hasNext</a></td>
+						  </tr><tr>
+							<td class="tc" colspan=4><a title="http://purl.org/goodrelations/v1#hasOpeningHoursDayOfWeek" class="treelinks" href="prop-grhasopeninghoursdayofweek.html">gr:hasOpeningHoursDayOfWeek</a></td>
+						  </tr><tr>
+							<td class="tc" colspan=4><a title="http://purl.org/goodrelations/v1#hasOpeningHoursSpecification" class="treelinks" href="prop-grhasopeninghoursspecification.html">gr:hasOpeningHoursSpecification</a></td>
+						  </tr><tr>
+							<td class="tc" colspan=4><a title="http://purl.org/goodrelations/v1#hasPOS" class="treelinks" href="prop-grhaspos.html">gr:hasPOS</a></td>
+						  </tr><tr>
+							<td class="tc" colspan=4><a title="http://purl.org/goodrelations/v1#hasPrevious" class="treelinks" href="prop-grhasprevious.html">gr:hasPrevious</a></td>
+						  </tr><tr>
+							<td class="tc" colspan=4><a title="http://purl.org/goodrelations/v1#hasPriceSpecification" class="treelinks" href="prop-grhaspricespecification.html">gr:hasPriceSpecification</a></td>
+						  </tr><tr>
 							<td class="tc" colspan=4><a title="http://purl.org/goodrelations/v1#hasUnitOfMeasurement" class="treelinks" href="prop-grhasunitofmeasurement.html">gr:hasUnitOfMeasurement</a></td>
+						  </tr><tr>
+							<td class="tc" colspan=4><a title="http://purl.org/goodrelations/v1#hasWarrantyPromise" class="treelinks" href="prop-grhaswarrantypromise.html">gr:hasWarrantyPromise</a></td>
+						  </tr><tr>
+							<td class="tc" colspan=4><a title="http://purl.org/goodrelations/v1#hasWarrantyScope" class="treelinks" href="prop-grhaswarrantyscope.html">gr:hasWarrantyScope</a></td>
+						  </tr><tr>
+							<td class="tc" colspan=4><a title="http://purl.org/goodrelations/v1#includes" class="treelinks" href="prop-grincludes.html">gr:includes</a></td>
+						  </tr><tr>
+							<td class="tc" colspan=4><a title="http://purl.org/goodrelations/v1#includesObject" class="treelinks" href="prop-grincludesobject.html">gr:includesObject</a></td>
+						  </tr><tr>
+							<td class="tc" colspan=4><a title="http://purl.org/goodrelations/v1#isAccessoryOrSparePartFor" class="treelinks" href="prop-grisaccessoryorsparepartfor.html">gr:isAccessoryOrSparePartFor</a></td>
+						  </tr><tr>
+							<td class="tc" colspan=4><a title="http://purl.org/goodrelations/v1#isConsumableFor" class="treelinks" href="prop-grisconsumablefor.html">gr:isConsumableFor</a></td>
 						  </tr><tr>
 							<td class="tc" colspan=4><a title="http://purl.org/goodrelations/v1#isListPrice" class="treelinks" href="prop-grislistprice.html">gr:isListPrice</a></td>
 						  </tr><tr>
+							<td class="tc" colspan=4><a title="http://purl.org/goodrelations/v1#isSimilarTo" class="treelinks" href="prop-grissimilarto.html">gr:isSimilarTo</a></td>
+						  </tr><tr>
+							<td class="tc" colspan=4><a title="http://purl.org/goodrelations/v1#isVariantOf" class="treelinks" href="prop-grisvariantof.html">gr:isVariantOf</a></td>
+						  </tr><tr>
 							<td class="tc" colspan=4><a title="http://purl.org/goodrelations/v1#legalName" class="treelinks" href="prop-grlegalname.html">gr:legalName</a></td>
+						  </tr><tr>
+							<td class="tc" colspan=4><a title="http://purl.org/goodrelations/v1#lesser" class="treelinks" href="prop-grlesser.html">gr:lesser</a></td>
+						  </tr><tr>
+							<td class="tc" colspan=4><a title="http://purl.org/goodrelations/v1#lesserOrEqual" class="treelinks" href="prop-grlesserorequal.html">gr:lesserOrEqual</a></td>
 						  </tr><tr>
 							<td class="tc" colspan=4><a title="http://purl.org/goodrelations/v1#name" class="treelinks" href="prop-grname.html">gr:name</a></td>
 						  </tr><tr>
+							<td class="tc" colspan=4><a title="http://purl.org/goodrelations/v1#nonEqual" class="treelinks" href="prop-grnonequal.html">gr:nonEqual</a></td>
+						  </tr><tr>
+							<td class="tc" colspan=4><a title="http://purl.org/goodrelations/v1#offers" class="treelinks" href="prop-groffers.html">gr:offers</a></td>
+						  </tr><tr>
 							<td class="tc" colspan=4><a title="http://purl.org/goodrelations/v1#opens" class="treelinks" href="prop-gropens.html">gr:opens</a></td>
+						  </tr><tr>
+							<td class="tc" colspan=4><a title="http://purl.org/goodrelations/v1#owns" class="treelinks" href="prop-growns.html">gr:owns</a></td>
+						  </tr><tr>
+							<td class="tc" colspan=4><a title="http://purl.org/goodrelations/v1#predecessorOf" class="treelinks" href="prop-grpredecessorof.html">gr:predecessorOf</a></td>
 						  </tr><tr>
 							<td class="tc" colspan=4><a title="http://purl.org/goodrelations/v1#priceType" class="treelinks" href="prop-grpricetype.html">gr:priceType</a></td>
 						  </tr><tr>
+							<td class="tc" colspan=4><a title="http://purl.org/goodrelations/v1#qualitativeProductOrServiceProperty" class="treelinks" href="prop-grqualitativeproductorserviceproperty.html">gr:qualitativeProductOrServiceProperty</a></td>
+						  </tr><tr>
+							<td class="tc" colspan=4><a title="http://purl.org/goodrelations/v1#quantitativeProductOrServiceProperty" class="treelinks" href="prop-grquantitativeproductorserviceproperty.html">gr:quantitativeProductOrServiceProperty</a></td>
+						  </tr> <tr>
+							<td class="space"></td>
+							<td class="bar"></td>
+							<td class="space"></td>
+							<td><table class="h"><tr>
+							<td class="tc" colspan=4><a title="http://purl.org/goodrelations/v1#depth" class="treelinks" href="prop-grdepth.html">gr:depth</a></td>
+						  </tr><tr>
+							<td class="tc" colspan=4><a title="http://purl.org/goodrelations/v1#height" class="treelinks" href="prop-grheight.html">gr:height</a></td>
+						  </tr><tr>
+							<td class="tc" colspan=4><a title="http://purl.org/goodrelations/v1#weight" class="treelinks" href="prop-grweight.html">gr:weight</a></td>
+						  </tr><tr>
+							<td class="tc" colspan=4><a title="http://purl.org/goodrelations/v1#width" class="treelinks" href="prop-grwidth.html">gr:width</a></td>
+						  </tr></table></td>
+							</tr><tr>
+							<td class="tc" colspan=4><a title="http://purl.org/goodrelations/v1#relatedWebService" class="treelinks" href="prop-grrelatedwebservice.html">gr:relatedWebService</a></td>
+						  </tr><tr>
+							<td class="tc" colspan=4><a title="http://purl.org/goodrelations/v1#seeks" class="treelinks" href="prop-grseeks.html">gr:seeks</a></td>
+						  </tr><tr>
 							<td class="tc" colspan=4><a title="http://purl.org/goodrelations/v1#serialNumber" class="treelinks" href="prop-grserialnumber.html">gr:serialNumber</a></td>
 						  </tr><tr>
+							<td class="tc" colspan=4><a title="http://purl.org/goodrelations/v1#successorOf" class="treelinks" href="prop-grsuccessorof.html">gr:successorOf</a></td>
+						  </tr><tr>
 							<td class="tc" colspan=4><a title="http://purl.org/goodrelations/v1#taxID" class="treelinks" href="prop-grtaxid.html">gr:taxID</a></td>
+						  </tr><tr>
+							<td class="tc" colspan=4><a title="http://purl.org/goodrelations/v1#typeOfGood" class="treelinks" href="prop-grtypeofgood.html">gr:typeOfGood</a></td>
 						  </tr><tr>
 							<td class="tc" colspan=4><a title="http://purl.org/goodrelations/v1#validFrom" class="treelinks" href="prop-grvalidfrom.html">gr:validFrom</a></td>
 						  </tr><tr>
@@ -834,9 +1028,15 @@
 						  </tr><tr>
 							<td class="tc" colspan=4><a title="http://purl.org/goodrelations/v1#valueAddedTaxIncluded" class="treelinks" href="prop-grvalueaddedtaxincluded.html">gr:valueAddedTaxIncluded</a></td>
 						  </tr><tr>
+							<td class="tc" colspan=4><a title="http://purl.org/goodrelations/v1#valueReference" class="treelinks" href="prop-grvaluereference.html">gr:valueReference</a></td>
+						  </tr><tr>
 							<td class="tc" colspan=4><a title="http://purl.org/goodrelations/v1#vatID" class="treelinks" href="prop-grvatid.html">gr:vatID</a></td>
 						  </tr><tr>
 							<td class="tc" colspan=4><a title="http://schema.org/description" class="treelinks" href="prop-httpschemaorgdescription.html">http://schema.org/description</a></td>
+						  </tr><tr>
+							<td class="tc" colspan=4><a title="http://schema.org/image" class="treelinks" href="prop-httpschemaorgimage.html">http://schema.org/image</a></td>
+						  </tr><tr>
+							<td class="tc" colspan=4><a title="http://schema.org/manufacturer" class="treelinks" href="prop-httpschemaorgmanufacturer.html">http://schema.org/manufacturer</a></td>
 						  </tr><tr>
 							<td class="tc" colspan=4><a title="http://schema.org/name" class="treelinks" href="prop-httpschemaorgname.html">http://schema.org/name</a></td>
 						  </tr><tr>
@@ -857,116 +1057,7 @@
 							<td class="tc" colspan=4><a title="http://purl.org/goodrelations/v1#hasStockKeepingUnit" class="treelinks" href="prop-grhasstockkeepingunit.html">gr:hasStockKeepingUnit</a></td>
 						  </tr></table></td>
 							</tr><tr>
-							<td class="tc" colspan=4><a title="http://purl.org/goodrelations/v1#acceptedPaymentMethods" class="treelinks" href="prop-gracceptedpaymentmethods.html">gr:acceptedPaymentMethods</a></td>
-						  </tr><tr>
-							<td class="tc" colspan=4><a title="http://purl.org/goodrelations/v1#addOn" class="treelinks" href="prop-graddon.html">gr:addOn</a></td>
-						  </tr><tr>
-							<td class="tc" colspan=4><a title="http://purl.org/goodrelations/v1#advanceBookingRequirement" class="treelinks" href="prop-gradvancebookingrequirement.html">gr:advanceBookingRequirement</a></td>
-						  </tr><tr>
-							<td class="tc" colspan=4><a title="http://purl.org/goodrelations/v1#appliesToDeliveryMethod" class="treelinks" href="prop-grappliestodeliverymethod.html">gr:appliesToDeliveryMethod</a></td>
-						  </tr><tr>
-							<td class="tc" colspan=4><a title="http://purl.org/goodrelations/v1#appliesToPaymentMethod" class="treelinks" href="prop-grappliestopaymentmethod.html">gr:appliesToPaymentMethod</a></td>
-						  </tr><tr>
-							<td class="tc" colspan=4><a title="http://purl.org/goodrelations/v1#availableAtOrFrom" class="treelinks" href="prop-gravailableatorfrom.html">gr:availableAtOrFrom</a></td>
-						  </tr><tr>
-							<td class="tc" colspan=4><a title="http://purl.org/goodrelations/v1#availableDeliveryMethods" class="treelinks" href="prop-gravailabledeliverymethods.html">gr:availableDeliveryMethods</a></td>
-						  </tr><tr>
-							<td class="tc" colspan=4><a title="http://purl.org/goodrelations/v1#deliveryLeadTime" class="treelinks" href="prop-grdeliveryleadtime.html">gr:deliveryLeadTime</a></td>
-						  </tr><tr>
-							<td class="tc" colspan=4><a title="http://purl.org/goodrelations/v1#eligibleCustomerTypes" class="treelinks" href="prop-greligiblecustomertypes.html">gr:eligibleCustomerTypes</a></td>
-						  </tr><tr>
-							<td class="tc" colspan=4><a title="http://purl.org/goodrelations/v1#eligibleDuration" class="treelinks" href="prop-greligibleduration.html">gr:eligibleDuration</a></td>
-						  </tr><tr>
-							<td class="tc" colspan=4><a title="http://purl.org/goodrelations/v1#eligibleTransactionVolume" class="treelinks" href="prop-greligibletransactionvolume.html">gr:eligibleTransactionVolume</a></td>
-						  </tr><tr>
-							<td class="tc" colspan=4><a title="http://purl.org/goodrelations/v1#equal" class="treelinks" href="prop-grequal.html">gr:equal</a></td>
-						  </tr><tr>
-							<td class="tc" colspan=4><a title="http://purl.org/goodrelations/v1#greater" class="treelinks" href="prop-grgreater.html">gr:greater</a></td>
-						  </tr><tr>
-							<td class="tc" colspan=4><a title="http://purl.org/goodrelations/v1#greaterOrEqual" class="treelinks" href="prop-grgreaterorequal.html">gr:greaterOrEqual</a></td>
-						  </tr><tr>
-							<td class="tc" colspan=4><a title="http://purl.org/goodrelations/v1#hasBrand" class="treelinks" href="prop-grhasbrand.html">gr:hasBrand</a></td>
-						  </tr><tr>
-							<td class="tc" colspan=4><a title="http://purl.org/goodrelations/v1#hasBusinessFunction" class="treelinks" href="prop-grhasbusinessfunction.html">gr:hasBusinessFunction</a></td>
-						  </tr><tr>
-							<td class="tc" colspan=4><a title="http://purl.org/goodrelations/v1#hasEligibleQuantity" class="treelinks" href="prop-grhaseligiblequantity.html">gr:hasEligibleQuantity</a></td>
-						  </tr><tr>
-							<td class="tc" colspan=4><a title="http://purl.org/goodrelations/v1#hasInventoryLevel" class="treelinks" href="prop-grhasinventorylevel.html">gr:hasInventoryLevel</a></td>
-						  </tr><tr>
-							<td class="tc" colspan=4><a title="http://purl.org/goodrelations/v1#hasMakeAndModel" class="treelinks" href="prop-grhasmakeandmodel.html">gr:hasMakeAndModel</a></td>
-						  </tr><tr>
-							<td class="tc" colspan=4><a title="http://purl.org/goodrelations/v1#hasManufacturer" class="treelinks" href="prop-grhasmanufacturer.html">gr:hasManufacturer</a></td>
-						  </tr><tr>
-							<td class="tc" colspan=4><a title="http://purl.org/goodrelations/v1#hasNext" class="treelinks" href="prop-grhasnext.html">gr:hasNext</a></td>
-						  </tr><tr>
-							<td class="tc" colspan=4><a title="http://purl.org/goodrelations/v1#hasOpeningHoursDayOfWeek" class="treelinks" href="prop-grhasopeninghoursdayofweek.html">gr:hasOpeningHoursDayOfWeek</a></td>
-						  </tr><tr>
-							<td class="tc" colspan=4><a title="http://purl.org/goodrelations/v1#hasOpeningHoursSpecification" class="treelinks" href="prop-grhasopeninghoursspecification.html">gr:hasOpeningHoursSpecification</a></td>
-						  </tr><tr>
-							<td class="tc" colspan=4><a title="http://purl.org/goodrelations/v1#hasPOS" class="treelinks" href="prop-grhaspos.html">gr:hasPOS</a></td>
-						  </tr><tr>
-							<td class="tc" colspan=4><a title="http://purl.org/goodrelations/v1#hasPrevious" class="treelinks" href="prop-grhasprevious.html">gr:hasPrevious</a></td>
-						  </tr><tr>
-							<td class="tc" colspan=4><a title="http://purl.org/goodrelations/v1#hasPriceSpecification" class="treelinks" href="prop-grhaspricespecification.html">gr:hasPriceSpecification</a></td>
-						  </tr><tr>
-							<td class="tc" colspan=4><a title="http://purl.org/goodrelations/v1#hasWarrantyPromise" class="treelinks" href="prop-grhaswarrantypromise.html">gr:hasWarrantyPromise</a></td>
-						  </tr><tr>
-							<td class="tc" colspan=4><a title="http://purl.org/goodrelations/v1#hasWarrantyScope" class="treelinks" href="prop-grhaswarrantyscope.html">gr:hasWarrantyScope</a></td>
-						  </tr><tr>
-							<td class="tc" colspan=4><a title="http://purl.org/goodrelations/v1#includes" class="treelinks" href="prop-grincludes.html">gr:includes</a></td>
-						  </tr><tr>
-							<td class="tc" colspan=4><a title="http://purl.org/goodrelations/v1#includesObject" class="treelinks" href="prop-grincludesobject.html">gr:includesObject</a></td>
-						  </tr><tr>
-							<td class="tc" colspan=4><a title="http://purl.org/goodrelations/v1#isAccessoryOrSparePartFor" class="treelinks" href="prop-grisaccessoryorsparepartfor.html">gr:isAccessoryOrSparePartFor</a></td>
-						  </tr><tr>
-							<td class="tc" colspan=4><a title="http://purl.org/goodrelations/v1#isConsumableFor" class="treelinks" href="prop-grisconsumablefor.html">gr:isConsumableFor</a></td>
-						  </tr><tr>
-							<td class="tc" colspan=4><a title="http://purl.org/goodrelations/v1#isSimilarTo" class="treelinks" href="prop-grissimilarto.html">gr:isSimilarTo</a></td>
-						  </tr><tr>
-							<td class="tc" colspan=4><a title="http://purl.org/goodrelations/v1#isVariantOf" class="treelinks" href="prop-grisvariantof.html">gr:isVariantOf</a></td>
-						  </tr><tr>
-							<td class="tc" colspan=4><a title="http://purl.org/goodrelations/v1#lesser" class="treelinks" href="prop-grlesser.html">gr:lesser</a></td>
-						  </tr><tr>
-							<td class="tc" colspan=4><a title="http://purl.org/goodrelations/v1#lesserOrEqual" class="treelinks" href="prop-grlesserorequal.html">gr:lesserOrEqual</a></td>
-						  </tr><tr>
-							<td class="tc" colspan=4><a title="http://purl.org/goodrelations/v1#nonEqual" class="treelinks" href="prop-grnonequal.html">gr:nonEqual</a></td>
-						  </tr><tr>
-							<td class="tc" colspan=4><a title="http://purl.org/goodrelations/v1#offers" class="treelinks" href="prop-groffers.html">gr:offers</a></td>
-						  </tr><tr>
-							<td class="tc" colspan=4><a title="http://purl.org/goodrelations/v1#owns" class="treelinks" href="prop-growns.html">gr:owns</a></td>
-						  </tr><tr>
-							<td class="tc" colspan=4><a title="http://purl.org/goodrelations/v1#predecessorOf" class="treelinks" href="prop-grpredecessorof.html">gr:predecessorOf</a></td>
-						  </tr><tr>
-							<td class="tc" colspan=4><a title="http://purl.org/goodrelations/v1#qualitativeProductOrServiceProperty" class="treelinks" href="prop-grqualitativeproductorserviceproperty.html">gr:qualitativeProductOrServiceProperty</a></td>
-						  </tr><tr>
-							<td class="tc" colspan=4><a title="http://purl.org/goodrelations/v1#quantitativeProductOrServiceProperty" class="treelinks" href="prop-grquantitativeproductorserviceproperty.html">gr:quantitativeProductOrServiceProperty</a></td>
-						  </tr> <tr>
-							<td class="space"></td>
-							<td class="bar"></td>
-							<td class="space"></td>
-							<td><table class="h"><tr>
-							<td class="tc" colspan=4><a title="http://purl.org/goodrelations/v1#depth" class="treelinks" href="prop-grdepth.html">gr:depth</a></td>
-						  </tr><tr>
-							<td class="tc" colspan=4><a title="http://purl.org/goodrelations/v1#height" class="treelinks" href="prop-grheight.html">gr:height</a></td>
-						  </tr><tr>
-							<td class="tc" colspan=4><a title="http://purl.org/goodrelations/v1#weight" class="treelinks" href="prop-grweight.html">gr:weight</a></td>
-						  </tr><tr>
-							<td class="tc" colspan=4><a title="http://purl.org/goodrelations/v1#width" class="treelinks" href="prop-grwidth.html">gr:width</a></td>
-						  </tr></table></td>
-							</tr><tr>
-							<td class="tc" colspan=4><a title="http://purl.org/goodrelations/v1#seeks" class="treelinks" href="prop-grseeks.html">gr:seeks</a></td>
-						  </tr><tr>
-							<td class="tc" colspan=4><a title="http://purl.org/goodrelations/v1#successorOf" class="treelinks" href="prop-grsuccessorof.html">gr:successorOf</a></td>
-						  </tr><tr>
-							<td class="tc" colspan=4><a title="http://purl.org/goodrelations/v1#typeOfGood" class="treelinks" href="prop-grtypeofgood.html">gr:typeOfGood</a></td>
-						  </tr><tr>
-							<td class="tc" colspan=4><a title="http://purl.org/goodrelations/v1#valueReference" class="treelinks" href="prop-grvaluereference.html">gr:valueReference</a></td>
-						  </tr><tr>
-							<td class="tc" colspan=4><a title="http://schema.org/image" class="treelinks" href="prop-httpschemaorgimage.html">http://schema.org/image</a></td>
-						  </tr><tr>
-							<td class="tc" colspan=4><a title="http://schema.org/manufacturer" class="treelinks" href="prop-httpschemaorgmanufacturer.html">http://schema.org/manufacturer</a></td>
-						  </tr><tr>
-							<td class="tc" colspan=4><a title="http://xmlns.com/foaf/0.1/depiction" class="treelinks" href="prop-foafdepiction.html">foaf:depiction</a></td>
+							<td class="tc" colspan=4><a title="http://www.w3.org/2002/07/owl#deprecated" class="treelinks" href="prop-owldeprecated.html">owl:deprecated</a></td>
 						  </tr></table>
 
 
@@ -1003,7 +1094,7 @@
   <footer class="footer">
     <div class="container">
     
-      <p class="text-muted">Documentation automatically generated on 26th February 2017 with <a href="https://github.com/lambdamusic/OntoSpy">OntoSpy</a> (v1.7.4)</p>
+      <p class="text-muted">Documentation automatically generated on Wed, 16 Nov 2022 14:13:02 with <a href="http://lambdamusic.github.io/Ontospy/">Ontospy</a> (v2.1.0)</p>
 
     
     </div>
@@ -1016,13 +1107,13 @@
 <!-- Bootstrap core JavaScript
 ================================================== -->
 <!-- Placed at the end of the document so the pages load faster -->
-<script src="../static/libs/jquery/1.12.4/jquery.min.js"></script>
-<script src="../static/libs/bootstrap-3.3.7-dist/js/bootstrap.min.js"></script>
+<script src="../static/libs/jquery/1_12_4/jquery.min.js"></script>
+<script src="../static/libs/bootstrap-3_3_7-dist/js/bootstrap.min.js"></script>
 
 <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
-<script src="../static/libs/bootstrap-3.3.7-dist/js/ie10-viewport-bug-workaround.js"></script>
+<script src="../static/libs/bootstrap-3_3_7-dist/js/ie10-viewport-bug-workaround.js"></script>
 
-<script src="../static/libs/Chart.js-2.4.0/Chart.bundle.js"></script>
+<script src="../static/libs/chartjs-2_4_0/chart.bundle.js"></script>
 
 
 <!-- Menu Toggle Script -->
@@ -1053,6 +1144,22 @@ $('#search-input-sidebar').keyup(function() {
 </script>
 
 
+
+
+  <!-- Scroll Sidebar Script -->
+
+  
+  
+
+  <script type="text/javascript">
+
+    $(document).ready(function (){
+      $('#sidebar-wrapper').animate({
+          scrollTop: $("#sd_2451").offset().top - 100
+      }, 100);
+    });
+
+  </script>
 
 
 
