@@ -1,19 +1,180 @@
-
-<html>
+<!DOCTYPE html>
+<html lang="en">
 <head>
-  <style media="screen">
-    body {margin: 40px 10px 100px 50px;}
-    li a {font-size: 20px; font- text-transform: lowercase; text-decoration: none; font-family: monospace;}
-    li a:hover {text-decoration: underline;}
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Ontospy examples</title>
+  <link href="static/libs/bootstrap-3_3_7-dist/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    body { margin: 40px 0 80px; }
+    td.count, th.count { text-align: right; white-space: nowrap; }
+    td .theme { color: #999; font-size: 85%; margin-top: 4px; }
+    td code { font-size: 100%; white-space: nowrap; }
   </style>
 </head>
 <body>
-<h1>Examples of ontology documentation generated with <a href="https://github.com/lambdamusic/ontospy" target="_blank">Ontospy</a></h1>
-<p>Source code on <a href="https://github.com/lambdamusic/ontospy-examples">GitHub</a></p>
-<hr>
-<ol>
-<li><a href='countriesowl/index.html' target='_blank'>Countries.owl</a> ('yeti' theme)</li><li><a href='dolce-lite_397owl/index.html' target='_blank'>DOLCE-Lite_397.owl</a> ('cosmo' theme)</li><li><a href='ethonrdf/index.html' target='_blank'>EthOn.rdf</a> ('cosmo' theme)</li><li><a href='instructionalobjectsxml/index.html' target='_blank'>InstructionalObjects.xml</a> ('yeti' theme)</li><li><a href='limoontologyowl/index.html' target='_blank'>LiMoOntology.owl</a> ('readable' theme)</li><li><a href='uncertaintyowl/index.html' target='_blank'>Uncertainty.owl</a> ('darkly' theme)</li><li><a href='bfo-11owl/index.html' target='_blank'>bfo-1.1.owl</a> ('united' theme)</li><li><a href='cidoccrm_ecrm-2022-11owlxml/index.html' target='_blank'>cidoccrm_ecrm-2022-11.owl.xml</a> ('slate' theme)</li><li><a href='citordf/index.html' target='_blank'>cito.rdf</a> ('spacelab' theme)</li><li><a href='conflict-v1owl/index.html' target='_blank'>conflict-v1.owl</a> ('spacelab' theme)</li><li><a href='fabiordf/index.html' target='_blank'>fabio.rdf</a> ('simplex' theme)</li><li><a href='foafrdf/index.html' target='_blank'>foaf.rdf</a> ('cerulean' theme)</li><li><a href='frbrrdf/index.html' target='_blank'>frbr.rdf</a> ('lumen' theme)</li><li><a href='gold-2010owl/index.html' target='_blank'>gold-2010.owl</a> ('slate' theme)</li><li><a href='goodrelationsrdf/index.html' target='_blank'>goodrelations.rdf</a> ('simplex' theme)</li><li><a href='hucitowl/index.html' target='_blank'>hucit.owl</a> ('cerulean' theme)</li><li><a href='koalaowl/index.html' target='_blank'>koala.owl</a> ('yeti' theme)</li><li><a href='lakirdf/index.html' target='_blank'>laki.rdf</a> ('spacelab' theme)</li><li><a href='navalttl/index.html' target='_blank'>naval.ttl</a> ('united' theme)</li><li><a href='npg-article-types-ontologyttl/index.html' target='_blank'>npg-article-types-ontology.ttl</a> ('sandstone' theme)</li><li><a href='npg-core-ontologyttl/index.html' target='_blank'>npg-core-ontology.ttl</a> ('paper' theme)</li><li><a href='oardf/index.html' target='_blank'>oa.rdf</a> ('paper' theme)</li><li><a href='pizzattl/index.html' target='_blank'>pizza.ttl</a> ('paper' theme)</li><li><a href='resumeowl/index.html' target='_blank'>resume.owl</a> ('sandstone' theme)</li><li><a href='scigraph-12-2017-11-07ttl/index.html' target='_blank'>scigraph-1.2-2017-11-07.ttl</a> ('flatly' theme)</li><li><a href='semanticbibleowl/index.html' target='_blank'>semanticbible.owl</a> ('sandstone' theme)</li><li><a href='timeowl/index.html' target='_blank'>time.owl</a> ('cerulean' theme)</li><li><a href='vannrdf/index.html' target='_blank'>vann.rdf</a> ('cerulean' theme)</li><li><a href='voidrdf/index.html' target='_blank'>void.rdf</a> ('flatly' theme)</li><li><a href='whiskyrdf/index.html' target='_blank'>whisky.rdf</a> ('slate' theme)</li>
-</ol>
+<div class="container">
+  <h1>Examples of ontology documentation generated with <a href="https://github.com/lambdamusic/ontospy">Ontospy</a></h1>
+  <p>30 ontologies, documented with the <i>html-complex</i> visualization. Source files and code on <a href="https://github.com/lambdamusic/ontospy-examples">GitHub</a>.</p>
+  <div class="table-responsive">
+  <table class="table table-hover">
+    <thead><tr><th>Ontology</th><th>Title and description</th><th class="count">Classes</th><th class="count">Properties</th><th class="count">Concepts</th><th class="count">Shapes</th></tr></thead>
+    <tbody>
+<tr>
+  <td><a href="bfo-11owl/index.html"><code>bfo-1.1.owl</code></a></td>
+  <td><b>Basic Formal Ontology (BFO)</b><div class="theme">theme: darkly</div></td>
+  <td class="count">39</td><td class="count">9</td><td class="count">0</td><td class="count">0</td>
+</tr>
+<tr>
+  <td><a href="cidoccrm_ecrm-2022-11owlxml/index.html"><code>cidoccrm_ecrm-2022-11.owl.xml</code></a></td>
+  <td><b>Erlangen CRM / OWL</b><br>Changelog: https://github.com/erlangen-crm/ecrm/commits/master - Erlangen CRM / OWL - An OWL DL 1.0 implementation of the CIDOC Conceptual Reference Model, based on: Nick Crofts, Martin Doerr, Tony Gill, Stephen Stead,…<div class="theme">theme: yeti</div></td>
+  <td class="count">84</td><td class="count">285</td><td class="count">0</td><td class="count">0</td>
+</tr>
+<tr>
+  <td><a href="citordf/index.html"><code>cito.rdf</code></a></td>
+  <td><b>CiTO, the Citation Typing Ontology</b><br>This ontology is available at http://purl.org/spar/cito/, and uses the namespace prefix cito. - CiTO, the Citation Typing Ontology, is an ontology for the characterization of citations, both factually and rhetorically.…<div class="theme">theme: cerulean</div></td>
+  <td class="count">1</td><td class="count">103</td><td class="count">0</td><td class="count">0</td>
+</tr>
+<tr>
+  <td><a href="conflict-v1owl/index.html"><code>conflict-v1.owl</code></a></td>
+  <td><b>Conflict: an ontology for historical modeling of WW1</b><br>The Conflict ontology is an extension of CIDOC-CRM that serves to characterizes the First World War.<div class="theme">theme: superhero</div></td>
+  <td class="count">175</td><td class="count">6</td><td class="count">0</td><td class="count">0</td>
+</tr>
+<tr>
+  <td><a href="countriesowl/index.html"><code>Countries.owl</code></a></td>
+  <td><b></b><br>Countries Ontology Created by Jenz &amp; Partner GmbH Version 0.1, 28-FEB-2004<div class="theme">theme: slate</div></td>
+  <td class="count">10</td><td class="count">26</td><td class="count">0</td><td class="count">0</td>
+</tr>
+<tr>
+  <td><a href="dolce-lite_397owl/index.html"><code>DOLCE-Lite_397.owl</code></a></td>
+  <td><b></b><br>The DOLCE and DnS ontologies. OWL engineering by Aldo Gangemi.<div class="theme">theme: readable</div></td>
+  <td class="count">37</td><td class="count">70</td><td class="count">0</td><td class="count">0</td>
+</tr>
+<tr>
+  <td><a href="ethonrdf/index.html"><code>EthOn.rdf</code></a></td>
+  <td><b>EthOn - An Ethereum Ontology</b><br>The EthOn Ethereum ontology, described using W3C RDF Schema and the Web Ontology Language. It is closely aligned with Gavin Wood&#x27;s Ethereum yellow paper.<div class="theme">theme: simplex</div></td>
+  <td class="count">46</td><td class="count">103</td><td class="count">0</td><td class="count">0</td>
+</tr>
+<tr>
+  <td><a href="fabiordf/index.html"><code>fabio.rdf</code></a></td>
+  <td><b>FaBiO, the FRBR-aligned Bibliographic Ontology</b><br>FaBiO, the FRBR-aligned Bibliographic Ontology, is an ontology for recording and publishing on the Semantic Web bibliographic records of scholarly endeavours. It forms part of SPAR, a suite of Semantic Publishing and…<div class="theme">theme: darkly</div></td>
+  <td class="count">242</td><td class="count">106</td><td class="count">0</td><td class="count">0</td>
+</tr>
+<tr>
+  <td><a href="foafrdf/index.html"><code>foaf.rdf</code></a></td>
+  <td><b>Friend of a Friend (FOAF) vocabulary</b><br>The Friend of a Friend (FOAF) RDF vocabulary, described using W3C RDF Schema and the Web Ontology Language.<div class="theme">theme: simplex</div></td>
+  <td class="count">16</td><td class="count">68</td><td class="count">0</td><td class="count">0</td>
+</tr>
+<tr>
+  <td><a href="frbrrdf/index.html"><code>frbr.rdf</code></a></td>
+  <td><b>Essential FRBR in OWL2 DL</b><br>FRBR DL is an OWL 2 DL expression of the FRBR model.<div class="theme">theme: readable</div></td>
+  <td class="count">13</td><td class="count">59</td><td class="count">0</td><td class="count">0</td>
+</tr>
+<tr>
+  <td><a href="gold-2010owl/index.html"><code>gold-2010.owl</code></a></td>
+  <td><b></b><div class="theme">theme: lumen</div></td>
+  <td class="count">501</td><td class="count">83</td><td class="count">0</td><td class="count">0</td>
+</tr>
+<tr>
+  <td><a href="goodrelationsrdf/index.html"><code>goodrelations.rdf</code></a></td>
+  <td><b>GoodRelations Ontology</b><br>The GoodRelations ontology provides the vocabulary for annotating e-commerce offerings (1) to sell, lease, repair, dispose, or maintain commodity products and (2) to provide commodity services. GoodRelations allows…<div class="theme">theme: lumen</div></td>
+  <td class="count">37</td><td class="count">112</td><td class="count">0</td><td class="count">0</td>
+</tr>
+<tr>
+  <td><a href="hucitowl/index.html"><code>hucit.owl</code></a></td>
+  <td><b>HuCit, the HUmanities CITation Ontology</b><br>HuCit is a light-weight ontology aimed at modelling citations with a particular focus on the Humanities<div class="theme">theme: flatly</div></td>
+  <td class="count">10</td><td class="count">21</td><td class="count">0</td><td class="count">0</td>
+</tr>
+<tr>
+  <td><a href="instructionalobjectsxml/index.html"><code>InstructionalObjects.xml</code></a></td>
+  <td><b></b><div class="theme">theme: readable</div></td>
+  <td class="count">31</td><td class="count">8</td><td class="count">0</td><td class="count">0</td>
+</tr>
+<tr>
+  <td><a href="koalaowl/index.html"><code>koala.owl</code></a></td>
+  <td><b></b><div class="theme">theme: readable</div></td>
+  <td class="count">20</td><td class="count">5</td><td class="count">0</td><td class="count">0</td>
+</tr>
+<tr>
+  <td><a href="lakirdf/index.html"><code>laki.rdf</code></a></td>
+  <td><b>Finlex Legislation Metadata Schema</b><div class="theme">theme: cerulean</div></td>
+  <td class="count">17</td><td class="count">20</td><td class="count">0</td><td class="count">0</td>
+</tr>
+<tr>
+  <td><a href="limoontologyowl/index.html"><code>LiMoOntology.owl</code></a></td>
+  <td><b>LiMo Ontology</b><div class="theme">theme: slate</div></td>
+  <td class="count">6</td><td class="count">25</td><td class="count">0</td><td class="count">0</td>
+</tr>
+<tr>
+  <td><a href="navalttl/index.html"><code>naval.ttl</code></a></td>
+  <td><b>The Muninn Naval Ontology</b><br>The Muninn Naval Ontology marks up information about maritime establishments.<div class="theme">theme: yeti</div></td>
+  <td class="count">23</td><td class="count">33</td><td class="count">100</td><td class="count">0</td>
+</tr>
+<tr>
+  <td><a href="npg-article-types-ontologyttl/index.html"><code>npg-article-types-ontology.ttl</code></a></td>
+  <td><b></b><br>The ArticleTypes Ontology is a categorization of kinds of publication which are used to index and group content published by Macmillan Science and Education.<div class="theme">theme: yeti</div></td>
+  <td class="count">0</td><td class="count">0</td><td class="count">67</td><td class="count">0</td>
+</tr>
+<tr>
+  <td><a href="npg-core-ontologyttl/index.html"><code>npg-core-ontology.ttl</code></a></td>
+  <td><b></b><br>The Core Ontology is a formal model providing definitions for the key concepts of interest to content publishing at Macmillan Science and Education.<div class="theme">theme: simplex</div></td>
+  <td class="count">50</td><td class="count">140</td><td class="count">0</td><td class="count">0</td>
+</tr>
+<tr>
+  <td><a href="oardf/index.html"><code>oa.rdf</code></a></td>
+  <td><b>Open Annotation Data Model</b><br>The Open Annotation Core Data Model specifies an interoperable framework for creating associations between related resources, annotations, using a methodology that conforms to the Architecture of the World Wide Web.…<div class="theme">theme: paper</div></td>
+  <td class="count">20</td><td class="count">23</td><td class="count">0</td><td class="count">0</td>
+</tr>
+<tr>
+  <td><a href="pizzattl/index.html"><code>pizza.ttl</code></a></td>
+  <td><b></b><br>An example ontology that contains all constructs required for the various versions of the Pizza Tutorial run by Manchester University (see http://www.co-ode.org/resources/tutorials/)<div class="theme">theme: slate</div></td>
+  <td class="count">99</td><td class="count">8</td><td class="count">0</td><td class="count">0</td>
+</tr>
+<tr>
+  <td><a href="resumeowl/index.html"><code>resume.owl</code></a></td>
+  <td><b>Career, Education, Experience, Person, Ontology</b><br>AN evolving ontology, contact j.yanosy@comcast.net for discussion or questions.<div class="theme">theme: spacelab</div></td>
+  <td class="count">166</td><td class="count">48</td><td class="count">0</td><td class="count">0</td>
+</tr>
+<tr>
+  <td><a href="scigraph-12-2017-11-07ttl/index.html"><code>scigraph-1.2-2017-11-07.ttl</code></a></td>
+  <td><b>Springer Nature SciGraph Core Ontology</b><br>The Springer Nature SciGraph Core Ontology is a formal model providing definitions for the key concepts of interest to content publishing at Springer Nature.<div class="theme">theme: readable</div></td>
+  <td class="count">49</td><td class="count">233</td><td class="count">0</td><td class="count">0</td>
+</tr>
+<tr>
+  <td><a href="semanticbibleowl/index.html"><code>semanticbible.owl</code></a></td>
+  <td><b></b><br>The names here are as transliterated in the English Standard Version (ESV), copyright © 2001 by Crossway Bibles, a division of Good News Publishers. Reuse note: where feasible, class names coincide with SUMO (Suggested…<div class="theme">theme: slate</div></td>
+  <td class="count">48</td><td class="count">38</td><td class="count">0</td><td class="count">0</td>
+</tr>
+<tr>
+  <td><a href="timeowl/index.html"><code>time.owl</code></a></td>
+  <td><b></b><br>An OWL Ontology of Time (OWL-Time).<div class="theme">theme: superhero</div></td>
+  <td class="count">12</td><td class="count">41</td><td class="count">0</td><td class="count">0</td>
+</tr>
+<tr>
+  <td><a href="uncertaintyowl/index.html"><code>Uncertainty.owl</code></a></td>
+  <td><b></b><div class="theme">theme: united</div></td>
+  <td class="count">24</td><td class="count">7</td><td class="count">0</td><td class="count">0</td>
+</tr>
+<tr>
+  <td><a href="vannrdf/index.html"><code>vann.rdf</code></a></td>
+  <td><b>VANN: A vocabulary for annotating vocabulary descriptions</b><br>This document describes a vocabulary for annotating descriptions of vocabularies with examples and usage notes.<div class="theme">theme: spacelab</div></td>
+  <td class="count">0</td><td class="count">6</td><td class="count">0</td><td class="count">0</td>
+</tr>
+<tr>
+  <td><a href="voidrdf/index.html"><code>void.rdf</code></a></td>
+  <td><b>Vocabulary of Interlinked Datasets (VoID)</b><br>The Vocabulary of Interlinked Datasets (VoID) is an RDF Schema vocabulary for expressing metadata about RDF datasets. It is intended as a bridge between the publishers and users of RDF data, with applications ranging…<div class="theme">theme: darkly</div></td>
+  <td class="count">5</td><td class="count">27</td><td class="count">0</td><td class="count">0</td>
+</tr>
+<tr>
+  <td><a href="whiskyrdf/index.html"><code>whisky.rdf</code></a></td>
+  <td><b>Vocabulary for describing whisky varieties</b><br>Created at vocamp oxford 2008<div class="theme">theme: simplex</div></td>
+  <td class="count">9</td><td class="count">20</td><td class="count">0</td><td class="count">0</td>
+</tr>
+    </tbody>
+  </table>
+  </div>
+  <hr>
+  <p class="text-muted">Generated on 2026-10-12 with Ontospy v2.4.</p>
+</div>
 </body>
 </html>
-    

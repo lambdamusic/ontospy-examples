@@ -153,79 +153,80 @@
 
 /*pygments css*/
 pre { line-height: 125%; }
-td.linenos pre { color: #000000; background-color: #f0f0f0; padding-left: 5px; padding-right: 5px; }
-span.linenos { color: #000000; background-color: #f0f0f0; padding-left: 5px; padding-right: 5px; }
-td.linenos pre.special { color: #000000; background-color: #ffffc0; padding-left: 5px; padding-right: 5px; }
+td.linenos .normal { color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px; }
+span.linenos { color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px; }
+td.linenos .special { color: #000000; background-color: #ffffc0; padding-left: 5px; padding-right: 5px; }
 span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 5px; padding-right: 5px; }
 .highlight .hll { background-color: #ffffcc }
 .highlight { background: #f8f8f8; }
-.highlight .c { color: #408080; font-style: italic } /* Comment */
-.highlight .err { border: 1px solid #FF0000 } /* Error */
+.highlight .c { color: #3D7B7B; font-style: italic } /* Comment */
+.highlight .err { border: 1px solid #F00 } /* Error */
 .highlight .k { color: #008000; font-weight: bold } /* Keyword */
-.highlight .o { color: #666666 } /* Operator */
-.highlight .ch { color: #408080; font-style: italic } /* Comment.Hashbang */
-.highlight .cm { color: #408080; font-style: italic } /* Comment.Multiline */
-.highlight .cp { color: #BC7A00 } /* Comment.Preproc */
-.highlight .cpf { color: #408080; font-style: italic } /* Comment.PreprocFile */
-.highlight .c1 { color: #408080; font-style: italic } /* Comment.Single */
-.highlight .cs { color: #408080; font-style: italic } /* Comment.Special */
+.highlight .o { color: #666 } /* Operator */
+.highlight .ch { color: #3D7B7B; font-style: italic } /* Comment.Hashbang */
+.highlight .cm { color: #3D7B7B; font-style: italic } /* Comment.Multiline */
+.highlight .cp { color: #9C6500 } /* Comment.Preproc */
+.highlight .cpf { color: #3D7B7B; font-style: italic } /* Comment.PreprocFile */
+.highlight .c1 { color: #3D7B7B; font-style: italic } /* Comment.Single */
+.highlight .cs { color: #3D7B7B; font-style: italic } /* Comment.Special */
 .highlight .gd { color: #A00000 } /* Generic.Deleted */
 .highlight .ge { font-style: italic } /* Generic.Emph */
-.highlight .gr { color: #FF0000 } /* Generic.Error */
+.highlight .ges { font-weight: bold; font-style: italic } /* Generic.EmphStrong */
+.highlight .gr { color: #E40000 } /* Generic.Error */
 .highlight .gh { color: #000080; font-weight: bold } /* Generic.Heading */
-.highlight .gi { color: #00A000 } /* Generic.Inserted */
-.highlight .go { color: #888888 } /* Generic.Output */
+.highlight .gi { color: #008400 } /* Generic.Inserted */
+.highlight .go { color: #717171 } /* Generic.Output */
 .highlight .gp { color: #000080; font-weight: bold } /* Generic.Prompt */
 .highlight .gs { font-weight: bold } /* Generic.Strong */
 .highlight .gu { color: #800080; font-weight: bold } /* Generic.Subheading */
-.highlight .gt { color: #0044DD } /* Generic.Traceback */
+.highlight .gt { color: #04D } /* Generic.Traceback */
 .highlight .kc { color: #008000; font-weight: bold } /* Keyword.Constant */
 .highlight .kd { color: #008000; font-weight: bold } /* Keyword.Declaration */
 .highlight .kn { color: #008000; font-weight: bold } /* Keyword.Namespace */
 .highlight .kp { color: #008000 } /* Keyword.Pseudo */
 .highlight .kr { color: #008000; font-weight: bold } /* Keyword.Reserved */
 .highlight .kt { color: #B00040 } /* Keyword.Type */
-.highlight .m { color: #666666 } /* Literal.Number */
+.highlight .m { color: #666 } /* Literal.Number */
 .highlight .s { color: #BA2121 } /* Literal.String */
-.highlight .na { color: #7D9029 } /* Name.Attribute */
+.highlight .na { color: #687822 } /* Name.Attribute */
 .highlight .nb { color: #008000 } /* Name.Builtin */
-.highlight .nc { color: #0000FF; font-weight: bold } /* Name.Class */
-.highlight .no { color: #880000 } /* Name.Constant */
-.highlight .nd { color: #AA22FF } /* Name.Decorator */
-.highlight .ni { color: #999999; font-weight: bold } /* Name.Entity */
-.highlight .ne { color: #D2413A; font-weight: bold } /* Name.Exception */
-.highlight .nf { color: #0000FF } /* Name.Function */
-.highlight .nl { color: #A0A000 } /* Name.Label */
-.highlight .nn { color: #0000FF; font-weight: bold } /* Name.Namespace */
+.highlight .nc { color: #00F; font-weight: bold } /* Name.Class */
+.highlight .no { color: #800 } /* Name.Constant */
+.highlight .nd { color: #A2F } /* Name.Decorator */
+.highlight .ni { color: #717171; font-weight: bold } /* Name.Entity */
+.highlight .ne { color: #CB3F38; font-weight: bold } /* Name.Exception */
+.highlight .nf { color: #00F } /* Name.Function */
+.highlight .nl { color: #767600 } /* Name.Label */
+.highlight .nn { color: #00F; font-weight: bold } /* Name.Namespace */
 .highlight .nt { color: #008000; font-weight: bold } /* Name.Tag */
 .highlight .nv { color: #19177C } /* Name.Variable */
-.highlight .ow { color: #AA22FF; font-weight: bold } /* Operator.Word */
-.highlight .w { color: #bbbbbb } /* Text.Whitespace */
-.highlight .mb { color: #666666 } /* Literal.Number.Bin */
-.highlight .mf { color: #666666 } /* Literal.Number.Float */
-.highlight .mh { color: #666666 } /* Literal.Number.Hex */
-.highlight .mi { color: #666666 } /* Literal.Number.Integer */
-.highlight .mo { color: #666666 } /* Literal.Number.Oct */
+.highlight .ow { color: #A2F; font-weight: bold } /* Operator.Word */
+.highlight .w { color: #BBB } /* Text.Whitespace */
+.highlight .mb { color: #666 } /* Literal.Number.Bin */
+.highlight .mf { color: #666 } /* Literal.Number.Float */
+.highlight .mh { color: #666 } /* Literal.Number.Hex */
+.highlight .mi { color: #666 } /* Literal.Number.Integer */
+.highlight .mo { color: #666 } /* Literal.Number.Oct */
 .highlight .sa { color: #BA2121 } /* Literal.String.Affix */
 .highlight .sb { color: #BA2121 } /* Literal.String.Backtick */
 .highlight .sc { color: #BA2121 } /* Literal.String.Char */
 .highlight .dl { color: #BA2121 } /* Literal.String.Delimiter */
 .highlight .sd { color: #BA2121; font-style: italic } /* Literal.String.Doc */
 .highlight .s2 { color: #BA2121 } /* Literal.String.Double */
-.highlight .se { color: #BB6622; font-weight: bold } /* Literal.String.Escape */
+.highlight .se { color: #AA5D1F; font-weight: bold } /* Literal.String.Escape */
 .highlight .sh { color: #BA2121 } /* Literal.String.Heredoc */
-.highlight .si { color: #BB6688; font-weight: bold } /* Literal.String.Interpol */
+.highlight .si { color: #A45A77; font-weight: bold } /* Literal.String.Interpol */
 .highlight .sx { color: #008000 } /* Literal.String.Other */
-.highlight .sr { color: #BB6688 } /* Literal.String.Regex */
+.highlight .sr { color: #A45A77 } /* Literal.String.Regex */
 .highlight .s1 { color: #BA2121 } /* Literal.String.Single */
 .highlight .ss { color: #19177C } /* Literal.String.Symbol */
 .highlight .bp { color: #008000 } /* Name.Builtin.Pseudo */
-.highlight .fm { color: #0000FF } /* Name.Function.Magic */
+.highlight .fm { color: #00F } /* Name.Function.Magic */
 .highlight .vc { color: #19177C } /* Name.Variable.Class */
 .highlight .vg { color: #19177C } /* Name.Variable.Global */
 .highlight .vi { color: #19177C } /* Name.Variable.Instance */
 .highlight .vm { color: #19177C } /* Name.Variable.Magic */
-.highlight .il { color: #666666 } /* Literal.Number.Integer.Long */
+.highlight .il { color: #666 } /* Literal.Number.Integer.Long */
 
 /*overloading this class from pygments*/
 .highlight {
@@ -325,45 +326,45 @@ span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 
 
             
           
-              <li class="second-level" style="line-height: 20px;" id="sd_3283"><a  href="class-oaannotation.html">oa:#Annotation</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_3252"><a  href="class-oaannotation.html">oa:#Annotation</a></li>
           
-              <li class="second-level" style="line-height: 20px;" id="sd_3284"><a  href="class-oachoice.html">oa:#Choice</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_3253"><a  href="class-oachoice.html">oa:#Choice</a></li>
           
-              <li class="second-level" style="line-height: 20px;" id="sd_3285"><a  href="class-oacomposite.html">oa:#Composite</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_3254"><a  href="class-oacomposite.html">oa:#Composite</a></li>
           
-              <li class="second-level" style="line-height: 20px;" id="sd_3286"><a  href="class-oacssstyle.html">oa:#CssStyle</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_3255"><a  href="class-oacssstyle.html">oa:#CssStyle</a></li>
           
-              <li class="second-level" style="line-height: 20px;" id="sd_3287"><a  href="class-oadatapositionselector.html">oa:#DataPositionSelector</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_3256"><a  href="class-oadatapositionselector.html">oa:#DataPositionSelector</a></li>
           
-              <li class="second-level" style="line-height: 20px;" id="sd_3288"><a  href="class-oafragmentselector.html">oa:#FragmentSelector</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_3257"><a  href="class-oafragmentselector.html">oa:#FragmentSelector</a></li>
           
-              <li class="second-level" style="line-height: 20px;" id="sd_3289"><a  href="class-oahttprequeststate.html">oa:#HttpRequestState</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_3258"><a  href="class-oahttprequeststate.html">oa:#HttpRequestState</a></li>
           
-              <li class="second-level" style="line-height: 20px;" id="sd_3290"><a  href="class-oalist.html">oa:#List</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_3259"><a  href="class-oalist.html">oa:#List</a></li>
           
-              <li class="second-level" style="line-height: 20px;" id="sd_3291"><a  href="class-oamotivation.html">oa:#Motivation</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_3260"><a  href="class-oamotivation.html">oa:#Motivation</a></li>
           
-              <li class="second-level" style="line-height: 20px;" id="sd_3292"><a  href="class-oaselector.html">oa:#Selector</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_3261"><a  href="class-oaselector.html">oa:#Selector</a></li>
           
-              <li class="second-level" style="line-height: 20px;" id="sd_3293"><a  href="class-oasemantictag.html">oa:#SemanticTag</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_3262"><a  href="class-oasemantictag.html">oa:#SemanticTag</a></li>
           
-              <li class="second-level" style="line-height: 20px;" id="sd_3294"><a  href="class-oaspecificresource.html">oa:#SpecificResource</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_3263"><a  href="class-oaspecificresource.html">oa:#SpecificResource</a></li>
           
-              <li class="second-level" style="line-height: 20px;" id="sd_3295"><a  href="class-oastate.html">oa:#State</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_3264"><a  href="class-oastate.html">oa:#State</a></li>
           
-              <li class="second-level" style="line-height: 20px;" id="sd_3296"><a  href="class-oastyle.html">oa:#Style</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_3265"><a  href="class-oastyle.html">oa:#Style</a></li>
           
-              <li class="second-level" style="line-height: 20px;" id="sd_3297"><a  href="class-oasvgselector.html">oa:#SvgSelector</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_3266"><a  href="class-oasvgselector.html">oa:#SvgSelector</a></li>
           
-              <li class="second-level" style="line-height: 20px;" id="sd_3298"><a  href="class-oatag.html">oa:#Tag</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_3267"><a  href="class-oatag.html">oa:#Tag</a></li>
           
-              <li class="second-level" style="line-height: 20px;" id="sd_3299"><a  href="class-oatextpositionselector.html">oa:#TextPositionSelector</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_3268"><a  href="class-oatextpositionselector.html">oa:#TextPositionSelector</a></li>
           
-              <li class="second-level" style="line-height: 20px;" id="sd_3300"><a  href="class-oatextquoteselector.html">oa:#TextQuoteSelector</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_3269"><a  href="class-oatextquoteselector.html">oa:#TextQuoteSelector</a></li>
           
-              <li class="second-level" style="line-height: 20px;" id="sd_3301"><a  href="class-oatimestate.html">oa:#TimeState</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_3270"><a  href="class-oatimestate.html">oa:#TimeState</a></li>
           
-              <li class="second-level" style="line-height: 20px;" id="sd_3282"><a  href="class-skosconcept.html">skos:Concept</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_3251"><a  href="class-skosconcept.html">skos:Concept</a></li>
           
         
 
@@ -373,51 +374,51 @@ span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 
 
             
           
-              <li class="second-level" style="line-height: 20px;" id="sd_3302"><a   href="prop-oaannotatedat.html">oa:#annotatedAt</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_3271"><a   href="prop-oaannotatedat.html">oa:#annotatedAt</a></li>
           
-              <li class="second-level" style="line-height: 20px;" id="sd_3311"><a   href="prop-oaannotatedby.html">oa:#annotatedBy</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_3280"><a   href="prop-oaannotatedby.html">oa:#annotatedBy</a></li>
           
-              <li class="second-level" style="line-height: 20px;" id="sd_3312"><a   href="prop-oacachedsource.html">oa:#cachedSource</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_3281"><a   href="prop-oacachedsource.html">oa:#cachedSource</a></li>
           
-              <li class="second-level" style="line-height: 20px;" id="sd_3313"><a   href="prop-oadefault.html">oa:#default</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_3282"><a   href="prop-oadefault.html">oa:#default</a></li>
           
-              <li class="second-level" style="line-height: 20px;" id="sd_3303"><a   href="prop-oaend.html">oa:#end</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_3272"><a   href="prop-oaend.html">oa:#end</a></li>
           
-              <li class="second-level" style="line-height: 20px;" id="sd_3314"><a   href="prop-oaequivalentto.html">oa:#equivalentTo</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_3283"><a   href="prop-oaequivalentto.html">oa:#equivalentTo</a></li>
           
-              <li class="second-level" style="line-height: 20px;" id="sd_3304"><a   href="prop-oaexact.html">oa:#exact</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_3273"><a   href="prop-oaexact.html">oa:#exact</a></li>
           
-              <li class="second-level" style="line-height: 20px;" id="sd_3315"><a class="active"  href="prop-oahasbody.html">oa:#hasBody</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_3284"><a class="active"  href="prop-oahasbody.html">oa:#hasBody</a></li>
           
-              <li class="second-level" style="line-height: 20px;" id="sd_3316"><a   href="prop-oahasscope.html">oa:#hasScope</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_3285"><a   href="prop-oahasscope.html">oa:#hasScope</a></li>
           
-              <li class="second-level" style="line-height: 20px;" id="sd_3317"><a   href="prop-oahasselector.html">oa:#hasSelector</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_3286"><a   href="prop-oahasselector.html">oa:#hasSelector</a></li>
           
-              <li class="second-level" style="line-height: 20px;" id="sd_3318"><a   href="prop-oahassource.html">oa:#hasSource</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_3287"><a   href="prop-oahassource.html">oa:#hasSource</a></li>
           
-              <li class="second-level" style="line-height: 20px;" id="sd_3319"><a   href="prop-oahasstate.html">oa:#hasState</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_3288"><a   href="prop-oahasstate.html">oa:#hasState</a></li>
           
-              <li class="second-level" style="line-height: 20px;" id="sd_3320"><a   href="prop-oahastarget.html">oa:#hasTarget</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_3289"><a   href="prop-oahastarget.html">oa:#hasTarget</a></li>
           
-              <li class="second-level" style="line-height: 20px;" id="sd_3321"><a   href="prop-oaitem.html">oa:#item</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_3290"><a   href="prop-oaitem.html">oa:#item</a></li>
           
-              <li class="second-level" style="line-height: 20px;" id="sd_3322"><a   href="prop-oamotivatedby.html">oa:#motivatedBy</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_3291"><a   href="prop-oamotivatedby.html">oa:#motivatedBy</a></li>
           
-              <li class="second-level" style="line-height: 20px;" id="sd_3305"><a   href="prop-oaprefix.html">oa:#prefix</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_3274"><a   href="prop-oaprefix.html">oa:#prefix</a></li>
           
-              <li class="second-level" style="line-height: 20px;" id="sd_3306"><a   href="prop-oaserializedat.html">oa:#serializedAt</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_3275"><a   href="prop-oaserializedat.html">oa:#serializedAt</a></li>
           
-              <li class="second-level" style="line-height: 20px;" id="sd_3323"><a   href="prop-oaserializedby.html">oa:#serializedBy</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_3292"><a   href="prop-oaserializedby.html">oa:#serializedBy</a></li>
           
-              <li class="second-level" style="line-height: 20px;" id="sd_3307"><a   href="prop-oastart.html">oa:#start</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_3276"><a   href="prop-oastart.html">oa:#start</a></li>
           
-              <li class="second-level" style="line-height: 20px;" id="sd_3308"><a   href="prop-oastyleclass.html">oa:#styleClass</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_3277"><a   href="prop-oastyleclass.html">oa:#styleClass</a></li>
           
-              <li class="second-level" style="line-height: 20px;" id="sd_3324"><a   href="prop-oastyledby.html">oa:#styledBy</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_3293"><a   href="prop-oastyledby.html">oa:#styledBy</a></li>
           
-              <li class="second-level" style="line-height: 20px;" id="sd_3309"><a   href="prop-oasuffix.html">oa:#suffix</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_3278"><a   href="prop-oasuffix.html">oa:#suffix</a></li>
           
-              <li class="second-level" style="line-height: 20px;" id="sd_3310"><a   href="prop-oawhen.html">oa:#when</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_3279"><a   href="prop-oawhen.html">oa:#when</a></li>
           
 
         
@@ -562,7 +563,7 @@ span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 
                 <ul>
                     
 
-                        <li><a href="entities-tree-properties.html">rdf:Property</a>
+                        <li><a href="entities-tree-properties.html">owl:ObjectProperty</a>
 
                           <ul>
                             <li><a style="font-weight: bold;" title="'hasBody' - The relationship between oa:Annotation and body. The body is somehow &#34;about&#34; the oa:hasTarget of the annotation. The Body may be..">oa:#hasBody</a>
@@ -593,6 +594,19 @@ span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 
              </div>
            </div>
             </div></div>
+
+            
+            <div class="row"><div class="col-md-12">
+               <div class="panel panel-default">
+             <div class="panel-heading">
+               <h3 class="panel-title">Type</h3>
+             </div>
+             <div class="panel-body">
+                 <code>owl:ObjectProperty</code>
+             </div>
+           </div>
+            </div></div>
+            
 
 
 
@@ -632,6 +646,10 @@ span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 
            </div></div>
            
 
+    
+    
+
+
 
 
             
@@ -655,11 +673,13 @@ span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 
                <tr>
                    <td>
                      
+                     
                          
                          
                               <a href="class-oaannotation.html" title="http://www.w3.org/ns/oa#Annotation">oa:#Annotation</a>
                            
                            
+                         
                          
                      
                    </td>
@@ -669,6 +689,7 @@ span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 
                     </td>
 
                     <td>
+                      
                       
                           <a>owl:Thing</a> (inferred)
                       
@@ -694,17 +715,17 @@ span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 
 <span class="k">@prefix</span><span class="w"> </span><span class="nn">rdfs:</span><span class="w"> </span><span class="nv">&lt;http://www.w3.org/2000/01/rdf-schema#&gt;</span><span class="w"> </span><span class="p">.</span>
 
 <span class="nn">oa</span><span class="p">:</span><span class="nt">hasBody</span> <span class="kt">a</span> <span class="nn">owl</span><span class="p">:</span><span class="nt">ObjectProperty</span> <span class="p">;</span>
-    <span class="nn">rdfs</span><span class="p">:</span><span class="nt">label</span> <span class="s">&quot;hasBody&quot;</span><span class="o">@</span><span class="ge">en</span> <span class="p">;</span>
-    <span class="nn">rdfs</span><span class="p">:</span><span class="nt">comment</span> <span class="s">&quot;&quot;&quot;The relationship between oa:Annotation and body. The body is somehow &quot;about&quot; the oa:hasTarget of the annotation.</span>
+    <span class="nn">rdfs</span><span class="p">:</span><span class="nt">label</span> <span class="s">"hasBody"</span><span class="o">@</span><span class="ge">en</span> <span class="p">;</span>
+    <span class="nn">rdfs</span><span class="p">:</span><span class="nt">comment</span> <span class="s">"""The relationship between oa:Annotation and body. The body is somehow "about" the oa:hasTarget of the annotation.</span>
 
 <span class="s">The Body may be of any media type, and contain any type of content. The Body SHOULD be identified by HTTP URIs unless they are embedded within the Annotation.</span>
 
 <span class="s">Embedded bodies SHOULD be instances of cnt:ContentAsText and embed their content with cnt:chars. They SHOULD declare their media type with dc:format, and MAY indicate their language using dc:language and a RFC-3066 language tag. </span>
 
-<span class="s">There is no OA class provided for &quot;Body&quot; as a body might be a target of a different annotation. However, there SHOULD be 1 or more content-based classes associated with the body resources of an Annotation, and the dctypes: vocabulary is recommended for this purpose, for instance dctypes:Text to declare textual content.</span>
-<span class="s">&quot;&quot;&quot;@en ;</span>
-<span class="s">    rdfs:domain oa:Annotation ;</span>
-<span class="s">    rdfs:isDefinedBy oa: .</span>
+<span class="s">There is no OA class provided for "Body" as a body might be a target of a different annotation. However, there SHOULD be 1 or more content-based classes associated with the body resources of an Annotation, and the dctypes: vocabulary is recommended for this purpose, for instance dctypes:Text to declare textual content.</span>
+<span class="s">"""</span><span class="o">@</span><span class="ge">en</span> <span class="p">;</span>
+    <span class="nn">rdfs</span><span class="p">:</span><span class="nt">domain</span> <span class="nn">oa</span><span class="p">:</span><span class="nt">Annotation</span> <span class="p">;</span>
+    <span class="nn">rdfs</span><span class="p">:</span><span class="nt">isDefinedBy</span> <span class="nn">oa</span><span class="p">:</span> <span class="p">.</span>
 </pre></div>
 
 
@@ -743,7 +764,7 @@ span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 
   <footer class="footer">
     <div class="container">
     
-      <p class="text-muted">Documentation automatically generated on Wed, 16 Nov 2022 14:21:30 with <a href="http://lambdamusic.github.io/Ontospy/">Ontospy</a> (v2.1.0)</p>
+      <p class="text-muted">Documentation automatically generated on Mon, 12 Oct 2026 17:34:01 with <a href="http://lambdamusic.github.io/Ontospy/">Ontospy</a> (v2.4)</p>
 
     
     </div>
@@ -804,7 +825,7 @@ $('#search-input-sidebar').keyup(function() {
 
     $(document).ready(function (){
       $('#sidebar-wrapper').animate({
-          scrollTop: $("#sd_3315").offset().top - 100
+          scrollTop: $("#sd_3284").offset().top - 100
       }, 100);
     });
 
