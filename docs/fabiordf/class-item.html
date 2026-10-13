@@ -2662,15 +2662,15 @@ Typically, rights information includes a statement about various property rights
     <span class="nn">rdfs</span><span class="p">:</span><span class="nt">label</span> <span class="s">"item"</span><span class="o">@</span><span class="ge">en</span> <span class="p">;</span>
     <span class="nn">dc</span><span class="p">:</span><span class="nt">description</span> <span class="s">"A fabio:Item can only have part or be part of another fabio:Item. Moreover, it can be an exemplar only of a fabio:Manifestation."</span><span class="o">@</span><span class="ge">en</span> <span class="p">;</span>
     <span class="nn">rdfs</span><span class="p">:</span><span class="nt">comment</span> <span class="s">"A subclass of FRBR item, restricted to exemplars of fabio:Manifestations.  An example of a fabio:Item is a printed copy of a journal article on your desk, or a PDF file of that article that you purchased from a publisher and that now resides in digital form on your computer hard drive.  "</span><span class="o">@</span><span class="ge">en</span> <span class="p">;</span>
-    <span class="nn">rdfs</span><span class="p">:</span><span class="nt">subClassOf</span> <span class="p">[</span> <span class="kt">a</span> <span class="nn">owl</span><span class="p">:</span><span class="nt">Restriction</span> <span class="p">;</span>
-            <span class="nn">owl</span><span class="p">:</span><span class="nt">allValuesFrom</span> <span class="p">:</span><span class="nt">Manifestation</span> <span class="p">;</span>
-            <span class="nn">owl</span><span class="p">:</span><span class="nt">onProperty</span> <span class="nn">frbr</span><span class="p">:</span><span class="nt">exemplarOf</span> <span class="p">],</span>
-        <span class="p">[</span> <span class="kt">a</span> <span class="nn">owl</span><span class="p">:</span><span class="nt">Class</span> <span class="p">;</span>
+    <span class="nn">rdfs</span><span class="p">:</span><span class="nt">subClassOf</span> <span class="p">[</span> <span class="kt">a</span> <span class="nn">owl</span><span class="p">:</span><span class="nt">Class</span> <span class="p">;</span>
             <span class="nn">owl</span><span class="p">:</span><span class="nt">intersectionOf</span> <span class="p">(</span> <span class="p">[</span> <span class="kt">a</span> <span class="nn">owl</span><span class="p">:</span><span class="nt">Restriction</span> <span class="p">;</span>
                         <span class="nn">owl</span><span class="p">:</span><span class="nt">allValuesFrom</span> <span class="nn">frbr</span><span class="p">:</span><span class="nt">Item</span> <span class="p">;</span>
                         <span class="nn">owl</span><span class="p">:</span><span class="nt">onProperty</span> <span class="nn">frbr</span><span class="p">:</span><span class="nt">part</span> <span class="p">]</span> <span class="p">[</span> <span class="kt">a</span> <span class="nn">owl</span><span class="p">:</span><span class="nt">Restriction</span> <span class="p">;</span>
                         <span class="nn">owl</span><span class="p">:</span><span class="nt">allValuesFrom</span> <span class="nn">frbr</span><span class="p">:</span><span class="nt">Item</span> <span class="p">;</span>
                         <span class="nn">owl</span><span class="p">:</span><span class="nt">onProperty</span> <span class="nn">frbr</span><span class="p">:</span><span class="nt">partOf</span> <span class="p">]</span> <span class="p">)</span> <span class="p">],</span>
+        <span class="p">[</span> <span class="kt">a</span> <span class="nn">owl</span><span class="p">:</span><span class="nt">Restriction</span> <span class="p">;</span>
+            <span class="nn">owl</span><span class="p">:</span><span class="nt">allValuesFrom</span> <span class="p">:</span><span class="nt">Manifestation</span> <span class="p">;</span>
+            <span class="nn">owl</span><span class="p">:</span><span class="nt">onProperty</span> <span class="nn">frbr</span><span class="p">:</span><span class="nt">exemplarOf</span> <span class="p">],</span>
         <span class="nn">frbr</span><span class="p">:</span><span class="nt">Item</span> <span class="p">.</span>
 </pre></div>
 
@@ -2701,7 +2701,7 @@ Typically, rights information includes a statement about various property rights
   <footer class="footer">
     <div class="container">
     
-      <p class="text-muted">Documentation automatically generated on Tue, 13 Oct 2026 20:33:13 with <a href="http://lambdamusic.github.io/Ontospy/">Ontospy</a> (v2.5)</p>
+      <p class="text-muted">Documentation automatically generated on Tue, 13 Oct 2026 20:50:58 with <a href="http://lambdamusic.github.io/Ontospy/">Ontospy</a> (v2.5)</p>
 
     
     </div>

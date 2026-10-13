@@ -976,6 +976,12 @@ span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 
 <span class="nn">dol</span><span class="p">:</span><span class="nt">perdurant</span> <span class="kt">a</span> <span class="nn">owl</span><span class="p">:</span><span class="nt">Class</span> <span class="p">;</span>
     <span class="nn">rdfs</span><span class="p">:</span><span class="nt">comment</span> <span class="s">"Perdurants (AKA occurrences) comprise what are variously called events, processes, phenomena, activities and states. They can have temporal parts or spatial parts. For instance, the first movement of (an execution of) a symphony is a temporal part of the symphony. On the other hand, the play performed by the left side of the orchestra is a spatial part. In both cases, these parts are occurrences themselves. We assume that objects cannot be parts of occurrences, but rather they participate in them. Perdurants extend in time by accumulating different temporal parts, so that, at any time they are present, they are only partially present, in  the sense that some of their proper temporal parts (e.g., their previous or future phases) may be not present. E.g., the piece of paper you are reading now is wholly present, while some temporal parts of your reading are not present yet, or any more. Philosophers say that endurants are entities that are in time, while lacking temporal parts (so to speak, all their parts flow with them in time). Perdurants, on the contrary, are entities that happen in time, and can have temporal parts (all their parts are fixed in time)."</span><span class="p">^^</span><span class="nn">xsd</span><span class="p">:</span><span class="nt">string</span> <span class="p">;</span>
     <span class="nn">rdfs</span><span class="p">:</span><span class="nt">subClassOf</span> <span class="p">[</span> <span class="kt">a</span> <span class="nn">owl</span><span class="p">:</span><span class="nt">Restriction</span> <span class="p">;</span>
+            <span class="nn">owl</span><span class="p">:</span><span class="nt">onProperty</span> <span class="nn">dol</span><span class="p">:</span><span class="nt">participant</span> <span class="p">;</span>
+            <span class="nn">owl</span><span class="p">:</span><span class="nt">someValuesFrom</span> <span class="nn">dol</span><span class="p">:</span><span class="nt">endurant</span> <span class="p">],</span>
+        <span class="p">[</span> <span class="kt">a</span> <span class="nn">owl</span><span class="p">:</span><span class="nt">Restriction</span> <span class="p">;</span>
+            <span class="nn">owl</span><span class="p">:</span><span class="nt">onProperty</span> <span class="nn">dol</span><span class="p">:</span><span class="nt">has-quality</span> <span class="p">;</span>
+            <span class="nn">owl</span><span class="p">:</span><span class="nt">someValuesFrom</span> <span class="nn">dol</span><span class="p">:</span><span class="nt">temporal-location_q</span> <span class="p">],</span>
+        <span class="p">[</span> <span class="kt">a</span> <span class="nn">owl</span><span class="p">:</span><span class="nt">Restriction</span> <span class="p">;</span>
             <span class="nn">owl</span><span class="p">:</span><span class="nt">allValuesFrom</span> <span class="nn">dol</span><span class="p">:</span><span class="nt">perdurant</span> <span class="p">;</span>
             <span class="nn">owl</span><span class="p">:</span><span class="nt">onProperty</span> <span class="nn">dol</span><span class="p">:</span><span class="nt">part</span> <span class="p">],</span>
         <span class="p">[</span> <span class="kt">a</span> <span class="nn">owl</span><span class="p">:</span><span class="nt">Restriction</span> <span class="p">;</span>
@@ -984,12 +990,6 @@ span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 
         <span class="p">[</span> <span class="kt">a</span> <span class="nn">owl</span><span class="p">:</span><span class="nt">Restriction</span> <span class="p">;</span>
             <span class="nn">owl</span><span class="p">:</span><span class="nt">allValuesFrom</span> <span class="nn">dol</span><span class="p">:</span><span class="nt">perdurant</span> <span class="p">;</span>
             <span class="nn">owl</span><span class="p">:</span><span class="nt">onProperty</span> <span class="nn">dol</span><span class="p">:</span><span class="nt">specific-constant-constituent</span> <span class="p">],</span>
-        <span class="p">[</span> <span class="kt">a</span> <span class="nn">owl</span><span class="p">:</span><span class="nt">Restriction</span> <span class="p">;</span>
-            <span class="nn">owl</span><span class="p">:</span><span class="nt">onProperty</span> <span class="nn">dol</span><span class="p">:</span><span class="nt">participant</span> <span class="p">;</span>
-            <span class="nn">owl</span><span class="p">:</span><span class="nt">someValuesFrom</span> <span class="nn">dol</span><span class="p">:</span><span class="nt">endurant</span> <span class="p">],</span>
-        <span class="p">[</span> <span class="kt">a</span> <span class="nn">owl</span><span class="p">:</span><span class="nt">Restriction</span> <span class="p">;</span>
-            <span class="nn">owl</span><span class="p">:</span><span class="nt">onProperty</span> <span class="nn">dol</span><span class="p">:</span><span class="nt">has-quality</span> <span class="p">;</span>
-            <span class="nn">owl</span><span class="p">:</span><span class="nt">someValuesFrom</span> <span class="nn">dol</span><span class="p">:</span><span class="nt">temporal-location_q</span> <span class="p">],</span>
         <span class="nn">dol</span><span class="p">:</span><span class="nt">spatio-temporal-particular</span> <span class="p">;</span>
     <span class="nn">owl</span><span class="p">:</span><span class="nt">disjointWith</span> <span class="nn">dol</span><span class="p">:</span><span class="nt">quality</span> <span class="p">.</span>
 </pre></div>
@@ -1021,7 +1021,7 @@ span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 
   <footer class="footer">
     <div class="container">
     
-      <p class="text-muted">Documentation automatically generated on Tue, 13 Oct 2026 20:33:11 with <a href="http://lambdamusic.github.io/Ontospy/">Ontospy</a> (v2.5)</p>
+      <p class="text-muted">Documentation automatically generated on Tue, 13 Oct 2026 20:50:56 with <a href="http://lambdamusic.github.io/Ontospy/">Ontospy</a> (v2.5)</p>
 
     
     </div>
