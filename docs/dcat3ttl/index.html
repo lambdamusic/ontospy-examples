@@ -1,0 +1,1645 @@
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="../static/custom/favicon.ico">
+
+	
+		<title>Ontospy > http://www.w3.org/ns/dcat</title>
+	
+
+    <!-- Bootstrap core CSS -->
+    <!-- <link href="../static/libs/bootstrap-3_3_7-dist/css/bootstrap.min.css" rel="stylesheet">  -->
+    <!-- Bootswatch:  -->
+    <!-- cerulean  | cyborg |  flatly |  lumen |  sandstone |   spacelab  |  yeti | cosmo |  darkly |  paper | simplex | superhero |  journal | readable  |   slate |  united -->
+    <link href="../static/libs/bootswatch3_2/readable/bootstrap.min.css" rel="stylesheet">
+    <link href="../static/custom/css/simple-sidebar.css" rel="stylesheet">
+    <link href="../static/custom/css/familytree.css" rel="stylesheet">
+    <link href="../static/custom/css/tabletree.css" rel="stylesheet">
+
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <link href="../static/libs/bootstrap-3_3_7-dist/css/ie10-viewport-bug-workaround.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="../static/custom/css/sticky-footer-navbar.css" rel="stylesheet">
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+<style type="text/css">
+
+  .lead-plus {font-size: 26.5px;}
+  .label-xs {font-size: 10px;}
+  .label-dark {background: #2c3e50; color: white; padding: 1px;}
+  .margin50 {margin-top: 50px; margin-bottom: 50px;}
+
+  .namespaces {background: #ced2d6; width: 100%;}
+
+
+  /*so that the d3plus tooltip panel doesnt cover the top banner*/
+  .navbar {z-index: 3000;}
+
+
+  .panel-body dt {margin-top: 5px;}
+  .page-header  {margin-top: 30px;}
+  #wrapper {margin-top: 50px;}
+
+  .implementation-panel {
+    overflow: auto;
+    /*max-height: 500px;*/
+  }
+
+  tr.table-classproperties {
+      /*background: #f5f5f5;*/
+  }
+  tr.table-classproperties th {
+      font-size: 80%;
+      font-weight: normal;
+  }
+
+
+  tr.table-inheritanceinfo {
+      /*background: #f5f5f5;*/
+      text-align: left;
+  }
+
+  tr.table-inheritanceinfo th {
+      font-size: 90%;
+      font-weight: normal;
+  }
+
+
+  .breadcrumb {
+    margin-top: 20px;
+    margin-bottom: 40px;
+  }
+
+  .breadcrumb a {
+      text-transform: capitalize;
+  }
+  .breadcrumb li {
+      text-transform: none;
+      /*so to catch the uri @todo improve*/
+  }
+
+
+  .fromclass_link {
+    /*color: white;
+    text-decoration: underline;*/
+    /*background: #1c1e52;*/
+    color: inherit;
+    /*padding: 1px;*/
+  }
+
+		.mythumbnail {
+			display: block;
+			padding: 13px;
+			margin-bottom: 30px;
+			line-height: 13.428571;
+			background-color: #fff;
+			border: 1px solid #ddd;
+			border-radius: 30px;
+		}
+
+		.mythumbnail:hover {
+			background: lightyellow;
+			text-decoration: none;
+		}
+
+
+		.img-container{
+		    height:100%;
+			overflow: hidden;
+		    max-height:200px;
+			padding: 10px;
+/*			margin: 20px 0px 20px 0px;*/
+			border: 1em #EAE5E5 solid;
+		}
+
+		.img-container:hover {
+			border: 1px grey solid;
+		}
+
+		img{
+/*		    height:100% !important;*/
+		}
+
+
+		.icon-xxs {
+			font-size: 15px;
+		}
+
+
+    /* dropdown open on hover */
+
+    @media (min-width: 979px) {
+      ul.nav li.dropdown:hover > ul.dropdown-menu {
+        display: block;
+      }
+    }
+
+
+
+/*pygments css*/
+
+
+/*overloading this class from pygments*/
+.highlight {
+  overflow: auto;
+}
+
+
+
+
+
+
+
+
+</style>
+
+
+
+
+
+  </head>
+
+  <body>
+
+
+
+    
+
+    
+<!-- Fixed navbar -->
+<nav class="navbar navbar-default navbar-fixed-top">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+
+      <a class="navbar-brand" id="menu-toggle" title="Toggle sidebar">
+        
+        <span class="glyphicon glyphicon-align-left" aria-hidden="true"></span>
+      </a>
+    </div>
+    <div id="navbar" class="collapse navbar-collapse">
+      <ul class="nav navbar-nav">
+        <li class="active"><a href="index.html"><code style="font-size: 115%;">http://www.w3.org/ns/dcat</code></a></li>
+
+        <li  ><a href="entities-az.html">Entities A-Z</a></li>
+        
+        <li ><a href="entities-tree-classes.html">Classes</a></li>
+        
+        
+        <li ><a href="entities-tree-properties.html">Properties</a></li>
+        
+        
+        
+        
+        <li  ><a href="statistics.html">Statistics</a></li>
+
+
+
+
+
+      </ul>
+      
+    </div><!--/.nav-collapse -->
+
+  </div>
+</nav>
+
+    
+
+
+
+
+
+
+
+
+
+<div id="wrapper" class="toggled">
+
+
+    
+
+    
+        
+<!-- Sidebar -->
+<div id="sidebar-wrapper">
+    <ul class="sidebar-nav">
+
+
+        <li>
+          <input style="margin-top: 30px;  margin-bottom: 20px;" type="text" id="search-input-sidebar" name="" value="" placeholder="Type to search">
+        </li>
+
+        
+          <li class="-second-level" id="sd_classes"><a href="entities-tree-classes.html">Classes (16)</a>
+          </li>
+
+            
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_748"><a  href="class-dcatcatalog.html">dcat:Catalog</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_749"><a  href="class-dcatcatalogrecord.html">dcat:CatalogRecord</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_750"><a  href="class-dcatdataservice.html">dcat:DataService</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_751"><a  href="class-dcatdataset.html">dcat:Dataset</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_752"><a  href="class-dcatdatasetseries.html">dcat:DatasetSeries</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_753"><a  href="class-dcatdistribution.html">dcat:Distribution</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_754"><a  href="class-dcatrelationship.html">dcat:Relationship</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_755"><a  href="class-dcatresource.html">dcat:Resource</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_756"><a  href="class-dcatrole.html">dcat:Role</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_743"><a  href="class-dctermslocation.html">dcterms:Location</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_744"><a  href="class-dctermsmediatype.html">dcterms:MediaType</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_745"><a  href="class-dctermsperiodoftime.html">dcterms:PeriodOfTime</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_742"><a  href="class-dctypeservice.html">dctype:Service</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_757"><a  href="class-foafdocument.html">foaf:Document</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_746"><a  href="class-skosconcept.html">skos:Concept</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_747"><a  href="class-vcardkind.html">vcard:Kind</a></li>
+          
+        
+
+        
+            <li class="-second-level" id="sd_properties"><a  href="entities-tree-properties.html">Properties (39)</a>
+            </li>
+
+            
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_758"><a   href="prop-dcataccessservice.html">dcat:accessService</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_759"><a   href="prop-dcataccessurl.html">dcat:accessURL</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_760"><a   href="prop-dcatbbox.html">dcat:bbox</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_761"><a   href="prop-dcatbytesize.html">dcat:byteSize</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_762"><a   href="prop-dcatcatalog.html">dcat:catalog</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_763"><a   href="prop-dcatcentroid.html">dcat:centroid</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_764"><a   href="prop-dcatcompressformat.html">dcat:compressFormat</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_765"><a   href="prop-dcatcontactpoint.html">dcat:contactPoint</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_766"><a   href="prop-dcatdataset.html">dcat:dataset</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_767"><a   href="prop-dcatdistribution.html">dcat:distribution</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_768"><a   href="prop-dcatdownloadurl.html">dcat:downloadURL</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_769"><a   href="prop-dcatenddate.html">dcat:endDate</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_770"><a   href="prop-dcatendpointdescription.html">dcat:endpointDescription</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_771"><a   href="prop-dcatendpointurl.html">dcat:endpointURL</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_772"><a   href="prop-dcatfirst.html">dcat:first</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_773"><a   href="prop-dcathadrole.html">dcat:hadRole</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_774"><a   href="prop-dcathascurrentversion.html">dcat:hasCurrentVersion</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_775"><a   href="prop-dcathasversion.html">dcat:hasVersion</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_776"><a   href="prop-dcatinseries.html">dcat:inSeries</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_777"><a   href="prop-dcatkeyword.html">dcat:keyword</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_778"><a   href="prop-dcatlandingpage.html">dcat:landingPage</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_779"><a   href="prop-dcatlast.html">dcat:last</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_780"><a   href="prop-dcatmediatype.html">dcat:mediaType</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_781"><a   href="prop-dcatpackageformat.html">dcat:packageFormat</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_782"><a   href="prop-dcatprev.html">dcat:prev</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_783"><a   href="prop-dcatpreviousversion.html">dcat:previousVersion</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_784"><a   href="prop-dcatqualifiedrelation.html">dcat:qualifiedRelation</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_785"><a   href="prop-dcatrecord.html">dcat:record</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_786"><a   href="prop-dcatresource.html">dcat:resource</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_787"><a   href="prop-dcatservesdataset.html">dcat:servesDataset</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_788"><a   href="prop-dcatservice.html">dcat:service</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_789"><a   href="prop-dcatspatialresolutioninmeters.html">dcat:spatialResolutionInMeters</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_790"><a   href="prop-dcatstartdate.html">dcat:startDate</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_791"><a   href="prop-dcattemporalresolution.html">dcat:temporalResolution</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_792"><a   href="prop-dcattheme.html">dcat:theme</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_793"><a   href="prop-dcatthemetaxonomy.html">dcat:themeTaxonomy</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_794"><a   href="prop-dcatversion.html">dcat:version</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_795"><a   href="prop-foafhomepage.html">foaf:homepage</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_796"><a   href="prop-foafprimarytopic.html">foaf:primaryTopic</a></li>
+          
+
+        
+
+        
+
+
+        
+
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+
+    </ul>
+
+</div>
+
+
+<!-- /#sidebar-wrapper -->
+    
+
+
+
+
+    <!-- Begin page content -->
+    <div class="container" id="page-content-wrapper">
+
+      
+
+	
+
+
+    
+        
+
+
+<ol class="breadcrumb">
+  <li class="active">
+    Home
+  </li>
+</ol>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+
+
+
+        <div class="page-header">
+
+            <h3>Home
+
+            </h3>
+
+        </div>
+
+
+
+
+      <div class="row">
+
+        
+        <div class="col-md-6">
+
+           
+
+           
+
+           <div class="row"><div class="col-md-12">
+              <div class="panel panel-default">
+            <div class="panel-heading">
+              <h3 class="panel-title">Ontology Metadata</h3>
+            </div>
+            <div class="panel-body">
+              
+              <dl>
+                <dt>URI</dt>
+                <dd><code>http://www.w3.org/ns/dcat</code></dd>
+              </dl>
+                
+                    <dl>
+                      
+                          
+                                <dt>adms:versionNotes</dt>
+                              
+                          
+                    <dd><p>Toto je aktualizovaná kopie slovníku DCAT 3, převzatá z https://www.w3.org/ns/dcat.ttl</p></dd>
+                    
+                          
+                                <dt>adms:versionNotes</dt>
+                              
+                          
+                    <dd><p>Dette er en opdateret kopi af DCAT 3 som er tilgænglig på https://www.w3.org/ns/dcat.ttl</p></dd>
+                    
+                          
+                                <dt>adms:versionNotes</dt>
+                              
+                          
+                    <dd><p>This is an updated copy of the DCAT 3 vocabulary, taken from https://www.w3.org/ns/dcat.ttl</p></dd>
+                    
+                          
+                                <dt>adms:versionNotes</dt>
+                              
+                          
+                    <dd><p>Esta es una copia del vocabulario DCAT 3 disponible en https://www.w3.org/ns/dcat.ttl</p></dd>
+                    
+                          
+                                <dt>adms:versionNotes</dt>
+                              
+                          
+                    <dd><p>Questa è una copia aggiornata del vocabolario DCAT 3 disponibile in https://www.w3.org/ns/dcat.ttl</p></dd>
+                    
+                          
+                                <dt>bibo:editor</dt>
+                              
+                          
+                    <dd><p>n563e67542d3546f597f33a638d15925ab1</p></dd>
+                    
+                          
+                                <dt>bibo:editor</dt>
+                              
+                          
+                    <dd><p>n563e67542d3546f597f33a638d15925ab2</p></dd>
+                    
+                          
+                                <dt>bibo:editor</dt>
+                              
+                          
+                    <dd><p>n563e67542d3546f597f33a638d15925ab3</p></dd>
+                    
+                          
+                                <dt>bibo:editor</dt>
+                              
+                          
+                    <dd><p>n563e67542d3546f597f33a638d15925ab5</p></dd>
+                    
+                          
+                                <dt>bibo:editor</dt>
+                              
+                          
+                    <dd><p>n563e67542d3546f597f33a638d15925ab7</p></dd>
+                    
+                          
+                                <dt>bibo:editor</dt>
+                              
+                          
+                    <dd><p>n563e67542d3546f597f33a638d15925ab8</p></dd>
+                    
+                          
+                                <dt>bibo:translator</dt>
+                              
+                          
+                    <dd><p>n563e67542d3546f597f33a638d15925ab10</p></dd>
+                    
+                          
+                                <dt>bibo:translator</dt>
+                              
+                          
+                    <dd><p>n563e67542d3546f597f33a638d15925ab11</p></dd>
+                    
+                          
+                                <dt>bibo:translator</dt>
+                              
+                          
+                    <dd><p>n563e67542d3546f597f33a638d15925ab13</p></dd>
+                    
+                          
+                                <dt>bibo:translator</dt>
+                              
+                          
+                    <dd><p>n563e67542d3546f597f33a638d15925ab14</p></dd>
+                    
+                          
+                                <dt>bibo:translator</dt>
+                              
+                          
+                    <dd><p>n563e67542d3546f597f33a638d15925ab9</p></dd>
+                    
+                          
+                                <dt>dcat:hasCurrentVersion</dt>
+                              
+                          
+                    <dd><a href="http://www.w3.org/ns/dcat3" target="_blank">http://www.w3.org/ns/dcat3</a></dd>
+                    
+                          
+                                <dt>dcat:hasVersion</dt>
+                              
+                          
+                    <dd><a href="http://www.w3.org/ns/dcat2" target="_blank">http://www.w3.org/ns/dcat2</a></dd>
+                    
+                          
+                                <dt>dcat:hasVersion</dt>
+                              
+                          
+                    <dd><a href="http://www.w3.org/ns/dcat2014" target="_blank">http://www.w3.org/ns/dcat2014</a></dd>
+                    
+                          
+                                <dt>dcat:hasVersion</dt>
+                              
+                          
+                    <dd><a href="http://www.w3.org/ns/dcat3" target="_blank">http://www.w3.org/ns/dcat3</a></dd>
+                    
+                          
+                                <dt>dcat:previousVersion</dt>
+                              
+                          
+                    <dd><a href="http://www.w3.org/ns/dcat2" target="_blank">http://www.w3.org/ns/dcat2</a></dd>
+                    
+                          
+                                <dt>dcat:version</dt>
+                              
+                          
+                    <dd><p>3</p></dd>
+                    
+                          
+                                <dt>dcterms:contributor</dt>
+                              
+                          
+                    <dd><p>n563e67542d3546f597f33a638d15925ab16</p></dd>
+                    
+                          
+                                <dt>dcterms:created</dt>
+                              
+                          
+                    <dd><p>2020-12-17</p></dd>
+                    
+                          
+                                <dt>dcterms:creator</dt>
+                              
+                          
+                    <dd><a href="https://www.w3.org/groups/wg/dx" target="_blank">https://www.w3.org/groups/wg/dx</a></dd>
+                    
+                          
+                                <dt>dcterms:description</dt>
+                              
+                          
+                    <dd><p>هي أنطولوجية تسهل تبادل البيانات بين مختلف الفهارس على الوب. استخدام هذه الأنطولوجية يساعد على اكتشاف قوائم  البيانات المنشورة على الوب و يمكن التطبيقات المختلفة من الاستفادة أتوماتيكيا من البيانات المتاحة من مختلف الفهارس.</p></dd>
+                    
+                          
+                                <dt>dcterms:description</dt>
+                              
+                          
+                    <dd><p>DCAT je RDF slovník navržený pro zprostředkování interoperability mezi datovými katalogy publikovanými na Webu. Poskytovatelé dat používáním slovníku DCAT pro popis datových sad v datových katalozích zvyšují jejich dohledatelnost a umožňují aplikacím konzumovat metadata z více katalogů. Dále je umožňena decentralizovaná publikace katalogů a federované dotazování na datové sady napříč katalogy. Agregovaná DCAT metadata mohou také sloužit jako průvodka umožňující digitální uchování informace. DCAT je definován na http://www.w3.org/TR/vocab-dcat/. Jakýkoliv nesoulad mezi odkazovaným dokumentem a tímto schématem je chybou v tomto schématu.</p></dd>
+                    
+                          
+                                <dt>dcterms:description</dt>
+                              
+                          
+                    <dd><p>DCAT er et RDF-vokabular som har til formål at understøtte interoperabilitet mellem datakataloger udgivet på nettet. Ved at anvende DCAT til at beskrive datasæt i datakataloger, kan udgivere øge findbarhed og gøre det gøre det lettere for applikationer at anvende metadata fra forskellige kataloger. Derudover understøttes decentraliseret udstilling af kataloger og fødererede datasætsøgninger på tværs af websider. Aggregerede DCAT-metadata kan fungere som fortegnelsesfiler der kan understøtte digital bevaring. DCAT er defineret på http://www.w3.org/TR/vocab-dcat/. Enhver forskel mellem det normative dokument og dette schema er en fejl i dette schema.</p></dd>
+                    
+                          
+                                <dt>dcterms:description</dt>
+                              
+                          
+                    <dd><p>Το DCAT είναι ένα RDF λεξιλόγιο που σχεδιάσθηκε για να κάνει εφικτή τη διαλειτουργικότητα μεταξύ καταλόγων δεδομένων στον Παγκόσμιο Ιστό. Χρησιμοποιώντας το DCAT για την περιγραφή συνόλων δεδομένων, οι εκδότες αυτών αυξάνουν την ανακαλυψιμότητα και επιτρέπουν στις εφαρμογές την εύκολη κατανάλωση μεταδεδομένων από πολλαπλούς καταλόγους. Επιπλέον, δίνει τη δυνατότητα για αποκεντρωμένη έκδοση και διάθεση καταλόγων και επιτρέπει δυνατότητες ενοποιημένης αναζήτησης μεταξύ διαφορετικών πηγών. Συγκεντρωτικά μεταδεδομένα που έχουν περιγραφεί με το DCAT μπορούν να χρησιμοποιηθούν σαν ένα δηλωτικό αρχείο (manifest file) ώστε να διευκολύνουν την ψηφιακή συντήρηση.</p></dd>
+                    
+                          
+                                <dt>dcterms:description</dt>
+                              
+                          
+                    <dd><p>DCAT is an RDF vocabulary designed to facilitate interoperability between data catalogs published on the Web. By using DCAT to describe datasets in data catalogs, publishers increase discoverability and enable applications easily to consume metadata from multiple catalogs. It further enables decentralized publishing of catalogs and facilitates federated dataset search across sites. Aggregated DCAT metadata can serve as a manifest file to facilitate digital preservation. DCAT is defined at http://www.w3.org/TR/vocab-dcat/. Any variance between that normative document and this schema is an error in this schema.</p></dd>
+                    
+                          
+                                <dt>dcterms:description</dt>
+                              
+                          
+                    <dd><p>DCAT es un vocabulario RDF diseñado para facilitar la interoperabilidad entre catálogos de datos publicados en la Web. Utilizando DCAT para describir datos disponibles en catálogos se aumenta la posibilidad de que sean descubiertos y se permite que las aplicaciones consuman fácilmente los metadatos de varios catálogos.</p></dd>
+                    
+                          
+                                <dt>dcterms:description</dt>
+                              
+                          
+                    <dd><p>DCAT est un vocabulaire développé pour faciliter l&#39;interopérabilité entre les jeux de données publiées sur le Web. En utilisant DCAT pour décrire les jeux de données dans les catalogues de données, les fournisseurs de données facilitent leur découverte et permettent que les applications consomment facilement les métadonnées de plusieurs catalogues. Il permet de plus la publication décentralisée des catalogues et facilite la recherche fédérée des données entre plusieurs sites. Les métadonnées DCAT aggrégées peuvent servir comme un manifeste pour faciliter la préservation digitale des ressources. DCAT est définie à l&#39;adresse http://www.w3.org/TR/vocab-dcat/. Toute différence entre ce document normatif et le présent vocabulaire est une erreur dans le vocabulaire.</p></dd>
+                    
+                          
+                                <dt>dcterms:description</dt>
+                              
+                          
+                    <dd><p>DCAT è un vocabolario RDF progettato per facilitare l&#39;interoperabilità tra i cataloghi di dati pubblicati nel Web. Utilizzando DCAT per descrivere i dataset nei cataloghi di dati, i fornitori migliorano la capacità di individuazione dei dati e abilitano le  applicazioni al consumo di dati provenienti da cataloghi differenti. DCAT permette di decentralizzare la pubblicazione di cataloghi e facilita la ricerca federata dei dataset. L&#39;aggregazione dei metadati federati può fungere da file manifesto per facilitare la conservazione digitale. DCAT è definito all&#39;indirizzo http://www.w3.org/TR/vocab-dcat/. Qualsiasi scostamento tra tale definizione normativa e questo schema è da considerarsi un errore di questo schema.</p></dd>
+                    
+                          
+                                <dt>dcterms:description</dt>
+                              
+                          
+                    <dd><p>DCATは、ウェブ上で公開されたデータ・カタログ間の相互運用性の促進を目的とするRDFの語彙です。このドキュメントでは、その利用のために、スキーマを定義し、例を提供します。データ・カタログ内のデータセットを記述するためにDCATを用いると、公開者が、発見可能性を増加させ、アプリケーションが複数のカタログのメタデータを容易に利用できるようになります。さらに、カタログの分散公開を可能にし、複数のサイトにまたがるデータセットの統合検索を促進します。集約されたDCATメタデータは、ディジタル保存を促進するためのマニフェスト・ファイルとして使用できます。</p></dd>
+                    
+                          
+                                <dt>dcterms:license</dt>
+                              
+                          
+                    <dd><a href="https://creativecommons.org/licenses/by/4.0/" target="_blank">https://creativecommons.org/licenses/by/4.0/</a></dd>
+                    
+                          
+                                <dt>dcterms:modified</dt>
+                              
+                          
+                    <dd><p>2020-11-30</p></dd>
+                    
+                          
+                                <dt>dcterms:modified</dt>
+                              
+                          
+                    <dd><p>2021-03-09</p></dd>
+                    
+                          
+                                <dt>dcterms:modified</dt>
+                              
+                          
+                    <dd><p>2021-04-08</p></dd>
+                    
+                          
+                                <dt>dcterms:modified</dt>
+                              
+                          
+                    <dd><p>2021-06-23</p></dd>
+                    
+                          
+                                <dt>dcterms:modified</dt>
+                              
+                          
+                    <dd><p>2021-09-27</p></dd>
+                    
+                          
+                                <dt>dcterms:modified</dt>
+                              
+                          
+                    <dd><p>2022-03-22</p></dd>
+                    
+                          
+                                <dt>dcterms:modified</dt>
+                              
+                          
+                    <dd><p>2022-05-23</p></dd>
+                    
+                          
+                                <dt>dcterms:modified</dt>
+                              
+                          
+                    <dd><p>2023-01-05</p></dd>
+                    
+                          
+                                <dt>dcterms:publisher</dt>
+                              
+                          
+                    <dd><p>n563e67542d3546f597f33a638d15925ab17</p></dd>
+                    
+                          
+                                <dt>dcterms:title</dt>
+                              
+                          
+                    <dd><p>أنطولوجية فهارس قوائم البيانات</p></dd>
+                    
+                          
+                                <dt>dcterms:title</dt>
+                              
+                          
+                    <dd><p>Slovník pro datové katalogy</p></dd>
+                    
+                          
+                                <dt>dcterms:title</dt>
+                              
+                          
+                    <dd><p>Datakatalogvokabular</p></dd>
+                    
+                          
+                                <dt>dcterms:title</dt>
+                              
+                          
+                    <dd><p>Το λεξιλόγιο των καταλόγων δεδομένων</p></dd>
+                    
+                          
+                                <dt>dcterms:title</dt>
+                              
+                          
+                    <dd><p>The data catalog vocabulary</p></dd>
+                    
+                          
+                                <dt>dcterms:title</dt>
+                              
+                          
+                    <dd><p>El vocabulario de catálogo de datos</p></dd>
+                    
+                          
+                                <dt>dcterms:title</dt>
+                              
+                          
+                    <dd><p>Le vocabulaire des catalogues de données</p></dd>
+                    
+                          
+                                <dt>dcterms:title</dt>
+                              
+                          
+                    <dd><p>Il vocabolario del catalogo dei dati</p></dd>
+                    
+                          
+                                <dt>dcterms:title</dt>
+                              
+                          
+                    <dd><p>データ・カタログ語彙（DCAT）</p></dd>
+                    
+                          
+                                <dt>foaf:depiction</dt>
+                              
+                          
+                    <dd><a href="https://www.w3.org/TR/vocab-dcat-3/images/dcat-all-attributes.svg" target="_blank">https://www.w3.org/TR/vocab-dcat-3/images/dcat-all-attributes.svg</a></dd>
+                    
+                          
+                                <dt>owl:backwardCompatibleWith</dt>
+                              
+                          
+                    <dd><a href="http://www.w3.org/ns/dcat2" target="_blank">http://www.w3.org/ns/dcat2</a></dd>
+                    
+                          
+                                <dt>owl:backwardCompatibleWith</dt>
+                              
+                          
+                    <dd><a href="http://www.w3.org/ns/dcat2014" target="_blank">http://www.w3.org/ns/dcat2014</a></dd>
+                    
+                          
+                                <dt>owl:imports</dt>
+                              
+                          
+                    <dd><a href="http://purl.org/dc/terms/" target="_blank">http://purl.org/dc/terms/</a></dd>
+                    
+                          
+                                <dt>owl:imports</dt>
+                              
+                          
+                    <dd><a href="http://www.w3.org/2004/02/skos/core" target="_blank">http://www.w3.org/2004/02/skos/core</a></dd>
+                    
+                          
+                                <dt>owl:imports</dt>
+                              
+                          
+                    <dd><a href="http://www.w3.org/ns/prov-o#" target="_blank">http://www.w3.org/ns/prov-o#</a></dd>
+                    
+                          
+                                <dt>owl:priorVersion</dt>
+                              
+                          
+                    <dd><a href="http://www.w3.org/ns/dcat2" target="_blank">http://www.w3.org/ns/dcat2</a></dd>
+                    
+                          
+                                <dt>owl:versionIRI</dt>
+                              
+                          
+                    <dd><a href="http://www.w3.org/ns/dcat3" target="_blank">http://www.w3.org/ns/dcat3</a></dd>
+                    
+                          
+                                <dt>owl:versionInfo</dt>
+                              
+                          
+                    <dd><p>3</p></dd>
+                    
+                          
+                                <dt>rdf:type</dt>
+                              
+                          
+                    <dd><a href="http://www.w3.org/2002/07/owl#Ontology" target="_blank">http://www.w3.org/2002/07/owl#Ontology</a></dd>
+                    
+                          
+                                <dt>rdfs:comment</dt>
+                              
+                          
+                    <dd><p>هي أنطولوجية تسهل تبادل البيانات بين مختلف الفهارس على الوب. استخدام هذه الأنطولوجية يساعد على اكتشاف قوائم  البيانات المنشورة على الوب و يمكن التطبيقات المختلفة من الاستفادة أتوماتيكيا من البيانات المتاحة من مختلف الفهارس.</p></dd>
+                    
+                          
+                                <dt>rdfs:comment</dt>
+                              
+                          
+                    <dd><p>DCAT je RDF slovník navržený pro zprostředkování interoperability mezi datovými katalogy publikovanými na Webu. Poskytovatelé dat používáním slovníku DCAT pro popis datových sad v datových katalozích zvyšují jejich dohledatelnost a umožňují aplikacím konzumovat metadata z více katalogů. Dále je umožňena decentralizovaná publikace katalogů a federované dotazování na datové sady napříč katalogy. Agregovaná DCAT metadata mohou také sloužit jako průvodka umožňující digitální uchování informace. DCAT je definován na http://www.w3.org/TR/vocab-dcat/. Jakýkoliv nesoulad mezi odkazovaným dokumentem a tímto schématem je chybou v tomto schématu.</p></dd>
+                    
+                          
+                                <dt>rdfs:comment</dt>
+                              
+                          
+                    <dd><p>DCAT er et RDF-vokabular som har til formål at understøtte interoperabilitet mellem datakataloger udgivet på nettet. Ved at anvende DCAT til at beskrive datasæt i datakataloger, kan udgivere øge findbarhed og gøre det gøre det lettere for applikationer at anvende metadata fra forskellige kataloger. Derudover understøttes decentraliseret udstilling af kataloger og fødererede datasætsøgninger på tværs af websider. Aggregerede DCAT-metadata kan fungere som fortegnelsesfiler der kan understøtte digital bevaring. DCAT er defineret på http://www.w3.org/TR/vocab-dcat/. Enhver forskel mellem det normative dokument og dette schema er en fejl i dette schema.</p></dd>
+                    
+                          
+                                <dt>rdfs:comment</dt>
+                              
+                          
+                    <dd><p>Το DCAT είναι ένα RDF λεξιλόγιο που σχεδιάσθηκε για να κάνει εφικτή τη διαλειτουργικότητα μεταξύ καταλόγων δεδομένων στον Παγκόσμιο Ιστό. Χρησιμοποιώντας το DCAT για την περιγραφή συνόλων δεδομένων, οι εκδότες αυτών αυξάνουν την ανακαλυψιμότητα και επιτρέπουν στις εφαρμογές την εύκολη κατανάλωση μεταδεδομένων από πολλαπλούς καταλόγους. Επιπλέον, δίνει τη δυνατότητα για αποκεντρωμένη έκδοση και διάθεση καταλόγων και επιτρέπει δυνατότητες ενοποιημένης αναζήτησης μεταξύ διαφορετικών πηγών. Συγκεντρωτικά μεταδεδομένα που έχουν περιγραφεί με το DCAT μπορούν να χρησιμοποιηθούν σαν ένα δηλωτικό αρχείο (manifest file) ώστε να διευκολύνουν την ψηφιακή συντήρηση.</p></dd>
+                    
+                          
+                                <dt>rdfs:comment</dt>
+                              
+                          
+                    <dd><p>DCAT is an RDF vocabulary designed to facilitate interoperability between data catalogs published on the Web. By using DCAT to describe datasets in data catalogs, publishers increase discoverability and enable applications easily to consume metadata from multiple catalogs. It further enables decentralized publishing of catalogs and facilitates federated dataset search across sites. Aggregated DCAT metadata can serve as a manifest file to facilitate digital preservation. DCAT is defined at http://www.w3.org/TR/vocab-dcat/. Any variance between that normative document and this schema is an error in this schema.</p></dd>
+                    
+                          
+                                <dt>rdfs:comment</dt>
+                              
+                          
+                    <dd><p>DCAT es un vocabulario RDF diseñado para facilitar la interoperabilidad entre catálogos de datos publicados en la Web. Utilizando DCAT para describir datos disponibles en catálogos se aumenta la posibilidad de que sean descubiertos y se permite que las aplicaciones consuman fácilmente los metadatos de varios catálogos.</p></dd>
+                    
+                          
+                                <dt>rdfs:comment</dt>
+                              
+                          
+                    <dd><p>DCAT est un vocabulaire développé pour faciliter l&#39;interopérabilité entre les jeux de données publiées sur le Web. En utilisant DCAT pour décrire les jeux de données dans les catalogues de données, les fournisseurs de données facilitent leur découverte et permettent que les applications consomment facilement les métadonnées de plusieurs catalogues. Il permet de plus la publication décentralisée des catalogues et facilite la recherche fédérée des données entre plusieurs sites. Les métadonnées DCAT aggrégées peuvent servir comme un manifeste pour faciliter la préservation digitale des ressources. DCAT est définie à l&#39;adresse http://www.w3.org/TR/vocab-dcat/. Toute différence entre ce document normatif et le présent vocabulaire est une erreur dans le vocabulaire.</p></dd>
+                    
+                          
+                                <dt>rdfs:comment</dt>
+                              
+                          
+                    <dd><p>DCAT è un vocabolario RDF progettato per facilitare l&#39;interoperabilità tra i cataloghi di dati pubblicati nel Web. Utilizzando DCAT per descrivere i dataset nei cataloghi di dati, i fornitori migliorano la capacità di individuazione dei dati e abilitano le  applicazioni al consumo di dati provenienti da cataloghi differenti. DCAT permette di decentralizzare la pubblicazione di cataloghi e facilita la ricerca federata dei dataset. L&#39;aggregazione dei metadati federati può fungere da file manifesto per facilitare la conservazione digitale. DCAT è definito all&#39;indirizzo http://www.w3.org/TR/vocab-dcat/. Qualsiasi scostamento tra tale definizione normativa e questo schema è da considerarsi un errore di questo schema.</p></dd>
+                    
+                          
+                                <dt>rdfs:comment</dt>
+                              
+                          
+                    <dd><p>DCATは、ウェブ上で公開されたデータ・カタログ間の相互運用性の促進を目的とするRDFの語彙です。このドキュメントでは、その利用のために、スキーマを定義し、例を提供します。データ・カタログ内のデータセットを記述するためにDCATを用いると、公開者が、発見可能性を増加させ、アプリケーションが複数のカタログのメタデータを容易に利用できるようになります。さらに、カタログの分散公開を可能にし、複数のサイトにまたがるデータセットの統合検索を促進します。集約されたDCATメタデータは、ディジタル保存を促進するためのマニフェスト・ファイルとして使用できます。</p></dd>
+                    
+                          
+                                <dt>rdfs:label</dt>
+                              
+                          
+                    <dd><p>أنطولوجية فهارس قوائم البيانات</p></dd>
+                    
+                          
+                                <dt>rdfs:label</dt>
+                              
+                          
+                    <dd><p>Slovník pro datové katalogy</p></dd>
+                    
+                          
+                                <dt>rdfs:label</dt>
+                              
+                          
+                    <dd><p>Datakatalogvokabular</p></dd>
+                    
+                          
+                                <dt>rdfs:label</dt>
+                              
+                          
+                    <dd><p>Το λεξιλόγιο των καταλόγων δεδομένων</p></dd>
+                    
+                          
+                                <dt>rdfs:label</dt>
+                              
+                          
+                    <dd><p>The data catalog vocabulary</p></dd>
+                    
+                          
+                                <dt>rdfs:label</dt>
+                              
+                          
+                    <dd><p>El vocabulario de catálogo de datos</p></dd>
+                    
+                          
+                                <dt>rdfs:label</dt>
+                              
+                          
+                    <dd><p>Le vocabulaire des jeux de données</p></dd>
+                    
+                          
+                                <dt>rdfs:label</dt>
+                              
+                          
+                    <dd><p>Il vocabolario del catalogo dei dati</p></dd>
+                    
+                          
+                                <dt>rdfs:label</dt>
+                              
+                          
+                    <dd><p>データ・カタログ語彙（DCAT）</p></dd>
+                    
+                          
+                                <dt>skos:editorialNote</dt>
+                              
+                          
+                    <dd><p>English language definitions updated in this revision in line with ED. Multilingual text unevenly updated.</p></dd>
+                    
+                          
+                                <dt>vann:preferredNamespacePrefix</dt>
+                              
+                          
+                    <dd><p>dcat</p></dd>
+                    
+                          
+                                <dt>vann:preferredNamespaceUri</dt>
+                              
+                          
+                    <dd><a href="http://www.w3.org/ns/dcat#" target="_blank">http://www.w3.org/ns/dcat#</a></dd>
+                    
+                          
+                                <dt>foaf:homepage</dt>
+                              
+                          
+                    <dd><a href="https://w3id.org/people/ralbertoni/" target="_blank">https://w3id.org/people/ralbertoni/</a></dd>
+                    
+                          
+                                <dt>foaf:name</dt>
+                              
+                          
+                    <dd><p>Riccardo Albertoni</p></dd>
+                    
+                          
+                                <dt>rdf:type</dt>
+                              
+                          
+                    <dd><a href="http://xmlns.com/foaf/0.1/Person" target="_blank">http://xmlns.com/foaf/0.1/Person</a></dd>
+                    
+                          
+                                <dt>rdfs:seeAlso</dt>
+                              
+                          
+                    <dd><a href="https://orcid.org/0000-0001-5648-2713" target="_blank">https://orcid.org/0000-0001-5648-2713</a></dd>
+                    
+                          
+                                <dt>foaf:homepage</dt>
+                              
+                          
+                    <dd><a href="https://jakub.klímek.com/" target="_blank">https://jakub.klímek.com/</a></dd>
+                    
+                          
+                                <dt>foaf:name</dt>
+                              
+                          
+                    <dd><p>Jakub Klímek</p></dd>
+                    
+                          
+                                <dt>rdf:type</dt>
+                              
+                          
+                    <dd><a href="http://xmlns.com/foaf/0.1/Person" target="_blank">http://xmlns.com/foaf/0.1/Person</a></dd>
+                    
+                          
+                                <dt>rdfs:seeAlso</dt>
+                              
+                          
+                    <dd><a href="https://jakub.klímek.com/#me" target="_blank">https://jakub.klímek.com/#me</a></dd>
+                    
+                          
+                                <dt>foaf:name</dt>
+                              
+                          
+                    <dd><p>Fadi Maali</p></dd>
+                    
+                          
+                                <dt>org:memberOf</dt>
+                              
+                          
+                    <dd><p>n563e67542d3546f597f33a638d15925ab12</p></dd>
+                    
+                          
+                                <dt>rdf:type</dt>
+                              
+                          
+                    <dd><a href="http://xmlns.com/foaf/0.1/Person" target="_blank">http://xmlns.com/foaf/0.1/Person</a></dd>
+                    
+                          
+                                <dt>foaf:homepage</dt>
+                              
+                          
+                    <dd><a href="http://www.deri.ie/" target="_blank">http://www.deri.ie/</a></dd>
+                    
+                          
+                                <dt>foaf:name</dt>
+                              
+                          
+                    <dd><p>DERI, NUI Galway</p></dd>
+                    
+                          
+                                <dt>foaf:name</dt>
+                              
+                          
+                    <dd><p>Anna Odgaard Ingram</p></dd>
+                    
+                          
+                                <dt>rdf:type</dt>
+                              
+                          
+                    <dd><a href="http://xmlns.com/foaf/0.1/Person" target="_blank">http://xmlns.com/foaf/0.1/Person</a></dd>
+                    
+                          
+                                <dt>foaf:name</dt>
+                              
+                          
+                    <dd><p>Vassilios Peristeras</p></dd>
+                    
+                          
+                                <dt>org:memberOf</dt>
+                              
+                          
+                    <dd><p>n563e67542d3546f597f33a638d15925ab15</p></dd>
+                    
+                          
+                                <dt>rdf:type</dt>
+                              
+                          
+                    <dd><a href="http://xmlns.com/foaf/0.1/Person" target="_blank">http://xmlns.com/foaf/0.1/Person</a></dd>
+                    
+                          
+                                <dt>foaf:homepage</dt>
+                              
+                          
+                    <dd><a href="http://ec.europa.eu/dgs/informatics/" target="_blank">http://ec.europa.eu/dgs/informatics/</a></dd>
+                    
+                          
+                                <dt>foaf:name</dt>
+                              
+                          
+                    <dd><p>European Commission, DG DIGIT</p></dd>
+                    
+                          
+                                <dt>foaf:homepage</dt>
+                              
+                          
+                    <dd><a href="http://makxdekkers.com/" target="_blank">http://makxdekkers.com/</a></dd>
+                    
+                          
+                                <dt>foaf:name</dt>
+                              
+                          
+                    <dd><p>Makx Dekkers</p></dd>
+                    
+                          
+                                <dt>rdf:type</dt>
+                              
+                          
+                    <dd><a href="http://xmlns.com/foaf/0.1/Person" target="_blank">http://xmlns.com/foaf/0.1/Person</a></dd>
+                    
+                          
+                                <dt>rdfs:seeAlso</dt>
+                              
+                          
+                    <dd><a href="http://makxdekkers.com/makxdekkers.rdf#me" target="_blank">http://makxdekkers.com/makxdekkers.rdf#me</a></dd>
+                    
+                          
+                                <dt>foaf:homepage</dt>
+                              
+                          
+                    <dd><a href="https://www.w3.org/" target="_blank">https://www.w3.org/</a></dd>
+                    
+                          
+                                <dt>foaf:name</dt>
+                              
+                          
+                    <dd><p>World Wide Web Consortium (W3C)</p></dd>
+                    
+                          
+                                <dt>rdf:type</dt>
+                              
+                          
+                    <dd><a href="http://www.w3.org/ns/org#Organization" target="_blank">http://www.w3.org/ns/org#Organization</a></dd>
+                    
+                          
+                                <dt>rdfs:seeAlso</dt>
+                              
+                          
+                    <dd><a href="https://www.wikidata.org/entity/Q37033" target="_blank">https://www.wikidata.org/entity/Q37033</a></dd>
+                    
+                          
+                                <dt>foaf:name</dt>
+                              
+                          
+                    <dd><p>David Browning</p></dd>
+                    
+                          
+                                <dt>rdf:type</dt>
+                              
+                          
+                    <dd><a href="http://xmlns.com/foaf/0.1/Person" target="_blank">http://xmlns.com/foaf/0.1/Person</a></dd>
+                    
+                          
+                                <dt>foaf:name</dt>
+                              
+                          
+                    <dd><p>Simon J D Cox</p></dd>
+                    
+                          
+                                <dt>foaf:workInfoHomepage</dt>
+                              
+                          
+                    <dd><a href="http://people.csiro.au/Simon-Cox" target="_blank">http://people.csiro.au/Simon-Cox</a></dd>
+                    
+                          
+                                <dt>org:memberOf</dt>
+                              
+                          
+                    <dd><p>n563e67542d3546f597f33a638d15925ab4</p></dd>
+                    
+                          
+                                <dt>rdf:type</dt>
+                              
+                          
+                    <dd><a href="http://xmlns.com/foaf/0.1/Person" target="_blank">http://xmlns.com/foaf/0.1/Person</a></dd>
+                    
+                          
+                                <dt>rdfs:seeAlso</dt>
+                              
+                          
+                    <dd><a href="https://orcid.org/0000-0002-3884-3420" target="_blank">https://orcid.org/0000-0002-3884-3420</a></dd>
+                    
+                          
+                                <dt>foaf:homepage</dt>
+                              
+                          
+                    <dd><a href="https://www.csiro.au" target="_blank">https://www.csiro.au</a></dd>
+                    
+                          
+                                <dt>foaf:name</dt>
+                              
+                          
+                    <dd><p>Commonwealth Scientific and Industrial Research Organisation</p></dd>
+                    
+                          
+                                <dt>foaf:homepage</dt>
+                              
+                          
+                    <dd><a href="https://agbeltran.github.io" target="_blank">https://agbeltran.github.io</a></dd>
+                    
+                          
+                                <dt>foaf:name</dt>
+                              
+                          
+                    <dd><p>Alejandra Gonzalez-Beltran</p></dd>
+                    
+                          
+                                <dt>org:memberOf</dt>
+                              
+                          
+                    <dd><p>n563e67542d3546f597f33a638d15925ab6</p></dd>
+                    
+                          
+                                <dt>rdf:type</dt>
+                              
+                          
+                    <dd><a href="http://xmlns.com/foaf/0.1/Person" target="_blank">http://xmlns.com/foaf/0.1/Person</a></dd>
+                    
+                          
+                                <dt>rdfs:seeAlso</dt>
+                              
+                          
+                    <dd><a href="https://orcid.org/0000-0003-3499-8262" target="_blank">https://orcid.org/0000-0003-3499-8262</a></dd>
+                    
+                          
+                                <dt>foaf:homepage</dt>
+                              
+                          
+                    <dd><a href="http://stfc.ac.uk" target="_blank">http://stfc.ac.uk</a></dd>
+                    
+                          
+                                <dt>foaf:name</dt>
+                              
+                          
+                    <dd><p>Science and Technology Facilities Council, UK</p></dd>
+                    
+                          
+                                <dt>foaf:name</dt>
+                              
+                          
+                    <dd><p>Andrea Perego</p></dd>
+                    
+                          
+                                <dt>rdf:type</dt>
+                              
+                          
+                    <dd><a href="http://xmlns.com/foaf/0.1/Person" target="_blank">http://xmlns.com/foaf/0.1/Person</a></dd>
+                    
+                          
+                                <dt>rdfs:seeAlso</dt>
+                              
+                          
+                    <dd><a href="https://orcid.org/0000-0001-9300-2694" target="_blank">https://orcid.org/0000-0001-9300-2694</a></dd>
+                    
+                          
+                                <dt>foaf:name</dt>
+                              
+                          
+                    <dd><p>Peter Winstanley</p></dd>
+                    
+                          
+                                <dt>rdf:type</dt>
+                              
+                          
+                    <dd><a href="http://xmlns.com/foaf/0.1/Person" target="_blank">http://xmlns.com/foaf/0.1/Person</a></dd>
+                    
+                          
+                                <dt>foaf:homepage</dt>
+                              
+                          
+                    <dd><a href="http://www.asahi-net.or.jp/~ax2s-kmtn/" target="_blank">http://www.asahi-net.or.jp/~ax2s-kmtn/</a></dd>
+                    
+                          
+                                <dt>foaf:name</dt>
+                              
+                          
+                    <dd><p>Shuji Kamitsuna</p></dd>
+                    
+                          
+                                <dt>rdf:type</dt>
+                              
+                          
+                    <dd><a href="http://xmlns.com/foaf/0.1/Person" target="_blank">http://xmlns.com/foaf/0.1/Person</a></dd>
+                    
+                    </dl>
+                
+
+
+            </div>
+          </div>
+           </div></div>
+           
+        
+
+
+           <div class="row"><div class="col-md-12">
+              <div class="panel panel-default">
+            <div class="panel-heading">
+              <h3 class="panel-title">Metrics</h3>
+            </div>
+            <div class="panel-body">
+                <dl>
+
+                 
+
+                  
+
+                      <dt>Ontologies</dt>
+                      <dd>1</dd>
+
+                  
+
+                    
+
+                  
+
+                      <dt>Triples</dt>
+                      <dd>1695</dd>
+
+                  
+
+                    
+
+                  
+
+                      <dt>Classes</dt>
+                      <dd>16</dd>
+
+                  
+
+                    
+
+                  
+
+                      <dt>Properties</dt>
+                      <dd>39</dd>
+
+                  
+
+                    
+
+                  
+
+                      <dt>Annotation Properties</dt>
+                      <dd>0</dd>
+
+                  
+
+                    
+
+                  
+
+                      <dt>Object Properties</dt>
+                      <dd>30</dd>
+
+                  
+
+                    
+
+                  
+
+                      <dt>Datatype Properties</dt>
+                      <dd>9</dd>
+
+                  
+
+                    
+
+                  
+
+                      <dt>Skos Concepts</dt>
+                      <dd>0</dd>
+
+                  
+
+                    
+
+                  
+
+                      <dt>Data Shapes</dt>
+                      <dd>0</dd>
+
+                  
+
+                    
+
+                  
+
+                    
+
+                </dl>
+            </div>
+          </div>
+           </div></div>
+
+
+
+
+        </div>
+         
+
+
+        
+        <div class="col-md-6">
+
+
+          
+            <div class="row">
+              <div class="col-md-12">
+                <div class="panel panel-default">
+              <div class="panel-heading">
+                <h3 class="panel-title">Namespaces</h3>
+              </div>
+              <div class="panel-body" style="overflow: auto;">
+                 <dl class="-dl-horizontal" style="--margin-left: -100px;">
+
+                 
+                     <dt><span class="label label-info">adms</span></dt>
+                     <dd><a href="http://www.w3.org/ns/adms#" target="_blank">http://www.w3.org/ns/adms#</a></dd>
+
+                 
+                     <dt><span class="label label-info">bibo</span></dt>
+                     <dd><a href="http://purl.org/ontology/bibo/" target="_blank">http://purl.org/ontology/bibo/</a></dd>
+
+                 
+                     <dt><span class="label label-info">dcat</span></dt>
+                     <dd><a href="http://www.w3.org/ns/dcat#" target="_blank">http://www.w3.org/ns/dcat#</a></dd>
+
+                 
+                     <dt><span class="label label-info">dcterms</span></dt>
+                     <dd><a href="http://purl.org/dc/terms/" target="_blank">http://purl.org/dc/terms/</a></dd>
+
+                 
+                     <dt><span class="label label-info">dctype</span></dt>
+                     <dd><a href="http://purl.org/dc/dcmitype/" target="_blank">http://purl.org/dc/dcmitype/</a></dd>
+
+                 
+                     <dt><span class="label label-info">foaf</span></dt>
+                     <dd><a href="http://xmlns.com/foaf/0.1/" target="_blank">http://xmlns.com/foaf/0.1/</a></dd>
+
+                 
+                     <dt><span class="label label-info">org</span></dt>
+                     <dd><a href="http://www.w3.org/ns/org#" target="_blank">http://www.w3.org/ns/org#</a></dd>
+
+                 
+                     <dt><span class="label label-info">owl</span></dt>
+                     <dd><a href="http://www.w3.org/2002/07/owl#" target="_blank">http://www.w3.org/2002/07/owl#</a></dd>
+
+                 
+                     <dt><span class="label label-info">pav</span></dt>
+                     <dd><a href="http://purl.org/pav/" target="_blank">http://purl.org/pav/</a></dd>
+
+                 
+                     <dt><span class="label label-info">prov</span></dt>
+                     <dd><a href="http://www.w3.org/ns/prov#" target="_blank">http://www.w3.org/ns/prov#</a></dd>
+
+                 
+                     <dt><span class="label label-info">rdf</span></dt>
+                     <dd><a href="http://www.w3.org/1999/02/22-rdf-syntax-ns#" target="_blank">http://www.w3.org/1999/02/22-rdf-syntax-ns#</a></dd>
+
+                 
+                     <dt><span class="label label-info">rdfs</span></dt>
+                     <dd><a href="http://www.w3.org/2000/01/rdf-schema#" target="_blank">http://www.w3.org/2000/01/rdf-schema#</a></dd>
+
+                 
+                     <dt><span class="label label-info">sdo</span></dt>
+                     <dd><a href="http://schema.org/" target="_blank">http://schema.org/</a></dd>
+
+                 
+                     <dt><span class="label label-info">skos</span></dt>
+                     <dd><a href="http://www.w3.org/2004/02/skos/core#" target="_blank">http://www.w3.org/2004/02/skos/core#</a></dd>
+
+                 
+                     <dt><span class="label label-info">vann</span></dt>
+                     <dd><a href="http://purl.org/vocab/vann/" target="_blank">http://purl.org/vocab/vann/</a></dd>
+
+                 
+                     <dt><span class="label label-info">vcard</span></dt>
+                     <dd><a href="http://www.w3.org/2006/vcard/ns#" target="_blank">http://www.w3.org/2006/vcard/ns#</a></dd>
+
+                 
+                     <dt><span class="label label-info">xhv</span></dt>
+                     <dd><a href="http://www.w3.org/1999/xhtml/vocab#" target="_blank">http://www.w3.org/1999/xhtml/vocab#</a></dd>
+
+                 
+                     <dt><span class="label label-info">xsd</span></dt>
+                     <dd><a href="http://www.w3.org/2001/XMLSchema#" target="_blank">http://www.w3.org/2001/XMLSchema#</a></dd>
+
+                 
+
+                </dl>
+              </div>
+            </div>
+              </div>
+            </div>
+            
+        </div>
+         
+
+      </div>
+
+
+
+
+    <div class="container margin50">
+
+
+    </div> <!-- /container -->
+
+
+  
+
+
+	</div><!-- /#page-content-wrapper -->
+
+
+  
+
+
+
+  
+
+
+
+
+  <footer class="footer">
+    <div class="container">
+    
+      <p class="text-muted">Documentation automatically generated on Tue, 13 Oct 2026 20:33:10 with <a href="http://lambdamusic.github.io/Ontospy/">Ontospy</a> (v2.5)</p>
+
+    
+    </div>
+  </footer>
+
+
+</div><!-- /#wrapper -->
+
+
+<!-- Bootstrap core JavaScript
+================================================== -->
+<!-- Placed at the end of the document so the pages load faster -->
+<script src="../static/libs/jquery/1_12_4/jquery.min.js"></script>
+<script src="../static/libs/bootstrap-3_3_7-dist/js/bootstrap.min.js"></script>
+
+<!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+<script src="../static/libs/bootstrap-3_3_7-dist/js/ie10-viewport-bug-workaround.js"></script>
+
+<script src="../static/libs/chartjs-2_4_0/chart.bundle.js"></script>
+
+
+<!-- Menu Toggle Script -->
+<script>
+$("#menu-toggle").click(function(e) {
+    e.preventDefault();
+    $("#wrapper").toggleClass("toggled");
+});
+</script>
+
+
+
+
+<script type="text/javascript">
+
+$('#search-input-sidebar').keyup(function() {
+
+  var val = $.trim($(this).val()).replace(/ +/g, ' ').toLowerCase();
+  // var $rows = $(this).next(".entities-list").find("div");
+  var $rows = $(this).parent().parent().find("li.second-level");
+
+  $rows.show().filter(function() {
+      var text = $(this).text().replace(/\s+/g, ' ').toLowerCase();
+      return !~text.indexOf(val);
+  }).hide();
+});
+
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  </body>
+</html>

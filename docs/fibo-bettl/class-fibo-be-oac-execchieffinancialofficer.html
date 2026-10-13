@@ -1,0 +1,2317 @@
+
+
+
+
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="../static/custom/favicon.ico">
+
+	
+		<title>Ontospy > RDF knowledge graph (45 ontologies)</title>
+	
+
+    <!-- Bootstrap core CSS -->
+    <!-- <link href="../static/libs/bootstrap-3_3_7-dist/css/bootstrap.min.css" rel="stylesheet">  -->
+    <!-- Bootswatch:  -->
+    <!-- cerulean  | cyborg |  flatly |  lumen |  sandstone |   spacelab  |  yeti | cosmo |  darkly |  paper | simplex | superhero |  journal | readable  |   slate |  united -->
+    <link href="../static/libs/bootswatch3_2/sandstone/bootstrap.min.css" rel="stylesheet">
+    <link href="../static/custom/css/simple-sidebar.css" rel="stylesheet">
+    <link href="../static/custom/css/familytree.css" rel="stylesheet">
+    <link href="../static/custom/css/tabletree.css" rel="stylesheet">
+
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <link href="../static/libs/bootstrap-3_3_7-dist/css/ie10-viewport-bug-workaround.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="../static/custom/css/sticky-footer-navbar.css" rel="stylesheet">
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+<style type="text/css">
+
+  .lead-plus {font-size: 26.5px;}
+  .label-xs {font-size: 10px;}
+  .label-dark {background: #2c3e50; color: white; padding: 1px;}
+  .margin50 {margin-top: 50px; margin-bottom: 50px;}
+
+  .namespaces {background: #ced2d6; width: 100%;}
+
+
+  /*so that the d3plus tooltip panel doesnt cover the top banner*/
+  .navbar {z-index: 3000;}
+
+
+  .panel-body dt {margin-top: 5px;}
+  .page-header  {margin-top: 30px;}
+  #wrapper {margin-top: 50px;}
+
+  .implementation-panel {
+    overflow: auto;
+    /*max-height: 500px;*/
+  }
+
+  tr.table-classproperties {
+      /*background: #f5f5f5;*/
+  }
+  tr.table-classproperties th {
+      font-size: 80%;
+      font-weight: normal;
+  }
+
+
+  tr.table-inheritanceinfo {
+      /*background: #f5f5f5;*/
+      text-align: left;
+  }
+
+  tr.table-inheritanceinfo th {
+      font-size: 90%;
+      font-weight: normal;
+  }
+
+
+  .breadcrumb {
+    margin-top: 20px;
+    margin-bottom: 40px;
+  }
+
+  .breadcrumb a {
+      text-transform: capitalize;
+  }
+  .breadcrumb li {
+      text-transform: none;
+      /*so to catch the uri @todo improve*/
+  }
+
+
+  .fromclass_link {
+    /*color: white;
+    text-decoration: underline;*/
+    /*background: #1c1e52;*/
+    color: inherit;
+    /*padding: 1px;*/
+  }
+
+		.mythumbnail {
+			display: block;
+			padding: 13px;
+			margin-bottom: 30px;
+			line-height: 13.428571;
+			background-color: #fff;
+			border: 1px solid #ddd;
+			border-radius: 30px;
+		}
+
+		.mythumbnail:hover {
+			background: lightyellow;
+			text-decoration: none;
+		}
+
+
+		.img-container{
+		    height:100%;
+			overflow: hidden;
+		    max-height:200px;
+			padding: 10px;
+/*			margin: 20px 0px 20px 0px;*/
+			border: 1em #EAE5E5 solid;
+		}
+
+		.img-container:hover {
+			border: 1px grey solid;
+		}
+
+		img{
+/*		    height:100% !important;*/
+		}
+
+
+		.icon-xxs {
+			font-size: 15px;
+		}
+
+
+    /* dropdown open on hover */
+
+    @media (min-width: 979px) {
+      ul.nav li.dropdown:hover > ul.dropdown-menu {
+        display: block;
+      }
+    }
+
+
+
+/*pygments css*/
+pre { line-height: 125%; }
+td.linenos .normal { color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px; }
+span.linenos { color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px; }
+td.linenos .special { color: #000000; background-color: #ffffc0; padding-left: 5px; padding-right: 5px; }
+span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 5px; padding-right: 5px; }
+.highlight .hll { background-color: #ffffcc }
+.highlight { background: #f8f8f8; }
+.highlight .c { color: #3D7B7B; font-style: italic } /* Comment */
+.highlight .err { border: 1px solid #F00 } /* Error */
+.highlight .k { color: #008000; font-weight: bold } /* Keyword */
+.highlight .o { color: #666 } /* Operator */
+.highlight .ch { color: #3D7B7B; font-style: italic } /* Comment.Hashbang */
+.highlight .cm { color: #3D7B7B; font-style: italic } /* Comment.Multiline */
+.highlight .cp { color: #9C6500 } /* Comment.Preproc */
+.highlight .cpf { color: #3D7B7B; font-style: italic } /* Comment.PreprocFile */
+.highlight .c1 { color: #3D7B7B; font-style: italic } /* Comment.Single */
+.highlight .cs { color: #3D7B7B; font-style: italic } /* Comment.Special */
+.highlight .gd { color: #A00000 } /* Generic.Deleted */
+.highlight .ge { font-style: italic } /* Generic.Emph */
+.highlight .ges { font-weight: bold; font-style: italic } /* Generic.EmphStrong */
+.highlight .gr { color: #E40000 } /* Generic.Error */
+.highlight .gh { color: #000080; font-weight: bold } /* Generic.Heading */
+.highlight .gi { color: #008400 } /* Generic.Inserted */
+.highlight .go { color: #717171 } /* Generic.Output */
+.highlight .gp { color: #000080; font-weight: bold } /* Generic.Prompt */
+.highlight .gs { font-weight: bold } /* Generic.Strong */
+.highlight .gu { color: #800080; font-weight: bold } /* Generic.Subheading */
+.highlight .gt { color: #04D } /* Generic.Traceback */
+.highlight .kc { color: #008000; font-weight: bold } /* Keyword.Constant */
+.highlight .kd { color: #008000; font-weight: bold } /* Keyword.Declaration */
+.highlight .kn { color: #008000; font-weight: bold } /* Keyword.Namespace */
+.highlight .kp { color: #008000 } /* Keyword.Pseudo */
+.highlight .kr { color: #008000; font-weight: bold } /* Keyword.Reserved */
+.highlight .kt { color: #B00040 } /* Keyword.Type */
+.highlight .m { color: #666 } /* Literal.Number */
+.highlight .s { color: #BA2121 } /* Literal.String */
+.highlight .na { color: #687822 } /* Name.Attribute */
+.highlight .nb { color: #008000 } /* Name.Builtin */
+.highlight .nc { color: #00F; font-weight: bold } /* Name.Class */
+.highlight .no { color: #800 } /* Name.Constant */
+.highlight .nd { color: #A2F } /* Name.Decorator */
+.highlight .ni { color: #717171; font-weight: bold } /* Name.Entity */
+.highlight .ne { color: #CB3F38; font-weight: bold } /* Name.Exception */
+.highlight .nf { color: #00F } /* Name.Function */
+.highlight .nl { color: #767600 } /* Name.Label */
+.highlight .nn { color: #00F; font-weight: bold } /* Name.Namespace */
+.highlight .nt { color: #008000; font-weight: bold } /* Name.Tag */
+.highlight .nv { color: #19177C } /* Name.Variable */
+.highlight .ow { color: #A2F; font-weight: bold } /* Operator.Word */
+.highlight .w { color: #BBB } /* Text.Whitespace */
+.highlight .mb { color: #666 } /* Literal.Number.Bin */
+.highlight .mf { color: #666 } /* Literal.Number.Float */
+.highlight .mh { color: #666 } /* Literal.Number.Hex */
+.highlight .mi { color: #666 } /* Literal.Number.Integer */
+.highlight .mo { color: #666 } /* Literal.Number.Oct */
+.highlight .sa { color: #BA2121 } /* Literal.String.Affix */
+.highlight .sb { color: #BA2121 } /* Literal.String.Backtick */
+.highlight .sc { color: #BA2121 } /* Literal.String.Char */
+.highlight .dl { color: #BA2121 } /* Literal.String.Delimiter */
+.highlight .sd { color: #BA2121; font-style: italic } /* Literal.String.Doc */
+.highlight .s2 { color: #BA2121 } /* Literal.String.Double */
+.highlight .se { color: #AA5D1F; font-weight: bold } /* Literal.String.Escape */
+.highlight .sh { color: #BA2121 } /* Literal.String.Heredoc */
+.highlight .si { color: #A45A77; font-weight: bold } /* Literal.String.Interpol */
+.highlight .sx { color: #008000 } /* Literal.String.Other */
+.highlight .sr { color: #A45A77 } /* Literal.String.Regex */
+.highlight .s1 { color: #BA2121 } /* Literal.String.Single */
+.highlight .ss { color: #19177C } /* Literal.String.Symbol */
+.highlight .bp { color: #008000 } /* Name.Builtin.Pseudo */
+.highlight .fm { color: #00F } /* Name.Function.Magic */
+.highlight .vc { color: #19177C } /* Name.Variable.Class */
+.highlight .vg { color: #19177C } /* Name.Variable.Global */
+.highlight .vi { color: #19177C } /* Name.Variable.Instance */
+.highlight .vm { color: #19177C } /* Name.Variable.Magic */
+.highlight .il { color: #666 } /* Literal.Number.Integer.Long */
+
+/*overloading this class from pygments*/
+.highlight {
+  overflow: auto;
+}
+
+
+
+
+
+
+
+
+</style>
+
+
+
+
+
+  </head>
+
+  <body>
+
+
+  
+<!-- Fixed navbar -->
+<nav class="navbar navbar-default navbar-fixed-top">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+
+      <a class="navbar-brand" id="menu-toggle" title="Toggle sidebar">
+        
+        <span class="glyphicon glyphicon-align-left" aria-hidden="true"></span>
+      </a>
+    </div>
+    <div id="navbar" class="collapse navbar-collapse">
+      <ul class="nav navbar-nav">
+        <li ><a href="index.html"><code style="font-size: 115%;">RDF knowledge graph (45 ontologies)</code></a></li>
+
+        <li  ><a href="entities-az.html">Entities A-Z</a></li>
+        
+        <li ><a href="entities-tree-classes.html">Classes</a></li>
+        
+        
+        <li ><a href="entities-tree-properties.html">Properties</a></li>
+        
+        
+        
+        
+        <li  ><a href="statistics.html">Statistics</a></li>
+
+
+
+
+
+      </ul>
+      
+    </div><!--/.nav-collapse -->
+
+  </div>
+</nav>
+
+
+
+
+
+
+
+
+<div id="wrapper" class="toggled">
+
+
+    
+  
+    
+<!-- Sidebar -->
+<div id="sidebar-wrapper">
+    <ul class="sidebar-nav">
+
+
+        <li>
+          <input style="margin-top: 30px;  margin-bottom: 20px;" type="text" id="search-input-sidebar" name="" value="" placeholder="Type to search">
+        </li>
+
+        
+          <li class="-second-level" id="sd_classes"><a href="entities-tree-classes.html">Classes (262)</a>
+          </li>
+
+            
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_1678"><a  href="class-cmns-bauthauthorizedparty.html">cmns-bauth:AuthorizedParty</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_1679"><a  href="class-cmns-bauthlegallydelegatedauthority.html">cmns-bauth:LegallyDelegatedAuthority</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_1680"><a  href="class-cmns-bauthresponsibleparty.html">cmns-bauth:ResponsibleParty</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_1683"><a  href="class-cmns-cdscodeelement.html">cmns-cds:CodeElement</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_1684"><a  href="class-cmns-cdscodeset.html">cmns-cds:CodeSet</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_1681"><a  href="class-cmns-clsclassificationscheme.html">cmns-cls:ClassificationScheme</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_1682"><a  href="class-cmns-clsclassifier.html">cmns-cls:Classifier</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_1685"><a  href="class-cmns-colconstituent.html">cmns-col:Constituent</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_1688"><a  href="class-cmns-docdocument.html">cmns-doc:Document</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_1686"><a  href="class-cmns-dtdate.html">cmns-dt:Date</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_1687"><a  href="class-cmns-dtexplicitdate.html">cmns-dt:ExplicitDate</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_1689"><a  href="class-cmns-ididentifier.html">cmns-id:Identifier</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_1690"><a  href="class-cmns-locgeopoliticalentity.html">cmns-loc:GeopoliticalEntity</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_1691"><a  href="class-cmns-orgformalorganization.html">cmns-org:FormalOrganization</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_1692"><a  href="class-cmns-orglegalentity.html">cmns-org:LegalEntity</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_1693"><a  href="class-cmns-orglegalperson.html">cmns-org:LegalPerson</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_1694"><a  href="class-cmns-orgorganization.html">cmns-org:Organization</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_1695"><a  href="class-cmns-orgorganizationidentificationscheme.html">cmns-org:OrganizationIdentificationScheme</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_1696"><a  href="class-cmns-orgorganizationidentifier.html">cmns-org:OrganizationIdentifier</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_1697"><a  href="class-cmns-orgorganizationmember.html">cmns-org:OrganizationMember</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_1698"><a  href="class-cmns-orgorganizationname.html">cmns-org:OrganizationName</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_1699"><a  href="class-cmns-orgorganizationalsubunit.html">cmns-org:OrganizationalSubUnit</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_1700"><a  href="class-cmns-orgserviceprovider.html">cmns-org:ServiceProvider</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_1701"><a  href="class-cmns-ptsagentrole.html">cmns-pts:AgentRole</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_1702"><a  href="class-cmns-ptsparty.html">cmns-pts:Party</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_1703"><a  href="class-cmns-ptspartyrole.html">cmns-pts:PartyRole</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_1704"><a  href="class-cmns-rgajurisdiction.html">cmns-rga:Jurisdiction</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_1705"><a  href="class-cmns-rlcmpfunctionalrole.html">cmns-rlcmp:FunctionalRole</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_1444"><a  href="class-fibo-be-corp-corpboardagreement.html">fibo-be-corp-corp:BoardAgreement</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_1445"><a  href="class-fibo-be-corp-corpjointstockcompany.html">fibo-be-corp-corp:JointStockCompany</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_1446"><a  href="class-fibo-be-corp-corpprivatelyheldcompany.html">fibo-be-corp-corp:PrivatelyHeldCompany</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_1447"><a  href="class-fibo-be-corp-corppubliclyheldcompany.html">fibo-be-corp-corp:PubliclyHeldCompany</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_1448"><a  href="class-fibo-be-corp-corpregistrationidentifier.html">fibo-be-corp-corp:RegistrationIdentifier</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_1449"><a  href="class-fibo-be-corp-corpregistrationidentifierscheme.html">fibo-be-corp-corp:RegistrationIdentifierScheme</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_1450"><a  href="class-fibo-be-corp-corpreligiouscorporation.html">fibo-be-corp-corp:ReligiousCorporation</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_1451"><a  href="class-fibo-be-fct-fctassociation.html">fibo-be-fct-fct:Association</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_1452"><a  href="class-fibo-be-fct-fctcooperativesociety.html">fibo-be-fct-fct:CooperativeSociety</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_1453"><a  href="class-fibo-be-fct-fctfamilyoffice.html">fibo-be-fct-fct:FamilyOffice</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_1454"><a  href="class-fibo-be-fct-fctfunctionalbusinessentity.html">fibo-be-fct-fct:FunctionalBusinessEntity</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_1455"><a  href="class-fibo-be-fct-fctfunctionalentity.html">fibo-be-fct-fct:FunctionalEntity</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_1456"><a  href="class-fibo-be-fct-fctmerchant.html">fibo-be-fct-fct:Merchant</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_1457"><a  href="class-fibo-be-fct-fctmerchantcategorycode.html">fibo-be-fct-fct:MerchantCategoryCode</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_1458"><a  href="class-fibo-be-fct-fctmerchantcategorycodescheme.html">fibo-be-fct-fct:MerchantCategoryCodeScheme</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_1459"><a  href="class-fibo-be-fct-fctmerchantidentifier.html">fibo-be-fct-fct:MerchantIdentifier</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_1460"><a  href="class-fibo-be-fct-fctsyndicate.html">fibo-be-fct-fct:Syndicate</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_1461"><a  href="class-fibo-be-fct-fctsyndicatemember.html">fibo-be-fct-fct:SyndicateMember</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_1462"><a  href="class-fibo-be-fct-pubapifirstmarketdataprovider.html">fibo-be-fct-pub:APIFirstMarketDataProvider</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_1463"><a  href="class-fibo-be-fct-pubalternativedataprovider.html">fibo-be-fct-pub:AlternativeDataProvider</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_1464"><a  href="class-fibo-be-fct-pubcryptodigitalassetdataprovider.html">fibo-be-fct-pub:CryptoDigitalAssetDataProvider</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_1465"><a  href="class-fibo-be-fct-pubderivativesvolatilitydataprovider.html">fibo-be-fct-pub:DerivativesVolatilityDataProvider</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_1466"><a  href="class-fibo-be-fct-pubexchangesourceddataprovider.html">fibo-be-fct-pub:ExchangeSourcedDataProvider</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_1467"><a  href="class-fibo-be-fct-pubfixedincomespecialistprovider.html">fibo-be-fct-pub:FixedIncomeSpecialistProvider</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_1468"><a  href="class-fibo-be-fct-pubinstitutionalmarketdataprovider.html">fibo-be-fct-pub:InstitutionalMarketDataProvider</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_1469"><a  href="class-fibo-be-fct-pubmarketdataprovider.html">fibo-be-fct-pub:MarketDataProvider</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_1470"><a  href="class-fibo-be-fct-pubpublication.html">fibo-be-fct-pub:Publication</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_1471"><a  href="class-fibo-be-fct-pubpublisher.html">fibo-be-fct-pub:Publisher</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_1472"><a  href="class-fibo-be-fct-pubreferencedataspecialistprovider.html">fibo-be-fct-pub:ReferenceDataSpecialistProvider</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_1473"><a  href="class-fibo-be-ge-gebranchofgovernment.html">fibo-be-ge-ge:BranchOfGovernment</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_1474"><a  href="class-fibo-be-ge-gedevolvedgovernment.html">fibo-be-ge-ge:DevolvedGovernment</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_1475"><a  href="class-fibo-be-ge-geexecutivebranch.html">fibo-be-ge-ge:ExecutiveBranch</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_1476"><a  href="class-fibo-be-ge-gefederalgovernment.html">fibo-be-ge-ge:FederalGovernment</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_1477"><a  href="class-fibo-be-ge-gefederatedsovereignty.html">fibo-be-ge-ge:FederatedSovereignty</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_1478"><a  href="class-fibo-be-ge-gegovernment.html">fibo-be-ge-ge:Government</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_1479"><a  href="class-fibo-be-ge-gegovernmentagency.html">fibo-be-ge-ge:GovernmentAgency</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_1480"><a  href="class-fibo-be-ge-gegovernmentappointee.html">fibo-be-ge-ge:GovernmentAppointee</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_1481"><a  href="class-fibo-be-ge-gegovernmentbody.html">fibo-be-ge-ge:GovernmentBody</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_1482"><a  href="class-fibo-be-ge-gegovernmentdepartment.html">fibo-be-ge-ge:GovernmentDepartment</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_1483"><a  href="class-fibo-be-ge-gegovernmentminister.html">fibo-be-ge-ge:GovernmentMinister</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_1484"><a  href="class-fibo-be-ge-gegovernmentofficial.html">fibo-be-ge-ge:GovernmentOfficial</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_1485"><a  href="class-fibo-be-ge-geinstrumentality.html">fibo-be-ge-ge:Instrumentality</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_1486"><a  href="class-fibo-be-ge-gejudiciary.html">fibo-be-ge-ge:Judiciary</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_1487"><a  href="class-fibo-be-ge-gelegislature.html">fibo-be-ge-ge:Legislature</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_1488"><a  href="class-fibo-be-ge-gemunicipalentity.html">fibo-be-ge-ge:MunicipalEntity</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_1489"><a  href="class-fibo-be-ge-gemunicipalgovernment.html">fibo-be-ge-ge:MunicipalGovernment</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_1490"><a  href="class-fibo-be-ge-genationalgovernment.html">fibo-be-ge-ge:NationalGovernment</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_1491"><a  href="class-fibo-be-ge-gepolity.html">fibo-be-ge-ge:Polity</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_1492"><a  href="class-fibo-be-ge-geregionalgovernment.html">fibo-be-ge-ge:RegionalGovernment</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_1493"><a  href="class-fibo-be-ge-geregionalsovereignty.html">fibo-be-ge-ge:RegionalSovereignty</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_1494"><a  href="class-fibo-be-ge-gesovereignstate.html">fibo-be-ge-ge:SovereignState</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_1495"><a  href="class-fibo-be-ge-gesupranationalentity.html">fibo-be-ge-ge:SupranationalEntity</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_1496"><a  href="class-fibo-be-ge-getribalarea.html">fibo-be-ge-ge:TribalArea</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_1497"><a  href="class-fibo-be-ge-getribalentity.html">fibo-be-ge-ge:TribalEntity</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_1498"><a  href="class-fibo-be-ge-getribalgovernment.html">fibo-be-ge-ge:TribalGovernment</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_1499"><a  href="class-fibo-be-le-cbbenefitcorporation.html">fibo-be-le-cb:BenefitCorporation</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_1500"><a  href="class-fibo-be-le-cbboardagreement.html">fibo-be-le-cb:BoardAgreement</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_1501"><a  href="class-fibo-be-le-cbcommoninterestdevelopmentcorporation.html">fibo-be-le-cb:CommonInterestDevelopmentCorporation</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_1502"><a  href="class-fibo-be-le-cbcorporation.html">fibo-be-le-cb:Corporation</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_1503"><a  href="class-fibo-be-le-cbforprofitcorporation.html">fibo-be-le-cb:ForProfitCorporation</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_1504"><a  href="class-fibo-be-le-cbincorporationguarantee.html">fibo-be-le-cb:IncorporationGuarantee</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_1505"><a  href="class-fibo-be-le-cbinstrumentofincorporation.html">fibo-be-le-cb:InstrumentOfIncorporation</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_1506"><a  href="class-fibo-be-le-cbjointstockcompany.html">fibo-be-le-cb:JointStockCompany</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_1507"><a  href="class-fibo-be-le-cbnotforprofitcorporation.html">fibo-be-le-cb:NotForProfitCorporation</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_1508"><a  href="class-fibo-be-le-cbprivatelyheldcompany.html">fibo-be-le-cb:PrivatelyHeldCompany</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_1509"><a  href="class-fibo-be-le-cbpubliclyheldcompany.html">fibo-be-le-cb:PubliclyHeldCompany</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_1510"><a  href="class-fibo-be-le-cbregistrationidentifier.html">fibo-be-le-cb:RegistrationIdentifier</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_1511"><a  href="class-fibo-be-le-cbregistrationidentifierscheme.html">fibo-be-le-cb:RegistrationIdentifierScheme</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_1512"><a  href="class-fibo-be-le-cbreligiouscorporation.html">fibo-be-le-cb:ReligiousCorporation</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_1513"><a  href="class-fibo-be-le-cbstockcorporation.html">fibo-be-le-cb:StockCorporation</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_1514"><a  href="class-fibo-be-le-fbobranch.html">fibo-be-le-fbo:Branch</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_1515"><a  href="class-fibo-be-le-fbodivision.html">fibo-be-le-fbo:Division</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_1516"><a  href="class-fibo-be-le-fbojointventure.html">fibo-be-le-fbo:JointVenture</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_1517"><a  href="class-fibo-be-le-fbonongovernmentalorganization.html">fibo-be-le-fbo:NonGovernmentalOrganization</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_1518"><a  href="class-fibo-be-le-fbonotforprofitorganization.html">fibo-be-le-fbo:NotForProfitOrganization</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_1519"><a  href="class-fibo-be-le-fboorganizationcoveringagreement.html">fibo-be-le-fbo:OrganizationCoveringAgreement</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_1520"><a  href="class-fibo-be-le-fbovalueaddedtaxidentificationnumber.html">fibo-be-le-fbo:ValueAddedTaxIdentificationNumber</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_1521"><a  href="class-fibo-be-le-leiaccountingframework.html">fibo-be-le-lei:AccountingFramework</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_1522"><a  href="class-fibo-be-le-leicontractuallycapableentity.html">fibo-be-le-lei:ContractuallyCapableEntity</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_1523"><a  href="class-fibo-be-le-leientitylegalform.html">fibo-be-le-lei:EntityLegalForm</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_1524"><a  href="class-fibo-be-le-leientitylegalformidentifier.html">fibo-be-le-lei:EntityLegalFormIdentifier</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_1525"><a  href="class-fibo-be-le-leientitylegalformscheme.html">fibo-be-le-lei:EntityLegalFormScheme</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_1526"><a  href="class-fibo-be-le-leileiregisteredentity.html">fibo-be-le-lei:LEIRegisteredEntity</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_1527"><a  href="class-fibo-be-le-leilegalentityidentifier.html">fibo-be-le-lei:LegalEntityIdentifier</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_1528"><a  href="class-fibo-be-le-leilegalentityidentifierscheme.html">fibo-be-le-lei:LegalEntityIdentifierScheme</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_1529"><a  href="class-fibo-be-le-leirelationshipperiodqualifier.html">fibo-be-le-lei:RelationshipPeriodQualifier</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_1530"><a  href="class-fibo-be-le-leirelationshipqualifier.html">fibo-be-le-lei:RelationshipQualifier</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_1531"><a  href="class-fibo-be-le-leirelationshiprecord.html">fibo-be-le-lei:RelationshipRecord</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_1532"><a  href="class-fibo-be-le-leirelationshipstatus.html">fibo-be-le-lei:RelationshipStatus</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_1533"><a  href="class-fibo-be-le-lpbusinessentity.html">fibo-be-le-lp:BusinessEntity</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_1534"><a  href="class-fibo-be-le-lpbusinesslicense.html">fibo-be-le-lp:BusinessLicense</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_1535"><a  href="class-fibo-be-le-lpcharteredlegalperson.html">fibo-be-le-lp:CharteredLegalPerson</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_1536"><a  href="class-fibo-be-le-lplegallycompetentnaturalperson.html">fibo-be-le-lp:LegallyCompetentNaturalPerson</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_1537"><a  href="class-fibo-be-le-lpnotforprofitobjective.html">fibo-be-le-lp:NotForProfitObjective</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_1538"><a  href="class-fibo-be-le-lppowerofattorney.html">fibo-be-le-lp:PowerOfAttorney</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_1539"><a  href="class-fibo-be-le-lpprofitobjective.html">fibo-be-le-lp:ProfitObjective</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_1540"><a  href="class-fibo-be-le-lppublicpurpose.html">fibo-be-le-lp:PublicPurpose</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_1541"><a  href="class-fibo-be-le-lpreligiousobjective.html">fibo-be-le-lp:ReligiousObjective</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_1542"><a  href="class-fibo-be-le-lpspecialpurposevehicle.html">fibo-be-le-lp:SpecialPurposeVehicle</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_1543"><a  href="class-fibo-be-le-lpstatutorybody.html">fibo-be-le-lp:StatutoryBody</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_1544"><a  href="class-fibo-be-le-lpvariableinterestentity.html">fibo-be-le-lp:VariableInterestEntity</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_1561"><a  href="class-fibo-be-oac-cctlaffiliate.html">fibo-be-oac-cctl:Affiliate</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_1562"><a  href="class-fibo-be-oac-cctlaffiliation.html">fibo-be-oac-cctl:Affiliation</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_1563"><a  href="class-fibo-be-oac-cctlcontrolledaffiliate.html">fibo-be-oac-cctl:ControlledAffiliate</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_1564"><a  href="class-fibo-be-oac-cctlcontrollingaffiliate.html">fibo-be-oac-cctl:ControllingAffiliate</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_1565"><a  href="class-fibo-be-oac-cctldomesticultimateparent.html">fibo-be-oac-cctl:DomesticUltimateParent</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_1566"><a  href="class-fibo-be-oac-cctlglobalultimateparent.html">fibo-be-oac-cctl:GlobalUltimateParent</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_1567"><a  href="class-fibo-be-oac-cctljointventurepartner.html">fibo-be-oac-cctl:JointVenturePartner</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_1568"><a  href="class-fibo-be-oac-cctlsignificantshareholder.html">fibo-be-oac-cctl:SignificantShareholder</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_1569"><a  href="class-fibo-be-oac-cctlsubsidiary.html">fibo-be-oac-cctl:Subsidiary</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_1570"><a  href="class-fibo-be-oac-cctltotalcontrollinginterestparty.html">fibo-be-oac-cctl:TotalControllingInterestParty</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_1571"><a  href="class-fibo-be-oac-cctlvotingshareholder.html">fibo-be-oac-cctl:VotingShareholder</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_1572"><a  href="class-fibo-be-oac-cownbeneficialowner.html">fibo-be-oac-cown:BeneficialOwner</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_1573"><a  href="class-fibo-be-oac-cownbeneficialownership.html">fibo-be-oac-cown:BeneficialOwnership</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_1574"><a  href="class-fibo-be-oac-cownpurchaselot.html">fibo-be-oac-cown:PurchaseLot</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_1575"><a  href="class-fibo-be-oac-cownshareholder.html">fibo-be-oac-cown:Shareholder</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_1576"><a  href="class-fibo-be-oac-cownshareholding.html">fibo-be-oac-cown:Shareholding</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_1577"><a  href="class-fibo-be-oac-cowntaxlot.html">fibo-be-oac-cown:TaxLot</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_1545"><a  href="class-fibo-be-oac-cptycontractualcontrol.html">fibo-be-oac-cpty:ContractualControl</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_1546"><a  href="class-fibo-be-oac-cptycontrolledparty.html">fibo-be-oac-cpty:ControlledParty</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_1547"><a  href="class-fibo-be-oac-cptycontrollingalliance.html">fibo-be-oac-cpty:ControllingAlliance</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_1548"><a  href="class-fibo-be-oac-cptycourtappointedcontrol.html">fibo-be-oac-cpty:CourtAppointedControl</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_1549"><a  href="class-fibo-be-oac-cptydefactocontrollinginterestparty.html">fibo-be-oac-cpty:DeFactoControllingInterestParty</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_1550"><a  href="class-fibo-be-oac-cptydejurecontrollinginterestparty.html">fibo-be-oac-cpty:DeJureControllingInterestParty</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_1551"><a  href="class-fibo-be-oac-cptyentitycontrollingparty.html">fibo-be-oac-cpty:EntityControllingParty</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_1552"><a  href="class-fibo-be-oac-cptyinfluencebaseddefactocontrol.html">fibo-be-oac-cpty:InfluenceBasedDeFactoControl</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_1553"><a  href="class-fibo-be-oac-cptyinfluencebaseddefactocontrollingparty.html">fibo-be-oac-cpty:InfluenceBasedDeFactoControllingParty</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_1554"><a  href="class-fibo-be-oac-cptyinvestmentbaseddefactocontrol.html">fibo-be-oac-cpty:InvestmentBasedDeFactoControl</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_1555"><a  href="class-fibo-be-oac-cptyinvestmentbaseddefactocontrollinginterestparty.html">fibo-be-oac-cpty:InvestmentBasedDeFactoControllingInterestParty</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_1556"><a  href="class-fibo-be-oac-cptyjointcontrollingparty.html">fibo-be-oac-cpty:JointControllingParty</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_1557"><a  href="class-fibo-be-oac-cptymajoritycontrollingparty.html">fibo-be-oac-cpty:MajorityControllingParty</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_1558"><a  href="class-fibo-be-oac-cptyreceiver.html">fibo-be-oac-cpty:Receiver</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_1559"><a  href="class-fibo-be-oac-cptysolecontrollingparty.html">fibo-be-oac-cpty:SoleControllingParty</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_1560"><a  href="class-fibo-be-oac-cptytotalowner.html">fibo-be-oac-cpty:TotalOwner</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_1578"><a  href="class-fibo-be-oac-execarticlesofincorporation.html">fibo-be-oac-exec:ArticlesOfIncorporation</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_1579"><a  href="class-fibo-be-oac-execauditor.html">fibo-be-oac-exec:Auditor</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_1580"><a  href="class-fibo-be-oac-execauthorization.html">fibo-be-oac-exec:Authorization</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_1581"><a  href="class-fibo-be-oac-execauthorizedindividual.html">fibo-be-oac-exec:AuthorizedIndividual</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_1582"><a  href="class-fibo-be-oac-execauthorizedparty.html">fibo-be-oac-exec:AuthorizedParty</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_1583"><a  href="class-fibo-be-oac-execauthorizingparty.html">fibo-be-oac-exec:AuthorizingParty</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_1584"><a  href="class-fibo-be-oac-execboardcapacity.html">fibo-be-oac-exec:BoardCapacity</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_1585"><a  href="class-fibo-be-oac-execboardcompositioncontrol.html">fibo-be-oac-exec:BoardCompositionControl</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_1586"><a  href="class-fibo-be-oac-execboardmember.html">fibo-be-oac-exec:BoardMember</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_1587"><a  href="class-fibo-be-oac-execboardmembership.html">fibo-be-oac-exec:BoardMembership</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_1588"><a  href="class-fibo-be-oac-execboardofdirectors.html">fibo-be-oac-exec:BoardOfDirectors</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_1589"><a  href="class-fibo-be-oac-execbylaws.html">fibo-be-oac-exec:Bylaws</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_1590"><a  href="class-fibo-be-oac-execchiefexecutiveofficer.html">fibo-be-oac-exec:ChiefExecutiveOfficer</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_1591"><a class="active" href="class-fibo-be-oac-execchieffinancialofficer.html">fibo-be-oac-exec:ChiefFinancialOfficer</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_1592"><a  href="class-fibo-be-oac-execcompanylaw.html">fibo-be-oac-exec:CompanyLaw</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_1593"><a  href="class-fibo-be-oac-execcompanysecretary.html">fibo-be-oac-exec:CompanySecretary</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_1594"><a  href="class-fibo-be-oac-execcontrollingnominee.html">fibo-be-oac-exec:ControllingNominee</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_1595"><a  href="class-fibo-be-oac-execcorporatebylaws.html">fibo-be-oac-exec:CorporateBylaws</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_1596"><a  href="class-fibo-be-oac-execcorporateofficer.html">fibo-be-oac-exec:CorporateOfficer</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_1597"><a  href="class-fibo-be-oac-execexecutive.html">fibo-be-oac-exec:Executive</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_1598"><a  href="class-fibo-be-oac-execexecutiveboardmember.html">fibo-be-oac-exec:ExecutiveBoardMember</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_1599"><a  href="class-fibo-be-oac-execexternalauditor.html">fibo-be-oac-exec:ExternalAuditor</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_1600"><a  href="class-fibo-be-oac-execinternalauditor.html">fibo-be-oac-exec:InternalAuditor</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_1601"><a  href="class-fibo-be-oac-execlegallydelegatedauthority.html">fibo-be-oac-exec:LegallyDelegatedAuthority</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_1602"><a  href="class-fibo-be-oac-execnonexecutiveboardmember.html">fibo-be-oac-exec:NonExecutiveBoardMember</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_1603"><a  href="class-fibo-be-oac-execprincipalparty.html">fibo-be-oac-exec:PrincipalParty</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_1604"><a  href="class-fibo-be-oac-execsignatory.html">fibo-be-oac-exec:Signatory</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_1605"><a  href="class-fibo-be-oac-optyconstitutionalowner.html">fibo-be-oac-opty:ConstitutionalOwner</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_1606"><a  href="class-fibo-be-oac-optycontrollingequity.html">fibo-be-oac-opty:ControllingEquity</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_1607"><a  href="class-fibo-be-oac-optydirectconsolidation.html">fibo-be-oac-opty:DirectConsolidation</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_1608"><a  href="class-fibo-be-oac-optyentityowner.html">fibo-be-oac-opty:EntityOwner</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_1609"><a  href="class-fibo-be-oac-optyentityownership.html">fibo-be-oac-opty:EntityOwnership</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_1610"><a  href="class-fibo-be-oac-optyforeignbranchownership.html">fibo-be-oac-opty:ForeignBranchOwnership</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_1611"><a  href="class-fibo-be-oac-optyinvestmentequity.html">fibo-be-oac-opty:InvestmentEquity</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_1612"><a  href="class-fibo-be-oac-optyinvestor.html">fibo-be-oac-opty:Investor</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_1613"><a  href="class-fibo-be-oac-optyinvestorcontract.html">fibo-be-oac-opty:InvestorContract</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_1614"><a  href="class-fibo-be-oac-optyultimateconsolidation.html">fibo-be-oac-opty:UltimateConsolidation</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_1624"><a  href="class-fibo-be-plc-plclimitedliabilitycompany.html">fibo-be-plc-plc:LimitedLiabilityCompany</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_1625"><a  href="class-fibo-be-plc-plclimitedliabilitycompanymember.html">fibo-be-plc-plc:LimitedLiabilityCompanyMember</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_1626"><a  href="class-fibo-be-plc-plclimitedliabilitycompanytaxedasacorporation.html">fibo-be-plc-plc:LimitedLiabilityCompanyTaxedAsACorporation</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_1627"><a  href="class-fibo-be-plc-plcmanagermanagedlimitedliabilitycompany.html">fibo-be-plc-plc:ManagerManagedLimitedLiabilityCompany</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_1628"><a  href="class-fibo-be-plc-plcmanagingmember.html">fibo-be-plc-plc:ManagingMember</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_1629"><a  href="class-fibo-be-plc-plcprivatecompanywithlimitedliability.html">fibo-be-plc-plc:PrivateCompanyWithLimitedLiability</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_1630"><a  href="class-fibo-be-plc-plcprivatelimitedcompany.html">fibo-be-plc-plc:PrivateLimitedCompany</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_1615"><a  href="class-fibo-be-ptr-ptrgeneralpartner.html">fibo-be-ptr-ptr:GeneralPartner</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_1616"><a  href="class-fibo-be-ptr-ptrgeneralpartnership.html">fibo-be-ptr-ptr:GeneralPartnership</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_1617"><a  href="class-fibo-be-ptr-ptrlimitedliabilitylimitedpartnership.html">fibo-be-ptr-ptr:LimitedLiabilityLimitedPartnership</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_1618"><a  href="class-fibo-be-ptr-ptrlimitedliabilitypartnership.html">fibo-be-ptr-ptr:LimitedLiabilityPartnership</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_1619"><a  href="class-fibo-be-ptr-ptrlimitedpartner.html">fibo-be-ptr-ptr:LimitedPartner</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_1620"><a  href="class-fibo-be-ptr-ptrlimitedpartnership.html">fibo-be-ptr-ptr:LimitedPartnership</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_1621"><a  href="class-fibo-be-ptr-ptrpartner.html">fibo-be-ptr-ptr:Partner</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_1622"><a  href="class-fibo-be-ptr-ptrpartnership.html">fibo-be-ptr-ptr:Partnership</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_1623"><a  href="class-fibo-be-ptr-ptrpartnershipagreement.html">fibo-be-ptr-ptr:PartnershipAgreement</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_1631"><a  href="class-fibo-be-sps-spssoleproprietor.html">fibo-be-sps-sps:SoleProprietor</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_1632"><a  href="class-fibo-be-sps-spssoleproprietorship.html">fibo-be-sps-sps:SoleProprietorship</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_1633"><a  href="class-fibo-be-tr-trirrevocabletrust.html">fibo-be-tr-tr:IrrevocableTrust</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_1634"><a  href="class-fibo-be-tr-trlivingtrust.html">fibo-be-tr-tr:LivingTrust</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_1635"><a  href="class-fibo-be-tr-trrevocabletrust.html">fibo-be-tr-tr:RevocableTrust</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_1636"><a  href="class-fibo-be-tr-trtestamentarytrust.html">fibo-be-tr-tr:TestamentaryTrust</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_1637"><a  href="class-fibo-be-tr-trtrust.html">fibo-be-tr-tr:Trust</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_1638"><a  href="class-fibo-be-tr-trtrustagreement.html">fibo-be-tr-tr:TrustAgreement</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_1639"><a  href="class-fibo-be-tr-trtrustbeneficiary.html">fibo-be-tr-tr:TrustBeneficiary</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_1640"><a  href="class-fibo-be-tr-trtrustfundmanager.html">fibo-be-tr-tr:TrustFundManager</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_1641"><a  href="class-fibo-be-tr-trtrustee.html">fibo-be-tr-tr:Trustee</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_1642"><a  href="class-fibo-be-tr-trtrustor.html">fibo-be-tr-tr:Trustor</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_1644"><a  href="class-fibo-fnd-aap-pplidentitydocument.html">fibo-fnd-aap-ppl:IdentityDocument</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_1645"><a  href="class-fibo-fnd-aap-pplnationalidentificationnumber.html">fibo-fnd-aap-ppl:NationalIdentificationNumber</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_1646"><a  href="class-fibo-fnd-aap-pplperson.html">fibo-fnd-aap-ppl:Person</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_1643"><a  href="class-fibo-fnd-acc-curmonetaryamount.html">fibo-fnd-acc-cur:MonetaryAmount</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_1647"><a  href="class-fibo-fnd-agr-agrbeneficiary.html">fibo-fnd-agr-agr:Beneficiary</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_1648"><a  href="class-fibo-fnd-agr-ctrcontractparty.html">fibo-fnd-agr-ctr:ContractParty</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_1649"><a  href="class-fibo-fnd-agr-ctrcounterparty.html">fibo-fnd-agr-ctr:Counterparty</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_1650"><a  href="class-fibo-fnd-agr-ctrwrittencontract.html">fibo-fnd-agr-ctr:WrittenContract</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_1651"><a  href="class-fibo-fnd-arr-clsindustrysectorclassificationscheme.html">fibo-fnd-arr-cls:IndustrySectorClassificationScheme</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_1652"><a  href="class-fibo-fnd-arr-clsindustrysectorclassifier.html">fibo-fnd-arr-cls:IndustrySectorClassifier</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_1653"><a  href="class-fibo-fnd-gao-objbusinessobjective.html">fibo-fnd-gao-obj:BusinessObjective</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_1654"><a  href="class-fibo-fnd-gao-objobjective.html">fibo-fnd-gao-obj:Objective</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_1659"><a  href="class-fibo-fnd-law-corconstitution.html">fibo-fnd-law-cor:Constitution</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_1660"><a  href="class-fibo-fnd-law-corlaw.html">fibo-fnd-law-cor:Law</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_1661"><a  href="class-fibo-fnd-law-corstatutelaw.html">fibo-fnd-law-cor:StatuteLaw</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_1655"><a  href="class-fibo-fnd-law-lcapdelegatedlegalauthority.html">fibo-fnd-law-lcap:DelegatedLegalAuthority</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_1656"><a  href="class-fibo-fnd-law-lcapduty.html">fibo-fnd-law-lcap:Duty</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_1657"><a  href="class-fibo-fnd-law-lcaplegalcapacity.html">fibo-fnd-law-lcap:LegalCapacity</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_1658"><a  href="class-fibo-fnd-law-lcaplicense.html">fibo-fnd-law-lcap:License</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_1664"><a  href="class-fibo-fnd-oac-ctlcontrol.html">fibo-fnd-oac-ctl:Control</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_1665"><a  href="class-fibo-fnd-oac-ctlcontrolledthing.html">fibo-fnd-oac-ctl:ControlledThing</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_1666"><a  href="class-fibo-fnd-oac-ctlcontrollingparty.html">fibo-fnd-oac-ctl:ControllingParty</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_1667"><a  href="class-fibo-fnd-oac-ctldefactocontrol.html">fibo-fnd-oac-ctl:DeFactoControl</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_1668"><a  href="class-fibo-fnd-oac-ctldejurecontrol.html">fibo-fnd-oac-ctl:DeJureControl</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_1669"><a  href="class-fibo-fnd-oac-ownasset.html">fibo-fnd-oac-own:Asset</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_1670"><a  href="class-fibo-fnd-oac-ownfinancialasset.html">fibo-fnd-oac-own:FinancialAsset</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_1671"><a  href="class-fibo-fnd-oac-ownowner.html">fibo-fnd-oac-own:Owner</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_1672"><a  href="class-fibo-fnd-oac-ownownersequity.html">fibo-fnd-oac-own:OwnersEquity</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_1673"><a  href="class-fibo-fnd-oac-ownownership.html">fibo-fnd-oac-own:Ownership</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_1674"><a  href="class-fibo-fnd-oac-ownshareholdersequity.html">fibo-fnd-oac-own:ShareholdersEquity</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_1662"><a  href="class-fibo-fnd-org-fmemployee.html">fibo-fnd-org-fm:Employee</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_1663"><a  href="class-fibo-fnd-org-fmgroup.html">fibo-fnd-org-fm:Group</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_1676"><a  href="class-fibo-fnd-plc-adrconventionalstreetaddress.html">fibo-fnd-plc-adr:ConventionalStreetAddress</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_1677"><a  href="class-fibo-fnd-plc-adrphysicaladdress.html">fibo-fnd-plc-adr:PhysicalAddress</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_1675"><a  href="class-fibo-fnd-pty-ptytaxidentifier.html">fibo-fnd-pty-pty:TaxIdentifier</a></li>
+          
+        
+
+        
+            <li class="-second-level" id="sd_properties"><a  href="entities-tree-properties.html">Properties (93)</a>
+            </li>
+
+            
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_1798"><a   href="prop-cmns-rgaisrecognizedin.html">cmns-rga:isRecognizedIn</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_1715"><a   href="prop-fibo-be-corp-corphasdateofincorporation.html">fibo-be-corp-corp:hasDateOfIncorporation</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_1716"><a   href="prop-fibo-be-corp-corphasdateofregistration.html">fibo-be-corp-corp:hasDateOfRegistration</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_1717"><a   href="prop-fibo-be-corp-corphasissuedcapital.html">fibo-be-corp-corp:hasIssuedCapital</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_1706"><a   href="prop-fibo-be-corp-corphassharesauthorized.html">fibo-be-corp-corp:hasSharesAuthorized</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_1707"><a   href="prop-fibo-be-fct-fcthasmerchantcategorydescription.html">fibo-be-fct-fct:hasMerchantCategoryDescription</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_1718"><a   href="prop-fibo-be-fct-pubhaspublisher.html">fibo-be-fct-pub:hasPublisher</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_1719"><a   href="prop-fibo-be-fct-pubispublishedby.html">fibo-be-fct-pub:isPublishedBy</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_1720"><a   href="prop-fibo-be-fct-pubpublishes.html">fibo-be-fct-pub:publishes</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_1721"><a   href="prop-fibo-be-ge-gehasfullsovereigntyover.html">fibo-be-ge-ge:hasFullSovereigntyOver</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_1722"><a   href="prop-fibo-be-ge-gehassharedsovereigntyover.html">fibo-be-ge-ge:hasSharedSovereigntyOver</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_1723"><a   href="prop-fibo-be-ge-gehassovereigntyover.html">fibo-be-ge-ge:hasSovereigntyOver</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_1724"><a   href="prop-fibo-be-ge-geiselectedby.html">fibo-be-ge-ge:isElectedBy</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_1725"><a   href="prop-fibo-be-ge-geisinstrumentof.html">fibo-be-ge-ge:isInstrumentOf</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_1726"><a   href="prop-fibo-be-ge-geisrepresentedby.html">fibo-be-ge-ge:isRepresentedBy</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_1727"><a   href="prop-fibo-be-le-cbhasdateofincorporation.html">fibo-be-le-cb:hasDateOfIncorporation</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_1728"><a   href="prop-fibo-be-le-cbhasdateofregistration.html">fibo-be-le-cb:hasDateOfRegistration</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_1729"><a   href="prop-fibo-be-le-cbhasissuedcapital.html">fibo-be-le-cb:hasIssuedCapital</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_1708"><a   href="prop-fibo-be-le-cbhassharesauthorized.html">fibo-be-le-cb:hasSharesAuthorized</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_1730"><a   href="prop-fibo-be-le-cbisconstitutedby.html">fibo-be-le-cb:isConstitutedBy</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_1731"><a   href="prop-fibo-be-le-cbisincorporatedin.html">fibo-be-le-cb:isIncorporatedIn</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_1732"><a   href="prop-fibo-be-le-fbohasequity.html">fibo-be-le-fbo:hasEquity</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_1733"><a   href="prop-fibo-be-le-fbohasheadquartersaddress.html">fibo-be-le-fbo:hasHeadquartersAddress</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_1734"><a   href="prop-fibo-be-le-fbohasoperatingaddress.html">fibo-be-le-fbo:hasOperatingAddress</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_1735"><a   href="prop-fibo-be-le-fbohasregisteredaddress.html">fibo-be-le-fbo:hasRegisteredAddress</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_1736"><a   href="prop-fibo-be-le-leihaslegaladdress.html">fibo-be-le-lei:hasLegalAddress</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_1737"><a   href="prop-fibo-be-le-leihaslegalform.html">fibo-be-le-lei:hasLegalForm</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_1709"><a   href="prop-fibo-be-le-leihaslegalformabbreviation.html">fibo-be-le-lei:hasLegalFormAbbreviation</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_1710"><a   href="prop-fibo-be-le-leihasownershippercentage.html">fibo-be-le-lei:hasOwnershipPercentage</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_1711"><a   href="prop-fibo-be-le-leihastransliteratedlegalformabbreviation.html">fibo-be-le-lei:hasTransliteratedLegalFormAbbreviation</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_1712"><a   href="prop-fibo-be-le-leihastransliteratedname.html">fibo-be-le-lei:hasTransliteratedName</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_1738"><a   href="prop-fibo-be-le-leiisconsolidatedby.html">fibo-be-le-lei:isConsolidatedBy</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_1739"><a   href="prop-fibo-be-le-leiisconsolidationof.html">fibo-be-le-lei:isConsolidationOf</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_1740"><a   href="prop-fibo-be-le-leiisdirectlyconsolidatedby.html">fibo-be-le-lei:isDirectlyConsolidatedBy</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_1741"><a   href="prop-fibo-be-le-leiisinternationalbranchof.html">fibo-be-le-lei:isInternationalBranchOf</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_1713"><a   href="prop-fibo-be-le-leiisquantifiedby.html">fibo-be-le-lei:isQuantifiedBy</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_1742"><a   href="prop-fibo-be-le-leiisultimatelyconsolidatedby.html">fibo-be-le-lei:isUltimatelyConsolidatedBy</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_1743"><a   href="prop-fibo-be-le-lphasintendedliquidationdate.html">fibo-be-le-lp:hasIntendedLiquidationDate</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_1750"><a   href="prop-fibo-be-oac-cctlhasaffiliate.html">fibo-be-oac-cctl:hasAffiliate</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_1751"><a   href="prop-fibo-be-oac-cctlhascontrollingaffiliate.html">fibo-be-oac-cctl:hasControllingAffiliate</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_1752"><a   href="prop-fibo-be-oac-cctlhasdomesticultimateparent.html">fibo-be-oac-cctl:hasDomesticUltimateParent</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_1753"><a   href="prop-fibo-be-oac-cctlhasglobalultimateparent.html">fibo-be-oac-cctl:hasGlobalUltimateParent</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_1754"><a   href="prop-fibo-be-oac-cctlhassubsidiary.html">fibo-be-oac-cctl:hasSubsidiary</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_1755"><a   href="prop-fibo-be-oac-cctlisaffiliateof.html">fibo-be-oac-cctl:isAffiliateOf</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_1756"><a   href="prop-fibo-be-oac-cctliscontrollingaffiliateof.html">fibo-be-oac-cctl:isControllingAffiliateOf</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_1757"><a   href="prop-fibo-be-oac-cctlisparentcompanyof.html">fibo-be-oac-cctl:isParentCompanyOf</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_1758"><a   href="prop-fibo-be-oac-cctlissubsidiaryof.html">fibo-be-oac-cctl:isSubsidiaryOf</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_1759"><a   href="prop-fibo-be-oac-cctliswhollyownedby.html">fibo-be-oac-cctl:isWhollyOwnedBy</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_1714"><a   href="prop-fibo-be-oac-cownconsistsofnumberofunits.html">fibo-be-oac-cown:consistsOfNumberOfUnits</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_1760"><a   href="prop-fibo-be-oac-cownhasbeneficialowner.html">fibo-be-oac-cown:hasBeneficialOwner</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_1761"><a   href="prop-fibo-be-oac-cownisbeneficialownerof.html">fibo-be-oac-cown:isBeneficialOwnerOf</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_1744"><a   href="prop-fibo-be-oac-cptyadvises.html">fibo-be-oac-cpty:advises</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_1745"><a   href="prop-fibo-be-oac-cptyhascontrollingorganizationmember.html">fibo-be-oac-cpty:hasControllingOrganizationMember</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_1746"><a   href="prop-fibo-be-oac-cptyhasmajoritycontrollingparty.html">fibo-be-oac-cpty:hasMajorityControllingParty</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_1747"><a   href="prop-fibo-be-oac-cptyisadvisedby.html">fibo-be-oac-cpty:isAdvisedBy</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_1748"><a   href="prop-fibo-be-oac-cptyisbasedoninvestmentequity.html">fibo-be-oac-cpty:isBasedOnInvestmentEquity</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_1749"><a   href="prop-fibo-be-oac-cptyiscontrollingmemberof.html">fibo-be-oac-cpty:isControllingMemberOf</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_1762"><a   href="prop-fibo-be-oac-execauthorizes.html">fibo-be-oac-exec:authorizes</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_1763"><a   href="prop-fibo-be-oac-execauthorizesthrough.html">fibo-be-oac-exec:authorizesThrough</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_1764"><a   href="prop-fibo-be-oac-execdelegatescontrolto.html">fibo-be-oac-exec:delegatesControlTo</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_1765"><a   href="prop-fibo-be-oac-execdesignatessignatory.html">fibo-be-oac-exec:designatesSignatory</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_1766"><a   href="prop-fibo-be-oac-execelects.html">fibo-be-oac-exec:elects</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_1767"><a   href="prop-fibo-be-oac-exechasauthorizedparty.html">fibo-be-oac-exec:hasAuthorizedParty</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_1768"><a   href="prop-fibo-be-oac-exechasauthorizingparty.html">fibo-be-oac-exec:hasAuthorizingParty</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_1769"><a   href="prop-fibo-be-oac-exechascorporateofficer.html">fibo-be-oac-exec:hasCorporateOfficer</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_1770"><a   href="prop-fibo-be-oac-exechasdelegatedcontrolof.html">fibo-be-oac-exec:hasDelegatedControlOf</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_1771"><a   href="prop-fibo-be-oac-exechasdirector.html">fibo-be-oac-exec:hasDirector</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_1772"><a   href="prop-fibo-be-oac-exechasprincipalmanagingparty.html">fibo-be-oac-exec:hasPrincipalManagingParty</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_1773"><a   href="prop-fibo-be-oac-exechasresponsibility.html">fibo-be-oac-exec:hasResponsibility</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_1774"><a   href="prop-fibo-be-oac-exechasresponsibleparty.html">fibo-be-oac-exec:hasResponsibleParty</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_1775"><a   href="prop-fibo-be-oac-exechassigningauthorityfor.html">fibo-be-oac-exec:hasSigningAuthorityFor</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_1776"><a   href="prop-fibo-be-oac-exechasvestedinit.html">fibo-be-oac-exec:hasVestedInIt</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_1777"><a   href="prop-fibo-be-oac-execisauthorizedby.html">fibo-be-oac-exec:isAuthorizedBy</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_1778"><a   href="prop-fibo-be-oac-execisauthorizedthrough.html">fibo-be-oac-exec:isAuthorizedThrough</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_1779"><a   href="prop-fibo-be-oac-execisdirectorof.html">fibo-be-oac-exec:isDirectorOf</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_1780"><a   href="prop-fibo-be-oac-execisofficerof.html">fibo-be-oac-exec:isOfficerOf</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_1781"><a   href="prop-fibo-be-oac-execisprincipalpartyof.html">fibo-be-oac-exec:isPrincipalPartyOf</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_1782"><a   href="prop-fibo-be-oac-execnominates.html">fibo-be-oac-exec:nominates</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_1783"><a   href="prop-fibo-be-oac-optyguarantees.html">fibo-be-oac-opty:guarantees</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_1784"><a   href="prop-fibo-be-oac-optyhasdirectownership.html">fibo-be-oac-opty:hasDirectOwnership</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_1785"><a   href="prop-fibo-be-oac-optyhasdirectowningentity.html">fibo-be-oac-opty:hasDirectOwningEntity</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_1786"><a   href="prop-fibo-be-oac-optyhasinvestmententity.html">fibo-be-oac-opty:hasInvestmentEntity</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_1787"><a   href="prop-fibo-be-oac-optyhasinvestmentownership.html">fibo-be-oac-opty:hasInvestmentOwnership</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_1788"><a   href="prop-fibo-be-oac-optyhasownedentity.html">fibo-be-oac-opty:hasOwnedEntity</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_1789"><a   href="prop-fibo-be-oac-optyhasowningentity.html">fibo-be-oac-opty:hasOwningEntity</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_1794"><a   href="prop-fibo-be-plc-plchasmanagingmember.html">fibo-be-plc-plc:hasManagingMember</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_1795"><a   href="prop-fibo-be-plc-plcismanagingmemberof.html">fibo-be-plc-plc:isManagingMemberOf</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_1790"><a   href="prop-fibo-be-ptr-ptrhasgeneralpartner.html">fibo-be-ptr-ptr:hasGeneralPartner</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_1791"><a   href="prop-fibo-be-ptr-ptrhaslimitedpartner.html">fibo-be-ptr-ptr:hasLimitedPartner</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_1792"><a   href="prop-fibo-be-ptr-ptrisgeneralpartnerof.html">fibo-be-ptr-ptr:isGeneralPartnerOf</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_1793"><a   href="prop-fibo-be-ptr-ptrislimitedpartnerof.html">fibo-be-ptr-ptr:isLimitedPartnerOf</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_1796"><a   href="prop-fibo-be-tr-trhastrustee.html">fibo-be-tr-tr:hasTrustee</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_1797"><a   href="prop-fibo-be-tr-tristrusteeof.html">fibo-be-tr-tr:isTrusteeOf</a></li>
+          
+
+        
+
+        
+
+
+        
+
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+
+    </ul>
+
+</div>
+
+
+<!-- /#sidebar-wrapper -->
+  
+
+
+
+    <!-- Begin page content -->
+    <div class="container" id="page-content-wrapper">
+
+      
+
+	
+
+      
+
+    
+    
+        
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <ol class="breadcrumb">
+    <li>
+      <a href="index.html">Home</a>
+    </li>
+    <li>
+          <a href="entities-az.html">Entities</a>
+    </li>
+    <li>
+          <a href="entities-tree-classes.html">Classes</a>
+    </li>
+      <li class="active">
+            fibo-be-oac-exec:ChiefFinancialOfficer
+        </li>
+  </ol>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+
+    
+    <h1>
+      fibo-be-oac-exec:ChiefFinancialOfficer
+      
+        <small class="label label-info label-xs">leaf node</small>
+      
+    </h1>
+
+    <hr>  
+
+    
+    <div class="tree-container">
+      <div class="tree">
+        <ul>
+          
+            
+              <li>
+                <a href="class-fibo-be-oac-execcorporateofficer.html" title="'corporate officer' - high-level management executive of a corporation or other organization, hired by the board of directors or the business owner(s), charged..">fibo-be-oac-exec:CorporateOfficer</a>
+                  <ul>
+                    <li><a style="font-weight: bold;" title="'chief financial officer' - senior-most corporate officer responsible for financial control and planning for an organization or project">fibo-be-oac-exec:ChiefFinancialOfficer</a>
+                    
+                  </li>
+                </ul>
+              </li>
+            
+          
+        </ul>
+      </div>
+    </div>
+
+
+    
+    <div class="row">
+      <div class="col-md-12">
+        <div class="panel panel-default">
+          <div class="panel-heading">
+            <h3 class="panel-title">URI</h3>
+          </div>
+          <div class="panel-body">
+            <code>https://spec.edmcouncil.org/fibo/ontology/BE/OwnershipAndControl/Executives/ChiefFinancialOfficer</code>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+    
+    
+      <div class="row">
+        <div class="col-md-12">
+          <div class="panel panel-default">
+          <div class="panel-heading">
+            <h3 class="panel-title">Label</h3>
+          </div>
+          <div class="panel-body">
+            chief financial officer
+          </div>
+          </div>
+        </div>
+      </div>
+    
+
+
+    
+    
+      <div class="row">
+        <div class="col-md-12">
+          <div class="panel panel-default">
+            <div class="panel-heading">
+              <h3 class="panel-title">Description</h3>
+            </div>
+            <div class="panel-body">
+              <p>senior-most corporate officer responsible for financial control and planning for an organization or project</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    
+
+    
+    
+
+
+
+    
+    
+      <div class="row">
+        <div class="col-md-12">
+          <div class="panel panel-default">
+            <div class="panel-heading">
+              <h3 class="panel-title">Superclasses (8)</h3>
+            </div>
+            <div class="panel-body">
+              
+                
+                  <li><a href="class-fibo-be-oac-execcorporateofficer.html" title="https://spec.edmcouncil.org/fibo/ontology/BE/OwnershipAndControl/Executives/CorporateOfficer">fibo-be-oac-exec:CorporateOfficer</a></li>
+                
+                  <li><a href="class-fibo-be-oac-execexecutive.html" title="https://spec.edmcouncil.org/fibo/ontology/BE/OwnershipAndControl/Executives/Executive">fibo-be-oac-exec:Executive</a></li>
+                
+                  <li><a href="class-cmns-bauthlegallydelegatedauthority.html" title="https://www.omg.org/spec/Commons/BusinessAuthorizations/LegallyDelegatedAuthority">cmns-bauth:LegallyDelegatedAuthority</a></li>
+                
+                  <li><a href="class-fibo-fnd-oac-ctlcontrollingparty.html" title="https://spec.edmcouncil.org/fibo/ontology/FND/OwnershipAndControl/Control/ControllingParty">fibo-fnd-oac-ctl:ControllingParty</a></li>
+                
+                  <li><a href="class-fibo-be-oac-execsignatory.html" title="https://spec.edmcouncil.org/fibo/ontology/BE/OwnershipAndControl/Executives/Signatory">fibo-be-oac-exec:Signatory</a></li>
+                
+                  <li><a href="class-fibo-be-oac-execauthorizedindividual.html" title="https://spec.edmcouncil.org/fibo/ontology/BE/OwnershipAndControl/Executives/AuthorizedIndividual">fibo-be-oac-exec:AuthorizedIndividual</a></li>
+                
+                  <li><a href="class-cmns-bauthresponsibleparty.html" title="https://www.omg.org/spec/Commons/BusinessAuthorizations/ResponsibleParty">cmns-bauth:ResponsibleParty</a></li>
+                
+                  <li><a href="class-cmns-orgorganizationmember.html" title="https://www.omg.org/spec/Commons/Organizations/OrganizationMember">cmns-org:OrganizationMember</a></li>
+                
+              
+            </div>
+          </div>
+        </div>
+      </div>
+    
+
+
+    
+    
+
+
+    
+    
+
+
+    
+    
+      <div class="row">
+        <div class="col-md-12">
+          <div class="panel panel-default">
+            <div class="panel-heading">
+              <h3 class="panel-title">Usage</h3>
+            </div>
+            <div class="panel-body" style="overflow: auto;">
+              <p>Instances of fibo-be-oac-exec:ChiefFinancialOfficer can have the following properties:</p>
+            </div>
+            <table class="table table-bordered" style="overflow: auto;">
+              <tr class="table-classproperties">
+                <th>PROPERTY</th><th>TYPE</th><th>DESCRIPTION</th><th>RANGE</th>
+              </tr>
+              
+                
+                  
+                
+              
+                
+                  
+                      <tr class="table-inheritanceinfo">
+                        <th colspan="4" class="treeinfo">
+                          <span class="label label-default">From class <a title="fibo-be-oac-exec:CorporateOfficer" href="class-fibo-be-oac-execcorporateofficer.html" class="fromclass_link">fibo-be-oac-exec:CorporateOfficer</a></span>
+                        </th>
+                      </tr>
+                    
+                      <tr>
+                        <td class="firsttd">
+                          <a class="propcolor" title="fibo-be-oac-exec:isOfficerOf" href="prop-fibo-be-oac-execisofficerof.html">fibo-be-oac-exec:isOfficerOf</a>
+                        </td>
+                        <td class="secondtd">
+                          <i>owl:ObjectProperty<i>
+                        </td>
+                        <td class="thirdtd">
+                          <span>indicates the organization that the person has some authority over and managerial responsibility for</span>
+                        </td>
+                        <td class="fourthtd">
+                          
+                          
+                            
+                                
+                                  <a title="fibo-be-oac-cpty:ControlledParty" href="class-fibo-be-oac-cptycontrolledparty.html" class="rdfclass">fibo-be-oac-cpty:ControlledParty</a>
+                                
+                            
+                          
+                        </td>
+                      </tr>
+                    
+                  
+                
+              
+                
+                  
+                      <tr class="table-inheritanceinfo">
+                        <th colspan="4" class="treeinfo">
+                          <span class="label label-default">From class <a title="cmns-bauth:LegallyDelegatedAuthority" href="class-cmns-bauthlegallydelegatedauthority.html" class="fromclass_link">cmns-bauth:LegallyDelegatedAuthority</a></span>
+                        </th>
+                      </tr>
+                    
+                      <tr>
+                        <td class="firsttd">
+                          <a class="propcolor" title="fibo-be-oac-exec:hasVestedInIt" href="prop-fibo-be-oac-exechasvestedinit.html">fibo-be-oac-exec:hasVestedInIt</a>
+                        </td>
+                        <td class="secondtd">
+                          <i>owl:ObjectProperty<i>
+                        </td>
+                        <td class="thirdtd">
+                          <span>indicates the delegated legal authority that is vested in the controlling party</span>
+                        </td>
+                        <td class="fourthtd">
+                          
+                          
+                            
+                                
+                                  <a title="fibo-fnd-law-lcap:DelegatedLegalAuthority" href="class-fibo-fnd-law-lcapdelegatedlegalauthority.html" class="rdfclass">fibo-fnd-law-lcap:DelegatedLegalAuthority</a>
+                                
+                            
+                          
+                        </td>
+                      </tr>
+                    
+                  
+                
+              
+                
+                  
+                      <tr class="table-inheritanceinfo">
+                        <th colspan="4" class="treeinfo">
+                          <span class="label label-default">From class <a title="fibo-fnd-oac-ctl:ControllingParty" href="class-fibo-fnd-oac-ctlcontrollingparty.html" class="fromclass_link">fibo-fnd-oac-ctl:ControllingParty</a></span>
+                        </th>
+                      </tr>
+                    
+                      <tr>
+                        <td class="firsttd">
+                          <a class="propcolor" title="fibo-be-oac-cpty:advises" href="prop-fibo-be-oac-cptyadvises.html">fibo-be-oac-cpty:advises</a>
+                        </td>
+                        <td class="secondtd">
+                          <i>owl:ObjectProperty<i>
+                        </td>
+                        <td class="thirdtd">
+                          <span>provides counsel or guidance to</span>
+                        </td>
+                        <td class="fourthtd">
+                          
+                          
+                            
+                                
+                                  <a title="fibo-be-oac-cpty:ControlledParty" href="class-fibo-be-oac-cptycontrolledparty.html" class="rdfclass">fibo-be-oac-cpty:ControlledParty</a>
+                                
+                            
+                          
+                        </td>
+                      </tr>
+                    
+                  
+                
+              
+                
+                  
+                      <tr class="table-inheritanceinfo">
+                        <th colspan="4" class="treeinfo">
+                          <span class="label label-default">From class <a title="fibo-be-oac-exec:Signatory" href="class-fibo-be-oac-execsignatory.html" class="fromclass_link">fibo-be-oac-exec:Signatory</a></span>
+                        </th>
+                      </tr>
+                    
+                      <tr>
+                        <td class="firsttd">
+                          <a class="propcolor" title="fibo-be-oac-exec:hasSigningAuthorityFor" href="prop-fibo-be-oac-exechassigningauthorityfor.html">fibo-be-oac-exec:hasSigningAuthorityFor</a>
+                        </td>
+                        <td class="secondtd">
+                          <i>owl:ObjectProperty<i>
+                        </td>
+                        <td class="thirdtd">
+                          <span>indicates the party for which a signatory has the ability to sign agreements, access accounts and perform related tasks</span>
+                        </td>
+                        <td class="fourthtd">
+                          
+                          
+                              <i>owl:Thing</i>
+                          
+                        </td>
+                      </tr>
+                    
+                  
+                
+              
+                
+                  
+                      <tr class="table-inheritanceinfo">
+                        <th colspan="4" class="treeinfo">
+                          <span class="label label-default">From class <a title="cmns-org:OrganizationMember" href="class-cmns-orgorganizationmember.html" class="fromclass_link">cmns-org:OrganizationMember</a></span>
+                        </th>
+                      </tr>
+                    
+                      <tr>
+                        <td class="firsttd">
+                          <a class="propcolor" title="fibo-be-oac-cpty:isControllingMemberOf" href="prop-fibo-be-oac-cptyiscontrollingmemberof.html">fibo-be-oac-cpty:isControllingMemberOf</a>
+                        </td>
+                        <td class="secondtd">
+                          <i>owl:ObjectProperty<i>
+                        </td>
+                        <td class="thirdtd">
+                          <span>identifies a controlled organization over which the member has some measure of control</span>
+                        </td>
+                        <td class="fourthtd">
+                          
+                          
+                            
+                                
+                                  <a title="fibo-be-oac-cpty:ControlledParty" href="class-fibo-be-oac-cptycontrolledparty.html" class="rdfclass">fibo-be-oac-cpty:ControlledParty</a>
+                                
+                            
+                          
+                        </td>
+                      </tr>
+                    
+                  
+                
+              
+                
+                  
+                      <tr class="table-inheritanceinfo">
+                        <th colspan="4" class="treeinfo">
+                          <span class="label label-default">From class <a title="owl:Thing" href="class-owlthing.html" class="fromclass_link">owl:Thing</a></span>
+                        </th>
+                      </tr>
+                    
+                      <tr>
+                        <td class="firsttd">
+                          <a class="propcolor" title="fibo-be-corp-corp:hasDateOfIncorporation" href="prop-fibo-be-corp-corphasdateofincorporation.html">fibo-be-corp-corp:hasDateOfIncorporation</a>
+                        </td>
+                        <td class="secondtd">
+                          <i>owl:ObjectProperty<i>
+                        </td>
+                        <td class="thirdtd">
+                          <span></span>
+                        </td>
+                        <td class="fourthtd">
+                          
+                          
+                              <i>owl:Thing</i>
+                          
+                        </td>
+                      </tr>
+                    
+                      <tr>
+                        <td class="firsttd">
+                          <a class="propcolor" title="fibo-be-corp-corp:hasDateOfRegistration" href="prop-fibo-be-corp-corphasdateofregistration.html">fibo-be-corp-corp:hasDateOfRegistration</a>
+                        </td>
+                        <td class="secondtd">
+                          <i>owl:ObjectProperty<i>
+                        </td>
+                        <td class="thirdtd">
+                          <span></span>
+                        </td>
+                        <td class="fourthtd">
+                          
+                          
+                              <i>owl:Thing</i>
+                          
+                        </td>
+                      </tr>
+                    
+                      <tr>
+                        <td class="firsttd">
+                          <a class="propcolor" title="fibo-be-corp-corp:hasIssuedCapital" href="prop-fibo-be-corp-corphasissuedcapital.html">fibo-be-corp-corp:hasIssuedCapital</a>
+                        </td>
+                        <td class="secondtd">
+                          <i>owl:ObjectProperty<i>
+                        </td>
+                        <td class="thirdtd">
+                          <span></span>
+                        </td>
+                        <td class="fourthtd">
+                          
+                          
+                              <i>owl:Thing</i>
+                          
+                        </td>
+                      </tr>
+                    
+                      <tr>
+                        <td class="firsttd">
+                          <a class="propcolor" title="fibo-be-corp-corp:hasSharesAuthorized" href="prop-fibo-be-corp-corphassharesauthorized.html">fibo-be-corp-corp:hasSharesAuthorized</a>
+                        </td>
+                        <td class="secondtd">
+                          <i>owl:DatatypeProperty<i>
+                        </td>
+                        <td class="thirdtd">
+                          <span></span>
+                        </td>
+                        <td class="fourthtd">
+                          
+                          
+                              <i>owl:Thing</i>
+                          
+                        </td>
+                      </tr>
+                    
+                      <tr>
+                        <td class="firsttd">
+                          <a class="propcolor" title="fibo-be-ge-ge:isElectedBy" href="prop-fibo-be-ge-geiselectedby.html">fibo-be-ge-ge:isElectedBy</a>
+                        </td>
+                        <td class="secondtd">
+                          <i>owl:ObjectProperty<i>
+                        </td>
+                        <td class="thirdtd">
+                          <span>identifies an official or government chosen to hold office by voting</span>
+                        </td>
+                        <td class="fourthtd">
+                          
+                          
+                              <i>owl:Thing</i>
+                          
+                        </td>
+                      </tr>
+                    
+                      <tr>
+                        <td class="firsttd">
+                          <a class="propcolor" title="fibo-be-ge-ge:isRepresentedBy" href="prop-fibo-be-ge-geisrepresentedby.html">fibo-be-ge-ge:isRepresentedBy</a>
+                        </td>
+                        <td class="secondtd">
+                          <i>owl:ObjectProperty<i>
+                        </td>
+                        <td class="thirdtd">
+                          <span>relates a system of governance to its chosen representatives</span>
+                        </td>
+                        <td class="fourthtd">
+                          
+                          
+                              <i>owl:Thing</i>
+                          
+                        </td>
+                      </tr>
+                    
+                      <tr>
+                        <td class="firsttd">
+                          <a class="propcolor" title="fibo-be-le-cb:hasDateOfIncorporation" href="prop-fibo-be-le-cbhasdateofincorporation.html">fibo-be-le-cb:hasDateOfIncorporation</a>
+                        </td>
+                        <td class="secondtd">
+                          <i>owl:ObjectProperty<i>
+                        </td>
+                        <td class="thirdtd">
+                          <span>indicates the formal date of incorporation as stated in filing documents</span>
+                        </td>
+                        <td class="fourthtd">
+                          
+                          
+                            
+                                
+                                  <a title="cmns-dt:ExplicitDate" href="class-cmns-dtexplicitdate.html" class="rdfclass">cmns-dt:ExplicitDate</a>
+                                
+                            
+                          
+                        </td>
+                      </tr>
+                    
+                      <tr>
+                        <td class="firsttd">
+                          <a class="propcolor" title="fibo-be-le-cb:hasDateOfRegistration" href="prop-fibo-be-le-cbhasdateofregistration.html">fibo-be-le-cb:hasDateOfRegistration</a>
+                        </td>
+                        <td class="secondtd">
+                          <i>owl:ObjectProperty<i>
+                        </td>
+                        <td class="thirdtd">
+                          <span>indicates the date on which the corporation has registered in some jurisdiction for regulatory and / or for tax purposes</span>
+                        </td>
+                        <td class="fourthtd">
+                          
+                          
+                            
+                                
+                                  <a title="cmns-dt:ExplicitDate" href="class-cmns-dtexplicitdate.html" class="rdfclass">cmns-dt:ExplicitDate</a>
+                                
+                            
+                          
+                        </td>
+                      </tr>
+                    
+                      <tr>
+                        <td class="firsttd">
+                          <a class="propcolor" title="fibo-be-le-cb:hasIssuedCapital" href="prop-fibo-be-le-cbhasissuedcapital.html">fibo-be-le-cb:hasIssuedCapital</a>
+                        </td>
+                        <td class="secondtd">
+                          <i>owl:ObjectProperty<i>
+                        </td>
+                        <td class="thirdtd">
+                          <span>indicates the aggregate value of all shares held by shareholders</span>
+                        </td>
+                        <td class="fourthtd">
+                          
+                          
+                            
+                                
+                                  <a title="fibo-fnd-acc-cur:MonetaryAmount" href="class-fibo-fnd-acc-curmonetaryamount.html" class="rdfclass">fibo-fnd-acc-cur:MonetaryAmount</a>
+                                
+                            
+                          
+                        </td>
+                      </tr>
+                    
+                      <tr>
+                        <td class="firsttd">
+                          <a class="propcolor" title="fibo-be-le-cb:hasSharesAuthorized" href="prop-fibo-be-le-cbhassharesauthorized.html">fibo-be-le-cb:hasSharesAuthorized</a>
+                        </td>
+                        <td class="secondtd">
+                          <i>owl:DatatypeProperty<i>
+                        </td>
+                        <td class="thirdtd">
+                          <span>indicates the maximum number of shares that are permitted to be issued, as established by the board of directors</span>
+                        </td>
+                        <td class="fourthtd">
+                          
+                          
+                            
+                                
+                                  <i>xsd:nonNegativeInteger</i>
+                                
+                            
+                          
+                        </td>
+                      </tr>
+                    
+                      <tr>
+                        <td class="firsttd">
+                          <a class="propcolor" title="fibo-be-le-lei:hasLegalFormAbbreviation" href="prop-fibo-be-le-leihaslegalformabbreviation.html">fibo-be-le-lei:hasLegalFormAbbreviation</a>
+                        </td>
+                        <td class="secondtd">
+                          <i>owl:DatatypeProperty<i>
+                        </td>
+                        <td class="thirdtd">
+                          <span>the precise abbreviation for the entity legal form as defined in the jurisdiction in which it is registered, for example LLC, LLP, Ltd, PLC, Corp.</span>
+                        </td>
+                        <td class="fourthtd">
+                          
+                          
+                              <i>owl:Thing</i>
+                          
+                        </td>
+                      </tr>
+                    
+                      <tr>
+                        <td class="firsttd">
+                          <a class="propcolor" title="fibo-be-le-lei:hasOwnershipPercentage" href="prop-fibo-be-le-leihasownershippercentage.html">fibo-be-le-lei:hasOwnershipPercentage</a>
+                        </td>
+                        <td class="secondtd">
+                          <i>owl:DatatypeProperty<i>
+                        </td>
+                        <td class="thirdtd">
+                          <span>the percentage ownership interest in the owned entity owned by owning entity, if known</span>
+                        </td>
+                        <td class="fourthtd">
+                          
+                          
+                            
+                                
+                                  <i>xsd:decimal</i>
+                                
+                            
+                          
+                        </td>
+                      </tr>
+                    
+                      <tr>
+                        <td class="firsttd">
+                          <a class="propcolor" title="fibo-be-le-lei:hasTransliteratedLegalFormAbbreviation" href="prop-fibo-be-le-leihastransliteratedlegalformabbreviation.html">fibo-be-le-lei:hasTransliteratedLegalFormAbbreviation</a>
+                        </td>
+                        <td class="secondtd">
+                          <i>owl:DatatypeProperty<i>
+                        </td>
+                        <td class="thirdtd">
+                          <span>a transliterated (i.e., in Latin or Romanized ASCII) representation of the abbreviation for the entity legal form</span>
+                        </td>
+                        <td class="fourthtd">
+                          
+                          
+                              <i>owl:Thing</i>
+                          
+                        </td>
+                      </tr>
+                    
+                      <tr>
+                        <td class="firsttd">
+                          <a class="propcolor" title="fibo-be-le-lei:hasTransliteratedName" href="prop-fibo-be-le-leihastransliteratedname.html">fibo-be-le-lei:hasTransliteratedName</a>
+                        </td>
+                        <td class="secondtd">
+                          <i>owl:DatatypeProperty<i>
+                        </td>
+                        <td class="thirdtd">
+                          <span>a transliterated (i.e., in Latin or Romanized ASCII) representation of a name for the entity</span>
+                        </td>
+                        <td class="fourthtd">
+                          
+                          
+                              <i>owl:Thing</i>
+                          
+                        </td>
+                      </tr>
+                    
+                      <tr>
+                        <td class="firsttd">
+                          <a class="propcolor" title="fibo-be-le-lei:isConsolidatedBy" href="prop-fibo-be-le-leiisconsolidatedby.html">fibo-be-le-lei:isConsolidatedBy</a>
+                        </td>
+                        <td class="secondtd">
+                          <i>owl:ObjectProperty<i>
+                        </td>
+                        <td class="thirdtd">
+                          <span>indicates the entity considered the &#39;end node&#39; or consolidating entity (parent) from an ISO 17442 perspective</span>
+                        </td>
+                        <td class="fourthtd">
+                          
+                          
+                            
+                                
+                                  <a title="cmns-org:LegalEntity" href="class-cmns-orglegalentity.html" class="rdfclass">cmns-org:LegalEntity</a>
+                                
+                            
+                          
+                        </td>
+                      </tr>
+                    
+                      <tr>
+                        <td class="firsttd">
+                          <a class="propcolor" title="fibo-be-le-lei:isConsolidationOf" href="prop-fibo-be-le-leiisconsolidationof.html">fibo-be-le-lei:isConsolidationOf</a>
+                        </td>
+                        <td class="secondtd">
+                          <i>owl:ObjectProperty<i>
+                        </td>
+                        <td class="thirdtd">
+                          <span>indicates the entity considered the &#39;start node&#39; or consolidated entity from an ISO 17442 perspective</span>
+                        </td>
+                        <td class="fourthtd">
+                          
+                          
+                            
+                                
+                                  <a title="cmns-org:LegalEntity" href="class-cmns-orglegalentity.html" class="rdfclass">cmns-org:LegalEntity</a>
+                                
+                            
+                          
+                        </td>
+                      </tr>
+                    
+                      <tr>
+                        <td class="firsttd">
+                          <a class="propcolor" title="fibo-be-le-lei:isDirectlyConsolidatedBy" href="prop-fibo-be-le-leiisdirectlyconsolidatedby.html">fibo-be-le-lei:isDirectlyConsolidatedBy</a>
+                        </td>
+                        <td class="secondtd">
+                          <i>owl:ObjectProperty<i>
+                        </td>
+                        <td class="thirdtd">
+                          <span>indicates that the entity considered the &#39;end node&#39; or consolidating entity (parent) fully consolidates the accounting of the &#39;start node&#39; (child) per the accounting rules specified, and is the closest consolidating entity to that child in any applicable ownership hierarchy</span>
+                        </td>
+                        <td class="fourthtd">
+                          
+                          
+                            
+                                
+                                  <a title="cmns-org:LegalEntity" href="class-cmns-orglegalentity.html" class="rdfclass">cmns-org:LegalEntity</a>
+                                
+                            
+                          
+                        </td>
+                      </tr>
+                    
+                      <tr>
+                        <td class="firsttd">
+                          <a class="propcolor" title="fibo-be-le-lei:isInternationalBranchOf" href="prop-fibo-be-le-leiisinternationalbranchof.html">fibo-be-le-lei:isInternationalBranchOf</a>
+                        </td>
+                        <td class="secondtd">
+                          <i>owl:ObjectProperty<i>
+                        </td>
+                        <td class="thirdtd">
+                          <span>indicates that the entity considered the &#39;start node&#39; or consolidated entity (child) is an international subsidiary of the &#39;end node&#39; (parent) in the jurisdiction of the child</span>
+                        </td>
+                        <td class="fourthtd">
+                          
+                          
+                            
+                                
+                                  <a title="cmns-org:LegalEntity" href="class-cmns-orglegalentity.html" class="rdfclass">cmns-org:LegalEntity</a>
+                                
+                            
+                          
+                        </td>
+                      </tr>
+                    
+                      <tr>
+                        <td class="firsttd">
+                          <a class="propcolor" title="fibo-be-le-lei:isQuantifiedBy" href="prop-fibo-be-le-leiisquantifiedby.html">fibo-be-le-lei:isQuantifiedBy</a>
+                        </td>
+                        <td class="secondtd">
+                          <i>owl:DatatypeProperty<i>
+                        </td>
+                        <td class="thirdtd">
+                          <span>indicates that something is limited to or conditional due to some rate or other statistical value</span>
+                        </td>
+                        <td class="fourthtd">
+                          
+                          
+                            
+                                
+                                  <i>xsd:decimal</i>
+                                
+                            
+                          
+                        </td>
+                      </tr>
+                    
+                      <tr>
+                        <td class="firsttd">
+                          <a class="propcolor" title="fibo-be-le-lei:isUltimatelyConsolidatedBy" href="prop-fibo-be-le-leiisultimatelyconsolidatedby.html">fibo-be-le-lei:isUltimatelyConsolidatedBy</a>
+                        </td>
+                        <td class="secondtd">
+                          <i>owl:ObjectProperty<i>
+                        </td>
+                        <td class="thirdtd">
+                          <span>indicates that the entity considered the &#39;end node&#39; or consolidating entity (parent) fully consolidates the accounting of the &#39;start node&#39; (child) per the accounting rules specified, and is the most distant consolidating entity to that child in any applicable ownership hierarchy</span>
+                        </td>
+                        <td class="fourthtd">
+                          
+                          
+                            
+                                
+                                  <a title="cmns-org:LegalEntity" href="class-cmns-orglegalentity.html" class="rdfclass">cmns-org:LegalEntity</a>
+                                
+                            
+                          
+                        </td>
+                      </tr>
+                    
+                      <tr>
+                        <td class="firsttd">
+                          <a class="propcolor" title="fibo-be-le-lp:hasIntendedLiquidationDate" href="prop-fibo-be-le-lphasintendedliquidationdate.html">fibo-be-le-lp:hasIntendedLiquidationDate</a>
+                        </td>
+                        <td class="secondtd">
+                          <i>owl:ObjectProperty<i>
+                        </td>
+                        <td class="thirdtd">
+                          <span>links an agreement, contract, or legal entity to a date on which it is scheduled to be sold</span>
+                        </td>
+                        <td class="fourthtd">
+                          
+                          
+                            
+                                
+                                  <a title="cmns-dt:Date" href="class-cmns-dtdate.html" class="rdfclass">cmns-dt:Date</a>
+                                
+                            
+                          
+                        </td>
+                      </tr>
+                    
+                      <tr>
+                        <td class="firsttd">
+                          <a class="propcolor" title="fibo-be-oac-cown:consistsOfNumberOfUnits" href="prop-fibo-be-oac-cownconsistsofnumberofunits.html">fibo-be-oac-cown:consistsOfNumberOfUnits</a>
+                        </td>
+                        <td class="secondtd">
+                          <i>owl:DatatypeProperty<i>
+                        </td>
+                        <td class="thirdtd">
+                          <span>indicates the number of units of</span>
+                        </td>
+                        <td class="fourthtd">
+                          
+                          
+                            
+                                
+                                  <i>xsd:decimal</i>
+                                
+                            
+                          
+                        </td>
+                      </tr>
+                    
+                      <tr>
+                        <td class="firsttd">
+                          <a class="propcolor" title="fibo-be-oac-exec:authorizes" href="prop-fibo-be-oac-execauthorizes.html">fibo-be-oac-exec:authorizes</a>
+                        </td>
+                        <td class="secondtd">
+                          <i>owl:ObjectProperty<i>
+                        </td>
+                        <td class="thirdtd">
+                          <span></span>
+                        </td>
+                        <td class="fourthtd">
+                          
+                          
+                              <i>owl:Thing</i>
+                          
+                        </td>
+                      </tr>
+                    
+                      <tr>
+                        <td class="firsttd">
+                          <a class="propcolor" title="fibo-be-oac-exec:authorizesThrough" href="prop-fibo-be-oac-execauthorizesthrough.html">fibo-be-oac-exec:authorizesThrough</a>
+                        </td>
+                        <td class="secondtd">
+                          <i>owl:ObjectProperty<i>
+                        </td>
+                        <td class="thirdtd">
+                          <span></span>
+                        </td>
+                        <td class="fourthtd">
+                          
+                          
+                              <i>owl:Thing</i>
+                          
+                        </td>
+                      </tr>
+                    
+                      <tr>
+                        <td class="firsttd">
+                          <a class="propcolor" title="fibo-be-oac-exec:delegatesControlTo" href="prop-fibo-be-oac-execdelegatescontrolto.html">fibo-be-oac-exec:delegatesControlTo</a>
+                        </td>
+                        <td class="secondtd">
+                          <i>owl:ObjectProperty<i>
+                        </td>
+                        <td class="thirdtd">
+                          <span></span>
+                        </td>
+                        <td class="fourthtd">
+                          
+                          
+                              <i>owl:Thing</i>
+                          
+                        </td>
+                      </tr>
+                    
+                      <tr>
+                        <td class="firsttd">
+                          <a class="propcolor" title="fibo-be-oac-exec:designatesSignatory" href="prop-fibo-be-oac-execdesignatessignatory.html">fibo-be-oac-exec:designatesSignatory</a>
+                        </td>
+                        <td class="secondtd">
+                          <i>owl:ObjectProperty<i>
+                        </td>
+                        <td class="thirdtd">
+                          <span>authorizes to sign agreements, access accounts and/or perform other similar tasks</span>
+                        </td>
+                        <td class="fourthtd">
+                          
+                          
+                            
+                                
+                                  <a title="fibo-be-oac-exec:Signatory" href="class-fibo-be-oac-execsignatory.html" class="rdfclass">fibo-be-oac-exec:Signatory</a>
+                                
+                            
+                          
+                        </td>
+                      </tr>
+                    
+                      <tr>
+                        <td class="firsttd">
+                          <a class="propcolor" title="fibo-be-oac-exec:hasAuthorizedParty" href="prop-fibo-be-oac-exechasauthorizedparty.html">fibo-be-oac-exec:hasAuthorizedParty</a>
+                        </td>
+                        <td class="secondtd">
+                          <i>owl:ObjectProperty<i>
+                        </td>
+                        <td class="thirdtd">
+                          <span></span>
+                        </td>
+                        <td class="fourthtd">
+                          
+                          
+                              <i>owl:Thing</i>
+                          
+                        </td>
+                      </tr>
+                    
+                      <tr>
+                        <td class="firsttd">
+                          <a class="propcolor" title="fibo-be-oac-exec:hasAuthorizingParty" href="prop-fibo-be-oac-exechasauthorizingparty.html">fibo-be-oac-exec:hasAuthorizingParty</a>
+                        </td>
+                        <td class="secondtd">
+                          <i>owl:ObjectProperty<i>
+                        </td>
+                        <td class="thirdtd">
+                          <span></span>
+                        </td>
+                        <td class="fourthtd">
+                          
+                          
+                              <i>owl:Thing</i>
+                          
+                        </td>
+                      </tr>
+                    
+                      <tr>
+                        <td class="firsttd">
+                          <a class="propcolor" title="fibo-be-oac-exec:hasDelegatedControlOf" href="prop-fibo-be-oac-exechasdelegatedcontrolof.html">fibo-be-oac-exec:hasDelegatedControlOf</a>
+                        </td>
+                        <td class="secondtd">
+                          <i>owl:ObjectProperty<i>
+                        </td>
+                        <td class="thirdtd">
+                          <span></span>
+                        </td>
+                        <td class="fourthtd">
+                          
+                          
+                              <i>owl:Thing</i>
+                          
+                        </td>
+                      </tr>
+                    
+                      <tr>
+                        <td class="firsttd">
+                          <a class="propcolor" title="fibo-be-oac-exec:hasResponsibleParty" href="prop-fibo-be-oac-exechasresponsibleparty.html">fibo-be-oac-exec:hasResponsibleParty</a>
+                        </td>
+                        <td class="secondtd">
+                          <i>owl:ObjectProperty<i>
+                        </td>
+                        <td class="thirdtd">
+                          <span></span>
+                        </td>
+                        <td class="fourthtd">
+                          
+                          
+                              <i>owl:Thing</i>
+                          
+                        </td>
+                      </tr>
+                    
+                      <tr>
+                        <td class="firsttd">
+                          <a class="propcolor" title="fibo-be-oac-exec:isAuthorizedBy" href="prop-fibo-be-oac-execisauthorizedby.html">fibo-be-oac-exec:isAuthorizedBy</a>
+                        </td>
+                        <td class="secondtd">
+                          <i>owl:ObjectProperty<i>
+                        </td>
+                        <td class="thirdtd">
+                          <span></span>
+                        </td>
+                        <td class="fourthtd">
+                          
+                          
+                              <i>owl:Thing</i>
+                          
+                        </td>
+                      </tr>
+                    
+                      <tr>
+                        <td class="firsttd">
+                          <a class="propcolor" title="fibo-be-oac-exec:isAuthorizedThrough" href="prop-fibo-be-oac-execisauthorizedthrough.html">fibo-be-oac-exec:isAuthorizedThrough</a>
+                        </td>
+                        <td class="secondtd">
+                          <i>owl:ObjectProperty<i>
+                        </td>
+                        <td class="thirdtd">
+                          <span></span>
+                        </td>
+                        <td class="fourthtd">
+                          
+                          
+                              <i>owl:Thing</i>
+                          
+                        </td>
+                      </tr>
+                    
+                      <tr>
+                        <td class="firsttd">
+                          <a class="propcolor" title="fibo-be-oac-opty:guarantees" href="prop-fibo-be-oac-optyguarantees.html">fibo-be-oac-opty:guarantees</a>
+                        </td>
+                        <td class="secondtd">
+                          <i>owl:ObjectProperty<i>
+                        </td>
+                        <td class="thirdtd">
+                          <span>provides a formal assurance or promise, esp. that certain conditions shall be fulfilled relating to a product, service, or transaction</span>
+                        </td>
+                        <td class="fourthtd">
+                          
+                          
+                              <i>owl:Thing</i>
+                          
+                        </td>
+                      </tr>
+                    
+                      <tr>
+                        <td class="firsttd">
+                          <a class="propcolor" title="fibo-be-oac-opty:hasDirectOwningEntity" href="prop-fibo-be-oac-optyhasdirectowningentity.html">fibo-be-oac-opty:hasDirectOwningEntity</a>
+                        </td>
+                        <td class="secondtd">
+                          <i>owl:ObjectProperty<i>
+                        </td>
+                        <td class="thirdtd">
+                          <span>relates a formal organization to a direct legal person / owner</span>
+                        </td>
+                        <td class="fourthtd">
+                          
+                          
+                              <i>owl:Thing</i>
+                          
+                        </td>
+                      </tr>
+                    
+                      <tr>
+                        <td class="firsttd">
+                          <a class="propcolor" title="fibo-be-oac-opty:hasInvestmentEntity" href="prop-fibo-be-oac-optyhasinvestmententity.html">fibo-be-oac-opty:hasInvestmentEntity</a>
+                        </td>
+                        <td class="secondtd">
+                          <i>owl:ObjectProperty<i>
+                        </td>
+                        <td class="thirdtd">
+                          <span>relates a legal person to a directly owned formal organization or subsidiary, depending on the percent ownership interest</span>
+                        </td>
+                        <td class="fourthtd">
+                          
+                          
+                              <i>owl:Thing</i>
+                          
+                        </td>
+                      </tr>
+                    
+                  
+                
+              
+            </table>
+          </div>
+        </div>
+      </div>
+    
+
+
+    
+    
+
+
+    
+    <div class="row">
+      <div class="col-md-12">
+        <div class="panel panel-default">
+          <div class="panel-heading">
+            <h3 class="panel-title">Implementation</h3>
+          </div>
+          <div class="panel-body implementation-panel">
+            
+              <div class="highlight"><pre><span></span><span class="k">@prefix</span><span class="w"> </span><span class="nn">cmns-av:</span><span class="w"> </span><span class="nv">&lt;https://www.omg.org/spec/Commons/AnnotationVocabulary/&gt;</span><span class="w"> </span><span class="p">.</span>
+<span class="k">@prefix</span><span class="w"> </span><span class="nn">fibo-be-oac-exec:</span><span class="w"> </span><span class="nv">&lt;https://spec.edmcouncil.org/fibo/ontology/BE/OwnershipAndControl/Executives/&gt;</span><span class="w"> </span><span class="p">.</span>
+<span class="k">@prefix</span><span class="w"> </span><span class="nn">owl:</span><span class="w"> </span><span class="nv">&lt;http://www.w3.org/2002/07/owl#&gt;</span><span class="w"> </span><span class="p">.</span>
+<span class="k">@prefix</span><span class="w"> </span><span class="nn">rdfs:</span><span class="w"> </span><span class="nv">&lt;http://www.w3.org/2000/01/rdf-schema#&gt;</span><span class="w"> </span><span class="p">.</span>
+<span class="k">@prefix</span><span class="w"> </span><span class="nn">skos:</span><span class="w"> </span><span class="nv">&lt;http://www.w3.org/2004/02/skos/core#&gt;</span><span class="w"> </span><span class="p">.</span>
+
+<span class="nn">fibo-be-oac-exec</span><span class="p">:</span><span class="nt">ChiefFinancialOfficer</span> <span class="kt">a</span> <span class="nn">owl</span><span class="p">:</span><span class="nt">Class</span> <span class="p">;</span>
+    <span class="nn">rdfs</span><span class="p">:</span><span class="nt">label</span> <span class="s">"chief financial officer"</span> <span class="p">;</span>
+    <span class="nn">rdfs</span><span class="p">:</span><span class="nt">subClassOf</span> <span class="nn">fibo-be-oac-exec</span><span class="p">:</span><span class="nt">CorporateOfficer</span> <span class="p">;</span>
+    <span class="nn">skos</span><span class="p">:</span><span class="nt">definition</span> <span class="s">"senior-most corporate officer responsible for financial control and planning for an organization or project"</span> <span class="p">;</span>
+    <span class="nn">cmns-av</span><span class="p">:</span><span class="nt">abbreviation</span> <span class="s">"CFO"</span> <span class="p">;</span>
+    <span class="nn">cmns-av</span><span class="p">:</span><span class="nt">explanatoryNote</span> <span class="s">"He or she is in charge of all accounting functions including (1) credit control, (2) preparing budgets and financial statements, (3) coordinating financing and fund raising, (4) monitoring expenditure and liquidity, (5) managing investment and taxation issues, (6) reporting financial performance to the board, and (7) providing timely financial data to the CEO. Also called chief finance officer, comptroller, controller, or finance controller."</span> <span class="p">.</span>
+</pre></div>
+
+            
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+        
+
+
+
+
+	</div><!-- /#page-content-wrapper -->
+
+
+  
+
+
+
+  
+
+
+
+
+  <footer class="footer">
+    <div class="container">
+    
+      <p class="text-muted">Documentation automatically generated on Tue, 13 Oct 2026 20:33:16 with <a href="http://lambdamusic.github.io/Ontospy/">Ontospy</a> (v2.5)</p>
+
+    
+    </div>
+  </footer>
+
+
+</div><!-- /#wrapper -->
+
+
+<!-- Bootstrap core JavaScript
+================================================== -->
+<!-- Placed at the end of the document so the pages load faster -->
+<script src="../static/libs/jquery/1_12_4/jquery.min.js"></script>
+<script src="../static/libs/bootstrap-3_3_7-dist/js/bootstrap.min.js"></script>
+
+<!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+<script src="../static/libs/bootstrap-3_3_7-dist/js/ie10-viewport-bug-workaround.js"></script>
+
+<script src="../static/libs/chartjs-2_4_0/chart.bundle.js"></script>
+
+
+<!-- Menu Toggle Script -->
+<script>
+$("#menu-toggle").click(function(e) {
+    e.preventDefault();
+    $("#wrapper").toggleClass("toggled");
+});
+</script>
+
+
+
+
+<script type="text/javascript">
+
+$('#search-input-sidebar').keyup(function() {
+
+  var val = $.trim($(this).val()).replace(/ +/g, ' ').toLowerCase();
+  // var $rows = $(this).next(".entities-list").find("div");
+  var $rows = $(this).parent().parent().find("li.second-level");
+
+  $rows.show().filter(function() {
+      var text = $(this).text().replace(/\s+/g, ' ').toLowerCase();
+      return !~text.indexOf(val);
+  }).hide();
+});
+
+</script>
+
+
+
+
+  <!-- Scroll Sidebar Script -->
+
+  
+  
+
+  <script type="text/javascript">
+
+    $(document).ready(function (){
+      $('#sidebar-wrapper').animate({
+          scrollTop: $("#sd_1591").offset().top - 100
+      }, 100);
+    });
+
+  </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  </body>
+</html>
